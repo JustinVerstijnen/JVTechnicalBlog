@@ -42,8 +42,6 @@ It monitors every authentication request that happens on the Active Directory li
 - A user requesting a shared printer and driver from a printserver
 - A user requesting access to a fileshare
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-3a3f1d7d1f62.png)
-
 ### What types of attacks can be mitigated by MDI?
 
 Microsoft Defender for Identity (MDI) can mitigate some special attacks such as;
@@ -91,8 +89,6 @@ This can take up to 15 minutes.
 After the mandatory coffee break we have access to the right settings. Again, go to Settings -> Identities if not already there.
 
 Download the sensor here by clicking "Add sensor".
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-bc127106ef4a.png)
 
 If your environment already has its servers joined to Microsoft Defender, there is a new option available that automatically onboards the server (Blue). In our case, we did not have joined the server, so we choose the classic sensor installation (Grey) here:
 
@@ -151,13 +147,9 @@ After a minute or 5, the software is installed succesfully:
 
 After succesfully installing the sensor, we can now find the sensor in the Security portal. Again, go to the Security portal, then to Settings -> Identities.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/updates-to-website-3098/jv-media-3098-c2e72581d278.png)
-
 Now the sensor is active, but we have to do some post-installation steps to make the sensor fully working.
 
 Click on the sensor to review all settings and information:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/updates-to-website-3098/jv-media-3098-f2c8a74a1c3a.png)
 
 We can edit the configuration of the sensor by clicking on the blue "Manage sensor" button. Also, we have to do 2 tasks for extra auditing which i will explain step by step.
 
@@ -203,8 +195,6 @@ Here we have to change 3 settings:
 | Network security: Restrict NTLM: Audit Incoming NTLM Traffic | Enable auditing for all accounts |
 
 Change the settings like i did below:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/what-is-mta-sts-and-how-to-protect-your-email-flow-2198/jv-media-2198-1809477fc3ed.png)
 
 Please review the settings before changing them, it can be easy to pick the wrong one.
 
@@ -351,8 +341,6 @@ Now we are done with all Active Directory side configuration.
 
 After performing all post installation tasks, the sensor will be on the "Healthy" status in the portal and all health issues are gone:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-ephemeral-os-disks-in-azure-2810/jv-media-2810-1d857be631d6.png)
-
 This means the service is up and running and ready for monitoring and so spying for any malicious activity.
 
 ---
@@ -365,23 +353,6 @@ Next up, we are going to simulate some malicious behaviour to check if the servi
 
 ---
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

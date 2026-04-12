@@ -54,8 +54,6 @@ Changes to your infrastructure, especially when talking about Security can take 
 
 To roll out the most critical Zero trust principles in a short timely manner, you can use the RaMP plan which is a Rapid Modernization plan. This gives you a kickstart, but leaves the more complex and time-consuming changes for the near-future.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-3b6112c103f6.png)
-
 To further expand your Zero Trust vision and security posture, a great resource is to use the following 2 references by Microsoft:
 
 - **Azure Cybersecurity Benchmark:** <https://learn.microsoft.com/en-us/security/benchmark/azure/overview-v3>
@@ -66,23 +64,6 @@ To further expand your Zero Trust vision and security posture, a great resource 
 
 ---
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

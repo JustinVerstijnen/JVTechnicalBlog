@@ -68,8 +68,6 @@ Then place the ZIP file on your Active Directory management server.
 
 Open PowerShell ISE as Administrator:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/set-correct-language-and-timezone-on-azure-vm-3665/jv-media-3665-db8174903971.png)
-
 Verify your credentials if needed and then use the "Open" function of PowerShell ISE and open the script file:
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-ad-users-with-on-demand-script-3685/jv-media-3685-ad901a5a5b5a.png)
@@ -90,8 +88,6 @@ Set-ExecutionPolicy Unrestricted -Scope Process
 This way the execution policy stays enabled but for this session only it's been lowered. When you close the window, you have to type this again before be able to run scripts.
 
 Execute the command, and when prompted to lower the policy, click Yes.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/set-correct-language-and-timezone-on-azure-vm-3665/jv-media-3665-607bf989f877.png)
 
 Now we can run the script itself by clicking the green "Play" button.
 
@@ -131,23 +127,6 @@ These sources helped me by writing and research for this post;
 
 1. <https://learn.microsoft.com/en-us/powershell/module/activedirectory/new-aduser?view=windowsserver2025-ps>
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

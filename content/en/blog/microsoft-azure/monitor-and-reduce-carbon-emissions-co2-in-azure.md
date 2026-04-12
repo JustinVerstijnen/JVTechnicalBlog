@@ -21,8 +21,6 @@ In this guide, I will show some features of Microsoft Azure regarding monitoring
 
 Azure offers several Carbon Optimization options to help organizations to monitor and reduce their CO₂ emissions and operate more sustainable. You can find this in the Azure Portal by searching for "Carbon optimizations":
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/what-is-mta-sts-and-how-to-protect-your-email-flow-2198/jv-media-2198-1809477fc3ed.png)
-
 At this dashboard we can find some interesting information, like the total emissions from when your organization started using Azure services, emissions in the last month and the potential reductions that your organization can make.
 
 ---
@@ -92,23 +90,6 @@ However, Microsoft does not recommend using these numbers in any form of marketi
 
 Thank you for reading this guide and I hope it was interesting.
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

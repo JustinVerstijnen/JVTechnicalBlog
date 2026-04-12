@@ -30,8 +30,6 @@ In Azure we can use the default workbooks in multiple resources that contain bas
 
 Go to the virtual machine, then to "Workbooks" and then "Overview" (or one of the others):
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-4fa4af2c49be.png)
-
 This is a very basic workbook that can be useful, but we want to see more.
 
 ---
@@ -43,8 +41,6 @@ To start off creating your own Workbooks, you can use this Github page for excel
 - <https://github.com/microsoft/Application-Insights-Workbooks/tree/master/Workbooks>
 
 This repository contains hunderds of workbooks that are ready to use. We can also use parts of those workbooks for our own, customized, workbook that monitors a whole application.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-6b765503571b.png)
 
 Here we can download and view some workbooks that are related to the Virtual Machines service.
 
@@ -58,27 +54,19 @@ Let's say, we want to use some of the workbooks found on the Github page above o
 
 In Azure, go to "Workbooks" and create a new Workbook.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-877f47bb19ce.png)
-
 We start with a completely empty workbook. In the menu bar, you have an option, the "Advanced editor". Click on that to open the code view:
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-custom-azure-workbooks-for-detailed-monitoring-1468/jv-media-1468-bc401700d54b.png)
 
 Now we see the code of an empty Workbook:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-f085d4defaf6.png)
-
 On the Github page, I found the [Virtual Machine At Scale workbook](https://github.com/microsoft/Application-Insights-Workbooks/blob/master/Workbooks/Virtual%20Machines/At-scale%20Metrics/Key%20Metrics.workbook) which I want to deploy into my environment. On the Github page we can view the code and copy all of it.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-d352291af236.png)
 
 We can paste this code into the Azure Workbook editor and then click on "Apply".
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-custom-azure-workbooks-for-detailed-monitoring-1468/jv-media-1468-3183696d71a6.png)
 
 We now have a pre-defined Azure Workbook in our environment, which is basic but does the job:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-b02f36d2e0fe.png)
 
 ---
 
@@ -87,8 +75,6 @@ We now have a pre-defined Azure Workbook in our environment, which is basic but 
 We now want to create some of our own queries to monitor one or multiple VMs, which is the basic reason you may want to have a workbook for.
 
 In a new workbook we can add multiple different things:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-68311f4283fc.png)
 
 The most important types are:
 
@@ -101,23 +87,17 @@ The most important types are:
 
 Let's start by adding a visualization for our CPU usage. Click on "New" and then on "Add metric"
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-0884610d5dfd.png)
-
 Now we have to define everything for our virtual machine. Start by selecting the "Virtual Machines" resource type:
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-custom-azure-workbooks-for-detailed-monitoring-1468/jv-media-1468-c62a0fde9d2e.png)
 
 Then select the resource scope and then the virtual machine itself: (You can select multiple VMs here)
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-28043760407e.png)
-
 Now that we selected the scope, we can configure a metric itself. Click on "Add metric" and select the "Metric" drop-down menu. Select the "Percentage CPU" metric here.
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-custom-azure-workbooks-for-detailed-monitoring-1468/jv-media-1468-a89aefde0fce.png)
 
 Then click on Save and then "Run metrics" to view your information.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-c7848a8c038f.png)
 
 No worries, we will polish up [the visualizations later](#visualizations).
 
@@ -129,15 +109,11 @@ We can add a metric for our RAM usage in mostly the same manner. Click on "Add" 
 
 Then perform the same steps to select your virtual machines and subscription.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-6b3d2245fb4b.png)
-
 Now add a metric named "Available Memory Percentage"
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-custom-azure-workbooks-for-detailed-monitoring-1468/jv-media-1468-115718ebd01e.png)
 
 Now click on "Run metrics"
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-a45275cfc831.png)
 
 We have now a metric for the memory usage too.
 
@@ -154,8 +130,6 @@ This means we have to select all those 4 metrics in order to fully monitor our d
 
 Add a new metric as we did before and select the virtual machine.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-3f9e4023cbfa.png)
-
 - Click on "Add metric" and select "Disk Read Bytes" and click on "Save"
 
 - Then click on "Add metric" and select "Disk Read Operations/sec" and click on "Save"
@@ -167,8 +141,6 @@ Add a new metric as we did before and select the virtual machine.
 Select "Average" on all those metric settings for the best view.
 
 Your metric should look like this:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-2407065de096.png)
 
 Save the metric.
 
@@ -184,8 +156,6 @@ Now that we have 3 queries ready we can save our workbook. Give it a name, and m
 
 Now that we have some raw data, we can now visualise this the way we want. The workbook on my end looks like this:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-3a3f1d7d1f62.png)
-
 ### Add titles to your queries
 
 We can now add some titles to our queries and visualisations to better understand the data we are looking at. Edit the query and open it's Advanced settings.
@@ -196,13 +166,9 @@ Here we can give it a title under the "Chart title" option. Then save the query 
 
 Do this for all metrics you have made.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-cc140cbd41a9.png)
-
 ### Tile order
 
 You can also change the tile order of the workbook. You can change the order of the queries with these buttons:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-d94a8d4b8796.png)
 
 This changes the order of the tiles.
 
@@ -216,8 +182,6 @@ Select the option to make it a custom width, and change the Percent width option
 
 Pick the second query and do the same. The queries are now next to each other:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-468e759b5d4a.png)
-
 ### Bar charts and color pallettes
 
 Now we have the default "Line" graph but we want to make the information more eye-catching and to the point. We can do this with a bar chart.
@@ -228,8 +192,6 @@ Edit your query and set the visualization to "Bar chart". We can also select a c
 
 Now our workbook looks like this:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-0af08502a8a9.png)
-
 Much more clear and eye-catching isn't it?
 
 ### Grid option
@@ -237,8 +199,6 @@ Much more clear and eye-catching isn't it?
 The grid visualization is much more functional and scalable but less visual and eye catching. I use this more in forensic research when there are issues on one or multiple machines to have much information in one view.
 
 I have created a new tile with all the querys above in one tile and selected the "Grid" visualization:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/updates-to-website-3098/jv-media-3098-a2a8b18bc54f.png)
 
 Now you have a list of your virtual machines in one tile and on the right all the technical information. This works but looks very boring.
 
@@ -284,8 +244,6 @@ We can do the same for the RAM usage, but be aware that the RAM metric is availa
 
 The grid now looks like this:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-c8dfca12d6d0.png)
-
 ### Rounding grid numbers
 
 For the real perfectionists we can round the grid numbers. Now we see values like 1,326% and 89,259%. We want to see 1% and 89%.
@@ -299,8 +257,6 @@ Go down under the "Number Format Settings" and fill in a maximum fractional digi
 Do this for each column and save the tile.
 
 Now the grid looks like this:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-8a89f57391bf.png)
 
 ---
 
@@ -316,29 +272,10 @@ To further clarify what I have exactly done, I have published my Workbook of thi
 
 Azure Workbooks are an excellent and advanced way to monitor and visualize what is happening in your Azure environment. They can be tough at the start but it will become more easy when time goes by. By following this guide you have a workbook that look similar to this:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-b1fb0db10814.png)
-
 Thank you for reading this guide and I hope it was helpful.
 
 ---
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

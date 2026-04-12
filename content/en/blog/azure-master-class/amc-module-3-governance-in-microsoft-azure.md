@@ -15,8 +15,6 @@ Governance in Azure refers to the enforcement of rules and the establishment of 
 
 In the cloud, Governance is crucial because processes and behaviors differ significantly from on-premises hardware. Additionally, certain services can be made publicly accessible, which requires an extra layer of security.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-28043760407e.png)
-
 ---
 
 ---
@@ -52,8 +50,6 @@ To better understand how Azure Policy works, here are its key components:
 - **Mitigated**: The exemption is given because the policy's goal was met through a different method.
 - **Waiver**: The exemption is given because the resource is temporarily allowed to not follow the policy.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-c7848a8c038f.png)
-
 ---
 
 ## Tags
@@ -69,8 +65,6 @@ For example:
 
 Here i have configured the tag on a resource group to show the outcome:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-6b3d2245fb4b.png)
-
 Write access to the resources is required to modify or add a tag. Additionally, a tag cannot contain special characters such as `?`, `<`, `>`, `,`, `/`, or `.`.
 
 A maximum of 10,000 tags can be assigned per subscription.
@@ -82,8 +76,6 @@ Tags need to be added directly to objects; within the Tags section, you can only
 ## Azure Role structure and assignment
 
 Access to specific components in Microsoft Azure is managed using Access Control (IAM):
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-5a157f42605c.png)
 
 In Microsoft Azure, there are hundreds of different roles for each service, but the basic structure is as follows, ranked from the fewest to the most permissions:
 
@@ -105,11 +97,7 @@ To learn more about Azure Roles and assignments, check out my easy Azure Roles g
 
 At every level in Microsoft Azure, it's possible to check the access permissions for a specific user or group. In the **Access Control (IAM)** blade of any level (such as subscription, resource group, or resource), you can click on the **"Check Access"** tab, and then on the **"Check Access"** button.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-3f9e4023cbfa.png)
-
 Azure will then display a clear overview of the roles assigned to the user and the associated permissions. This feature helps ensure that you can easily verify who has access to what resources and at what level of control.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-2407065de096.png)
 
 ## Creating custom Azure roles for more granular access
 
@@ -243,23 +231,6 @@ Governance in Azure ensures that your cloud resources are used effectively and s
 
 To go back to the navigation page: <https://justinverstijnen.nl/microsoft-azure-master-class-navigation/>
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

@@ -23,8 +23,6 @@ Assuming you run your Azure Virtual Desktop environment by using the good old Ac
 
 To help you optimizing the experience on Windows 11, I have a predefined group policy available with lots of settings to help optimizing your Windows 11 session hosts. This group policy follows the official Microsoft best practices, alongside with some of my own optimizations which has been proven good in production.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-1602f77af72c.png)
-
 ---
 
 ## What this Group Policy does
@@ -107,23 +105,6 @@ This group policy is a great wat to optimize your Windows 11 session hosts in Az
 
 I hope I helped you optimizing your Windows 11 session hosts and thank you for reading and using my Group Policy template.
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

@@ -73,8 +73,6 @@ Import the script you just downloaded from my Github page. Then set the script o
 
 Then click “Next” and assign it to your devices. In my case, I selected “All devices”.
 
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/deploy-google-chrome-single-sign-on-with-intune-5787/jv-media-5787-3bd8486ec056.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/deploy-google-chrome-single-sign-on-with-intune-5787/jv-media-5787-3bd8486ec056.png)
-
 Click “Next” and then “Create” to deploy the script that will delete the printers upon execution.
 
 ---
@@ -137,23 +135,6 @@ These sources helped me by writing and research for this post;
 
 - None
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

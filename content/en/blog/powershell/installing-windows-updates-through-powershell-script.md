@@ -66,8 +66,6 @@ Unzip the file and then we can run the "Install" script. This must be run as adm
 
 Open Powershell ISE as administrator.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/disk-cleaning-script-on-windows-azure-vms-1276/jv-media-1276-abb9c2951099.png)
-
 Now open the "Install" script.
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/installing-windows-updates-through-powershell-script-3614/jv-media-3614-06723875d442.png)
@@ -87,8 +85,6 @@ Set-ExecutionPolicy Unrestricted -Scope Process
 This way the execution policy stays enabled but for this session only it's been lowered. When you close the window, you have to type this again before be able to run scripts.
 
 Execute the command, and when prompted to lower the policy, click Yes.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/disk-cleaning-script-on-windows-azure-vms-1276/jv-media-1276-6339e6e403bb.png)
 
 Now execute the Install script by clicking the green "Run" button:
 
@@ -128,8 +124,6 @@ I have placed the scipt into the correct folder. If you also want the script to 
 
 ### Creating the scheduled task
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/disk-cleaning-script-on-windows-azure-vms-1276/jv-media-1276-1df7d56f3806.png)
-
 Do a "Right-mouse click" on the empty space and click on "Create New Task...".
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/installing-windows-updates-through-powershell-script-3614/jv-media-3614-52c360ba7351.png)
@@ -138,15 +132,11 @@ Give the task a name and description that alings with your documentation.
 
 Then change the user to "SYSTEM" to run this in SYSTEM context for the highest privileges:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/disk-cleaning-script-on-windows-azure-vms-1276/jv-media-1276-c6c18f9fa7db.png)
-
 Then check the "Run with highest privileges" and select the highest OS possible in the "Configure for" dropdown menu.
 
 ### Configure script trigger
 
 Go to the "Triggers" tab and add a new trigger.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/disk-cleaning-script-on-windows-azure-vms-1276/jv-media-1276-fafe7b477e51.png)
 
 Select "Monthly" and select all months. Then change the "Days" field to 1 to run it on the first day.
 
@@ -155,8 +145,6 @@ You can defer from this schedule if your environment needs that. This is just an
 {{% /alert %}}
 
 Now the page looks like this:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/disk-cleaning-script-on-windows-azure-vms-1276/jv-media-1276-8e35e0f371e5.png)
 
 ### Configure script action
 
@@ -173,15 +161,12 @@ In the "Add arguments (optional):" field, type in the following:
 {{< card code=true header="**POWERSHELL**" lang="powershell" >}}
 -ExecutionPolicy Bypass -File C:\Scripts\JV-ServerPeriodicInstallUpdates.ps1
 {{< /card >}}
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/disk-cleaning-script-on-windows-azure-vms-1276/jv-media-1276-e54f48edbd99.png)
 
 Now click on "OK" twice to create the task.
 
 ### Testing the task
 
 Now we can manually run the task to ensure it runs on a schedule too. Right click the task and click on "Run" to start the task.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/disk-cleaning-script-on-windows-azure-vms-1276/jv-media-1276-33d36f0fd528.png)
 
 As we can see, the script runs succesfully as it still runs after 30 seconds. This means the task and permissions are correct.
 
@@ -209,23 +194,6 @@ These sources helped me by writing and research for this post;
 
 1. <https://www.powershellgallery.com/packages/pswindowsupdate/2.2.1.5>
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

@@ -73,11 +73,7 @@ We tried to do a DNS Zone transfer, which means that we wanted to make a full ex
 
 Now we have generated our first alert and the Security Operations Center (SOC) of the company will be notified. We can find the alert in the Security Portal by going to "Hunting" and then to "Advanced Hunting". There we can use the query "IdentityQueryEvents":
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-default-outbound-access-2652/jv-media-2652-c225b8e3d40d.png)
-
 This will show all events where attackers tried to do sensitive queries. We can investigate this further by expanding the alert:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-24d0dbbf18c6.png)
 
 Now the SOC knows exactly on which computer this happend and on what time.
 
@@ -97,21 +93,17 @@ net user /domain
 
 Now we get a report of all the users in the domain, with username and so their emailaddresses:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-cc294d8f53a2.png)
-
 Now we can run a command to get all groups in the domain:
 
 {{< card code=true header="**POWERSHELL**" lang="powershell" >}}
 net group /domain
 {{< /card >}}
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-ccb3e379965c.png)
 
 This list shows some default groups and some user created groups that are in use for different use cases. We now want to go a level deeper, and that is the members of one of these groups:
 
 {{< card code=true header="**POWERSHELL**" lang="powershell" >}}
 net group "Domain Admins" /domain
 {{< /card >}}
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-210c599a138d.png)
 
 Now, as an attacker, we have gold on our hands. We know exactly which 5 users we have to attack to get domain admin permissions and be able to be destructive.
 
@@ -120,7 +112,6 @@ If we want to have even more permissions, we can find out which user has Enterpr
 {{< card code=true header="**POWERSHELL**" lang="powershell" >}}
 net group "Enterprise Admins" /domain
 {{< /card >}}
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-42973c6523f9.png)
 
 So we can aim our attack to that guy Justin.
 
@@ -128,13 +119,9 @@ So we can aim our attack to that guy Justin.
 
 Let's see in the portal after we have issued this command above in complete silence or if we are detected by Defender for Identity:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-db420741336c.png)
-
 So all the enumeration and query events we did are audited by the Defender for Identity sensor and marked as potentially dangerous.
 
 We can further investigate every event by expanding it:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-5e47ccabe739.png)
 
 After some time (around 10 minutes in my case), an official incident will be opened in the Security portal, and notifiies the SOC with possible alerts they have configured:
 
@@ -161,7 +148,6 @@ Now lets run a command to show all logged in users including their IP addresses
 {{< card code=true header="**POWERSHELL**" lang="powershell" >}}
 Netsess.exe vm-jv-mdi
 {{< /card >}}
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-e6093862024c.png)
 
 Now we know where potential domain admins are logged in and could launch attacks on their computer, especially because we know on which computer the user credentials are stored. This all without any access to a server (yet).
 
@@ -243,8 +229,6 @@ Let's configure this account as Honeytoken account in the Security portal. Go to
 
 Tag the user and select it from the list.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-f27bc82f071b.png)
-
 After that save the account and let's generate some alerts.
 
 ---
@@ -254,8 +238,6 @@ After that save the account and let's generate some alerts.
 Now, as an attacker, we cloud know that the admin.service account exists through the Enumeration of users/groups and group memberships. Let's open the Windows Explorer on a workstation and open the SYSVOL share of the domain.
 
 It asks for credentials, we can try to log in with some basic, wrong passwords on the admin.service account.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-011299ffaed4.png)
 
 This will generate alerts on that account because the account is not really supposed to logon. The SOC will immediately know that an malicious actor is running some malicious behaviour.
 
@@ -283,23 +265,6 @@ Thank you for reading this guide!
 
 ---
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

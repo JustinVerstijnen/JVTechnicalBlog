@@ -48,8 +48,6 @@ To learn more about the Start/Stop solution, check out this page: <https://learn
 
 After deploying the template to your resource group, you can find some Logic Apps that are deployed to the resource group:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/pooled-azure-virtual-desktop-with-azure-ad-users-1947/jv-media-1947-bd668f70132f.png)
-
 These all have their own task:
 
 - **AutoStop**: Stop VMs automatically at a certain time
@@ -109,8 +107,6 @@ You have to define names of all the dependencies of this Start/Stop solution.
 
 After this step, create the resource and all the required components will be built by Azure. Also all the permissions will be set correctly so this minimizes administrative effort.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-bc127106ef4a.png)
-
 There is created a managed identity and will be assigned "Contributor" permissions on the whole resource group. This way it has enough permissions to perform the tasks needed to start and shutdown VMs.
 
 ---
@@ -119,11 +115,7 @@ There is created a managed identity and will be assigned "Contributor" permissio
 
 In Azure, search for Logic Apps and go to the **ststv2\_vms\_Scheduled\_start** resource.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-3b1af94bf2bc.png)
-
 Open the Resource and on the left, click on the "Logic App Desginer"
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-58a228307c9a.png)
 
 Here you see some tasks and blocks, similar to a Power Automate flow if you are familiar with those.
 
@@ -141,29 +133,19 @@ We can configure the complete flow here in the blocks:
 
 Click on the "Recurrence" block and change the parameters to your needs. In my case, i configured to start the VM on 13:45 Amsterdam time.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-3013a5d8a7ef.png)
-
 After configuring the scheduled start time, you can close the panel on the right and save the configuration.
 
 ## Configuring the scope
 
 After configuring the recurrence we can configure the scope of the start logic app. You can do that by clicking on "Function-Try".
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-c2c4dae9fbbf.png)
-
 On the "Settings" tab you can see that the recurrence we configured is used in this task to check if the time is matched. If this is a "success" the rest of the Logic App will be started.
 
 Now we have to open the "Logic app code view" option on the left and we have to make a change to the code to limit the scope of the task.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-40cd088cc4b5.png)
-
 Now we have to look out for a specific part of this code which is the "Function-Try" section. In my case, this section starts on **line 68**:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-081b7973420c.png)
-
 Now we have to paste the Resource ID of the resource group in here. You can find the Resource ID of the resource very fast and in a copy-paste manner by navigating to the resource group on a new browser tab, go to properties and in the field "Resource ID":
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-d94a8d4b8796.png)
 
 Paste the Resource ID of the resource group and head back to the logic app code view browser tab.
 
@@ -220,8 +202,6 @@ Enable the logic app by clicking "Enable". This starts the logic app and begins 
 To configure the Auto stop schedule, we have to go to the Logic app "**ststv2\_vms\_Scheduled\_stop**"
 
 Go to the Logic App Designer, just when we did with the Auto Start schedule:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-3b6112c103f6.png)
 
 Click on the "Recurrence" block and configure the desired shutdown time.
 
@@ -285,11 +265,7 @@ Now i configured the machine to stop on 14:15. My VM is running at this time to 
 
 At 14:15:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-8c8f32e4ab5d.png)
-
 And some time later:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-f901865e7eeb.png)
 
 This confirms that the solution is working as intended.
 
@@ -310,8 +286,6 @@ Maybe your time or timezone is incorrect. By going to the logic app and then the
 
 The underlying Azure Function app must have the right permissions in your Resource Group to be able to perform the tasks. You can check the permissions by navigating to your Resource Group, and them check the Access Control (IAM) menu.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-bc127106ef4a.png)
-
 Double check if the right Functions App/Managed Identity has "Contributor" permissions to the resource group(s).
 
 ---
@@ -326,17 +300,11 @@ You can configure notifications of this solution by searching for "Notifications
 
 Here you can configure what type of alert you want to receive when some of the tasks are executed.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-dfde3a7edc08.png)
-
 Click on the "Edit" button to edit the Action Group.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-51c46350321e.png)
 
 Here you can configure how you want to receive the notifications. Be aware that if this task is executed every day, this can generate a huge amount of notifications.
 
 This is an example of the email message you will receive:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-a1dcfb0f21db.png)
 
 You can further change the texting of the notification by going into the alerts in Azure.
 
@@ -350,23 +318,6 @@ This solution is similar to the Scaling Plans you have for Azure Virtual Desktop
 
 Thank you for reading this page and i hope i helped you by saving costs on VM consumption in Microsoft Azure.
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

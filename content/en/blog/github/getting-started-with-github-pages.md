@@ -181,8 +181,6 @@ These sources helped me with writing and research for this post:
 1. <https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site>
 2. <https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages>
 
-
-
 {{< ads >}}
 
 {{< article-footer >}}

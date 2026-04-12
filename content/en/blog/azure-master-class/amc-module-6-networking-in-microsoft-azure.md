@@ -114,8 +114,6 @@ To learn more about basic subnetting, check out this page: <https://www.freecode
 
 Here an example of Microsoft which I found really usefull and well-architected:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-7853558ee7fa.png)
-
 ---
 
 ## Network Interface Cards (NIC) in Microsoft Azure
@@ -183,8 +181,6 @@ ExpressRoute is a private connection to an Azure datacenter. Microsoft establish
 - High bandwidth requirements (up to 10 Gbps)
 - Low latency requirements
 - Physical security, traffic does not traverse the public internet
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-b02f36d2e0fe.png)
 
 ## Point-to-Site (P2S) VPN Connections (users)
 
@@ -312,8 +308,6 @@ Typically, you use either an NSG per machine or an NSG for the entire subnet com
 
 Within Azure, you can also create route tables. These allow you to define custom rules on top of the virtual network or subnet to direct traffic. The routing table which contains all the user defined routes (UDR's) has to be linked to one of the created subnets.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-6b3d2245fb4b.png)
-
 Every network uses routing to determine where specific traffic should be directed. In Azure, this works the same way within a virtual network. There are the following types of routing:
 
 System routes are the default routes that Azure creates. These ensure that resources automatically have access to the internet and other resources/networks. The default routes created by Azure include:
@@ -368,8 +362,6 @@ After this step there are different **Next Hop types**, each with its own purpos
 
 It is good to know that all routes can be viewed through a network interface that is connected to the network. Additionally, you can check whether a route is a system route or a user-defined route. You can find this in the Network Interface Card (NIC) of the virtual machine.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-319d276ec052.png)
-
 This can be helpful if a routing doesn't work properly and you want to find out if this is by a User defined route.
 
 ---
@@ -410,8 +402,6 @@ Resources who use public endpoints:
 
 In the configuration of the resource, its possible to still use the public endpoint for its simplicity but limit the access to specified IP addresses/ranges:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-28043760407e.png)
-
 ### Service Endpoints
 
 Service endpoints are extensions for virtual networks that enhance security by allowing traffic to specific Azure resources only from a designated virtual network. The following resources support both service endpoints and private endpoints:
@@ -434,8 +424,6 @@ A private link ensures that a resource is only accessible from the internal netw
 This provides extra security and performance since the route to the resource is optimized for efficiency. It also allows you to place a load balancer between the client and the resource if needed.
 
 To give a better understanding of how this works:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-c7848a8c038f.png)
 
 In this case, John Savill created a Private Endpoint on his Storage Account and so connected it to his private network. It does get a local IP address instead of being routed over the internet.
 
@@ -587,8 +575,6 @@ Azure Application Gateway supports 2 load balancing methods:
 - **Path-based routing:** Determines the endpoint or pool of endpoints based on a specific URL. (See image)
 - **Multiple site routing:** Determines the endpoint or pool of endpoints based on a specific domain name. (See image)
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/enhance-email-security-with-spf-dkim-dmarc-1462/jv-media-1462-2196f5040337.png)
-
 On the frontend, Azure Application Gateway has a virtual WAN IP address that allows access to the web service. On the backend, you must determine how requests are routed to internal servers.
 
 A load balancer also typically includes a health probe rule. This checks whether the backend web servers are functioning correctly by periodically opening an internal website. If a web server does not respond, the load balancer will immediately stop sending traffic to that server.
@@ -627,8 +613,6 @@ This service is primarily focused on security, just-in-time access and ease of a
 
 The topology of Azure Bastion:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-4fa4af2c49be.png)
-
 ---
 
 ## Azure Firewall
@@ -663,23 +647,6 @@ To go back to the navigation page: <https://justinverstijnen.nl/microsoft-azure-
 
 ---
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

@@ -116,8 +116,6 @@ Storage redundancy is divided into three main methods:
 - **ZRS (Zone-Redundant Storage)**: Stores three instances of the data across different availability zones within an Azure region.
 - **GRS (Geographically Redundant Storage)**: Stores three instances of the data in one data center and an additional three instances in a paired region.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-7eee8ff81921.png)
-
 *Note: Synchronizations between regions are **asynchronous**.*
 
 Aside from the options LRS, ZRS and GRS there is a 4th option available;
@@ -153,8 +151,6 @@ Billing for Azure Storage is done in 2 different types:
 ### Provisioning based billing
 
 Azure Storage will increase **IOPS, throughput, and reduce latency** when you allocate more storage space for **Premium options or managed disks**. See the image below:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-f5992d989822.png)
 
 ### Consumption based billing
 
@@ -261,23 +257,6 @@ Azure offers a service for importing or exporting large amounts of data.
 
 To go back to the navigation page: <https://justinverstijnen.nl/microsoft-azure-master-class-navigation/>
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

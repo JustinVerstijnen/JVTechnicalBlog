@@ -277,8 +277,6 @@ The configuration of VMSS can be done in the Azure Portal and starts with config
 
 After the conditions are configured, we can define the rules where we plan when to scale up or down:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/creating-static-web-apps-on-azure-the-easy-way-2346/jv-media-2346-25261df04b8a.png)
-
 I am no expert in Scale Sets myself but i know the basic concept. If you want to learn more, refer to this guide: <https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-portal>
 
 ## Practice Scenarios
@@ -353,23 +351,6 @@ To go back to the navigation page: <https://justinverstijnen.nl/microsoft-azure-
 
 ---
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

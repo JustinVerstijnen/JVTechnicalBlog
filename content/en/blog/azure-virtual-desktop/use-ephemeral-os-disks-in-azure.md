@@ -90,27 +90,17 @@ Login to the Azure Portal, and deploy a new virtual machine:
 - Disable availability zones (as this is not supported)
 - Select your image (Windows 11 24H2 Multi-session in my case)
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-cb39a3173818.png)
-
 Now we have to select a size, which mus contain a non-capital "d". This stands for having local NVME storage on the hypervisor which makes it bloody fast. In my case, I selected the vm size: "E4ds\_v6"
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-c8dfca12d6d0.png)
-
 Now the wizard looks like this:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-945275aa0ed6.png)
 
 Proceed by creating your local account and advance to the tab "Disks".
 
 Here we have to scroll down to the "Advanced" section, expand it and here we have the hided options for having Ephemeral OS disks:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-8a89f57391bf.png)
-
 Select the "NVME placement" option and let the option "Use managed disks" checked. This is for additional data disks you link to the virtual machine. The Ephemeral OS disk option requires you to enable it.
 
 Finish the rest of the wizard by selecting your needed options.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-b1fb0db10814.png)
 
 ---
 
@@ -163,23 +153,6 @@ If using VMs with Ephemeral OS disks, use it for cases where data loss is no iss
 
 Thank you for reading this guide and I hope it was helpful.
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

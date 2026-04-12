@@ -25,10 +25,6 @@ Remember, having a secure score of 100% doesn't mean 100% security. This only me
 
 Starting this page, my Secure Score overview is this:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-i-bumped-up-microsoft-secure-score-towards-100-5293/jv-media-5293-cf5c9fb82ed1.png)
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-i-bumped-up-microsoft-secure-score-towards-100-5293/jv-media-5293-a44012a62c4d.png)
-
 ---
 
 ## The Microsoft Entra ID recommendations
@@ -36,8 +32,6 @@ Starting this page, my Secure Score overview is this:
 Let's check first which requirements we have to address. Go to <https://security.microsoft.com/securescore> and select Microsoft Entra ID.
 
 We then will get this list of items:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-i-bumped-up-microsoft-secure-score-towards-100-5293/jv-media-5293-edb8814a7861.png)
 
 As you can see, the bottom 4 items are already done. The top 4 items must be addressed but I will explain how to address them all.
 
@@ -64,8 +58,6 @@ As 1 and 2 are mostly to achieve the same goal, I really like to create one poli
 
 First, check the list of users that might be blocked due to the results of this new policy: <https://entra.microsoft.com/#view/Microsoft_AAD_IAM/SecurityMenuBlade/~/RiskyUsers/menuId/RiskyUsers/fromNav/>
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-i-bumped-up-microsoft-secure-score-towards-100-5293/jv-media-5293-eccc3822f15f.png)
-
 Then proceedd creating the policy.
 
 In my environment, I use a very clear naming scheme for Conditional Access. I start with JV, then state if this policy allows or blocks users and then some more information. I call this new policy "JV-Block-RiskyUsersSignins".
@@ -74,15 +66,9 @@ Create a new policy and name it to your desired naming scheme.
 
 Then select "Users" and include all users.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-i-bumped-up-microsoft-secure-score-towards-100-5293/jv-media-5293-05348eb11755.png)
-
 After that, click on "Exclude", select "Users and groups" and select your break-glass administrator account to have this account excluded from this policy. This ensures if you make any mistake, you have still access to the tenant with this account. Great recommendation, can save you weeks from support of Microsoft who wants to know in 5 different ways that its actually you.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-i-bumped-up-microsoft-secure-score-towards-100-5293/jv-media-5293-245abc57f141.png)
-
 For "Target Resources", select "All resources".
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-i-bumped-up-microsoft-secure-score-towards-100-5293/jv-media-5293-50c02176e914.png)
 
 At "Conditions", select the following options, according to Microsoft's best practices ([source](https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies#microsofts-recommendation))
 
@@ -91,23 +77,15 @@ At "Conditions", select the following options, according to Microsoft's best pra
 
 You can set this more tight, but expect false positives among users who are unable to sign in.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-i-bumped-up-microsoft-secure-score-towards-100-5293/jv-media-5293-68790237a17c.png)
-
 Then at "Grant", set "Block access". This ensures if users are at risk they are unable to sign in to their account and they need the skilled helpdesk to regain access to their account. It's up to the helpdesk to confirm if the account is compromised, to collect sign-in actions, to take action and most of the time enforce a password change.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-i-bumped-up-microsoft-secure-score-towards-100-5293/jv-media-5293-6560045f8471.png)
-
 Now the policy can be created and ready to be enforced:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-i-bumped-up-microsoft-secure-score-towards-100-5293/jv-media-5293-a3c072380790.png)
 
 ---
 
 ## 3/4: Enable Multi Factor Authentication for all users
 
 Make sure you have a Conditional Access policy in place where you enforce Multi Factor Authentication for all users for this to work:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-i-bumped-up-microsoft-secure-score-towards-100-5293/jv-media-5293-bd4c7d2f4978.png)
 
 I have a policy in place that requires MFA or sign-in from a compliant device. This generally is a good approach. Make sure to exclude your break-glass administrator from the policy if making errors and/or not having a compliant device and/or having problems with your normal account.
 
@@ -123,22 +101,14 @@ We can actually create one Conditional Access policy to do this. Let's head back
 
 Select "All Users" and exclude your break-glass administrator account.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-i-bumped-up-microsoft-secure-score-towards-100-5293/jv-media-5293-99cecc8cbadf.png)
-
 Select all target resources.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-i-bumped-up-microsoft-secure-score-towards-100-5293/jv-media-5293-c3a9920b9935.png)
 
 Under "Conditions", select "Client Apps" and select the options:
 
 - Exchange ActiveSync clients
 - Other clients
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-i-bumped-up-microsoft-secure-score-towards-100-5293/jv-media-5293-517ed1a3609b.png)
-
 Then under "Grant", select "Block access" to block any legacy authentication protocols from being used.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-i-bumped-up-microsoft-secure-score-towards-100-5293/jv-media-5293-65f98578dc36.png)
 
 ---
 
@@ -168,8 +138,6 @@ Microsoft recommends us that users have the Self Service Password Reset (SSPR) o
 
 Set this switch to "All" to enable this for all users. After a users logging in after this change, they will have to register for this new feature. Make sure you also set the methods needed to reset a password is "2" to enhance security.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-i-bumped-up-microsoft-secure-score-towards-100-5293/jv-media-5293-ff078d652bb7.png)
-
 ---
 
 ## 8: Never expire passwords
@@ -179,8 +147,6 @@ A good recommendation is to let passwords of users never expire. This was a best
 To disable this option (which is already disabled by default), go to [Microsoft 365 Admin Center](https://admin.microsoft.com).
 
 Then go to "Settings", "Org settings", then the tab "Security & privacy" and then search for "Password expiration policy". Then check the box to disable this option.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-i-bumped-up-microsoft-secure-score-towards-100-5293/jv-media-5293-6be0434fd693.png)
 
 ---
 
@@ -198,8 +164,6 @@ You can check pro-actively in this dashboard for risky users or sign ins:
 
 It is generally a good approach to disable users to give 3rd parties access to their profile and organization data. <https://entra.microsoft.com/#view/Microsoft_AAD_IAM/ConsentPoliciesMenuBlade/~/UserSettings>
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-i-bumped-up-microsoft-secure-score-towards-100-5293/jv-media-5293-5ca09dcb57e5.png)
-
 1. **Do not allow user consent (recommended):** This makes sure a user cannot give any 3rd party access and is the most restrictive option and also my recommendation.
 2. **Allow user consent for apps from verified publishers, for selected permissions**: Really broad setting and not something you want any user to do. Unfortunately, this is the default setting.
 3. **Let Microsoft manage your consent settings:** This option means Microsoft can dynamically change this option to new guidelines.
@@ -208,13 +172,9 @@ Setting this to "Do not allow user consent" will give your users a prompt where 
 
 Go to "Admin consent settings" and configure the following options:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-i-bumped-up-microsoft-secure-score-towards-100-5293/jv-media-5293-2967ae66b0db.png)
-
 Select "Yes" to the "Users can request..." option and select users, groups or roles who are able to allow the consent. Then save the new configuration.
 
 Now if users get any request from 3rd party applications, they can do a request to their admins to allow the application:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-i-bumped-up-microsoft-secure-score-towards-100-5293/jv-media-5293-1030d6256674.png)
 
 The request will then popup into this window: <https://portal.azure.com/#view/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/~/AccessRequests/menuId~/null>
 
@@ -245,8 +205,6 @@ Something that is in no Secure Score check, but very important is to block manua
 
 Open up the [Microsoft 365 Admin Center](https://admin.microsoft.com), search for the shared Mailbox and click on "Block Sign-in".
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-i-bumped-up-microsoft-secure-score-towards-100-5293/jv-media-5293-a57ec8094490.png)
-
 ---
 
 ## Tip 2: Disable these user settings
@@ -266,8 +224,6 @@ Set the following options:
 
 This must look like this for the highest level of security:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-i-bumped-up-microsoft-secure-score-towards-100-5293/jv-media-5293-b143227b0305.png)
-
 ---
 
 ## Tip 3: Restrict amount of outbound email messages
@@ -284,8 +240,6 @@ This type of attack is described as such by the MITRE ATTACK framework:
 | Phishing from Compromised Accounts | Masquerading | T1036 | Impersonating a legitimate user. |
 
 A good recommendation I can give is to limit the amount of outbound email messages a user can send per hour or day. We can do this in Microsoft Denfender with an Outbound anti-spam policy:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-i-bumped-up-microsoft-secure-score-towards-100-5293/jv-media-5293-9c4fd1a66d75.png)
 
 In this policy, I was very strict and set the maximum limit of every user to 100 messages. You can set this higher, but be aware that an attacker can send thousands of messages within minutes. The Exchange Online default limit is 10.000 messages which can cause devastating damage if being breached. Not only financial damage, but your good name is being abused too.
 
@@ -317,23 +271,6 @@ These sources helped me by writing and research for this post;
 
 1. <https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies#microsofts-recommendation>
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

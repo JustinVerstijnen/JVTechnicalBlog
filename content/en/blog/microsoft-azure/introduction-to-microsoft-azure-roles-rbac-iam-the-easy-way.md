@@ -83,8 +83,6 @@ To begin creating a custom role, go to any access control blade, click "Add" and
 
 From there you have the option to completely start from scratch, or to clone a role and add or delete permissions from it to match your goal.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-46ab525b3246.png)
-
 Creating your own role is the best way, but can take up a lot of time to build and manage. My advice is to stick to built in roles wherever it's possible.
 
 ---
@@ -135,8 +133,6 @@ For example:
 
 You can also check effective permissions at every level in the Azure Portal by going to "Access control (IAM)" and go to the tab "Check access".
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-5e3e34894ec2.png)
-
 - With the "View my access" button, you list your stack of permissions at your current scope
 - With the "Check access" button, you can check permissions of another principal at your current scope
 
@@ -156,8 +152,6 @@ A relatively new feature is a condition in a role assignment. This way you can e
   - Or only to exactly what principals you choose
 - Block/filter some roles like priveleged roles
   - For example, a user may assign some reader/contributor roles but not the "Owner" role.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-7eee8ff81921.png)
 
 ---
 
@@ -183,8 +177,6 @@ An example of a service principal can be a third party built CRM application tha
 A managed identity is a identity which represents a resource in Azure like a virtual machine, storage account or web app. This can be used to assign a resource a role to another resource.
 
 For example; a group of virtual machines need access to your SQL database. You can assign the roles on the SQL database and define the virtual machines as principal. This will look like this the image below.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-f5992d989822.png)
 
 All principals are stored in Microsoft Entra ID which is considered a Identity Provider, a database which contains all principals.
 
@@ -213,23 +205,6 @@ This page is a great preparation of this subject for the following Microsoft exa
 
 ---
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

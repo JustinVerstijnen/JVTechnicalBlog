@@ -67,8 +67,6 @@ This dashboard gets information from various places, like Virtual Machine insigh
 
 In almost every resource in Azure, you can view resource-specific insights. This is information relevant to the selected resource and can be found under **"**Monitoring**"** and then "Insights".
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/creating-static-web-apps-on-azure-the-easy-way-2346/jv-media-2346-5799d7f2603f.png)
-
 However, this information is predefined and cannot be customized. Additionally, it only covers a small portion of the entire application you want to monitor.
 
 # Azure Workbooks
@@ -76,8 +74,6 @@ However, this information is predefined and cannot be customized. Additionally, 
 Azure Workbooks are flexible overviews in Azure. You can fully customize what you want to see for a specific service and even add tabs. This option is more advanced than an Azure Dashboard. The information displayed in an Azure Workbook comes mostly from a Log Analytics workspace, but it is possible to get information from Azure Resource Graph too.
 
 An workbook can look like this:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/creating-static-web-apps-on-azure-the-easy-way-2346/jv-media-2346-eaccadc15a8d.png)
 
 The advantages of an Azure Workbook are that every button, every column and every type of conditional formatting is customizable. However, it can quickly become very complex and it requires a bit of knowledge of Kusto Query Language (KQL) to make it totally yours. I speak out of experience here.
 
@@ -101,11 +97,7 @@ It is very important to watch the data retention of the workspace. The more data
 
 In Azure, you can send logs to Log Analytics from almost every resource under "Diagnostics Settings":
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/creating-static-web-apps-on-azure-the-easy-way-2346/jv-media-2346-12ab03e28ef3.png)
-
 And then "+ Add diagnostic setting":
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/creating-static-web-apps-on-azure-the-easy-way-2346/jv-media-2346-d41b901adaf8.png)
 
 ## Alternatives to Log Analytics
 
@@ -131,11 +123,7 @@ Every came in the situation that something has changed but you don't know what e
 
 The Azure Activity logs solve this problem and can be displayed on every level in Azure. Here is an example of the Activity logs on Resource Group-level:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/creating-static-web-apps-on-azure-the-easy-way-2346/jv-media-2346-a566b887f332.png)
-
 Let's say we have an storage account named sa-jv-amc10 and suddenly, the application doesn't have access to the storage account anymore, starting like 5 minutes ago. You can fire up the activity log to search for possible changes.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/creating-static-web-apps-on-azure-the-easy-way-2346/jv-media-2346-2f214eb3e57e.png)
 
 And there it is, like 5 minutes ago someone disabled public internet access to the storage account and this caused the outage.
 
@@ -163,8 +151,6 @@ The available action types for Action Groups include:
 - Event Hubs
 
 An overview of how this works looks like this:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/creating-static-web-apps-on-azure-the-easy-way-2346/jv-media-2346-344893d40c2c.png)
 
 ---
 
@@ -204,8 +190,6 @@ The main objectives of Defender for Cloud are:
 - **Cloud Security Posture Management (CSPM):** Continuously monitors cloud environments to detect misconfigurations and vulnerabilities.
 - **Cloud Security Explorer:** Allows in-depth security investigations and queries to analyze risks across cloud resources.
 - **Security Governance:** Helps implement security controls and best practices to maintain compliance with industry standards.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/creating-static-web-apps-on-azure-the-easy-way-2346/jv-media-2346-e88c65382a79.png)
 
 Microsoft Defender for Cloud also provides a dashboard with Secure Score, which evaluates your entire environment. Not just Azure, but also AWS, Google Cloud, and Azure Arc (on-premises) resources.
 
@@ -298,23 +282,6 @@ Thank you for reading this page.
 
 To go back to the navigation page: <https://justinverstijnen.nl/microsoft-azure-master-class-navigation/>
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

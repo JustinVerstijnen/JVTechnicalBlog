@@ -7,3 +7,7 @@ categories:
 draft: true
 ---
 In this module, we will dive into Windows Server Storage options and File Sharing.
+
+{{< ads >}}
+
+{{< article-footer >}}

@@ -31,8 +31,6 @@ In this guide we do a deep dive into IPv6 in Microsoft Azure and i will show som
 
 By default, Azure pushes you to use an IPv4 address space when creating a virtual network in Azure. Now this is the best understandable and easy version of addressing.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-3013a5d8a7ef.png)
-
 In some cases we want to give our IPv6 addresses only, IPv4 addresses only or use dual-stack where we assign both IPv4 and IPv6 to our resources.
 
 In the wizard, we can remove the default generated address space and design our own, IPv6 based address space like i have done below:
@@ -68,8 +66,6 @@ So we have to add IPv4 address spaces to our IPv6 network to connect machines. T
 Go to your virtual network and open "Address space"
 
 Here i added a 10.0.0.0/8 IPv4 address space:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-3617bd48c962.png)
 
 Now we have to add IPv4 spaces to our subnets, what i have already done:
 
@@ -113,8 +109,6 @@ Now we can go to the machine and assign the newly created public IP address to t
 
 My complete configuration of the network looks like this:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-325689985ce6.png)
-
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/deep-dive-into-ipv6-with-microsoft-azure-869/jv-media-869-6cea8752b256.png)
 
 Now our server is available through IPv6. Good to mention that you may not be possible to connect to the server with this address because of 6-to-4 tunneling and ISP's not supporting IPv6. In this case we have to use the IPv4 method.
@@ -127,11 +121,7 @@ To actually test the IPv6 connectivity, we can setup a webserver in one of the s
 
 I used a simple webserver image to create a new VM and placed it in Subnet-2. After that i created a secondary connection just like the other Windows based VM and added a private and a public IPv6 address:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-a7309c793754.png)
-
 Now we are on the first VM which runs on Windows and we try to connect to the webserver:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-f01c571d4c4b.png)
 
 A ping request works fine and we get a response from the webserver.
 
@@ -143,11 +133,7 @@ I went to Edge and opened the website by using the IPv6 address: https://[fd02::
 
 The webserver works, but i get a 404 not found page. This is by my design because i did not publish a website. The connection works like a charm!
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-80de00ec9191.png)
-
 The webserver also works with the added Public IPv6 address:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-70a40341a334.png)
 
 Small note: some webservers/firewalls may be configured manually to listen to IPv6. With my used image, this was the case.
 
@@ -161,23 +147,6 @@ My personal opninion is that the addressing can be easier than IPv4, when done c
 
 ---
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

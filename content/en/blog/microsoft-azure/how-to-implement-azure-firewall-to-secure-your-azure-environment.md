@@ -51,11 +51,7 @@ We will build these networks. The only exception is VNET03, which we will isolat
 
 In Azure, search for "Virtual Networks", select it and create a virtual network.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-d1409fa6f079.png)
-
 Create a new virtual network which we will configure as hub of our Azure network. This is a big network where the Azure Firewall instance will reside.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-325689985ce6.png)
 
 For the IP addresses, ensure you choose an address space that is big enough for your network. I chose for the default /16 which theoretically can host 65.000 addresses.
 
@@ -69,15 +65,11 @@ Now we can create the other spoke networks in Azure where the servers, workstati
 
 Create the networks and select your preferred IP address ranges.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-ff6b4add7660.png)
-
 ---
 
 ## Peering the networks
 
 Now that we have all our IP ranges in place, we can now peer all spoke networks with our hub. We can do this the most efficient way by going to the Hub network and creating the peers from there:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-1602f77af72c.png)
 
 Create a new peering here.
 
@@ -101,8 +93,6 @@ Now we know how to configue the peerings, let's bring this in practice.
 
 The wizard starts with the configuration of the peering for the remote network:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-cebd878c4e33.png)
-
 For the peering name, I advice you to simply use:
 
 VNETxx-to-VNETxx
@@ -119,8 +109,6 @@ After these checks are marked correctly, we can create the peering by clicking o
 
 Do this configuration for each spoke network to connect it to the hub. The list of peered networks in your Hub network must look like this:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-f01c571d4c4b.png)
-
 Now the foundation of our network is in place.
 
 ---
@@ -130,8 +118,6 @@ Now the foundation of our network is in place.
 Azure Firewall needs a subnet for management purposes which we have to create prior to creating the instance.
 
 We can do this very easily by going to the Hub virtual network and then go to "Subnets".
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-f4ecdd11276d.png)
 
 Click on "+ Subnet" to create a subnet from template:
 
@@ -168,21 +154,13 @@ Now configure the public IP addresses for the firewall itself and the management
 
 The complete configuration of my wizard looks like this:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-7eee8ff81921.png)
-
 Now click on "Next" and then "Review and Create" to create the Firewall instance.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-f5992d989822.png)
 
 This will take around 5 to 10 minutes.
 
 After the Firewall is created, we can check the status in the Firewall Manager:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-a918696a3adf.png)
-
 And in the Firewall policy:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/enhance-email-security-with-spf-dkim-dmarc-1462/jv-media-1462-343d9db4978f.png)
 
 ---
 
@@ -196,11 +174,7 @@ We have to tell all of our Spoke networks which gateway they can use to talk to 
 
 Go to "Route Tables" and create a new route table. Give it a name and place it in the same region as your networks:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-706ed7d28843.png)
-
 After this is done, we kan open the Route table and add a route in the Routes section:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-13a61175857f.png)
 
 Configure the route:
 
@@ -210,13 +184,9 @@ Configure the route:
 - **Next hop type:** Virtual Appliance
 - **Next hop address:** Your private IP addresss of Azure Firewall
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-7853558ee7fa.png)
-
 Create the route. Now go to the "Subnets" section, because after creating the route, we must speficy which networks will use it.
 
 In "Subnets", click on "+ Associate" and select your spoke networks only. After selecting, this should look like this:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-8456e7a65306.png)
 
 Now outbound traffic of any resource in those spoke networks is routed through the firewall and we can start applying our own rules to it.
 
@@ -229,8 +199,6 @@ We can now start with creating the network rules to start and allow traffic. Azu
 This means we have to allow traffic between networks. Traffic in the same subnet/network however does not travel through the firewall and is allowed by default.
 
 Go to your Firewall policy and go to "Rule Collections". All rules you create in Azure Firewall are placed in Rule collections which are basically groups of rules. Create a new Rule collection:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/enhance-email-security-with-spf-dkim-dmarc-1462/jv-media-1462-2196f5040337.png)
 
 I create a network rule collection for all of my networks to allow outbound traffic. We can also put the rules of inter-network here, these are basically outbound in their own context.
 
@@ -259,8 +227,6 @@ Create a rule to allow your created VNET01 outbound access to the internet.
 
 Such rule looks like this:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-6b765503571b.png)
-
 I created the rules for every spoke network (VNET01 to VNET03). Keep in mind you have to change the source to the address space of every network.
 
 Save the rule to make it effective.
@@ -279,8 +245,6 @@ Go to Rule collections and create a new rule collection:
 - Rule collection action: Deny
 - Rule Collection Group: DefaultNetworkRuleCollectionGroup
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-4fa4af2c49be.png)
-
 The most important are the priority and the action, where the priority must be closer to 100 to make it effective above the allow rules and the action to block the traffic.
 
 Now create rules to block traffic from VNET03 to all of our spoke networks:
@@ -296,8 +260,6 @@ Now create rules to block traffic from VNET03 to all of our spoke networks:
 
 Create 2 rules to block traffic to VNET01 and VNET02:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-877f47bb19ce.png)
-
 Save the rule collection to make it effective.
 
 ---
@@ -308,8 +270,6 @@ For access from the outside network to for example RDP of servers, HTTPS or SQL 
 
 Go to the Firewall policy and then to "Rule collections". Create a new rule collection and specify DNAT as type:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-f085d4defaf6.png)
-
 I chose a priority of 65000 because of broad rules. DNAT rules have the higest priority over network and application rules.
 
 Create the rule collection.
@@ -319,8 +279,6 @@ Create the rule collection.
 ## Creating DNAT rules
 
 Now we can create DNAT rules to allow traffic from the internet into our environment. Go to the just created DNAT rule collection and add some rules for RDP and HTTPS:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-d352291af236.png)
 
 Part 2:
 
@@ -343,8 +301,6 @@ WIth application rules, you can allow or block traffic based on FQDNs and web ca
 
 To block a certain website for example create a new Rule collection for Application and specify the action "Deny".
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-0884610d5dfd.png)
-
 Save the collection and advance to the rules.
 
 ---
@@ -352,8 +308,6 @@ Save the collection and advance to the rules.
 ## Creating Application rules
 
 Now we can create some application rules to block certain websites:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-68311f4283fc.png)
 
 For example I created 2 rules which block access from the workstations to apple.com and vmware.com. Make sure when using application rules, there has to be another rule in place to allow traffic with a higher priority number (closer to 65000)
 
@@ -374,23 +328,6 @@ These sources helped me by writing and research for this post;
 1. [What is Azure Firewall? | Microsoft Learn](https://learn.microsoft.com/en-us/azure/firewall/overview)
 2. [Pricing - Azure Firewall | Microsoft Azure](https://azure.microsoft.com/en-us/pricing/details/azure-firewall/)
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

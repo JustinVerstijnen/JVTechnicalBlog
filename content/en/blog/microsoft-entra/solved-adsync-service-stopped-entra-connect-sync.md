@@ -77,8 +77,6 @@ Then place the files on the server where you want to install the script.
 
 Open Powershell ISE as administrator.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/disk-cleaning-script-on-windows-azure-vms-1276/jv-media-1276-abb9c2951099.png)
-
 Now open the "Install" script.
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/solved-adsync-service-stopped-entra-connect-sync-6576/jv-media-6576-1d6ccca49412.png)
@@ -98,8 +96,6 @@ Set-ExecutionPolicy Unrestricted -Scope Process -Force
 This way the execution policy stays enabled but for this session only it's been lowered. When you close the window, you have to type this again before be able to run scripts.
 
 Execute the command, and when prompted to lower the policy, click Yes.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/disk-cleaning-script-on-windows-azure-vms-1276/jv-media-1276-6339e6e403bb.png)
 
 Now execute the Install script by clicking the green "Run" button:
 
@@ -129,23 +125,6 @@ These sources helped me by writing and research for this post;
 
 - None
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

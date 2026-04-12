@@ -56,8 +56,6 @@ Logic Apps are relatively cheap, most of the time we can save a lot more money o
 
 Advance to the next step.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/updates-to-website-3098/jv-media-3098-74929da3f52d.png)
-
 Create the app by filling in the details and finish the wizard.
 
 After finishing the wizard, we have our Logic App in place, and now we can configure our "flows" and the 3 examples.
@@ -82,8 +80,6 @@ We now have a Logic App created, but it cannot do something for us unless we giv
 
 In the Logic App, go to "Identity" and enable the System-assigned managed identity.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-ephemeral-os-disks-in-azure-2810/jv-media-2810-1d857be631d6.png)
-
 Now we have to give this Managed Identity permissions to a certain scope. Since my Minecraft server is in a specific Resource Group, I can assign the permissions there. If you create flows for one specific machine in a resource group with multiple machines, assign the permissions on the VM level instead.
 
 In my example, I will assign the permissions at Resource Group level.
@@ -91,8 +87,6 @@ In my example, I will assign the permissions at Resource Group level.
 Go to the Resource group where your Virtual Machine resides, and open the option "Access Control (IAM)".
 
 Add a new Role assignment here:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-ephemeral-os-disks-in-azure-2810/jv-media-2810-139ba22657d8.png)
 
 Select the role "Virtual Machine Contributor" or a custom role with the permissions:
 
@@ -104,11 +98,7 @@ Click on "Next".
 
 Select the option "Managed Identity" and select the Logic App identity:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/new-azure-service-groups-3200/jv-media-3200-edbad5477c81.png)
-
 Select the Managed Identity that we created.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-default-outbound-access-2652/jv-media-2652-da9d1e7d3a1c.png)
 
 Assign the role and that concludes the permissions-part.
 
@@ -143,8 +133,6 @@ Save the trigger and now we have to add actions to perform after the trigger.
 Click on the "+" under Recurrence and then "add a task" to link a task to the recurrence.
 
 Search for: "virtual machine"
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-ephemeral-os-disks-in-azure-2810/jv-media-2810-9078c80fb440.png)
 
 Select the option "Start virtual machine".
 
@@ -228,8 +216,6 @@ Click on the "+" under Recurrence and then "add a task" to link a task to the re
 
 Search for: "virtual machine"
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-ephemeral-os-disks-in-azure-2810/jv-media-2810-9078c80fb440.png)
-
 Select the option "Start virtual machine".
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-24d0dbbf18c6.png)
@@ -254,23 +240,6 @@ Azure Logic Apps are an excellent cloud-native way to automate recurring tasks i
 
 I hope this guide was very useful and thank you for reading.
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

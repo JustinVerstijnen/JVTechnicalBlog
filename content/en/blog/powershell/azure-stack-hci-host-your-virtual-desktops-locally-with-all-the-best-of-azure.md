@@ -76,8 +76,6 @@ I create a Multi-node server cluster to experiment with Stack HCI. The environme
 
 In Azure i have a single resource group where i want to deploy my cluster into:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-ff6b4add7660.png)
-
 ---
 
 ## 1. Multi-node setup guide
@@ -116,8 +114,6 @@ At the credential section, you have to specify a new user who can manage the HCI
 
 I created my user like shown below:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-c2c4dae9fbbf.png)
-
 The module accepted my account:
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-stack-hci-host-your-virtual-desktops-locally-with-all-the-best-of-azure-374/jv-media-374-ac11ecffbc71.png)
@@ -148,8 +144,6 @@ I have done the following steps on both of the nodes:
 Note: do NOT join your nodes to Active Directory, otherwise the wizard to create a cluster will fail.
 
 The result after these steps.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-325689985ce6.png)
 
 After the basic configuration of the nodes is complete, we have to do the following pre-configuration steps on every node:
 
@@ -201,13 +195,9 @@ Now the node will be registered to Azure Arc. This will take around 10 minutes.
 
 After some minutes, the nodes appear in the Azure portal:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-cebd878c4e33.png)
-
 Now we have achieved this, we don't need the nodes anymore and we can close the connections to it. The rest of the cluster/node configuration will be done in the Azure Portal. This was just the setup of the nodes itself.
 
 After the machines appear in the Azure Portal, the service will install the needed extensions on all of the cluster nodes. You can't go further before all the extensions are installed. You can follow the status by clicking on one of the cluster nodes and the open the blade "Extensions".
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-a7309c793754.png)
 
 All of the nodes must have at least 3 extensions and the status must be "Succeded".
 
@@ -219,13 +209,9 @@ Now we have prepared everything, and we can create the cluster in the Azure port
 
 Go to Azure Arc and open the blade "Azure Stack HCI":
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-f01c571d4c4b.png)
-
 Select the option "Deploy cluster"
 
 We now have to fill in some details. Next to a HCI cluster, Azure needs a Key Vault to store some secrets for encryption purposes. We have to create that in this wizard:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-f4ecdd11276d.png)
 
 After that, we have to validate our cluster nodes by Azure to check if all pre-requisites are done:
 
@@ -234,8 +220,6 @@ After that, we have to validate our cluster nodes by Azure to check if all pre-r
 After succesfully validating the nodes, we can go further in the wizard.
 
 On the tab "Configuration", i chose for a new configuration:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-80de00ec9191.png)
 
 On the tab "Networking", i chose for "Network switch for storage". This means if there is a network switch between the servers. In my environment, i am using VMware as Hypervisor for my cluster nodes. This has a internal switching system and has no direct link to the PCIe connected network interface.
 
@@ -248,8 +232,6 @@ Further, you have the option to segment your cluster network by using different 
 In my environment i chose to group all traffic. In real world and business critical environments, it is often better to segment the traffic to increase performance and security.
 
 After that step, we have to configure network connectivity. Select the network interface and at the IP configuration section, keep in mind at the DNS servers you need connection to your domain controller.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-70a40341a334.png)
 
 When everything is filled in correctly, we can advance to the "Management" tab.
 
@@ -266,11 +248,7 @@ Fill in those details and click Next: Security
 
 We want the highest level of security, so we choose the recommended settings:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-5e3e34894ec2.png)
-
 After that we can go to the tab "Validation". Here we have to validate the complete configuration of the cluster:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-7eee8ff81921.png)
 
 ---
 
@@ -324,8 +302,6 @@ At the credential section, you have to specify a new user who can manage the HCI
 
 I created my user like shown below:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-c2c4dae9fbbf.png)
-
 The module accepted my account:
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-stack-hci-host-your-virtual-desktops-locally-with-all-the-best-of-azure-374/jv-media-374-ba8b6a4f3cee.png)
@@ -364,8 +340,6 @@ Invoke-Command ($ServerList) {
 
 This will give no output when succeeded:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-3013a5d8a7ef.png)
-
 ### 2.4 Creating the cluster
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-stack-hci-host-your-virtual-desktops-locally-with-all-the-best-of-azure-374/jv-media-374-7c36ca1edcd8.png)
@@ -400,15 +374,11 @@ New-VirtualDisk -StoragePoolFriendlyName S2D* -FriendlyName CSVDisk -Size 240GB 
 
 My output was:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-dfde3a7edc08.png)
-
 ### 2.7 Register the cluster to Azure Stack HCI
 
 After you configured everything of the local server we have to register the cluster to Azure Arc/Stack HCI. We can do this by following these steps:
 
 First, register the needed resource providers in the Azure Portal. You can find this under your active subscription where you want to register the Cluster.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-51c46350321e.png)
 
 Register the following resource providers here:
 
@@ -439,8 +409,6 @@ After that step, you have to wait around 10 minutes for the registration to be d
 
 You can access Azure Stack HCI in the Azure Portal:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-3617bd48c962.png)
-
 Here you can manage the nodes and clusters.
 
 To actually create resources on the hardware on-premises through Azure Stack HCI, you have to configure a Arc Resource Bridge. This is a connection between the host OS of the cluster nodes and Azure. We can configure this through Windows Admin Center, which can be enabled on the cluster nodes.
@@ -453,23 +421,6 @@ Azure Stack HCI is the newest evolution in hybrid setups, where you want to leve
 
 ---
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

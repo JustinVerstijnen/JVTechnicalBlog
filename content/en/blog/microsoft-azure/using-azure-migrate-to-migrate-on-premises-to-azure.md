@@ -43,8 +43,6 @@ Officially, it is not supported to combine the Discovery Server and the Migratio
 
 The migration of servers to Microsoft Azure consists of 3 phases: *Discovery*, *Replicate* and then *Migrate*.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/introduction-to-networks-940/jv-media-940-8f8766ca136e.png)
-
 1. Azure Migrate begins with a Discovery once a Discovery Server has been set up. This server inventories all machines, including dependencies, and reports them to Azure. You can find this information in the Azure Migrate project within the Azure Portal
    - It is not mandatory to set-up the Discovery server, in this case you have to document all risks and information yourself
 2. When you're ready, you can choose to replicate the machines to Azure. This process is handled by the Configuration/Process server. Azure Migrate starts a job to completely copy the server to Azure in small portions till both sides are synchronized. This can take days or weeks to complete
@@ -72,23 +70,15 @@ Go to the Azure Portal, navigate to Azure Migrate:
 
 Open the "Servers, databases, and web apps" blade on the left:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-a98e10390677.png)
-
 On this page, create a new Azure Migrate project.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-d1409fa6f079.png)
-
 When this is set-up, we go to our migration project:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-325689985ce6.png)
 
 Under "Migration Tools", click "Discover".
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/using-azure-migrate-to-migrate-on-premises-to-azure-1126/jv-media-1126-425d69c14227.png)
 
 On the next page, we have to select the source and target for our migration. In my case, the target is "Azure VM".
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-ff6b4add7660.png)
 
 The source can be a little confusing, but hopefully this makes it clear:
 
@@ -101,8 +91,6 @@ In my case, i used VMware ESXi to host a migration testing machine, so i selecte
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/using-azure-migrate-to-migrate-on-premises-to-azure-1126/jv-media-1126-f234a337a69d.png)
 
 Hit "Create resources" to let Azure Migrate prepare the rest of the process.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-cebd878c4e33.png)
 
 Now we can download the required registration key to register our migration/processing machine.
 
@@ -185,8 +173,6 @@ After the installation is complete (approximately 5 to 10 minutes), the setup wi
 
 Once the agent is installed, the server appears in the Azure Portal. This may take 15 minutes and may require a manual refresh.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-80de00ec9191.png)
-
 When the server is visible like in the picture above, you can proceed to step 6.
 
 ---
@@ -233,8 +219,6 @@ Then, go to the Azure Portal, navigate to Azure Migrate, and under "Migration to
 
 Go through the wizard and monitor the status. In my case, this process took approximately 5 minutes, after which the server was online in Microsoft Azure.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-7eee8ff81921.png)
-
 And now it's finished.
 
 ---
@@ -249,23 +233,6 @@ Thank you for reading this guide!
 
 ---
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

@@ -9,3 +9,7 @@ hidden: true
 Even uitzoeken en testen of dit interresant is.
 
 UItgezocht, ziet er heel veel handwerk uit. Naar mijn inziens is het makkelijekr om een image weer op te starten dan customizations te doen en dan weer imagen.
+
+{{< ads >}}
+
+{{< article-footer >}}

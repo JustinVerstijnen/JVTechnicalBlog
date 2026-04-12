@@ -323,10 +323,3 @@ body:not(.home-navbar-transparent) .td-navbar .td-search .form-control:-ms-input
   color: #fff;
   background-color: #0E202C;
 }
-
-/* Categories and Tags hide on article pages */
-body.single .td-sidebar,
-body.single .td-sidebar__right,
-body.single .td-blog-sidebar {
-  display: none;
-}

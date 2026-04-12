@@ -20,8 +20,6 @@ DNSSEC is a feature where a client can validate the DNS records received by a DN
 
 DNSSEC is developed to prevent attacks like in the topology below:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-cc140cbd41a9.png)
-
 Here a attacker injects a fake DNS record and sends the user to a different IP-address, not the actual IP-address of the real website but a fake, mostly spoofed website. This way, a user sees for example https://portal.azure.com in his address bar but is actually on a malicious webserver. This makes the user far more vulnerable to credential harvesting or phising attacks.
 
 With DNSSEC, the client receives the malicious and fake DNS entry, validates it at the authorative DNS server for the domain and sees its fake. The user will be presented a error message and we have prevented just another breach.
@@ -65,8 +63,6 @@ When starting out, your DNS hosting must support and enabled DNSSEC on your doma
 <https://dnsmegatool.jvapp.nl>
 
 My domain is DNSSEC capable and a DS record is published from the registrar to the DNS hosting and is ready to go to the next phase:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-cb39a3173818.png)
 
 You can find this on the last row of the table in the DNS MEGAtool. If the status is red or an error is in the value field, the configuration of your domain is not correct.
 
@@ -174,23 +170,6 @@ Thank you for reading this post and I hope I helped you out securing your email 
 
 ---
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

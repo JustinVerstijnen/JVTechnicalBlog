@@ -263,8 +263,6 @@ In this guide I will use an Azure Function to publish the MTA-STS policy to the 
 
 Let's go to the Azure Portal and create a new Function App:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-adbea3391418.png)
-
 Here you can select:
 
 - Operating system: Windows
@@ -288,8 +286,6 @@ After creating the app, we must do a change to the host.json file in the Azure F
 
 It should look like this:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-3a3f1d7d1f62.png)
-
 Save the file, and now it is prepared to host a MTA-STS policy for us.
 
 ---
@@ -297,8 +293,6 @@ Save the file, and now it is prepared to host a MTA-STS policy for us.
 ### Publishing the MTA-STS policy
 
 Create a new Function in the function app:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-65ef692cf88a.png)
 
 Select the HTTP trigger, give it a name and select the "Anonymous" authorization level.
 
@@ -326,8 +320,6 @@ public static async Task&lt;IActionResult> Run(HttpRequest req, ILogger log)
 On line 12 there is the policy where you need to paste your settings in. Paste the final code into the Azure Portal and save/publish the function.
 
 Now go to the "Integration" tab:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-cc140cbd41a9.png)
 
 Click in the "Trigger" section on "HTTP(req)".
 
@@ -410,23 +402,6 @@ MTA-STS is a great way to enhance our email security and protect them from being
 
 Thank you for reading this guide and I hope it was helpful.
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

@@ -46,8 +46,6 @@ For a typical Minecraft server, without Mods, the guidelines and system requirem
 
 First, we need to setup our Azure environment for a Minecraft server. I started with creating a Resource group named "rg-jv-minecraftserver".
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-58a228307c9a.png)
-
 This resource group can we use to put all of the related resources in. We not only need to create a VM but also an virtual network, Public IP address, Network Security Group and disk for storage.
 
 ---
@@ -61,8 +59,6 @@ For a single server-setup, we can use most of the default settings of the wizard
 ### Image and Size
 
 Go to "Virtual Machines" and create a new virtual machine:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-3013a5d8a7ef.png)
 
 Put the server in the created resource group. I use the image **Ubuntu Server 24.04 LTS - x64 Gen2** for this deployment. This is a "Long-Term Support" image, which are enterprise grade images with at least 5 years support.
 
@@ -101,8 +97,6 @@ Select the option "Create and attach a new disk". Then give the disk a name and 
 
 I chose 128GB as size and have the performance tier as default.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-51c46350321e.png)
-
 Click "OK" and review the settings:
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-a-minecraft-server-on-azure-1573/jv-media-1573-8d2b1865d288.png)
@@ -110,8 +104,6 @@ Click "OK" and review the settings:
 ### Networking
 
 Advance to the "Networking" tab.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-3617bd48c962.png)
 
 Azure automatically creates a virtual network and a subnet for you. These are needed for the server to have an outbound connection to the internet. This way we can download updates on the server.
 
@@ -141,8 +133,6 @@ Then create the virtual machine and we are good to go! Create the virtual machin
 
 We want to secure inbound connections made to the server. Let's go to "Network Security Groups" (NSG for short) in Azure:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/introduction-to-networks-940/jv-media-940-8f8766ca136e.png)
-
 Open the related NSG and go to "Inbound Security rules".
 
 By default we have a rule applied for SSH access that allows the whole internet to the server. For security, the first thing we want to do is limit this access to only our own IP address. You can find your IP address by going to this page: <https://whatismyipaddress.com/>
@@ -151,13 +141,9 @@ By default we have a rule applied for SSH access that allows the whole internet 
 
 Note this IP address down and return to Azure.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/introduction-to-networks-940/jv-media-940-a1e17cf37a8f.png)
-
 Click on the rule "SSH".
 
 Change the "Source" to "IP addresses" and paste in the IP address from the IP lookup website. This only allows SSH (admin) traffic from your own IP-address for security. This is a whitelist.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-e1dd061295a4.png)
 
 You see that the warning is now gone as we have blocked more than 99% of all worldwide IP addresses SSH access to our server.
 
@@ -189,10 +175,6 @@ Create a new rule with the following settings:
 \*Here we do allow all inbound connections and use the Minecraft username whitelist.
 
 My rule looks like this:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-a98e10390677.png)
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-d1409fa6f079.png)
 
 Now the network configuration in Azure is done. We will advance to the server configuration now.
 
@@ -292,8 +274,6 @@ fdisk /dev/nvme0n2
 
 This will start an interactive wizard where it wants to know how to format the disk:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-ff6b4add7660.png)
-
 1. Type n and press enter -> For a new partition
 2. Type p and press enter -> For a primary partition
 3. Hit enter twice to use the default setting for the sectors (full disk)
@@ -350,8 +330,6 @@ blkid /dev/nvme0n2p1
 {{< /card >}}
 
 You will get an output of this command what we need. Mine is:
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-a7309c793754.png)
 
 We have to edit the fstab system file to tell the system part that it must make this mount at boot.
 
@@ -423,7 +401,6 @@ We can now finally run the server with 28GBs of RAM with the following command:
 {{< card code=true header="**BASH**" lang="bash" >}}
 java -Xmx28672M -Xms28672M -jar server.jar nogui
 {{< /card >}}
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-46ab525b3246.png)
 
 Now our server has been fully initialized and we are ready to play.
 
@@ -432,8 +409,6 @@ Now our server has been fully initialized and we are ready to play.
 ## Connecting to the server
 
 The moment we have been waiting for, finally playing on our own Minecraft server. Download the game and login to your account.
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-7eee8ff81921.png)
 
 Let's wait till the game opens.
 
@@ -488,7 +463,6 @@ RestartSec=10
 [Install]
 WantedBy=multi-user.target
 {{< /card >}}
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-70a40341a334.png)
 
 Then use the shortcut CTRL and X to exit and select Yes to save.
 
@@ -499,7 +473,6 @@ sudo systemctl daemon-reexec
 sudo systemctl daemon-reload
 sudo systemctl enable minecraft.service
 {{< /card >}}
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-80de00ec9191.png)
 
 Now run this command to start Minecraft:
 
@@ -512,7 +485,6 @@ We can view the status of the service by running this command:
 {{< card code=true header="**BASH**" lang="bash" >}}
 sudo systemctl status minecraft
 {{< /card >}}
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-5e3e34894ec2.png)
 
 We made a seperate service of Minecraft which allows it to automatically run at boot. We can easily restart and stop it when needed without using the complex commands of Minecraft.
 
@@ -535,7 +507,6 @@ All of these settings are in files of the minecraft directory. You can navigate 
 {{< card code=true header="**BASH**" lang="bash" >}}
 cd /mnt/minecraft-data
 {{< /card >}}
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-13a61175857f.png)
 
 Open the file *server.properties*
 
@@ -577,23 +548,6 @@ Thank you for reading this guide and I hope it was helpful.
 
 ---
 
----
+{{< ads >}}
 
-## End of the page 🎉
-
-You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
-
-If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
-
-[Go back to Blog](https://justinverstijnen.nl/blog/)
-
-If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
-
-[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
-
-[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
-
-The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
-
-Page visitors:
-No page-counter data available yet.
+{{< article-footer >}}

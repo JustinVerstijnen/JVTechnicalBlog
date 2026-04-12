@@ -23,3 +23,7 @@ Coole blog over hoe je de beveiliging nog verder kan opkrikken:
 - Integrity monitoring
 - Defender for Cloud
 - Wat verder in je op komt
+
+{{< ads >}}
+
+{{< article-footer >}}
