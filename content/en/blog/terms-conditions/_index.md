@@ -7,10 +7,6 @@ build:
   list: never
 ---
 
-# Terms and Conditions
-
-
-
 Welcome to **justinverstijnen.nl**. By accessing or using this website, its pages, posts, and tools, you agree to be bound by these Terms and Conditions.
 
 This website serves as my personal documentation platform, where I write about concepts, ideas, and technical topics I have worked through myself. While the content is primarily created to help me understand topics more deeply, I also aim to make it useful and understandable for a broader audience.
