@@ -36,11 +36,11 @@ An example of a resource in my environment using tags:
 
 I marked two domains I use for a redirection to an other website. Therefore I have a nice overview over multiple resources.
 
-{% alert color="info" %}
+{{% alert color="info" %}}
 You can only use 1 unique Name per resources. Multiple tags with the same name are not possible.
 
 (Therefore I used domain-1 and domain-2).
-{% /alert %}
+{{% /alert %}}
 
 ---
 
