@@ -24,7 +24,7 @@ params:
 
 {{< blocks/lead color="white" >}}
 
-On this website, I will share my aviation experiences, including both theory and practice, during my journey towards achieving a Private Pilot License (PPL).
+Let's introduce this website into 3 categories:
 
 {{< /blocks/lead >}}
 
