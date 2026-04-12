@@ -11,6 +11,8 @@ Welcome to **justinverstijnen.nl**. By accessing or using this website, its page
 
 This website serves as my personal documentation platform, where I write about concepts, ideas, and technical topics I have worked through myself. While the content is primarily created to help me understand topics more deeply, I also aim to make it useful and understandable for a broader audience.
 
+{{< ads >}}
+
 ## 1. Introduction
 
 This website is intended to share knowledge, practical insights, and educational content. I strive to explain concepts clearly and make them accessible to readers who may not already be familiar with the subject matter.
@@ -151,3 +153,5 @@ I hope you find the educational content, technical explanations, and shared know
 ---
 
 © Justin Verstijnen. Thank you for reading.
+
+{{< ads >}}
