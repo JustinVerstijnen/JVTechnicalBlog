@@ -1,14 +1,11 @@
 ---
 title: "Terms and Conditions"
 description: "This page contains my general Terms and Conditions. Please review them accordingly before using my website."
-date: 2024-06-19
+date: 2024-07-19
+hidden: true
 ---
 
-# Terms and Conditions
-
-
-
-Welcome to **justinverstijnen.nl**. By accessing or using this website, its pages, posts, and tools, you agree to be bound by these Terms and Conditions.
+Welcome to justinverstijnen.nl. By accessing or using this website, its pages, posts, and tools, you agree to be bound by these Terms and Conditions.
 
 This website serves as my personal documentation platform, where I write about concepts, ideas, and technical topics I have worked through myself. While the content is primarily created to help me understand topics more deeply, I also aim to make it useful and understandable for a broader audience.
 
@@ -18,7 +15,7 @@ This website is intended to share knowledge, practical insights, and educational
 
 ## 2. No Cookies Policy
 
-I am committed to protecting your privacy. This website does **not** use cookies or other tracking mechanisms to collect information about your browsing habits.
+I am committed to protecting your privacy. This website does not use cookies or other tracking mechanisms to collect information about your browsing habits.
 
 Your privacy is important to me, and I believe in offering a browsing experience that is as free from unnecessary data collection as possible.
 
