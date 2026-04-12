@@ -1,14 +1,12 @@
 ---
-
 title: "AMC - Module 1: Fundamentals of Cloud and Microsoft Azure"  
 date: 2024-10-17  
 slug: "amc-module-1-fundamentals-of-cloud-and-microsoft-azure"  
 categories:
-
-*   Azure Master Class  
-    tags:
-*   Concepts  
-    description: >  
+- Azure Master Class  
+tags:
+- Concepts  
+description: >  
     This chapter is about the term "Cloud" and the fundamentals of Microsoft Azure and Cloud Services in general.
 
 ---
