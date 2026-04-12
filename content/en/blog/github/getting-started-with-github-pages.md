@@ -183,4 +183,6 @@ These sources helped me with writing and research for this post:
 
 ---
 
+{{< ads >}}
+
 {{< article-footer >}}
