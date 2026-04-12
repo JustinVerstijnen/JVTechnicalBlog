@@ -1,0 +1,116 @@
+---
+title: "Automatically start Windows App at startup"
+date: 2025-12-25
+slug: "automatically-start-windows-app-at-startup"
+categories:
+  - Intune
+tags:
+  - Step by Step guides
+description: >
+  In some cases we want to automatically start the Windows App for connections to AVD and Windows 365 at startup. We can achieve this through different ways which I will describe in this post.
+---
+In some cases we want to automatically start the Windows App for connections to AVD and Windows 365 at startup. We can achieve this through different ways which I will describe in this post.
+
+---
+
+---
+
+## Creating the Intune script
+
+We can achieve this with Intune using a PowerShell script. As Intune doesn't support login/startup scripts, we have to create a Platform script that creates a Scheduled Task in Windows for us. This is a great way, as this is visible at the client side and can be disabled pretty easily.
+
+To create this task/script, go to the Intune Admin center: <https://intune.microsoft.com>
+
+Go to Devices -> Windows -> Scripts and remediations, then open the tab "Platform scripts".
+
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatically-start-windows-app-at-startup-6832/jv-media-6832-51c9912fd07e.png)
+
+Click on "+ Add" and select "Windows 10 and later" to create a new script.
+
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatically-start-windows-app-at-startup-6832/jv-media-6832-3490973267f0.png)
+
+Click "Next".
+
+Then download my script here that does the magic for you:
+
+[Download script from GitHub](https://github.com/JustinVerstijnen/JV-AutoStartWindowsApp/blob/main/JV-AutoStartWindowsApp.ps1)
+
+Or create a new file in Windows and paste the contents below into a file save it to a .ps1 file.
+
+{{< card code=true header="**POWERSHELL**" lang="powershell" >}}
+$TaskName = "JV-StartWindowsApp"
+
+$Action = New-ScheduledTaskAction `
+    -Execute "explorer.exe" `
+    -Argument "shell:AppsFolder\MicrosoftCorporationII.Windows365_8wekyb3d8bbwe!Windows365"
+
+$Trigger = New-ScheduledTaskTrigger -AtLogOn
+
+$Principal = New-ScheduledTaskPrincipal `
+    -GroupId "BUILTIN\Users" `
+    -RunLevel Limited
+
+Register-ScheduledTask `
+    -TaskName $TaskName `
+    -Action $Action `
+    -Trigger $Trigger `
+    -Principal $Principal `
+    -Force
+{{< /card >}}
+
+Upload the script to Intune and set the following options:
+
+1. Run this script using the logged on credentials: No
+2. Enforce script signature check: No
+3. Run script in 64 bit PowerShell Host: Yes
+
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatically-start-windows-app-at-startup-6832/jv-media-6832-0bf1f24d2233.png)
+
+Then click "Next".
+
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatically-start-windows-app-at-startup-6832/jv-media-6832-9f052328860d.png)
+
+Assign the script to the group containing your devices where you want to autostart the Windows App. Then save the script.
+
+---
+
+## The results
+
+After the script was applied which can take up to 30 minutes, and after restarting the computer, the Windows App will automatically start after the user logs in, automating this process and elaminating the start-up wait time:
+
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatically-start-windows-app-at-startup-6832/jv-media-6832-9c54e9225ca2.png)
+
+---
+
+## Summary
+
+Automatically startint the Windows App can help end users to automate a bit of their daily work. They don't have to open it after turning on their PC and can sign-in directly to their cloud device.
+
+Thank you for visiting my website and I hope it was helpful.
+
+### Sources
+
+These sources helped me by writing and research for this post;
+
+- None
+
+---
+
+## End of the page 🎉
+
+You have reached the end of the page. You can select a category, share this post on X, LinkedIn and Reddit or return to the blog posts collection page. Thank you for visiting this post.
+
+If you think something is wrong with this post or you want to know more, you can send me a message to one of my social profiles at: <https://justinverstijnen.nl/about/>
+
+[Go back to Blog](https://justinverstijnen.nl/blog/)
+
+If you find this page and blog very useful and you want to leave a donation, you can use the button below to buy me a beer. Thank you in advance and cheers :)
+
+[![](https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=justinverstijnen&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/justinverstijnen)
+
+[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/about-66/jv-media-66-36a3c69c96cb.png)](https://buymeacoffee.com/justinverstijnen)
+
+The [terms and conditions](https://justinverstijnen.nl/terms-conditions/) apply to this post.
+
+Page visitors:
+No page-counter data available yet.
