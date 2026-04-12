@@ -1,12 +1,12 @@
 ---
 title: Justin Verstijnen
-description: On this website, I share all my aviation experiences
+description: Cloud mysteries revealed for you
 params:
   body_class: td-navbar-links-all-active home-navbar-transparent
 ---
 
 {{< blocks/cover
-  title="Justin Verstijnen Flight Blog"
+  title="Welcome!"
   height="full"
   color="primary"
   image_anchor="top"
@@ -16,7 +16,7 @@ params:
 
 <div class="td-cta-buttons my-5">
   <a class="btn btn-lg btn-primary" href="/blog/">
-    Visit Flight Blog
+    Visit Technical Blog
   </a>
 </div>
 
