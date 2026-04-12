@@ -15,8 +15,6 @@ At the time of writing, this feature is in public preview and anyone can use it 
 
 ---
 
----
-
 ## What are these new Service Groups in Azure?
 
 Service Groups are a parralel type of group to group resources and separate permissions to them. In this manner we can assign multiple resources of different resource groups and put them into a overshadowing Service Group to apply permissions. This eliminates the need to move resources into specific resource groups with all broken links that comes with it.

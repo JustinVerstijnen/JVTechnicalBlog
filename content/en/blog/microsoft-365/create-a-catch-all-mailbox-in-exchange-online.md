@@ -17,8 +17,6 @@ In this guide I will explain how to configure this in Exchange Online and how to
 
 ---
 
----
-
 ## Requirements
 
 - Around 20 minutes of your time

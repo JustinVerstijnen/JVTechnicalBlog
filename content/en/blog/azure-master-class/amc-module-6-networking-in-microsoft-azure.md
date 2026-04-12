@@ -15,8 +15,6 @@ Check out the AZ-700 Azure Networking Certification at: <https://learn.microsoft
 
 ---
 
----
-
 ## Introduction to generic Networking
 
 A **network** is described as a group of devices who communicate with each other. In Microsoft Azure, we have to create and design networks for our resources to communicatie with each other. We only use TCP/IP networking, which works with IP addresses, DHCP, routing etcetera.
@@ -644,8 +642,6 @@ Networking is a critical part of administering and architecturing solutions in M
 Most of the knowledge is needed to architect and configure the solutions and most of the time, you sporadically add an IP address to a whitelist or make a minor change.
 
 To go back to the navigation page: <https://justinverstijnen.nl/microsoft-azure-master-class-navigation/>
-
----
 
 {{< ads >}}
 

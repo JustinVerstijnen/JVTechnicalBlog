@@ -62,8 +62,6 @@ To further expand your Zero Trust vision and security posture, a great resource 
 - **Azure Cybersecurity Reference Architectures:** <https://github.com/MicrosoftDocs/security/blob/main/Downloads/mcra-december-2023.pptx?raw=true>
   - To get some inspiration about how to build your cybersecurity architecture
 
----
-
 {{< ads >}}
 
 {{< article-footer >}}

@@ -15,8 +15,6 @@ When it comes to naming your Azure Resource Groups and resources, most of them a
 
 ---
 
----
-
 ## How to add those renameable tags in the Azure Portal?
 
 You can add this name tag by using a tag in Microsoft Azure. In the portal, go to your resource and go to tags. Here you can add a new tag:

@@ -17,8 +17,6 @@ I also added some optional steps for a better configuration and security than th
 
 ---
 
----
-
 ## The solution described
 
 The day has finally come; we can now build a Azure Virtual Desktop (AVD) hostpool in pooled configuration without having to host an Active Directory, and/or having to host an unsecured storage account by [having to inject the Storage Access Key into the machines' registry](https://justinverstijnen.nl/pooled-azure-virtual-desktop-with-azure-ad-users/). This newer setup enhances performance and security on those points.

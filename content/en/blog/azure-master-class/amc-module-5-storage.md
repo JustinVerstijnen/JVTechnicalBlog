@@ -13,8 +13,6 @@ This module focuses purely on the various storage services that Azure offers and
 
 ---
 
----
-
 ## The importance and types of storage
 
 Storage fundamentally exists in three different types:

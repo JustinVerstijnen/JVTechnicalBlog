@@ -19,8 +19,6 @@ To give a quick overview of all the training resources I used throughout the yea
 
 ---
 
----
-
 ## 1. Starting out (Video and text-based)
 
 When starting out, my advice is to first watch the following video of John Savill explaining Microsoft Azure and giving a real introduction.

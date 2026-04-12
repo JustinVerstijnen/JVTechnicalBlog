@@ -43,8 +43,6 @@ I only filled in the pillars Reliability and Security and filled it in as bad as
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-a1dcfb0f21db.png)
 
----
-
 {{< ads >}}
 
 {{< article-footer >}}

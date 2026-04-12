@@ -24,8 +24,6 @@ Also: Recover Services storage is much cheaper than live Storage Account storage
 
 ---
 
----
-
 ## Requirements
 
 - Around 30 minutes of your time

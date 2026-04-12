@@ -13,8 +13,6 @@ In this article, we are going to implement Azure Firewall in Azure. We are going
 
 ---
 
----
-
 ## Requirements
 
 - Around 60 minutes of your time

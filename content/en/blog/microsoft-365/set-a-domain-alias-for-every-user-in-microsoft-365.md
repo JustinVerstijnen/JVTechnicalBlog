@@ -49,8 +49,6 @@ Now we have added the alias to every user. To check if everything is configured 
 $users | ft PrimarySmtpAddress, EmailAddresses
 {{< /card >}}
 
----
-
 {{< ads >}}
 
 {{< article-footer >}}

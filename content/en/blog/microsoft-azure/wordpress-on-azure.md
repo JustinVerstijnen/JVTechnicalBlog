@@ -13,8 +13,6 @@ Wordpress. Its maybe the best and easiest way to maintain a website. This can be
 
 ---
 
----
-
 ## Requirements
 
 - An Azure subscription
@@ -434,8 +432,6 @@ Wordpress on Azure is a great way to host a Wordpress environment in a modern an
 The setup takes a few steps but it is worth it. Pricing is something to consider prior, but I think with the Basic plan, you have a great self hosted Wordpress environment for around 25 dollars a month and that is even with a hourly Backup included. Overall, great value for money.
 
 Thank you for reading this guide and I hope it was helpful.
-
----
 
 {{< ads >}}
 

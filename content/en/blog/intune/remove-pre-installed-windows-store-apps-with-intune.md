@@ -15,8 +15,6 @@ In this guide I will dive into this new setting and explain how to configure thi
 
 ---
 
----
-
 ## The new feature described
 
 In Intune we can now select which default shipped apps must be removed from Windows clients. Before, this was a complete package we had to use or remove with custom scripts, but now we can select the apps to remove (and deselect to keep).

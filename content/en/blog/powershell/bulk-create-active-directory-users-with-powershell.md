@@ -14,8 +14,6 @@ When it comes to creating users for Active Directory, especially in new implemen
 
 ---
 
----
-
 ## Requirements
 
 - Minimal knowledge of Powershell
@@ -72,8 +70,6 @@ After running this command you can navigate to the folder where the CSV file and
 {{< card code=true header="**POWERSHELL**" lang="powershell" >}}
 .\bulk_user.ps1
 {{< /card >}}
-
----
 
 {{< ads >}}
 

@@ -15,8 +15,6 @@ But sometimes, Microsoft has to perform updates to these gateways to keep them u
 
 ---
 
----
-
 ## Why configure a maintenance configuration?
 
 We would want to configure a maintenance configuration for our VPN gateway to Azure to prevent unwanted updates during business hours. Microsoft doesn’t publish when they perform updates to their infrastructure, so this could be any moment.

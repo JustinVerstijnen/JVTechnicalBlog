@@ -23,8 +23,6 @@ However, some users don't use them and they will annoyingly be as default printe
 
 ---
 
----
-
 ## The PowerShell script
 
 The PowerShell script can be downloaded from my Github page:

@@ -16,8 +16,6 @@ Make sure that to target those recommendations, you will need at least Microsoft
 
 ---
 
----
-
 ## Before we begin
 
 I collected all the options of the Microsoft Entra ID Identity Secure Score on this page, and we will address them all. I also added some industry-accepted options which are not in the secure score framework but are really helpful in avoiding or minimizing attacks in your environment.

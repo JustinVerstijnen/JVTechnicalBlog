@@ -15,8 +15,6 @@ In short, [Azure Policy](https://justinverstijnen.nl/ama-module-3-governance-in-
 
 ---
 
----
-
 ## Step 1: The configuration explained
 
 The boot diagnostics in Azure enables you to monitor the state of the virtual machine in the portal. By default, this will be enabled with a Microsoft managed storage account but we don't have control over the storage account.

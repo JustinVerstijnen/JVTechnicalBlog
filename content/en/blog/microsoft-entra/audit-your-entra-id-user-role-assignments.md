@@ -15,8 +15,6 @@ Therefore, I have created a script that only gets all Entra ID role assignments 
 
 ---
 
----
-
 ## Requirements
 
 - Microsoft Graph PowerShell module

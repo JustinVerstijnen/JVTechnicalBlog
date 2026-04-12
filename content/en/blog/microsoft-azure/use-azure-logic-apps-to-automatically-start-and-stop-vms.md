@@ -15,8 +15,6 @@ In this guide I will demonstrate some simple examples of what Logic Apps can do 
 
 ---
 
----
-
 ## Azure Logic Apps
 
 Azure Logic Apps is a solution to automate flows that we can run based on a trigger. After a certain trigger is being met, the Logic App can then perform some certain steps, like;

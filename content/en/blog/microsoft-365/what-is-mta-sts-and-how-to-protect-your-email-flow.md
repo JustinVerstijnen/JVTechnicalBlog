@@ -16,8 +16,6 @@ In this guide I will explain how it works. Because it is a domain specific confi
 
 ---
 
----
-
 ## Requirements
 
 - Around 30 minutes of your time

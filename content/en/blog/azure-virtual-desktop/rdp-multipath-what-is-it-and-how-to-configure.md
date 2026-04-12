@@ -29,8 +29,6 @@ The RDP Multipath function is exclusively for Azure Virtual Desktop and Windows 
 
 ---
 
----
-
 ## Option 1: Configure RDP Multipath using Group Policy
 
 RDP Multipath can be configured by adding a registry key to your sessionhosts. This can be done through Group Policy by following these steps:

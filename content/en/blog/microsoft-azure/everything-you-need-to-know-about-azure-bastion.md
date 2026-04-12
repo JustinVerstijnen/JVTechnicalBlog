@@ -16,8 +16,6 @@ In this guide I will explain more about Azure Bastion and I hope I can give you 
 
 ---
 
----
-
 ## How does Azure Bastion work?
 
 Azure Bastion is a serverless instance you deploy in your Azure virtual network. It resides there waiting for users to connect with it. It acts like a Jump-server, a secured server from where an administrative user connects to another server.

@@ -17,8 +17,6 @@ To help you secure break glass administrator accounts, I have 10 generic industr
 
 ---
 
----
-
 ## List of recommendations
 
 The list of recommendations which I will describe further:

@@ -15,8 +15,6 @@ One day I came across an option in Microsoft 365 to disable the users' self serv
 
 ---
 
----
-
 ## Why should you disable trial licenses?
 
 You can disable self service trial licenses if you want to avoid users to use un-accepted apps. This could result in shadow-it happening in your environment.

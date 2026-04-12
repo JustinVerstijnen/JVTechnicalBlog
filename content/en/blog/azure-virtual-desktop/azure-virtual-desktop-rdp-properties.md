@@ -15,8 +15,6 @@ I will be talking about local PC's and remote PC's alot, where the remote PC is 
 
 ---
 
----
-
 ## What are RDP properties?
 
 RDP properties are specific settings to change your RDP experience. This can be to play sound on the remote or local PC, enable or disable printer redirection, enable or disable clipboard between computers and what to do if connection is lost.

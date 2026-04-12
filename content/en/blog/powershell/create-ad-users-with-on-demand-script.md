@@ -15,8 +15,6 @@ I will explain how this script works on this page.
 
 ---
 
----
-
 ## The create AD users on demand script
 
 For the fast pass, the script can be downloaded from my GitHub page:

@@ -15,8 +15,6 @@ In this blog post, I will tell more about Azure Compute Gallery, how to use it w
 
 ---
 
----
-
 ## Requirements
 
 - Around 40 minutes of your time

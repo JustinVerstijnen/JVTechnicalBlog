@@ -13,8 +13,6 @@ When it comes to security, it is great to secure every perimeter. In the Zero Tr
 
 ---
 
----
-
 ## Requirements
 
 - An Microsoft 365 tenant
@@ -350,8 +348,6 @@ This means the service is up and running and ready for monitoring and so spying 
 Defender for Identity is a great solution and monitoring tool for any malicious behaviour in your Active Directory. It is not limited to on-premises, it also can run on domain controllers in Azure, like i did for this DEMO.
 
 Next up, we are going to simulate some malicious behaviour to check if the service can detect and warn us about it. Refer this guide: <https://justinverstijnen.nl/penetration-testing-defender-for-identity-and-active-directory>
-
----
 
 {{< ads >}}
 

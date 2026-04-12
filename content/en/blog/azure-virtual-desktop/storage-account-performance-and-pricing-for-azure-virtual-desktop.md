@@ -16,8 +16,6 @@ In this blog post I will explain everything about hosting your FSLogix profiles 
 
 ---
 
----
-
 ## Billing types for Storage Accounts
 
 Before looking into the details, we first want to decide which billing type we want to use for our Storage Account. There are two billing types for storage accounts:

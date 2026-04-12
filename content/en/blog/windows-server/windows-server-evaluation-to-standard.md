@@ -19,8 +19,6 @@ You can download the ISO file for Windows Server 2025 Evaluation here: <https://
 
 ---
 
----
-
 ## Requirements
 
 - A valid product key for Windows Server Standard

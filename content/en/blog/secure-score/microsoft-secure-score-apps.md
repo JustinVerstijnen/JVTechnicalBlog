@@ -18,8 +18,6 @@ Small note, because of the mass of this page, the contents widget on the left wi
 
 ---
 
----
-
 ## Before we begin
 
 I collected all the options of the Microsoft Secure Score for Apps on this page, and we I address them all. I also added some industry-accepted options which are not in the secure score framework but are really helpful in avoiding or minimizing attacks in your environment. You can use all options, or only a subset. The more of the options you implement, the higher your score.

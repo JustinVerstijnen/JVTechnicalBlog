@@ -15,8 +15,6 @@ In this guide we do a deep dive into IPv6 in Microsoft Azure and i will show som
 
 ---
 
----
-
 ## Requirements
 
 - Basic knowledge of Azure and IPv4 and IPv6
@@ -144,8 +142,6 @@ Small note: some webservers/firewalls may be configured manually to listen to IP
 When playing with IPv6, you see that some things are great but its use is primarily for filling up the worldwide shortage of IPv4 addresses. Also i admit that there is no full support for IPv6 on Azure, most of the services i tested like VMs, Private Endpoints, Load balancers etcetera all requires IPv4 to communicatie which eliminates the possibility to go full IPv6.
 
 My personal opninion is that the addressing can be easier than IPv4, when done correctly. In the addressing i used in this guide i used the fd00::/8 space which makes very short addressess and no limitation of 250 devices without having to upper the number. These days a network of 250 devices is no exception.
-
----
 
 {{< ads >}}
 

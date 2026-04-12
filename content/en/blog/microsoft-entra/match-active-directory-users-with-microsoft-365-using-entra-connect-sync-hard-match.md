@@ -15,8 +15,6 @@ Sometimes, it is necessary to match an existing local Active Directory (AD) user
 
 ---
 
----
-
 ## What is soft-matching?
 
 Most of the time the system itself will match the users automatically using soft-matching. Here the service will be matching users in both Entra ID and Active Directory by using known attributes like UserPrincipalName and ProxyAddresses.

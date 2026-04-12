@@ -14,8 +14,6 @@ This module is about application services in Microsoft Azure. It mainly focuses 
 
 ---
 
----
-
 ## Statefull vs. Stateless
 
 We can categorize servers/VMs into two categories: Stateful and Stateless:
@@ -394,8 +392,6 @@ This chapter is very based on microservices and automation, this all with server
 However, some legacy systems and applications that require Windows Servers to run cannot be run on these serverless applications.
 
 To go back to the navigation page: <https://justinverstijnen.nl/microsoft-azure-master-class-navigation/>
-
----
 
 {{< ads >}}
 

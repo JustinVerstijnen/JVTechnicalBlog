@@ -15,8 +15,6 @@ In this guide, I want to you to understand the most of the basic knowledge of ma
 
 ---
 
----
-
 ## Basic definitions in roles and permissions Azure
 
 When talking about roles and permissions in Azure, we have the basic terms below, and later in this article all pieces of the puzzle will be set in place.
@@ -202,8 +200,6 @@ This page is a great preparation of this subject for the following Microsoft exa
 - AZ-500
 - SC-300
 - SC-900
-
----
 
 {{< ads >}}
 

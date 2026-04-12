@@ -18,8 +18,6 @@ As I already did some research on this topic with Azure Virtual Desktop, I also 
 
 ---
 
----
-
 ## Requirements
 
 - Basic knowledge of Azure

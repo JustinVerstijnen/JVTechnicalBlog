@@ -16,8 +16,6 @@ In this guide, I will explain 10 tools I use regularly and we can use with Azure
 
 ---
 
----
-
 ## Introduction to page and tools
 
 I mostly use these tools regularly to check the latest Azure updates, watch service health, calculate costs, build diagrams, create documentation, run commands easily, learn new skills, and manage your resources better.

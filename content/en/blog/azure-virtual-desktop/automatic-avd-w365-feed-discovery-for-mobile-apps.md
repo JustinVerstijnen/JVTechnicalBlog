@@ -17,8 +17,6 @@ Fast path for URL: https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery
 
 ---
 
----
-
 ## The problem explained
 
 When downloading the apps for your mobile devices, we get this window after installing:

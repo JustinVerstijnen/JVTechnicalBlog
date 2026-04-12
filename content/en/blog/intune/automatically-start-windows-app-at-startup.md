@@ -13,8 +13,6 @@ In some cases we want to automatically start the Windows App for connections to 
 
 ---
 
----
-
 ## Creating the Intune script
 
 We can achieve this with Intune using a PowerShell script. As Intune doesn't support login/startup scripts, we have to create a Platform script that creates a Scheduled Task in Windows for us. This is a great way, as this is visible at the client side and can be disabled pretty easily.

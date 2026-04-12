@@ -10,8 +10,6 @@ A great way to encrypt your Microsoft 365 outbound emails using a similar techni
 
 ---
 
----
-
 ## Requirements
 
 - Around 30 minutes of your time

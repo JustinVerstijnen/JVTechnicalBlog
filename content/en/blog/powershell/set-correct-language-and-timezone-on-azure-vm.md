@@ -15,8 +15,6 @@ Also, in the case of Azure Virtual Desktop, we want to present our users their n
 
 ---
 
----
-
 ## The script to set the language and timezone on Azure VM
 
 For the fast pass, I have the script here:

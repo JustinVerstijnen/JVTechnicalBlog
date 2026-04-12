@@ -15,8 +15,6 @@ After that we will look into the official Virtual Desktop Optimization Toolkit (
 
 ---
 
----
-
 ## Introduction to the Group Policy template
 
 Assuming you run your Azure Virtual Desktop environment by using the good old Active Directory (AD DS), you can manage the hosts with Group Policy.

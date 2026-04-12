@@ -13,8 +13,6 @@ Azure Update Manager is a tool from Microsoft and is developed to automate, inst
 
 ---
 
----
-
 ## Requirements
 
 - Around 15 minutes of your time

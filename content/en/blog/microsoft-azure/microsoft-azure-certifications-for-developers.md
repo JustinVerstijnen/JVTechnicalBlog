@@ -13,8 +13,6 @@ This page shows what Microsoft Azure certifications are available for Developer-
 
 ---
 
----
-
 ## The certification poster
 
 Microsoft has an monthly updating certification poster available to have an overview for each solution category and the certifications of that category. You can find the poster here:
@@ -69,8 +67,6 @@ Some certifications also have overlap. Some knowledge of the AZ-104 and AZ-204 a
 ## Summary
 
 I hope I helped you to clarify and decide what certification to take as developer with interest in Azure. Thank you for reading this guide.
-
----
 
 {{< ads >}}
 

@@ -15,8 +15,6 @@ The good part about this script/PowerShell module is that it does support both W
 
 ---
 
----
-
 ## Where to download this script?
 
 For the fast pass, my script can be downloaded here:

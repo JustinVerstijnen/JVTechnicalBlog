@@ -15,8 +15,6 @@ Now a long time I told our end users that there unfortunately is no solution pos
 
 ---
 
----
-
 ## Requirements
 
 - Around 15 minutes of your time

@@ -21,8 +21,6 @@ Take care before creating them and assigning this policy to such subscription.
 
 ---
 
----
-
 ## The solution described
 
 This solution consists of an Azure Policy Definition, that is assigned to the subscription where this must be executed. It also consists of a custom role that only gives the needed permissions, and nothing more.

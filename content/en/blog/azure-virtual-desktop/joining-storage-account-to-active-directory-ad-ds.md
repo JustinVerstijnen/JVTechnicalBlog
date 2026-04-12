@@ -15,8 +15,6 @@ In this guide I will write down the most easiest way with the least effort of pe
 
 ---
 
----
-
 ## Requirements
 
 - Around 30 minutes of your time

@@ -15,8 +15,6 @@ To apply a little more automation you can use the Dynamic Distribution Group fea
 
 ---
 
----
-
 ## Requirements
 
 - Around 15 minutes

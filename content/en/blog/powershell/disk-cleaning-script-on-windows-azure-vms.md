@@ -15,8 +15,6 @@ To help reducing this chance, I have created a PowerShell script that cleans up 
 
 ---
 
----
-
 ## Where do download this script?
 
 For the fast pass, my script can be downloaded here:

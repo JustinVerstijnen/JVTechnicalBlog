@@ -21,8 +21,6 @@ At the moment, SharePoint is a better option to store your files because it has 
 
 ---
 
----
-
 ## The Microsoft SharePoint Migration Tool
 
 Microsoft has a tool available which is free and which can migrate your local data to SharePoint. The targets you can specify are:

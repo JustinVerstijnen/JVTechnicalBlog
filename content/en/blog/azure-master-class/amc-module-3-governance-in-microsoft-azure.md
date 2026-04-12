@@ -17,8 +17,6 @@ In the cloud, Governance is crucial because processes and behaviors differ signi
 
 ---
 
----
-
 ## Azure Policy
 
 With Azure Policy, you can set up rules that different subscriptions, resources, or resource groups need to follow. Some examples include:

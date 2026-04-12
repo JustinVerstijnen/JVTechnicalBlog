@@ -15,8 +15,6 @@ In this guide I will explain how Network Security Groups (NSG) and Application S
 
 ---
 
----
-
 ## What does an Network Security Group (NSG) do?
 
 A network Security Group is a layer 4 network security layer in Azure to filter incoming and outgoing traffic which you can apply to:

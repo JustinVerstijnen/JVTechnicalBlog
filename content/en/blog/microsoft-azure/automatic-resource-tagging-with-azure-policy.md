@@ -16,8 +16,6 @@ For some inspiration on to how to actually use Azure Tags, check out my earlier 
 
 ---
 
----
-
 ## The solution described
 
 The solution we are going to build in this post, is simply a Azure Policy which we will link to a specific resource group in Azure. This simply looks like this:

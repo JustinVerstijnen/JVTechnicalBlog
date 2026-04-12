@@ -11,8 +11,6 @@ Microsoft has published a new command to completely disable the unsafe DirectSen
 
 ---
 
----
-
 ## What is DirectSend?
 
 DirectSend (Microsoft 365) lets devices or applications (like printers, scanners, or internal apps) send email directly to users inside your organization without authentication. Instead of using authentication, it uses your MX record directly with port 25.

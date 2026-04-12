@@ -15,8 +15,6 @@ In this guide I will show you how to customize the installation of Office apps, 
 
 ---
 
----
-
 ## Requirements
 
 - Around 30 minutes of your time

@@ -14,8 +14,6 @@ Microsoft Azure has a service called the 'Static Web Apps" (SWA) which are simpl
 
 ---
 
----
-
 ## Requirements
 
 - Around 45 minutes of your time
@@ -193,8 +191,6 @@ The most great thing is that everything is handled by Azure; from deployment -> 
 Azure Static Web Apps are a great way of hosting your simple webpages. They can be used for a variety of things. Management of the SWA instance is done in Azure, management of the code through Github.
 
 Thank you for reading this guide and I hope it was helpful.
-
----
 
 {{< ads >}}
 

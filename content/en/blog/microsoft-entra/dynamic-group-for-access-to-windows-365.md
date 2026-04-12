@@ -13,8 +13,6 @@ When using Windows 365 in your organization, the deployment is very easy to do. 
 
 ---
 
----
-
 ## Requirements
 
 - Azure AD/Entra ID/Microsoft Graph Powershell module

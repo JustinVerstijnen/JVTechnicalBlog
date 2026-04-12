@@ -15,8 +15,6 @@ It works the best with servers in a specific management subnet. I do not recomme
 
 ---
 
----
-
 ## Requirements
 
 - Management computer/Priveleged Access Workstation

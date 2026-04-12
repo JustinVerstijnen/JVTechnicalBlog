@@ -15,8 +15,6 @@ Not everyting detected by Defender for Identity will be directly classified as p
 
 ---
 
----
-
 ## Requirements
 
 - At least one Microsoft Defender for Identity running
@@ -262,8 +260,6 @@ My advices:
 - Always lock your computer
 
 Thank you for reading this guide!
-
----
 
 {{< ads >}}
 

@@ -15,8 +15,6 @@ Today a short guide on how to disable Windows Taskbar widgets through Intune. I 
 
 ---
 
----
-
 ## Method 1: Settings Catalog
 
 The easiest way to disable these widgets is through a Settings Catalog policy. Open up Microsoft Intune admin center and create a new policy through the Settings Catalog.

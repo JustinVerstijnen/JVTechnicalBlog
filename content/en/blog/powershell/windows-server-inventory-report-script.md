@@ -19,8 +19,6 @@ An example of the output of the script.
 
 ---
 
----
-
 ## Where to download this script?
 
 For the fast pass, my script can be downloaded here:

@@ -15,8 +15,6 @@ In this post I will do a deep dive into this new developement and explain what i
 
 ---
 
----
-
 ## What does this new requirement mean?
 
 This requirement means that every virtual machine in Azure created after 30 September 2025 needs to have an outbound connectivity method configured. You can see this as a "bring your own connection".

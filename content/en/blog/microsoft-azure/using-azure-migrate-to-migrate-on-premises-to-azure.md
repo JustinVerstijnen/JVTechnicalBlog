@@ -13,8 +13,6 @@ This page is about Azure Migrate and how you can migrate an on-premises server o
 
 ---
 
----
-
 ## Requirements
 
 - A server to migrate to Microsoft Azure
@@ -230,8 +228,6 @@ Migrating a server or multiple servers with the Azure Migrate tool is not overly
 I have also done some migration in production from on-premises to Azure with Azure Migrate and when it's completely set-up, its a really reliable tool to perform so called "Lift-and-shift" migrations.
 
 Thank you for reading this guide!
-
----
 
 {{< ads >}}
 

@@ -21,8 +21,6 @@ Azure Stack HCI became part of Azure Local after writing this post, see more inf
 
 ---
 
----
-
 ## Supported Azure Services
 
 The supported Azure services at the moment of writing are:
@@ -418,8 +416,6 @@ To actually create resources on the hardware on-premises through Azure Stack HCI
 ## Summary
 
 Azure Stack HCI is the newest evolution in hybrid setups, where you want to leverage as much as possible from the Azure services, but want the flexibility of using your own hardware and increasing security and performance. Another pro of this setup is that you can save costs by not using the expensive servers on Azure with certain needs, like GPU-enabled machines.
-
----
 
 {{< ads >}}
 

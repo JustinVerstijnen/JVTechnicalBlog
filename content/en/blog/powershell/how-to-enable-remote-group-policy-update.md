@@ -21,8 +21,6 @@ Actually, this only works after you configured this on the remote computers. The
 
 ---
 
----
-
 ## Errors explained
 
 When you do not configure remote group policy update, you get errors like:

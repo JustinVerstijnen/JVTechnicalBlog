@@ -15,8 +15,6 @@ The script is **not** made by myself, the source of the script is: <https://www.
 
 ---
 
----
-
 ## The script used in practice
 
 I have a demo environment where we can test this script. There we will run the script.
@@ -95,8 +93,6 @@ You can get the script from [this site](https://www.controlup.com/script-library
 This script can be very handy when testing, monitoring and troubleshooting logon performance of Azure Virtual Desktop. It shows exactly how much time it takes and what part took the most time. I can recommend everybody to use it when needed.
 
 Thank you for reading this guide and I hope it was helpful.
-
----
 
 {{< ads >}}
 

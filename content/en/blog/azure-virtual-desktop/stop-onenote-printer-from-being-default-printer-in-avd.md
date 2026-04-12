@@ -17,8 +17,6 @@ This can be very annoying for our end users and ourselves as we want real printe
 
 ---
 
----
-
 ## The issue itself
 
 The issue is that OneNote automatically creates a printer queue in Windows at installation for users to send information to OneNote. This will be something they use sometimes, but a physical printer will be used much more often. The most annoying part is that the software printer for OneNote will be marked as default printer every day which is annoying for the end users.

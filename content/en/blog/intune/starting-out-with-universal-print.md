@@ -14,8 +14,6 @@ Universal Print is a Microsoft cloud solution which can replace your Windows bas
 
 ---
 
----
-
 ## Requirements
 
 - Around 30 minutes of your time

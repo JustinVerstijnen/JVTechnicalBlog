@@ -19,8 +19,6 @@ In this guide, I will explain the cause of this problem and the options to solve
 
 ---
 
----
-
 ## Cause of this problem
 
 The cause of this problem is mostly an object that is first created cloud-only and then created in Active Directory, or a user that was synced previously but is deselected or deleted. Entra Connect Sync will not match the users correctly, and a the ImmutableId of the user in Entra still exists. In short; it still wants to sync a user that not exists.

@@ -168,8 +168,6 @@ After this guide you are using DNSSEC and SMTP DANE on your Exchange Online envi
 
 Thank you for reading this post and I hope I helped you out securing your email flow and data in transfer.
 
----
-
 {{< ads >}}
 
 {{< article-footer >}}

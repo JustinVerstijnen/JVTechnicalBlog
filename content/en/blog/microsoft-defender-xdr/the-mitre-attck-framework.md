@@ -64,8 +64,6 @@ The MITRE ATT&CK framework is a very great framework to get a clear understandin
 
 The best part about the framework are the mitigation steps where you can implement changes to prevent attacks that already happend with a big impact.
 
----
-
 {{< ads >}}
 
 {{< article-footer >}}

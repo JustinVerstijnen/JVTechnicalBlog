@@ -13,8 +13,6 @@ Sometimes, we also want a step down from our work and want to fully enjoy a vide
 
 ---
 
----
-
 ## Requirements
 
 - An Azure environment
@@ -545,8 +543,6 @@ While hosting a Minecraft server setup on Azure is a possibility, it's not that 
 However I had a lot of fun testing this solutionand bringing Minecraft, Azure and Linux knowledge together and build a Minecraft server and write a tutorial for it.
 
 Thank you for reading this guide and I hope it was helpful.
-
----
 
 {{< ads >}}
 

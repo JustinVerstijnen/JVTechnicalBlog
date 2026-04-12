@@ -17,8 +17,6 @@ Because this can get very annoying, I researched on how to disable this button t
 
 ---
 
----
-
 ## Cause of appearance
 
 In most cases, this button will appear automatically when more than 1 language is installed in Windows. However, after one of the updates for 24H2, it appeared for me on multiple PC's. Especially the PC's which were installed with the Dutch language.

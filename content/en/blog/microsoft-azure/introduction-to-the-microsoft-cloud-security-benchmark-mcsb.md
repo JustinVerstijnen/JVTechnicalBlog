@@ -43,8 +43,6 @@ The tool gives you overall recommendations which have previously compromised env
 
 For more information about this very interesting benchmark, check out this page: <https://learn.microsoft.com/en-us/security/benchmark/azure/introduction>
 
----
-
 {{< ads >}}
 
 {{< article-footer >}}

@@ -13,8 +13,6 @@ At this page I will show you how to export all your AD users fast and easy.
 
 ---
 
----
-
 ## The Export AD users script:
 
 For the fast pass, I uploaded the script to my Github page:

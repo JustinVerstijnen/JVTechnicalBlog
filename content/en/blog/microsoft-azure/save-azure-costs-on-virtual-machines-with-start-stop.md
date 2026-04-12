@@ -13,8 +13,6 @@ With the Azure Start/Stop solution we can save costs in Microsoft Azure and save
 
 ---
 
----
-
 ## Requirements
 
 - Around 45 minutes of your time

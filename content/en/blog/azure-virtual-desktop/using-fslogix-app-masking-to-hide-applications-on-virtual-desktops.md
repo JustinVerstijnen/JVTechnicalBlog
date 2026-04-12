@@ -16,8 +16,6 @@ In this guide I will give some extra explaination about this feature, how it wor
 
 ---
 
----
-
 ## Requirements
 
 - Around 45 minutes of your time

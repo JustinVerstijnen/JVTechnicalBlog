@@ -17,8 +17,6 @@ In this guide I will dive into how it works, what is backed up and excluded and 
 
 ---
 
----
-
 ## Requirements
 
 - Windows 11 [with the latest feature updates installed](https://learn.microsoft.com/en-us/windows/configuration/windows-backup/?tabs=intune#backup-requirements) for both creating and restoring backups

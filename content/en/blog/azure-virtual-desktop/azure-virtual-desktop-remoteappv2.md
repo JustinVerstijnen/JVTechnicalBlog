@@ -22,8 +22,6 @@ Source: <https://learn.microsoft.com/en-us/azure/virtual-desktop/remoteapp-enhan
 
 ---
 
----
-
 ## How to enable RemoteAppV2
 
 To enable RemoteAppV2, you need to set a registry key as long as the preview is running. Make sure you are compliant with the requirements as described on this page (client + hosts):

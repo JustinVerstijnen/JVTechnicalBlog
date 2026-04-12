@@ -15,8 +15,6 @@ For this purpose I built this script. It sets the timezone for Western Europe an
 
 ---
 
----
-
 ## Where to download this script?
 
 For the fast pass, my script can be downloaded here:

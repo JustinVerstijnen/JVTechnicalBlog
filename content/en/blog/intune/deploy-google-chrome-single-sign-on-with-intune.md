@@ -17,8 +17,6 @@ On this page I will show how this extension works, what the advantages are and h
 
 ---
 
----
-
 ## How the extension works
 
 The Microsoft SSO extension for Google Chrome uses the same token/session you already have when you have your device Entra ID joined. It will send that to every Microsoft Online webpage to show you are already authenticated and have a valid token. This makes the user experience a lot better as they don't have to authenticate first before starting to use the web applications.

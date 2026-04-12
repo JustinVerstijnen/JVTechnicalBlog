@@ -25,8 +25,6 @@ In this guide, I will describe the steps I have taken to accomplish what I've bu
 
 ---
 
----
-
 ## The GitHub repository topology
 
 To prepare for this setup, we need to have our GitHub repository topology right. I already had all my tools in place. Then I have built my repositories to be as the following diagram:

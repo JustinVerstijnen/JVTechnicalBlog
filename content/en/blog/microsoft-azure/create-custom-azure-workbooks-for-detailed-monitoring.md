@@ -22,8 +22,6 @@ They’re highly flexible and can be used for anything from a simple performance
 
 ---
 
----
-
 ## Using the default Azure Workbooks
 
 In Azure we can use the default workbooks in multiple resources that contain basic information about a resource and it's performance. You can find those under the resource itself.
@@ -273,8 +271,6 @@ To further clarify what I have exactly done, I have published my Workbook of thi
 Azure Workbooks are an excellent and advanced way to monitor and visualize what is happening in your Azure environment. They can be tough at the start but it will become more easy when time goes by. By following this guide you have a workbook that look similar to this:
 
 Thank you for reading this guide and I hope it was helpful.
-
----
 
 {{< ads >}}
 

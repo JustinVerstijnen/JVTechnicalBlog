@@ -13,8 +13,6 @@ Azure Firewall is a cloud-native Firewall which can be implemented in your Azure
 
 ---
 
----
-
 ## Requirements
 
 - Around 15 minutes of your time

@@ -13,8 +13,6 @@ Microsoft will sometimes "pause" tenants to reduce infrastructure costs. You wil
 
 ---
 
----
-
 ## What is "Tenant dehydrated"?
 
 Microsoft sometimes will dehydrate Microsoft 365 tenants where things will not often change to the tenant. This closes some parts of the tenant for changing, even if you have Global Administrator permissions.

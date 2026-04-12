@@ -18,8 +18,6 @@ Because I really wanted to use higher version VMs, I went to research on how to 
 
 ---
 
----
-
 ## The problem described
 
 When using V6 and higher version Virtual Machines in Azure, the Boot Controller will also change from the older SCSI to NVMe. When using local VM storage, this could give a pretty disk performance increase but not really for Azure Virtual Desktop. We mostly use managed disks here so we don't use that storage.

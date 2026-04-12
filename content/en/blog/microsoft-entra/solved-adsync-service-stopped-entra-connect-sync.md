@@ -15,8 +15,6 @@ In this guide I will explain how I solved this problem using a simple PowerShell
 
 ---
 
----
-
 ## The Check ADSync script
 
 The PowerShell script that fixes this problem is on my GitHub page:

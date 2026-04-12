@@ -15,8 +15,6 @@ In this guide I will show how I got this to work in combination with the newest 
 
 ---
 
----
-
 ## The Maximum Security preset in the Azure Portal
 
 We can also run the SMB security on the Maximum security preset in the Azure Portal and still run FSLogix without problems. In the Azure Portal, go to the storage account and set the security of the File share to "Maximum security":

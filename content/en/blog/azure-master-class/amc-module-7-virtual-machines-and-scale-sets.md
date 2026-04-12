@@ -13,8 +13,6 @@ This module explicitly covers virtual machines and virtual machines in combinati
 
 ---
 
----
-
 # Virtual Machines (VMs)
 
 Virtual Machines are one of the most commonly used services in Microsoft Azure. This is because a customizable virtual machine allows for nearly unlimited possibilities, and most software requires a real desktop environment for installation.
@@ -348,8 +346,6 @@ This allows you to have consistent management, monitoring, and security policies
 Virtual Machines are the most important feature of cloud computing in general. Virtual Machines enable you to build possibly 95% of all applications needed for an organization. It also gives great flexibility but not profit that much of the cloud as a whole. Remember, there is no such "cloud". Its only others computer.
 
 To go back to the navigation page: <https://justinverstijnen.nl/microsoft-azure-master-class-navigation/>
-
----
 
 {{< ads >}}
 

@@ -15,8 +15,6 @@ In this guide, I will show some features of Microsoft Azure regarding monitoring
 
 ---
 
----
-
 ## Carbon Optimization dashboard
 
 Azure offers several Carbon Optimization options to help organizations to monitor and reduce their CO₂ emissions and operate more sustainable. You can find this in the Azure Portal by searching for "Carbon optimizations":

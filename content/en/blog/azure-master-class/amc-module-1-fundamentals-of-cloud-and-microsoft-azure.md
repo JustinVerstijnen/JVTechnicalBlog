@@ -11,10 +11,6 @@ description: >
 ---
 This chapter is about the term "Cloud" and the fundamentals of Microsoft Azure and Cloud Services in general.
 
-![Microsoft Azure logo](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-13a61175857f.png)
-
-*The official logo of Microsoft Azure*
-
 ## What is "the Cloud"?
 
 The Cloud is a widely used term to say, "That runs elsewhere on the internet." There are many different definitions, but the National Institute of Standards and Technology (NIST) in the United States has identified five characteristics that a service/solution must meet to call itself a cloud service:
@@ -61,8 +57,6 @@ And we call self hosted servers:
 - **On-premises:** With on-premises, a company/customer is 100% responsible for all components but also has the most information and control.
   - *Examples:* Own servers/hypervisors
 
-![On-premises vs. IaaS vs. PaaS vs. SaaS](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-8456e7a65306.png)
-
 ---
 
 ## When to choose Public or Private Cloud?
@@ -85,10 +79,6 @@ Other good scenarios for choosing the Public Cloud include:
 
 This is because prices may initially seem quite high. However, when you take into account all the factors, such as those in the image below, you’ll see that the Cloud isn’t such a crazy option after all:
 
-![Costs On-premises vs. Cloud Computing](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/enhance-email-security-with-spf-dkim-dmarc-1462/jv-media-1462-2196f5040337.png)
-
-*On-premises VS. the Cloud including all general expense categories*
-
 For on-premises (local) servers, for example, you incur the following costs that you don't in the cloud:
 
 - Applying patches/updates to hardware
@@ -104,8 +94,6 @@ For on-premises (local) servers, for example, you incur the following costs that
 ## What is Microsoft Azure?
 
 Microsoft Azure is an Infrastructure-as-a-Service (IaaS) cloud service designed to run compute and storage solutions.
-
-![Microsoft Azure logo](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/enhance-email-security-with-spf-dkim-dmarc-1462/jv-media-1462-343d9db4978f.png)
 
 It can serve as a replacement for physical servers and consists of dozens of different services, such as:
 
@@ -125,8 +113,6 @@ Most services in Microsoft Azure are "serverless." This means you use a service 
 ## Costs management in Microsoft Azure
 
 **Microsoft Azure works with the "Pay-as-you-go" model.** This means you pay based on the usage of the cloud service and its resources. This makes the platform very flexible in terms of pricing.
-
-![Costs](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-6b765503571b.png)
 
 Billing by Azure to a customer or reseller happens at the **Subscription level**, and payment methods are quite limited, usually to various types of credit cards.
 

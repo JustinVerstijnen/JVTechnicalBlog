@@ -13,8 +13,6 @@ In this module, i want you to understand all the possibilities of Monitoring and
 
 ---
 
----
-
 # Azure Monitor
 
 Azure Monitor is a service in Azure that enables monitoring. With it, you can monitor various resources and quickly identify potential issues during an outage. Azure Monitor supports almost all resources in Azure and can, for example, retrieve event logs and metrics from the guest operating system of virtual machines.

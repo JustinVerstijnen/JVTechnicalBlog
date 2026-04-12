@@ -28,8 +28,6 @@ In this guide, we will cover those 3 techniques, how they work, how they can hel
 
 ---
 
----
-
 ## Why bother about those techniques
 
 You will recognise this in your work. You send an email to a party or expecting an incoming email, but it appears in your junk folder. Or you send a advertisement email to your customers but most of the customers will not receive this properly and the mail will appear in the junk folder which will not be checked that regularly. This can result in some huge income loss.

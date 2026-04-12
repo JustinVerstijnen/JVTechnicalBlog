@@ -15,8 +15,6 @@ In this post I will explain how this is done, how to setup Azure Front Door to d
 
 ---
 
----
-
 ## Requirements
 
 For this solution, you need the following stuff:

@@ -15,8 +15,6 @@ In this guide we will configure this without Microsoft Sentinel. If you already 
 
 ---
 
----
-
 ## The alert solution described
 
 The solution we will configure looks like this:

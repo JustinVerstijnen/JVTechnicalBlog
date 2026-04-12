@@ -15,8 +15,6 @@ In this module, we cover Azure: Infrastructure as Code (IaC) and DevOps. This mo
 
 ---
 
----
-
 # Azure Portal, Azure Powershell and Azure CLI
 
 There are multiple environments to manage Azure and its resources:

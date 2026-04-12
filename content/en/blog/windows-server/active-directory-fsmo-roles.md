@@ -16,8 +16,6 @@ In this guide, I will give a brief explaination of the roles, what their functio
 
 ---
 
----
-
 ## What are the FSMO roles of Active Directory?
 
 FSMO stands for Flexible Single Master Operations. Active Directory is normally multi-master, meaning changes can be made on any domain controller. However, some operations must be handled by one specific domain controller at a time to avoid conflicts. These special responsibilities are called the FSMO roles.

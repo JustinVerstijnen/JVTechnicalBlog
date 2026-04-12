@@ -19,8 +19,6 @@ Note: Think out very carefully how long the retention must be. Deleting files is
 
 ---
 
----
-
 ## The clean script
 
 The Powershell script for cleaning up files is on my GitHub page:

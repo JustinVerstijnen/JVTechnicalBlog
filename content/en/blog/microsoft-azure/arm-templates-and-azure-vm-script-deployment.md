@@ -15,8 +15,6 @@ In this post I will show some examples of deploying with ARM templates and also 
 
 ---
 
----
-
 ## Requirements
 
 - Around 30 minutes of your time

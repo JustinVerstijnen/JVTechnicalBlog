@@ -16,8 +16,6 @@ Today I will show how to implement certificate-based authentication for App Regi
 
 ---
 
----
-
 ## Requirements
 
 - Around 20 minutes of your time

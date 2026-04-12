@@ -14,8 +14,6 @@ In this we will explore various possibilities of Databases and AI in Microsoft A
 
 ---
 
----
-
 ## Types of data and structures
 
 Data in general can be stored in different ways for various purposes.

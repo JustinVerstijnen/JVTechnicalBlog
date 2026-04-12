@@ -19,8 +19,6 @@ But what if I tell you this is technically possible to do now? We can use Azure 
 
 ---
 
----
-
 ## Requirements
 
 - Basic understanding of Azure

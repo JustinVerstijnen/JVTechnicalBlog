@@ -16,8 +16,6 @@ I will give some examples how I implemented certain actions in production. I wil
 
 ---
 
----
-
 ## How to create a Dynamic Group
 
 In Microsoft Entra, you can create a Dynamic Group by heading to "Groups" and then click "+ New group":

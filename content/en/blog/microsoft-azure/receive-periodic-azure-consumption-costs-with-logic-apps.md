@@ -19,8 +19,6 @@ To partly address this issue for Azure Consumption costs, I have made a Logic Ap
 
 ---
 
----
-
 ## How does the solution work?
 
 The solution works with a Logic App which has a customizable recurrence. Let's say, every day, hour, week, specific workday or month. It then grabs the costs information from a given subscriptions using a Managed Identity and puts it into a HTML table. After creating and filling the table sends this HTML table via email to your email address of choice.

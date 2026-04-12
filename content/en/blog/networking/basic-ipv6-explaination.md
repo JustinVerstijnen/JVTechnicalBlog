@@ -13,8 +13,6 @@ IPv6. We hear it a lot these days and it's a very common network addressing prot
 
 ---
 
----
-
 ## Requirements
 
 - Around 15 minutes of your time
@@ -120,8 +118,6 @@ When it comes to compare generic terms in networking, you can use the table belo
 ## Summary
 
 This page greatly explains how IPv4 and IPv6 addresses and their basics and benefits work, and there is a lot to also tell about. Obviously too much to include on a single page. Also i want the content to be readable and to stay within the best attention span of humans :).
-
----
 
 {{< ads >}}
 

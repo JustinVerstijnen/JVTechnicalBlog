@@ -13,8 +13,6 @@ We can bypass this requirement by building these trust ourselves and so managing
 
 ---
 
----
-
 ## Installing Hyper-V management tools
 
 When you use Windows 11 Pro/Education/Enterprise, you have the option to install Hyper-V on your machine. This can be done through the features on demand window:

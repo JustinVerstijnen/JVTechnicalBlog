@@ -15,8 +15,6 @@ In this guide, I will explain how Microsoft 365 Backup works and how you can sta
 
 ---
 
----
-
 ## Requirements
 
 - A Microsoft 365 environment with Global Administrator permissions

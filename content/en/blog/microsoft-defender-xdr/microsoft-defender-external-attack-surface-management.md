@@ -25,8 +25,6 @@ The costs for this solution are minimal; you pay €0.01 per day per host, domai
 
 ---
 
----
-
 ## Best features of Microsoft Defender EASM
 
 The best features of this solution include:

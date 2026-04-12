@@ -15,8 +15,6 @@ I will explain these ways in this article.
 
 ---
 
----
-
 ## What are Tags in Azure?
 
 Tags are a pair of editable values in Microsoft Azure. These are in this pair-convention:

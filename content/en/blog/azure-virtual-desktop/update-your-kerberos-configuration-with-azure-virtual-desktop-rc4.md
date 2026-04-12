@@ -19,8 +19,6 @@ Microsoft already introduced Kerberos-related hardening changes in updates relea
 
 ---
 
----
-
 ## The update and protocols described
 
 Kerberos is the authentication protocol used in Microsoft Active Directory Domain Services. This is being used to authenticate yourself to servers and different services within that domain, such as an Azure Files share.

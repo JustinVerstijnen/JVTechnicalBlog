@@ -13,8 +13,6 @@ On this page I will show how I've uploaded scripts from Github to the PowerShell
 
 ---
 
----
-
 ## Requirements
 
 - Around 30 minutes of your time

@@ -50,8 +50,6 @@ For more information, check out this page: <https://learn.microsoft.com/en-us/az
 
 This framework (CAF) can be very useful if your organization decides to migrate to the cloud. It contains a variety of steps and processes from earlier migrations done by companies and their faults.
 
----
-
 {{< ads >}}
 
 {{< article-footer >}}

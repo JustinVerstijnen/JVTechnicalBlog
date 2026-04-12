@@ -41,8 +41,6 @@ A Managed Identity can also be used in languages like PHP. In this case, you fir
 
 There is also a **Premium** option, which ensures that Keys in a Key Vault are stored on a hardware security module (HSM). This allows the use of a higher level of encryption keys and meets certain compliance standards that require this level of security.
 
----
-
 {{< ads >}}
 
 {{< article-footer >}}

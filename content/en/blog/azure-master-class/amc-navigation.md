@@ -1,7 +1,7 @@
 ---
 title: "Microsoft Azure Master Class - Navigation page"
 date: 2024-10-17
-slug: "microsoft-azure-master-class-navigation"
+slug: "amc-navigation"
 categories:
   - Azure Master Class
 tags:

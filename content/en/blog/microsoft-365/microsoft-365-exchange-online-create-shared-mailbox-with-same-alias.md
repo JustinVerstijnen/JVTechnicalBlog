@@ -15,8 +15,6 @@ In this guide I will explain this problem and show how to still get the job done
 
 ---
 
----
-
 ## The problem of multiple shared mailboxes with same alias
 
 Let's say, we have a Microsoft 365 tenant with 3 domains;

@@ -17,8 +17,6 @@ Because Windows Server 2025 is now out for almost a year and runs really stable,
 
 ---
 
----
-
 ## Requirements
 
 - The Azure Powershell module

@@ -20,8 +20,6 @@ I created a script to test the connectivity, if it is allowed through Firewall a
 
 ---
 
----
-
 ## The script to test Azure Virtual Desktop connectivity
 
 I have the script on my Github page which can be downloaded here:

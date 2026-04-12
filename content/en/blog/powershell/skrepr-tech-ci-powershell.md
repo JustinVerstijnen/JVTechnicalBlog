@@ -298,8 +298,6 @@ Deze module geeft op een vrij simpele manier weer wat de mogelijkheden zijn van 
 
 Bedankt voor het bijwonen van mijn CI, en de informatie blijft voorlopig beschikbaar op deze website. Mocht je nog een keer deze gids en de bijbehorende informatie willen volgen kan dat!
 
----
-
 {{< ads >}}
 
 {{< article-footer >}}

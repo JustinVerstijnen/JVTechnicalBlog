@@ -17,8 +17,6 @@ In this guide I will describe how I got this to work. Honestly, the setup with r
 
 ---
 
----
-
 ## The configuration explained
 
 The configuration in this blog post is a virtual network with one server and one client. In the virtual network, we will deploy a Azure Private DNS instance and that instance will do everything DNS in our network.

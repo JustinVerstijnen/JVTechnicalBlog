@@ -27,8 +27,6 @@ I tried everything to delete the folder of the Recycle bin on the C:\ drive but 
 
 ---
 
----
-
 ## How to solve the problem with GPO (1)
 
 To solve the bug, you have to disable the Recycle Bin roaming in the FSLogix configuration. You can do this by going to your FSLogix Group Policy and open it to edit the settings. Make sure you already updated the FSLogix policies to this new version to match the agent and policy version. I also addedd a fix for using the Windows registry.
@@ -84,8 +82,6 @@ After some more research, I came across a page of Microsoft about a lot of featu
 {{% /alert %}}
 
 If I helped you with this guide to fix this bug, it was my pleasure and thank you for reading it.
-
----
 
 {{< ads >}}
 

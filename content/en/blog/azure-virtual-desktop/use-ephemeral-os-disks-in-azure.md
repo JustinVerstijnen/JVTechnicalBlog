@@ -14,8 +14,6 @@ In Azure, you have the option to create Ephemeral OS disks for your machine. Thi
 
 ---
 
----
-
 ## Requirements
 
 - Around 25 minutes of your time

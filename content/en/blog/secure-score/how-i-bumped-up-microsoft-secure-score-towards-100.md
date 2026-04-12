@@ -18,8 +18,6 @@ This pages and the subpages describe how I got my secure score up, and describin
 
 ---
 
----
-
 ## Microsoft Secure Score subpages
 
 These subpages contains the different pillars to address:

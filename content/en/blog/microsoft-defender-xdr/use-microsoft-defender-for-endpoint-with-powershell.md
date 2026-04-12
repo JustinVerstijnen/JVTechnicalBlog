@@ -16,8 +16,6 @@ In this guide, I will explain some PowerShell commands with simple steps to help
 
 ---
 
----
-
 ## Requirements
 
 To follow this guide, you need the following things:
