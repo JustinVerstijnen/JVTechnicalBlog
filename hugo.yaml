@@ -1,5 +1,5 @@
-baseURL: https://flightblog.justinverstijnen.nl
-title: JV Flight Blog
+baseURL: https://justinverstijnen.nl
+title: justinverstijnen.nl
 
 # Language settings
 contentDir: content/en
@@ -23,7 +23,7 @@ menu:
       url: /blog/
       weight: 10
     - name: Tools
-      url: https://flighttools.justinverstijnen.nl
+      url: https://tools.justinverstijnen.nl
       weight: 20
     - name: About
       url: https://justinverstijnen.nl/about
@@ -59,7 +59,7 @@ imaging:
 languages:
   en:
     languageName: English
-    title: Flight Blog | Justin Verstijnen
+    title: Justin Verstijnen
     params:
       description: On this website, I will share my aviation experiences, including both theory and practice, during my journey towards achieving a Private Pilot License (PPL).
   # cSpell:disable
