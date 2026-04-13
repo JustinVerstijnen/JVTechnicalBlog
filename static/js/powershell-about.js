@@ -19,12 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const outputLines = [
       "Loading Justin's information...",
       "12,7% completed...",
-      "Grouping Justin's hobbies and profiles...",
+      "Formatting table...",
       "42% completed...",
-      "Formatting certifications table...",
-      "67% completed...",
-      "Rendering webpage...",
-      "100% completed!"
+      "$certifications | Format-Table",
+      "67% completed...Done",
+      "Rendering webpage..."
     ];
 
     const showContent = () => {
