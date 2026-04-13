@@ -41,6 +41,20 @@ I am Justin Verstijnen, I live in the Netherlands and am 27 years old. My intere
 </div>
 </div>
 
+## My IT and Cloud story
+
+My interest in computers started because of my dad who had a computer company for around 15 years where he helped around 200 individuals and small companies with their computer problems, migrating to new computers, selling new computers, laptops, printers and monitors, and helping them with using them, periodic cleaning and more. At first I only watched him do the magic, but later I helped him very often and this way I learned a lot about computers, software, possible problems and some basic knowledge of hardware. I knew very soon in my life that I wanted to do the same as my dad, but not what exactly. *Something with computers.*
+
+In my free time I sometimes play some games, and I liked it to set up custom game servers for games. Here is where my interest in building systems and servers started, but quickly realized that technical knowledge, security and planning is very important when designing systems. I knew then that only building and planning systems is fun to do and wanted to make my work out of it which it now is, already for several years.
+
+## From hobby to job
+
+After passing my IT Intermediate vocational education I started at my first IT job on the servicedesk. A few years later, the wish to specialize in Microsoft and Microsoft Cloud solutions became stronger, and I followed that path. After some years of watching, learning and gaining hands-on experience, I started to achieve Microsoft certifications and that is where the learning really began and has never stopped since.
+
+In 2024, after achieving every Microsoft certification I wanted, I started this website as a great way to shift into the next phase: gaining even more knowledge, going deeper into topics and sharing that knowledge in practice. I really like to research a topic or technical part and then document what I did to make it work. It pushes me to the limit when I have to understand a solution, configure it correctly and then explain it in a way that helps others get it working as well.
+
+In my daily job I am busy designing, building, maintaining, securing and improving Microsoft Cloud and on-premises solutions.
+
 ## Certifications
 
 | Certification | Exam code(s) |
@@ -70,17 +84,4 @@ I am Justin Verstijnen, I live in the Netherlands and am 27 years old. My intere
 | Cisco Certified Networking Associate 1 + 2 | CCNA 1, CCNA 2 |
 | ITIL 4 Foundation |  |
 
-## My IT and Cloud story
-
-My interest in computers started because of my dad who had a computer company for around 15 years where he helped around 200 individuals and small companies with their computer problems, migrating to new computers, selling new computers, laptops, printers and monitors, and helping them with using them, periodic cleaning and more. At first I only watched him do the magic, but later I helped him very often and this way I learned a lot about computers, software, possible problems and some basic knowledge of hardware. I knew very soon in my life that I wanted to do the same as my dad, but not what exactly. *Something with computers.*
-
-In my free time I sometimes play some games, and I liked it to set up custom game servers for games. Here is where my interest in building systems and servers started, but quickly realized that technical knowledge, security and planning is very important when designing systems. I knew then that only building and planning systems is fun to do and wanted to make my work out of it which it now is, already for several years.
-
-## From hobby to job
-
-After passing my IT Intermediate vocational education I started at my first IT job on the servicedesk. A few years later, the wish to specialize in Microsoft and Microsoft Cloud solutions became stronger, and I followed that path. After some years of watching, learning and gaining hands-on experience, I started to achieve Microsoft certifications and that is where the learning really began and has never stopped since.
-
-In 2024, after achieving every Microsoft certification I wanted, I started this website as a great way to shift into the next phase: gaining even more knowledge, going deeper into topics and sharing that knowledge in practice. I really like to research a topic or technical part and then document what I did to make it work. It pushes me to the limit when I have to understand a solution, configure it correctly and then explain it in a way that helps others get it working as well.
-
-In my daily job I am busy designing, building, maintaining, securing and improving Microsoft Cloud and on-premises solutions.
 {{< /powershell-about >}}
