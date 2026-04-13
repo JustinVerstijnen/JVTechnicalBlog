@@ -3,12 +3,17 @@ title: "About me"
 ---
 
 {{< powershell-about command=".\about-justin-verstijnen.ps1" >}}
-I am Justin Verstijnen, I live in the Netherlands and am 27 years old. My interest in computers started around the age of 8 and has never been less.
 
 <div class="about-two-columns">
 <div>
 
+## Welcome to justinverstijnen.nl
+
+Hi! I’m Justin Verstijnen, 27 years old, and passionate about computers and technology. Over the past several years, I’ve worked as a Systems Engineer and now as an architect focused on cloud and security solutions which I share a lot about on this website.
+
 ### Hobbies and pasttimes
+
+These are my hobbies and pasttimes
 
 - Photography
 - Playing guitar
@@ -27,6 +32,8 @@ I am Justin Verstijnen, I live in the Netherlands and am 27 years old. My intere
 
 ### Profiles and Socials
 
+These are my social profiles where I'm active
+
 - [LinkedIn](https://www.linkedin.com/in/justinverstijnen/)
 - [Email](mailto:info@justinverstijnen.nl)
 - [Microsoft Learn](https://learn.microsoft.com/en-us/users/justinverstijnen/)
@@ -44,7 +51,7 @@ I am Justin Verstijnen, I live in the Netherlands and am 27 years old. My intere
 
 ## My IT and Cloud story
 
-My interest in computers started because of my dad who had a computer company for around 15 years where he helped around 200 individuals and small companies with their computer problems, migrating to new computers, selling new computers, laptops, printers and monitors, and helping them with using them, periodic cleaning and more. At first I only watched him do the magic, but later I helped him very often and this way I learned a lot about computers, software, possible problems and some basic knowledge of hardware. I knew very soon in my life that I wanted to do the same as my dad, but not what exactly. *Something with computers.*
+My interest in computers started at around 9 years old because of my dad who had a computer company for years where he helped around 200 individuals and 1 to 2 person companies with their computer problems, migrating to new computers, selling new computers, laptops, printers and monitors, and helping them with using them, periodic cleaning and more. At first I only watched him do the magic, but later I helped him very often. This introduced me well and fast into computers, software, possible problems and some basic knowledge of hardware. I knew very soon in my life that I wanted to do the same as my dad, but not what exactly. I thought of *Something with computers.*
 
 In my free time I sometimes play some games, and I liked it to set up custom game servers for games. Here is where my interest in building systems and servers started, but quickly realized that technical knowledge, security and planning is very important when designing systems. I knew then that only building and planning systems is fun to do and wanted to make my work out of it which it now is, already for several years.
 
