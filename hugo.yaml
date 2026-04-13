@@ -103,7 +103,7 @@ params:
   copyright:
     authors: >-
        | Justin Verstijnen |
-    from_year: 2023
+    from_year: 2024
     to_year: present
 
   # User interface configuration
@@ -136,8 +136,8 @@ params:
 
   links:
     developer:
-      - name: Header picture
-        url: /header-picture/
+      - name: Header photo
+        url: /header-photo/
         icon: fa-regular fa-camera
         desc: Header picture
       - name: Send me an email
