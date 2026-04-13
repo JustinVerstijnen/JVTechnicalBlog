@@ -4,12 +4,12 @@ title: "About me"
 
 {{< powershell-about command=".\about-justin-verstijnen.ps1" >}}
 
-<div class="about-two-columns">
-<div>
-
 ## Welcome to justinverstijnen.nl
 
 Hi! I’m Justin Verstijnen, 27 years old, and passionate about computers and technology. Over the past several years, I’ve worked as a Systems Engineer and now as an architect focused on cloud and security solutions which I share a lot about on this website.
+
+<div class="about-two-columns">
+<div>
 
 ### Hobbies and pasttimes
 
