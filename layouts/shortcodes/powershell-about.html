@@ -1,14 +1,32 @@
+{{- $content := .Inner | strings.TrimSpace -}}
+{{- $rendered := .Page.RenderString (dict "display" "block") $content -}}
+{{- $lines := slice
+  "PowerShell 7.5.0"
+  "Copyright (c) Microsoft Corporation. All rights reserved."
+  ""
+  "PS C:\\Users\\Justin> ./about-me.ps1"
+  "Starting profile bootstrap..."
+  "Loading personal summary"
+  "Loading IT and Cloud story"
+  "Preparing markdown view"
+  "Done."
+-}}
 
-<div class="ps-terminal-wrapper">
-  <pre class="ps-terminal">
-<span class="ps-line">PS C:\Users\Justin> ./about-me.ps1</span>
-<span id="ps-output"></span>
-<span class="ps-cursor">█</span>
-  </pre>
-</div>
+<div class="ps-about" data-ps-lines='{{ $lines | jsonify }}'>
+  <div class="ps-terminal-wrapper" aria-hidden="true">
+    <div class="ps-terminal-header">
+      <span class="ps-terminal-title">Windows PowerShell</span>
+      <span class="ps-terminal-controls">
+        <span></span><span></span><span></span>
+      </span>
+    </div>
 
-<div id="about-content" class="about-hidden">
-  {{ .Inner }}
+    <pre class="ps-terminal"><code class="ps-terminal-code"><span class="ps-output"></span><span class="ps-cursor">█</span></code></pre>
+  </div>
+
+  <div class="ps-about-content about-hidden">
+    {{ $rendered }}
+  </div>
 </div>
 
 <link rel="stylesheet" href="/css/powershell-about.css">

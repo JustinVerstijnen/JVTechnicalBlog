@@ -1,18 +1,17 @@
-
 ---
 title: "About me"
 ---
 
-<!-- Prevent empty-body render in Docsy -->
-
 {{< powershell-about >}}
+# Hi, I'm Justin Verstijnen
 
-<p>I am Justin Verstijnen, I live in the Netherlands and am [age] years old.</p>
+I live in the Netherlands and I work on Microsoft, cloud, and infrastructure-focused solutions.
 
-<h2>My IT and Cloud story</h2>
-<p>
-My interest in computers started at a young age and evolved into a professional career
-focused on Microsoft and cloud solutions.
-</p>
+## My IT and Cloud story
 
+My interest in computers started at a young age and gradually turned into hands-on work with modern IT platforms, automation, and cloud technology.
+
+Over time, that interest grew into a stronger focus on Microsoft technologies, practical infrastructure design, and building solutions that are clear, reliable, and useful in the real world.
+
+What I enjoy most is combining technical depth with a clean, understandable way of working — whether that is around cloud environments, platform engineering, or improving the experience for the people using the end result.
 {{< /powershell-about >}}
