@@ -46,3 +46,6 @@ Some concepts are basically the explaination, some of them are added with some p
 Other information comes from or is confirmed using the official learn.microsoft.com page.
 
 {{< ads >}}
+
+---
+
