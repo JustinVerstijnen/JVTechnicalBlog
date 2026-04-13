@@ -5,17 +5,14 @@ title: "About me"
 {{< powershell-about command=".\about-justin-verstijnen.ps1" >}}
 
 <div class="about-two-columns">
-<div>
+  <div class="about-card">
 
-
-
-
-### Hobbies and pasttimes
+## Hobbies and pasttimes
 
 - Photography
 - Playing guitar
 - Microsoft Flight Simulator pilot (602hrs)
-- [Student PPL pilot on the C172](https://flightblog.justinverstijnen.nl/)
+- [Student PPL pilot on the C172](https://justinverstijnen.nl/category/flying/)
 - Studying cloud solutions
 - Helping the community with my website
 - Gaming
@@ -24,10 +21,10 @@ title: "About me"
 - Fitness
 - Football
 
-</div>
-<div>
+  </div>
+  <div class="about-card">
 
-### Profiles and Socials
+## Profiles and Socials
 
 - [LinkedIn](https://www.linkedin.com/in/justinverstijnen/)
 - [Email](mailto:info@justinverstijnen.nl)
@@ -36,12 +33,12 @@ title: "About me"
 - [GitHub](https://github.com/JustinVerstijnen)
 - [Reddit](https://www.reddit.com/user/JustinVerstijnen/)
 - [Subreddit](https://www.reddit.com/r/JustinVerstijnen/)
-- [Substack](https://substack.com/@justinverstijnen)
+- [Substack](#)
 - [PowerShell Gallery](https://www.powershellgallery.com/profiles/JustinVerstijnen)
 - [YouTube](https://www.youtube.com/@JustinVerstijnen)
 - [Buy me a Coffee](https://buymeacoffee.com/justinverstijnen)
 
-</div>
+  </div>
 </div>
 
 ## My IT and Cloud story
