@@ -1,18 +1,20 @@
-{{- $id := printf "ps-about-%d" now.UnixNano -}}
-{{- $typedLines := slice `Write-Host "Starting about-me.ps1"` `Write-Host "Name: Justin Verstijnen"` `Write-Host "Location: Netherlands"` `Write-Host "Focus: Microsoft, Azure, Cloud & Automation"` `Write-Host "Rendering profile..."` `Write-Host "Done."` -}}
-
-<div id="{{ $id }}" class="ps-about" data-ps-lines='{{ jsonify $typedLines }}'>
-  <div class="ps-terminal-wrapper" aria-live="polite">
-    <div class="ps-terminal-chrome">
-      <span></span><span></span><span></span>
+<div class="ps-about" data-powershell-about>
+  <div class="ps-terminal-wrapper" data-terminal-wrapper>
+    <div class="ps-terminal-chrome" aria-hidden="true">
+      <span class="ps-terminal-dot"></span>
+      <span class="ps-terminal-dot"></span>
+      <span class="ps-terminal-dot"></span>
+      <span class="ps-terminal-title">Windows PowerShell</span>
     </div>
 
-    <pre class="ps-terminal"><span class="ps-line">PS C:\Users\Justin&gt; ./about-me.ps1</span>
-<span class="ps-output"></span><span class="ps-cursor" aria-hidden="true">█</span></pre>
+    <pre class="ps-terminal"><span class="ps-command">PS C:\Users\Justin&gt; .\about-me.ps1</span>
+<span class="ps-output" data-ps-output></span><span class="ps-cursor" data-ps-cursor>█</span></pre>
   </div>
 
-  <div class="ps-rendered about-hidden">
-    {{ .Page.RenderString .Inner }}
+  <textarea class="ps-typing-source" data-ps-source aria-hidden="true">{{ .Inner | htmlUnescape }}</textarea>
+
+  <div class="ps-rendered-content about-hidden" data-about-content>
+    {{ .Inner | safeHTML }}
   </div>
 </div>
 

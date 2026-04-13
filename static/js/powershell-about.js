@@ -1,66 +1,55 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const blocks = document.querySelectorAll(".ps-about");
+  const blocks = document.querySelectorAll("[data-powershell-about]");
 
   blocks.forEach((block) => {
-    const output = block.querySelector(".ps-output");
-    const content = block.querySelector(".ps-rendered");
+    const output = block.querySelector("[data-ps-output]");
+    const content = block.querySelector("[data-about-content]");
+    const terminal = block.querySelector("[data-terminal-wrapper]");
+    const cursor = block.querySelector("[data-ps-cursor]");
+    const source = block.querySelector("[data-ps-source]");
 
-    if (!output || !content) {
-      return;
-    }
-
-    let lines = [];
-
-    try {
-      lines = JSON.parse(block.dataset.psLines || "[]");
-    } catch (error) {
-      console.error("Could not parse PowerShell about lines.", error);
-      lines = [];
-    }
-
-    if (!Array.isArray(lines) || lines.length === 0) {
-      content.classList.remove("about-hidden");
-      content.classList.add("about-visible");
-      block.classList.add("is-finished");
+    if (!output || !content || !terminal || !source) {
       return;
     }
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const text = source.value.replace(/\r\n/g, "\n").trim();
 
-    if (reducedMotion) {
-      output.textContent = `${lines.join("\n")}\n`;
+    if (!text) {
       content.classList.remove("about-hidden");
-      content.classList.add("about-visible");
-      block.classList.add("is-finished");
+      terminal.classList.add("is-hidden");
       return;
     }
 
-    let lineIndex = 0;
-    let charIndex = 0;
+    if (reducedMotion) {
+      output.textContent = text;
+      content.classList.remove("about-hidden");
+      terminal.classList.add("is-hidden");
+      return;
+    }
+
+    let index = 0;
+    const typingSpeed = 4;
+    const finishDelay = 450;
 
     const typeNextCharacter = () => {
-      if (lineIndex >= lines.length) {
+      if (index >= text.length) {
         window.setTimeout(() => {
           content.classList.remove("about-hidden");
-          content.classList.add("about-visible");
-          block.classList.add("is-finished");
-        }, 900);
+          terminal.classList.add("is-hidden");
+
+          window.setTimeout(() => {
+            if (cursor) {
+              cursor.style.display = "none";
+            }
+          }, 360);
+        }, finishDelay);
         return;
       }
 
-      const currentLine = String(lines[lineIndex] ?? "");
-
-      if (charIndex < currentLine.length) {
-        output.textContent += currentLine.charAt(charIndex);
-        charIndex += 1;
-        window.setTimeout(typeNextCharacter, 24);
-        return;
-      }
-
-      output.textContent += "\n";
-      lineIndex += 1;
-      charIndex = 0;
-      window.setTimeout(typeNextCharacter, 180);
+      output.textContent += text.charAt(index);
+      index += 1;
+      window.setTimeout(typeNextCharacter, typingSpeed);
     };
 
     typeNextCharacter();

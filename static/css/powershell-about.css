@@ -1,57 +1,71 @@
 .ps-about {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .ps-terminal-wrapper {
-  background: linear-gradient(135deg, #012456 0%, #0f3a78 100%);
+  background: linear-gradient(135deg, #012456 0%, #0b2f6b 100%);
   border-radius: 14px;
-  padding: 0;
-  color: #ffffff;
-  margin-bottom: 2rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
   overflow: hidden;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+  transform: translateY(0);
+  opacity: 1;
+  max-height: 1200px;
+  transition: opacity 0.35s ease, transform 0.35s ease, max-height 0.45s ease, margin 0.35s ease;
+}
+
+.ps-terminal-wrapper.is-hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+  max-height: 0;
+  margin-bottom: 0;
 }
 
 .ps-terminal-chrome {
   display: flex;
-  gap: 0.5rem;
   align-items: center;
-  padding: 0.85rem 1rem;
+  gap: 0.45rem;
+  padding: 0.75rem 1rem;
   background: rgba(255, 255, 255, 0.08);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.ps-terminal-chrome span {
-  width: 0.75rem;
-  height: 0.75rem;
+.ps-terminal-dot {
+  width: 0.7rem;
+  height: 0.7rem;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.45);
 }
 
-.ps-terminal {
-  margin: 0;
-  padding: 1.25rem;
-  white-space: pre-wrap;
-  word-break: break-word;
-  font: 0.96rem/1.7 Consolas, "Cascadia Code", "Courier New", monospace;
-  min-height: 12rem;
+.ps-terminal-title {
+  margin-left: 0.4rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.82);
 }
 
-.ps-line {
-  color: #9cdcfe;
+.ps-terminal {
+  margin: 0;
+  padding: 1.2rem 1.35rem 1.35rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: Consolas, "Cascadia Code", "Courier New", monospace;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #f5f9ff;
+  min-height: 9rem;
+}
+
+.ps-command {
+  color: #ffd84d;
 }
 
 .ps-output {
-  color: #ffffff;
+  color: #f5f9ff;
 }
 
 .ps-cursor {
   display: inline-block;
   animation: ps-blink 1s steps(1) infinite;
-}
-
-.ps-about.is-finished .ps-cursor {
-  display: none;
 }
 
 @keyframes ps-blink {
@@ -60,12 +74,12 @@
   }
 }
 
+.ps-typing-source,
 .about-hidden {
   display: none;
 }
 
-.ps-rendered.about-visible {
-  display: block;
+.ps-rendered-content {
   animation: ps-fade-in 0.45s ease;
 }
 
@@ -80,9 +94,44 @@
   }
 }
 
+.ps-rendered-content .wp-block-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.ps-rendered-content .wp-block-column {
+  flex: 1 1 280px;
+}
+
+.ps-rendered-content .wp-block-table {
+  overflow-x: auto;
+}
+
+.ps-rendered-content table {
+  width: 100%;
+}
+
+.ps-rendered-content .is-style-stripes tbody tr:nth-child(odd) {
+  background: rgba(0, 0, 0, 0.035);
+}
+
+@media (max-width: 767px) {
+  .ps-terminal {
+    font-size: 0.88rem;
+    padding: 1rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .ps-cursor,
-  .ps-rendered.about-visible {
+  .ps-terminal-wrapper,
+  .ps-rendered-content {
+    transition: none;
+    animation: none;
+  }
+
+  .ps-cursor {
     animation: none;
   }
 }
