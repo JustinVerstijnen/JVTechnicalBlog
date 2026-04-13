@@ -22,7 +22,7 @@ This Azure Master Class (AMC) chapter is all about Identity in Microsoft Azure. 
 
 For every service that a user accesses, it is necessary to have an identity. Access needs to be determined, and the service must know who the user is in order to open the correct environment.
 
-**Best practice** is to always assign the least possible privileges. A person who performs 3 tasks does not need permissions for 200 tasks, but for the 3 tasks only. "Least privilege" is one of the 3 key principals of the Zero Trust model.
+Best practice is to always assign the least possible privileges. A person who performs 3 tasks does not need permissions for 200 tasks, but for the 3 tasks only. "Least privilege" is one of the 3 key principals of the Zero Trust model.
 
 ---
 
@@ -100,7 +100,7 @@ Each SKU has its own functionality and features. For the actual list of features
 
 ## Microsoft Secure Score
 
-**The Microsoft Secure Score** is a score for the Azure AD tenant on a scale from 0 to 100%. By using various security features, this score will increase, indicating how secure your identities and organization are with the use of Azure AD.
+The Microsoft Secure Score is a score for the Azure AD tenant on a scale from 0 to 100%. By using various security features, this score will increase, indicating how secure your identities and organization are with the use of Azure AD.
 
 A few tasks that improve the Secure Score of the Azure AD environment include:
 
@@ -125,7 +125,7 @@ For more information about the Microsoft Secure Score, check out my Secure Score
 
 ## Identities in Microsoft Entra ID
 
-All types of identities stored in **Microsoft Entra ID** are:
+All types of identities stored in Microsoft Entra ID are:
 
 - **Users**: Real people/employees or shared accounts.
 - **Guest Users**: Individuals from external companies who have an account with reduced rights within your tenant.
@@ -139,18 +139,18 @@ All types of identities stored in **Microsoft Entra ID** are:
 
 ## Entra ID Join/Hybrid Entra ID Joined/Entra ID Registered
 
-Devices can be added to **Microsoft Entra ID** for various reasons:
+Devices can be added to Microsoft Entra ID for various reasons:
 
-- **Single Sign-On** for users to enhance user convenience.
-- Apply configurations using **Endpoint Manager MDM**.
-- **Device registration**.
-- Security with **compliance policies**.
+- Single Sign-On for users to enhance user convenience.
+- Apply configurations using Endpoint Manager MDM.
+- Device registration for auditing what device made what request or change
+- Security with compliance policies.
 
-Devices can be added to **Microsoft Entra ID** in multiple ways, for different purposes/reasons:
+Devices can be added to **Microsoft Entra ID in multiple ways, for different purposes/reasons:
 
 - **Microsoft Entra ID registered**: to register devices such as BYOD (Bring Your Own Device). Works with Windows/Mac/Android/iOS/Ubuntu. No configuration capabilities, just registration to track which accounts are used on which device.
 - **Microsoft Entra ID joined**: to manage and register devices. In addition, it provides Single Sign-On. This is supported on Windows 10 and later (no support for Windows Server).
-- **Hybrid Microsoft Entra ID joined**\*: devices are added to **Active Directory Domain Services (AD DS)** and synced to **Microsoft Entra ID**. This offers the benefits of both AD DS and Microsoft Entra ID. Supported on Windows 10 and later (no support for Windows Server).
+- **Hybrid Microsoft Entra ID joined**\*: devices are added to Active Directory Domain Services (AD DS) and synced to **Microsoft Entra ID**. This offers the benefits of both AD DS and Microsoft Entra ID. Supported on Windows 10 and later (no support for Windows Server).
 
 *\*Active Directory Domain Services and Entra ID Connect required*
 
@@ -158,7 +158,7 @@ Devices can be added to **Microsoft Entra ID** in multiple ways, for different p
 
 ## Synchronize Active Directory (AD DS) to Microsoft Entra ID
 
-Synchronizing traditional Active Directory (AD DS) to **Microsoft Entra ID** offers the following benefits:
+Synchronizing traditional Active Directory (AD DS) to Microsoft Entra ID offers the following benefits:
 
 - Single Sign-On
 - Centralized management
@@ -177,15 +177,15 @@ To synchronize AD DS with Microsoft Entra ID, there are two solutions available:
 
 ## Roles and Administrative units
 
-**Microsoft Entra ID** has several built-in roles, which are packages with predefined permissions. These can be assigned to users to grant them access to specific functions. It is possible to create a custom role using JSON, defining actions that a user can or cannot perform (Actions/NotActions).
+Microsoft Entra ID has several built-in roles, which are packages with predefined permissions. These can be assigned to users to grant them access to specific functions. It is possible to create a custom role using JSON, defining actions that a user can or cannot perform (Actions/NotActions).
 
 To learn more about roles and custom roles, check out my guide where i go in depth of this subject: <https://justinverstijnen.nl/introduction-to-microsoft-azure-roles-rbac-iam-the-easy-way/>
 
-Roles cannot be assigned to groups, except if you create a custom group. In this case, you can specify that **Microsoft Entra ID** roles can be applied:
+Roles cannot be assigned to groups, except if you create a custom group. In this case, you can specify that Microsoft Entra ID roles can be applied:
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-2-identity-463/jv-media-463-27cce0f7cd65.png)
 
-**Administrative units** are similar to OUs (Organizational Units) in traditional AD DS, but they differ in a few aspects. They are logical groups used to add identities, with the purpose of applying additional security to control what users can and cannot manage. For example, an administrative unit for Executives can be created so that not all administrators can manage these identities.
+Administrative units are similar to OUs (Organizational Units) in traditional AD DS, but they differ in a few aspects. They are logical groups used to add identities, with the purpose of applying additional security to control what users can and cannot manage. For example, an administrative unit for Executives can be created so that not all administrators can manage these identities.
 
 Identities that can be added to administrative units are:
 
@@ -203,7 +203,7 @@ However, administrative units have some limitations/security constraints:
 
 ## Privileged Identity Management (P2)
 
-**Privileged Identity Management (PIM)** is a feature in Microsoft Entra ID to reinforce the "least privilege" concept. With PIM, you can assign roles to users or groups, but also for specific time periods. Does someone need to make a change between 12:00 PM and 12:30 PM but otherwise doesn’t need these permissions? Why should they always have those rights?
+Privileged Identity Management (PIM) is a feature in Microsoft Entra ID to reinforce the "least privilege" concept. With PIM, you can assign roles to users or groups, but also for specific time periods. Does someone need to make a change between 12:00 PM and 12:30 PM but otherwise doesn’t need these permissions? Why should they always have those rights?
 
 Privileged Identity Management is your central tool for assigning all permissions to users within your Microsoft Entra ID tenant and Azure subscriptions.
 
@@ -223,7 +223,7 @@ There are 3 types of assignments:
 
 ## Access Reviews (P2)
 
-Another option in **Microsoft Entra ID** is access reviews. This allows you to periodically review user assignments to groups and ensure that users who no longer need access are removed.
+Another option in Microsoft Entra ID is access reviews. This allows you to periodically review user assignments to groups and ensure that users who no longer need access are removed.
 
 Access reviews can assist by notifying administrators about users, but also by sending an email to the users themselves, asking whether access is still needed. If they respond with "no" or fail to respond within a set number of days, the assignment is removed, and access is revoked. This enhances the level of security while also reducing the workload for administrators.
 
@@ -231,11 +231,11 @@ Access reviews can assist by notifying administrators about users, but also by s
 
 ## Conditional Access (P1)
 
-Conditional Access is a feature of **Microsoft Entra ID** that allows users to access resources based on "if-then" rules.
+Conditional Access is a feature of Microsoft Entra ID that allows users to access resources based on "if-then" rules.
 
 This works in 3 steps:
 
-- **Signals**: Signals can include access to a specific application, certain **Microsoft Entra ID** roles, specific locations based on IP addresses, certain user groups, certain devices, or compliance of devices.
+- **Signals**: Signals can include access to a specific application, certain Microsoft Entra ID roles, specific locations based on IP addresses, certain user groups, certain devices, or compliance of devices.
 - **Verify/Grant**: In this step, you can specify whether access should be allowed or blocked. It's also possible to enforce MFA.
 - **Session**: In the Session step, you can specify how long a session remains active.
 
@@ -249,9 +249,9 @@ This works in 3 steps:
 
 ### Conditional Access Policy presedence
 
-Because you can create many different policies for **Conditional Access** to secure access to your resources, these policies work slightly differently than you might expect. For example, with firewall rules, only the first policy that is triggered applies.
+Because you can create many different policies for Conditional Access to secure access to your resources, these policies work slightly differently than you might expect. For example, with firewall rules, only the first policy that is triggered applies.
 
-With **Conditional Access**, the effective policy for a user is determined by all the available policies, and they are combined. In addition, the following two rules are taken into account:
+With Conditional Access, the effective policy for a user is determined by all the available policies, and they are combined. In addition, the following two rules are taken into account:
 
 - **Blocking takes precedence over allowing**: If the same user is subject to two policies, where one blocks access and the other allows access, the effective access will be blocked.
 - **The most restrictive policy wins over the less restrictive policy**: This means the policy that allows the least access will be effectively applied.
@@ -260,11 +260,11 @@ With **Conditional Access**, the effective policy for a user is determined by al
 
 ## Entra ID Multi Factor Authentication
 
-**Multi-Factor Authentication** prevents alot of password-based attacks. However, enabling MFA isn't a clean security method. It can still be phished by attacks like Evilnginx: https://evilginx.com/
+Multi-Factor Authentication prevents alot of password-based attacks. However, enabling MFA isn't a clean security method. It can still be phished by attacks like Evilnginx: https://evilginx.com/
 
-Additionally, the two recommended ways to enable MFA are **Security defaults** (free) or through **Conditional Access** (P1).
+Additionally, the two recommended ways to enable MFA are Security defaults (free) or through Conditional Access (P1).
 
-**Microsoft Entra ID** supports Multi-Factor Authentication. This means that, in addition to entering an email address and password, you also need to complete multiple factors.
+Microsoft Entra ID supports Multi-Factor Authentication. This means that, in addition to entering an email address and password, you also need to complete multiple factors.
 
 During authentication (AuthN), it is verified whether you are truly who you say you are, and whether your identity is valid. Multi-Factor Authentication means that you can perform two or more of the following methods:
 
@@ -297,21 +297,21 @@ During authentication (AuthN), it is verified whether you are truly who you say 
 
 ### Smart use of MFA
 
-MFA should be deployed intelligently so that it doesn’t become an action that appears for every minor activity, to prevent MFA fatigue. In **Conditional Access**, for example, you can set how long a session can remain active, so that the user doesn’t have to perform any action during that time, using the same cookies. If an attacker logs in from elsewhere in the world, they will still receive the MFA prompt to complete.
+MFA should be deployed intelligently so that it doesn’t become an action that appears for every minor activity, to prevent MFA fatigue. In Conditional Access, for example, you can set how long a session can remain active, so that the user doesn’t have to perform any action during that time, using the same cookies. If an attacker logs in from elsewhere in the world, they will still receive the MFA prompt to complete.
 
 The user cannot mindlessly click "Allow" but must also confirm the number displayed on the screen. While the user could guess the number, the chance of guessing correctly is 1 in 100, and the number changes with each request.
 
 ### Registration for MFA and SSPR
 
-Before a user can use MFA, they must register for it. This means the initial configuration of the method and verifying the method. When registering for MFA, the registration for **Self-Service Password Reset (SSPR)** is also completed at the same time.
+Before a user can use MFA, they must register for it. This means the initial configuration of the method and verifying the method. When registering for MFA, the registration for Self-Service Password Reset (SSPR) is also completed at the same time.
 
-With **Microsoft Entra ID** security defaults, all users must register for MFA but don’t need to use it for every login (exception: administrators). When a system requires MFA from a user, the user must always register and use it immediately.
+With Microsoft Entra ID security defaults, all users must register for MFA but don’t need to use it for every login (exception: administrators). When a system requires MFA from a user, the user must always register and use it immediately.
 
 ### Self-Service Password Reset (SSPR)
 
-Self-Service Password Reset is a feature of **Microsoft Entra ID** that allows a user to change their password without the intervention of the IT department by performing a backup method, such as MFA, an alternate private email address, or a phone number.
+Self-Service Password Reset is a feature of Microsoft Entra ID that allows a user to change their password without the intervention of the IT department by performing a backup method, such as MFA, an alternate private email address, or a phone number.
 
-You can find the portal to reset your password via the link below, or by pressing **CTRL+ALT+DELETE** on a **Microsoft Entra ID**-joined computer and then selecting "Change Password". Otherwise, this is the link:
+You can find the portal to reset your password via the link below, or by pressing CTRL+ALT+DELETE on a Microsoft Entra ID-joined computer and then selecting "Change Password". Otherwise, this is the link:
 
 <https://passwordreset.microsoftonline.com>
 
@@ -323,13 +323,13 @@ B2B and B2C can be seen as similar to how trusts used to work. This allows a use
 
 It is possible to block certain tenants (blacklist) or only allow certain tenants (whitelist) for use with guest users to prevent attacks or unwanted access. This can be configured in Microsoft Entra ID → External Identities → Cross-tenant access settings.
 
-With B2C, it is entirely focused on customers. Customers can, for example, log in with Google or Facebook to an application published with Microsoft Entra ID. B2C does not work with guest users and is used purely for authentication. This must first be set up in **Microsoft Entra ID** → **External Identities**.
+With B2C, it is entirely focused on customers. Customers can, for example, log in with Google or Facebook to an application published with Microsoft Entra ID. B2C does not work with guest users and is used purely for authentication. This must first be set up in Microsoft Entra ID and then External Identities.
 
 ---
 
 ## Azure Active Directory Domain Services (Azure AD DS)
 
-The traditional **Active Directory** with OUs and Group Policies is an outdated solution but is still needed for some applications/use cases (AVD/FSLogix). It is possible to get this as a service in **Azure**. A subscription to **Azure** is required for this.
+The traditional Active Directory with OUs and Group Policies is an outdated solution but is still needed for some applications/use cases (AVD/FSLogix). It is possible to get this as a service in Azure. A subscription to Azure is required for this.
 
 With this solution, it is no longer necessary to set up and configure a separate VM as a Domain Controller. By default, this service is configured redundantly with 2 servers and a load balancer and costs about half (~90-100 euros per month, depending on the SKU and the number of objects) compared to a good server (~200 euros).
 
