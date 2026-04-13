@@ -136,10 +136,10 @@ params:
 
   links:
     developer:
-      - name: Site information
-        url: /site/
-        icon: fa-solid fa-chart-area
-        desc: Site build information.
+      - name: Header picture
+        url: /header-picture/
+        icon: fa-regular fa-camera
+        desc: Header picture
       - name: Send me an email
         url: mailto:info@justinverstijnen.nl
         icon: fa fa-envelope
