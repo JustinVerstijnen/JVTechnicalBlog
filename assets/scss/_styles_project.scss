@@ -64,9 +64,9 @@
   display: none;
 }
 
-/* Default link styling */
+/* Default link styling (slightly darker version for readability light/dark)*/
 a {
-  color: #6e89ab;
+  color: #4b92cb;
   text-decoration: none;
 }
 
@@ -342,7 +342,7 @@ body:not(.home-navbar-transparent) .td-navbar .td-search .form-control:-ms-input
 
 /* Blog posts pages styles */
 .td-toc #TableOfContents a.active {
-    color: #2b4975;
+    color: #4b92cb;
     border-left-color: #77B0DE;
 }
 
