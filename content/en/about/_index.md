@@ -2,7 +2,7 @@
 title: "About me"
 ---
 
-{{< powershell-about command=".\\about-justin-verstijnen.ps1" >}}
+{{< powershell-about command=".\about-justin-verstijnen.ps1" >}}
 I am Justin Verstijnen, I live in the Netherlands and am 27 years old. My interest in computers started around the age of 8 and has never been less.
 
 <div class="about-two-columns">
@@ -13,7 +13,7 @@ I am Justin Verstijnen, I live in the Netherlands and am 27 years old. My intere
 - Photography
 - Playing guitar
 - Microsoft Flight Simulator pilot (602hrs)
-- [Student PPL pilot on the C172](https://justinverstijnen.nl/category/flying/)
+- [Student PPL pilot on the C172](https://flightblog.justinverstijnen.nl/)
 - Studying cloud solutions
 - Helping the community with my website
 - Gaming
@@ -28,12 +28,13 @@ I am Justin Verstijnen, I live in the Netherlands and am 27 years old. My intere
 ### Profiles and Socials
 
 - [LinkedIn](https://www.linkedin.com/in/justinverstijnen/)
+- [Email](mailto:info@justinverstijnen.nl)
 - [Microsoft Learn](https://learn.microsoft.com/en-us/users/justinverstijnen/)
 - [Microsoft Certification Transcript](https://learn.microsoft.com/en-us/users/justinverstijnen/transcript/71kg1ag8p16k9e0)
 - [GitHub](https://github.com/JustinVerstijnen)
 - [Reddit](https://www.reddit.com/user/JustinVerstijnen/)
 - [Subreddit](https://www.reddit.com/r/JustinVerstijnen/)
-- [Email](mailto:info@justinverstijnen.nl)
+- [Substack](https://substack.com/@justinverstijnen)
 - [PowerShell Gallery](https://www.powershellgallery.com/profiles/JustinVerstijnen)
 - [YouTube](https://www.youtube.com/@JustinVerstijnen)
 - [Buy me a Coffee](https://buymeacoffee.com/justinverstijnen)
@@ -83,5 +84,9 @@ In my daily job I am busy designing, building, maintaining, securing and improvi
 | 3CX Expert |  |
 | Cisco Certified Networking Associate 1 + 2 | CCNA 1, CCNA 2 |
 | ITIL 4 Foundation |  |
+
+In 2023 I founded this website and wanted to use it as my personal documentation system, as I went to research pretty much solutions. Documenting these solutions and actually being able to explain them pushes me further than only trying a solution and knowing I did something with it.
+
+Thank you for visiting my website.
 
 {{< /powershell-about >}}
