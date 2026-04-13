@@ -1,12 +1,11 @@
 # RFC 9116 security.txt for justinverstijnen.nl
 
 Canonical: https://justinverstijnen.nl/.well-known/security.txt
-Canonical: https://www.justinverstijnen.nl/.well-known/security.txt
 
 Expires: 2027-02-08T00:00:01+00:00
 
 # Responsible disclosure / vulnerability reporting policy
-Policy: https://justinverstijnen.nl/terms-conditions
+Policy: https://justinverstijnen.nl/blog/terms-conditions
 
 # Preferred reporting method
 Contact: mailto:info@justinverstijnen.nl
