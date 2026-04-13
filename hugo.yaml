@@ -26,7 +26,7 @@ menu:
       url: https://tools.justinverstijnen.nl
       weight: 20
     - name: About
-      url: https://justinverstijnen.nl/about
+      url: /about/
       weight: 30
 
 taxonomies:
@@ -103,7 +103,7 @@ params:
   copyright:
     authors: >-
        | Justin Verstijnen |
-    from_year: 2024
+    from_year: 2023
     to_year: present
 
   # User interface configuration
@@ -138,7 +138,7 @@ params:
     developer:
       - name: Site information
         url: /site/
-        icon: fa-area-chart
+        icon: fa-solid fa-chart-area
         desc: Site build information.
       - name: Send me an email
         url: mailto:info@justinverstijnen.nl
