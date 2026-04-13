@@ -1,12 +1,14 @@
 ---
+
 title: "Module 1: Fundaments of Cloud and Azure"  
 date: 2024-10-17  
 slug: "amc-module-1-fundamentals-of-cloud-and-microsoft-azure"  
 categories:
-- Azure Master Class  
-tags:
-- Concepts  
-description: >  
+
+*   Azure Master Class  
+    tags:
+*   Concepts  
+    description: >  
     This chapter is about the term "Cloud" and the fundamentals of Microsoft Azure and Cloud Services in general.
 
 ---
@@ -194,9 +196,8 @@ The table below shows which services can be categorized under the above concepts
 
 Microsoft Azure is a Infrastructure-as-a-service platform which is cloud based. It focusses primairly on replacing your infrastructure and hosting it in the cloud. This goes further than hosting a virtual machine or hosting a file storage.
 
-To go back to the navigation page: <https://justinverstijnen.nl/blog/azure-master-class/>
+To go back to the navigation page: \<https://justinverstijnen.nl/blog/azure-master-class/\>
 
+{{ \< ads >}}
 
-{{\< ads >}}
-
-{{\< article-footer >}}
+{{ \< article-footer >}}

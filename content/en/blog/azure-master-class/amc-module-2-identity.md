@@ -71,7 +71,7 @@ However, it differs some from the old Active Directory Domain Services protocols
 | Verification protocols | NTLM & Kerberos | Open ID, OAuth 2.0, SAML, WS-FED |
 | Query protocols | LDAP | Powershell |
 
-## Federation
+### Federation
 
 The Federation process means that an application trusts a federation server, allowing it to issue tokens for Single Sign-On.
 
@@ -80,6 +80,8 @@ The Federation process means that an application trusts a federation server, all
 ## Multiple Entra ID tenants
 
 It is possible to create multiple Azure ADs within a single .onmicrosoft tenant. For example, for a partner who works on the same tenant with a different domain name. This can be done in the Microsoft Azure marketplace.
+
+---
 
 ## Microsoft Entra ID SKUs
 
@@ -94,9 +96,7 @@ Microsoft Entra ID consists of 4 different licenses:
 - **Microsoft Entra ID Premium P2**
   - You get this SKU when one or more users have Microsoft Entra ID Premium P2 licenses.
 
-Each SKU has its own functionality:
-
-For the actual list of features, please visit: <https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-licensing#available-versions-of-azure-ad-multi-factor-authentication>
+Each SKU has its own functionality and features. For the actual list of features, please visit: <https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-licensing#available-versions-of-azure-ad-multi-factor-authentication>
 
 ## Microsoft Secure Score
 
@@ -118,6 +118,8 @@ There are multiple overviews of the Microsoft Secure Score. In the Security port
 In the Microsoft Entra portal, only the "Identity" score is shown:
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-2-identity-463/jv-media-463-b1d9fbbd7ebd.png)
+
+For more information about the Microsoft Secure Score, check out my Secure Score pages on the left.
 
 ---
 
@@ -227,6 +229,35 @@ Access reviews can assist by notifying administrators about users, but also by s
 
 ---
 
+## Conditional Access (P1)
+
+Conditional Access is a feature of **Microsoft Entra ID** that allows users to access resources based on "if-then" rules.
+
+This works in 3 steps:
+
+- **Signals**: Signals can include access to a specific application, certain **Microsoft Entra ID** roles, specific locations based on IP addresses, certain user groups, certain devices, or compliance of devices.
+- **Verify/Grant**: In this step, you can specify whether access should be allowed or blocked. It's also possible to enforce MFA.
+- **Session**: In the Session step, you can specify how long a session remains active.
+
+**Examples**:
+
+- A user tries to access Windows 365 from IP address 88.134.65.213. For this, they must complete an MFA challenge every 2 hours.
+- A user logs in into a service from a blocked country -> Block access
+- A normal user doesn't have to do MFA but a administrative user must do MFA
+
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-2-identity-463/jv-media-463-68aa35fb7fc8.png)
+
+### Conditional Access Policy presedence
+
+Because you can create many different policies for **Conditional Access** to secure access to your resources, these policies work slightly differently than you might expect. For example, with firewall rules, only the first policy that is triggered applies.
+
+With **Conditional Access**, the effective policy for a user is determined by all the available policies, and they are combined. In addition, the following two rules are taken into account:
+
+- **Blocking takes precedence over allowing**: If the same user is subject to two policies, where one blocks access and the other allows access, the effective access will be blocked.
+- **The most restrictive policy wins over the less restrictive policy**: This means the policy that allows the least access will be effectively applied.
+
+---
+
 ## Entra ID Multi Factor Authentication
 
 **Multi-Factor Authentication** prevents alot of password-based attacks. However, enabling MFA isn't a clean security method. It can still be phished by attacks like Evilnginx: https://evilginx.com/
@@ -248,7 +279,7 @@ During authentication (AuthN), it is verified whether you are truly who you say 
   - Biometric verification
   - Facial recognition
 
-## Complexity levels for MFA methods
+### Complexity levels for MFA methods
 
 |  |  |  |
 | --- | --- | --- |
@@ -264,60 +295,25 @@ During authentication (AuthN), it is verified whether you are truly who you say 
 | Authenticator app passkey | Pretty safe | An authenticator app with the use of passkeys is very safe. It is like a software FIDO key and is very hard to phish (yet). |
 | FIDO 2 key | Pretty safe | Use of a FIDO 2 key is the most secure option at this moment to use to authenticate. |
 
----
-
-## Smart use of MFA
+### Smart use of MFA
 
 MFA should be deployed intelligently so that it doesn’t become an action that appears for every minor activity, to prevent MFA fatigue. In **Conditional Access**, for example, you can set how long a session can remain active, so that the user doesn’t have to perform any action during that time, using the same cookies. If an attacker logs in from elsewhere in the world, they will still receive the MFA prompt to complete.
 
 The user cannot mindlessly click "Allow" but must also confirm the number displayed on the screen. While the user could guess the number, the chance of guessing correctly is 1 in 100, and the number changes with each request.
 
----
-
-## Registration for MFA and SSPR
+### Registration for MFA and SSPR
 
 Before a user can use MFA, they must register for it. This means the initial configuration of the method and verifying the method. When registering for MFA, the registration for **Self-Service Password Reset (SSPR)** is also completed at the same time.
 
 With **Microsoft Entra ID** security defaults, all users must register for MFA but don’t need to use it for every login (exception: administrators). When a system requires MFA from a user, the user must always register and use it immediately.
 
----
-
-## Self-Service Password Reset (SSPR)
+### Self-Service Password Reset (SSPR)
 
 Self-Service Password Reset is a feature of **Microsoft Entra ID** that allows a user to change their password without the intervention of the IT department by performing a backup method, such as MFA, an alternate private email address, or a phone number.
 
 You can find the portal to reset your password via the link below, or by pressing **CTRL+ALT+DELETE** on a **Microsoft Entra ID**-joined computer and then selecting "Change Password". Otherwise, this is the link:
 
 <https://passwordreset.microsoftonline.com>
-
----
-
-## Conditional Access (P1)
-
-Conditional Access is a feature of **Microsoft Entra ID** that allows users to access resources based on "if-then" rules.
-
-This works in 3 steps:
-
-- **Signals**: Signals can include access to a specific application, certain **Microsoft Entra ID** roles, specific locations based on IP addresses, certain user groups, certain devices, or compliance of devices.
-- **Verify/Grant**: In this step, you can specify whether access should be allowed or blocked. It's also possible to enforce MFA.
-- **Session**: In the Session step, you can specify how long a session remains active.
-
-**Examples**:
-
-- A user tries to access Windows 365 from IP address 88.134.65.213. For this, they must complete an MFA challenge every 2 hours.
-- A user logs in into a service from a blocked country -> Block access
-- A normal user doesn't have to do MFA but a administrative user must do MFA
-
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-2-identity-463/jv-media-463-68aa35fb7fc8.png)
-
-## Conditional Access Policy presedence
-
-Because you can create many different policies for **Conditional Access** to secure access to your resources, these policies work slightly differently than you might expect. For example, with firewall rules, only the first policy that is triggered applies.
-
-With **Conditional Access**, the effective policy for a user is determined by all the available policies, and they are combined. In addition, the following two rules are taken into account:
-
-- **Blocking takes precedence over allowing**: If the same user is subject to two policies, where one blocks access and the other allows access, the effective access will be blocked.
-- **The most restrictive policy wins over the less restrictive policy**: This means the policy that allows the least access will be effectively applied.
 
 ---
 
@@ -356,7 +352,7 @@ The Identity part is a huge part of Microsoft Azure. At each level it's good to 
 
 Because Identity has become the primary attack vector the last years, we have to defend ourselves to Identity-based attacks. This is because humans do the most with their identity and this is the most easy target for attackers.
 
-Always keep the Zero Trust principals in mind when configuring identities:
+Always keep the Zero Trust principles (guidelines) in mind when configuring identities:
 
 - Least privilege
 - Verify explicitly
