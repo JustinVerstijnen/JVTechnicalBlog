@@ -197,6 +197,6 @@ Microsoft Azure is a Infrastructure-as-a-service platform which is cloud based. 
 
 To go back to the navigation page: \<https://justinverstijnen.nl/blog/azure-master-class/\>
 
-{{ \< ads >}}
+{{ < ads >}}
 
-{{ \< article-footer >}}
+{{ < article-footer >}}
