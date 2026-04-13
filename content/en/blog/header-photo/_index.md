@@ -1,8 +1,11 @@
-
-
-
-
-
+---
+title: "Header Photo"
+description: "This page contains information about my header photo."
+date: 2024-06-19
+build:
+  render: always
+  list: never
+---
 
 ## Header photo
 As you might know, I am interested in photograpy and really like to shoot some pictures now and then. The header photo is a great example of that.

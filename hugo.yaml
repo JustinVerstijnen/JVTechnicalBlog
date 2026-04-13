@@ -137,7 +137,7 @@ params:
   links:
     developer:
       - name: Header photo
-        url: /header-photo/
+        url: /blog/header-photo/
         icon: fa-regular fa-camera
         desc: Header picture
       - name: Send me an email
