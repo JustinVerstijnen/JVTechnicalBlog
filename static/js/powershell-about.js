@@ -15,11 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const outputLines = [
-      "Loading profile data...",
-      "Grouping hobbies and profiles...",
+      "Loading Justin's information...",
+      "12,7% completed...",
+      "Grouping Justin's hobbies and profiles...",
+      "42% completed...",
       "Formatting certifications table...",
-      "Rendering Markdown page...",
-      "Done."
+      "67% completed...",
+      "Rendering webpage...",
+      "100% completed!"
     ];
 
     if (prefersReducedMotion) {
