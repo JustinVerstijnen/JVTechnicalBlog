@@ -12,7 +12,7 @@ title: "About me"
 - Photography
 - Playing guitar
 - Microsoft Flight Simulator pilot (602hrs)
-- [Student PPL pilot on the C172](https://justinverstijnen.nl/category/flying/)
+- [Student PPL pilot on the C172](https://flightblog.justinverstijnen.nl/)
 - Studying cloud solutions
 - Helping the community with my website
 - Gaming
@@ -33,7 +33,7 @@ title: "About me"
 - [GitHub](https://github.com/JustinVerstijnen)
 - [Reddit](https://www.reddit.com/user/JustinVerstijnen/)
 - [Subreddit](https://www.reddit.com/r/JustinVerstijnen/)
-- [Substack](#)
+- [Substack](https://substack.com/@justinverstijnen)
 - [PowerShell Gallery](https://www.powershellgallery.com/profiles/JustinVerstijnen)
 - [YouTube](https://www.youtube.com/@JustinVerstijnen)
 - [Buy me a Coffee](https://buymeacoffee.com/justinverstijnen)
