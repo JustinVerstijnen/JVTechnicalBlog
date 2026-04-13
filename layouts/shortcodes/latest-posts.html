@@ -1,0 +1,48 @@
+<div class="container my-5">
+  <div class="row mb-5">
+    <div class="col text-center">
+      <h2>Latest blog posts</h2>
+      <p class="lead">An overview of my three most recently published articles.</p>
+    </div>
+  </div>
+
+  <div class="row g-4 justify-content-center">
+    {{ range first 3 (where site.RegularPages.ByDate.Reverse "Section" "blog") }}
+      <div class="col-md-10 col-lg-4 d-flex">
+        <div class="card homepage-post-card homepage-equal-card w-100">
+          <div class="card-body d-flex flex-column">
+            {{ with index .Params.categories 0 }}
+              <p class="homepage-post-category">{{ . }}</p>
+            {{ end }}
+
+            <h3 class="h5 card-title">
+              <a href="{{ .RelPermalink }}" class="homepage-post-title">{{ .Title }}</a>
+            </h3>
+
+            {{ with .Date }}
+              <p class="homepage-post-date">{{ .Format "January 2, 2006" }}</p>
+            {{ end }}
+
+            <p class="card-text flex-grow-1">
+              {{ with .Description }}
+                {{ . }}
+              {{ else }}
+                {{ .Summary | plainify | truncate 160 }}
+              {{ end }}
+            </p>
+
+            <div class="mt-auto">
+              <a href="{{ .RelPermalink }}" class="btn btn-primary">Read post</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+
+  <div class="row">
+    <div class="col text-center mt-3">
+      <a class="btn btn-outline-primary" href="/blog/">View all blog posts</a>
+    </div>
+  </div>
+</div>
