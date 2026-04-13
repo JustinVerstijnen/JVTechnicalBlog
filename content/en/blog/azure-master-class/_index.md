@@ -11,7 +11,7 @@ description: >
 ---
 ## Introduction to this Azure Master Class
 
-Hey there! I have a new collection of blog posts here. A while ago (2023) I followed the Azure Master Class course of John Savill, and done some extra research into some of the components of Azure. I wrote those things down to learn from it and have some documentation. Firstly, this was for personal use but after founding this website and blog I decided to rework it and publish all the information because I think it can be very helpful.
+Hey there! This is a collection of pages with overall information for Microsoft Azure. A while ago (2023) I followed the Azure Master Class course of John Savill, and done some extra research into some of the components of Azure. I wrote those things down to learn from it and have some documentation. Firstly, this was for personal use but after founding this website and blog I decided to rework it and publish all the information because I think it can be very helpful.
 
 I find some of the pages very interesting, but are not neccesarily to prepare you for a specific exam. It contains overal general knowledge of Azure, its components and some deep information about services. It is true that some information can really help you understand those concepts which can appear in your Azure exams journey.
 
@@ -19,26 +19,18 @@ I find some of the pages very interesting, but are not neccesarily to prepare yo
 
 ## Modules
 
+Here are all the pages summed up. You can also find them in the blog side bar under the Azure Master Class folder.
+
 [**1:** Fundamentals of Cloud & Azure](https://justinverstijnen.nl/module-1-fundamentals-of-cloud-and-microsoft-azure/)
-
 [**2:** Identity](https://justinverstijnen.nl/amc-module-2-identity/)
-
 [**3:** Governance](https://justinverstijnen.nl/ama-module-3-governance-in-microsoft-azure/)
-
 [**4:** Resiliency & Redundancy](https://justinverstijnen.nl/amc-module-4-resiliency-and-redundancy/)
-
 [**5:** Storage](https://justinverstijnen.nl/amc-module-5-storage/)
-
 [**6:** Networking](https://justinverstijnen.nl/amc-module-6-networking-in-microsoft-azure/)
-
 [**7:** Virtual Machines and Scale Sets](https://justinverstijnen.nl/amc-module-6-networking-in-microsoft-azure/)
-
 [**8:** Application Services and Containers](https://justinverstijnen.nl/ama-module-8-application-services-and-containers/)
-
 [**9:** Databases & AI](https://justinverstijnen.nl/amc-module-9-databases-ai/)
-
 [**10:** Monitoring and Security](https://justinverstijnen.nl/amc-module-10-monitoring-and-security/)
-
 [**11:** Infrastructure as Code (IaC) and DevOps](https://justinverstijnen.nl/amc-module-11-infrastructure-as-code-iac-and-devops/)
 
 ---
@@ -54,5 +46,3 @@ Some concepts are basically the explaination, some of them are added with some p
 Other information comes from or is confirmed using the official learn.microsoft.com page.
 
 {{< ads >}}
-
-{{< article-footer >}}
