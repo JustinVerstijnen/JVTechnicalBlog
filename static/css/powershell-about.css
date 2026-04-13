@@ -3,7 +3,7 @@
 }
 
 .ps-terminal-wrapper {
-  background: linear-gradient(180deg, #171717 0%, #090909 100%);
+  background: #0e202c;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   box-shadow: 0 22px 54px rgba(0, 0, 0, 0.35);
