@@ -7,7 +7,6 @@ build:
   list: never
 ---
 
-## Header photo
 As you might know, I am interested in photograpy and really like to shoot some pictures now and then. The header photo is a great example of that.
 
 
