@@ -7,7 +7,8 @@
 ## Header photo
 As you might know, I am interested in photograpy and really like to shoot some pictures now and then. The header photo is a great example of that.
 
-![](https://raw.githubusercontent.com/JustinVerstijnen/ProjectKaasplank/ac1f0f839b3490a9a032073d7aadd67f82c32774/content/en/featured-background.jpg)
+
+<img src="https://raw.githubusercontent.com/JustinVerstijnen/ProjectKaasplank/ac1f0f839b3490a9a032073d7aadd67f82c32774/content/en/featured-background.jpg" alt="picture" width="800"/>
 
 
 This header photo is taken by me in Italy in September 2023. We were on holiday to the area of the Garda Lake, at the edge of the Alps. The last day of this vacation we went to a small town with a cable car to the top of the mountains. At the highest point you can be around 3069 meters.
