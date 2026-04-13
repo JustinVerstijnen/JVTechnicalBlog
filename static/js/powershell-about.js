@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const output = block.querySelector(".ps-output");
     const cursor = block.querySelector(".ps-cursor");
     const content = block.querySelector(".ps-markdown");
-    const scriptName = block.dataset.command || ".\\about-justin-verstijnen.ps1";
+    const scriptName = block.dataset.command || ".\about-justin-verstijnen.ps1";
 
     if (!terminal || !command || !output || !cursor || !content) {
       return;

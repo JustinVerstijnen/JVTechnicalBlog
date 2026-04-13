@@ -1,4 +1,4 @@
-{{- $command := .Get "command" | default ".\\about-justin-verstijnen.ps1" -}}
+{{- $command := .Get "command" | default ".\about-justin-verstijnen.ps1" -}}
 {{- $content := .Inner | strings.TrimSpace -}}
 {{- $rendered := .Page.RenderString $content -}}
 
