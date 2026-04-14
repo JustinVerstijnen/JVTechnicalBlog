@@ -35,6 +35,8 @@ Go to the following path:
 
 *Computer Configuration -> Policies -> Administrative Templates -> FSLogix*
 
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/solved-fslogix-update-25-02-breaks-recycle-bin-bug-1312/jv-media-1312-983cda2f2bff.png)
+
 Here you can find the option "Roam Recycle Bin", which is enabled by default -> even when in a "Not Configured" state. Disable this option and click on "OK".
 
 After this change, reboot your session host(s) to update the FSLogix configuration and after rebooting log in again and check if this solved your problem. Otherwise, advance to the second option.
@@ -67,6 +69,8 @@ We have 2 options to "fix" the profile:
 - Backup all of your data in the profile and delete it. Then let FSLogix regenerate a new profile
 - Restore a backup of the profile, before the FSLogix update to 25.02
 
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/solved-fslogix-update-25-02-breaks-recycle-bin-bug-1312/jv-media-1312-c20e8ab02a2c.png)
+
 After logging in with a new or restored profile, the problem is solved.
 
 ---
@@ -82,6 +86,10 @@ After some more research, I came across a page of Microsoft about a lot of featu
 {{% /alert %}}
 
 If I helped you with this guide to fix this bug, it was my pleasure and thank you for reading it.
+
+### Sources
+1. <https://learn.microsoft.com/en-us/fslogix/reference-configuration-settings?tabs=profiles#roamrecyclebin>
+2. <https://learn.microsoft.com/en-us/fslogix/overview-release-notes>
 
 {{< ads >}}
 

@@ -92,6 +92,8 @@ Then create a Group Policy with an start-up script that targets this script and 
 
 *User Configuration -> Policies -> Windows Settings -> Scripts (Logon)*
 
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/microsoft-store-applications-on-azure-virtual-desktop-fslogix-997/jv-media-997-5eb06a2f9530.png)
+
 Add your network added script there. Then head over to your AVD application.
 
 ---

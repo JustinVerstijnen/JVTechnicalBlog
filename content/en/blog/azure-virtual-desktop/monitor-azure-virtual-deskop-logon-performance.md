@@ -52,7 +52,7 @@ After about 15 seconds, we get the results from the script with readable informa
 
 Here we have some basic information like the total time, the username, the FSLogix profile mounting, the possible Loopback processing mode and the total time of all login phases at the bottom.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-ephemeral-os-disks-in-azure-2810/jv-media-2810-418ccb396975.png)
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitor-azure-virtual-deskop-logon-performance-1938/jv-media-1938-f72e46dd6bde.png)
 
 This is a nice overview of the total sign in time and where this time is spent. In my case, I did not use FSLogix because of 1 session host.
 
@@ -60,23 +60,23 @@ This is a nice overview of the total sign in time and where this time is spent. 
 
 At this section there are some tasks that happens in the background. In this case, the client refreshed some Group Policy scripts.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-ephemeral-os-disks-in-azure-2810/jv-media-2810-9078c80fb440.png)
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitor-azure-virtual-deskop-logon-performance-1938/jv-media-1938-955aa258a0e5.png)
 
 ### Login scheduled tasks
 
 Here the script assessed the scheduled tasks on the machine that ran on the login of the user. Some tasks can take much time to perform, but in this case it was really fast.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-ephemeral-os-disks-in-azure-2810/jv-media-2810-1d857be631d6.png)
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitor-azure-virtual-deskop-logon-performance-1938/jv-media-1938-31c20a901802.png)
 
 ### Group Policies
 
 At this section the group policies are assessed. This takes more time the more settings and different policies you have.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-ephemeral-os-disks-in-azure-2810/jv-media-2810-139ba22657d8.png)
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitor-azure-virtual-deskop-logon-performance-1938/jv-media-1938-b90600f23aa6.png)
 
 After that the script summarizes the processing time on the client for the Group Policy Client Side Extensions (CSE). This means, the machine get its settings and the CSE interprets this into machine actions.
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-ephemeral-os-disks-in-azure-2810/jv-media-2810-0a762a372402.png)
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitor-azure-virtual-deskop-logon-performance-1938/jv-media-1938-68d1df24a9ce.png)
 
 ---
 
