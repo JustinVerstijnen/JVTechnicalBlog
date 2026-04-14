@@ -18,5 +18,4 @@ v{{% param version %}} </span>][version]
 
 [version]: <https://github.com/google/docsy/releases/v{{% param version %}}>
 
-Test
-
+Site running on Github Pages. To learn more about Github Pages, visit [This blogpost](https://justinverstijnen.nl/getting-started-with-github-pages/)
