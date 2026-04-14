@@ -9,11 +9,6 @@ tags:
   - Step by Step guides
 description: >
   Active Directory Domain Controllers are assigned 5 different FSMO roles, which all have their own function. We can separate them over multiple servers to create more redundancy, but make sure to handle those all as servers. All roles neeed a 24/7 uptime for your environment to work properly. In this guide, I will give a brief explaination of the roles, what their function is and how to move them to different servers to enhance availability and redundancy.
-  
----
-Active Directory Domain Controllers are assigned 5 different FSMO roles, which all have their own function. We can separate them over multiple servers to create more redundancy, but make sure to handle those all as servers. All roles neeed a 24/7 uptime for your environment to work properly.
-
-In this guide, I will give a brief explaination of the roles, what their function is and how to move them to different servers to enhance availability and redundancy.
 
 ---
 
