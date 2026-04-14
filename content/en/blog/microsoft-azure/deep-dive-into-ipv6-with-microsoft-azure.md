@@ -29,6 +29,8 @@ In this guide we do a deep dive into IPv6 in Microsoft Azure and i will show som
 
 By default, Azure pushes you to use an IPv4 address space when creating a virtual network in Azure. Now this is the best understandable and easy version of addressing.
 
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/deep-dive-into-ipv6-with-microsoft-azure-869/jv-media-869-3d7741153121.png)
+
 In some cases we want to give our IPv6 addresses only, IPv4 addresses only or use dual-stack where we assign both IPv4 and IPv6 to our resources.
 
 In the wizard, we can remove the default generated address space and design our own, IPv6 based address space like i have done below:
@@ -41,7 +43,7 @@ In the same window, we can configure our subnets in the IPv6 variant:
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/deep-dive-into-ipv6-with-microsoft-azure-869/jv-media-869-a2cdc8c6a467.png)
 
-Here i created a subnet called Subnet-1 which has address block **fd01::/64** which means there are 264 (18 quintillion) addresses possible in one subnet. Azure only supports /64 subnets in IPv6, this because this has the best support over all devices and operating systems worldwide.
+Here I created a subnet called Subnet-1 which has address block **fd01::/64** which means there are 264 (18 quintillion) addresses possible in one subnet. Azure only supports /64 subnets in IPv6, this because this has the best support over all devices and operating systems worldwide.
 
 For demonstration purposes i created 3 subnets where we can connect our resources:
 
@@ -63,9 +65,11 @@ So we have to add IPv4 address spaces to our IPv6 network to connect machines. T
 
 Go to your virtual network and open "Address space"
 
-Here i added a 10.0.0.0/8 IPv4 address space:
+Here I added a 10.0.0.0/8 IPv4 address space:
 
-Now we have to add IPv4 spaces to our subnets, what i have already done:
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/deep-dive-into-ipv6-with-microsoft-azure-869/jv-media-869-4d9736f22f98.png)
+
+Now we have to add IPv4 spaces to our subnets, what I have already done:
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/deep-dive-into-ipv6-with-microsoft-azure-869/jv-media-869-e102ed9f7769.png)
 
@@ -119,7 +123,11 @@ To actually test the IPv6 connectivity, we can setup a webserver in one of the s
 
 I used a simple webserver image to create a new VM and placed it in Subnet-2. After that i created a secondary connection just like the other Windows based VM and added a private and a public IPv6 address:
 
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/deep-dive-into-ipv6-with-microsoft-azure-869/jv-media-869-1356641b39dc.png)
+
 Now we are on the first VM which runs on Windows and we try to connect to the webserver:
+
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/deep-dive-into-ipv6-with-microsoft-azure-869/jv-media-869-e8352765fecb.png)
 
 A ping request works fine and we get a response from the webserver.
 
@@ -129,9 +137,13 @@ I went to Edge and opened the website by using the IPv6 address: https://[fd02::
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/deep-dive-into-ipv6-with-microsoft-azure-869/jv-media-869-be6d73c6ab25.png)
 
-The webserver works, but i get a 404 not found page. This is by my design because i did not publish a website. The connection works like a charm!
+The webserver works, but I get a 404 not found page. This is by my design because I did not publish a website. The connection works like a charm!
+
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/deep-dive-into-ipv6-with-microsoft-azure-869/jv-media-869-4ba611a206da.png)
 
 The webserver also works with the added Public IPv6 address:
+
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/deep-dive-into-ipv6-with-microsoft-azure-869/jv-media-869-e7ffb88534e6.png)
 
 Small note: some webservers/firewalls may be configured manually to listen to IPv6. With my used image, this was the case.
 

@@ -236,7 +236,7 @@ Get-MpThreatCatalog
 
 This will give you a list of millions of signature items Microsoft has in its database. You could use this to lookup a single definition in it, rather than executing the command and get the millions of items.
 
-[](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-microsoft-defender-for-endpoint-with-powershell-7360/jv-media-7360-e45a2402644e.mp4)
+[Video](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-microsoft-defender-for-endpoint-with-powershell-7360/jv-media-7360-e45a2402644e.mp4)
 
 ---
 

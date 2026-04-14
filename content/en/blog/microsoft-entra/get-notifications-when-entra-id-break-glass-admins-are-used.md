@@ -168,7 +168,7 @@ Finish the creation of the Action group.
 
 Now we have configured everything, we can test the working of this alert. Let's prepare an InPrivate window to login to the account:
 
-[](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/get-notifications-when-entra-id-break-glass-admins-are-used-4337/jv-media-4337-44117bb526d6.mp4)
+[Video](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/get-notifications-when-entra-id-break-glass-admins-are-used-4337/jv-media-4337-44117bb526d6.mp4)
 
 I have logged in seconds from **13:20:08** hours. Let's wait till I receive the alerting phone call.
 
