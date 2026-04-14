@@ -363,3 +363,15 @@ body:not(.home-navbar-transparent) .td-navbar .td-search .form-control:-ms-input
 .td-sidebar-nav .nav-item summary:focus {
   color: #77B0DE !important;
 }
+
+/* Add breathing room below code blocks and code cards */
+.td-content .highlight,
+.td-content .td-card.card {
+  margin-bottom: 1rem;
+}
+
+/* Keep compact layout when a code block/card is the final element */
+.td-content > .highlight:last-child,
+.td-content > .td-card.card:last-child {
+  margin-bottom: 0;
+}

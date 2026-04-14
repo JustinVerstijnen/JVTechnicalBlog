@@ -74,7 +74,7 @@ Assign the script to the group containing your devices where you want to autosta
 
 ## The results
 
-After the script was applied which can take up to 30 minutes, and after restarting the computer, the Windows App will automatically start after the user logs in, automating this process and elaminating the start-up wait time:
+After the script has been applied, which may take up to 30 minutes, and the computer has been restarted, the Windows app will start automatically when the user logs in, automating the process and eliminating the startup wait time.
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatically-start-windows-app-at-startup-6832/jv-media-6832-9c54e9225ca2.png)
 
