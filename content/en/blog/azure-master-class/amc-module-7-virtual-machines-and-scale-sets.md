@@ -13,7 +13,7 @@ This module explicitly covers virtual machines and virtual machines in combinati
 
 ---
 
-# Virtual Machines (VMs)
+## Virtual Machines (VMs)
 
 Virtual Machines are one of the most commonly used services in Microsoft Azure. This is because a customizable virtual machine allows for nearly unlimited possibilities, and most software requires a real desktop environment for installation.
 
@@ -21,7 +21,7 @@ Technically, all virtual machines run on Microsoft's hardware within Azure. A se
 
 With virtual machines, the system administrator or customer is responsible for everything within the VM. This makes it an **IaaS** *(Infrastructure as a Service)* solution. Microsoft ensures the VM runs properly from a technical standpoint, but the customer is responsible for everything from the VM's operating system and beyond.
 
-## Virtual Machine Extensions
+### Virtual Machine Extensions
 
 Azure can enable various extensions for virtual machines. These are small pieces of software installed as Windows Services within the VM to enhance integration with the Azure Backbone and the Azure Portal. When an extension is required for a specific function, Azure will automatically install it at the VM-bus level.
 
@@ -37,20 +37,20 @@ These extensions help optimize and automate VM management within Microsoft Azure
 
 ---
 
-# Virtual Machine workloads
+## Virtual Machine workloads
 
 Before choosing a VM size and family, we first want to do some research about the actual workload/tasks that the VM has to support. Compare this to driving a car, we have to buy tires that exactly fit the car and type of rims of your car and driving style.
 
 In Azure, various virtual machine configurations are available to meet different requirements. The amount of resources a VM needs depends entirely on its workload. Below is a reference guide to help determine the appropriate resource allocation for different types of workloads:
 
-## RAM-Dependent Workload
+### RAM-Dependent Workload
 
 These workloads require a high amount of memory (RAM):
 
 - Database/SQL servers
 - Application servers
 
-## CPU-Dependent Workload
+### CPU-Dependent Workload
 
 For CPU-intensive workloads, it is crucial to choose the right number of vCPUs and the correct CPU generation.
 
@@ -66,7 +66,7 @@ Examples of CPU-dependent workloads:
 - Analytics-based applications
 - Email servers
 
-## Disk-Dependent Workload
+### Disk-Dependent Workload
 
 Disk performance depends on capacity, IOPS/throughput, and latency. Workloads that require high disk performance include:
 
@@ -80,7 +80,7 @@ Every application/software is different and always review the recommended specs 
 
 ---
 
-# Virtual Machine families and sizes
+## Virtual Machine families and sizes
 
 In Azure, every type of virtual machine is classified into families and sizes. You have to select one of the available sizes that suit your needs. This is a difference when used to on-premises virtualization solutions like Hyper-V or VMware where you can exactly assign the resources you need. To exactly know which VM you must pick, it is good to know where to pick from.
 
@@ -100,7 +100,7 @@ The following virtual machine families/editions are available:
 
 The ratio of vCPU and RAM can be confusing, but it stands for; General purpose has 4 GBs of RAM for every vCPU and Memory-optimized has 8 GBs of RAM for every vCPU.
 
-## Virtual Machine sub-families
+### Virtual Machine sub-families
 
 When a virtual machine family/edition has more than one letter (for example: DC), the second letter serves as a sub-family. This indicates that the virtual machine is designed for two purposes. The available second letters/sub-families stands for:
 
@@ -111,7 +111,7 @@ When a virtual machine family/edition has more than one letter (for example: DC)
 
 Each type of virtual machine in Azure is identified by a name, such as E8s\_v5, D8\_v2, F4s\_v1. This name provides information about the configuration and composition of the virtual machine. Here are some more examples of names:
 
-# Virtual Machine naming convention
+## Virtual Machine naming convention
 
 |  |
 | --- |
@@ -139,7 +139,7 @@ So all features and details are included in the name of the VM, but if a machine
 
 ---
 
-## Virtual Machine features
+### Virtual Machine features
 
 Virtual machines also have specific features, which are indicated in the VM name/size. If the feature is not mentioned, the virtual machine does not have that feature.
 
@@ -162,7 +162,7 @@ These features are always indicated in lowercase letters:
 - **t**: The letter "t" in a VM size indicates that the VM has much less (tiny) RAM compared to other machines in the same family.
   *Example*: E4tv5
 
-## Virtual Machine accelerators
+### Virtual Machine accelerators
 
 Certain types of virtual machines also include an accelerator, which is often a GPU. Azure has several different types of GPUs for different purposes:
 
@@ -179,7 +179,7 @@ The type of GPU is directly reflected in the virtual machine name, such as:
 
 - **NC24ads\_A100\_v4**
 
-## Virtual Machine versions
+### Virtual Machine versions
 
 Each virtual machine edition has its own version number, which indicates the generation of physical hardware the virtual machine runs on. The best practice is to always select the highest version possible. Lower versions may be "throttled" to simulate lower speeds, and you'll pay the same amount for a higher version number.
 
@@ -187,17 +187,17 @@ Versions available to this day are v1 to v6 in some families.
 
 The biggest factor influencing performance is the CPU. The higher the version number, the faster and newer the CPU will be.
 
-# Generation 1 VMs vs Generation 2 VMs
+## Generation 1 VMs vs Generation 2 VMs
 
 Azure is based on Hyper-V, where you also deal with Generation 1 and Generation 2 virtual machines. The differences are as follows:
 
-### **Generation 1 (Gen 1)**
+#### **Generation 1 (Gen 1)**
 
 - BIOS-based
 - IDE boot (max. 2TB disk)
 - MBR (Master Boot Record)
 
-### **Generation 2 (Gen 2)**
+#### **Generation 2 (Gen 2)**
 
 - UEFI-based
 - Secure Boot
@@ -207,7 +207,7 @@ Azure is based on Hyper-V, where you also deal with Generation 1 and Generation 
 
 Not all virtual machines support both generations. So, you should take this into account when designing your architecture. Also, because Windows 11 and up requires Secure Boot and TPM so Gen 2 is required for Windows 11.
 
-# Azure VM building blocks
+## Azure VM building blocks
 
 A virtual machine on Azure is not a standalone resource; it is a collection of various resources that make the term "virtual machine" workable. It consists of:
 
@@ -221,7 +221,7 @@ A virtual machine on Azure is not a standalone resource; it is a collection of v
 - Availability Set, Zone, Proximity Placement Group: For ensuring high availability, redundancy, and optimal placement of VMs.
 - Reserved Instance: For reserving a VM for a longer term at a discounted price.
 
-# Supported OSs on Azure VMs
+## Supported OSs on Azure VMs
 
 On Azure, the basic support is available for:
 
@@ -230,19 +230,19 @@ On Azure, the basic support is available for:
 
 Through the Azure Marketplace, it is possible to install a wide range of different operating systems, but it also offers ready-made solutions that are deployed with ARM templates. These ARM (Azure Resource Manager) templates help automate the deployment and configuration of complex environments, including both OS and application-level setups.
 
-# Isolated VM options
+## Isolated VM options
 
 In Microsoft Azure, by default, your virtual machine is placed on a hypervisor. It is quite possible that virtual machines from completely different companies are running on the same hypervisor/physical server. By default, Azure does not allow these machines to connect with each other, as they are well isolated for security reasons.
 
 However, there may be cases where a company, due to legal or regulatory requirements, cannot run virtual machines on the same server as another company. For such cases, Azure offers the following options:
 
-## **Azure Isolated VM**
+### **Azure Isolated VM**
 
 - An Azure Isolated VM is a VM that runs exclusively on a physical server, without any other VMs from your own company or others.
 - Drawbacks: These VMs have a relatively short lifespan as they are often replaced by Microsoft, and they tend to be more expensive, starting with editions that have 72 vCPUs.
 - Alternative: In such cases, Azure Dedicated Host may be a better option.
 
-## **Azure Dedicated Host**
+### **Azure Dedicated Host**
 
 - With Azure Dedicated Host, you rent an entire physical server according to your specifications, and you can populate it with your own VMs.
 - Advantages: This server is dedicated solely to your tenant and will not be used by Azure for other purposes, ensuring complete isolation.
@@ -251,7 +251,7 @@ Both options provide greater control and isolation for specific regulatory needs
 
 ---
 
-# Virtual Machine Scale Sets (VMSS)
+## Virtual Machine Scale Sets (VMSS)
 
 In Azure, you can create a Virtual Machine Scale Set. This means it is a set of identical virtual machines, all with 1 purpose like hosting a website on the web-tier. These sets of virtual machines can scale up or down according to the load of the machines. Scale Sets focusses primarily on achieving High Availability and saving costs.
 
@@ -267,7 +267,7 @@ Virtual Machine Scale Sets are an example of "Horizontal Scaling" where more ins
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-7-virtual-machines-and-scale-sets-993/jv-media-993-6f876b1787aa.png)
 
-## VMSS configuration
+### VMSS configuration
 
 The configuration of VMSS can be done in the Azure Portal and starts with configuring a condition to scale up and down and defining the minimum, maximum and default amount of instances:
 
@@ -277,7 +277,7 @@ After the conditions are configured, we can define the rules where we plan when 
 
 I am no expert in Scale Sets myself but i know the basic concept. If you want to learn more, refer to this guide: <https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-portal>
 
-## Practice Scenarios
+### Practice Scenarios
 
 What type of scenario's can really profit from scale sets?
 
@@ -287,17 +287,17 @@ What type of scenario's can really profit from scale sets?
 
 ---
 
-# Maintenance and Hotpatching
+## Maintenance and Hotpatching
 
 Microsoft automatically maintains virtual machines and hypervisors. It’s possible for Microsoft to put a VM into a **"freeze"** mode, where the virtual machine does not need to be turned off, but critical updates can still be applied, often without the customer noticing.
 
 To protect your applications from these micro-outages, it’s recommended to place multiple virtual machines in an availability set. Here, you can define different update domains, ensuring that not all VMs are patched at the same time.
 
-## Azure Guest Patch Orchestration
+### Azure Guest Patch Orchestration
 
 Azure Guest Patch Orchestration is an extension for the VM that automatically installs Windows updates on a schedule. This solution always works according to the “**Availability-first**” model, meaning it will not update all virtual machines in the same region simultaneously.
 
-## Azure Update Manager
+### Azure Update Manager
 
 Azure Update Management Center is a solution within Azure that can update virtual machines directly from the Azure Portal. It allows for applying both Windows and Linux updates without logging into the VMs. Additionally, you can update a whole batch of Azure VMs and Azure ARC machines from a central system.
 
@@ -307,7 +307,7 @@ These solutions help manage updates while ensuring that applications and VMs on 
 To learn more about Azure Update Manager, check out my guide: <https://justinverstijnen.nl/using-azure-update-manager-to-manage-updates-at-scale/>
 {{% /alert %}}
 
-# Azure Compute Gallery
+## Azure Compute Gallery
 
 The Azure Compute Gallery is a service that allows you to create custom images for deployment. You can use this for Azure Virtual Desktop, virtual machines, and more.
 
@@ -315,13 +315,13 @@ You can create an image definition and associate multiple versions under it to e
 
 In the Azure Compute Gallery, you can also choose between LRS (Locally Redundant Storage) or ZRS (Zone-Redundant Storage) for data center redundancy.
 
-# Azure VMware solutions
+## Azure VMware solutions
 
 In Azure, it is possible to use VMware as a service. In this setup, Azure provisions a VMware server for you on its own physical hardware. This server connects to Azure via ExpressRoute.
 
 Normally, virtual machines in Azure run on Hyper-V, which is Microsoft's own virtualization solution. However, with this service, you can create your own VMware host or even a cluster of hosts. Additionally, these VMware hosts can be connected to an on-premises vCenter server. This allows you to integrate your existing VMware environment with Azure's infrastructure.
 
-# Azure Arc
+## Azure Arc
 
 Azure Arc is a service that allows you to add servers outside of Azure as if they were part of Azure. This means you can integrate servers from AWS, Google Cloud, other public clouds, or on-premises servers to be managed in Azure.
 
@@ -341,7 +341,7 @@ This allows you to have consistent management, monitoring, and security policies
 
 ---
 
-# Summary
+## Summary
 
 Virtual Machines are the most important feature of cloud computing in general. Virtual Machines enable you to build possibly 95% of all applications needed for an organization. It also gives great flexibility but not profit that much of the cloud as a whole. Remember, there is no such "cloud". Its only others computer.
 
