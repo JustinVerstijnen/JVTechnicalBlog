@@ -144,6 +144,10 @@ params:
         url: mailto:info@justinverstijnen.nl
         icon: fa fa-envelope
         desc: Discuss development issues around the project
+      - name: Sitemap
+        url: /sitemap.xml
+        icon: fa-solid fa-rss
+        desc: Sitemap
 
 security:
   funcs: # cspell:disable-line
