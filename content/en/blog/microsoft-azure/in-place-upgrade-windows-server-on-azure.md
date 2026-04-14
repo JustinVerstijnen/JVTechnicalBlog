@@ -31,7 +31,7 @@ Because Windows Server 2025 is now out for almost a year and runs really stable,
 
 We will perform the upgrade by having a eligible server, and we will create an upgrade media for it. Then we will assign this upgrade media to the server, which will effectively put in the ISO. Then we can perform the upgrade from the guest OS itself and wait for around an hour.
 
-Recommended is before you start, to perform this task in a maintenance window and to have a full server backup. Upgrading Windows Server isnt always a full waterproof process and errors can occur.
+Recommended is before you start, to perform this task in a maintenance window and to have a full server backup. Upgrading Windows Server isnt always a full waterproof process and errors will always occur if not having a plan b.
 
 You'll be happy to have followed my advice on this one if this goes wrong.
 
@@ -194,7 +194,7 @@ This process can take 45 minutes up to 2 hours, depending on the workload and th
 
 After the machine will restart, RDP connection will be lost. However, you can check the status of the upgrade using the Azure Portal.
 
-[](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/in-place-upgrade-windows-server-on-azure-134/jv-media-134-3844a9e96c1d.mp4)
+[Video](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/in-place-upgrade-windows-server-on-azure-134/jv-media-134-3844a9e96c1d.mp4)
 
 Go to the virtual machine you are upgrading, and go to: "Boot diagnostics"
 
