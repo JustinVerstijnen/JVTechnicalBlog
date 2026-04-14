@@ -241,7 +241,7 @@ Let's configure this account as Honeytoken account in the Security portal. Go to
 
 Tag the user and select it from the list.
 
-
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/penetration-testing-defender-for-identity-and-active-directory-1049/jv-media-1049-00a625bce214.png)
 
 After that save the account and let's generate some alerts.
 
