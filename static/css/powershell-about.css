@@ -12,6 +12,11 @@ body.has-ps-about-page .td-main {
   padding-top: calc(var(--ps-about-navbar-offset) + 0.75rem);
 }
 
+body.has-ps-about-page.ps-about-intro-active .td-footer {
+  visibility: hidden;
+  opacity: 0;
+}
+
 body.has-ps-about-page .ps-about,
 body.has-ps-about-page .ps-markdown,
 body.has-ps-about-page .ps-markdown h1,

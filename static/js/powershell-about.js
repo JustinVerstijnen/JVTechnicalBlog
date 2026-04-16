@@ -53,6 +53,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const blocks = document.querySelectorAll(".ps-about");
 
+  if (blocks.length > 0) {
+    document.body.classList.add("ps-about-intro-active");
+  }
+
+  let pendingBlocks = blocks.length;
+
+  const releaseIntroState = () => {
+    pendingBlocks = Math.max(0, pendingBlocks - 1);
+
+    if (pendingBlocks === 0) {
+      document.body.classList.remove("ps-about-intro-active");
+    }
+  };
+
   blocks.forEach((block) => {
     const terminal = block.querySelector(".ps-terminal-wrapper");
     const command = block.querySelector(".ps-command");
@@ -106,7 +120,10 @@ document.addEventListener("DOMContentLoaded", () => {
       cursor.style.display = "none";
       showContent();
       terminal.classList.add("is-hidden");
-      setTimeout(releaseReservedHeight, 50);
+      setTimeout(() => {
+        releaseReservedHeight();
+        releaseIntroState();
+      }, 50);
       return;
     }
 
@@ -122,7 +139,10 @@ document.addEventListener("DOMContentLoaded", () => {
         terminal.classList.add("is-hidden");
       });
 
-      setTimeout(releaseReservedHeight, 450);
+      setTimeout(() => {
+        releaseReservedHeight();
+        releaseIntroState();
+      }, 450);
     }
 
     function typeOutput() {
