@@ -79,21 +79,21 @@ Click on the blue button above. You now are on the GitHub page of the script.
 
 Click on "Code" and then "Download ZIP".
 
-Now place the files on the server where you want to install the script.
+Now place the files on the server where you want to execute the script.
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/windows-server-inventory-report-script-3866/jv-media-3866-7b76c7b8117c.png)
 
-Unzip the file and then we can run the "Install" script. This must be run as administrator and temporarily without Execution Policy.
+Unzip the ZIP file.
 
 Open Powershell ISE as administrator.
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/windows-server-inventory-report-script-3866/jv-media-3866-4baa015038fe.png)
 
-After opening PowerShell ISE and after authenticating, open the "Install" script.
+After opening PowerShell ISE and after authenticating, open the script.
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/windows-server-inventory-report-script-3866/jv-media-3866-a00421852055.png)
 
-Review the script to understand what it does. This is always a recommendation before executing unknown scripts.
+Review the script to understand what it does. This is always a good recommendation before executing unknown scripts.
 
 After reviewing, run the following command to temporarily disable the PowerShell execution policy:
 
