@@ -93,13 +93,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const outputLines = [
-      "Loading Justin's information...",
+      "$hobbies | Format-List",
       "12,7% completed...",
-      "Formatting table...",
+      "$profiles | Format-List",
       "42% completed...",
       "$certifications | Format-Table",
-      "67% completed...Done",
-      "Rendering webpage..."
+      "67% completed...",
+      "Script executed succesfully!"
     ];
 
     const releaseReservedHeight = () => {
