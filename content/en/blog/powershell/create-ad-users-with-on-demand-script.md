@@ -66,6 +66,8 @@ Then place the ZIP file on your Active Directory management server.
 
 Open PowerShell ISE as Administrator:
 
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-ad-users-with-on-demand-script-3685/jv-media-3685-db8174903971.png)
+
 Verify your credentials if needed and then use the "Open" function of PowerShell ISE and open the script file:
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-ad-users-with-on-demand-script-3685/jv-media-3685-ad901a5a5b5a.png)
