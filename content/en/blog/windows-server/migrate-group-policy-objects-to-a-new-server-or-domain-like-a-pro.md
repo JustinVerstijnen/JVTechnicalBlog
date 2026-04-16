@@ -1,15 +1,18 @@
 ---
-title: "Migrate Group Policies to a new server or domain like a pro"
-date: 2024-08-07
-slug: "migrate-group-policy-objects-to-a-new-server-or-domain-like-a-pro"
+
+title: "Migrate Group Policies to a new server or domain like a pro"  
+date: 2024-08-07  
+slug: "migrate-group-policy-objects-to-a-new-server-or-domain-like-a-pro"  
 categories:
-  - Windows Server
+- Windows Server  
 tags:
-  - AI Generated Content
-  - Step by Step guides
-description: >
-  Once in a while, we as IT administrators need to migrate our Group Policies of Windows Server to another server. Sometimes to...
+- AI Generated Content
+- Step by Step guides  
+description: >  
+    Once in a while, we as IT administrators need to migrate our Group Policies of Windows Server to another server. Sometimes to...
+
 ---
+
 Once in a while, we as IT administrators need to export and import our Group Policies of Windows Server to another server. Sometimes to copy a great policy you've built, or to migrate a customer to a new server.
 
 By default, the only option Microsoft has built in into Group Policy Management (gpmc.msc) is the backup option. This creates some administrative tasks.
@@ -20,7 +23,7 @@ By default, the only option Microsoft has built in into Group Policy Management 
 
 I have created two scripts with Powershell that fully exports and imports all Group Policy Objects (GPOs). This with 2 seperate scripts. These can be found and downloaded from my Github page:
 
-[Export script](https://github.com/JustinVerstijnen/MigrateGroupPoliciesScripts/blob/main/ExportGroupPolicies.ps1)
+[Export script](https://github.com/JustinVerstijnen/MigrateGroupPoliciesScripts/blob/main/ExportGroupPolicies.ps1)  
 [Import script](https://github.com/JustinVerstijnen/MigrateGroupPoliciesScripts/blob/main/ImportGroupPolicies.ps1)
 
 ---
@@ -29,19 +32,21 @@ I have created two scripts with Powershell that fully exports and imports all Gr
 
 When having our Group Policies in place on a server, create a new folder on a preferred place like Desktop.
 
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/migrate-group-policy-objects-to-a-new-server-or-domain-like-a-pro-324/jv-media-324-2d71683c68b3.png)
+
 Save my Export script to a .ps1 file and place that into the newly created folder.
 
 If you haven't changed your Powershell script execution policy yet, do a shift + right click on a empty space in the folder, and run the command:
 
-{{< card code=true header="**POWERSHELL**" lang="powershell" >}}
-Set-ExecutionPolicy Unrestricted -Scope Process
-{{< /card >}}
+{{\< card code=true header="\*\*POWERSHELL\*\*" lang="powershell" >}}  
+Set-ExecutionPolicy Unrestricted -Scope Process  
+{{\< /card >}}
 
-After that you can run the script by typing .\\*tab button\*
+After that you can run the script by typing .\\\*tab button\*
 
-{{< card code=true header="**POWERSHELL**" lang="powershell" >}}
-.\ExportGroupPolicies.ps1
-{{< /card >}}
+{{\< card code=true header="\*\*POWERSHELL\*\*" lang="powershell" >}}  
+.\\ExportGroupPolicies.ps1  
+{{\< /card >}}
 
 This will temporarily accept our script and other scripts till we close the Powershell window. This is the best and most secure way handling the Execution Policy of Powershell.
 
@@ -71,7 +76,7 @@ We now execute the script to import the Group Policies:
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/migrate-group-policy-objects-to-a-new-server-or-domain-like-a-pro-324/jv-media-324-d9ee1292e70a.png)
 
-If you haven't temporarily disabled your PowerShell execution policy yet, [do this just like in the exporting action.](#powershell-execution-policy-disable)
+If you haven't temporarily disabled your PowerShell execution policy yet, [do this just like in the exporting action.](#using-the-export-script-to-migrate-group-policies)
 
 After succesfully executing the script, our GPO is available and ready to link to our OU. This is the only task what we have to do manually.
 
@@ -87,6 +92,6 @@ I have used this script multiple times and I am very satisfied.
 
 Thank you for reading this page and hope it was interesting and helpful.
 
-{{< ads >}}
+{{\< ads >}}
 
-{{< article-footer >}}
+{{\< article-footer >}}

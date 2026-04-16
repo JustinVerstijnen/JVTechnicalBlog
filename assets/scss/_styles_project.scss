@@ -375,3 +375,30 @@ body:not(.home-navbar-transparent) .td-navbar .td-search .form-control:-ms-input
 .td-content > .td-card.card:last-child {
   margin-bottom: 0;
 }
+
+/* About page fixed navbar offset */
+body.has-ps-about-page {
+  --ps-about-navbar-offset: 0px;
+}
+
+body.has-ps-about-page .td-main {
+  padding-top: calc(var(--ps-about-navbar-offset) + 0.75rem);
+}
+
+body.has-ps-about-page .ps-about,
+body.has-ps-about-page .ps-markdown,
+body.has-ps-about-page .ps-markdown h1,
+body.has-ps-about-page .ps-markdown h2,
+body.has-ps-about-page .ps-markdown h3,
+body.has-ps-about-page .ps-markdown h4,
+body.has-ps-about-page .ps-markdown h5,
+body.has-ps-about-page .ps-markdown h6,
+body.has-ps-about-page .ps-markdown [id] {
+  scroll-margin-top: calc(var(--ps-about-navbar-offset) + 1rem);
+}
+
+@media (max-width: 900px) {
+  body.has-ps-about-page .td-main {
+    padding-top: calc(var(--ps-about-navbar-offset) + 0.5rem);
+  }
+}

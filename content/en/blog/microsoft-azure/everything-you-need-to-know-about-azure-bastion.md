@@ -307,7 +307,7 @@ We are once again connected, and this session will be recorded. You can find the
 
 The recording looks like this, watch me installing the ISS role for demonstration of this function. This is a recording that Azure Bastion has made.
 
-[](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/everything-you-need-to-know-about-azure-bastion-3240/jv-media-3240-35dde68855fe.mp4)
+[Video](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/everything-you-need-to-know-about-azure-bastion-3240/jv-media-3240-35dde68855fe.mp4)
 
 ---
 

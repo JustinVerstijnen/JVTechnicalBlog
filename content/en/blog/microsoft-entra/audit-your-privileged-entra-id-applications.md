@@ -215,7 +215,6 @@ When executed, it asks to login to a tenant. Here you have to login to the tenan
 
 {{% alert color="info" %}}
 When prompted that the Execution Policy is restricted, you can use this command for a one-time bypass until the window closes:
-
 {{< card code=true header="**POWERSHELL**" lang="powershell" >}}
 Set-ExecutionPolicy Unrestricted -Scope Process
 {{< /card >}}

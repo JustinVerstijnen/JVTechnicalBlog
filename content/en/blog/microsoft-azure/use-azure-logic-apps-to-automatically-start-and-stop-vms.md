@@ -26,6 +26,10 @@ Azure Logic Apps is a solution to automate flows that we can run based on a trig
 
 To keep it simple, such logic app can looks like this:
 
+<!-- draw.io diagram -->
+<div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;dark-mode&quot;:&quot;auto&quot;,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;Electron\&quot; agent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.15 Chrome/134.0.6998.205 Electron/35.2.1 Safari/537.36\&quot; version=\&quot;26.2.15\&quot;&gt;\n  &lt;diagram name=\&quot;Pagina-1\&quot; id=\&quot;vu_1MCZk8u4QtrpTwHyX\&quot;&gt;\n    &lt;mxGraphModel dx=\&quot;1992\&quot; dy=\&quot;645\&quot; grid=\&quot;1\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;1\&quot; fold=\&quot;1\&quot; page=\&quot;1\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;1169\&quot; pageHeight=\&quot;827\&quot; math=\&quot;0\&quot; shadow=\&quot;0\&quot;&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;1\&quot; parent=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;HWtHuZUkWH_dWUqPsxzS-2\&quot; value=\&quot;\&quot; style=\&quot;image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Logic_Apps.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;-1157.82\&quot; y=\&quot;10\&quot; width=\&quot;75.64\&quot; height=\&quot;59\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HWtHuZUkWH_dWUqPsxzS-3\&quot; value=\&quot;\&quot; style=\&quot;image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/general/Scheduler.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;-967.8199999999999\&quot; y=\&quot;14.5\&quot; width=\&quot;50\&quot; height=\&quot;50\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HWtHuZUkWH_dWUqPsxzS-4\&quot; value=\&quot;\&quot; style=\&quot;image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/compute/Virtual_Machine.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;-637.8199999999999\&quot; y=\&quot;14.5\&quot; width=\&quot;69\&quot; height=\&quot;64\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HWtHuZUkWH_dWUqPsxzS-5\&quot; value=\&quot;\&quot; style=\&quot;sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.a7_power\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;-797.8199999999999\&quot; y=\&quot;14.5\&quot; width=\&quot;50\&quot; height=\&quot;50\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HWtHuZUkWH_dWUqPsxzS-6\&quot; value=\&quot;&amp;lt;b&amp;gt;Logic App&amp;lt;/b&amp;gt;\&quot; style=\&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;-1160\&quot; y=\&quot;80\&quot; width=\&quot;80\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HWtHuZUkWH_dWUqPsxzS-7\&quot; value=\&quot;&amp;lt;b&amp;gt;Schedule&amp;lt;/b&amp;gt;&amp;lt;div&amp;gt;&amp;lt;b&amp;gt;(every day on 9:00 AM)&amp;lt;/b&amp;gt;&amp;lt;/div&amp;gt;\&quot; style=\&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;-1017.8199999999999\&quot; y=\&quot;75\&quot; width=\&quot;150\&quot; height=\&quot;40\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HWtHuZUkWH_dWUqPsxzS-8\&quot; value=\&quot;&amp;lt;b&amp;gt;Power-On&amp;lt;/b&amp;gt;\&quot; style=\&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;-812.8199999999999\&quot; y=\&quot;78.5\&quot; width=\&quot;80\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HWtHuZUkWH_dWUqPsxzS-9\&quot; value=\&quot;&amp;lt;b&amp;gt;Virtual Machine&amp;lt;/b&amp;gt;\&quot; style=\&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;-658.3199999999999\&quot; y=\&quot;78.5\&quot; width=\&quot;110\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HWtHuZUkWH_dWUqPsxzS-10\&quot; value=\&quot;\&quot; style=\&quot;endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;flowAnimation=1;entryX=-0.033;entryY=0.503;entryDx=0;entryDy=0;entryPerimeter=0;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; target=\&quot;HWtHuZUkWH_dWUqPsxzS-3\&quot;&gt;\n          &lt;mxGeometry width=\&quot;50\&quot; height=\&quot;50\&quot; relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;-1080\&quot; y=\&quot;39\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;-990\&quot; y=\&quot;40\&quot; as=\&quot;targetPoint\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HWtHuZUkWH_dWUqPsxzS-11\&quot; value=\&quot;\&quot; style=\&quot;endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;flowAnimation=1;entryX=0.008;entryY=0.499;entryDx=0;entryDy=0;entryPerimeter=0;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; target=\&quot;HWtHuZUkWH_dWUqPsxzS-5\&quot;&gt;\n          &lt;mxGeometry width=\&quot;50\&quot; height=\&quot;50\&quot; relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;-917.8199999999999\&quot; y=\&quot;39\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;-807.64\&quot; y=\&quot;40\&quot; as=\&quot;targetPoint\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HWtHuZUkWH_dWUqPsxzS-12\&quot; value=\&quot;\&quot; style=\&quot;endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;flowAnimation=1;entryX=-0.033;entryY=0.503;entryDx=0;entryDy=0;entryPerimeter=0;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;\n          &lt;mxGeometry width=\&quot;50\&quot; height=\&quot;50\&quot; relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;-747.8199999999999\&quot; y=\&quot;39\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;-637.64\&quot; y=\&quot;40\&quot; as=\&quot;targetPoint\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;\n&quot;}"></div>
+<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+
 In Logic Apps there are templates to help you starting out what the possibilities are:
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-cb39a3173818.png)
@@ -54,6 +58,8 @@ Logic Apps are relatively cheap, most of the time we can save a lot more money o
 
 Advance to the next step.
 
+![]()
+
 Create the app by filling in the details and finish the wizard.
 
 After finishing the wizard, we have our Logic App in place, and now we can configure our "flows" and the 3 examples.
@@ -78,6 +84,8 @@ We now have a Logic App created, but it cannot do something for us unless we giv
 
 In the Logic App, go to "Identity" and enable the System-assigned managed identity.
 
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-369dbaef3a5d.png)
+
 Now we have to give this Managed Identity permissions to a certain scope. Since my Minecraft server is in a specific Resource Group, I can assign the permissions there. If you create flows for one specific machine in a resource group with multiple machines, assign the permissions on the VM level instead.
 
 In my example, I will assign the permissions at Resource Group level.
@@ -85,6 +93,8 @@ In my example, I will assign the permissions at Resource Group level.
 Go to the Resource group where your Virtual Machine resides, and open the option "Access Control (IAM)".
 
 Add a new Role assignment here:
+
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-9f0e84a8dd6a.png)
 
 Select the role "Virtual Machine Contributor" or a custom role with the permissions:
 
@@ -96,7 +106,11 @@ Click on "Next".
 
 Select the option "Managed Identity" and select the Logic App identity:
 
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-210c599a138d.png)
+
 Select the Managed Identity that we created.
+
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-1f16ed3fa273.png)
 
 Assign the role and that concludes the permissions-part.
 
@@ -131,6 +145,8 @@ Save the trigger and now we have to add actions to perform after the trigger.
 Click on the "+" under Recurrence and then "add a task" to link a task to the recurrence.
 
 Search for: "virtual machine"
+
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-c2e01e58b203.png)
 
 Select the option "Start virtual machine".
 

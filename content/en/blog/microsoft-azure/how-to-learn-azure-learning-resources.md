@@ -23,7 +23,7 @@ To give a quick overview of all the training resources I used throughout the yea
 
 When starting out, my advice is to first watch the following video of John Savill explaining Microsoft Azure and giving a real introduction.
 
-https://www.youtube.com/watch?v=\_x1V2ny8FWM
+https://www.youtube.com/watch?v=_x1V2ny8FWM
 
 After this, there is a Microsoft Learn collection available which describes the beginning of Azure:
 
@@ -40,10 +40,12 @@ Because we are learning to understand, administer and later on architecting a so
 
 When you have a creditcard you can sign up for a free 150 to 200 dollar budget which is free. When the budget is depleted there are no costs involved till you as user agree with costs.
 
-My advice is to explore the portal and train yourself to do for example the following:
+My advice is to explore the portal and train yourself to do simple tasks like:
 
-1. Create a virtual machine and connect to it
+1. Create a virtual machine and connect to it using RDP or SSH
 2. Create a virtual network and network peering
+3. Create network security groups
+4. Create a virtual machine and backup it
 
 ---
 
@@ -61,9 +63,9 @@ John Savil: <https://www.youtube.com/watch?v=tQp1YkB2Tgs>
 
 John has a extra playlist for each concept where he will go deeper into the subject than in the cram. You can find that here: <https://www.youtube.com/playlist?list=PLlVtbbG169nED0_vMEniWBQjSoxTsBYS3>
 
-[AZ-900 Text course](https://learn.microsoft.com/en-us/training/courses/az-900t00#course-syllabus)
-[AZ-900 Video course](https://www.youtube.com/playlist?list=PLlVtbbG169nED0_vMEniWBQjSoxTsBYS3)
-[AZ-900 Study Cram](https://www.youtube.com/watch?v=tQp1YkB2Tgs)
+- [AZ-900 Text course](https://learn.microsoft.com/en-us/training/courses/az-900t00#course-syllabus)
+- [AZ-900 Video course](https://www.youtube.com/playlist?list=PLlVtbbG169nED0_vMEniWBQjSoxTsBYS3)
+- [AZ-900 Study Cram](https://www.youtube.com/watch?v=tQp1YkB2Tgs)
 
 ---
 
@@ -79,8 +81,8 @@ Also, in the modules there are some interactive guides. These are visual but you
 
 When wanting to have some great hands-on experience and inspiration for your Azure trial/test environment, there are some practice labs available based on the interactive guides to build the resources in your own environment. You can find [them under heading 8.](#github-labs)
 
-[AZ-104 Interactive labs](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator)
-[AZ-104 Text course](https://learn.microsoft.com/nl-nl/training/paths/az-104-administrator-prerequisites/)
+- [AZ-104 Interactive labs](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator)
+- [AZ-104 Text course](https://learn.microsoft.com/nl-nl/training/paths/az-104-administrator-prerequisites/)
 
 ---
 
@@ -92,7 +94,7 @@ The video can be found here:
 
 https://www.youtube.com/watch?v=0Knf9nub4-k
 
-[AZ-104 Study cram](https://www.youtube.com/watch?v=0Knf9nub4-k)
+- [AZ-104 Study cram](https://www.youtube.com/watch?v=0Knf9nub4-k)
 
 ---
 
@@ -108,7 +110,7 @@ I have one note when using the practice exams for training. The actual exam is h
 - Drag and drop in order or terms to explaination
 - Hot Area: You get one or more pictures about a configuration and you have to spot an error, configuration, mistake etc.
 
-[AZ-104 Practice Assessment](https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/practice/assessment?assessment-type=practice&assessmentId=21&practice-assessment-type=certification)
+- [AZ-104 Practice Assessment](https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/practice/assessment?assessment-type=practice&assessmentId=21&practice-assessment-type=certification)
 
 ---
 
@@ -139,7 +141,7 @@ However, it requires you to have an Azure subscription to click around and deplo
 2. Shutdown VMs when not using
 3. Pick cheap options, not "Premium" options
 
-[AZ-104 Github Labs](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/)
+- [AZ-104 Github Labs](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/)
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-to-learn-azure-learning-resources-338/jv-media-338-f0a4094d9edb.png)
 

@@ -1,19 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const navbar = document.querySelector(".td-navbar");
+  const updateNavbarOffset = () => {
+    const navbar = document.querySelector(".td-navbar");
 
-  function syncAboutNavbarOffset() {
     if (!navbar) {
       return;
     }
 
-    const navbarHeight = Math.ceil(navbar.getBoundingClientRect().height || navbar.offsetHeight || 0);
-    document.body.classList.add("has-ps-about-page");
-    document.body.style.setProperty("--ps-about-navbar-offset", `${navbarHeight}px`);
-  }
+    const navbarHeight = Math.ceil(navbar.getBoundingClientRect().height || navbar.offsetHeight || 64);
+    document.documentElement.style.setProperty("--site-navbar-offset", `${navbarHeight}px`);
+  };
 
-  syncAboutNavbarOffset();
-  window.addEventListener("resize", syncAboutNavbarOffset, { passive: true });
-  window.addEventListener("load", syncAboutNavbarOffset, { passive: true });
+  updateNavbarOffset();
+  window.addEventListener("resize", updateNavbarOffset, { passive: true });
+  window.addEventListener("orientationchange", updateNavbarOffset, { passive: true });
 
   const blocks = document.querySelectorAll(".ps-about");
 

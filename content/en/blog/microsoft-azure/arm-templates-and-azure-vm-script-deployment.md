@@ -175,7 +175,7 @@ This block must be placed after the virtual machine, as the virtual machine must
 
 Search for the "Outputs" block and on the second line just above it, place a comma and hit Enter and on the new line paste the Custom Script Extension block. Watch this video as example where I show you how to do this:
 
-[](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/arm-templates-and-azure-vm-script-deployment-3935/jv-media-3935-a28593d65eaf.mp4)
+[Video](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/arm-templates-and-azure-vm-script-deployment-3935/jv-media-3935-a28593d65eaf.mp4)
 
 ---
 

@@ -8,11 +8,7 @@ tags:
   - Concepts
   - Step by Step guides
 description: >
-  Active Directory Domain Controllers are assigned 5 different FSMO roles, which all have their own function. We can separate them over multiple...
----
-Active Directory Domain Controllers are assigned 5 different FSMO roles, which all have their own function. We can separate them over multiple servers to create more redundancy, but make sure to handle those all as servers. All roles neeed a 24/7 uptime for your environment to work properly.
-
-In this guide, I will give a brief explaination of the roles, what their function is and how to move them to different servers to enhance availability and redundancy.
+  Active Directory Domain Controllers are assigned 5 different FSMO roles, which all have their own function. We can separate them over multiple servers to create more redundancy, but make sure to handle those all as servers. All roles neeed a 24/7 uptime for your environment to work properly. In this guide, I will give a brief explaination of the roles, what their function is and how to move them to different servers to enhance availability and redundancy.
 
 ---
 
@@ -50,9 +46,9 @@ In my environment, I have 3 domain controllers. This means we can separate all r
 |  |  |  |
 | --- | --- | --- |
 | **Server** | **Roles** | **Availability Zone** |
-| JV-DC01.justinverstijnen.nl | Primary Domain Controller (PDC)   Infrastructure master | Zone 1 |
-| JV-DC02.justinverstijnen.nl | Domain naming master   RID Master | Zone 2 |
-| JV-DC03.justinverstijnen.nl | Schema Master   Entra Connect Sync | Zone 3 |
+| JV-DC01.justinverstijnen.nl | Primary Domain Controller (PDC) & Infrastructure master | Zone 1 |
+| JV-DC02.justinverstijnen.nl | Domain naming master & RID Master | Zone 2 |
+| JV-DC03.justinverstijnen.nl | Schema Master & Entra Connect Sync | Zone 3 |
 
 Because Entra Connect Sync is also a critical function of my domain, I placed this on my third server to give all 3 servers 2 dedicated roles.
 
@@ -100,7 +96,7 @@ Move-ADDirectoryServerOperationMasterRole -Identity *server* -OperationMasterRol
 Move-ADDirectoryServerOperationMasterRole -Identity *server* -OperationMasterRole SchemaMaster -Confirm:$false
 {{< /card >}}
 
-Make sure to change the \*server\* placeholder to your server names.
+Make sure to change the \*server\* placeholder to the correct server names in your environment.
 
 ---
 
