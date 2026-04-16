@@ -1,7 +1,5 @@
 baseURL: https://projectkaasplank.justinverstijnen.nl
 title: justinverstijnen.nl
-
-# Language settings
 contentDir: content/en
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: false
