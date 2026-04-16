@@ -11,6 +11,42 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.setProperty("--ps-about-navbar-offset", `${navbarHeight}px`);
   }
 
+  function measureHiddenContentHeight(block, content) {
+    const previous = {
+      hidden: content.hidden,
+      display: content.style.display,
+      position: content.style.position,
+      visibility: content.style.visibility,
+      pointerEvents: content.style.pointerEvents,
+      left: content.style.left,
+      top: content.style.top,
+      width: content.style.width,
+    };
+
+    content.hidden = false;
+    content.setAttribute("aria-hidden", "true");
+    content.style.display = "block";
+    content.style.position = "absolute";
+    content.style.visibility = "hidden";
+    content.style.pointerEvents = "none";
+    content.style.left = "0";
+    content.style.top = "0";
+    content.style.width = `${block.clientWidth || block.offsetWidth || 0}px`;
+
+    const measuredHeight = Math.ceil(content.offsetHeight || content.scrollHeight || 0);
+
+    content.hidden = previous.hidden;
+    content.style.display = previous.display;
+    content.style.position = previous.position;
+    content.style.visibility = previous.visibility;
+    content.style.pointerEvents = previous.pointerEvents;
+    content.style.left = previous.left;
+    content.style.top = previous.top;
+    content.style.width = previous.width;
+
+    return measuredHeight;
+  }
+
   syncAboutNavbarOffset();
   window.addEventListener("resize", syncAboutNavbarOffset, { passive: true });
   window.addEventListener("load", syncAboutNavbarOffset, { passive: true });
@@ -29,7 +65,17 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    content.hidden = true;
+    content.setAttribute("aria-hidden", "true");
     content.classList.add("about-hidden");
+
+    const measuredContentHeight = measureHiddenContentHeight(block, content);
+    const terminalHeight = Math.ceil(terminal.offsetHeight || terminal.scrollHeight || 0);
+    const reservedHeight = Math.max(terminalHeight, measuredContentHeight);
+
+    if (reservedHeight > 0) {
+      block.style.minHeight = `${reservedHeight}px`;
+    }
 
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const outputLines = [
@@ -42,7 +88,15 @@ document.addEventListener("DOMContentLoaded", () => {
       "Rendering webpage..."
     ];
 
+    const releaseReservedHeight = () => {
+      window.requestAnimationFrame(() => {
+        block.style.minHeight = "";
+      });
+    };
+
     const showContent = () => {
+      content.hidden = false;
+      content.removeAttribute("aria-hidden");
       content.classList.remove("about-hidden");
     };
 
@@ -50,8 +104,9 @@ document.addEventListener("DOMContentLoaded", () => {
       command.textContent = scriptName;
       output.textContent = `\n${outputLines.join("\n")}`;
       cursor.style.display = "none";
-      terminal.classList.add("is-hidden");
       showContent();
+      terminal.classList.add("is-hidden");
+      setTimeout(releaseReservedHeight, 50);
       return;
     }
 
@@ -61,14 +116,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function finishSequence() {
       cursor.style.display = "none";
+      showContent();
 
-      setTimeout(() => {
+      window.requestAnimationFrame(() => {
         terminal.classList.add("is-hidden");
-      }, 220);
+      });
 
-      setTimeout(() => {
-        showContent();
-      }, 620);
+      setTimeout(releaseReservedHeight, 450);
     }
 
     function typeOutput() {
