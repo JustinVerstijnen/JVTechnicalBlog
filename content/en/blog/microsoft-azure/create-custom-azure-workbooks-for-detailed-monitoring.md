@@ -1,11 +1,14 @@
 ---
-
-title: "Create Custom Azure Workbooks for Detailed Monitoring"
-date: 2026-04-16
-slug: create-custom-azure-workbooks-for-detailed-monitoring
+title: "Create custom Azure Workbooks for detailed monitoring"
+date: 2025-05-08
+slug: "create-custom-azure-workbooks-for-detailed-monitoring"
 categories:
+  - Microsoft Azure
 tags:
-
+  - Concepts
+  - Step by Step guides
+description: >
+  Azure Workbooks are an excellent way to monitor your application and dependencies in a nice and customizable dashboard. Workbooks can...
 ---
 
 ## Introduction
