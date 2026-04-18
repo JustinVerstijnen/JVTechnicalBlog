@@ -28,8 +28,8 @@ After this, there is a Microsoft Learn collection available which describes the 
 
 <https://learn.microsoft.com/nl-nl/training/paths/microsoft-azure-fundamentals-describe-cloud-concepts>
 
-[Starting out (Video)](https://www.youtube.com/watch?v=_x1V2ny8FWM)
-[Starting out (Text)](https://learn.microsoft.com/nl-nl/training/paths/microsoft-azure-fundamentals-describe-cloud-concepts)
+<p><a class="btn btn-primary" href="https://www.youtube.com/watch?v=_x1V2ny8FWM">Starting out (Video)</a></p>
+<p><a class="btn btn-primary" href="https://learn.microsoft.com/nl-nl/training/paths/microsoft-azure-fundamentals-describe-cloud-concepts">Starting out (Text)</a></p>
 
 ---
 
