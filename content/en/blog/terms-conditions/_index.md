@@ -19,9 +19,11 @@ This website is intended to share knowledge, practical insights, and educational
 
 ## 2. No Cookies Policy
 
-I am committed to protecting your privacy. This website does **not** use cookies or other tracking mechanisms to collect information about your browsing habits.
+I am committed to protecting your privacy. This website uses Umami, a privacy-friendly analytics tool, to monitor page views and visitor activity in a respectful and minimal way.
 
-Your privacy is important to me, and I believe in offering a browsing experience that is as free from unnecessary data collection as possible.
+Umami does not use cookies and is designed to avoid collecting unnecessary personal data or tracking your browsing behavior across websites.
+
+Your privacy is important to me, and I believe in offering a browsing experience that is both informative and respectful of your data.
 
 ## 3. Advertisements
 
