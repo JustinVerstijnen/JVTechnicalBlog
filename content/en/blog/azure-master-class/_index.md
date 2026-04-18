@@ -8,6 +8,7 @@ tags:
   - Concepts
 description: >
   Hey there! I have a new collection of blog posts here. A while ago (2023) I followed the Azure Master Class course of John Savill, and done...
+weight: 21
 ---
 ## Introduction to this Azure Master Class
 
