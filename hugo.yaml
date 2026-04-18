@@ -1,4 +1,4 @@
-baseURL: https://projectkaasplank.justinverstijnen.nl
+baseURL: https://justinverstijnen.nl
 title: justinverstijnen.nl
 contentDir: content/en
 defaultContentLanguage: en
@@ -91,8 +91,8 @@ params:
   archived_version: false
   version: 0.14.3
   versionWithBuildId: 0.14.3
-  github_repo: https://github.com/JustinVerstijnen/JVFlightBlog
-  github_project_repo: https://github.com/JustinVerstijnen/JVFlightBlog
+  github_repo: https://github.com/JustinVerstijnen/JVTechnicalBlog
+  github_project_repo: https://github.com/JustinVerstijnen/JVTechnicalBlog
   github_branch: main
   #gcs_engine_id: d72aa9b2712488cc3
   prism_syntax_highlighting: false
