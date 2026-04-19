@@ -1,6 +1,6 @@
 ---
 title: "Welcome to justinverstijnen.nl v2"
-date: 2026-04-18
+date: 2026-04-19
 weight: 1
 ---
 ## Welcome to justinverstijnen.nl v2
