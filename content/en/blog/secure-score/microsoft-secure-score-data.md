@@ -197,7 +197,7 @@ Thank you for taking the time to read this guide. I hope it was helpful and give
 
 ### Sources
 
-These sources helped me by writing and research for this post;
+These sources helped me by writing and research for this post:
 
 1. <https://learn.microsoft.com/en-us/purview/data-map-sensitivity-labels>
 2. <https://learn.microsoft.com/en-us/purview/data-map-sensitivity-labels-apply>
