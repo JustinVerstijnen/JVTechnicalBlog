@@ -1,6 +1,6 @@
 ---
 title: "Microsoft Secure Score Data"
-date: 2026-04-30
+date: 2026-04-23
 slug: "microsoft-secure-score-data"
 categories:
   - Secure Score
