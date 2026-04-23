@@ -93,29 +93,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const outputLines = [
-      { text: "$hobbies | Format-List", html: '<span class="ps-token-variable">$hobbies</span> | <span class="ps-token-command">Format-List</span>' },
-      { text: "12,7% completed..." },
-      { text: "$profiles | Format-List", html: '<span class="ps-token-variable">$profiles</span> | <span class="ps-token-command">Format-List</span>' },
-      { text: "42% completed..." },
-      { text: "$certifications | Format-Table", html: '<span class="ps-token-variable">$certifications</span> | <span class="ps-token-command">Format-Table</span>' },
-      { text: "67% completed..." },
-      { text: "Script executed succesfully!" }
+      "$hobbies | Format-List",
+      "12,7% completed...",
+      "$profiles | Format-List",
+      "42% completed...",
+      "$certifications | Format-Table",
+      "67% completed...",
+      "Script executed succesfully!"
     ];
-
-    const appendRenderedLine = (line) => {
-      output.appendChild(document.createTextNode("\n"));
-
-      const lineElement = document.createElement("span");
-      lineElement.className = "ps-output-line";
-
-      if (line.html) {
-        lineElement.innerHTML = line.html;
-      } else {
-        lineElement.textContent = line.text;
-      }
-
-      output.appendChild(lineElement);
-    };
 
     const releaseReservedHeight = () => {
       window.requestAnimationFrame(() => {
@@ -131,8 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (prefersReducedMotion) {
       command.textContent = scriptName;
-      output.textContent = "";
-      outputLines.forEach((line) => appendRenderedLine(line));
+      output.textContent = `\n${outputLines.join("\n")}`;
       cursor.style.display = "none";
       showContent();
       terminal.classList.add("is-hidden");
@@ -146,7 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let commandIndex = 0;
     let lineIndex = 0;
     let charIndex = 0;
-    let currentLineNodes = [];
 
     function finishSequence() {
       cursor.style.display = "none";
@@ -168,35 +151,21 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      const currentLineData = outputLines[lineIndex];
-      const currentLine = currentLineData.text;
+      const currentLine = outputLines[lineIndex];
 
       if (charIndex === 0) {
         output.appendChild(document.createTextNode("\n"));
-        currentLineNodes = [];
       }
 
       if (charIndex < currentLine.length) {
-        const characterNode = document.createTextNode(currentLine.charAt(charIndex));
-        output.appendChild(characterNode);
-        currentLineNodes.push(characterNode);
+        output.appendChild(document.createTextNode(currentLine.charAt(charIndex)));
         charIndex += 1;
         setTimeout(typeOutput, 9);
         return;
       }
 
-      if (currentLineData.html && currentLineNodes.length > 0) {
-        const lineElement = document.createElement("span");
-        lineElement.className = "ps-output-line";
-        lineElement.innerHTML = currentLineData.html;
-
-        currentLineNodes.forEach((node) => node.remove());
-        output.appendChild(lineElement);
-      }
-
       lineIndex += 1;
       charIndex = 0;
-      currentLineNodes = [];
       setTimeout(typeOutput, lineIndex === outputLines.length ? 150 : 70);
     }
 
