@@ -209,18 +209,6 @@ body.has-ps-about-page .ps-markdown [id] {
   color: #c9d6e7;
 }
 
-.ps-output-line {
-  display: block;
-}
-
-.ps-token-variable {
-  color: #6cc644;
-}
-
-.ps-token-command {
-  color: #f2cc60;
-}
-
 .ps-cursor {
   display: inline-block;
   width: 0.6ch;
