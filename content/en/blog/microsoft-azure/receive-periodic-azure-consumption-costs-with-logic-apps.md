@@ -1,6 +1,6 @@
 ---
 title: "Receive Periodic Azure Consumption costs with Logic Apps"
-date: 2026-05-30
+date: 2026-05-23
 slug: "receive-periodic-azure-consumption-costs-with-logic-apps"
 categories:
   - Microsoft Azure
