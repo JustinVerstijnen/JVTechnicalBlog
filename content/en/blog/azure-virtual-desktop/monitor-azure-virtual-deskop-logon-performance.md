@@ -81,9 +81,7 @@ After that the script summarizes the processing time on the client for the Group
 
 ## Download the script
 
-You can get the script from [this site](https://www.controlup.com/script-library-posts/analyze-logon-duration/) or by downloading it here:
-
-[Download](https://justinverstijnen.nl/wp-content/uploads/2025/04/Monitor-AVD-sign-ins.zip)
+Not my own script this time, but you can get the script from [this site](https://www.controlup.com/script-library-posts/analyze-logon-duration/)
 
 ---
 
