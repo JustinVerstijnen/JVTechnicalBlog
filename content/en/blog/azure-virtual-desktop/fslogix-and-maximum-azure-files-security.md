@@ -16,7 +16,7 @@ We can also run the SMB security on the Maximum security preset in the Azure Por
 
 ![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-virtual-desktop-fslogix-and-native-kerberos-authentication-5828/jv-media-5828-ecc337dcb41b.png)
 
-This will only allow the AES\_256\_GCM SMB Channel encryption, but Windows 11 defaults to the 128 version only. We now have to tell Windows to use the better secured 256 version instead, otherwise the storage account blocks your requests and logging in isn't possible. I will do this through Intune, but you could do this with Group Policy in the same manner or with PowerShell.
+This will only allow the AES-256-GCM SMB Channel encryption, but Windows 11 defaults to the 128 version only. We now have to tell Windows to use the better secured 256 version instead, otherwise the storage account blocks your requests and logging in isn't possible. I will do this through Intune, but you could do this with Group Policy in the same manner or with PowerShell.
 
 {{< card code=true header="**POWERSHELL**" lang="powershell" >}}
 Set-SmbClientConfiguration -EncryptionCiphers "AES_256_GCM" -Confirm:$false
