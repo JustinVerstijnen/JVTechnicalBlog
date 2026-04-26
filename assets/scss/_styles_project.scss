@@ -588,3 +588,37 @@ body.has-ps-about-page .ps-markdown [id] {
     font-size: 1.5rem;
   }
 }
+
+/* Planned posts page layout fixes */
+.planned-posts-page {
+  width: 100%;
+  max-width: 980px;
+  margin: 5.5rem auto 0 auto;
+  padding: 0 1rem 2.5rem 1rem;
+}
+
+/* Center the planned posts content inside the Docsy content area */
+.td-content .planned-posts-page {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Give the generated page title enough space below the fixed navbar */
+.td-content > .planned-posts-page:first-child {
+  padding-top: 1rem;
+}
+
+/* Make sure summary cards and post cards do not stick to the left edge */
+.planned-posts-summary,
+.planned-posts-grid {
+  width: 100%;
+}
+
+/* Better mobile spacing */
+@media (max-width: 767.98px) {
+  .planned-posts-page {
+    margin-top: 5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
