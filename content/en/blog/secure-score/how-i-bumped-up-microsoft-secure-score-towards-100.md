@@ -8,7 +8,6 @@ tags:
   - Step by Step guides
 description: >
   In this post series, I will demonstrate how I bumped up the Microsoft Secure Score of my tenant up to 100%. This can be used to change the...
-draft: true
 ---
 In this post series, I will demonstrate how I bumped up the Microsoft Secure Score of my tenant up to 100% (98,78% to be exact). This can be used to change the settings of your own tenant and have a better security posture.
 

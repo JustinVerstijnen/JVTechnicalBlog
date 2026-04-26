@@ -7,10 +7,8 @@ categories:
 tags:
   - Concepts
 description: >
-  The Azure Well Architected Framework (WAF) is a framework to improve the quality of your Microsoft Azure Deployment. This does it by..
-hidden: true
+  The Azure Well Architected Framework (WAF) is a framework to improve the quality of your Microsoft Azure Deployment. This does it by spanning 5 pillars so an architect can determine with IT decision makers how they can get the most Azure with the planned budget.
 ---
-The Azure Well-Architected Framework is a framework to improve the quality of your Microsoft Azure Deployment. This does it by spanning 5 pillars so an architect can determine with IT decision makers how they can get the most Azure with the planned budget.
 
 The 5 pillars of the Well-Architected Framework are:
 
@@ -23,7 +21,7 @@ The 5 pillars of the Well-Architected Framework are:
 | Operational Excellence | The processes that keep a system running |
 | Performance Efficiency | The ability to adapt to changes |
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-dfde3a7edc08.png)
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/introduction-of-azure-well-architected-framework-235/jv-media-235-99603fc394e8.png)
 
 Like it is shown in the image up here is that the Well-Architected Framework is the heart of all Cloud processes. Without this well done, all other processes can fail.
 
@@ -37,11 +35,11 @@ With this tool you can link your existing environment/subscription or answer que
 
 I filled in the tool with some answers and my result was this:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-51c46350321e.png)
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/introduction-of-azure-well-architected-framework-235/jv-media-235-abec815a236e.png)
 
 I only filled in the pillars Reliability and Security and filled it in as bad as possible to get as much as advices to improve. This looks like this:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-a-catch-all-mailbox-in-exchange-online-2480/jv-media-2480-a1dcfb0f21db.png)
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/introduction-of-azure-well-architected-framework-235/jv-media-235-ed065d3b4c96.png)
 
 {{< ads >}}
 
