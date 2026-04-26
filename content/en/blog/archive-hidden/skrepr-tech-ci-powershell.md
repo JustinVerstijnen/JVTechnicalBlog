@@ -1,6 +1,6 @@
 ---
 title: "Skrepr Tech CI - PowerShell"
-date: 2025-04-24
+date: 2030-01-01
 slug: "skrepr-tech-ci-powershell"
 categories:
   - Powershell
