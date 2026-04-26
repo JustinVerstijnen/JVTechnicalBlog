@@ -27,7 +27,7 @@ To keep it simple, such logic app can looks like this:
 
 In Logic Apps there are templates to help you starting out what the possibilities are:
 
-![https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-cb39a3173818.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-cb39a3173818.png)
+[![image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-cb39a3173818.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-cb39a3173818.png)
 
 ---
 
