@@ -88,6 +88,8 @@ To maintain transparency, pages that contain AI-generated content are tagged  on
 
 `AI-Generated-Content`
 
+![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/terms-conditions-152/jv-media-152-780bfb38de10.png)
+
 This tag means that **any part** of the page may contain AI-generated content, even if only a small portion of the content was created with AI assistance.
 
 You can view all tagged pages here:

@@ -7,12 +7,10 @@ categories:
 tags:
   - Concepts
 description: >
-  So have a good overview of how secure your complete IT environment is, Microsoft released the Microsoft Cloud Security Benchmark, which is...
-hidden: true
+  In the modern era like where we are today, security is a very important aspect of every system you manage where the security is as high as your least secured system.
 ---
-In the modern era like where we are today, security is a very important aspect of every system you manage. Bad security of 1 system can mess with all your systems.
 
-So have a good overview of how secure your complete IT environment is, Microsoft released the Microsoft Cloud Security Benchmark, which is an collection of high-impact security recommendations you can use to secure your cloud services, even when utilizing a hybrid environment. When using Microsoft Defender for Cloud, this MCSB is included in the recommendations.
+To have a good overview of how secure your complete IT environment is, Microsoft released the Microsoft Cloud Security Benchmark, which is an collection of high-impact security recommendations you can use to secure your cloud services, even when utilizing a hybrid environment. When using Microsoft Defender for Cloud, this MCSB is included in the recommendations.
 
 ## Checking domains of the Cloud Security Benchmark
 
