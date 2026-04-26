@@ -46,23 +46,21 @@ jobs:
           hugo-version: "0.160.0"
           extended: true
 
-      - name: Show planned posts
+      - name: Generate planned posts page
         run: |
-          echo "## Planned posts" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Date | Title | File |" >> $GITHUB_STEP_SUMMARY
-          echo "|---|---|---|" >> $GITHUB_STEP_SUMMARY
-
-          python3 - <<'PY' >> $GITHUB_STEP_SUMMARY
+          python3 - <<'PY'
           from pathlib import Path
           from datetime import datetime, timezone
           import re
 
           today = datetime.now(timezone.utc).date()
-          found = False
+          planned_posts = []
 
-          for path in sorted(Path("content/en/blog").glob("*.md")):
-              text = path.read_text(encoding="utf-8")
+          for path in sorted(Path("content/en/blog").rglob("*.md")):
+              if path.name == "_index.md":
+                  continue
+
+              text = path.read_text(encoding="utf-8", errors="ignore")
 
               date_match = re.search(r"^date:\s*['\"]?([^'\"\n]+)['\"]?", text, re.MULTILINE)
               title_match = re.search(r"^title:\s*['\"]?([^'\"\n]+)['\"]?", text, re.MULTILINE)
@@ -71,15 +69,76 @@ jobs:
                   continue
 
               raw_date = date_match.group(1).strip()
-              post_date = datetime.fromisoformat(raw_date[:10]).date()
+
+              try:
+                  post_date = datetime.fromisoformat(raw_date[:10]).date()
+              except ValueError:
+                  continue
 
               if post_date > today:
-                  found = True
                   title = title_match.group(1).strip() if title_match else path.stem
-                  print(f"| {post_date.strftime('%d-%m-%Y')} | {title} | `{path}` |")
+                  planned_posts.append({
+                      "date": post_date,
+                      "title": title,
+                      "file": str(path)
+                  })
 
-          if not found:
-              print("| - | No planned posts found | - |")
+          planned_posts.sort(key=lambda post: post["date"])
+
+          output = Path("content/en/planned-posts.md")
+
+          lines = [
+              "---",
+              'title: "Planned posts"',
+              'description: "Overview of planned future posts."',
+              "---",
+              "",
+              "# Planned posts",
+              "",
+          ]
+
+          if planned_posts:
+              lines.extend([
+                  "| Date | Title | File |",
+                  "|---|---|---|",
+              ])
+
+              for post in planned_posts:
+                  lines.append(
+                      f"| {post['date'].strftime('%d-%m-%Y')} | {post['title']} | `{post['file']}` |"
+                  )
+          else:
+              lines.append("No planned posts found.")
+
+          lines.append("")
+
+          output.write_text("\n".join(lines), encoding="utf-8")
+
+          print(f"Generated {output} with {len(planned_posts)} planned post(s).")
+
+          with open(Path.cwd() / "planned-posts-summary.md", "w", encoding="utf-8") as summary:
+              summary.write("## Planned posts\n\n")
+              if planned_posts:
+                  summary.write("| Date | Title | File |\n")
+                  summary.write("|---|---|---|\n")
+                  for post in planned_posts:
+                      summary.write(
+                          f"| {post['date'].strftime('%d-%m-%Y')} | {post['title']} | `{post['file']}` |\n"
+                      )
+              else:
+                  summary.write("No planned posts found.\n")
+
+          with open("$GITHUB_STEP_SUMMARY", "a", encoding="utf-8") as github_summary:
+              github_summary.write("## Planned posts\n\n")
+              if planned_posts:
+                  github_summary.write("| Date | Title | File |\n")
+                  github_summary.write("|---|---|---|\n")
+                  for post in planned_posts:
+                      github_summary.write(
+                          f"| {post['date'].strftime('%d-%m-%Y')} | {post['title']} | `{post['file']}` |\n"
+                      )
+              else:
+                  github_summary.write("No planned posts found.\n")
           PY
 
       - name: Build site
