@@ -27,7 +27,7 @@ To keep it simple, such logic app can looks like this:
 
 In Logic Apps there are templates to help you starting out what the possibilities are:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-cb39a3173818.png)
+![https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-cb39a3173818.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-azure-logic-apps-to-automatically-start-and-stop-vms-2258/jv-media-2258-cb39a3173818.png)
 
 ---
 
@@ -51,11 +51,7 @@ In the Azure Portal, go to "Logic Apps" and create a new Logic app. I chose the 
 
 Logic Apps are relatively cheap, most of the time we can save a lot more money on compute costs than the costs of the Logic App.
 
-Advance to the next step.
-
-![]()
-
-Create the app by filling in the details and finish the wizard.
+Advance to the next step. Create the app by filling in the details and finish the wizard.
 
 After finishing the wizard, we have our Logic App in place, and now we can configure our "flows" and the 3 examples.
 
