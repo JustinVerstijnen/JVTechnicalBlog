@@ -1,6 +1,6 @@
 ---
-title: "Sync SharePoing Sites automatically using Intune"
-date: 2026-04-04
+title: "Sync SharePoint Sites automatically using Intune"
+date: 2026-06-03
 slug: "syncing-sharepoint-sites-automatically-intune"
 categories:
   - Networking
@@ -10,6 +10,7 @@ draft: true
 # Automatically Sync SharePoint Sites with Intune
 
 With Microsoft Intune, you can automatically add SharePoint sites to users.
+
 This is useful because it prevents the need to manually connect multiple SharePoint sites for each user.
 
 ---
@@ -18,7 +19,7 @@ This is useful because it prevents the need to manually connect multiple SharePo
 
 First, copy the **Library ID** of the desired SharePoint site.
 
-Steps:
+**Steps:**
 
 - Open the SharePoint site as a **Global Administrator** or **SharePoint Administrator**
 - Click **Sync** on the document library
@@ -26,12 +27,12 @@ Steps:
 
 Next, convert the copied string from Unicode to ASCII.
 
-Steps:
+**Steps:**
 
 - Open **PowerShell**
 - Run the following command and paste the copied string:
 
-[uri]::UnescapeDataString("PASTE THE COPIED STRING HERE")
+    [uri]::UnescapeDataString("PASTE THE COPIED STRING HERE")
 
 - Copy the output from PowerShell  
   This output will be used in the Intune configuration profile.
@@ -42,7 +43,7 @@ Steps:
 
 To create a configuration profile, open the **Intune Admin Center**.
 
-Steps:
+**Steps:**
 
 - Go to **Devices**
 - Select **Windows**
@@ -79,9 +80,21 @@ Provide a clear **name** and **description** for the profile.
 
 ---
 
-## Assign the Profile
+## Step 3: Assign the Profile
 
 - Assign the configuration profile to the desired **users or groups**
 
-For each SharePoint site, a **separate configuration profile** must be created,
+For each SharePoint site, a **separate configuration profile** must be created,  
 or you can decide per group which SharePoint sites should be synced for all users in that group.
+
+---
+
+## Summary
+
+You can use Intune to sync SharePoint team site document libraries automatically by:
+1) getting the correct **Library ID** in SharePoint,
+2) converting it with the PowerShell command,
+3) adding the result into a **OneDrive** Settings catalog profile in Intune, and
+4) assigning the profile to the right users or groups.
+
+Thank you for reading this post and I hope it was helpful!
