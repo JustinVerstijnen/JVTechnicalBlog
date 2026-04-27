@@ -9,7 +9,7 @@ description: "This page contains a standardized runbook of how I performed netwo
 
 ## When do you use this implementation guide?
 
-With **network implementations**, we mean the implementation, migration, or replacement of one or more of the following components:
+With *network implementations*, I mean the implementation, migration, or replacement of one or more of the following components:
 
 - DHCP server, IP address ranges, and/or VLANs
 - Firewall  
