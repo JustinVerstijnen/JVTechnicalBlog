@@ -1,6 +1,6 @@
 ---
 title: "Networking Implementation Runbook"
-date: 2024-06-04
+date: 2024-06-02
 slug: "networking-implementation"
 categories:
   - Networking
