@@ -13,7 +13,7 @@ title: "About"
   <aside class="about-hero-aside" aria-label="Profile photo">
     <figure class="about-profile-card">
       <div class="about-profile-photo">
-        <img src="https://media.licdn.com/dms/image/v2/D4E03AQGo_phxUmEeGA/profile-displayphoto-shrink_800_800/B4EZNdp3RXH0Ac-/0/1732443076343?e=1781136000&v=beta&t=8Txf-rlVKRlAQCmfAm1-5DoDR1V73A7E1wLilxCilxM" alt="Profile picture">
+        <img src="img/profile_picture.jpg" alt="Profile picture">
       </div>
     </figure>
   </aside>
