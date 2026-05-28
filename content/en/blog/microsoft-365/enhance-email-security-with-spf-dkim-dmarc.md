@@ -64,6 +64,8 @@ After configuring DNSSEC and SMTP DANE [from this guide](https://justinverstijne
 
 MX records have a priority number in front of them, this tells the priority of the servers. Messages will be delivered first at the number closest to "0" which represents a higer priority. After this server doesnt accept the message or a outage is ongoing, other servers will be tried to deliver the message.
 
+If managing your own emailing server, the SSL certificate must be valid at all times which may sound logical. If using 3rd party services to send and receive emails like Microsoft 365, Google Workspace or such solutions, then this certificate will be automatically renewed.
+
 ---
 
 ## SPF - Sender Policy Framework
