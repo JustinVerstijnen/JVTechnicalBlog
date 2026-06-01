@@ -3,7 +3,7 @@ title: "What is MTA-STS and how to use it to protect your email flow"
 date: 2026-01-08
 slug: "what-is-mta-sts-and-how-to-protect-your-email-flow"
 categories:
-  - Microsoft 365
+  - Email security
 tags:
   - Concepts
   - Step by Step guides

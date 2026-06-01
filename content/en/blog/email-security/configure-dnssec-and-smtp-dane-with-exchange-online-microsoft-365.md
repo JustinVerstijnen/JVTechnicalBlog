@@ -3,6 +3,7 @@ title: "Configure DNSSEC and SMTP DANE Microsoft 365"
 date: 2024-10-31
 slug: "configure-dnssec-and-smtp-dane-with-exchange-online-microsoft-365"
 categories:
+  - Email security
   - Microsoft 365
 tags:
   - Concepts

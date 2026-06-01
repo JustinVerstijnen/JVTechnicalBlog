@@ -3,6 +3,7 @@ title: "Enhance email security with SPF/DKIM/DMARC"
 date: 2025-06-16
 slug: "enhance-email-security-with-spf-dkim-dmarc"
 categories:
+  - Email security
   - Microsoft 365
 tags:
   - Concepts
