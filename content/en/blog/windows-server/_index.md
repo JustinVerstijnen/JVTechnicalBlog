@@ -1,6 +1,6 @@
 ---
 title: Windows Server
-weight: 32
+weight: 33
 ---
 
 All pages referring or tutorials for Windows Server.

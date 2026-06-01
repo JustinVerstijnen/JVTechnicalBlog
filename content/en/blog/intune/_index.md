@@ -1,6 +1,6 @@
 ---
 title: Intune
-weight: 24
+weight: 25
 ---
 
 All pages referring or tutorials for Intune.
