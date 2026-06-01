@@ -10,17 +10,25 @@ weight: 23
 
 ## Email security
 
-Email security is increasingly critical, as email remains one of the most targeted attack vectors. Attackers recognize that email often provides direct access to valuable data and systems—especially through unsuspecting or untrained users who may inadvertently grant privileged access.
+Email security is becoming more and more important, because email is still one of the main ways attackers try to get access to organizations.
 
-To mitigate the most simple risks, I’ve created a dedicated category with essential configurations that should be applied to every domain you own. This applies even to domains that are not actively used for sending or receiving email, as they can still be abused by attackers. You should not only care about your own security, but also about any partner/supplier or customer you work with.
+Attackers know that email can be a very direct route to sensitive data, systems, and sometimes even privileged access. This often happens through users who are not aware of the risks, or who accidentally click something, share information, or approve access they should not.
+
+To reduce the most basic risks, I’ve created a dedicated category with essential email security settings that should be applied to every domain we own. This also includes domains that are not actively used for sending or receiving email, because attackers can still abuse those domains for spoofing or impersonation.
 
 In the pages in this category, I dive into how to configure different security mechanisms to enhance your email security, get the lowest amount of possible messages marked as spam and minimize the risk of your domain(s) being spoofed in various attacks happening every minute of the day.
+
+---
 
 ## Check you domains' email security posture
 
 To check your domains' email security posture based on configurations, I have made the DNS MEGAtool where you get an overview of the configuration within seconds.
 
 <a class="btn btn-primary" href="https://tools.justinverstijnen.nl/dnsmegatool" target="_blank" rel="noreferrer">Use the DNS MEGAtool</a>
+
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/what-is-tls-rpt/jv-media-8510-8d5e8234af20.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/what-is-tls-rpt/jv-media-8510-8d5e8234af20.png)
+
+---
 
 ## Configure on any domain (even cold/stand-by domains)
 
@@ -77,3 +85,5 @@ Configure a MTA-STS record including policy to
 If using Microsoft 365, configure SMTP DANE to further increase email security by leveraging the DNSSEC protocol.
 
 <a class="btn btn-primary" href="https://justinverstijnen.nl/configure-dnssec-and-smtp-dane-with-exchange-online-microsoft-365/" target="_blank" rel="noreferrer">SMTP DANE record configuration guide</a>
+
+{{< ads >}}
