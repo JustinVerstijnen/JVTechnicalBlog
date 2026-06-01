@@ -87,12 +87,11 @@ In this record you state all the emailing services, emailserver as IP address or
 
 In a SPF record, you always have a ~all, ?all or -all at the end of the record. This is the policy of what the SPF record will do:
 
-|  |  |  |
-| --- | --- | --- |
-| **SPF Policy** | **Description** | **Effect** |
-| ?all | No action taken | All emails are delivered normally. |
-| ~all | Softfail | All email is still being sent and delivered, but in the Junk folder |
-| -all | Hardfail | Email sent from your domain but not by trusted service in SPF means a very high spam score and most of the time rejecting the email. |
+| SPF Policy | Description | Effect | Security level |
+| --- | --- | --- | --- |
+| ?all | No action taken | All emails are delivered normally without intervention | Low |
+| ~all | Softfail | All email is still being sent and delivered, but in the Junk folder | Low to moderate |
+| -all | Hardfail | Email sent from your domain but not by trusted service in SPF means a very high spam score and most of the time rejecting the email. | High |
 
 My advice is to always use the Hardfail (-all) and ensuring your emailsystems are always trusted by SPF. This means almost nobody could misuse your domain to send unauthorized email. Of course, this excludes security breaches into accounts.
 
