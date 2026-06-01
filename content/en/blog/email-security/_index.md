@@ -87,3 +87,5 @@ If using Microsoft 365, configure SMTP DANE to further increase email security b
 <a class="btn btn-primary" href="https://justinverstijnen.nl/configure-dnssec-and-smtp-dane-with-exchange-online-microsoft-365/" target="_blank" rel="noreferrer">SMTP DANE record configuration guide</a>
 
 {{< ads >}}
+
+---
