@@ -1,7 +1,7 @@
 ---
 title: "What is TLS-RPT and how to configure"
 slug: "what-is-tls-rpt"
-date: 2025-06-01
+date: 2025-06-04
 tags:
 - Concepts
 - Step by Step guides
@@ -65,7 +65,7 @@ Example:
 
 [![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/what-is-tls-rpt/jv-media-8510-b861ac03322c.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/what-is-tls-rpt/jv-media-8510-b861ac03322c.png)
 
-_OThe configured SMTP TLS record for this domain, justinverstijnen.nl_
+_The configured SMTP TLS record for this websites' domain, justinverstijnen.nl_
 
 The `rua` value defines where the reports should be sent. TLS-RPT supports these reporting options:
 
