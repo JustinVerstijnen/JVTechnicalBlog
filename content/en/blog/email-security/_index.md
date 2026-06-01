@@ -8,8 +8,6 @@ tags:
 weight: 23
 ---
 
-## Email security
-
 Email security is becoming more and more important, because email is still one of the main ways attackers try to get access to organizations.
 
 Attackers know that email can be a very direct route to sensitive data, systems, and sometimes even privileged access. This often happens through users who are not aware of the risks, or who accidentally click something, share information, or approve access they should not.
