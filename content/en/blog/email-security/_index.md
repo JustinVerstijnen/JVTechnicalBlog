@@ -28,7 +28,7 @@ To check your domains' email security posture based on configurations, I have ma
 
 ---
 
-## Configure on any domain (even cold/stand-by domains)
+## Configure on any domain
 
 The underlying security mechanisms must be configured on any domain you own in my opinion. Most companies have various stale/stand-by domains. Even there you should configure at least the basics. This will help you prevent spoofing and similar attacks.
 
