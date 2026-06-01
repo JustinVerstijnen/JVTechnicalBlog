@@ -26,8 +26,8 @@
   --bs-btn-bg: #77B0DE;
   --bs-btn-border-color: #8daed9;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #7691b5;
-  --bs-btn-hover-border-color: #687f9e;
+  --bs-btn-hover-bg: #6da1cb;
+  --bs-btn-hover-border-color: #6da1cb;
   background-color: #77B0DE;
 }
 
@@ -37,6 +37,11 @@
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #687f9e;
     --bs-btn-hover-border-color: #77B0DE;
+}
+
+/* Arrow color opened blog section */
+nav.foldable-nav .ul-1 .with-child>input:checked~label::before {
+    color: #77B0DE;
 }
 
 .page-link.active, .active>.page-link {
