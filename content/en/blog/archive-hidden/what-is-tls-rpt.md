@@ -1,10 +1,11 @@
 ---
 title: "What is TLS-RPT and Why Should You Use It?"
 slug: "what-is-tls-rpt"
-date: 2026-06-01
+date: 2025-06-01
 tags:
 - Concepts
 - Step by Step guides
+- AI Generated Content
 categories:
 - Microsoft 365
 description: "In this post I will explain TLS-RPT which is an email security reporting mechanism that gives you reports about TLS encryption problems for incoming email to your domain. In this guide, I will explain what TLS-RPT is, how it works and how you can configure it easily for your domains."
@@ -57,14 +58,14 @@ Reports can also include issues related to:
 To use TLS-RPT, you publish a DNS TXT record on your domains:
 
 {{< card code=true header="**Plain text**" lang="text" >}}
-_smtp._tls.yourdomain.com
+_smtp._tls.yourdomain.com TXT v=TLSRPTv1; rua=mailto:reports@yourdomain.com;
 {{< /card >}}
 
 Example:
 
-{{< card code=true header="**Plain text**" lang="text" >}}
-v=TLSRPTv1; rua=mailto:tlsrpt@yourdomain.com
-{{< /card >}}
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/what-is-tls-rpt/jv-media-8510-b861ac03322c.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/what-is-tls-rpt/jv-media-8510-b861ac03322c.png)
+
+_OThe configured SMTP TLS record for this domain, justinverstijnen.nl_
 
 The `rua` value defines where the reports should be sent. TLS-RPT supports these reporting options:
 
@@ -89,7 +90,82 @@ TLS-RPT helps you understand if email delivery to your domain is secure and work
 
 ## How to configure TLS-RPT for your domain
 
-TLS-RPT can be configured for any public domain, where your email service doesn't really matter. My advice is to have an email address for specific reports, where you can use the same email address as you already use for DMARC reports.
+TLS-RPT can be configured for any public domain, where your email service doesn't really matter. My advice is to have an email address for specific reports, where you can use the same email address as you already use for DMARC reports. This ensures you receive the reports and can read them if needed and possible deliverability problems are assumed. My advice is to only configure TLS-RPT on domains where you expect to receive email messages. For domains at rest/stand-by domains it's not neccesary.
+
+To configure the record needed for TLS-RPT, open up your DNS hosting of your public domain. Then navigate to the section where you can create DNS records.
+
+Now create a new **TXT record** with these parameters:
+
+**Name**
+
+{{< card code=true header="**Plain text**" lang="text" >}}
+_smtp._tls
+{{< /card >}}
+
+**TTL**
+
+1 hour or provider-default
+
+**Type**
+
+TXT
+
+**Value**
+
+{{< card code=true header="**Bash**" lang="bash" >}}
+v=TLSRPTv1; rua=mailto:reports@yourdomain.com;
+{{< /card >}}
+
+And change the email address at the end to your own reporting email address. Then save the configuration. Here my configured record for example:
+
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/what-is-tls-rpt/jv-media-8510-b861ac03322c.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/what-is-tls-rpt/jv-media-8510-b861ac03322c.png)
+
+You can then check this configuration by using my DNS MEGAtool, a tool created to check all security mechanisms for email security for a specific domain:
+
+<a class="btn btn-primary" href="https://tools.justinverstijnen.nl/dnsmegatool" target="_blank" rel="noreferrer">Use the DNS MEGAtool</a>
+
+This should show green/passed for the TLS-RPT check of your domain:
+
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/what-is-tls-rpt/jv-media-8510-f2236a0d9a0f.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/what-is-tls-rpt/jv-media-8510-f2236a0d9a0f.png)
+
+---
+
+## TLS-RPT reports
+
+After we configured the TXT record and waited for around a week, we will start to receive daily email reports about other email senders over the internet about the deliverability of your domain:
+
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/what-is-tls-rpt/jv-media-8510-c892741f56e0.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/what-is-tls-rpt/jv-media-8510-c892741f56e0.png)
+
+In the emails we get a report zipped into a compressed archive file. In the file we have a JSON file with the raw data, but we can format this to a table of course. This will immediately show the most important information.
+
+### Report Overview
+
+This table shows the TLS-RPT reports from Microsoft and Google as senders and show that all sessions are succesful. Successful sessions are defined as "successful connections to your emailing server". If assuming email deliverability problems and the information shows failed sessions, then a good point to start is your MTA-STS/TLS-RPT records/hosting configuration. If managing your own emailing server, then the validity of your servers' SSL certificate is also a great guess.
+
+| Date | Organization | Report ID | Contact | Policy Types | Successful Sessions | Failed Sessions |
+| --- | --- | --- | --- | --- | --- | --- |
+| 2026-05-11 | Google Inc. | 2026-05-11T00:00:00Z_justinverstijnen.nl | smtp-tls-reporting@google.com | STS | 2 | 0 |
+| 2026-05-12 | Microsoft Corporation | 134244139446293765+justinverstijnen.nl | tlsrpt-noreply@microsoft.com | STS, TLSA | 6 | 0 |
+| 2026-05-13 | Microsoft Corporation | 134244703562497423+justinverstijnen.nl | tlsrpt-noreply@microsoft.com | TLSA, STS | 3 | 0 |
+| 2026-05-14 | Microsoft Corporation | 134245570067423518+justinverstijnen.nl | tlsrpt-noreply@microsoft.com | TLSA, STS | 12 | 0 |
+| Total |  |  |  |  | 23 | 0 |
+
+### Policy Summary
+
+This table shows the results of the MTA-STS policy being enforced and the TLSA records. As I am using Microsoft 365, I don't have to manage the TLSA records. This is managed by the emailserver (MX) service, in this case Microsoft.
+
+| Date | Organization | Policy Domain | Policy Type | Policy Details | Successful Sessions | Failed Sessions |
+| --- | --- | --- | --- | --- | --- | --- |
+| 2026-05-11 | Google Inc. | justinverstijnen.nl | STS | mode=enforce; mx=justinverstijnen-nl.r-v1.mx.microsoft; max_age=1209600 | 2 | 0 |
+| 2026-05-12 | Microsoft Corporation | justinverstijnen.nl | STS | mode=enforce; mx=justinverstijnen-nl.r-v1.mx.microsoft; max_age=1209600 | 3 | 0 |
+| 2026-05-13 | Microsoft Corporation | justinverstijnen.nl | TLSA | 6 TLSA records published | 3 | 0 |
+| 2026-05-14 | Microsoft Corporation | justinverstijnen.nl | STS | mode=enforce; mx=justinverstijnen-nl.r-v1.mx.microsoft; max_age=1209600 | 2 | 0 |
+| 2026-05-15 | Microsoft Corporation | justinverstijnen.nl | TLSA | 6 TLSA records published | 1 | 0 |
+| 2026-05-16 | Microsoft Corporation | justinverstijnen.nl | STS | mode=enforce; mx=justinverstijnen-nl.r-v1.mx.microsoft; max_age=1209600 | 7 | 0 |
+| 2026-05-16 | Microsoft Corporation | justinverstijnen.nl | TLSA | 6 TLSA records published | 5 | 0 |
+| Total |  |  |  |  | 23 | 0 |
+
+Overall, the reports show a healthy TLS reporting status. Both MTA-STS and TLSA/DANE-related reporting looks to be functioning correctly for the reporting sources shown. There are no failed sessions in the deliverability and all sessions are succesful, showing a healthy deliverability to your domain and email server.
 
 ---
 
