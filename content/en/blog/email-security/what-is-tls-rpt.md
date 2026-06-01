@@ -1,7 +1,7 @@
 ---
 title: "What is TLS-RPT and how to configure"
 slug: "what-is-tls-rpt"
-date: 2025-06-04
+date: 2025-06-01
 tags:
 - Concepts
 - Step by Step guides
