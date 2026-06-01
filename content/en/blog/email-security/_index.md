@@ -58,6 +58,8 @@ To configure DMARC records for active domains, refer to my DMARC guide:
 
 <a class="btn btn-primary" href="https://justinverstijnen.nl/enhance-email-security-with-spf-dkim-dmarc/#dmarc---domain-based-message-authentication-reporting-and-conformance" target="_blank" rel="noreferrer">DMARC record configuration guide</a>
 
+---
+
 ## Configure on sending/receiving domains
 
 These records only have to be configured on domains where you send and receive email messages. They are all related to sending and receiving email messages.
