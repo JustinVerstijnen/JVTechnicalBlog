@@ -1,5 +1,5 @@
 ---
-title: "What is TLS-RPT and Why Should You Use It?"
+title: "What is TLS-RPT and how to configure"
 slug: "what-is-tls-rpt"
 date: 2025-06-01
 tags:
