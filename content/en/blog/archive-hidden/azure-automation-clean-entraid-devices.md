@@ -7,21 +7,16 @@ tags:
 - Tools and Scripts
 categories:
 - Microsoft Azure
-description: "Learn how to automatically clean up inactive Entra ID devices after 180 days using Azure Automation."
+description: "Over time, Microsoft Entra ID environments often become filled with old and inactive devices. These can be devices from former employees, reinstalled systems, test devices or machines that simply no longer exist. Cleaning up these devices manually takes time and is easy to forget. By using Azure Automation, we can fully automate this process and remove devices that have been inactive for more than 180 days. Azure Automation is a service in Azure that allows you to automate tasks. Automation tasks usually work with schedules/timers and scripts and normally require infrastructure to run. In traditional environments this often means deploying and maintaining servers or virtual machines. In the cloud era we naturally want to avoid this as much as possible. With Azure Automation you can run different types of scripts whenever you want. These scripts run directly on the Azure platform without the need to deploy, design, maintain or secure your own server. This makes it a very robust solution. Azure Automation can also run in the context of a Managed Identity connected to the Automation Account. This removes the need for separate service accounts."
 hidden: false
 ---
 
-## Introduction
+## Requirements
 
-Over time, Microsoft Entra ID environments often become filled with old and inactive devices. These can be devices from former employees, reinstalled systems, test devices or machines that simply no longer exist.
-
-Cleaning up these devices manually takes time and is easy to forget. By using Azure Automation, we can fully automate this process and remove devices that have been inactive for more than 180 days.
-
-Azure Automation is a service in Azure that allows you to automate tasks. Automation tasks usually work with schedules/timers and scripts and normally require infrastructure to run. In traditional environments this often means deploying and maintaining servers or virtual machines. In the cloud era we naturally want to avoid this as much as possible.
-
-With Azure Automation you can run different types of scripts whenever you want. These scripts run directly on the Azure platform without the need to deploy, design, maintain or secure your own server. This makes it a very robust solution.
-
-Azure Automation can also run in the context of a Managed Identity connected to the Automation Account. This removes the need for separate service accounts.
+- An Azure subscription
+- Basic knowledge of PowerShell
+- Basic knowledge of Microsoft Graph
+- Around 30 minutes of your time
 
 ---
 
@@ -49,40 +44,44 @@ The script will check all Entra ID devices and remove devices that have been ina
 
 ---
 
-## Preparation
+## The scripts needed
 
 I already created the preparation files and scripts which can be found here:
 
 https://github.com/JustinVerstijnen/JV-AA-CleanEntraIDDevices/tree/main
 
-Make sure you have:
+Here are two scripts:
 
-- An Azure subscription
-- Permissions to create Azure Automation resources
-- Global Administrator or Privileged Role Administrator permissions for the initial setup
-- Microsoft Graph access
+- Setup-script: This is the script needed for the setup of the automation account, only the first time after creating an Automation Account
+- Clean-script: This is the script that runs on schedule
 
 ---
 
 ## Step 1: Create an Automation Account:
 
-Open the Azure Portal and navigate to:
+Open the Azure Portal and navigate to: "Automation Accounts". Then create a new Automation Account.
 
-`Azure Portal -> Automation Accounts`
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8511-82c205a3b934.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8511-82c205a3b934.png)
 
-Create a new Automation Account.
+Give the Automation Account a name and place it in your desired resource group.
 
-Recommended settings:
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8511-26e422ef0a7c.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8511-26e422ef0a7c.png)
 
-- Enable System Assigned Managed Identity
-- Use PowerShell 7 Runtime if possible
-- Place the Automation Account in your preferred Resource Group
+Then advance to the "Advanced" page.
 
-After deployment is complete, open the Automation Account.
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8511-ee616f0fb4d3.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8511-ee616f0fb4d3.png)
+
+Here enable the "System assigned" identity option to enable an identity for the Automation Account.
+
+Leave the rest of the wizard as-is and complete it to create the Automation Account.
+
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8511-1e91ce5564cf.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8511-1e91ce5564cf.png)
 
 ---
 
-## Step 2: Import the required PowerShell modules:
+## Step 2: Configure the Managed Identity
+
+Now we have to configure the managed identity for this solution to work. This is a sort of service account the script uses to gain least privileges.
 
 The script uses Microsoft Graph PowerShell modules.
 
