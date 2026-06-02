@@ -1,6 +1,6 @@
 ---
 title: "Automatically clean up inactive Entra ID devices using Azure Automation"
-slug: "azure-automation-clean-entraid-devices"
+slug: "azure-automation-clean-entra-id-devices"
 date: 2026-04-27
 tags:
 - Step by Step guides
@@ -14,6 +14,8 @@ hidden: false
 ## Requirements
 
 - An Azure subscription
+- PowerShell 7 installed
+- [Microsoft Graph PowerShell module](https://www.powershellgallery.com/packages/Microsoft.Graph) installed
 - Basic knowledge of PowerShell
 - Basic knowledge of Microsoft Graph
 - Around 30 minutes of your time
@@ -81,57 +83,54 @@ Leave the rest of the wizard as-is and complete it to create the Automation Acco
 
 ## Step 2: Configure the Managed Identity
 
-Now we have to configure the managed identity for this solution to work. This is a sort of service account the script uses to gain least privileges.
+Now we have to configure the managed identity for this solution to work. This is a sort of service account the script uses to gain least privileges and having access to your Entra ID from the Azure platform.
 
-The script uses Microsoft Graph PowerShell modules.
+Go to your Automation Account, then open up "Identity" from the left:
 
-Navigate to:
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8511-133bb8f36704.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8511-133bb8f36704.png)
 
-`Automation Account -> Modules`
+Here we must copy the Object ID of the Managed Identity, as we need this in our script to give the required permissions. As we need to provide permissions to a Service Principal, this must be done through PowerShell. A Managed Identity is not managed through the portal like a normal App Registration.
 
-Import the following modules if they are not already available:
+On the GitHub page, you can find the "Setup-Script.ps1". Download this as we have to run it with PowerShell 7.
+
+[https://github.com/JustinVerstijnen/JV-AA-CleanEntraIDDevices/tree/main](https://github.com/JustinVerstijnen/JV-AA-CleanEntraIDDevices/tree/main) 
+
+Change the Managed Identity ID on line 4:
+
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8511-25eefd0f6b09.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8511-25eefd0f6b09.png)
+
+Now we can run the script in PowerShell 7 by executing it and then logging in to the tenant where you placed the automation account.
+
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8511-48ee37b285b3.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8511-48ee37b285b3.png)
+
+After logging in successfully, the correct permissions are assigned to the Managed Identity and the Automation Account can now be tested.
+
+- _Device.ReadWrite.All_
+
+---
+
+## Step 3: Install the needed modules
+
+Now we have to install some PowerShell modules on our Automation Account. The script uses some modules which are not shipped by default on the Automation Account PowerShell runtime, but we can install this manually through the Azure Portal.
+
+Navigate to the Automation Account in Azure and open up "Modules" from the left. From there, click on "Browse gallery" to add new PowerShell modules directly from the PowerShell Gallery into your Automation Account.
+
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8511-1e4c8b985ce2.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8511-1e4c8b985ce2.png)
+
+Here install these two modules:
 
 - Microsoft.Graph.Authentication
 - Microsoft.Graph.Identity.DirectoryManagement
 
-You can import these directly from the PowerShell Gallery.
-
-Wait until all modules are successfully imported before continuing.
+***VERDER AANVULLEN
 
 ---
 
-## Step 3: Assign permissions to the Managed Identity:
+## Step 4: Create the PowerShell Runbook
 
-The Automation Account Managed Identity needs permissions to read and remove devices in Entra ID.
+Now we can create the PowerShell runbook itself. This is the task where the script is launched to clean the Entra ID devices. Navigate to your Automation Account  and open up "Runbooks" from the left. From there, click on "+ Create a runbook" to create a new runbook with our desired settings.
 
-Navigate to:
-
-`Automation Account -> Identity`
-
-Copy the Object ID of the Managed Identity.
-
-Now open:
-
-`Microsoft Entra Admin Center -> Enterprise Applications`
-
-Search for the Automation Account identity.
-
-Assign the following Microsoft Graph Application permissions:
-
-- Device.ReadWrite.All
-- Directory.Read.All
-
-After assigning the permissions, make sure to grant admin consent.
-
-Without admin consent the script will not work.
-
----
-
-## Step 4: Create the PowerShell Runbook:
-
-Navigate to:
-
-`Automation Account -> Runbooks`
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8511-5ba8e219dbfe.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8511-5ba8e219dbfe.png)
 
 Create a new Runbook.
 
