@@ -60,23 +60,16 @@ https://github.com/JustinVerstijnen/JV-AA-CleanEntraIDDevices/tree/main
 
 Here are two scripts:
 
-- Setup-script: This is the script needed for the setup of the automation account, only the first time after creating an Automation Account
-- Clean-script: This is the script that runs on schedule
+- **Setup-script**: This is the script needed for the setup of the automation account, only the first time after creating an Automation Account
+- **Clean-script**: This is the script that runs on schedule
 
 1. The script connects to Microsoft Entra ID using the Microsoft Graph PowerShell module
-
 2. It looks for devices that have been inactive for more than 180 days based on their Last activity date shown in Entra ID
-
 3. Devices that do not have a Last activity / Last sign-in date are ignored and will not be disabled or deleted because the setting `$SkipDevicesWithoutLastSignIn = $true` is enabled
-
 4. Hybrid Azure AD joined devices are skipped and will not be processed
-
 5. The script generates a list of stale devices that meet the criteria
-
 6. With the current setting (`$Action = "Report"`), the script only creates a report and does not make any changes to devices
-
 7. If the action is changed to Disable, the matching stale devices will be disabled
-
 8. If the action is changed to Delete, only devices that are already disabled can be deleted, providing an additional safety measure. This is the default option for now
 
 ---
@@ -141,8 +134,8 @@ Navigate to the Automation Account in Azure and open up "Modules" from the left.
 
 Here we need to install these two modules:
 
-- Microsoft.Graph.Authentication
-- Microsoft.Graph.Identity.DirectoryManagement
+- **Microsoft.Graph.Authentication**
+- **Microsoft.Graph.Identity.DirectoryManagement**
 
 We can find them by searching for their names in the search bar:
 
@@ -181,8 +174,8 @@ Then finish the create Runbook wizard. We will now be presented a online code ed
 
 Here we can change two parameters for the script based on your preferences:
 
-- Line 8: The amount of days for a device to be inactive
-- Line 14: The action, if it must only report or directly delete the devices
+- **Line 8**: The amount of days for a device to be inactive
+- **Line 14**: The action, if it must only report or directly delete the devices
 
 [![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-a7b117d798c1.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-a7b117d798c1.png)
 
