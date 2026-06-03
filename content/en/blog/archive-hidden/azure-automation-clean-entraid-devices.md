@@ -93,7 +93,7 @@ Here we must copy the Object ID of the Managed Identity, as we need this in our 
 
 On the GitHub page, you can find the "Setup-Script.ps1". Download this as we have to run it with PowerShell 7.
 
-[https://github.com/JustinVerstijnen/JV-AA-CleanEntraIDDevices/tree/main](https://github.com/JustinVerstijnen/JV-AA-CleanEntraIDDevices/tree/main) 
+[https://github.com/JustinVerstijnen/JV-AA-CleanEntraIDDevices/tree/main](https://github.com/JustinVerstijnen/JV-AA-CleanEntraIDDevices/tree/main)
 
 Change the Managed Identity ID on line 4:
 
@@ -117,102 +117,127 @@ Navigate to the Automation Account in Azure and open up "Modules" from the left.
 
 [![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8511-1e4c8b985ce2.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8511-1e4c8b985ce2.png)
 
-Here install these two modules:
+Here we need to install these two modules:
 
 - Microsoft.Graph.Authentication
 - Microsoft.Graph.Identity.DirectoryManagement
 
-***VERDER AANVULLEN
+We can find them by searching for their names in the search bar:
+
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-1ff24a6a113c.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-1ff24a6a113c.png)
+
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-c536a60ea6e2.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-c536a60ea6e2.png)
+
+And then select the PowerShell 7.2 runtime version for both modules:
+
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-844f6f026241.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-844f6f026241.png)
+
+Then click "Next" to install the modules into the Automation Account. After a few minutes the modules should be ready to use:
+
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-8b9abb479dd5.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-8b9abb479dd5.png)
+
+Now we can proceed to Step 4 where we create the task itself.
 
 ---
 
 ## Step 4: Create the PowerShell Runbook
 
-Now we can create the PowerShell runbook itself. This is the task where the script is launched to clean the Entra ID devices. Navigate to your Automation Account  and open up "Runbooks" from the left. From there, click on "+ Create a runbook" to create a new runbook with our desired settings.
+In this step we can create the PowerShell runbook itself. This is the task where the script is launched to clean the Entra ID devices. Navigate to your Automation Account  and open up "Runbooks" from the left. From there, click on "+ Create a runbook" to create a new runbook with our desired settings.
 
 [![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8511-5ba8e219dbfe.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8511-5ba8e219dbfe.png)
 
-Create a new Runbook.
+Create a new Runbook by giving it a name and description and select these properties:
 
-Recommended settings:
+- **Runbook type:** PowerShell
+- **Runtime version** : 7.2
 
-- Runbook type: PowerShell
-- Runtime version: PowerShell 7
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-5cd475ecf5e1.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-5cd475ecf5e1.png)
 
-Upload or paste the PowerShell script from the GitHub repository.
+Then finish the create Runbook wizard. We will now be presented a online code editor where we can place the PowerShell script itself. Here paste the contents of the "Clean-scipt.ps1" file from the GitHub Repo:
 
-The script checks the device last sign-in activity and removes devices inactive for more than 180 days.
+<a class="btn btn-primary" href="https://github.com/JustinVerstijnen/JV-AA-CleanEntraIDDevices/blob/main/Clean-Script.ps1" target="_blank" rel="noreferrer">Clean script on GitHub</a>
 
-Example logic used in the script:
+Here we can change two parameters for the script based on your preferences:
 
-- Connect to Microsoft Graph using Managed Identity
-- Retrieve Entra ID devices
-- Check last sign-in timestamp
-- Compare inactivity against 180 days
-- Remove inactive devices
+- Line 8: The amount of days for a device to be inactive
+- Line 14: The action, if it must only report or directly delete the devices
 
-After uploading the script, publish the Runbook.
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-a7b117d798c1.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-a7b117d798c1.png)
 
----
+After you have changed the script to your preferences, save the script and then publish it to the Automation Account.
 
-## Step 5: Test the Runbook:
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-3cfb8c825e6e.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-3cfb8c825e6e.png)
 
-Before fully automating the process, always test the Runbook manually.
+And then publish it by clicking "Publish".
 
-Open the Runbook and click:
-
-`Start`
-
-Monitor the job output and verify:
-
-- Graph authentication works
-- Devices are retrieved correctly
-- Inactive devices are detected properly
-- Devices are removed successfully
-
-It is recommended to first test against a lab or test tenant.
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-de17c41ab234.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-de17c41ab234.png)
 
 ---
 
-## Step 6: Create a schedule:
+## Step 5: Testing the Runbook script
 
-Once testing is complete, configure automatic execution.
+Before we can fully automate the process, we must test the Runbook manually. We must verify if the script works and if we have configured the account, runbook and permissions correctly for the script to run unattended.
 
-Navigate to:
+Open the Runbook from the Automation Account:
 
-`Runbook -> Schedules`
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-720df9a5608d.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-720df9a5608d.png)
 
-Create a new schedule.
+From there, start the Runbook manually by clicking the "Start" button:
 
-Recommended example:
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-dd3d26b5428a.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-dd3d26b5428a.png)
 
-- Recurrence: Weekly
-- Time: Outside business hours
+We will now be redirected to a new pane where we can check the state of the script:
 
-Link the schedule to the Runbook.
+- **Input** : This shows possible customizable parameters you gave the script (not applicable for this script)
+- **Output** : This shows the output PowerShell gave just like how you get the information when performing the tasks manually
+- **Errors and Warnings** : This shows possible errors and warnings during performing the script
+- **All logs** : Here you can view a verbose-like view of the automation account
 
-From now on the cleanup process runs automatically.
+As you can see, the script has ran successfully:
 
----
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-34298e1b78d4.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-34298e1b78d4.png)
 
-## Important considerations
+On the "Output" tab, all devices that has been deleted with this task will be shown:
 
-Automatically deleting devices can have impact if devices are still in use.
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-a3268e231a92.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-a3268e231a92.png)
 
-Before enabling automatic cleanup:
-
-- Validate your inactivity period
-- Exclude special devices if needed
-- Test carefully
-- Monitor logs regularly
-
-180 days is often a safe balance for many environments, but every organization is different.
+In this case, no stale/inactive devices are available which is being shown by PowerShell. Let's try another environment.
 
 ---
 
-## Benefits of this solution
+## Step 6: Create a schedule and link it to the Runbook
 
-Using Azure Automation for device cleanup provides several benefits:
+Once our test is completed successfully, we can schedule our script to perform this task on a schedule. As this task checks for devices inactive for 180 days, we can run this script once per month. This gives us a maximum of 30 days on top of the 180 days of the script. This can be changed to your preferences of course.
+
+To create a schedule, navigate to the Automation Account and open up "Schedules" from the left:
+
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-937e972953d2.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-937e972953d2.png)
+
+Then click on "+ Add a schedule" to add a new schedule. I will demonstrate a schedule for the first day of the month.
+
+Give the schedule a name and description. Then configure the schedule to when you want the runbook/script to clean the devices. I have set the first day of the month at 3:00 AM, and set it to repeat every month.
+
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-5e93134edda2.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-5e93134edda2.png)
+
+Then click "Create" to create the schedule. We must now link the schedule to the runbook, so the task will actually run on your configured schedule. Re-open the "Runbooks" from the Automation Account again and open up your created Runbook.
+
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-720df9a5608d.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-720df9a5608d.png)
+
+Click on "Link to schedule" in your Runbook.
+
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-1fc146f17002.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-1fc146f17002.png)
+
+From there select your just created schedule and save the configuration.
+
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-af10fbe0a406.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-af10fbe0a406.png)
+
+Then click "OK" to apply the configuration and set the runbook to run on a schedule. We are now done with the configuration work.
+
+---
+
+## Summary
+
+Using Azure Automation together with Microsoft Graph is a powerful and clean way to automatically remove inactive Entra ID devices. Using Azure Automation for device cleanup provides several benefits:
 
 - No servers required
 - Fully automated process
@@ -221,15 +246,14 @@ Using Azure Automation for device cleanup provides several benefits:
 - Scalable
 - Low operational overhead
 
-It also helps keeping Entra ID clean and easier to manage.
+Because the solution runs fully in Azure and uses Managed Identity authentication, there is no need for extra infrastructure or service accounts. This keeps the solution secure, modern and easy to maintain. Automatically deleting devices can have impact if devices are still in use. Before enabling automatic cleanup:
 
----
+- Validate your inactivity period
+- Exclude special devices if needed
+- Test carefully
+- Monitor logs regularly
 
-## Summary
-
-Using Azure Automation together with Microsoft Graph is a powerful and clean way to automatically remove inactive Entra ID devices.
-
-Because the solution runs fully in Azure and uses Managed Identity authentication, there is no need for extra infrastructure or service accounts. This keeps the solution secure, modern and easy to maintain.
+180 days is often a safe balance for many environments, but of course every organization is different and in special cases, devices can be offline for 180+ days before coming online again.
 
 Thank you for reading this post and I hope it was helpful!
 
