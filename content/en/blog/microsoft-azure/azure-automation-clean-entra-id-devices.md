@@ -1,7 +1,7 @@
 ---
 title: "Automatically clean up inactive Entra ID devices using Azure Automation"
 slug: "azure-automation-clean-entra-id-devices"
-date: 2026-04-27
+date: 2026-06-27
 tags:
 - Step by Step guides
 - Tools and Scripts
@@ -46,7 +46,7 @@ The script will check all Entra ID devices and remove devices that have been ina
 
 ---
 
-## The scripts needed
+## The scripts and description
 
 I already created the preparation files and scripts which can be found here:
 
@@ -56,6 +56,22 @@ Here are two scripts:
 
 - Setup-script: This is the script needed for the setup of the automation account, only the first time after creating an Automation Account
 - Clean-script: This is the script that runs on schedule
+
+1. The script connects to Microsoft Entra ID using the Microsoft Graph PowerShell module
+
+2. It looks for devices that have been inactive for more than 180 days based on their **Last activity / Last sign-in** date
+
+3. Devices that do **not** have a Last activity / Last sign-in date are **ignored** and will not be disabled or deleted because the setting `$SkipDevicesWithoutLastSignIn = $true` is enabled
+
+4. Hybrid Azure AD joined devices are skipped and will not be processed
+
+5. The script generates a list of stale devices that meet the criteria
+
+6. With the current setting (`$Action = "Report"`), the script only creates a report and does not make any changes to devices
+
+7. If the action is changed to **Disable**, the matching stale devices will be disabled
+
+8. If the action is changed to **Delete**, only devices that are already disabled can be deleted, providing an additional safety measure. This is the default option for now
 
 ---
 
@@ -201,7 +217,11 @@ On the "Output" tab, all devices that has been deleted with this task will be sh
 
 [![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-a3268e231a92.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-a3268e231a92.png)
 
-In this case, no stale/inactive devices are available which is being shown by PowerShell. Let's try another environment.
+In this case, no stale/inactive devices are available which is being shown by PowerShell. Let's try with 120 days:
+
+[![Image](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-441f70a3661e.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-automation-clean-entra-id-devices/jv-media-8510-441f70a3661e.png)
+
+The script now deleted 4 stale devices.
 
 ---
 
