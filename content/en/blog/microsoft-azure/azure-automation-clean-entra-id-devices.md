@@ -1,7 +1,7 @@
 ---
 title: "Automatically clean up inactive Entra ID devices using Azure Automation"
 slug: "azure-automation-clean-entra-id-devices"
-date: 2026-06-27
+date: 2025-06-27
 tags:
 - Step by Step guides
 - Tools and Scripts
