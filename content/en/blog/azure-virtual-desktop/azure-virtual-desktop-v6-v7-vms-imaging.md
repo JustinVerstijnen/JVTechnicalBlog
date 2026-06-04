@@ -193,6 +193,8 @@ The image will then be created:
 
 [![jv-media-7340-3fd2940a9eb3.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-virtual-desktop-v6-v7-vms-imaging-7340/jv-media-7340-3fd2940a9eb3.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-virtual-desktop-v6-v7-vms-imaging-7340/jv-media-7340-3fd2940a9eb3.png)
 
+This can take some minutes, up to 30 minutes in some of my cases.
+
 ### Checking image disk controller types
 
 If you want, you can check the VM support of your image using this simple Azure PowerShell scipt:
