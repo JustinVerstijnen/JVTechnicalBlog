@@ -8,7 +8,7 @@ tags:
   - Concepts
 ---
 
-When you reinstall my laptop or setup a fresh management workstation, there are always a couple of PowerShell modules and tools must be installed install directly. These modules save a lot of time and make managing Azure and Microsoft 365 environments much easier but you always have to remember them correctly to actually install them.
+When you reinstall your admin workstation or setup a fresh workstation, there are always a couple of PowerShell modules and tools must be installed install directly. These modules save a lot of time and make managing Azure and Microsoft 365 environments much easier but you always have to remember them correctly to actually install them.
 
 In this post I have summed up all modules I personally prefer to install almost every time on a clean Windows installation and I can recommend to every other Azure or Microsoft 365 administrator.
 
@@ -21,6 +21,8 @@ The Microsoft Graph PowerShell SDK is basically the modern management module for
 I use this module almost daily because many modern Microsoft 365 automation tasks now needs Graph.
 
 <a class="btn btn-primary" href="https://www.powershellgallery.com/packages/Microsoft.Graph" target="_blank" rel="noreferrer">Open Microsoft Graph in PowerShell Gallery</a>
+
+To install this PowerShell module on your computer, run the following command:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
 Install-Module Microsoft.Graph -Scope CurrentUser
@@ -40,6 +42,8 @@ The Exchange Online module is still a must-have when managing mailboxes, mail fl
 
 <a class="btn btn-primary" href="https://www.powershellgallery.com/packages/ExchangeOnlineManagement" target="_blank" rel="noreferrer">Open Exchange Online module in PowerShell Gallery</a>
 
+To install this PowerShell module on your computer, run the following command:
+
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
 Install-Module ExchangeOnlineManagement -Scope CurrentUser
 {{< /card >}}
@@ -58,6 +62,8 @@ The Az module is the main PowerShell module for managing Microsoft Azure resourc
 
 <a class="btn btn-primary" href="https://www.powershellgallery.com/packages/Az" target="_blank" rel="noreferrer">Open Az module in PowerShell Gallery</a>
 
+To install this PowerShell module on your computer, run the following command:
+
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
 Install-Module Az -Scope CurrentUser
 {{< /card >}}
@@ -75,6 +81,8 @@ Connect-AzAccount
 Even though this is not a PowerShell module, I still install Azure CLI on every management workstation. Some Microsoft documentation examples are written for Azure CLI and sometimes certain preview or newer features arrive there first. It is also heavily used in automation, DevOps pipelines and Terraform deployments.
 
 <a class="btn btn-primary" href="https://learn.microsoft.com/en-us/cli/azure/" target="_blank" rel="noreferrer">Open Azure CLI documentation</a>
+
+To install this module on your computer, run the following command:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
 winget install --exact --id Microsoft.AzureCLI
@@ -95,6 +103,8 @@ The Microsoft Teams module is useful for managing Teams policies, calling config
 I mostly use it for reporting and bulk configuration changes.
 
 <a class="btn btn-primary" href="https://www.powershellgallery.com/packages/MicrosoftTeams" target="_blank" rel="noreferrer">Open Microsoft Teams module in PowerShell Gallery</a>
+
+To install this PowerShell module on your computer, run the following command:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
 Install-Module MicrosoftTeams -Scope CurrentUser
@@ -121,6 +131,8 @@ For example:
 - OneDrive management
 
 <a class="btn btn-primary" href="https://www.powershellgallery.com/packages/microsoft.online.sharepoint.powershell" target="_blank" rel="noreferrer">Open SharePoint Online module in PowerShell Gallery</a>
+
+To install this PowerShell module on your computer, run the following command:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
 Install-Module Microsoft.Online.SharePoint.PowerShell -Scope CurrentUser
