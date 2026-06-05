@@ -13,7 +13,7 @@ title: "About"
   <aside class="about-hero-aside" aria-label="Profile photo">
     <figure class="about-profile-card">
       <div class="about-profile-photo">
-        <img src="img/profile_picture.jpg" alt="Profile picture">
+        <img src="https://justinverstijnen.nl/img/profile_picture.jpg" alt="Profile picture">
       </div>
     </figure>
   </aside>
