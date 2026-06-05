@@ -1,7 +1,7 @@
 ---
 title: "Entra ID Authentication on Azure Windows VM"
 slug: "entra-id-authentication-on-azure-windows-vm"
-date: 2026-06-13
+date: 2026-06-18
 description: "This guide explains how to join an Azure virtual machine to Azure Active Directory (Azure AD). Please note that this process has several prerequisites that must be met before configuration which are described in the guide itself."
 tags: "Step by Step guides"
 categories: "Microsoft Azure"

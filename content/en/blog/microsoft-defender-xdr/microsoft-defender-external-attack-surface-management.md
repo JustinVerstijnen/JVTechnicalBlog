@@ -1,6 +1,6 @@
 ---
 title: "Microsoft Defender External Attack Surface Management (EASM)"
-date: 2026-07-04
+date: 2026-07-09
 description: "Microsoft Defender External Attack Surface Management (EASM) is a separate Defender solution which can be used to defend and monitor some of your external attack surfaces like websites, servers, SSL certificates and domains. All of this is achieved through a single admin panel in your Azure Portal."
 tags:
 - Step by Step guides

@@ -1,6 +1,6 @@
 ---
 title: "The art of Dynamic Groups in Microsoft Entra"
-date: 2026-07-20
+date: 2026-08-06
 slug: "the-art-of-dynamic-groups-in-microsoft-entra"
 categories:
   - Microsoft Entra

@@ -1,6 +1,6 @@
 ---
 title: "Must-have PowerShell Modules for Azure and Microsoft 365 Administrators"
-date: 2026-07-04
+date: 2026-07-23
 slug: "must-have-powershell-modules-for-azure-and-microsoft-365-administrators"
 description: "When you reinstall your admin workstation or setup a fresh workstation, there are always a couple of PowerShell modules and tools must be installed install directly. These modules save a lot of time and make managing Azure and Microsoft 365 environments much easier but you always have to remember them correctly to actually install them."
 categories:
