@@ -76,7 +76,7 @@ Configure a TLS-RPT record to receive TLS deliverability reports by senders to y
 
 ### 5. MTA-STS record
 
-Configure a MTA-STS record including policy to 
+Configure a MTA-STS record including policy to increase email security by leveraging the MTA-STS protocol.
 
 <a class="btn btn-primary" href="https://justinverstijnen.nl/what-is-mta-sts-and-how-to-protect-your-email-flow/" target="_blank" rel="noreferrer">MTA-STS record configuration guide</a>
 
