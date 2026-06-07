@@ -169,6 +169,60 @@ Overall, the reports show a healthy TLS reporting status. Both MTA-STS and TLSA/
 
 ---
 
+## Let's review
+
+{{< quiz >}}
+{
+  "intro": "Answer these questions to check your understanding of this post.",
+  "questions": [
+    {
+      "question": "What is the main purpose of TLS-RPT?",
+      "reference": "See the section: What is TLS-RPT",
+      "referenceUrl": "#what-is-tls-rpt",
+      "answers": [
+        {
+          "text": "Securing your email messages by adding a validation signature",
+          "correct": false,
+          "message": "Incorrect. This is what DKIM does."
+        },
+         {
+          "text": "Encrypting your email messages",
+          "correct": false,
+          "message": "Incorrect. This is what S/MIME does"
+        },
+        {
+          "text": "To receive reports about the deliverability of your domain.",
+          "correct": true,
+          "message": "Correct! By configuring TLS-RPT you can receive reports from senders on the internet about the deliverability to your domain."
+        },
+        {
+      "question": "How do you configure TLS-RPT?",
+      "reference": "See the section: How TLS-RPT works",
+      "referenceUrl": "#how-tls-rpt-works",
+      "answers": [
+        {
+          "text": "By enabling this on your email server",
+          "correct": false,
+          "message": "Incorrect. You need to configure TLS-RPT through a DNS record."
+        },
+         {
+          "text": "By configuring a DNS record on your domain(s)",
+          "correct": true,
+          "message": "Correct! This is indeed how we configure TLS-RPT."
+        },
+        {
+          "text": "By adding a S/MIME certificate to your email messages",
+          "correct": false,
+          "message": "Incorrect. You need to configure TLS-RPT through a DNS record."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
+
+---
+
 ## Summary
 
 TLS-RPT is basically DMARC-style reporting for TLS and secure mail transport. It helps you understand whether other mail servers can securely deliver email to your domain using TLS. TLS-RPT itself does not stop attacks or enforce encryption, but it gives visibility into certificate problems, downgrade risks, DNS issues and MTA-STS problems. Enabling the option therefore does not make your environment more secure. Its more a reporting mechanism for more insights of possible delivery failures.
