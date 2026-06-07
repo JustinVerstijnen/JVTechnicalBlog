@@ -1,0 +1,16 @@
+{{- $quizID := printf "jv-quiz-%d" .Ordinal -}}
+
+<div id="{{ $quizID }}" class="jv-quiz" data-jv-quiz>
+  <div class="jv-quiz__noscript">
+    <strong>Knowledge check</strong><br>
+    This quiz needs JavaScript to show the questions and feedback.
+  </div>
+  <script type="application/json" class="jv-quiz__data">
+{{ .Inner | strings.TrimSpace | safeHTML }}
+  </script>
+</div>
+
+{{- if not (.Page.Scratch.Get "jvQuizAssetsLoaded") -}}
+  {{- .Page.Scratch.Set "jvQuizAssetsLoaded" true -}}
+  <script src="/js/quiz.js" defer></script>
+{{- end -}}
