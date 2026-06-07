@@ -191,7 +191,7 @@ Overall, the reports show a healthy TLS reporting status. Both MTA-STS and TLSA/
           "message": "Incorrect. This is what S/MIME does"
         },
         {
-          "text": "Receiving reports about the deliverability of your domain.",
+          "text": "Receiving reports about the deliverability of your domain",
           "correct": true,
           "message": "Correct! By configuring TLS-RPT you can receive reports from senders on the internet about the deliverability to your domain."
         }
