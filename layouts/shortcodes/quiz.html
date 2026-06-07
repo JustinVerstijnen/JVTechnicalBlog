@@ -6,7 +6,7 @@
     This quiz needs JavaScript to show the questions and feedback.
   </div>
   <script type="application/json" class="jv-quiz__data">
-{{ .Inner | strings.TrimSpace | safeHTML }}
+{{ .Inner | strings.TrimSpace | safeJS }}
   </script>
 </div>
 
