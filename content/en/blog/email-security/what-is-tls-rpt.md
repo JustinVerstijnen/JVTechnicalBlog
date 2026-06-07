@@ -185,7 +185,7 @@ Overall, the reports show a healthy TLS reporting status. Both MTA-STS and TLSA/
           "correct": false,
           "message": "Incorrect. This is what DKIM does."
         },
-         {
+        {
           "text": "Encrypting your email messages",
           "correct": false,
           "message": "Incorrect. This is what S/MIME does"
@@ -194,8 +194,10 @@ Overall, the reports show a healthy TLS reporting status. Both MTA-STS and TLSA/
           "text": "To receive reports about the deliverability of your domain.",
           "correct": true,
           "message": "Correct! By configuring TLS-RPT you can receive reports from senders on the internet about the deliverability to your domain."
-        },
-        {
+        }
+      ]
+    },
+    {
       "question": "How do you configure TLS-RPT?",
       "reference": "See the section: How TLS-RPT works",
       "referenceUrl": "#how-tls-rpt-works",
@@ -205,7 +207,7 @@ Overall, the reports show a healthy TLS reporting status. Both MTA-STS and TLSA/
           "correct": false,
           "message": "Incorrect. You need to configure TLS-RPT through a DNS record."
         },
-         {
+        {
           "text": "By configuring a DNS record on your domain(s)",
           "correct": true,
           "message": "Correct! This is indeed how we configure TLS-RPT."
