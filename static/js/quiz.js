@@ -91,6 +91,111 @@
     root.appendChild(error);
   }
 
+  function launchConfetti() {
+    if (
+      window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
+      return;
+    }
+
+    var canvas = document.createElement('canvas');
+    var context = canvas.getContext('2d');
+
+    if (!context) {
+      return;
+    }
+
+    var colors = ['#77B0DE', '#198754', '#ffc107', '#ffffff'];
+    var particles = [];
+    var particleCount = 120;
+    var duration = 1800;
+    var startTime = performance.now();
+    var animationFrameId = null;
+
+    canvas.className = 'jv-quiz__confetti-canvas';
+    canvas.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(canvas);
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    function randomBetween(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    function createParticle() {
+      return {
+        x: randomBetween(0, canvas.width),
+        y: randomBetween(-canvas.height * 0.25, 0),
+        size: randomBetween(6, 11),
+        color: colors[Math.floor(Math.random() * colors.length)],
+        rotation: randomBetween(0, Math.PI * 2),
+        rotationSpeed: randomBetween(-0.18, 0.18),
+        velocityX: randomBetween(-1.9, 1.9),
+        velocityY: randomBetween(3.2, 7.8),
+        opacity: 1,
+      };
+    }
+
+    function cleanup() {
+      if (animationFrameId) {
+        window.cancelAnimationFrame(animationFrameId);
+      }
+
+      window.removeEventListener('resize', resizeCanvas);
+      canvas.remove();
+    }
+
+    function drawFrame(now) {
+      var elapsed = now - startTime;
+      var fadeStart = duration * 0.62;
+
+      context.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach(function (particle) {
+        if (elapsed > fadeStart) {
+          particle.opacity = Math.max(0, 1 - (elapsed - fadeStart) / (duration - fadeStart));
+        }
+
+        particle.x += particle.velocityX;
+        particle.y += particle.velocityY;
+        particle.rotation += particle.rotationSpeed;
+
+        context.save();
+        context.globalAlpha = particle.opacity;
+        context.translate(particle.x, particle.y);
+        context.rotate(particle.rotation);
+        context.fillStyle = particle.color;
+        context.fillRect(
+          -particle.size / 2,
+          -particle.size / 2,
+          particle.size,
+          particle.size * 0.62
+        );
+        context.restore();
+      });
+
+      if (elapsed < duration) {
+        animationFrameId = window.requestAnimationFrame(drawFrame);
+        return;
+      }
+
+      cleanup();
+    }
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    for (var index = 0; index < particleCount; index += 1) {
+      particles.push(createParticle());
+    }
+
+    animationFrameId = window.requestAnimationFrame(drawFrame);
+  }
+
   function updateProgress(root, state) {
     var answeredCount = state.answers.filter(function (answer) {
       return answer !== null;
@@ -100,34 +205,31 @@
       return answer && answer.correct;
     }).length;
 
+    var incorrectCount = answeredCount - correctCount;
+    var totalCount = state.questions.length;
+    var correctPercent = totalCount ? (correctCount / totalCount) * 100 : 0;
+    var answeredPercent = totalCount ? (answeredCount / totalCount) * 100 : 0;
+
     if (state.scoreLabel) {
-      state.scoreLabel.textContent = correctCount + '/' + state.questions.length + ' correct';
+      state.scoreLabel.textContent = correctCount + '/' + totalCount + ' correct';
     }
 
     if (state.statusLabel) {
       state.statusLabel.textContent =
-        answeredCount + '/' + state.questions.length +
-        ' answered · ' + correctCount + '/' + state.questions.length + ' correct';
+        answeredCount + '/' + totalCount +
+        ' answered · ' + correctCount + ' correct · ' + incorrectCount + ' incorrect';
     }
 
-    state.progressSegments.forEach(function (segment, index) {
-      segment.classList.remove('is-correct', 'is-incorrect', 'is-current');
-      segment.setAttribute('aria-label', 'Question ' + (index + 1) + ' not answered yet');
-
-      if (state.answers[index]) {
-        segment.classList.add(state.answers[index].correct ? 'is-correct' : 'is-incorrect');
-        segment.setAttribute(
-          'aria-label',
-          'Question ' + (index + 1) + ': ' + (state.answers[index].correct ? 'correct' : 'incorrect')
-        );
-        return;
-      }
-
-      if (index === state.currentIndex) {
-        segment.classList.add('is-current');
-        segment.setAttribute('aria-label', 'Question ' + (index + 1) + ': current question');
-      }
-    });
+    if (state.progressBar) {
+      state.progressBar.style.setProperty('--jv-quiz-correct-end', correctPercent + '%');
+      state.progressBar.style.setProperty('--jv-quiz-answered-end', answeredPercent + '%');
+      state.progressBar.setAttribute('aria-valuenow', answeredCount);
+      state.progressBar.setAttribute(
+        'aria-valuetext',
+        answeredCount + ' of ' + totalCount +
+        ' answered. ' + correctCount + ' correct and ' + incorrectCount + ' incorrect.'
+      );
+    }
   }
 
   function appendReference(feedbackBody, question) {
@@ -155,17 +257,24 @@
       return answer && answer.correct;
     }).length;
 
+    var perfectScore = correctCount === state.questions.length;
+
     state.summary.classList.remove('d-none', 'is-perfect', 'is-review-needed');
-    state.summary.classList.add(correctCount === state.questions.length ? 'is-perfect' : 'is-review-needed');
-    state.summaryTitle.textContent =
-      correctCount === state.questions.length ? 'Great job — all answers are correct.' : 'Quiz completed.';
+    state.summary.classList.add(perfectScore ? 'is-perfect' : 'is-review-needed');
+    state.summaryTitle.textContent = perfectScore
+      ? 'Great job — all answers are correct.'
+      : 'Quiz completed.';
     state.summaryText.textContent =
       'You scored ' + correctCount + ' out of ' + state.questions.length + '. ' +
-      (correctCount === state.questions.length
+      (perfectScore
         ? 'You understood the key points from this post.'
         : 'Review the references above and try the quiz again if needed.');
 
     root.classList.add('is-completed');
+
+    if (perfectScore) {
+      launchConfetti();
+    }
   }
 
   function resetQuiz(root, state) {
@@ -178,10 +287,15 @@
       card.hidden = index !== 0;
       card.classList.remove('is-answered', 'is-correct', 'is-incorrect');
 
-      var buttons = card.querySelectorAll('.jv-quiz__answer');
-      buttons.forEach(function (button) {
-        button.disabled = false;
-        button.classList.remove('is-selected', 'is-correct', 'is-incorrect');
+      var options = card.querySelectorAll('.jv-quiz__answer-option');
+      options.forEach(function (option) {
+        option.classList.remove('is-selected', 'is-correct', 'is-incorrect');
+      });
+
+      var inputs = card.querySelectorAll('.jv-quiz__answer-input');
+      inputs.forEach(function (input) {
+        input.disabled = false;
+        input.checked = false;
       });
 
       var feedback = card.querySelector('.jv-quiz__feedback');
@@ -205,7 +319,8 @@
     var selectedAnswer = question.answers[answerIndex];
     var isCorrect = Boolean(selectedAnswer.correct);
     var card = state.questionCards[questionIndex];
-    var buttons = card.querySelectorAll('.jv-quiz__answer');
+    var options = card.querySelectorAll('.jv-quiz__answer-option');
+    var inputs = card.querySelectorAll('.jv-quiz__answer-input');
     var feedback = card.querySelector('.jv-quiz__feedback');
 
     state.answers[questionIndex] = {
@@ -213,20 +328,24 @@
       selectedAnswerIndex: answerIndex,
     };
 
-    buttons.forEach(function (button, index) {
-      var buttonAnswer = question.answers[index];
-      button.disabled = true;
+    inputs.forEach(function (input, index) {
+      input.checked = index === answerIndex;
+      input.disabled = true;
+    });
+
+    options.forEach(function (option, index) {
+      var optionAnswer = question.answers[index];
 
       if (index === answerIndex) {
-        button.classList.add('is-selected');
+        option.classList.add('is-selected');
       }
 
-      if (buttonAnswer.correct) {
-        button.classList.add('is-correct');
+      if (optionAnswer.correct) {
+        option.classList.add('is-correct');
       }
 
       if (index === answerIndex && !isCorrect) {
-        button.classList.add('is-incorrect');
+        option.classList.add('is-incorrect');
       }
     });
 
@@ -272,8 +391,8 @@
         return null;
       }),
       currentIndex: 0,
-      progressSegments: [],
       questionCards: [],
+      progressBar: null,
       scoreLabel: null,
       statusLabel: null,
       summary: null,
@@ -303,20 +422,15 @@
     header.appendChild(headerCopy);
     header.appendChild(state.scoreLabel);
 
-    var progress = createElement('div', 'jv-quiz__progress');
-    progress.setAttribute('role', 'list');
-    progress.setAttribute('aria-label', 'Quiz progress');
-
-    questions.forEach(function (_, index) {
-      var segment = createElement('span', 'jv-quiz__progress-segment');
-      segment.setAttribute('role', 'listitem');
-      segment.setAttribute('aria-label', 'Question ' + (index + 1) + ' not answered yet');
-      progress.appendChild(segment);
-      state.progressSegments.push(segment);
-    });
+    state.progressBar = createElement('div', 'jv-quiz__progress');
+    state.progressBar.setAttribute('role', 'progressbar');
+    state.progressBar.setAttribute('aria-label', 'Quiz progress');
+    state.progressBar.setAttribute('aria-valuemin', '0');
+    state.progressBar.setAttribute('aria-valuemax', String(questions.length));
+    state.progressBar.setAttribute('aria-valuenow', '0');
 
     wrapper.appendChild(header);
-    wrapper.appendChild(progress);
+    wrapper.appendChild(state.progressBar);
     wrapper.appendChild(state.statusLabel);
 
     var questionList = createElement('div', 'jv-quiz__questions');
@@ -335,14 +449,28 @@
       questionTitle.id = root.id + '-question-' + questionIndex;
 
       var answerList = createElement('div', 'jv-quiz__answers');
+      answerList.setAttribute('role', 'radiogroup');
+      answerList.setAttribute('aria-labelledby', questionTitle.id);
 
       question.answers.forEach(function (answer, answerIndex) {
-        var button = createElement('button', 'jv-quiz__answer', answer.text);
-        button.type = 'button';
-        button.addEventListener('click', function () {
+        var optionId = root.id + '-question-' + questionIndex + '-answer-' + answerIndex;
+        var label = createElement('label', 'jv-quiz__answer-option');
+        var input = createElement('input', 'jv-quiz__answer-input');
+        var answerText = createElement('span', 'jv-quiz__answer-text', answer.text);
+
+        input.type = 'radio';
+        input.id = optionId;
+        input.name = root.id + '-question-' + questionIndex;
+        input.value = String(answerIndex);
+
+        input.addEventListener('change', function () {
           handleAnswer(root, state, questionIndex, answerIndex);
         });
-        answerList.appendChild(button);
+
+        label.setAttribute('for', optionId);
+        label.appendChild(input);
+        label.appendChild(answerText);
+        answerList.appendChild(label);
       });
 
       var feedback = createElement('div', 'jv-quiz__feedback');
