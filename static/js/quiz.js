@@ -106,10 +106,10 @@
       return;
     }
 
-    var colors = ['#77B0DE', '#198754', '#ffc107', '#ffffff'];
+    var colors = ['#77B0DE', '#198754', '#ff0707', '#ffffff'];
     var particles = [];
     var particleCount = 120;
-    var duration = 1800;
+    var duration = 1000;
     var startTime = performance.now();
     var animationFrameId = null;
 
@@ -262,13 +262,13 @@
     state.summary.classList.remove('d-none', 'is-perfect', 'is-review-needed');
     state.summary.classList.add(perfectScore ? 'is-perfect' : 'is-review-needed');
     state.summaryTitle.textContent = perfectScore
-      ? 'Great job — all answers are correct.'
-      : 'Quiz completed.';
+      ? 'Great job! You have answered all questions correctly.'
+      : 'Quiz completed, but some review is needed.';
     state.summaryText.textContent =
       'You scored ' + correctCount + ' out of ' + state.questions.length + '. ' +
       (perfectScore
         ? 'You understood the key points from this post.'
-        : 'Review the references above and try the quiz again if needed.');
+        : 'Review the references above and try the quiz again if you want to.');
 
     root.classList.add('is-completed');
 
