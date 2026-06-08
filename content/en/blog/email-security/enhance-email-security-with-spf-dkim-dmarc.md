@@ -323,7 +323,7 @@ Then save your configuration.
 
 {{< quiz >}}
 {
-  "intro": "Answer these question(s) to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "intro": "Answer these questions to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
   "questions": [
     {
       "question": "What is the main purpose of SPF?",
@@ -407,9 +407,9 @@ Then save your configuration.
       "referenceUrl": "#dmarc-policies",
       "answers": [
         {
-          "text": "p=reject",
-          "correct": true,
-          "message": "Correct! This is the right answer."
+          "text": "p=block",
+          "correct": false,
+          "message": "Incorrect. This policy does not exist."
         },
         {
           "text": "p=quarantine",
@@ -417,9 +417,9 @@ Then save your configuration.
           "message": "Incorrect. This policy only tells to quarantine/move email to junk."
         },
         {
-          "text": "p=block-all",
-          "correct": false,
-          "message": "Incorrect. This policy does not exist."
+          "text": "p=reject",
+          "correct": true,
+          "message": "Correct! This is the right answer."
         },
         {
           "text": "p=none",
