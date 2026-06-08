@@ -110,7 +110,7 @@ Make sure to change the \*server\* placeholder to the correct server names in yo
   "intro": "Answer these question(s) to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
   "questions": [
     {
-      "question": "What is the FSMO with the highest user impact when that domain controllers has an outage?",
+      "question": "What is the FSMO with the highest user impact when that domain controller has an outage?",
       "reference": "What are the FSMO roles of Active Directory?",
       "referenceUrl": "#what-are-the-fsmo-roles-of-active-directory",
       "answers": [
