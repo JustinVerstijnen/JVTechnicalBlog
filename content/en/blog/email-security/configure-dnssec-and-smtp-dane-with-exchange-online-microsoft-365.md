@@ -177,7 +177,7 @@ Fill in your domain, and select the "DANE-validation" including DNSSEC to test b
   "questions": [
     {
       "question": "What does the SMTP DANE protocol do?",
-      "reference": "See the section: Section title",
+      "reference": "See the section: SMTP DNS Authentication of Named Entities (DANE)",
       "referenceUrl": "#smtp-dns-authentication-of-named-entities-dane",
       "answers": [
         {
@@ -204,7 +204,7 @@ Fill in your domain, and select the "DANE-validation" including DNSSEC to test b
     },
     {
       "question": "What does the DNSSEC protocol do?",
-      "reference": "See the section: Section title",
+      "reference": "See the section: Domain Name System Security Extensions (DNSSEC)",
       "referenceUrl": "#domain-name-system-security-extensions-dnssec",
       "answers": [
         {
@@ -226,7 +226,7 @@ Fill in your domain, and select the "DANE-validation" including DNSSEC to test b
     },
     {
       "question": "What must be done first before configuring SMTP DANE for Microsoft 365?",
-      "reference": "See the section: Section title",
+      "reference": "See the section: Step 1: Check your DNSSEC configuration",
       "referenceUrl": "#step-1-check-your-dnssec-configuration",
       "answers": [
         {
