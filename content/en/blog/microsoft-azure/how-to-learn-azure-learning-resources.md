@@ -77,7 +77,7 @@ Also, in the modules there are some interactive guides. These are visual but you
 
 When wanting to have some great hands-on experience and inspiration for your Azure trial/test environment, there are some practice labs available based on the interactive guides to build the resources in your own environment. You can find <a href="#github-labs">them under heading 8.</a>
 
-<p><a class="btn btn-primary" href="https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator">AZ-104 Interactive labs</a>&nbsp;<a class="btn btn-primary" href="https://learn.microsoft.com/nl-nl/training/paths/az-104-administrator-prerequisites/">AZ-104 Text course</a></p>
+<p><a class="btn btn-primary" href="https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator">AZ-104 Interactive labs</a>&nbsp;<a class="btn btn-primary" href="https://learn.microsoft.com/nl-nl/training/paths/az-104-administrator-prerequisites/">AZ-104 Text course</a>&nbsp;<a class="btn btn-primary" href="https://microsoftlearning.github.io/click-throughs/docs/IG/interactive_guide_explore_conditional_access_optimization_agent_web/story.html">Conditional Access Interactive guide</a></p>
 
 ---
 
