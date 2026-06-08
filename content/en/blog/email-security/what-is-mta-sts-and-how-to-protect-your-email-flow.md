@@ -389,6 +389,72 @@ After configuring everything, it can take up to 60 minutes before everything sho
 
 ---
 
+## Knowledge check
+
+{{< quiz >}}
+{
+  "intro": "Answer these question(s) to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "questions": [
+    {
+      "question": "What is the main purpose of MTA-STS?",
+      "reference": "See the section: Deep dive into how MTA-STS works",
+      "referenceUrl": "#deep-dive-into-how-mta-sts-works",
+      "answers": [
+        {
+          "text": "To publish which mail servers are allowed to send email for your domain",
+          "correct": false,
+          "message": "Incorrect. Defining trusted sending servers is what SPF does."
+        },
+        {
+          "text": "To digitally sign outgoing email messages with a private key",
+          "correct": false,
+          "message": "Incorrect. Digitally signing email messages is what DKIM does."
+        },
+        {
+          "text": "To make sure SMTP TLS encryption is used and certificates are validated during email transmission",
+          "correct": true,
+          "message": "Correct! MTA-STS helps protect email transmission by enforcing TLS and validating certificates."
+        },
+        {
+          "text": "To replace MX records with TXT records",
+          "correct": false,
+          "message": "Incorrect. MTA-STS does not replace MX records; it uses a DNS record and a published policy file."
+        }
+      ]
+    },
+    {
+      "question": "Which two things must be configured for MTA-STS to work?",
+      "reference": "See the section: Steps to configure MTA-STS",
+      "referenceUrl": "#steps-to-configure-mta-sts",
+      "answers": [
+        {
+          "text": "DNSSEC and a TLSA record",
+          "correct": false,
+          "message": "Incorrect. DNSSEC and TLSA records are used for SMTP DANE, not MTA-STS."
+        },
+        {
+          "text": "A DNS record and a policy TXT file",
+          "correct": true,
+          "message": "Correct! MTA-STS requires a DNS record and a publicly accessible policy file."
+        },
+        {
+          "text": "An SPF record and a DKIM selector",
+          "correct": false,
+          "message": "Incorrect. SPF and DKIM are separate email authentication techniques."
+        },
+        {
+          "text": "A Microsoft 365 connector and an Exchange transport rule",
+          "correct": false,
+          "message": "Incorrect. MTA-STS is configured using DNS and a published policy file, not an Exchange transport rule."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
+
+---
+
 ## Summary
 
 MTA-STS is a great way to enhance our email security and protect them from being stolen or read in transit. It also offers a great way of protection when DNSSEC/SMTP DANE is no option in your domain.

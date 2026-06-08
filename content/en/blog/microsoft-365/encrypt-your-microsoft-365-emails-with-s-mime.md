@@ -353,6 +353,45 @@ For company managed devices, this can be configured with browser policies. In sm
 
 ---
 
+## Knowledge check
+
+{{< quiz >}}
+{
+  "intro": "Answer these question(s) to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "questions": [
+    {
+      "question": "What is the main difference between S/MIME and DKIM?",
+      "reference": "See the section: S/MIME versus DKIM",
+      "referenceUrl": "#smime-versus-dkim",
+      "answers": [
+        {
+          "text": "DKIM encrypts the full email message, while S/MIME only checks the sending domain",
+          "correct": false,
+          "message": "Incorrect. DKIM does not encrypt the email content, and S/MIME is focused on individual sender verification and encryption."
+        },
+        {
+          "text": "S/MIME only works for inbound email, while DKIM only works for outbound email",
+          "correct": false,
+          "message": "Incorrect. This is not the main difference between S/MIME and DKIM."
+        },
+        {
+          "text": "S/MIME verifies the individual sender and can encrypt the email content, while DKIM verifies the sending domain",
+          "correct": true,
+          "message": "Correct! S/MIME can verify the individual sender and protect the message content, while DKIM verifies the sending domain."
+        },
+        {
+          "text": "S/MIME replaces the need for SPF, DKIM and DMARC",
+          "correct": false,
+          "message": "Incorrect. S/MIME does not replace SPF, DKIM or DMARC; it only adds personal signing and encryption."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
+
+---
+
 ## Summary
 
 In this guide we configured S/MIME for Microsoft 365 and Exchange Online. We purchased and installed a personal S/MIME certificate, exported the Root and Intermediate CA information to an `.sst` file and uploaded this to Exchange Online.

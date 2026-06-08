@@ -160,6 +160,62 @@ It looks like we are ready and done :).
 
 ---
 
+## Knowledge check
+
+{{< quiz >}}
+{
+  "intro": "Answer these questions to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "questions": [
+    {
+      "question": "What type of website can you host with GitHub Pages?",
+      "reference": "See the section: What is GitHub Pages?",
+      "referenceUrl": "#what-is-github-pages",
+      "answers": [
+        {
+          "text": "Complex websites with PHP, APIs, Node.js or Python",
+          "correct": false,
+          "message": "Incorrect. GitHub Pages is meant for static websites and does not support backend code like PHP, APIs, Node.js or Python."
+        },
+        {
+          "text": "Static websites with frontend code like HTML, CSS, JavaScript and Markdown",
+          "correct": true,
+          "message": "Correct! GitHub Pages is designed to host static websites directly from a GitHub repository."
+        },
+        {
+          "text": "WordPress websites with a database",
+          "correct": false,
+          "message": "Incorrect. GitHub Pages does not host WordPress websites with a database."
+        }
+      ]
+    },
+    {
+      "question": "Which DNS record is used in this guide to link a custom subdomain to GitHub Pages?",
+      "reference": "See the section: Linking a custom domain to your GitHub Page",
+      "referenceUrl": "#step-4-linking-a-custom-domain-to-your-github-page",
+      "answers": [
+        {
+          "text": "MX record",
+          "correct": false,
+          "message": "Incorrect. An MX record is used for email routing, not for linking a GitHub Pages website."
+        },
+        {
+          "text": "TXT record",
+          "correct": false,
+          "message": "Incorrect. A TXT record can be used for verification or policies, but this guide uses a CNAME record for the custom subdomain."
+        },
+        {
+          "text": "CNAME record",
+          "correct": true,
+          "message": "Correct! The guide links the custom subdomain to GitHub Pages with a CNAME record."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
+
+---
+
 ## Summary
 
 GitHub Pages provides a simple and reliable way to host static websites for free. It integrates directly with Git, requires no server maintenance, and supports custom domains with HTTPS.
