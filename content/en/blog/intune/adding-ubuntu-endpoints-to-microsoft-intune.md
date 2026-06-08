@@ -4,6 +4,7 @@ slug: "Adding-ubuntu-endpoints-to-intune"
 date: 2025-06-18
 tags:
 - Step by Step guides
+- Knowledge check
 categories:
 - Microsoft Intune
 description: "In this post, I will be installing an Ubuntu Desktop laptop and join it to Microsoft Intune to leverage Device Management on the endpoint."
@@ -81,7 +82,7 @@ After the ISO has been written to the USB drive, I have connected it to the test
 During the installation, you can proceed with Step 2, as we have to wait for a few minutes. This makes the process a bit efficient.
 
 {{% alert title="Warning" color="warning" %}}
-During the installation, it's recommended to enable Device Encryption as this cannot be done through Microsoft Intune Policies.
+During the installation, it's recommended to enable **Device Encryption** as this cannot be done through Microsoft Intune Policies.
 {{% /alert %}}
 
 ---
@@ -90,7 +91,7 @@ During the installation, it's recommended to enable Device Encryption as this ca
 
 We can prepare our Intune environment by creating a dynamic security group for Linux devices. I like dynamic security groups in Intune as assignments are done automatically and eliminating the need for us manually adding devices to groups. Policies and Compliance will also automatically apply.
 
-Open Microsoft Intune admin center on [https://i](https://i)[https://intune.microsoft.com](https://intune.microsoft.com)[https://i](https://i)ntune.microsoft.com and open up "Groups" from the left and then click "New group".
+Open Microsoft Intune admin center on [https://intune.microsoft.com](https://intune.microsoft.com) and open up "Groups" from the left and then click "New group".
 
 [![jv-media-8512-815dfb116639.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/adding-ubuntu-endpoints-to-microsoft-intune/jv-media-8512-815dfb116639.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/adding-ubuntu-endpoints-to-microsoft-intune/jv-media-8512-815dfb116639.png)
 
@@ -98,7 +99,7 @@ Fill in the details of the group and select the Membership type "Dynamic Device"
 
 [![jv-media-8512-3542c1a09d25.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/adding-ubuntu-endpoints-to-microsoft-intune/jv-media-8512-3542c1a09d25.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/adding-ubuntu-endpoints-to-microsoft-intune/jv-media-8512-3542c1a09d25.png)
 
-Then click "Add dynamic query". to add filtering on what devices must be added to the group. First, select the deviceOSType to equal to Linux and then add another expression, called deviceManagementAppId to equal 0000000a-0000-0000-c000-000000000000. This means only Intune joined devices, which filters out Entra registered Linux devices. Check the screenshot below for reference.
+Then click "Add dynamic query". to add filtering on what devices must be added to the group. First, select the **deviceOSType** to equal to Linux and then add another expression, called **deviceManagementAppId** to equal 0000000a-0000-0000-c000-000000000000. This means only Intune joined devices, which filters out Entra registered Linux devices. Check the screenshot below for reference.
 
 [![jv-media-8512-3a1222686033.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/adding-ubuntu-endpoints-to-microsoft-intune/jv-media-8512-3a1222686033.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/adding-ubuntu-endpoints-to-microsoft-intune/jv-media-8512-3a1222686033.png)
 
@@ -262,6 +263,72 @@ Now we have to wait for a few minutes before the script will be pushed to Micros
 [![jv-media-8512-a81ec82a8d35.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/adding-ubuntu-endpoints-to-microsoft-intune/jv-media-8512-a81ec82a8d35.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/adding-ubuntu-endpoints-to-microsoft-intune/jv-media-8512-a81ec82a8d35.png)
 
 The applications are succesfully installed after the first reboot.
+
+---
+
+## Knowledge check
+
+{{< quiz >}}
+{
+  "intro": "Answer these question(s) to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "questions": [
+    {
+      "question": "What items are possible to push to Linux devices managed by Microsoft Intune?",
+      "reference": "Supported options in Microsoft Intune",
+      "referenceUrl": "#supported-options-in-microsoft-intune",
+      "answers": [
+        {
+          "text": "Compliance Policies and Scripts",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        },
+        {
+          "text": "Compliance Policies and Configuration Profiles",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "Custom Scripts and Applications",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "Only custom scripts",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        }
+      ]
+    },
+    {
+      "question": "What Linux distribution is NOT supported by Microsoft Intune?",
+      "reference": "Supported Linux versions",
+      "referenceUrl": "#supported-linux-versions",
+      "answers": [
+        {
+          "text": "Ubuntu Desktop",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "Red Hat Enterprise Linux",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "Fedora",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        },
+        {
+          "text": "Ubuntu LTS",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
 
 ---
 
