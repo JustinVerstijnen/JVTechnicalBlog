@@ -173,10 +173,10 @@ Fill in your domain, and select the "DANE-validation" including DNSSEC to test b
 
 {{< quiz >}}
 {
-  "intro": "Answer these question(s) to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "intro": "Answer these questions to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
   "questions": [
     {
-      "question": "What does SMTP DANE do?",
+      "question": "What does the SMTP DANE protocol do?",
       "reference": "See the section: Section title",
       "referenceUrl": "#smtp-dns-authentication-of-named-entities-dane",
       "answers": [
@@ -199,6 +199,50 @@ Fill in your domain, and select the "DANE-validation" including DNSSEC to test b
           "text": "Leveraging DNSSEC protocol and requiring TLS connections for inbound messages",
           "correct": false,
           "message": "Incorrect. SMTP DANE uses DNSSEC and TLS connections for OUTbound email messages."
+        }
+      ]
+    },
+    {
+      "question": "What does the DNSSEC protocol do?",
+      "reference": "See the section: Section title",
+      "referenceUrl": "#domain-name-system-security-extensions-dnssec",
+      "answers": [
+        {
+          "text": "Checking for malware manipulating your computers' DNS cache",
+          "correct": false,
+          "message": "Incorrect. DNSSEC helps securing/validating your domains' DNS records and origin."
+        },
+        {
+          "text": "Validating the origin of the DNS records and ensures records are not manipulated",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        },
+        {
+          "text": "Securing your domains' DNS servers",
+          "correct": false,
+          "message": "Incorrect. DNSSEC helps securing/validating your domains' DNS records and origin."
+        }
+      ]
+    },
+    {
+      "question": "What must be done first before configuring SMTP DANE for Microsoft 365?",
+      "reference": "See the section: Section title",
+      "referenceUrl": "#step-1-check-your-dnssec-configuration",
+      "answers": [
+        {
+          "text": "Configure DNSSEC on your domain",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        },
+        {
+          "text": "Enabling DNSSEC in the Microsoft Exchange admin center",
+          "correct": false,
+          "message": "Incorrect. There is no DNSSEC-like option in the Exchange admin center."
+        },
+        {
+          "text": "Connect to Exchange Online using PowerShell",
+          "correct": false,
+          "message": "Incorrect. We must first configure something on our domain/DNS hosting."
         }
       ]
     }
