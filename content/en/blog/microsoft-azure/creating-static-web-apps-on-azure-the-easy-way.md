@@ -183,6 +183,70 @@ The most great thing is that everything is handled by Azure; from deployment -> 
 
 ---
 
+## Knowledge check
+
+```markdown
+{{< quiz >}}
+{
+  "intro": "Answer these questions to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "questions": [
+    {
+      "question": "What happens when you commit or change code in the connected GitHub repository?",
+      "reference": "See the section: Introduction to Static Web Apps and Github",
+      "referenceUrl": "#introduction-to-static-web-apps-and-github",
+      "answers": [
+        {
+          "text": "Azure requires you to manually upload the updated HTML files again with the FTP protocol",
+          "correct": false,
+          "message": "Incorrect. The GitHub workflow handles the deployment automatically after changes are committed."
+        },
+        {
+          "text": "The Static Web App is deleted and recreated from scratch",
+          "correct": false,
+          "message": "Incorrect. The Static Web App is not deleted; the updated code is deployed to the existing app."
+        },
+        {
+          "text": "A GitHub Workflow runs automatically and deploys the updated code to the Azure Static Web App",
+          "correct": true,
+          "message": "Correct! Committing changes to GitHub starts a workflow that uploads the updated code to the Static Web App."
+        }
+      ]
+    },
+    {
+      "question": "Which DNS record is recommended in this guide when linking a custom subdomain to the Azure Static Web App?",
+      "reference": "See the section: Create a custom domain name",
+      "referenceUrl": "#create-a-custom-domain-name",
+      "answers": [
+        {
+          "text": "MX record",
+          "correct": false,
+          "message": "Incorrect. MX records are used for email routing, not for linking a web app."
+        },
+        {
+          "text": "CNAME record",
+          "correct": true,
+          "message": "Correct! The guide recommends using a CNAME record because it can validate and redirect the custom domain with one record."
+        },
+        {
+          "text": "SPF record",
+          "correct": false,
+          "message": "Incorrect. SPF records are used for email authentication, not for Static Web App custom domains."
+        },
+        {
+          "text": "NS record",
+          "correct": false,
+          "message": "Incorrect. NS records define authoritative name servers for a domain, not the Static Web App target."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
+```
+
+
+---
+
 ## Summary
 
 Azure Static Web Apps are a great way of hosting your simple webpages. They can be used for a variety of things. Management of the SWA instance is done in Azure, management of the code through Github.

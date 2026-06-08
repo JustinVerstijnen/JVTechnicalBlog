@@ -428,6 +428,72 @@ After that you will land on the homepage of the website. You can manually go to 
 
 ---
 
+## Knowledge check
+
+{{< quiz >}}
+{
+  "intro": "Answer these questions to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "questions": [
+    {
+      "question": "Why does this guide choose the official Microsoft WordPress offering in Azure?",
+      "reference": "See the section: Different Azure Wordpress offerings",
+      "referenceUrl": "#different-azure-wordpress-offerings",
+      "answers": [
+        {
+          "text": "Because it runs WordPress on a single virtual machine that you fully manage yourself",
+          "correct": false,
+          "message": "Incorrect. A virtual machine requires more maintenance, updates and security work."
+        },
+        {
+          "text": "Because it is the official Microsoft option, has strong support and relies mostly on Azure services",
+          "correct": true,
+          "message": "Correct! The guide chooses the official Microsoft option because it fits best with an Azure-focused, supported setup."
+        },
+        {
+          "text": "Because it does not require an Azure subscription",
+          "correct": false,
+          "message": "Incorrect. An Azure subscription is required to deploy WordPress on Azure."
+        },
+        {
+          "text": "Because it only works with containers and scale sets",
+          "correct": false,
+          "message": "Incorrect. Containers and scale sets are described as another Azure Application option."
+        }
+      ]
+    },
+    {
+      "question": "Which DNS record does the guide use for a custom WordPress subdomain in Azure App Service?",
+      "reference": "See the section: Step 4: Configure a custom domain",
+      "referenceUrl": "#step-4-configure-a-custom-domain",
+      "answers": [
+        {
+          "text": "MX record",
+          "correct": false,
+          "message": "Incorrect. MX records are used for email routing, not for linking a website to Azure App Service."
+        },
+        {
+          "text": "TXT record only",
+          "correct": false,
+          "message": "Incorrect. A TXT record can be used for verification, but the guide uses a CNAME record for the subdomain redirect."
+        },
+        {
+          "text": "CNAME record",
+          "correct": true,
+          "message": "Correct! For a subdomain, the guide uses a CNAME record pointing to the Azure App Service."
+        },
+        {
+          "text": "NS record",
+          "correct": false,
+          "message": "Incorrect. NS records define the authoritative name servers for a domain."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
+
+---
+
 ## Summary
 
 Wordpress on Azure is a great way to host a Wordpress environment in a modern and scalable way. It's high available and secure by default without the need for hosting a complete server which has to be maintained and patched regularly.

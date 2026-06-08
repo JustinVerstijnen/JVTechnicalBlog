@@ -313,6 +313,72 @@ terraform destroy -auto-approve
 
 ---
 
+## Knowledge check
+
+{{< quiz >}}
+{
+  "intro": "Answer these questions to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "questions": [
+    {
+      "question": "What does it mean that Terraform code is declarative?",
+      "reference": "See the section: Terraform described",
+      "referenceUrl": "#terraform-described",
+      "answers": [
+        {
+          "text": "You write every manual step Terraform must execute, just like a traditional PowerShell script",
+          "correct": false,
+          "message": "Incorrect. Declarative code means you describe the desired end result, not every individual step."
+        },
+        {
+          "text": "You describe the desired end result, and Terraform figures out how to create or change the resources",
+          "correct": true,
+          "message": "Correct! With Terraform, you define what the infrastructure should look like, and Terraform creates a plan to reach that state."
+        },
+        {
+          "text": "Terraform only shows documentation and does not change cloud resources",
+          "correct": false,
+          "message": "Incorrect. Terraform can create, change and remove cloud resources based on your configuration."
+        },
+        {
+          "text": "Terraform only works when resources are created manually first in the Azure Portal",
+          "correct": false,
+          "message": "Incorrect. Terraform is used to deploy and manage resources from code."
+        }
+      ]
+    },
+    {
+      "question": "Which Terraform command is used to create a plan file before applying changes to Azure?",
+      "reference": "See the section: Step 5: Deploying the Terraform project",
+      "referenceUrl": "#step-5-deploying-the-terraform-project",
+      "answers": [
+        {
+          "text": "terraform init",
+          "correct": false,
+          "message": "Incorrect. terraform init prepares the Terraform working directory, but it does not create the deployment plan file."
+        },
+        {
+          "text": "terraform validate",
+          "correct": false,
+          "message": "Incorrect. terraform validate checks the configuration for errors, but it does not create the plan file."
+        },
+        {
+          "text": "terraform apply main.tfplan",
+          "correct": false,
+          "message": "Incorrect. terraform apply applies an existing plan, but the plan must be created first."
+        },
+        {
+          "text": "terraform plan -out main.tfplan",
+          "correct": true,
+          "message": "Correct! This command creates a plan file that shows what Terraform will add or change before applying it."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
+
+---
+
 ## Summary
 
 Terraform helps you deploy Azure resources in a repeatable way using Infrastructure as Code. With the steps above, you installed Terraform and Azure CLI, prepared your settings in `terraform.tfvars`, then used `terraform init`, `terraform validate`, `terraform plan`, and `terraform apply` to deploy your single server setup. This structured format follows the same blog layout pattern from my post template.

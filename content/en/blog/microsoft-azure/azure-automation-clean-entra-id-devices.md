@@ -254,6 +254,45 @@ Then click "OK" to apply the configuration and set the runbook to run on a sched
 
 ---
 
+## Knowledge check
+
+{{< quiz >}}
+{
+  "intro": "Answer these questions to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "questions": [
+    {
+      "question": "Why is a Managed Identity used in this Azure Automation setup?",
+      "reference": "See the section: Configure the Managed Identity",
+      "referenceUrl": "#step-2-configure-the-managed-identity",
+      "answers": [
+        {
+          "text": "To make the Automation Account run faster",
+          "correct": false,
+          "message": "Incorrect. The Managed Identity is not used to improve speed."
+        },
+        {
+          "text": "To allow the Automation Account to access Microsoft Graph without using a separate service account",
+          "correct": true,
+          "message": "Correct! The Managed Identity lets the Automation Account authenticate securely and use the required Microsoft Graph permissions."
+        },
+        {
+          "text": "To store the cleanup reports in Azure Storage",
+          "correct": false,
+          "message": "Incorrect. The Managed Identity is used for authentication and permissions, not for storing reports."
+        },
+        {
+          "text": "To automatically install the required PowerShell modules",
+          "correct": false,
+          "message": "Incorrect. The required modules still need to be installed separately in the Automation Account."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
+
+---
+
 ## Summary
 
 Using Azure Automation together with Microsoft Graph is a powerful and clean way to automatically remove inactive Entra ID devices. Using Azure Automation for device cleanup provides several benefits:
