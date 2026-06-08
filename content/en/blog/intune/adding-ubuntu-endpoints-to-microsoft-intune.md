@@ -1,7 +1,7 @@
 ---
 title: "Adding Ubuntu endpoints to Microsoft Intune"
 slug: "Adding-ubuntu-endpoints-to-intune"
-date: 2025-06-18
+date: 2026-06-18
 tags:
 - Step by Step guides
 - Knowledge check
