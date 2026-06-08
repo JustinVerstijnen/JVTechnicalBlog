@@ -154,9 +154,9 @@ DMARC uses the SPF and DKIM checks as a sort of top layer to determine if a send
 |  |  |  |
 | --- | --- | --- |
 | **DMARC Policy** | **Description** | **Effect** |
-| p=none | No action taken, just collect reports. | All emails are delivered normally. |
-| p=quarantine | Suspicious emails are sent to spam. | Reduces phishing but still delivers spoofed emails to end users Junk box. |
-| p=reject | Strict enforcement – email sent without SPF or DKIM check are blocked. | Maximum protection against spoofing and phishing. |
+| p=none | No action taken, just collect reports | All emails are delivered normally |
+| p=quarantine | Suspicious emails are sent to spam | Reduces phishing but still delivers spoofed emails to end users Junk box |
+| p=reject | Strict enforcement: email sent without SPF or DKIM check are blocked | Maximum protection against spoofing and phishing |
 
 So DMARC isn't really a protocol that states what email inbound on your emailing service should be blocked. It tells other servers on the internet when they receive an email from your domain, what they should do. You then can choose to receive reports from other emailing services what
 
@@ -312,10 +312,125 @@ Open your domain and then open the "DNS records" tab. Create a new record here:
 Use the following parameters:
 
 - Type: TXT
-- TXT name: \_dmarc
-- TXT value: \*your constructed DMARC record\*
+- TXT name: _dmarc
+- TXT value: *your constructed DMARC record*
 
 Then save your configuration.
+
+---
+
+## Knowledge check
+
+{{< quiz >}}
+{
+  "intro": "Answer these question(s) to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "questions": [
+    {
+      "question": "What is the main purpose of SPF?",
+      "reference": "See the section: SPF - Sender Policy Framework",
+      "referenceUrl": "#spf-sender-policy-framework",
+      "answers": [
+        {
+          "text": "Specifying which mail servers are allowed to send email on behalf of your domain",
+          "correct": true,
+          "message": "Correct! SPF helps receiving mail servers verify if email from your domain was sent by an authorized source."
+        },
+        {
+          "text": "Digitally signing every email message with a private key",
+          "correct": false,
+          "message": "Incorrect. Digitally signing messages is what DKIM does."
+        },
+        {
+          "text": "Receiving reports about failed email authentication checks",
+          "correct": false,
+          "message": "Incorrect. Reporting is part of DMARC, not SPF."
+        },
+        {
+          "text": "Changing the MX record priority of your domain",
+          "correct": false,
+          "message": "Incorrect. SPF is about defining trusted sending sources for your domain."
+        }
+      ]
+    },
+    {
+      "question": "What does DKIM help receiving mail servers verify?",
+      "reference": "See the section: DKIM - Domain Keys Identified Mail",
+      "referenceUrl": "#dkim-domain-keys-identified-mail",
+      "answers": [
+        {
+          "text": "That the email was sent from an authorized source and was not altered during transit",
+          "correct": true,
+          "message": "Correct! DKIM uses cryptographic signatures to help verify the sender and message integrity."
+        },
+        {
+          "text": "That the sender's IP address is listed in the SPF record",
+          "correct": false,
+          "message": "Incorrect. Checking authorized sending IPs or services is part of SPF."
+        },
+        {
+          "text": "That suspicious emails are always moved to the Junk folder",
+          "correct": false,
+          "message": "Incorrect. Moving suspicious emails to Junk is related to a DMARC quarantine policy."
+        },
+        {
+          "text": "That your domain has the correct MX priority configured",
+          "correct": false,
+          "message": "Incorrect. DKIM verifies signed email messages, not MX record priority."
+        }
+      ]
+    },
+    {
+      "question": "What does the DMARC p=reject policy do?",
+      "reference": "See the section: DMARC policies",
+      "referenceUrl": "#dmarc-policies",
+      "answers": [
+        {
+          "text": "It tells receiving mail servers to block emails that fail the required authentication checks",
+          "correct": true,
+          "message": "Correct! The reject policy is the strictest DMARC policy and helps protect against spoofing and phishing."
+        },
+        {
+          "text": "It only collects reports and takes no action on email delivery",
+          "correct": false,
+          "message": "Incorrect. This describes the p=none policy."
+        },
+        {
+          "text": "It sends suspicious emails to the recipient's Junk folder",
+          "correct": false,
+          "message": "Incorrect. This describes the p=quarantine policy."
+        }
+      ]
+    },
+    {
+      "question": "Which DMARC policy potentially gives you the highest level of phishing protection for your domain?",
+      "reference": "See the section: DMARC policies",
+      "referenceUrl": "#dmarc-policies",
+      "answers": [
+        {
+          "text": "p=reject",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        },
+        {
+          "text": "p=quarantine",
+          "correct": false,
+          "message": "Incorrect. This policy only tells to quarantine/move email to junk."
+        },
+        {
+          "text": "p=block-all",
+          "correct": false,
+          "message": "Incorrect. This policy does not exist."
+        },
+        {
+          "text": "p=none",
+          "correct": false,
+          "message": "Incorrect. This policy does not do anything."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
 
 ---
 

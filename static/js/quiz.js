@@ -265,7 +265,7 @@
       ? 'Great job! You have answered all questions correctly.'
       : 'Quiz completed, but some review is needed.';
     state.summaryText.textContent =
-      'You scored ' + correctCount + ' out of ' + state.questions.length + '. ' +
+      'You scored ' + correctCount + ' correct answers out of ' + state.questions.length + '. ' +
       (perfectScore
         ? 'You understood the key points from this post.'
         : 'Review the references above and try the quiz again if you want to.');
