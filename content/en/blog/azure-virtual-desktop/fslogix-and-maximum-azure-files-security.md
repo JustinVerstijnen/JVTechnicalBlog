@@ -70,6 +70,45 @@ Now that we have set the configuration, I have rebooted the Azure Virtual Deskto
 
 ---
 
+## Knowledge check
+
+{{< quiz >}}
+{
+  "intro": "Answer these questions to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "questions": [
+    {
+      "question": "Why must the SMB client encryption cipher be configured when using the Maximum security preset for Azure Files with FSLogix?",
+      "reference": "See the section: The Maximum Security preset in the Azure Portal",
+      "referenceUrl": "#the-maximum-security-preset-in-the-azure-portal",
+      "answers": [
+        {
+          "text": "Because FSLogix only works when NTLM authentication is enabled",
+          "correct": false,
+          "message": "Incorrect. The Maximum security preset is focused on stronger SMB encryption and authentication, not enabling NTLM."
+        },
+        {
+          "text": "Because Windows 11 uses AES-128 by default, while the Maximum security preset only allows AES-256-GCM",
+          "correct": true,
+          "message": "Correct! The SMB client must be configured to use AES_256_GCM, otherwise the Azure Files connection can be blocked."
+        },
+        {
+          "text": "Because Azure Files requires public network access for FSLogix profiles",
+          "correct": false,
+          "message": "Incorrect. The Maximum security preset is intended to reduce the attack surface and can enforce private network access."
+        },
+        {
+          "text": "Because the storage account must be converted to Blob Storage before FSLogix can connect",
+          "correct": false,
+          "message": "Incorrect. FSLogix uses Azure Files for profile containers; it does not require converting the storage account to Blob Storage."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
+
+---
+
 ## Summary
 
 The Maximum security preset for Azure Files applies the most restrictive security configuration available to minimize the attack surface. It enforces:

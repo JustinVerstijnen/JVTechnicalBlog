@@ -45,7 +45,7 @@ Small note, we must configure this record for every domain which is used for one
 - justinverstijnen.com
 - justinverstijnen.tech
 
-We must configure this 3 times.
+We must configure this 3 times, once for every domain.
 
 Let's login to our DNS hosting for the domain, and create the record:
 
@@ -62,6 +62,43 @@ Now that our DNS record is in place, we can test this by again, typing our email
 [![jv-media-4725-ba13d135b117.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-avd-w365-feed-discovery-for-mobile-apps-4725/jv-media-4725-ba13d135b117.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-avd-w365-feed-discovery-for-mobile-apps-4725/jv-media-4725-ba13d135b117.png)
 
 Now the application automatically finds the domain and imports the feed discovery URL into the application. This minor change solves a lot of headache.
+
+## Knowledge check
+
+{{< quiz >}}
+{
+  "intro": "Answer these question(s) to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "questions": [
+    {
+      "question": "Which DNS record is needed to automatically discover the AVD or Windows 365 feed URL in the mobile Remote Desktop apps?",
+      "reference": "See the section: How to configure the Feed Discovery DNS record",
+      "referenceUrl": "#how-to-configure-the-feed-discovery-dns-record",
+      "answers": [
+        {
+          "text": "A CNAME record named avd pointing to rdweb.wvd.microsoft.com",
+          "correct": false,
+          "message": "Incorrect. The guide uses a TXT record, not a CNAME record."
+        },
+        {
+          "text": "A TXT record with host _msradc and the feed discovery URL as value",
+          "correct": true,
+          "message": "Correct! The _msradc TXT record allows the app to automatically discover the AVD or Windows 365 feed URL based on your emailaddresses' domain."
+        },
+        {
+          "text": "An MX record pointing to the Microsoft 365 mail servers",
+          "correct": false,
+          "message": "Incorrect. MX records are used for email routing, not AVD or Windows 365 feed discovery."
+        },
+        {
+          "text": "An SPF record containing the Remote Desktop feed URL",
+          "correct": false,
+          "message": "Incorrect. SPF records are used for email authentication, not Remote Desktop feed discovery."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
 
 ---
 

@@ -125,6 +125,45 @@ If Multipath is mentioned here, it means that the connection uses Multipath to c
 
 ---
 
+## Knowledge check
+
+{{< quiz >}}
+{
+  "intro": "Answer these questions to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "questions": [
+    {
+      "question": "What is the main benefit of RDP Multipath?",
+      "reference": "See the section: RDP Multipath - What is it and how to configure?",
+      "referenceUrl": "#rdp-multipath-what-is-it-and-how-to-configure",
+      "answers": [
+        {
+          "text": "It replaces the need for Azure Virtual Desktop gateways",
+          "correct": false,
+          "message": "Incorrect. RDP Multipath improves the connection path, not the need for gateways."
+        },
+        {
+          "text": "It automatically installs the newest Remote Desktop client on all devices",
+          "correct": false,
+          "message": "Incorrect. RDP Multipath requires a supported client version, but it does not install the client automatically."
+        },
+        {
+          "text": "It adds extra connection paths and chooses the most reliable path to improve stability and reduce latency",
+          "correct": true,
+          "message": "Correct! RDP Multipath adds additional connection paths and helps select the most reliable one for a better user experience."
+        },
+        {
+          "text": "It disables RDP Shortpath and forces all traffic through the gateway",
+          "correct": false,
+          "message": "Incorrect. The connection can first route through the gateway and then switch to Shortpath or Multipath based on the configuration."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
+
+---
+
 ## Summary
 
 Configuring RDP Multipath will enhance the user experience. With some minor network outages, the connection will be more stable. Also, it will help by always choosing the most efficient path to the end users' computer.

@@ -264,6 +264,72 @@ Now I have finished the configuration of the hostpool as described in my AVD imp
 
 ---
 
+## Knowledge check
+
+{{< quiz >}}
+{
+  "intro": "Answer these questions to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "questions": [
+    {
+      "question": "Why do V6 and V7 Azure Virtual Desktop VMs require a different image workflow?",
+      "reference": "See the section: The problem described",
+      "referenceUrl": "#the-problem-described",
+      "answers": [
+        {
+          "text": "Because V6 and V7 VMs require Windows Server instead of Windows multi-session",
+          "correct": false,
+          "message": "Incorrect. The issue is not about Windows Server versus Windows multi-session."
+        },
+        {
+          "text": "Because V6 and V7 VMs use NVMe instead of the older SCSI boot controller",
+          "correct": true,
+          "message": "Correct! V6 and V7 VM sizes use NVMe, so the image must support NVMe-capable deployments."
+        },
+        {
+          "text": "Because Azure Virtual Desktop does not support custom images anymore",
+          "correct": false,
+          "message": "Incorrect. Custom images are still possible, but the workflow needs to support NVMe."
+        },
+        {
+          "text": "Because V6 and V7 VMs can only be deployed with unmanaged disks",
+          "correct": false,
+          "message": "Incorrect. The post explains the issue around image support and boot controller types, not unmanaged disks."
+        }
+      ]
+    },
+    {
+      "question": "Which Azure service is used in this guide to store and version NVMe-compatible VM images?",
+      "reference": "See the section: Create Azure Compute Gallery instance",
+      "referenceUrl": "#step-4-create-azure-compute-gallery-instance",
+      "answers": [
+        {
+          "text": "Azure Storage Account",
+          "correct": false,
+          "message": "Incorrect. A Storage Account is not used here as the managed image repository."
+        },
+        {
+          "text": "Azure Backup Center",
+          "correct": false,
+          "message": "Incorrect. Azure Backup Center is not used to store and version AVD VM images in this guide."
+        },
+        {
+          "text": "Azure Compute Gallery",
+          "correct": true,
+          "message": "Correct! Azure Compute Gallery is used to store, version and deploy the NVMe-compatible image."
+        },
+        {
+          "text": "Azure Key Vault",
+          "correct": false,
+          "message": "Incorrect. Azure Key Vault is used for secrets and certificates, not VM image versioning."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
+
+---
+
 ## Summary
 
 If you want to use newer V6 or V7 AVD machines, you need to switch to an NVMe-compatible image workflow with Azure Compute Gallery. That is the supported way to build, version, and deploy modern AVD session hosts.

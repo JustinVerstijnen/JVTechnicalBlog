@@ -161,6 +161,72 @@ You can search through the list with the search function of your browser, and su
 
 ---
 
+## Knowledge check
+
+{{< quiz >}}
+{
+  "intro": "Answer these questions to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "questions": [
+    {
+      "question": "What are RDP properties used for in Azure Virtual Desktop?",
+      "reference": "See the section: What are RDP properties?",
+      "referenceUrl": "#what-are-rdp-properties",
+      "answers": [
+        {
+          "text": "To change the Azure subscription where the session hosts are deployed",
+          "correct": false,
+          "message": "Incorrect. RDP properties do not move or change the Azure subscription of your session hosts."
+        },
+        {
+          "text": "To configure settings that change the remote desktop experience, such as sound, clipboard and printer redirection",
+          "correct": true,
+          "message": "Correct! RDP properties control parts of the remote desktop experience, including redirection and session behavior."
+        },
+        {
+          "text": "To install applications automatically on the Azure Virtual Desktop hosts",
+          "correct": false,
+          "message": "Incorrect. Application installation is not handled by RDP properties."
+        },
+        {
+          "text": "To configure the FSLogix profile container location",
+          "correct": false,
+          "message": "Incorrect. FSLogix profile storage is configured separately from RDP properties."
+        }
+      ]
+    },
+    {
+      "question": "Which RDP property hides the RDP connection bar by default?",
+      "reference": "See the section: Display RDP connection bar",
+      "referenceUrl": "#display-rdp-connection-bar",
+      "answers": [
+        {
+          "text": "redirectclipboard:i:0",
+          "correct": false,
+          "message": "Incorrect. This setting disables clipboard redirection between the local and remote PC."
+        },
+        {
+          "text": "drivestoredirect:s:dynamicdrives",
+          "correct": false,
+          "message": "Incorrect. This setting controls drive redirection behavior."
+        },
+        {
+          "text": "displayconnectionbar:i:0",
+          "correct": true,
+          "message": "Correct! This setting hides the RDP connection bar by default."
+        },
+        {
+          "text": "redirectprinters:i:1",
+          "correct": false,
+          "message": "Incorrect. This setting enables printer redirection."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
+
+---
+
 ## Summary
 
 This page contains a lot of different RDP settings which we can still use today. Some of the RDP settings are categorized by Microsoft as not supported but will do their work in Azure Virtual Desktop too, for example the option to hide the connection bar by default.
