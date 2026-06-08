@@ -173,7 +173,7 @@ Overall, the reports show a healthy TLS reporting status. Both MTA-STS and TLSA/
 
 {{< quiz >}}
 {
-  "intro": "Answer these questions to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "intro": "Answer these question(s) to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
   "questions": [
     {
       "question": "What is the main purpose of TLS-RPT?",

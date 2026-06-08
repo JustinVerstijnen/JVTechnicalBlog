@@ -169,6 +169,45 @@ Fill in your domain, and select the "DANE-validation" including DNSSEC to test b
 
 ---
 
+## Knowledge check
+
+{{< quiz >}}
+{
+  "intro": "Answer these question(s) to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "questions": [
+    {
+      "question": "What does SMTP DANE do?",
+      "reference": "See the section: Section title",
+      "referenceUrl": "#smtp-dns-authentication-of-named-entities-dane",
+      "answers": [
+        {
+          "text": "Leveraging DNSSEC protocol and requiring TLS connections for outbound messages",
+          "correct": true,
+          "message": "Great job! This is the right answer."
+        },
+        {
+          "text": "Adding a signature to your sent email messages",
+          "correct": false,
+          "message": "Incorrect. SMTP DANE uses DNSSEC and TLS connections for outbound email messages."
+        },
+        {
+          "text": "Blocks incoming spam from unverified senders",
+          "correct": false,
+          "message": "Incorrect. SMTP DANE uses DNSSEC and TLS connections for outbound email messages."
+        },
+        {
+          "text": "Leveraging DNSSEC protocol and requiring TLS connections for inbound messages",
+          "correct": false,
+          "message": "Incorrect. SMTP DANE uses DNSSEC and TLS connections for OUTbound email messages."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
+
+---
+
 ## Summary
 
 After this guide you are using DNSSEC and SMTP DANE on your Exchange Online environment. This improves your security posture at that point. My advice is to enable this options when possible. When DNSSEC is not an option, I highly recommend to configure this: <https://justinverstijnen.nl/what-is-mta-sts-and-how-to-protect-your-email-flow/>
