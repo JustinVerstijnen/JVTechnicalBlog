@@ -6,6 +6,7 @@ categories:
   - Microsoft Azure
 tags:
   - Step by Step guides
+  - Knowledge check
 description: >
   Wordpress. Its maybe the best and easiest way to maintain a website. This can be run on any server. In Azure, we also have great and serverless possibilities to run Wordpress. In this guide I will show you how to do this, how to enhance the experience and what steps are needed to build the solution. I will also tell more about the theoretical stuff to get a better understanding of what we are doing.
 ---

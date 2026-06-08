@@ -6,6 +6,7 @@ categories:
   - Azure Virtual Desktop
 tags:
   - Step by Step guides
+  - Knowledge check
 description: >
   When using Azure Virtual Desktop (AVD) or Windows (W365), we sometimes use the mobile apps for Android, MacOS or iOS. But those apps rely on filling in a Feed Discovery URL instead of simply a Email address and a password.
 ---

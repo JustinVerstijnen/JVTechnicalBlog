@@ -6,6 +6,7 @@ categories:
   - Azure Virtual Desktop
 tags:
   - Step by Step guides
+  - Knowledge check
 description: >
   When I first chose to use V6 or V7 machines with Azure Virtual Desktop, I ran into some boot controller errors about the boot controller not supporting SCSI images.
 ---

@@ -75,6 +75,8 @@ In my writing, I often aim for practical and efficient solutions with minimal co
 
 Some of the solutions or ideas shared here may be suitable for practical or production use, but they may come with limited support or no support at all.
 
+At the end of some posts, you can find some quiz questions to check your own knowledge of the content of the blog posts. Answers given are not saved, sent or used in any form. All types of checking your answers are done using front-end code only, so on your local device.
+
 The primary language of this website is English, even though my native language is Dutch. I aim to write in a way that makes the content understandable to as many people as possible.
 
 ## 8. Use of Artificial Intelligence (AI)

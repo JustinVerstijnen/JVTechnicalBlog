@@ -7,6 +7,7 @@ categories:
 tags:
   - Concepts
   - Step by Step guides
+  - Knowledge check
 description: >
   MTA-STS is a standard for ensuring TLS is always used for email transmission. This increases security and data protection because emails cannot be read by a Man in the Middle. It works like this for inbound and outbound email to ensure security is applied to all of the messages processed by your emailing solution and domains. In this guide I will explain how it works. Because it is a domain specific configuration, it can work with any service and is not bound to for example Exchange Online. In this guide we use Azure to host our MTA-STS policy. I present you 2 different options for you to choose, and of course only one is needed. You can also choose to use another solution, its it supports HTTPS and hosting a single TXT file, it should work.
 ---

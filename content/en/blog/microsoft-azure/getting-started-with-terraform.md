@@ -4,6 +4,7 @@ slug: "getting-started-with-terraform"
 date: 2026-07-16
 tags:
 - Step by Step guides
+- Knowledge check
 categories:
 - Microsoft Azure
 description: "In this guide, I show the path from install to deployment: I install Terraform, I prepare my Azure login using Azure CLI, and then I run a “single server” Terraform setup so you can see the process end-to-end."

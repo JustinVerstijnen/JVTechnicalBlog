@@ -8,6 +8,7 @@ categories:
 tags:
   - Concepts
   - Step by Step guides
+  - Knowledge check
 description: >
   When it comes to basic email security, we have 3 techniques that can enhance our email security and delivery by some basic initial configuration. Those are called SPF, DKIM and DMARC. This means, configure, monitor and almost never touch again.
 ---

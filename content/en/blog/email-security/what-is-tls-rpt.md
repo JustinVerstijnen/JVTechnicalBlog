@@ -8,6 +8,7 @@ tags:
 - AI Generated Content
 categories:
 - Email security
+- Knowledge check
 description: "In this post I will explain TLS-RPT which is an email security reporting mechanism that gives you reports about TLS encryption problems for incoming email to your domain. In this guide, I will explain what TLS-RPT is, how it works and how you can configure it easily for your domains."
 hidden: false
 ---

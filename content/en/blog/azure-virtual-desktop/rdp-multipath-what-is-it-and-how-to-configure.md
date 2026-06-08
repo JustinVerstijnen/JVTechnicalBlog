@@ -6,6 +6,7 @@ categories:
   - Azure Virtual Desktop
 tags:
   - Step by Step guides
+  - Knowledge check
 description: >
   RDP Multipath is a new protocol for Azure Virtual Desktop and ensures the user always has a good and stable connection. It improves the connection by connecting via the best path and reduces random disconnections between session hosts and users.
 ---

@@ -4,6 +4,7 @@ slug: "encrypt-your-microsoft-365-emails-with-s-mime"
 date: 2026-06-11
 tags:
 - Step by Step guides
+- Knowledge check
 categories:
 - Microsoft 365
 description: "A great way to encrypt your Microsoft 365 outbound emails using a similar technique as SSL is to use S/MIME. In this guide I will show you how to get certificates and configure S/MIME for your mailboxes."

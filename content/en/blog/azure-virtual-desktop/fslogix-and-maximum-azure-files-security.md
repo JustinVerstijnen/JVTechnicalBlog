@@ -6,6 +6,7 @@ categories:
   - Azure Virtual Desktop
 tags:
   - Step by Step guides
+  - Knowledge check
 description: >
   When using Azure Files and Windows 11 as operating system for Azure Virtual Desktop, we can leverage the highest SMB encryption/security available at the moment, which is AES-256. While we can change this pretty easily, the connection to the storage account will not work anymore by default. In this guide I will show how I got this to work in combination with the newest Kerberos Authentication.
 ---

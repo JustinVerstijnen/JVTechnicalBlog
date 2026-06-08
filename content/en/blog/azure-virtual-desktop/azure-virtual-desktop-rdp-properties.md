@@ -6,6 +6,7 @@ categories:
   - Azure Virtual Desktop
 tags:
   - Concepts
+  - Knowledge check
 description: >
   In this post, we will be looking at the most popular different RDP Properties we can use in Azure Virtual Desktop.  will be talking about local PC's and remote PC's alot, where the remote PC is of course the Azure Virtual Desktop host and the local PC is the device you can physically touch.
 ---

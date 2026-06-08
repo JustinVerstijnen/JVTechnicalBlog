@@ -6,6 +6,7 @@ categories:
   - Azure Virtual Desktop
 tags:
   - Step by Step guides
+  - Knowledge check
 description: >
   On this page I will describe how I built an environment with a pooled Azure Virtual Desktop hostpool with FSLogix and using the Entra Kerberos option for authentication. This new authentication option eliminates the unsafe need of storing the storage key in hosts' registry like we did [in my earlier AVD full Entra blog](https://justinverstijnen.nl/pooled-azure-virtual-desktop-with-azure-ad-users/).
 ---
@@ -509,6 +510,153 @@ Change the name to your storage account name.
 [![jv-media-5828-e88235b11443.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-virtual-desktop-fslogix-and-native-kerberos-authentication-5828/jv-media-5828-e88235b11443.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-virtual-desktop-fslogix-and-native-kerberos-authentication-5828/jv-media-5828-e88235b11443.png)
 
 In my case, I get two tickets who are given to my user. If this shows nothing, there is anything wrong with your Kerberos configuration.
+
+---
+
+## Knowledge check
+
+{{< quiz >}}
+{
+  "intro": "Answer these question(s) to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "questions": [
+    {
+      "question": "What value does Entra Kerberos add to Azure Virtual Desktop with FSLogix deployments?",
+      "reference": "See the section: The solution described",
+      "referenceUrl": "#the-solution-described",
+      "answers": [
+        {
+          "text": "The option to link Azure Virtual Desktop Deployments to your Active Directory",
+          "correct": false,
+          "message": "Incorrect, this is what we had. Not what we get with Entra Kerberos."
+        },
+        {
+          "text": "The elimination of the Active Directory requirement when using FSLogix",
+          "correct": true,
+          "message": "Correct, which saves us maintenance, costs and minimizes attack surface."
+        },
+        {
+          "text": "Faster deployments using Infrastructure as Code",
+          "correct": false,
+          "message": "Incorrect. This is nonsense, and what we could achieve with Terraform/Bicep or ARM."
+        },
+        {
+          "text": "Creating a cloud trust with Active Directory",
+          "correct": false,
+          "message": "Incorrect. This exists, but then for AD/Windows Hello and Intune joined devices."
+        }
+      ]
+    },
+    {
+      "question": "Which least-privileged Azure RBAC role do we need to assign to the end users group to be able to connect to Azure Virtual Desktop hosts?",
+      "reference": "See the section: Assign Virtual Machine login roles to users",
+      "referenceUrl": "#assign-virtual-machine-login-roles-to-users",
+      "answers": [
+        {
+          "text": "Virtual Machine Administrator Login",
+          "correct": false,
+          "message": "Incorrect. This gives end users way too much privileges."
+        },
+        {
+          "text": "Administrator",
+          "correct": false,
+          "message": "Incorrect. This gives end users way too much privileges."
+        },
+        {
+          "text": "Virtual Machine User Login",
+          "correct": true,
+          "message": "Correct! This gives only access to the hosts with RDP and nothing more."
+        },
+        {
+          "text": "Reader",
+          "correct": false,
+          "message": "Incorrect. This gives too much privileges and doesn't even gain access to the Virtual Machine by RDP itself."
+        }
+      ]
+    },
+    {
+      "question": "What action must be done to the Storage Account Service Principal?",
+      "reference": "See the section: 5: Configure the App registration",
+      "referenceUrl": "#5-configure-the-app-registration",
+      "answers": [
+        {
+          "text": "Granting admin consent on behalf of the organization",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        },
+        {
+          "text": "Assigning the right Graph API permissions",
+          "correct": false,
+          "message": "Almost correct, the required API permissions are already assigned."
+        },
+        {
+          "text": "Assigning the Service Principal to your AVD Users group",
+          "correct": false,
+          "message": "Incorrect, this is nonsense and should not be done."
+        }
+      ]
+    },
+    {
+      "question": "What must be configured using Microsoft Intune or registry/group policy to make Entra Kerberos work for Intune-joined session hosts?",
+      "reference": "See the section: 7: Intune configuration for AVD hosts",
+      "referenceUrl": "#7-intune-configuration-for-avd-hosts",
+      "answers": [
+        {
+          "text": "Kerberos Cloud Ticket Retrieval to obtain Kerberos tickets",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        },
+        {
+          "text": "Active Directory integration",
+          "correct": false,
+          "message": "Incorrect. Entra Kerberos is all about eliminating Active Directory."
+        },
+        {
+          "text": "A custom PowerShell script to create a cloud trust",
+          "correct": false,
+          "message": "Incorrect. Entra Kerberos is all about eliminating Active Directory."
+        },
+        {
+          "text": "FSLogix containers pointing to your Active Directory-joined SMB server",
+          "correct": false,
+          "message": "Incorrect. Entra Kerberos is all about eliminating Active Directory."
+        }
+      ]
+    },
+    {
+      "question": "What must be configured on the Azure Virtual Desktop Hostpool for making Entra Kerberos work?",
+      "reference": "See the section: 9: Preparing the hostpool",
+      "referenceUrl": "#9-preparing-the-hostpool",
+      "answers": [
+        {
+          "text": "Drive redirection",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "Credential Security Support Provider",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "redirectwebauthn:i:1",
+          "correct": false,
+          "message": "Incorrect RDP property."
+        },
+        {
+          "text": "Microsoft Entra Single sign-on",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        },
+        {
+          "text": "Validation environment",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
 
 ---
 
