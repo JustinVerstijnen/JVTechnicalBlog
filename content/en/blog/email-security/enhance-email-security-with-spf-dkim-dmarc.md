@@ -9,7 +9,7 @@ tags:
   - Concepts
   - Step by Step guides
 description: >
-  When it comes to basic email security, we have 3 techniques that can enhance our email security and delivery by some basic initial configuration. Those are called SPF, DKIM and DMARC. This means, configure and mostly never touch again.
+  When it comes to basic email security, we have 3 techniques that can enhance our email security and delivery by some basic initial configuration. Those are called SPF, DKIM and DMARC. This means, configure, monitor and almost never touch again.
 ---
 
 {{% alert color="info" %}}
@@ -34,7 +34,7 @@ You will recognise this in your work. You send an email to a party or expecting 
 
 This will happen because the receiving party checks reputation of the sending party. Based on that reputation there will be a decision on the receiving email service which can place the email in the normal folder or in the junk folder.
 
-In the last 3 years, almost every emailing service (Hotmail/Exchange Online/Gmail/Yahoo) has forced to have SPF configured. If not configured properly, all received email will be placed in the junk folder. In addition to this, also configuring DKIM can further reduce the odds of an email received in the junk folder.
+In the last 3 years, almost every emailing service (Hotmail/Exchange Online/Gmail/Yahoo) has forced to have SPF configured. If not configured properly, all received email will be placed in the junk folder at the recipient side. In addition to this, also configuring DKIM can further reduce the odds of an email received in the junk folder so configuring these protocols is key to good deliverability of your sent email messages.
 
 Configuring these 3 techniques helps with:
 
@@ -63,7 +63,7 @@ After configuring DNSSEC and SMTP DANE [from this guide](https://justinverstijne
 0 justinverstijnen-nl.r-v1.mx.microsoft
 {{< /card >}}
 
-MX records have a priority number in front of them, this tells the priority of the servers. Messages will be delivered first at the number closest to "0" which represents a higer priority. After this server doesnt accept the message or a outage is ongoing, other servers will be tried to deliver the message.
+MX records have a priority number in front of them, this tells the priority of the servers. Messages will be delivered first at the number closest to "0" which represents a higher priority. After this server doesn't accept the message or a outage is ongoing, other servers will be tried to deliver the message.
 
 If managing your own emailing server, the SSL certificate must be valid at all times which may sound logical. If using 3rd party services to send and receive emails like Microsoft 365, Google Workspace or such solutions, then this certificate will be automatically renewed.
 
