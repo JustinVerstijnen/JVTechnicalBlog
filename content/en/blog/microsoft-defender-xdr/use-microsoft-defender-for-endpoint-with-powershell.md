@@ -6,6 +6,7 @@ categories:
   - Microsoft Defender XDR
 tags:
   - Step by Step guides
+  - Knowledge check
 description: >
   Microsoft Defender for Endpoint is a built-in antivirus and security solution that helps protect your Windows devices. Because we want as less overhead as possible at certain moments, I though of using Defender with PowerShell. Using PowerShell, you can manage Defender by checking its status, running Full and Quick scans, updating protections, and handling detected threats. In this guide, I will explain some PowerShell commands with simple steps to help you control Defender effectively from PowerShell, remotely or even to use in your scripts.
 ---
@@ -247,6 +248,67 @@ Get-MpThreatDetection | Remove-MpThreat
 {{< /card >}}
 
 This can work in smaller environenments of course. If managing environments with more devices and servers I would still advise you tu use Microsoft Intune and or Group Policies to schedule quick and full scans instead.
+
+---
+
+## Knowledge check
+
+{{< quiz >}}
+{
+  "intro": "Answer these question(s) to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "questions": [
+    {
+      "question": "What should you do first when you want to scan a device for threats with Microsoft Defender?",
+      "reference": "9. Simple full scan script",
+      "referenceUrl": "#9-simple-full-scan-script",
+      "answers": [
+        {
+          "text": "Reboot the device",
+          "correct": false,
+          "message": "Incorrect. When a device is possibly compromised, we have no time to waste on a reboot."
+        },
+        {
+          "text": "Updating the definitions using Update-MpSignature",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        },
+        {
+          "text": "Set the DNS servers to Microsoft Defender",
+          "correct": false,
+          "message": "Incorrect. When a device is possibly compromised, we have no time to waste to set DNS servers."
+        }
+      ]
+    },
+    {
+      "question": "What does Event ID 1001 represent?",
+      "reference": "2. Viewing recent scanning events",
+      "referenceUrl": "#2-viewing-recent-scanning-events",
+      "answers": [
+        {
+          "text": "Defender scan has completed",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        },
+        {
+          "text": "Defender scan has started",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "Defender scan cancelled or interrupted",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "Defender scan has succesfully removed threats",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
 
 ---
 

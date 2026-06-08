@@ -6,6 +6,7 @@ categories:
   - Networking
 tags:
   - Concepts
+  - Knowledge check
 description: >
   IPv6. We hear it a lot these days and it's a very common network addressing protocol and the successor of the older IPv4, but will not necessarily take over IPv4 100% (yet). On this page I will describe the basics, some tips and the benefits.
 ---
@@ -92,6 +93,99 @@ When it comes to compare generic terms in networking, you can use the table belo
 | Subnet mask | 255.255.255.0 | /64 |
 | Types of network routing | Class A, B and C | 1 class |
 | Type of notation | Decimal (0-9) with dots . | Hexadecimal (0-9 and A-F) with colons : |
+
+---
+
+## Knowledge check
+
+{{< quiz >}}
+{
+  "intro": "Answer these question(s) to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "questions": [
+    {
+      "question": "In how many bits is IPv6?",
+      "reference": "IPv6 addressing",
+      "referenceUrl": "#ipv6-addressing",
+      "answers": [
+        {
+          "text": "32-bits",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "64-bits",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "128-bits",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        },
+        {
+          "text": "256-bits",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        }
+      ]
+    },
+    {
+      "question": "What is the main reason of IPv6 being developed on top of IPv4?",
+      "reference": "Differences between IPv4 and IPv6 and benefits",
+      "referenceUrl": "#differences-between-ipv4-and-ipv6-and-benefits",
+      "answers": [
+        {
+          "text": "For better performance",
+          "correct": false,
+          "message": "Incorrect. IPv6 does not improve performance."
+        },
+        {
+          "text": "Eliminating networking hardware",
+          "correct": false,
+          "message": "Incorrect. Networking hardware will always be needed to create a network."
+        },
+        {
+          "text": "To compensate the shortage of IPv4 addresses",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        },
+        {
+          "text": "For better security",
+          "correct": false,
+          "message": "Partly correct with IPSec, but IPv6 does not mean more security automatically."
+        }
+      ]
+    },
+    {
+      "question": "How many addresses are theoretically possible with the IPv6 protocol?",
+      "reference": "IPv6 addressing",
+      "referenceUrl": "#ipv6-addressing",
+      "answers": [
+        {
+          "text": "4.200.000.000 addresses",
+          "correct": false,
+          "message": "This is the case for IPv4."
+        },
+        {
+          "text": "169.000.000.000 addresses",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "340 undecillion addresses",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        },
+        {
+          "text": "Unlimited addresses",
+          "correct": false,
+          "message": "It might sound as unlimited, but as many things have a limit, IPv6 also has."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
 
 ---
 

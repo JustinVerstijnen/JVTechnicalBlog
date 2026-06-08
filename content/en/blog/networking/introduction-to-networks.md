@@ -6,6 +6,7 @@ categories:
   - Networking
 tags:
   - Concepts
+  - Knowledge check
 description: >
   This page is an introduction to Networks. We don't need to know everything about it, but often face it in our work. In this guide I will give you a basic understanding of networks, IP addresses, VLANs, Segmenting etcetera. Basically everything you need to understand the process, and hopefully even more than that.
 ---
@@ -189,6 +190,84 @@ To have a cheat sheet of subnet masks, I have created a complete table of all us
 | /32 | 255.255.255.255 | 0 |
 
 Comma's used in Usable addresses to not be confused with IP addresses ;)
+
+---
+
+## Knowledge check
+
+{{< quiz >}}
+{
+  "intro": "Answer these question(s) to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "questions": [
+    {
+      "question": "What is the definition of a Router in a network?",
+      "reference": "Routers",
+      "referenceUrl": "#routers",
+      "answers": [
+        {
+          "text": "Connecting different networks/subnets",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        },
+        {
+          "text": "Distributing the network as a networking outlet",
+          "correct": false,
+          "message": "Incorrect. This is what a Switch does."
+        },
+        {
+          "text": "Wirelessly distributing your network for devices to connect",
+          "correct": false,
+          "message": "Wirelessly distributing your network for devices to connect"
+        }
+      ]
+    },
+    {
+      "question": "What is the definition of a Switch in a network?",
+      "reference": "Switches",
+      "referenceUrl": "#switches",
+      "answers": [
+        {
+          "text": "Wirelessly distributing your network for devices to connect",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "Connecting different networks/subnets",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "Distributing the network as a networking outlet",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        }
+      ]
+    },
+    {
+      "question": "From what components is an IP address functionally built?",
+      "reference": "IP addressing",
+      "referenceUrl": "#ip-addressing",
+      "answers": [
+        {
+          "text": "A Network ID representing the first 3 parts and a Host ID representing the last part",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        },
+        {
+          "text": "From numbers and dots",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "From a MAC address and a Subnet mask.",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
 
 ---
 

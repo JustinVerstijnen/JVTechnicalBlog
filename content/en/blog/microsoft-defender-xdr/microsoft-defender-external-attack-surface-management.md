@@ -5,6 +5,7 @@ description: "Microsoft Defender External Attack Surface Management (EASM) is a 
 tags:
 - Step by Step guides
 - Concepts
+- Knowledge check
 categories:
 - Microsoft Defender XDR
 ---
@@ -145,6 +146,40 @@ The open ports/services of the server:
 And after scanning, the solution has scanned all vulnerabilities in terms of open ports and services and vulnerabilities to be scanned:
 
 [![jv-media-8503-62ff1e32cc35.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/microsoft-defender-external-attack-surface-management/jv-media-8503-62ff1e32cc35.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/microsoft-defender-external-attack-surface-management/jv-media-8503-62ff1e32cc35.png)
+
+---
+
+## Knowledge check
+
+{{< quiz >}}
+{
+  "intro": "Answer these question(s) to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "questions": [
+    {
+      "question": "What type of components does Defender EASM secure?",
+      "reference": "What is Defender External Attack Surface Management (EASM)?",
+      "referenceUrl": "#what-is-defender-external-attack-surface-management-(easm)?",
+      "answers": [
+        {
+          "text": "Websites, IP addresses, Domains, SSL certificates and more digital assets",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        },
+        {
+          "text": "Virtual Machines running on-premises",
+          "correct": false,
+          "message": "Incorrect. This can be achieved with Defender for Servers."
+        },
+        {
+          "text": "External endpoints",
+          "correct": false,
+          "message": "Incorrect. This can be achieved with Defender for Endpoint."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
 
 ---
 

@@ -7,6 +7,7 @@ categories:
 tags:
   - Concepts
   - Step by Step guides
+  - Knowledge check
 description: >
   Active Directory Domain Controllers are assigned 5 different FSMO roles, which all have their own function. We can separate them over multiple servers to create more redundancy, but make sure to handle those all as servers. All roles neeed a 24/7 uptime for your environment to work properly. In this guide, I will give a brief explaination of the roles, what their function is and how to move them to different servers to enhance availability and redundancy.
 
@@ -36,6 +37,8 @@ For more information about the specifics of the roles, check out the official Mi
 {{% /alert %}}
 
 Depending on your environment, these roles can run on one or multiple domain controllers. If having an environment with a single domain controller, all roles will be done by that single server. As you might already guess, this is a single point of failure.
+
+According to the table, the PDC Emulator is the role with the highest user impact. Outage will mean no NTP, no password updates which happens daily in bigger environments and no Group Policy updates are possible.
 
 ---
 
@@ -97,6 +100,77 @@ Move-ADDirectoryServerOperationMasterRole -Identity *server* -OperationMasterRol
 {{< /card >}}
 
 Make sure to change the \*server\* placeholder to the correct server names in your environment.
+
+---
+
+## Knowledge check
+
+{{< quiz >}}
+{
+  "intro": "Answer these question(s) to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "questions": [
+    {
+      "question": "What is the FSMO with the highest user impact when that domain controllers has an outage?",
+      "reference": "What are the FSMO roles of Active Directory?",
+      "referenceUrl": "#what-are-the-fsmo-roles-of-active-directory",
+      "answers": [
+        {
+          "text": "PDC Emulator",
+          "correct": true,
+          "message": "Correct! This is the right answer. Outage will mean no NTP, no password updates which happens daily in bigger environments and no Group Policy updates are possible."
+        },
+        {
+          "text": "Schema Master",
+          "correct": false,
+          "message": "Incorrect. Outage will only prevent Schema updates."
+        },
+        {
+          "text": "Domain Naming Master",
+          "correct": false,
+          "message": "Incorrect. Outage will only prevent Adding or removing domains."
+        },
+        {
+          "text": "RID Master",
+          "correct": false,
+          "message": "Incorrect. Outage will only prevent assignments of RID pools for unique SIDs"
+        },
+        {
+          "text": "Infrastructure Master",
+          "correct": false,
+          "message": "Incorrect. Outage will only prevent cross-domain references from working."
+        }
+      ]
+    },
+    {
+      "question": "How do we move a FSMO role to another server when minimizing administrative effort?",
+      "reference": "See the section: Section title",
+      "referenceUrl": "#section-title",
+      "answers": [
+        {
+          "text": "Through the Active Directory Users and Computers management console",
+          "correct": false,
+          "message": "Partly correct, but not minimizing administrative effort."
+        },
+        {
+          "text": "netdom query fsmo",
+          "correct": false,
+          "message": "Incorrect. This only prints an overview of the current servers and role assignments."
+        },
+        {
+          "text": "Move-ADDirectoryServerOperationMasterRole",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        },
+        {
+          "text": "Through the Active Directory Sites and Services management console",
+          "correct": false,
+          "message": "Partly correct, but not minimizing administrative effort."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
 
 ---
 
