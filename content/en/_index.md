@@ -20,6 +20,8 @@ params:
   </a>
 </div>
 
+<title>Home | justinverstijnen.nl</title>
+
 {{< /blocks/cover >}}
 
 {{< blocks/lead color="white" >}}
