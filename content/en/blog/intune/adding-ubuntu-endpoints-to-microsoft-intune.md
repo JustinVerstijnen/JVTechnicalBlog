@@ -1,13 +1,13 @@
 ---
 title: "Adding Ubuntu endpoints to Microsoft Intune"
 slug: "adding-ubuntu-endpoints-to-intune"
-date: 2026-06-18
+date: 2026-06-11
 tags:
 - Step by Step guides
 - Knowledge check
 categories:
 - Microsoft Intune
-description: "In this post, I will be installing an Ubuntu Desktop laptop and join it to Microsoft Intune to leverage Device Management on the endpoint."
+description: "In this post, I will be installing an Ubuntu Desktop instance and join it to Microsoft Intune to leverage Device Management on Ubuntu devices including some extra steps for proper device management."
 hidden: false
 ---
 
@@ -39,6 +39,12 @@ The Linux versions that are supported by Microsoft Intune are these:
 | Red Hat Enterprise Linux | RHEL 9 and RHEL 10 |
 
 The official support is listed here and could be updated in the future: [https://learn.microsoft.com/en-us/intune/fundamentals/ref-supported-platforms#linux](https://learn.microsoft.com/en-us/intune/fundamentals/ref-supported-platforms#linux)
+
+What happens if we try to join unsupported Linux OS versions? I tried this just for fun with Zorin OS (which is based on Ubuntu) but an error is presented unfortunately:
+
+[![jv-media-8511-3c2946a69abb.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/adding-ubuntu-endpoints-to-microsoft-intune/jv-media-8511-3c2946a69abb.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/adding-ubuntu-endpoints-to-microsoft-intune/jv-media-8511-3c2946a69abb.png)
+
+So only supported OS versions and distributions can actually work with Microsoft Intune.
 
 ---
 
@@ -215,7 +221,11 @@ Then assign the policy to the created group and finish the wizard.
 
 [![jv-media-8512-f6e4c2c9e7a8.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/adding-ubuntu-endpoints-to-microsoft-intune/jv-media-8512-f6e4c2c9e7a8.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/adding-ubuntu-endpoints-to-microsoft-intune/jv-media-8512-f6e4c2c9e7a8.png)
 
-Intune will now scan the Linux devices if they are compliant with the rules we have configured here, but will not remediate them.
+Intune will now scan the Linux devices if they are compliant with the rules we have configured here, but will not remediate them. This looks like this after around 15 minutes:
+
+[![jv-media-8511-2cedd18d5748.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/adding-ubuntu-endpoints-to-microsoft-intune/jv-media-8511-2cedd18d5748.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/adding-ubuntu-endpoints-to-microsoft-intune/jv-media-8511-2cedd18d5748.png)
+
+This is as intended as I did not enable encryption at the installation, just for checking if this will be found by Microsoft Intune.
 
 ---
 
@@ -235,7 +245,7 @@ Download the script below and let's create the script in Microsoft Intune.
 
 In Microsoft Intune, go to "Linux" and from there go to "Scripts" and click "+ Add".
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/adding-ubuntu-endpoints-to-microsoft-intune/jv-media-8512-085929d9d343.png)
+[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/adding-ubuntu-endpoints-to-microsoft-intune/jv-media-8512-085929d9d343.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/adding-ubuntu-endpoints-to-microsoft-intune/jv-media-8512-085929d9d343.png)
 
 Give the script a name and clear description and advance to the next tab.
 
