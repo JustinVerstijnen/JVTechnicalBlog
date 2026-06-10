@@ -93,9 +93,21 @@ Securing Ubuntu devices is just as important as securing Microsoft Windows devic
 
 ---
 
-## 5. OneDrive
+## 5. GNOME Privacy Settings
 
-This script opens Microsoft OneDrive for a quick installation and access to personal and shared company files.
+This script has various settings for the GNOME Desktop Environment which can be set. I also have a table for you on what options are available:
+
+| Options | Default value | Supported values | Notes |
+| --- | --- | --- | --- |
+| DISABLELOCATIONSERVICES | `true` | `true`, `false` | Uses the GNOME location setting where available. Some apps may behave differently depending on desktop environment and installed services. |
+| DISABLERECENTFILE_HISTORY | `true` | `true`, `false` | GNOME exposes file history controls in Privacy & Security settings. |
+| CLEAREXISTINGRECENTFILEHISTORY | `true` | `true`, `false` | This removes the existing `recently-used.xbel` file where present. |
+| DISABLELOCKSCREEN_NOTIFICATIONS | `true` | `true`, `false` | Ubuntu documents this as the dconf key `/org/gnome/desktop/notifications/show-in-lock-screen`. |
+| REMOVEOLDTEMP_FILES | `true` | `true`, `false` | Uses GNOME privacy settings where available. |
+| REMOVEOLDTRASH_FILES | `true` | `true`, `false` | Uses GNOME privacy settings where available. |
+| OLDFILESAGE_DAYS | `30` | Number of days, for example `7`, `14`, `30` | Only relevant when old temp or trash cleanup is enabled. |
+| LOCKPRIVACYSETTINGS | `false` | `true`, `false` | Useful for strict policy enforcement. Leave disabled for a softer baseline. |
+| APPLYTOACTIVE_USERS | `true` | `true`, `false` | If no GNOME session is active, system defaults still apply on next login. |
 
 ---
 
@@ -138,6 +150,9 @@ You can change the timezone on Line 16 of this script.
 ---
 
 ## Summary
+
+
+
 
 ### Sources
 
