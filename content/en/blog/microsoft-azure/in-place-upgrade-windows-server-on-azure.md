@@ -77,7 +77,7 @@ Select a subscription if needed:
 
 Then after logging in succesfully, we need to execute a script to create a upgrade disk. This can be done through this script:
 
-{{< card code=true header="**POWERSHELL**" lang="powershell" >}}
+{{< card code=true header="**PowerShell**" lang="powershell" >}}
 # -------- PARAMETERS --------
 $resourceGroup = "rg-jv-upgrade2025"
 $location = "WestEurope"
@@ -123,7 +123,9 @@ New-AzDisk -ResourceGroupName $resourceGroup `
            -Disk $diskConfig
 {{< /card >}}
 
-[View the script on my GitHub page](https://github.com/JustinVerstijnen/JV-AzureServerUpgradeDisk/blob/main/CreateUpgradeDisk.ps1)
+Or download the script from GitHub:
+
+<a class="btn btn-primary" href="https://github.com/JustinVerstijnen/JV-AzureServerUpgradeDisk" target="_blank" rel="noreferrer">View the script on my GitHub page</a>
 
 On line 8 of the script, you can decide which version of Windows Server to upgrade to. Refer to the table in step 1 before choosing your version. Then perform the script.
 

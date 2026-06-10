@@ -26,7 +26,7 @@ However, some users don't use them and they will annoyingly be as default printe
 
 The PowerShell script can be downloaded from my Github page:
 
-[Visit Github page](https://github.com/JustinVerstijnen/JV-DeleteOneNoteMicrosoftPDFPrinter)
+<p><a class="btn btn-primary" href="https://github.com/JustinVerstijnen/JV-DeleteOneNoteMicrosoftPDFPrinter"><i class="fa-brands fa-github"></i> Download script from GitHub</a></p>
 
 On the Github page, click on "<> Code" and then on "Download ZIP".
 
