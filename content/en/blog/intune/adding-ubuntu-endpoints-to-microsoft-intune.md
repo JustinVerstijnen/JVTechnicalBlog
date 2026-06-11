@@ -17,6 +17,8 @@ This question has a very simple answer: compliance, management, and security.
 
 As IT professionals, we want to manage every endpoint from a single pane of glass while keeping compliance and security at a consistently high level. Linux endpoints are often overlooked in IT departments, especially compared to Windows and macOS devices. This makes them an interesting attack vector, because they are not always properly managed, monitored, or secured.
 
+[![jv-media-8512-e412cf6a239a.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/adding-ubuntu-endpoints-to-microsoft-intune/jv-media-8512-e412cf6a239a.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/adding-ubuntu-endpoints-to-microsoft-intune/jv-media-8512-e412cf6a239a.png)
+
 Some important reasons to manage Linux endpoints with Intune are:
 
 - **Centralized device visibility:** IT teams can see which Linux devices are used within the organization and who is using them
