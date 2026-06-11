@@ -1,7 +1,7 @@
 ---
 title: "10 scripts for Ubuntu MDM with Microsoft Intune"
 slug: "10-scripts-for-ubuntu-mdm-with-microsoft-intune"
-date: 2025-06-18
+date: 2026-06-18
 tags:
 - Step by Step guides
 - Tools and Scripts
@@ -13,7 +13,7 @@ hidden: false
 
 Last week I described how to add Ubuntu endpoints to Microsoft Intune and to increase manageability for these devices. This guide can be found here: [https://justinverstijnen.nl/adding-ubuntu-endpoints-to-intune](https://justinverstijnen.nl/adding-ubuntu-endpoints-to-intune)
 
-This guide is a sort of "part 2", for extra customization to Ubuntu endpoints which we can enroll with Microsoft Intune on top of what's already described in the first guide which can be used if needed.
+This guide is a sort of "Part 2" and covers additional customization options for Ubuntu endpoints enrolled in Microsoft Intune, building on the configuration described in the first guide.
 
 ---
 
@@ -23,7 +23,7 @@ You can find the scripts I used in this guide here on GitHub:
 
 <a class="btn btn-primary" href="https://github.com/JustinVerstijnen/JV-Linux-DeviceManagement" target="_blank" rel="noreferrer">View on my GitHub page</a>
 
-After some click-work, I have manually imported the scripts to Microsoft Intune and assigned them to my Ubuntu device:
+After a few clicks, I manually imported the scripts into Microsoft Intune and assigned them to my Ubuntu device:
 
 [![jv-media-8512-e03e422db6b1.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/10-scripts-for-ubuntu-mdm-with-microsoft-intune/jv-media-8512-e03e422db6b1.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/10-scripts-for-ubuntu-mdm-with-microsoft-intune/jv-media-8512-e03e422db6b1.png)
 
@@ -73,11 +73,11 @@ Download the script, then change them in your favorite text-editor and then uplo
 
 ## 1. Enable Ubuntu Firewall (UFW)
 
-The first script will enable the Ubuntu Firewall. This because Ubuntu has the Ubuntu Firewall disabled by default:
+The first script will enable the Ubuntu Firewall. This is because Ubuntu has the firewall disabled by default:
 
 [![jv-media-8512-291d9103c0dd.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/10-scripts-for-ubuntu-mdm-with-microsoft-intune/jv-media-8512-291d9103c0dd.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/10-scripts-for-ubuntu-mdm-with-microsoft-intune/jv-media-8512-291d9103c0dd.png)
 
-Enabling the Firewall will block incoming connections that are not defined by a rule and keeps your device a bit more secure. After the script has ran to enable the firewall, this will be enabled automatically with no need for manual configuration:
+Enabling the Firewall will block incoming connections that are not defined by a rule and keeps your device a bit more secure. After the script has run to enable the firewall, it will be enabled automatically with no need for manual configuration:
 
 [![jv-media-8512-4316e53c4051.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/10-scripts-for-ubuntu-mdm-with-microsoft-intune/jv-media-8512-4316e53c4051.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/10-scripts-for-ubuntu-mdm-with-microsoft-intune/jv-media-8512-4316e53c4051.png)
 
@@ -104,7 +104,7 @@ The connection name on Line 19 is a display name in Ubuntu which you can change 
 
 ## 3. Deploy wallpaper
 
-Deploying a wallpaper is also something we often to with Microsoft Intune. In this script, we set a Wallpaper URL which must be available to the device and sets it as desktop wallpeper by saving it locally. Updating the wallpaper server-side will also result in a wallpaper update on the endpoints, which is very nice.
+Deploying a wallpaper is also something we often do with Microsoft Intune. In this script, we set a wallpaper URL that must be accessible to the device and configure it as the desktop wallpaper by saving it locally. Updating the wallpaper server-side will also result in a wallpaper update on the endpoints, which is very convenient.
 
 You can change the wallpaper on Line 16 of the script.
 
@@ -178,7 +178,7 @@ This must be set on Line 4, where you can select one of these options:
 
 ## 8. Configure screen timeout/lock
 
-Something we often configure with Microsoft Intune is the screen timeout and locing options. After we walk away from the device and no input is done, the device will lock after 5 minutes, but can be changed in the script to your own value.
+Something we often configure with Microsoft Intune is the screen timeout and locking options. After we walk away from the device and no input is done, the device will lock after 5 minutes, but can be changed in the script to your own value.
 
 You can change this value in seconds on Line 15, where the default is 5 minutes, 300 seconds.
 
@@ -196,7 +196,7 @@ This script enables automatic security updates on an Ubuntu device. It installs 
 
 ## 10. Set Timezone/NTP
 
-We can set the Timezone and NTP server with this script. This ensures the time/date is being synchronized with servers on the internet and minimizes the chance of causing problems in a time de-synchronization.
+We can set the Timezone and NTP server with this script. This ensures the time and date are synchronized with time servers on the internet and minimizes the risk of issues caused by time synchronization problems.
 
 You can change the timezone on Line 16 of this script.
 
@@ -206,7 +206,7 @@ You can change the timezone on Line 16 of this script.
 
 ## Troubleshooting
 
-All scripts will write a log file to the /var/log folder. All scripts are tested and working on Ubuntu 26.04, but may this give errors on your end, you can review the logs to check what errors are there.
+All scripts will write a log file to the /var/log folder. All scripts have been tested and are working on Ubuntu 26.04. However, if you encounter errors on your end, you can review the logs to identify the cause.
 
 - /var/log
 
@@ -221,13 +221,13 @@ You can use the two built-in Ubuntu/Linux commands to review the contents:
 
 ## Downsides of Linux devices in Microsoft Intune
 
-One of the downsides I find with Ubuntu devices in Intune is that everything must be confirmed by the user itself by typing in their password. When new scripts are uploaded and assigned, you get this window:
+One of the downsides I find with Ubuntu devices in Intune is that everything must be confirmed by the user themselves by entering their password. When new scripts are uploaded and assigned, you get this window:
 
 [![jv-media-8512-7303a1af5261.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/10-scripts-for-ubuntu-mdm-with-microsoft-intune/jv-media-8512-7303a1af5261.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/10-scripts-for-ubuntu-mdm-with-microsoft-intune/jv-media-8512-7303a1af5261.png)
 
-Not a very big problem, but not like how device management works on Windows devices. There we can update policies and install applications without user interaction.
+Not a major problem, but unlike device management on Windows devices. There we can update policies and install applications without user interaction.
 
-Another downside is that management is very limited. We cannot wipe devices from the portal and support is limited to Ubuntu only. Most people who use Linux distributions do not only use Ubuntu, but want more customization with other distro's, but there is not support for them yet.
+Another downside is that management is very limited. We cannot wipe devices from the portal and support is limited to Ubuntu only. Most people who use Linux distributions do not only use Ubuntu, but want more customization with other distro's, but there is no support for them yet.
 
 ### Sources
 
