@@ -337,6 +337,60 @@ The applications are successfully installed after the first reboot.
           "message": "Incorrect. Review the referenced section and try again."
         }
       ]
+    },
+    {
+      "question": "What is my the required Execution context of the Install Applications script",
+      "reference": "Step 6: Deploy custom scripts",
+      "referenceUrl": "#step-6-deploy-custom-scripts",
+      "answers": [
+        {
+          "text": "User",
+          "correct": false,
+          "message": "Wrong answer, the user does not have the required permissions."
+        },
+        {
+          "text": "Root",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        },
+        {
+          "text": "Administrator",
+          "correct": false,
+          "message": "Linux doesn't know \"Administrators\"."
+        },
+        {
+          "text": "Device",
+          "correct": false,
+          "message": "Wrong answer. This option doesn't exist."
+        }
+      ]
+    },
+    {
+      "question": "What are the correct actions to enroll an Ubuntu device into Intune?",
+      "reference": "Step 3: Join Ubuntu device to Microsoft Intune",
+      "referenceUrl": "#step-3-join-ubuntu-device-to-microsoft-intune",
+      "answers": [
+        {
+          "text": "Install Firefox, Install PowerShell and execute the Set-Item command",
+          "correct": false,
+          "message": "Incorrect."
+        },
+        {
+          "text": "Download the Intune application from the Ubuntu App Center.",
+          "correct": false,
+          "message": "Incorrect."
+        },
+        {
+          "text": "Run the apt-get install intune command in the Terminal",
+          "correct": false,
+          "message": "Incorrect."
+        },
+        {
+          "text": "Install Microsoft Edge, then run the Intune installer.sh script",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        }
+      ]
     }
   ]
 }
