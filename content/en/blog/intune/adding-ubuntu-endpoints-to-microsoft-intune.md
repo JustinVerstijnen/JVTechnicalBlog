@@ -350,6 +350,8 @@ Adding Ubuntu endpoints to Microsoft Intune is a simple but valuable step toward
 
 Hopefully, Microsoft will continue to expand Linux support in Intune with more configuration, encryption, and remote management options. But even with the current feature set, enrolling Ubuntu devices is a good first step toward a more complete and secure endpoint management approach. With the custom scripts option, we can have basically any option available with some deep knowledge.
 
+Next week I have a new post going further in some management with Ubuntu devices using custom scripts.
+
 I hope this post was helpful and thank you for reading!
 
 ### Sources
