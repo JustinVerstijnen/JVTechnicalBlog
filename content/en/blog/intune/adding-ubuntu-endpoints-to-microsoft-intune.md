@@ -339,7 +339,7 @@ The applications are successfully installed after the first reboot.
       ]
     },
     {
-      "question": "What is my the required Execution context of the Install Applications script",
+      "question": "What is the required Execution context of the Install Applications script",
       "reference": "Step 6: Deploy custom scripts",
       "referenceUrl": "#step-6-deploy-custom-scripts",
       "answers": [
