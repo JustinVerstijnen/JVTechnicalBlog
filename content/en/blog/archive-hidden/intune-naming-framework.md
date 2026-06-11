@@ -14,19 +14,21 @@ CP - Config Profile
 
 SCR - Script (PowerShell/Custom)
 
-**Device & Application Security**
+**Endpoint & Application Security**
 
 AV - Antivirus
 
-AS - Attack Surface
+ASR - Attack Surface Reduction
 
-AP - Account Prot.
+ACP - Account Protection
 
-BL - BitLocker
+DE - Disk Encryption
 
-EP - Endpoint Priv.
+EPM - Endpoint Privilege Management
 
-PP - App Protection
+AP - App Protection
+
+ACB - App Control for Business
 
 FW - Firewall
 
@@ -46,9 +48,11 @@ DLR - Device Limit Restriction
 
 DPR - Device Platform Restriction
 
-**Compliance**
+**Compliance and Identity**
 
 COM - Compliance Policy
+
+CA - Conditional Access
 
 **Categorization and Cleanup**
 
