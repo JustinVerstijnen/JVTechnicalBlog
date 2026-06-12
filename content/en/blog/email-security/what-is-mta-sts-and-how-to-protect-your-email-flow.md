@@ -261,7 +261,7 @@ Here you can select:
 
 - Operating system: Windows
 - Runtime stack: .NET
-- Version: 8 in-process model (this enables editing in the portal for easy access)
+- Version: 10 LTS (Or newer, this enables editing in the portal for easy access)
 - Region: Of your choice
 
 Create the app by finishing the wizard.
