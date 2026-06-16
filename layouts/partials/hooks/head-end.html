@@ -1,2 +1,74 @@
 <script defer src="https://cloud.umami.is/script.js" data-website-id="3ce7d7a4-539b-4d3c-981e-e96189fa5ac8"></script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4082816808518335" crossorigin="anonymous"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    /**
+     * @param {HTMLAnchorElement} link
+     */
+    function configureExternalLink(link) {
+      const href = link.getAttribute('href');
+
+      if (
+        !href ||
+        href.startsWith('#') ||
+        href.startsWith('mailto:') ||
+        href.startsWith('tel:') ||
+        href.startsWith('javascript:') ||
+        link.hasAttribute('download')
+      ) {
+        return;
+      }
+
+      try {
+        const linkUrl = new URL(href, window.location.href);
+
+        if (linkUrl.hostname === window.location.hostname) {
+          return;
+        }
+
+        link.setAttribute('target', '_blank');
+
+        const relValues = new Set(
+          (link.getAttribute('rel') || '')
+            .split(/\s+/)
+            .filter(Boolean)
+        );
+
+        relValues.add('noopener');
+        relValues.add('noreferrer');
+
+        link.setAttribute('rel', Array.from(relValues).join(' '));
+      } catch (error) {
+        console.warn('Link kon niet worden gecontroleerd:', href, error);
+      }
+    }
+
+    document
+      .querySelectorAll('a[href]')
+      .forEach(configureExternalLink);
+
+    const observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        mutation.addedNodes.forEach(function (node) {
+          if (!(node instanceof HTMLElement)) {
+            return;
+          }
+
+          if (node.matches('a[href]')) {
+            configureExternalLink(node);
+          }
+
+          node
+            .querySelectorAll('a[href]')
+            .forEach(configureExternalLink);
+        });
+      });
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  });
+</script>
