@@ -8,7 +8,7 @@ tags:
   - Concepts
 draft: true
 ---
-Hey there! In 2026 i'm back with a new series of pages. I call this the Windows Server Master Class where I will discuss, explain and demonstrate all features and server roles of the traditional Windows Server operating system. As more organizations move to the cloud, doesn't mean we IT guys doesn't have to manage servers anymore. The need for server administration decreases a little, but applications without full cloud/serverless deployment options still exist.
+Hey there! In 2026 I'm back with a new series of pages. I call this the Windows Server Master Class where I will discuss, explain and demonstrate all features and server roles of the traditional Windows Server operating system. As more organizations move to the cloud, doesn't mean we IT guys doesn't have to manage servers anymore. The need for server administration decreases a little, but applications without full cloud/serverless deployment options still exist.
 
 In this Windows Server Master Class, I will follow the concept of the old MCSA 2016 modules but will also add newer functionality which will be in the AZ-800 and AZ-801 exams which can be done today. My goal is to give you a good overview of functionality, making organizations more structured and prepare you for these exams. I also will dive into some tasks with PowerShell, as you have to get familiar with it. PowerShell can be really complex but it can also be really easy.
 

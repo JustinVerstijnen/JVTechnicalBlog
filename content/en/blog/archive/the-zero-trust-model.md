@@ -17,7 +17,7 @@ The 3 primary principles are:
 - Least privileged access
 - Assume Breach
 
-At first, those terms seem very unclear to me. To further clarify the principles, i have added some practice examples to further understand what they mean:
+At first, those terms seem very unclear to me. To further clarify the principles, I have added some practice examples to further understand what they mean:
 
 |  |  |
 | --- | --- |

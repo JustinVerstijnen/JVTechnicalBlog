@@ -239,7 +239,7 @@ If you have a domain that has DKIM disabled, you can click on the domain-name. T
 
 [![jv-media-1462-142c458b7cca.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/enhance-email-security-with-spf-dkim-dmarc-1462/jv-media-1462-142c458b7cca.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/enhance-email-security-with-spf-dkim-dmarc-1462/jv-media-1462-142c458b7cca.png)
 
-The window tells us how to configure the records in our DNS service. In my case i have to configure 2 CNAME type DNS records. Microsoft 365 always use this 2 CNAME-configuration.
+The window tells us how to configure the records in our DNS service. In my case I have to configure 2 CNAME type DNS records. Microsoft 365 always use this 2 CNAME-configuration.
 
 Log in to your DNS-hosting service where you can create and change DNS records.
 

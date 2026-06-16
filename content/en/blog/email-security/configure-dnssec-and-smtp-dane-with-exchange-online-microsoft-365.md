@@ -35,7 +35,7 @@ SMTP DANE is an addition to DNSSEC which actually brings the extra security meas
 
 ## SMTP DANE and DKIM (DomainKeys Identified Mail)
 
-SMTP DANE and DKIM sounded the same security to me when i first read about it. However, both are needed to secure your outbound email traffic, but they help in another way:
+SMTP DANE and DKIM sounded the same security to me when I first read about it. However, both are needed to secure your outbound email traffic, but they help in another way:
 
 - DKIM helps by generating a signature at sending the email which a receiver can validate through a public DNS record
   - The receiver knows that the message is not modified by an attacker
@@ -88,7 +88,7 @@ Login with your credentials, and we are ready.
 
 ## Step 3: Enable DNSSEC
 
-We have to enable DNSSEC to each of our domains managed in Microsoft 365. In my environment, i have only one domain. Run the following command to enable DNSSEC:
+We have to enable DNSSEC to each of our domains managed in Microsoft 365. In my environment, I have only one domain. Run the following command to enable DNSSEC:
 
 {{< card code=true header="**POWERSHELL**" lang="powershell" >}}
 Enable-DnssecForVerifiedDomain -DomainName "justinverstijnen.nl"

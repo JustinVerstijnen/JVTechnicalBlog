@@ -32,7 +32,7 @@ The framework can be found on this website: [MITRE ATT&CK®](https://attack.mitr
 
 ## The stages of a cyberattack
 
-Each cybersecurity attack follows multiple or all stages below. Also, i added a summary of that the stage contains:
+Each cybersecurity attack follows multiple or all stages below. Also, I added a summary of that the stage contains:
 
 |  |  |
 | --- | --- |

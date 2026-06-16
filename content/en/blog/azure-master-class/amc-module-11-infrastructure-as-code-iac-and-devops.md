@@ -40,7 +40,7 @@ You visit the Azure Portal by going to: <https://portal.azure.com>
 
 Azure Powershell is a Powershell module built on the Azure Resource Manager and can be used to manage and deploy resources into Azure. When deploying multiple instances, it fastly becomes a faster and less time consuming tool than the Azure Portal.
 
-In practice i sometimes stumbled on some errors with Virtual Machines freezing in the Azure Portal and having to restart them with Powershell. It therefore gives you access to a deeper level of your Azure Environment.
+In practice I sometimes stumbled on some errors with Virtual Machines freezing in the Azure Portal and having to restart them with Powershell. It therefore gives you access to a deeper level of your Azure Environment.
 
 You can access Azure Powershell by installing the Powershell module or by going to <https://shell.azure.com>
 

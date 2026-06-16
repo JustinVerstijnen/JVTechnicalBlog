@@ -61,7 +61,7 @@ For example:
 - **Tag Name**: Department
 - **Tag Value**: IT
 
-Here i have configured the tag on a resource group to show the outcome:
+Here I have configured the tag on a resource group to show the outcome:
 
 Write access to the resources is required to modify or add a tag. Additionally, a tag cannot contain special characters such as `?`, `<`, `>`, `,`, `/`, or `.`.
 

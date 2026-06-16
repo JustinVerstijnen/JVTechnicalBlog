@@ -372,7 +372,7 @@ By default, Azure traffic communicates directly with the internet, as this resul
 
 [![jv-media-937-69ffb0b5a399.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-6-networking-in-microsoft-azure-937/jv-media-937-69ffb0b5a399.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-6-networking-in-microsoft-azure-937/jv-media-937-69ffb0b5a399.png)
 
-Now i don't neccesarily recommend this option as it increases hops and lower the performance but when it is required for security and governance purposes it will do the trick.
+Now I don't neccesarily recommend this option as it increases hops and lower the performance but when it is required for security and governance purposes it will do the trick.
 
 ---
 
@@ -386,7 +386,7 @@ We have the following types of endpoints:
 - Service Endpoints
 - Private Endpoints
 
-The order of these are very important, because i ordered them most inclusive to most restrictive.
+The order of these are very important, because I ordered them most inclusive to most restrictive.
 
 ### Public Endpoints
 
@@ -432,7 +432,7 @@ This increases:
 
 ## Service Endpoint vs. Private Endpoint
 
-Because i find both terms still really confusing till this day, i have created a table to describe the exact differences:
+Because I find both terms still really confusing till this day, I have created a table to describe the exact differences:
 
 |  |  |
 | --- | --- |

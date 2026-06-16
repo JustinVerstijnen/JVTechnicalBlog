@@ -271,7 +271,7 @@ In Machine Learning Studio, you need to create a workspace. There are four types
 
 ## Summary
 
-In Azure, the possibilities are endless in terms of Databases and AI are almost limitless. I hope i gave a good understanding of all the services and features possible.
+In Azure, the possibilities are endless in terms of Databases and AI are almost limitless. I hope I gave a good understanding of all the services and features possible.
 
 Thank you for reading this page.
 

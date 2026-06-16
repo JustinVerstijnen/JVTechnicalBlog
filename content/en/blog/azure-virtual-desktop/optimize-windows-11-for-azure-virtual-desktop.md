@@ -65,7 +65,7 @@ You are free to link the GPO to each OU you want but make sure it will not direc
 
 ## Tips when using this Group Policy
 
-Managing AVD session hosts isn't only enabling settings and hoping that it will reach its goal. It is building, maintaining and securing your system with every step. To help you building your AVD environment like a professional, i have some tips for you:
+Managing AVD session hosts isn't only enabling settings and hoping that it will reach its goal. It is building, maintaining and securing your system with every step. To help you building your AVD environment like a professional, I have some tips for you:
 
 - Put your AVD session hosts in a seperate OU
   - Better for security and maintainability, and you can link this group policy to your sessio hosts OU

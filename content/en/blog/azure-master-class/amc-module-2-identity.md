@@ -179,7 +179,7 @@ To synchronize AD DS with Microsoft Entra ID, there are two solutions available:
 
 Microsoft Entra ID has several built-in roles, which are packages with predefined permissions. These can be assigned to users to grant them access to specific functions. It is possible to create a custom role using JSON, defining actions that a user can or cannot perform (Actions/NotActions).
 
-To learn more about roles and custom roles, check out my guide where i go in depth of this subject: <https://justinverstijnen.nl/introduction-to-microsoft-azure-roles-rbac-iam-the-easy-way/>
+To learn more about roles and custom roles, check out my guide where I go in depth of this subject: <https://justinverstijnen.nl/introduction-to-microsoft-azure-roles-rbac-iam-the-easy-way/>
 
 Roles cannot be assigned to groups, except if you create a custom group. In this case, you can specify that Microsoft Entra ID roles can be applied:
 

@@ -275,7 +275,7 @@ The configuration of VMSS can be done in the Azure Portal and starts with config
 
 After the conditions are configured, we can define the rules where we plan when to scale up or down:
 
-I am no expert in Scale Sets myself but i know the basic concept. If you want to learn more, refer to this guide: <https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-portal>
+I am no expert in Scale Sets myself but I know the basic concept. If you want to learn more, refer to this guide: <https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-portal>
 
 ### Practice Scenarios
 
