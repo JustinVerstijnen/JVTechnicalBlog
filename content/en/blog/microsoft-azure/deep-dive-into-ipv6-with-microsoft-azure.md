@@ -7,7 +7,7 @@ categories:
 tags:
   - Step by Step guides
 description: >
-  In Microsoft Azure, we can build servers and networks that use IPv6 for their connectivity. This is especially great for your webservers, where you want the highest level of availability for your users. This is achieved the best using both IPv4 and IPv6 protocols. In this guide we do a deep dive into IPv6 in Microsoft Azure and i will show some practical examples of use of IPv6 in Azure.
+  In Microsoft Azure, we can build servers and networks that use IPv6 for their connectivity. This is especially great for your webservers, where you want the highest level of availability for your users. This is achieved the best using both IPv4 and IPv6 protocols. In this guide we do a deep dive into IPv6 in Microsoft Azure and I will show some practical examples of use of IPv6 in Azure.
 ---
 
 ## Requirements
@@ -28,7 +28,7 @@ By default, Azure pushes you to use an IPv4 address space when creating a virtua
 
 In some cases we want to give our IPv6 addresses only, IPv4 addresses only or use dual-stack where we assign both IPv4 and IPv6 to our resources.
 
-In the wizard, we can remove the default generated address space and design our own, IPv6 based address space like i have done below:
+In the wizard, we can remove the default generated address space and design our own, IPv6 based address space like I have done below:
 
 [![jv-media-869-fffc8af61374.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/deep-dive-into-ipv6-with-microsoft-azure-869/jv-media-869-fffc8af61374.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/deep-dive-into-ipv6-with-microsoft-azure-869/jv-media-869-fffc8af61374.png)
 
@@ -40,7 +40,7 @@ In the same window, we can configure our subnets in the IPv6 variant:
 
 Here I created a subnet called Subnet-1 which has address block **fd01::/64** which means there are 264 (18 quintillion) addresses possible in one subnet. Azure only supports /64 subnets in IPv6, this because this has the best support over all devices and operating systems worldwide.
 
-For demonstration purposes i created 3 subnets where we can connect our resources:
+For demonstration purposes I created 3 subnets where we can connect our resources:
 
 [![jv-media-869-a29b52956b4a.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/deep-dive-into-ipv6-with-microsoft-azure-869/jv-media-869-a29b52956b4a.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/deep-dive-into-ipv6-with-microsoft-azure-869/jv-media-869-a29b52956b4a.png)
 
@@ -92,7 +92,7 @@ Here you can see that we have both IPv4 and IPv6 addresses in our own configured
 
 Now the cherry on the pie (like we say in dutch) is to make our machine available to the internet using IPv6.
 
-I already have a public IPv4 address to connect to the server, and now i want to add a IPv6 address to connect to the server.
+I already have a public IPv4 address to connect to the server, and now I want to add a IPv6 address to connect to the server.
 
 Go in the Azure Portal to "Public IP Addresses" and create a new IP address.
 
@@ -116,7 +116,7 @@ Now our server is available through IPv6. Good to mention that you may not be po
 
 To actually test the IPv6 connectivity, we can setup a webserver in one of the subnets and try if we can make a connection with IPv6 to that device. I used the marketplace image "Litespeed Web Server" to serve this purpose.
 
-I used a simple webserver image to create a new VM and placed it in Subnet-2. After that i created a secondary connection just like the other Windows based VM and added a private and a public IPv6 address:
+I used a simple webserver image to create a new VM and placed it in Subnet-2. After that I created a secondary connection just like the other Windows based VM and added a private and a public IPv6 address:
 
 [![jv-media-869-1356641b39dc.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/deep-dive-into-ipv6-with-microsoft-azure-869/jv-media-869-1356641b39dc.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/deep-dive-into-ipv6-with-microsoft-azure-869/jv-media-869-1356641b39dc.png)
 
@@ -146,9 +146,9 @@ Small note: some webservers/firewalls may be configured manually to listen to IP
 
 ## Summary
 
-When playing with IPv6, you see that some things are great but its use is primarily for filling up the worldwide shortage of IPv4 addresses. Also i admit that there is no full support for IPv6 on Azure, most of the services i tested like VMs, Private Endpoints, Load balancers etcetera all requires IPv4 to communicatie which eliminates the possibility to go full IPv6.
+When playing with IPv6, you see that some things are great but its use is primarily for filling up the worldwide shortage of IPv4 addresses. Also I admit that there is no full support for IPv6 on Azure, most of the services I tested like VMs, Private Endpoints, Load balancers etcetera all requires IPv4 to communicatie which eliminates the possibility to go full IPv6.
 
-My personal opninion is that the addressing can be easier than IPv4, when done correctly. In the addressing i used in this guide i used the fd00::/8 space which makes very short addressess and no limitation of 250 devices without having to upper the number. These days a network of 250 devices is no exception.
+My personal opninion is that the addressing can be easier than IPv4, when done correctly. In the addressing I used in this guide I used the fd00::/8 space which makes very short addressess and no limitation of 250 devices without having to upper the number. These days a network of 250 devices is no exception.
 
 {{< ads >}}
 

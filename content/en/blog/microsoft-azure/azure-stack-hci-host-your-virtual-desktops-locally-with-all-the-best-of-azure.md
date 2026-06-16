@@ -55,7 +55,7 @@ You need the following to follow this guide and make sure to minimize errors:
   - Storage Account Contributor
 - A Azure storage account which is the cluster witness (needed for quorum)
 
-In my guide, i will focus on creating a cluster with 2 nodes. I have included and tested the steps to create a single-server cluster too:
+In my guide, I will focus on creating a cluster with 2 nodes. I have included and tested the steps to create a single-server cluster too:
 
 - [Multi node cluster setup](#1-multi-node-setup-guide)
 - [Single node cluster setup](#2-steps-for-creating-a-single-node-cluster)
@@ -72,7 +72,7 @@ I create a Multi-node server cluster to experiment with Stack HCI. The environme
 - 1 domain controller (DC01)
 - In Azure: 1 storage account
 
-In Azure i have a single resource group where i want to deploy my cluster into:
+In Azure I have a single resource group where I want to deploy my cluster into:
 
 [![jv-media-374-e59b0f791505.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-stack-hci-host-your-virtual-desktops-locally-with-all-the-best-of-azure-374/jv-media-374-e59b0f791505.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-stack-hci-host-your-virtual-desktops-locally-with-all-the-best-of-azure-374/jv-media-374-e59b0f791505.png)
 
@@ -82,7 +82,7 @@ In Azure i have a single resource group where i want to deploy my cluster into:
 
 ### 1.1 Installing nodes for the cluster
 
-The installation of Azure Stack HCI is very straight-forward, and the same as installing Windows 11 or Windows Server. At the time you follow this guide i think you understand how to do this.
+The installation of Azure Stack HCI is very straight-forward, and the same as installing Windows 11 or Windows Server. At the time you follow this guide I think you understand how to do this.
 
 [![jv-media-374-8ebc1913b625.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-stack-hci-host-your-virtual-desktops-locally-with-all-the-best-of-azure-374/jv-media-374-8ebc1913b625.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-stack-hci-host-your-virtual-desktops-locally-with-all-the-best-of-azure-374/jv-media-374-8ebc1913b625.png)
 
@@ -231,11 +231,11 @@ After that, we have to validate our cluster nodes by Azure to check if all pre-r
 
 After succesfully validating the nodes, we can go further in the wizard.
 
-On the tab "Configuration", i chose for a new configuration:
+On the tab "Configuration", I chose for a new configuration:
 
 [![jv-media-374-e09e3f7cbe05.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-stack-hci-host-your-virtual-desktops-locally-with-all-the-best-of-azure-374/jv-media-374-e09e3f7cbe05.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-stack-hci-host-your-virtual-desktops-locally-with-all-the-best-of-azure-374/jv-media-374-e09e3f7cbe05.png)
 
-On the tab "Networking", I chose for "Network switch for storage". This means if there is a network switch between the servers. In my environment, i am using VMware as Hypervisor for my cluster nodes. This has a internal switching system and has no direct link to the PCIe connected network interface.
+On the tab "Networking", I chose for "Network switch for storage". This means if there is a network switch between the servers. In my environment, I am using VMware as Hypervisor for my cluster nodes. This has a internal switching system and has no direct link to the PCIe connected network interface.
 
 Further, you have the option to segment your cluster network by using different network links for:
 
@@ -243,7 +243,7 @@ Further, you have the option to segment your cluster network by using different 
 - Traffic between nodes
 - Storage network
 
-In my environment i chose to group all traffic. In real world and business critical environments, it is often better to segment the traffic to increase performance and security.
+In my environment I chose to group all traffic. In real world and business critical environments, it is often better to segment the traffic to increase performance and security.
 
 After that step, we have to configure network connectivity. Select the network interface and at the IP configuration section, keep in mind at the DNS servers you need connection to your domain controller.
 
@@ -288,7 +288,7 @@ On the Management-server, run the following command:
 Test-Cluster -Node HCI01 -Include "Storage Spaces Direct", "Inventory", "Network", "System Configuration"
 {{< /card >}}
 
-Te result i got is the following:
+Te result I got is the following:
 
 [![jv-media-374-bac5c94f883e.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-stack-hci-host-your-virtual-desktops-locally-with-all-the-best-of-azure-374/jv-media-374-bac5c94f883e.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-stack-hci-host-your-virtual-desktops-locally-with-all-the-best-of-azure-374/jv-media-374-bac5c94f883e.png)
 

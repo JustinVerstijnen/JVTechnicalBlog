@@ -25,7 +25,7 @@ When we speak of a network, we speak of a set connected devices (we call them cl
 - Router (this device connects your network to other networks like the internet)
 - Client
 
-Like i said, your network contains several devices and each devices has to know how to connect to an other device. This will be done using an IP address. Using IP addresses enables you to have a very efficient network in terms of cabling. In the past there some coaxial based networks where every device was physically connected to each other.
+Like I said, your network contains several devices and each devices has to know how to connect to an other device. This will be done using an IP address. Using IP addresses enables you to have a very efficient network in terms of cabling. In the past there some coaxial based networks where every device was physically connected to each other.
 
 You can pretty much compare IP addresses to sending a post card in real life. Your postal company has to know where your postcard must be delivered, but then in terms of finding the right device in your network.
 
@@ -191,7 +191,7 @@ When it comes to compare generic terms in networking, you can use the table belo
 
 ## Summary
 
-This page greatly explains how IPv4 and IPv6 addresses and their basics and benefits work, and there is a lot to also tell about. Obviously too much to include on a single page. Also i want the content to be readable and to stay within the best attention span of humans :).
+This page greatly explains how IPv4 and IPv6 addresses and their basics and benefits work, and there is a lot to also tell about. Obviously too much to include on a single page. Also I want the content to be readable and to stay within the best attention span of humans :).
 
 {{< ads >}}
 

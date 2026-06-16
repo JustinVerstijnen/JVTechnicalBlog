@@ -55,7 +55,7 @@ Learning for the AZ-900 certification is possible through the following source:
 
 Microsoft Learn: <https://learn.microsoft.com/en-us/training/courses/az-900t00#course-syllabus>
 
-After you have done the complete cource, i recommend you watch the Study Cram of John Savil for AZ-900. He is a great explainer of concepts, and he explains every detail you need to know for the exam including some populair exam questions.
+After you have done the complete cource, I recommend you watch the Study Cram of John Savil for AZ-900. He is a great explainer of concepts, and he explains every detail you need to know for the exam including some populair exam questions.
 
 John Savil: <https://www.youtube.com/watch?v=tQp1YkB2Tgs>
 

@@ -11,7 +11,7 @@ description: >
 ---
 ## Group Policy update to multiple computers
 
-Sometimes you want to force a group policy update on multiple computers. Often when i am configuring Azure Virtual Desktop Session Hosts i need this option instead of logging into all hosts and executing the command manually.
+Sometimes you want to force a group policy update on multiple computers. Often when I am configuring Azure Virtual Desktop Session Hosts I need this option instead of logging into all hosts and executing the command manually.
 
 There is a option in Group Policy management to force a group policy update to all computers in a OU:
 

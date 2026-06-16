@@ -101,7 +101,7 @@ ServicePlanId                        ServicePlanName
 
 ## Summary
 
-Dynamic Groups are an excellent way to automating and securing your environment with the least administrative tasks possible. I hope i helped you a little bit by automating some more of your environment!
+Dynamic Groups are an excellent way to automating and securing your environment with the least administrative tasks possible. I hope I helped you a little bit by automating some more of your environment!
 
 {{< ads >}}
 

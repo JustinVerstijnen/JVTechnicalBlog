@@ -74,7 +74,7 @@ Select all machines and click on "Update settings".
 
 Here you can do the same for all servers on your subscriptions (and Lighthouse managed subscriptions too)
 
-By using the top drop down menu's you can bulk change the options of the VMs to the desired settings. In my case i want to install updates on all servers with the same schedule.
+By using the top drop down menu's you can bulk change the options of the VMs to the desired settings. In my case I want to install updates on all servers with the same schedule.
 
 ---
 

@@ -49,7 +49,7 @@ The migration of servers to Microsoft Azure consists of 3 phases: *Discovery*, *
 
 Every migration starts with some sort of preparations. This can consist of:
 
-- Describing the scope of the migration; which machines do i want to migrate?
+- Describing the scope of the migration; which machines do I want to migrate?
 - Method of migrating; 1 to 1 migration or a complete rebuild?
 - Assess possible risks and sensitive data/applications
 
@@ -81,7 +81,7 @@ The source can be a little confusing, but hopefully this makes it clear:
 - **Hyper-V:** When using Hyper-V as virtualization platform
 - **Physical:** Every other source, like VMware ESXi, actually Physical or other public/private clouds
 
-In my case, i used VMware ESXi to host a migration testing machine, so i selected "Physical".
+In my case, I used VMware ESXi to host a migration testing machine, so I selected "Physical".
 
 [![jv-media-1126-f234a337a69d.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/using-azure-migrate-to-migrate-on-premises-to-azure-1126/jv-media-1126-f234a337a69d.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/using-azure-migrate-to-migrate-on-premises-to-azure-1126/jv-media-1126-f234a337a69d.png)
 

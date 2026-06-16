@@ -64,7 +64,7 @@ There are 2 types of rules in a Network Security Group, inbound rules and outbou
 
 ## NSGs of Azure in practice
 
-To further clarify some practice examples i will create some different examples:
+To further clarify some practice examples I will create some different examples:
 
 ### Example 1:
 
@@ -80,7 +80,7 @@ A advice for opening RDP ports to the internet is to specify at least one IP-adr
 
 When you want to only allow certain traffic from your Azure server to the internet, we need to create 2 *outbound rule*s and will look like below:
 
-Here i have created 2 rules:
+Here I have created 2 rules:
 
 - A rule to allow outbound internet access with ports 80, 443 and 53 with a priority of 100
 - A rule to block outbound internet access with all ports and all destinations with a priority of 4000.

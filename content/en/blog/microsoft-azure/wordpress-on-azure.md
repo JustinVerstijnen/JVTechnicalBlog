@@ -132,7 +132,7 @@ Click on "Next: Add ins >"
 
 ### Add-ins
 
-On the Add-ins page, i have all options as default but enabled the Azure Blob Storage. This is where the media files are stored like images, documents and stuff.
+On the Add-ins page, I have all options as default but enabled the Azure Blob Storage. This is where the media files are stored like images, documents and stuff.
 
 [![jv-media-2625-1602f77af72c.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-1602f77af72c.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-1602f77af72c.png)
 

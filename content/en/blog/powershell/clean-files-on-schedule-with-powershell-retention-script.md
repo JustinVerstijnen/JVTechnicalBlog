@@ -191,7 +191,7 @@ In the Script directory, a file is created, containing all the filenames it has 
 
 ## Summary
 
-This Powershell script can help cleaning up files in specific folders. mostly i use this for maintenance on servers where software is installed without proper retention settings of their temporary files. This script helps keeping your disks clean and indirectly improves the availability of your infrastructure.
+This Powershell script can help cleaning up files in specific folders. mostly I use this for maintenance on servers where software is installed without proper retention settings of their temporary files. This script helps keeping your disks clean and indirectly improves the availability of your infrastructure.
 
 Thank you for reading this guide and I hope this was helpful.
 

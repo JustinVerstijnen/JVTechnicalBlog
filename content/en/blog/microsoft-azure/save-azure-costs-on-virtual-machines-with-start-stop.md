@@ -134,7 +134,7 @@ We can configure the complete flow here in the blocks:
 
 ## Configure Auto start schedule
 
-Click on the "Recurrence" block and change the parameters to your needs. In my case, i configured to start the VM on 13:45 Amsterdam time.
+Click on the "Recurrence" block and change the parameters to your needs. In my case, I configured to start the VM on 13:45 Amsterdam time.
 
 [![jv-media-1250-d5de9e8af3af.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/save-azure-costs-on-virtual-machines-with-start-stop-1250/jv-media-1250-d5de9e8af3af.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/save-azure-costs-on-virtual-machines-with-start-stop-1250/jv-media-1250-d5de9e8af3af.png)
 
@@ -260,7 +260,7 @@ After configuring the Function-Try block you can save the Logic app and head to 
 
 ## Let's check the Auto Start outcome
 
-Now i configured the machine to start on 13:45. You will not see the change directly in the Azure Portal but it will definitely start the VM.
+Now I configured the machine to start on 13:45. You will not see the change directly in the Azure Portal but it will definitely start the VM.
 
 At 13:45:
 
@@ -343,7 +343,7 @@ This solution is a excellent way to save on Azure VM consumption costs and shutt
 
 This solution is similar to the Scaling Plans you have for Azure Virtual Desktop, but then for non-AVD VMs.
 
-Thank you for reading this page and i hope i helped you by saving costs on VM consumption in Microsoft Azure.
+Thank you for reading this page and I hope I helped you by saving costs on VM consumption in Microsoft Azure.
 
 {{< ads >}}
 

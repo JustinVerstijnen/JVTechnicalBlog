@@ -7,7 +7,7 @@ categories:
 tags:
   - Concepts
 description: >
-  This page shows what Microsoft Azure certifications are available for Developer-minded people. I intend to focus as much on the developers as possible, although this is not my primary subject. I did some research and i didn't find it very clear what to do, where to start etcetera.
+  This page shows what Microsoft Azure certifications are available for Developer-minded people. I intend to focus as much on the developers as possible, although this is not my primary subject. I did some research and I didn't find it very clear what to do, where to start etcetera.
 ---
 
 ## The certification poster

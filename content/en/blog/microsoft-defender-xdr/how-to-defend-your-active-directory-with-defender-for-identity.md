@@ -58,7 +58,7 @@ You can get this one-time trial through the Microsoft 365 marketplace by looking
 
 After that, if you are eligible for a trial, you can get it by clicking on "Details" and then on "Start Trial".
 
-In my environment, i have assigned the license to my user:
+In my environment, I have assigned the license to my user:
 
 [![jv-media-999-7b3f43fce41f.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-to-defend-your-active-directory-with-defender-for-identity-999/jv-media-999-7b3f43fce41f.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-to-defend-your-active-directory-with-defender-for-identity-999/jv-media-999-7b3f43fce41f.png)
 {{% alert color="info" %}}
@@ -146,7 +146,7 @@ Now the sensor is active, but we have to do some post-installation steps to make
 
 Click on the sensor to review all settings and information:
 
-We can edit the configuration of the sensor by clicking on the blue "Manage sensor" button. Also, we have to do 2 tasks for extra auditing which i will explain step by step.
+We can edit the configuration of the sensor by clicking on the blue "Manage sensor" button. Also, we have to do 2 tasks for extra auditing which I will explain step by step.
 
 First, click on the "Manage Sensor" button.
 
@@ -189,7 +189,7 @@ Here we have to change 3 settings:
 | Network security: Restrict NTLM: Audit NTLM authentication in this domain | Enable all |
 | Network security: Restrict NTLM: Audit Incoming NTLM Traffic | Enable auditing for all accounts |
 
-Change the settings like i did below:
+Change the settings like I did below:
 
 Please review the settings before changing them, it can be easy to pick the wrong one.
 
@@ -303,7 +303,7 @@ Now we get a pile of permissions:
 
 [![jv-media-999-a0281ac4fd76.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-to-defend-your-active-directory-with-defender-for-identity-999/jv-media-999-a0281ac4fd76.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-to-defend-your-active-directory-with-defender-for-identity-999/jv-media-999-a0281ac4fd76.png)
 
-We have to select "Type" and set it to "Success" and then the Applies to: "Decendant User objects" like i have done in the picture above.
+We have to select "Type" and set it to "Success" and then the Applies to: "Decendant User objects" like I have done in the picture above.
 
 Now we have to scroll down to the "Clear all" button and hit it to make everything empty.
 
@@ -342,7 +342,7 @@ This means the service is up and running and ready for monitoring and so spying 
 
 ## Summary
 
-Defender for Identity is a great solution and monitoring tool for any malicious behaviour in your Active Directory. It is not limited to on-premises, it also can run on domain controllers in Azure, like i did for this DEMO.
+Defender for Identity is a great solution and monitoring tool for any malicious behaviour in your Active Directory. It is not limited to on-premises, it also can run on domain controllers in Azure, like I did for this DEMO.
 
 Next up, we are going to simulate some malicious behaviour to check if the service can detect and warn us about it. Refer this guide: <https://justinverstijnen.nl/penetration-testing-defender-for-identity-and-active-directory>
 

@@ -275,7 +275,7 @@ Comma's used in Usable addresses to not be confused with IP addresses ;)
 
 I hope I gave you a great basic understanding of how networks work and the fundamentals to use networking in Azure. Its part of our jobs and not very easy to start out with.
 
-Thank you for reading my guide and i hope it was helpful.
+Thank you for reading my guide and I hope it was helpful.
 
 {{< ads >}}
 
