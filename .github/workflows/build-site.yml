@@ -58,6 +58,7 @@ jobs:
           import os
           import re
           import html
+          import json
 
           BLOG_DIR = Path("content/en/blog")
           OUTPUT_FILE = Path("content/en/planned-posts.md")
@@ -207,6 +208,172 @@ jobs:
           """
 
 
+          def build_calendar(posts):
+              if not posts:
+                  return ""
+
+              posts_by_date = {}
+              date_occurrences = {}
+
+              for post in posts:
+                  date_key = post["date"].isoformat()
+                  date_occurrences[date_key] = date_occurrences.get(date_key, 0) + 1
+                  anchor = f'planned-post-{date_key}-{date_occurrences[date_key]}'
+                  post["anchor"] = anchor
+
+                  posts_by_date.setdefault(date_key, []).append(
+                      {
+                          "title": post["title"],
+                          "anchor": anchor,
+                      }
+                  )
+
+              first_post_date = posts[0]["date"]
+              last_post_date = posts[-1]["date"]
+              calendar_data = {
+                  "today": TODAY.isoformat(),
+                  "minMonth": TODAY.strftime("%Y-%m"),
+                  "maxMonth": last_post_date.strftime("%Y-%m"),
+                  "initialMonth": first_post_date.strftime("%Y-%m"),
+                  "posts": posts_by_date,
+              }
+              calendar_json = json.dumps(calendar_data, ensure_ascii=False, separators=(",", ":"))
+              calendar_json = (
+                  calendar_json.replace("&", "\\u0026")
+                  .replace("<", "\\u003c")
+                  .replace(">", "\\u003e")
+              )
+
+              return f"""
+          <section class="planned-posts-calendar" aria-labelledby="planned-posts-calendar-title">
+            <div class="planned-posts-calendar__header">
+              <div>
+                <div class="planned-posts-calendar__eyebrow">Publishing calendar</div>
+                <h2 id="planned-posts-calendar-title">Upcoming posts by date</h2>
+              </div>
+              <div class="planned-posts-calendar__controls" aria-label="Calendar navigation">
+                <button type="button" class="planned-posts-calendar__nav planned-posts-calendar__nav--previous" aria-label="Previous month">&#8249;</button>
+                <div class="planned-posts-calendar__month" aria-live="polite"></div>
+                <button type="button" class="planned-posts-calendar__nav planned-posts-calendar__nav--next" aria-label="Next month">&#8250;</button>
+              </div>
+            </div>
+            <div class="planned-posts-calendar__weekdays" aria-hidden="true">
+              <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+            </div>
+            <div class="planned-posts-calendar__grid" role="group"></div>
+            <div class="planned-posts-calendar__legend">
+              <span><span class="planned-posts-calendar__legend-dot" aria-hidden="true"></span>Scheduled post</span>
+              <span>Select a marked day to jump to its post.</span>
+            </div>
+            <noscript><p class="planned-posts-calendar__noscript">JavaScript is required to display the publishing calendar.</p></noscript>
+            <script type="application/json" class="planned-posts-calendar__data">{calendar_json}</script>
+          </section>
+          <script>
+          (() => {{
+            const monthFormatter = new Intl.DateTimeFormat('en-GB', {{ month: 'long', year: 'numeric' }});
+            const fullDateFormatter = new Intl.DateTimeFormat('en-GB', {{ day: 'numeric', month: 'long', year: 'numeric' }});
+
+            document.querySelectorAll('.planned-posts-calendar').forEach((calendar) => {{
+              const dataElement = calendar.querySelector('.planned-posts-calendar__data');
+              const grid = calendar.querySelector('.planned-posts-calendar__grid');
+              const monthLabel = calendar.querySelector('.planned-posts-calendar__month');
+              const previousButton = calendar.querySelector('.planned-posts-calendar__nav--previous');
+              const nextButton = calendar.querySelector('.planned-posts-calendar__nav--next');
+
+              if (!dataElement || !grid || !monthLabel || !previousButton || !nextButton) return;
+
+              const data = JSON.parse(dataElement.textContent);
+              const parseMonth = (value) => {{
+                const [year, month] = value.split('-').map(Number);
+                return new Date(year, month - 1, 1);
+              }};
+              const monthKey = (date) => `${{date.getFullYear()}}-${{String(date.getMonth() + 1).padStart(2, '0')}}`;
+              const dateKey = (year, month, day) => `${{year}}-${{String(month + 1).padStart(2, '0')}}-${{String(day).padStart(2, '0')}}`;
+
+              const minimumMonth = parseMonth(data.minMonth);
+              const maximumMonth = parseMonth(data.maxMonth);
+              let visibleMonth = parseMonth(data.initialMonth);
+
+              const render = () => {{
+                const year = visibleMonth.getFullYear();
+                const month = visibleMonth.getMonth();
+                const firstWeekday = (new Date(year, month, 1).getDay() + 6) % 7;
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+                monthLabel.textContent = monthFormatter.format(visibleMonth);
+                grid.setAttribute('aria-label', monthFormatter.format(visibleMonth));
+                grid.replaceChildren();
+
+                for (let index = 0; index < firstWeekday; index += 1) {{
+                  const emptyCell = document.createElement('span');
+                  emptyCell.className = 'planned-posts-calendar__day planned-posts-calendar__day--empty';
+                  emptyCell.setAttribute('aria-hidden', 'true');
+                  grid.appendChild(emptyCell);
+                }}
+
+                for (let day = 1; day <= daysInMonth; day += 1) {{
+                  const key = dateKey(year, month, day);
+                  const scheduledPosts = data.posts[key] || [];
+                  const cell = document.createElement(scheduledPosts.length ? 'button' : 'span');
+                  cell.className = 'planned-posts-calendar__day';
+
+                  if (key === data.today) cell.classList.add('planned-posts-calendar__day--today');
+
+                  const number = document.createElement('span');
+                  number.className = 'planned-posts-calendar__day-number';
+                  number.textContent = day;
+                  cell.appendChild(number);
+
+                  if (scheduledPosts.length) {{
+                    cell.type = 'button';
+                    cell.classList.add('planned-posts-calendar__day--scheduled');
+                    const countLabel = scheduledPosts.length === 1 ? '1 scheduled post' : `${{scheduledPosts.length}} scheduled posts`;
+                    const readableDate = fullDateFormatter.format(new Date(year, month, day));
+                    cell.setAttribute('aria-label', `${{readableDate}}, ${{countLabel}}: ${{scheduledPosts.map((post) => post.title).join('; ')}}`);
+                    cell.title = scheduledPosts.map((post) => post.title).join('\\n');
+
+                    const marker = document.createElement('span');
+                    marker.className = 'planned-posts-calendar__day-marker';
+                    marker.textContent = scheduledPosts.length > 1 ? scheduledPosts.length : '';
+                    marker.setAttribute('aria-hidden', 'true');
+                    cell.appendChild(marker);
+
+                    cell.addEventListener('click', () => {{
+                      const target = document.getElementById(scheduledPosts[0].anchor);
+                      if (target) {{
+                        target.scrollIntoView({{ behavior: 'smooth', block: 'center' }});
+                        target.classList.add('planned-post-card--highlighted');
+                        window.setTimeout(() => target.classList.remove('planned-post-card--highlighted'), 1800);
+                      }}
+                    }});
+                  }}
+
+                  grid.appendChild(cell);
+                }}
+
+                previousButton.disabled = monthKey(visibleMonth) <= monthKey(minimumMonth);
+                nextButton.disabled = monthKey(visibleMonth) >= monthKey(maximumMonth);
+              }};
+
+              previousButton.addEventListener('click', () => {{
+                if (monthKey(visibleMonth) <= monthKey(minimumMonth)) return;
+                visibleMonth = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth() - 1, 1);
+                render();
+              }});
+
+              nextButton.addEventListener('click', () => {{
+                if (monthKey(visibleMonth) >= monthKey(maximumMonth)) return;
+                visibleMonth = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth() + 1, 1);
+                render();
+              }});
+
+              render();
+            }});
+          }})();
+          </script>
+          """
+
+
           posts = []
 
           for path in sorted(BLOG_DIR.rglob("*.md")):
@@ -251,7 +418,13 @@ jobs:
 
           cards_html = []
 
+          date_occurrences = {}
+
           for post in posts:
+              date_key = post["date"].isoformat()
+              date_occurrences[date_key] = date_occurrences.get(date_key, 0) + 1
+              post.setdefault("anchor", f'planned-post-{date_key}-{date_occurrences[date_key]}')
+
               category_html = ""
               if post["categories"]:
                   category_html = " / ".join(
@@ -267,7 +440,7 @@ jobs:
                   )
 
               card_html = f"""
-          <article class="planned-post-card">
+          <article id="{html.escape(post["anchor"])}" class="planned-post-card" data-planned-date="{post["date"].isoformat()}">
             <div class="planned-post-card__top">
               <span class="planned-post-card__date">{html.escape(post["date_display"])}</span>
               <span class="planned-post-card__countdown">{html.escape(post["countdown"])}</span>
@@ -300,6 +473,7 @@ jobs:
               "",
               '<div class="planned-posts-page">',
               build_summary(posts),
+              build_calendar(posts),
           ]
 
           if posts:
