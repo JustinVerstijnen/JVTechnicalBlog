@@ -5,7 +5,7 @@ date: 2026-07-01
 tags: []
 categories:
 - Github
-description: "This page contains my GH-900 certification course notes."
+description: "This page contains my GH-900 certification course notes. Some notes are added with information I already knew but the base topics are from the GH-900 courses."
 hidden: false
 ---
 
