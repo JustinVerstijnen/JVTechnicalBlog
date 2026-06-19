@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+  schedule:
+    - cron: "0 0 * * *"
+      timezone: "Europe/Amsterdam"
+
 permissions:
   contents: read
   pages: write
