@@ -10,6 +10,7 @@ enableGitInfo: true
 # Blog en datum uitschakelen uit URL
 permalinks:
   blog: "/:slug/"
+  labs: "/labs/:slug/"
 
 # Disable archive-hidden pages
 ignoreFiles:
