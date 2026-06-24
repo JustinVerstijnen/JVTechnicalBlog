@@ -1,6 +1,6 @@
 ---
 title: Lab Objectives
-weight: 1
+weight: 100
 ---
 
-This category contains some lab objectives for Microsoft Azure made by myself.
+This category contains some lab objectives for Microsoft Azure made by myself. These can be executed in your own environment, which maximizes the learning experience.
