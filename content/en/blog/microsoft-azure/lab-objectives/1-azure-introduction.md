@@ -10,6 +10,8 @@ description: "In this objective, you will learn about how to build and configure
 hidden: false
 ---
 
+> Difficulty: Easy
+
 ## Introduction
 
 In this lab, we will start-up and prepare our Azure environment to be able to do the Lab objectives. I will also aim to prepare you to understand the Azure Portal, even when having close to zero experience. In the further labs, some knowledge and experience is preferable. Steps may also vary as Websites and Portals are continuously updated.
