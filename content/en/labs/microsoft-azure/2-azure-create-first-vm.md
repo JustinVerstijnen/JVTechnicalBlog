@@ -5,7 +5,6 @@ date: 2025-09-02
 tags:
 - Lab Objective
 categories:
-- Microsoft Azure Labs
 description: "In this objective, you will learn about how to build and configure the required Azure resources in your own environment. Make sure you use your own Azure subscription, tenant, and resource groups when completing the tasks. The goal of this lab is to gain hands-on experience with setting up Azure infrastructure in a secure and structured, where the goal is to maximize the learning experience."
 hidden: false
 weight: 2
