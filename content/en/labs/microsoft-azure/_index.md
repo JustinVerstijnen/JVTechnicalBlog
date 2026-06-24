@@ -1,6 +1,5 @@
 ---
 title: Microsoft Azure
-type: docs
 weight: 10
 ---
 

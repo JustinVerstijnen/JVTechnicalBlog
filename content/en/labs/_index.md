@@ -1,7 +1,9 @@
 ---
 title: Lab Objectives
 linkTitle: Labs
-type: docs
+type: blog
+cascade:
+  type: blog
 weight: 15
 ---
 
