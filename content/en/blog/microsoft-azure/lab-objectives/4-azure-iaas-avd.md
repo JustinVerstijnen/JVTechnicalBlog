@@ -1,6 +1,6 @@
 ---
-title: "3 - Azure IaaS + Azure Virtual Desktop"
-slug: "3-azure-iaas-avd"
+title: "4 - Azure IaaS + Azure Virtual Desktop"
+slug: "4-azure-iaas-avd"
 date: 2026-09-03
 tags:
 - Lab Objective

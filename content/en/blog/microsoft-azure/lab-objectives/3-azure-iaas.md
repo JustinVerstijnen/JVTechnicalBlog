@@ -1,6 +1,6 @@
 ---
-title: "2 - Azure Virtual Machine"
-slug: "2-azure-iaas"
+title: "3 - Azure Virtual Machines"
+slug: "3-azure-iaas"
 date: 2026-09-02
 tags:
 - Lab Objective
