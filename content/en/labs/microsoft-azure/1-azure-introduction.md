@@ -1,5 +1,5 @@
 ---
-title: "1 - Azure Introduction"
+title: "1: Azure Introduction"
 slug: "1-azure-introduction"
 tags:
 - Lab Objective

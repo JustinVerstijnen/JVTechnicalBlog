@@ -1,5 +1,5 @@
 ---
-title: "3 - Virtual networking fundamentals"
+title: "3: Virtual networking fundamentals"
 slug: "3-virtual-networking-fundamentals"
 tags:
 - Lab Objective

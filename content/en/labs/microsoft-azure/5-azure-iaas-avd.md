@@ -1,5 +1,5 @@
 ---
-title: "5 - Azure IaaS + Azure Virtual Desktop"
+title: "5: Azure IaaS + Azure Virtual Desktop"
 slug: "5-azure-iaas-avd"
 tags:
 - Lab Objective

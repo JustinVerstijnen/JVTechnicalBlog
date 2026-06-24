@@ -1,5 +1,5 @@
 ---
-title: "2 - Create your first Azure VM"
+title: "2: Create your first Azure VM"
 slug: "2-azure-create-first-vm"
 tags:
 - Lab Objective

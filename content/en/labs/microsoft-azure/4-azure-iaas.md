@@ -1,5 +1,5 @@
 ---
-title: "4 - Azure Virtual Machines setup"
+title: "4: Azure Virtual Machines setup"
 slug: "4-azure-virtual-machines-setup"
 tags:
 - Lab Objective
