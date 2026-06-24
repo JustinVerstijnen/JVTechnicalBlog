@@ -9,6 +9,7 @@ tags:
   - Concepts
 description: >
   This module is about application services and containers in Microsoft Azure. It mainly focuses on containers and containerized...
+weight: 8
 ---
 This module is about application services in Microsoft Azure. It mainly focuses on containers and containerized solutions but also explores other serverless solutions. These are solutions where, as a customer or consumer of Microsoft Azure, you do not need to manage a server.
 

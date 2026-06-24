@@ -8,6 +8,7 @@ tags:
   - Concepts
 description: >
   This module is all about resiliency and redundancy in Microsoft Azure. Resiliency literally means flexibility. It refers to how resistant...
+weight: 4
 ---
 This module is all about resiliency and redundancy in Microsoft Azure. Resiliency literally means flexibility. It refers to how resistant a solution is to certain issues and failures. We want to build our solutions redundant, because we don't want outage in a system so a customer can't do their work.
 

@@ -8,6 +8,7 @@ tags:
   - Concepts
 description: >
   This Azure Master Class (AMC) chapter is all about Identity in Microsoft Azure. This means we discuss the following: Users, Groups, Ente...
+weight: 2
 ---
 This Azure Master Class (AMC) chapter is all about Identity in Microsoft Azure. This means we discuss the following:
 

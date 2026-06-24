@@ -8,6 +8,7 @@ tags:
   - Concepts
 description: >
   In Module 6, we will explore all the possibilities of Azure regarding networking, VPNs, load balancing methods, proxies, and gateways. This...
+weight: 6
 ---
 In Module 6, we will explore all the possibilities of Azure regarding networking, VPNs, load balancing methods, proxies, and gateways. This chapter also covers most the topics and solutions included in the AZ-700 exam, the Azure Networking certification.
 

@@ -10,6 +10,7 @@ tags:
   - Step by Step guides
 description: >
   In this module, we cover Azure: Infrastructure as Code (IaC) and DevOps. This module focuses more on development on Azure, with less emphasis...
+weight: 11
 ---
 In this module, we cover Azure: Infrastructure as Code (IaC) and DevOps. This module focuses more on development on Azure, with less emphasis on automation and IT management. While IaC and DevOps might seem less exciting at first, they are essential for modern cloud-based application development and operations, helping streamline deployments, ensure consistency, and integrate continuous delivery pipelines.
 

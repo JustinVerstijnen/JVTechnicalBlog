@@ -8,6 +8,7 @@ tags:
   - Concepts
 description: >
   This module focuses purely on the various storage services that Azure offers and provides. Additionally, we will
+weight: 5
 ---
 This module focuses purely on the various storage services that Azure offers and provides. Additionally, we will explore the different options available to increase redundancy and apply greater resilience.
 

@@ -8,6 +8,7 @@ tags:
   - Concepts
 description: >
   In this module, I want you to understand all the possibilities of Monitoring and some Security features of Microsoft Azure...
+weight: 10
 ---
 In this module, I want you to understand all the possibilities of Monitoring and some Security features of Microsoft Azure. We know that Security these days is a very hot topic and monitoring is not really unimportant either. Very valuable information for you, I hope :).
 

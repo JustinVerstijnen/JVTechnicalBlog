@@ -9,6 +9,7 @@ tags:
   - Concepts
 description: >
   In this module we will explore various possibilities of Databases and AI in Microsoft Azure.
+weight: 9
 ---
 In this we will explore various possibilities of Databases and AI in Microsoft Azure.
 

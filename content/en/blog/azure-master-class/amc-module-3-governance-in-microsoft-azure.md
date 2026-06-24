@@ -8,6 +8,7 @@ tags:
   - Concepts
 description: >
   Governance in Azure refers to the enforcement of rules and the establishment of standards in solutions, naming conventions...
+weight: 3
 ---
 ## Introduction to Govenance in Azure
 
