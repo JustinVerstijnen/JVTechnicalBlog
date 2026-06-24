@@ -14,11 +14,9 @@ hidden: false
 
 In this lab, we will build a very small Infrastructure as a Service environment in Azure. The goal is to create one Windows Server virtual machine for Justin Verstijnen Inc. and configure Remote Desktop access through a Network Security Group rule.
 
-This lab is intentionally smaller than the full Azure IaaS lab. You will not configure Active Directory Domain Services, DNS, IIS or multiple servers. Instead, the focus is on understanding the basic Azure resources that are created when you deploy a virtual machine, and how access to the server is controlled.
-
 This lab is not necessarily a complete step-by-step guide for every button in the Azure Portal. The main goal is to achieve the required end-state, understand what you are building and become more comfortable with Azure IaaS resources. The Azure Portal is updated regularly, so some buttons or menu names may be slightly different when you perform this lab.
 
-In the previous lab, we prepared the Azure environment and created our first resource group. In this lab, we will now start using the resource group for our first virtual machine.
+In the previous lab, we prepared the Azure environment and created our first resource group. In this lab, we will dive deeper, re-creating the resource group for our first virtual machine and setting basic NSG Firewall rules.
 
 ---
 
@@ -40,6 +38,7 @@ This lab uses a virtual machine, which means the lab will cost more than only cr
 To minimize costs during this lab, use the following guidelines:
 
 - Shutdown the VM when you are not using it
+
 	- VMs are the most expensive when running
 	- When VMs are stopped, you still pay for disks and some attached resources
 - Do not choose an oversized virtual machine
@@ -51,6 +50,8 @@ My best recommendation is to complete the lab, take screenshots or notes of your
 
 ---
 
+{{< ads >}}
+
 ## Lab objective
 
 Justin Verstijnen Inc. wants to create its first server in Azure. The company needs one Windows Server virtual machine that can be managed remotely with Remote Desktop.
@@ -59,32 +60,25 @@ The server must be protected by a Network Security Group. Remote Desktop access 
 
 ### Resource group
 
-Use the existing lab resource group from the previous lab.
+You need to create this resource group:
 
 | Resource group name | Purpose |
-|---|---|
+| --- | --- |
 | JV-LAB | All resources for this Azure VM lab |
 
-If the resource group does not exist yet, you can create it during the virtual machine wizard.
+If the resource group does not exist yet, you can create it during the virtual machine wizard. You can also use any existing resource group, but I advice you to use an empty resource group.
 
 ### Server
 
+You need to create this virtual machine:
+
 | Server name | Description |
-|---|---|
-| JV-DC-SRV01 | Windows Server virtual machine |
+| --- | --- |
+| JV-DC-SRV01 | Windows Server virtual machine (2019/2022/2025) |
 
 ### Network
 
-For this lab, the network should remain as simple as possible. You can allow Azure to create the virtual network, subnet, network interface, public IP address and Network Security Group during the virtual machine creation.
-
-Recommended values:
-
-| Resource | Name |
-|---|---|
-| Virtual network | JV-VNET01 |
-| Subnet | default |
-| Network Security Group | JV-NSG-DC-SRV01 |
-| Public IP address | Created during the VM deployment |
+During the virtual machine wizard, you can create the network automatically, using default values. In a future guide, I will also require you to create the virtual network yourself.
 
 ---
 
@@ -99,7 +93,7 @@ Start by creating the virtual machine for this lab.
 - Use the virtual machine name `JV-DC-SRV01`
 - Place it in the region "West Europe"
 - Choose a Windows Server image, for example "Windows Server 2022"
-- Choose a small VM size for this lab
+- Choose a small VM size for this lab, for example D2as_V7
 - Create a local administrator account
 - Make sure a public IP address is created
 - Do not open inbound ports during the VM wizard
@@ -108,12 +102,12 @@ Start by creating the virtual machine for this lab.
 Use the following values as a guideline:
 
 | Setting | Value |
-|---|---|
+| --- | --- |
 | Resource group | JV-LAB |
 | Virtual machine name | JV-DC-SRV01 |
 | Region | West Europe |
 | Image | Windows Server 2022 |
-| Size | Small lab size, for example Standard B2s |
+| Size | Small lab size, for example Standard D2as_v7 |
 | Public IP address | Yes |
 | Public inbound ports | None |
 | Network Security Group | JV-NSG-DC-SRV01 |
@@ -127,7 +121,7 @@ az vm create \
   --resource-group JV-LAB \
   --name JV-DC-SRV01 \
   --image Win2022Datacenter \
-  --size Standard_B2s \
+  --size Standard_D2as \
   --admin-username azureadmin \
   --vnet-name JV-VNET01 \
   --subnet default \
@@ -156,7 +150,7 @@ Now create an inbound security rule to allow Remote Desktop traffic to the virtu
 - Use the following values:
 
 | Setting | Value |
-|---|---|
+| --- | --- |
 | Source | IP Addresses |
 | Source IP addresses/CIDR ranges | Your own public IP address, for example `1.2.3.4/32` |
 | Source port ranges | `*` |
@@ -211,7 +205,7 @@ If the connection does not work, check the following items:
 - The source IP address in the NSG rule matches your current public IP address
 - Your local network allows outbound RDP traffic
 
-You can test the RDP port from your own computer with PowerShell.
+You can test the RDP port from your own computer, outside of the RDP connection with PowerShell.
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
 Test-NetConnection <public-ip-address> -Port 3389
@@ -233,20 +227,6 @@ Check the following items:
 - The NSG has an inbound rule for RDP on TCP port `3389`
 - The RDP rule only allows access from your own public IP address
 - You can log in to the VM using Remote Desktop
-
-Useful validation commands inside the VM:
-
-{{< card code=true header="**PowerShell**" lang="powershell" >}}
-whoami
-hostname
-ipconfig /all
-{{< /card >}}
-
-Useful validation command from your own computer:
-
-{{< card code=true header="**PowerShell**" lang="powershell" >}}
-Test-NetConnection <public-ip-address> -Port 3389
-{{< /card >}}
 
 ## 2.6 Cleaning up the lab
 

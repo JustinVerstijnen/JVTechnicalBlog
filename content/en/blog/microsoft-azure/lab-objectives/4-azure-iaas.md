@@ -1,7 +1,7 @@
 ---
-title: "3 - Azure Virtual Machines"
-slug: "3-azure-iaas"
-date: 2026-09-02
+title: "4 - Azure Virtual Machines setup"
+slug: "4-azure-virtual-machines-setup"
+date: 2025-09-02
 tags:
 - Lab Objective
 - Knowledge Check
