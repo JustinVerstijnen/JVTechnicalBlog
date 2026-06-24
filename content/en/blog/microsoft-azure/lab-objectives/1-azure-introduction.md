@@ -133,7 +133,7 @@ Now we did some simple tasks with the Azure Cloud Shell which we will dive deepe
     {
       "question": "What payment methods can be used to use Microsoft Azure?",
       "reference": "1.1 Setting up Azure environment",
-      "referenceUrl": "#1.1-setting-up-azure-environment",
+      "referenceUrl": "#11-setting-up-azure-environment",
       "answers": [
         {
           "text": "Cash",
@@ -155,7 +155,7 @@ Now we did some simple tasks with the Azure Cloud Shell which we will dive deepe
     {
       "question": "What is a Resource Group?",
       "reference": "1.3 Creating your first resource group",
-      "referenceUrl": "#1.3-creating-your-first-resource-group",
+      "referenceUrl": "#13-creating-your-first-resource-group",
       "answers": [
         {
           "text": "A logical container which contains all particular resources for a solution",
@@ -177,7 +177,7 @@ Now we did some simple tasks with the Azure Cloud Shell which we will dive deepe
     {
       "question": "What CLI's are available in the Azure Cloud Shell?",
       "reference": "1.5 The Azure Cloud Shell",
-      "referenceUrl": "#1.5-the-azure-cloud-shell",
+      "referenceUrl": "#15-the-azure-cloud-shell",
       "answers": [
         {
           "text": "Bash and PowerShell",
@@ -204,7 +204,7 @@ Now we did some simple tasks with the Azure Cloud Shell which we will dive deepe
     {
       "question": "What Azure CLI command is correct to create a resource group?",
       "reference": "1.5 The Azure Cloud Shell",
-      "referenceUrl": "#1.5-the-azure-cloud-shell",
+      "referenceUrl": "#15-the-azure-cloud-shell",
       "answers": [
         {
           "text": "az group resource create jv-az-lab-1 -l westeurope",
