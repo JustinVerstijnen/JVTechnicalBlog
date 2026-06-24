@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra
-weight: 29
+weight: 28
 ---
 
 All pages referring or tutorials for Microsoft Entra.
