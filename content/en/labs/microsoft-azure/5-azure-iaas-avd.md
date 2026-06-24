@@ -1,6 +1,7 @@
 ---
 title: "5: Azure IaaS + Azure Virtual Desktop"
 slug: "5-azure-iaas-avd"
+date: 01-01-2025
 tags:
 - Lab Objective
 - Knowledge Check
@@ -36,20 +37,15 @@ This lab is not necessarily a complete step-by-step guide for every button in th
 
 ## Minimizing Azure costs
 
-This lab uses multiple virtual machines, Azure Virtual Desktop and Azure Storage. This means the lab can become more expensive than the previous labs if you keep resources running.
-
-To minimize costs during this lab, use the following guidelines:
+As registering your creditcard to Azure might sound like paying a huge amount of bucks every month, but it's relatively cheap to try Azure and to perform some labs in it. You do have to adapt to this Pay-as-you-go structure. I will give you the following guidelines to minimize the costs:
 
 - Shutdown unused VMs
-	- This includes the domain controller, application server and AVD session hosts
-- Use a small VM size for testing
-- Do not keep the AVD session hosts running longer than needed
-- Remove the full lab environment when you are done
-- Use resource groups to make cleanup easier
-- Check the Cost analysis page in your Azure subscription
-- Do not store large user profiles or unnecessary test data
+	- VMs are the most expensive when running, when not running you still pay for disks and IP addresses
+- Remove unused resources
+- Place all testing resources in one resource group, which makes the deletion action very fast and easy
+- Setup Budgets in your subscription
 
-My best recommendation is to complete the objective, validate the configuration, document your result and remove the resource groups afterwards.
+My best recommendation is to do a Lab objective, check if everything works, check your configuration and immediately remove all resources. Big chance you will not even pay 1 euro, dependent on how long you spent on the lab objective.
 
 ---
 

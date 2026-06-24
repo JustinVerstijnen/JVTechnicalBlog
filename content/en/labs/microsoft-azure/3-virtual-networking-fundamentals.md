@@ -1,6 +1,7 @@
 ---
 title: "3: Virtual networking fundamentals"
 slug: "3-virtual-networking-fundamentals"
+date: 01-01-2025
 tags:
 - Lab Objective
 categories:
@@ -36,16 +37,15 @@ The Azure Portal is updated regularly, so some buttons or menu names may be slig
 
 ## Minimizing Azure costs
 
-This lab only uses networking resources, so the costs should be very low compared to virtual machines. However, you should still clean up resources when you are done testing.
+As registering your creditcard to Azure might sound like paying a huge amount of bucks every month, but it's relatively cheap to try Azure and to perform some labs in it. You do have to adapt to this Pay-as-you-go structure. I will give you the following guidelines to minimize the costs:
 
-To minimize costs during this lab, use the following guidelines:
+- Shutdown unused VMs
+	- VMs are the most expensive when running, when not running you still pay for disks and IP addresses
+- Remove unused resources
+- Place all testing resources in one resource group, which makes the deletion action very fast and easy
+- Setup Budgets in your subscription
 
-- Use one lab resource group, so everything can be removed quickly
-- Do not deploy virtual machines unless you need them for testing
-- Review all resources before deleting the resource group
-- Check the Cost analysis page in your Azure subscription
-
-My best recommendation is to complete the lab, take screenshots or notes of your configuration, test if everything works and remove the resource group afterwards.
+My best recommendation is to do a Lab objective, check if everything works, check your configuration and immediately remove all resources. Big chance you will not even pay 1 euro, dependent on how long you spent on the lab objective.
 
 ---
 

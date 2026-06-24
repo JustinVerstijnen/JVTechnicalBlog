@@ -1,6 +1,7 @@
 ---
 title: "2: Create your first Azure VM"
 slug: "2-azure-create-first-vm"
+date: 01-01-2025
 tags:
 - Lab Objective
 categories:
@@ -34,20 +35,15 @@ In the previous lab, we prepared the Azure environment and created our first res
 
 ## Minimizing Azure costs
 
-This lab uses a virtual machine, which means the lab will cost more than only creating a resource group. As already mentioned in the introduction lab, you should remove resources when you are done testing.
+As registering your creditcard to Azure might sound like paying a huge amount of bucks every month, but it's relatively cheap to try Azure and to perform some labs in it. You do have to adapt to this Pay-as-you-go structure. I will give you the following guidelines to minimize the costs:
 
-To minimize costs during this lab, use the following guidelines:
+- Shutdown unused VMs
+	- VMs are the most expensive when running, when not running you still pay for disks and IP addresses
+- Remove unused resources
+- Place all testing resources in one resource group, which makes the deletion action very fast and easy
+- Setup Budgets in your subscription
 
-- Shutdown the VM when you are not using it
-
-	- VMs are the most expensive when running
-	- When VMs are stopped, you still pay for disks and some attached resources
-- Do not choose an oversized virtual machine
-- Use one lab resource group, so everything can be removed quickly
-- Remove the public IP address when you do not need it anymore
-- Check the Cost analysis page in your Azure subscription
-
-My best recommendation is to complete the lab, take screenshots or notes of your configuration, test if everything works and remove the resource group afterwards.
+My best recommendation is to do a Lab objective, check if everything works, check your configuration and immediately remove all resources. Big chance you will not even pay 1 euro, dependent on how long you spent on the lab objective.
 
 ---
 
