@@ -1,7 +1,6 @@
 ---
 title: "3 - Virtual networking fundamentals"
 slug: "3-virtual-networking-fundamentals"
-date: 2025-06-24
 tags:
 - Lab Objective
 categories:

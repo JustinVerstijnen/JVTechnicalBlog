@@ -1,7 +1,6 @@
 ---
 title: "4 - Azure Virtual Machines setup"
 slug: "4-azure-virtual-machines-setup"
-date: 2025-09-02
 tags:
 - Lab Objective
 - Knowledge Check
