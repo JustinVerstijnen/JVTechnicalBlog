@@ -1,7 +1,7 @@
 ---
 title: "2 - Create your first Azure VM"
 slug: "2-azure-create-first-vm"
-date: 2025-09-02
+date: 202-09-02
 tags:
 - Lab Objective
 categories:
@@ -305,12 +305,12 @@ The lab is now done, let's check your knowledge!
         {
           "text": "Because it reduces exposure compared to allowing RDP from the entire internet",
           "correct": true,
-          "message": "Correct! Limiting the source IP address makes the lab safer."
+          "message": "Correct! Limiting the source IP address makes environments a lot safer."
         },
         {
           "text": "Because Azure does not support RDP from other IP addresses",
           "correct": false,
-          "message": "Incorrect. Azure can allow other IP addresses, but that is not recommended for this lab."
+          "message": "Incorrect. Azure can allow other IP addresses, but that is not recommended."
         },
         {
           "text": "Because Windows Server cannot use a public IP address",
@@ -318,7 +318,27 @@ The lab is now done, let's check your knowledge!
           "message": "Incorrect. Azure VMs can have a public IP address."
         }
       ]
-    }
+    },
+    {
+      "question": "What type of cloud service is a Virtual Machine in Azure?",
+      "reference": "Introduction",
+      "referenceUrl": "#introduction",
+      "answers": [
+        {
+          "text": "SaaS",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "PaaS",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "Iaas",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        }
       ]
     }
   ]
