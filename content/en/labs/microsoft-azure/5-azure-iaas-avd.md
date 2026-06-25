@@ -1,7 +1,7 @@
 ---
 title: "5: Azure IaaS + Azure Virtual Desktop"
 slug: "5-azure-iaas-avd"
-date: 01-01-2025
+date: 2025-01-01
 tags:
 - Lab Objective
 - Knowledge Check

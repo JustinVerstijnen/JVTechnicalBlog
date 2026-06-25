@@ -1,7 +1,7 @@
 ---
 title: "2: Create your first Azure VM"
 slug: "2-azure-create-first-vm"
-date: 01-01-2025
+date: 2025-01-01
 tags:
 - Lab Objective
 categories:

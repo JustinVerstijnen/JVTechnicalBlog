@@ -1,7 +1,7 @@
 ---
 title: "1: Azure Introduction"
 slug: "1-azure-introduction"
-date: 01-01-2025
+date: 2025-01-01
 tags:
 - Lab Objective
 - Knowledge Check
