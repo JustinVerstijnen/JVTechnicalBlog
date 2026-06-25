@@ -62,4 +62,4 @@
 | 10.2 | Is the speed/performance satisfactory when working from home/remotely? |  |  |  |  |
 |  | Summary |  |  |  |  |
 |  | In your opinion, is the environment ready for deployment? |  |  |  |  |
-|  | We also ask for some human insight here—besides the points above, there may be other improvements to address before wider rollout |  |  |  |  |
+|  | We also ask for some human insight here—besides the points above, there may be other improvements to address before wider rollout. |  |  |  |  |
