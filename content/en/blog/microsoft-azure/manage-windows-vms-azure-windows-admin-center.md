@@ -1,7 +1,7 @@
 ---
 title: "Manage your Windows VMs in Azure with Windows Admin Center"
 slug: "manage-windows-vms-azure-windows-admin-center"
-date: 2025-09-14
+date: 2026-08-14
 tags:
 - Step by Step guides
 categories:
