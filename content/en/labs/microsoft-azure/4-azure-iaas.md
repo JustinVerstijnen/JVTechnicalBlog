@@ -5,10 +5,9 @@ date: 2025-01-01
 tags:
 - Lab Objective
 - Knowledge Check
-categories:
+categories: []
 description: "In this objective, you will learn about how to build and configure the required Azure resources in your own environment. Make sure you use your own Azure subscription, tenant, and resource groups when completing the tasks. The goal of this lab is to gain hands-on experience with setting up Azure infrastructure in a secure and structured, where the goal is to maximize the learning experience."
 hidden: false
-weight: 4
 ---
 
 > Difficulty: Easy to Medium
@@ -39,6 +38,7 @@ In the previous lab, we prepared the Azure environment and created our first res
 As registering your creditcard to Azure might sound like paying a huge amount of bucks every month, but it's relatively cheap to try Azure and to perform some labs in it. You do have to adapt to this Pay-as-you-go structure. I will give you the following guidelines to minimize the costs:
 
 - Shutdown unused VMs
+
 	- VMs are the most expensive when running, when not running you still pay for disks and IP addresses
 - Remove unused resources
 - Place all testing resources in one resource group, which makes the deletion action very fast and easy
@@ -65,13 +65,13 @@ Use the following Active Directory domain for this lab:
 All resources can be created in one resource group.
 
 | Resource group name | Purpose |
-|---|---|
+| --- | --- |
 | JV-RG-LAB | All resources for this Azure IaaS lab |
 
 ## Servers
 
 | Server name | IP address | Description |
-|---|---:|---|
+| --- | --- | --- |
 | JV-VM-DC | 10.69.0.100 | Domain controller, DNS server |
 | JV-VM-APP | 10.69.0.101 | Application server, IIS |
 
@@ -80,18 +80,18 @@ All resources can be created in one resource group.
 The network should remain as simple as possible, using a single virtual network and a single subnet.
 
 | Network name | Network |
-|---|---:|
+| --- | --- |
 | JV-VNET01 | 10.69.0.0/16 |
 
 Recommended subnet:
 
 | Subnet name | Network |
-|---|---:|
+| --- | --- |
 | subnet-0 | 10.69.0.0/24 |
 
 ---
 
-## 2.1 Creating the resource group
+## 4.1 Creating the resource group
 
 Start by creating the resource group for this lab.
 
@@ -110,7 +110,7 @@ az group create -l westeurope -n JV-RG-LAB
 
 This creates the resource group named `JV-RG-LAB` in the West Europe region.
 
-## 2.2 Creating the virtual network
+## 4.2 Creating the virtual network
 
 Now create the virtual network where the servers will be connected.
 
@@ -136,35 +136,35 @@ az network vnet create \
 
 After creating the virtual network, review the subnet and check if the address ranges are correct.
 
-## 2.3 Creating dedicated Network Security Groups
+## 4.3 Creating dedicated Network Security Groups
 
 Each server must have its own dedicated Network Security Group. This makes it easier to understand which security rules apply to which server.
 
 Create the following Network Security Groups:
 
 | NSG name | Purpose |
-|---|---|
+| --- | --- |
 | JV-NSG-DC | Network Security Group for the domain controller |
 | JV-NSG-APP | Network Security Group for the application server |
 
 Recommended inbound rules for this lab:
 
 | Rule | Purpose | Recommendation |
-|---|---|---|
+| --- | --- | --- |
 | RDP | Remote management | Only allow from your own public IP address |
 | ICMP | Testing ping between servers | Only allow inside the virtual network |
 | HTTP | Testing IIS on the application server | Only allow where needed |
 
 Be careful with opening RDP to the internet. For a real production environment, you should use a more secure management solution, like Azure Bastion, VPN or Just-in-time VM access.
 
-## 2.4 Creating the domain controller VM
+## 4.4 Creating the domain controller VM
 
 Create the first virtual machine. This server will become the domain controller and DNS server.
 
 Use the following values:
 
 | Setting | Value |
-|---|---|
+| --- | --- |
 | Resource group | JV-RG-LAB |
 | Virtual machine name | JV-VM-DC |
 | Region | West Europe |
@@ -174,11 +174,17 @@ Use the following values:
 | Private IP address | 10.69.0.100 |
 | Network Security Group | JV-NSG-DC |
 
-After creating the VM, open the Network Interface of the VM and make sure the private IP address is static.
+After creating the VM, open the Network Interface of the VM and make sure the private IP address is static and set to the desired IP address.
 
 The domain controller should always keep the same IP address, because DNS and domain services depend on it.
 
-## 2.5 Installing Active Directory Domain Services
+## 4.5 Creating inbound RDP NSG rules
+
+To actually be able to connect to your VMs, you must create an inbound RDP rule and add your IP address to the source IP addresses. This increases security as you do not expose the RDP service to the internet.
+
+Go to your Network Security Group, create an inbound RDP rule and set your IP addresses as source. You may give this rule any name, as long as it is clear what it's purpose is.
+
+## 4.6 Installing Active Directory Domain Services
 
 Log in to `JV-VM-DC` using Remote Desktop.
 
@@ -201,7 +207,7 @@ You will be asked to enter a Directory Services Restore Mode password. After the
 
 After the reboot, log in with the domain administrator account.
 
-## 2.6 Configuring DNS for the virtual network
+## 4.7 Configuring DNS for the virtual network
 
 The application server must use the domain controller as DNS server. Otherwise, it will not be able to find the Active Directory domain.
 
@@ -222,14 +228,14 @@ az network vnet update \
   --dns-servers 10.69.0.100
 {{< /card >}}
 
-## 2.7 Creating the application server VM
+## 4.8 Creating the application server VM
 
 Create the second virtual machine. This server will become the application server.
 
 Use the following values:
 
 | Setting | Value |
-|---|---|
+| --- | --- |
 | Resource group | JV-RG-LAB |
 | Virtual machine name | JV-VM-APP |
 | Region | West Europe |
@@ -241,7 +247,7 @@ Use the following values:
 
 After creating the VM, open the Network Interface of the VM and make sure the private IP address is static.
 
-## 2.8 Joining the application server to the domain
+## 4.9 Joining the application server to the domain
 
 Log in to `JV-VM-APP` using Remote Desktop.
 
@@ -265,7 +271,7 @@ Add-Computer -DomainName "justinverstijnen.nl" -Restart
 
 After the reboot, log in using a domain account.
 
-## 2.9 Installing IIS on the application server
+## 4.10 Installing IIS on the application server
 
 The application server must host a basic web service. We will use IIS for this lab.
 
@@ -287,7 +293,7 @@ You can also browse to the private IP address of the application server from the
 Invoke-WebRequest http://10.69.0.101
 {{< /card >}}
 
-## 2.10 Testing the lab objective
+## 4.11 Testing the lab objective
 
 Now validate if the environment meets the requirements.
 
@@ -319,7 +325,7 @@ Run this command on the domain controller to check if the application server is 
 Get-ADComputer -Filter * | Select-Object Name, Enabled
 {{< /card >}}
 
-## 2.11 Cleaning up the lab
+## 4.12 Cleaning up the lab
 
 When you are done, remove the resource group to prevent unexpected costs.
 
@@ -396,9 +402,9 @@ The lab is now done, let's check your knowledge!
       "referenceUrl": "#24-creating-the-domain-controller-vm",
       "answers": [
         {
-          "text": "Because DNS and domain services depend on the domain controller keeping the same IP address",
+          "text": "Because we wanted to have a custom, static IP address based on the scenario",
           "correct": true,
-          "message": "Correct! The domain controller should keep a predictable IP address."
+          "message": "Correct! The domain controller should keep a predictable and static IP address."
         },
         {
           "text": "Because Azure VMs cannot use dynamic IP addresses",
@@ -409,11 +415,16 @@ The lab is now done, let's check your knowledge!
           "text": "Because IIS requires the domain controller to have a public IP address",
           "correct": false,
           "message": "Incorrect. IIS does not require the domain controller to have a public IP address."
+        },
+        {
+          "text": "To make DNS resolving mechanisms work",
+          "correct": false,
+          "message": "Partly true but not the core of the goal."
         }
       ]
     },
     {
-      "question": "Which DNS server should the virtual network use after the domain controller is configured?",
+      "question": "Which DNS server should the virtual network primarily use after the domain controller is configured?",
       "reference": "2.6 Configuring DNS for the virtual network",
       "referenceUrl": "#26-configuring-dns-for-the-virtual-network",
       "answers": [
