@@ -52,7 +52,7 @@ My best recommendation is to do a Lab objective, check if everything works, chec
 
 Justin Verstijnen Inc. wants to deploy a secure and manageable network in Azure. The company needs a domain controller to manage Active Directory and DNS, and a separate application server to host business applications.
 
-Both servers must be located in the same virtual network, joined to the same Active Directory domain and configured with the required roles.
+Both servers must be located in the same virtual network, joined to the same Active Directory domain and configured with the required roles. The DC server must have the Active DIrectory roles installed and the second server must be joined to the domain as member server.
 
 ## Company domain
 
@@ -72,8 +72,8 @@ All resources can be created in one resource group.
 
 | Server name | IP address | Description |
 |---|---:|---|
-| JV-DC-SRV01 | 10.0.0.100 | Domain controller, DNS server |
-| JV-APP-SRV01 | 10.0.0.101 | Application server, IIS |
+| JV-DC-SRV01 | 10.69.0.100 | Domain controller, DNS server |
+| JV-APP-SRV01 | 10.69.0.101 | Application server, IIS |
 
 ## Network
 
@@ -81,13 +81,13 @@ The network should remain as simple as possible, using a single virtual network 
 
 | Network name | Network |
 |---|---:|
-| JV-VNET01 | 10.0.0.0/16 |
+| JV-VNET01 | 10.69.0.0/16 |
 
 Recommended subnet:
 
 | Subnet name | Network |
 |---|---:|
-| default | 10.0.0.0/24 |
+| subnet-0 | 10.69.0.0/24 |
 
 ---
 
@@ -118,9 +118,9 @@ Now create the virtual network where the servers will be connected.
 - Create a new Virtual Network
 - Place it in the `JV-RG-LAB` resource group
 - Use the name `JV-VNET01`
-- Use the address space `10.0.0.0/16`
-- Create a subnet named `default`
-- Use the subnet range `10.0.0.0/24`
+- Use the address space `10.69.0.0/16`
+- Create a subnet named `subnet-0`
+- Use the subnet range `10.69.0.0/24`
 - Finish the wizard
 
 You can also create the virtual network with Azure Cloud Shell.
@@ -129,9 +129,9 @@ You can also create the virtual network with Azure Cloud Shell.
 az network vnet create \
   --resource-group JV-RG-LAB \
   --name JV-VNET01 \
-  --address-prefix 10.0.0.0/16 \
-  --subnet-name default \
-  --subnet-prefix 10.0.0.0/24
+  --address-prefix 10.69.0.0/16 \
+  --subnet-name subnet-0 \
+  --subnet-prefix 10.69.0.0/24
 {{< /card >}}
 
 After creating the virtual network, review the subnet and check if the address ranges are correct.
@@ -170,8 +170,8 @@ Use the following values:
 | Region | West Europe |
 | Image | Windows Server 2022 |
 | Virtual network | JV-VNET01 |
-| Subnet | default |
-| Private IP address | 10.0.0.100 |
+| Subnet | subnet-0 |
+| Private IP address | 10.69.0.100 |
 | Network Security Group | JV-NSG-DC-SRV01 |
 
 After creating the VM, open the Network Interface of the VM and make sure the private IP address is static.
@@ -208,7 +208,7 @@ The application server must use the domain controller as DNS server. Otherwise, 
 - Open `JV-VNET01`
 - Go to "DNS servers"
 - Select "Custom"
-- Add `10.0.0.100`
+- Add `10.69.0.100`
 - Save the configuration
 
 After changing the DNS server of the virtual network, restart the VMs or renew the network configuration inside the VMs.
@@ -219,7 +219,7 @@ You can also configure the DNS server with Azure Cloud Shell.
 az network vnet update \
   --resource-group JV-RG-LAB \
   --name JV-VNET01 \
-  --dns-servers 10.0.0.100
+  --dns-servers 10.69.0.100
 {{< /card >}}
 
 ## 2.7 Creating the application server VM
@@ -235,8 +235,8 @@ Use the following values:
 | Region | West Europe |
 | Image | Windows Server 2022 |
 | Virtual network | JV-VNET01 |
-| Subnet | default |
-| Private IP address | 10.0.0.101 |
+| Subnet | subnet-0 |
+| Private IP address | 10.69.0.101 |
 | Network Security Group | JV-NSG-APP-SRV01 |
 
 After creating the VM, open the Network Interface of the VM and make sure the private IP address is static.
@@ -254,7 +254,7 @@ Resolve-DnsName justinverstijnen.nl
 Also test if the domain controller can be reached.
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
-Test-Connection 10.0.0.100
+Test-Connection 10.69.0.100
 {{< /card >}}
 
 If DNS and network connectivity work, join the server to the domain.
@@ -275,7 +275,7 @@ Open PowerShell as Administrator on `JV-APP-SRV01` and run the following command
 Install-WindowsFeature Web-Server -IncludeManagementTools
 {{< /card >}}
 
-After the installation, test the IIS default website locally.
+After the installation, test the IIS subnet-0 website locally.
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
 Invoke-WebRequest http://localhost
@@ -284,7 +284,7 @@ Invoke-WebRequest http://localhost
 You can also browse to the private IP address of the application server from the domain controller.
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
-Invoke-WebRequest http://10.0.0.101
+Invoke-WebRequest http://10.69.0.101
 {{< /card >}}
 
 ## 2.10 Testing the lab objective
@@ -293,8 +293,8 @@ Now validate if the environment meets the requirements.
 
 Check the following items:
 
-- `JV-DC-SRV01` exists and has private IP address `10.0.0.100`
-- `JV-APP-SRV01` exists and has private IP address `10.0.0.101`
+- `JV-DC-SRV01` exists and has private IP address `10.69.0.100`
+- `JV-APP-SRV01` exists and has private IP address `10.69.0.101`
 - Both servers run Windows Server 2022
 - Both servers are connected to `JV-VNET01`
 - Both servers can ping each other
@@ -309,8 +309,8 @@ Useful validation commands:
 whoami
 hostname
 ipconfig /all
-Test-Connection 10.0.0.100
-Test-Connection 10.0.0.101
+Test-Connection 10.69.0.100
+Test-Connection 10.69.0.101
 {{< /card >}}
 
 Run this command on the domain controller to check if the application server is known in Active Directory.
@@ -418,12 +418,12 @@ The lab is now done, let's check your knowledge!
       "referenceUrl": "#26-configuring-dns-for-the-virtual-network",
       "answers": [
         {
-          "text": "10.0.0.100",
+          "text": "10.69.0.100",
           "correct": true,
           "message": "Correct! This is the private IP address of the domain controller."
         },
         {
-          "text": "10.0.0.101",
+          "text": "10.69.0.101",
           "correct": false,
           "message": "Incorrect. This is the application server."
         },
