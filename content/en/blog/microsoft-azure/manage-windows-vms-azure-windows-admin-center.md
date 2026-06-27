@@ -109,14 +109,125 @@ Now we are in the Windows Admin Center blade of the server where we can perform 
 To give a better overview of the tool, watch this video where I am clicking through the admin panel and showing the features and blades:
 
 <iframe
-  width="960"
-  height="540"
-  src="https://www.youtube.com/embed/jCInuPETL10?autoplay=1&mute=1&playsinline=1"
-  title="YouTube video player"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  allowfullscreen>
+
+width="960"
+
+height="540"
+
+src="https://www.youtube.com/embed/jCInuPETL10?autoplay=1&mute=1&playsinline=1"
+
+title="YouTube video player"
+
+frameborder="0"
+
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+
+allowfullscreen>
+
 </iframe>
+
+---
+
+## Knowledge check
+
+{{< quiz >}}
+{
+  "intro": "Answer these question(s) to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "questions": [
+    {
+      "question": "What role must an administrator have to manage a Virtual Machine using Windows Admin Center?",
+      "reference": "Step 2: Assigning the correct permissions",
+      "referenceUrl": "#step-2-assigning-the-correct-permissions",
+      "answers": [
+        {
+          "text": "Windows Admin Center Administrator Login",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        },
+        {
+          "text": "Reader",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "Owner",
+          "correct": false,
+          "message": "Incorrect. It cloud assign the correct role itself, but Owner permissions is not correct."
+        },
+        {
+          "text": "Contributor",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "Administrator",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        }
+      ]
+    },
+    {
+      "question": "What port does Windows Admin Center use?",
+      "reference": "Step 3: Open up the ports (optional)",
+      "referenceUrl": "#step-3-open-up-the-ports-optional",
+      "answers": [
+        {
+          "text": "TCP 6516",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        },
+        {
+          "text": "TCP 3389",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "TCP 80/443",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "UDP 53",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        }
+      ]
+    },
+    {
+      "question": "What feature is NOT available in the Windows Admin Center blade?",
+      "reference": "Step 4: Connecting to Windows Admin Center",
+      "referenceUrl": "#step-4-connecting-to-windows-admin-center",
+      "answers": [
+        {
+          "text": "Removing software",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "Adding registry keys",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "Changing Group Policy settings",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        },
+        {
+          "text": "Checking and installing Windows Updates",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "Installing and removing Server Roles",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
 
 ---
 
