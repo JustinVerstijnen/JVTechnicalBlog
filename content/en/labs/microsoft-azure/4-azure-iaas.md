@@ -293,6 +293,8 @@ You can also browse to the private IP address of the application server from the
 Invoke-WebRequest http://10.69.0.101
 {{< /card >}}
 
+You can also check the default wehsite in the webbrowser at: localhost/ on the APP server and at 10.69.0.101 from the DC server. You can also host your own website by pasting any index.html file into the `C:\inetpub\wwwroot` folder.
+
 ## 4.11 Testing the lab objective
 
 Now validate if the environment meets the requirements.
