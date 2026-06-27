@@ -72,8 +72,8 @@ All resources can be created in one resource group.
 
 | Server name | IP address | Description |
 |---|---:|---|
-| JV-DC-SRV01 | 10.69.0.100 | Domain controller, DNS server |
-| JV-APP-SRV01 | 10.69.0.101 | Application server, IIS |
+| JV-VM-DC | 10.69.0.100 | Domain controller, DNS server |
+| JV-VM-APP | 10.69.0.101 | Application server, IIS |
 
 ## Network
 
@@ -166,7 +166,7 @@ Use the following values:
 | Setting | Value |
 |---|---|
 | Resource group | JV-RG-LAB |
-| Virtual machine name | JV-DC-SRV01 |
+| Virtual machine name | JV-VM-DC |
 | Region | West Europe |
 | Image | Windows Server 2022 |
 | Virtual network | JV-VNET01 |
@@ -180,7 +180,7 @@ The domain controller should always keep the same IP address, because DNS and do
 
 ## 2.5 Installing Active Directory Domain Services
 
-Log in to `JV-DC-SRV01` using Remote Desktop.
+Log in to `JV-VM-DC` using Remote Desktop.
 
 Open PowerShell as Administrator and install the Active Directory Domain Services role.
 
@@ -231,7 +231,7 @@ Use the following values:
 | Setting | Value |
 |---|---|
 | Resource group | JV-RG-LAB |
-| Virtual machine name | JV-APP-SRV01 |
+| Virtual machine name | JV-VM-APP |
 | Region | West Europe |
 | Image | Windows Server 2022 |
 | Virtual network | JV-VNET01 |
@@ -243,7 +243,7 @@ After creating the VM, open the Network Interface of the VM and make sure the pr
 
 ## 2.8 Joining the application server to the domain
 
-Log in to `JV-APP-SRV01` using Remote Desktop.
+Log in to `JV-VM-APP` using Remote Desktop.
 
 Before joining the domain, check if the server can resolve the domain name.
 
@@ -269,7 +269,7 @@ After the reboot, log in using a domain account.
 
 The application server must host a basic web service. We will use IIS for this lab.
 
-Open PowerShell as Administrator on `JV-APP-SRV01` and run the following command:
+Open PowerShell as Administrator on `JV-VM-APP` and run the following command:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
 Install-WindowsFeature Web-Server -IncludeManagementTools
@@ -293,14 +293,14 @@ Now validate if the environment meets the requirements.
 
 Check the following items:
 
-- `JV-DC-SRV01` exists and has private IP address `10.69.0.100`
-- `JV-APP-SRV01` exists and has private IP address `10.69.0.101`
+- `JV-VM-DC` exists and has private IP address `10.69.0.100`
+- `JV-VM-APP` exists and has private IP address `10.69.0.101`
 - Both servers run Windows Server 2022
 - Both servers are connected to `JV-VNET01`
 - Both servers can ping each other
-- `JV-DC-SRV01` is a domain controller for `justinverstijnen.nl`
-- `JV-APP-SRV01` is joined to `justinverstijnen.nl`
-- IIS is installed on `JV-APP-SRV01`
+- `JV-VM-DC` is a domain controller for `justinverstijnen.nl`
+- `JV-VM-APP` is joined to `justinverstijnen.nl`
+- IIS is installed on `JV-VM-APP`
 - Both servers have their own dedicated Network Security Group
 
 Useful validation commands:
@@ -374,12 +374,12 @@ The lab is now done, let's check your knowledge!
       "referenceUrl": "#servers",
       "answers": [
         {
-          "text": "JV-DC-SRV01",
+          "text": "JV-VM-DC",
           "correct": true,
           "message": "Correct! This server is used as the domain controller and DNS server."
         },
         {
-          "text": "JV-APP-SRV01",
+          "text": "JV-VM-APP",
           "correct": false,
           "message": "Incorrect. This server is used as the application server."
         },
