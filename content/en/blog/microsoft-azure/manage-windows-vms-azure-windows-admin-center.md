@@ -109,21 +109,13 @@ Now we are in the Windows Admin Center blade of the server where we can perform 
 To give a better overview of the tool, watch this video where I am clicking through the admin panel and showing the features and blades:
 
 <iframe
-
 width="960"
-
 height="540"
-
 src="https://www.youtube.com/embed/jCInuPETL10?autoplay=1&mute=1&playsinline=1"
-
-title="YouTube video player"
-
+title="JV video player"
 frameborder="0"
-
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-
 allowfullscreen>
-
 </iframe>
 
 ---
