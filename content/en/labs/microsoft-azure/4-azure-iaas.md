@@ -66,7 +66,7 @@ All resources can be created in one resource group.
 
 | Resource group name | Purpose |
 |---|---|
-| JV-LAB | All resources for this Azure IaaS lab |
+| JV-RG-LAB | All resources for this Azure IaaS lab |
 
 ## Servers
 
@@ -98,17 +98,17 @@ Start by creating the resource group for this lab.
 - Open the Azure Portal
 - Find and open "Resource groups"
 - Create a new Resource Group
-- Use the name `JV-LAB`
+- Use the name `JV-RG-LAB`
 - Place it in the region "West Europe"
 - Finish the wizard
 
 You can also create the resource group with Azure Cloud Shell.
 
 {{< card code=true header="**Bash**" lang="bash" >}}
-az group create -l westeurope -n JV-LAB
+az group create -l westeurope -n JV-RG-LAB
 {{< /card >}}
 
-This creates the resource group named `JV-LAB` in the West Europe region.
+This creates the resource group named `JV-RG-LAB` in the West Europe region.
 
 ## 2.2 Creating the virtual network
 
@@ -116,7 +116,7 @@ Now create the virtual network where the servers will be connected.
 
 - Find and open "Virtual networks"
 - Create a new Virtual Network
-- Place it in the `JV-LAB` resource group
+- Place it in the `JV-RG-LAB` resource group
 - Use the name `JV-VNET01`
 - Use the address space `10.0.0.0/16`
 - Create a subnet named `default`
@@ -127,7 +127,7 @@ You can also create the virtual network with Azure Cloud Shell.
 
 {{< card code=true header="**Bash**" lang="bash" >}}
 az network vnet create \
-  --resource-group JV-LAB \
+  --resource-group JV-RG-LAB \
   --name JV-VNET01 \
   --address-prefix 10.0.0.0/16 \
   --subnet-name default \
@@ -165,7 +165,7 @@ Use the following values:
 
 | Setting | Value |
 |---|---|
-| Resource group | JV-LAB |
+| Resource group | JV-RG-LAB |
 | Virtual machine name | JV-DC-SRV01 |
 | Region | West Europe |
 | Image | Windows Server 2022 |
@@ -217,7 +217,7 @@ You can also configure the DNS server with Azure Cloud Shell.
 
 {{< card code=true header="**Bash**" lang="bash" >}}
 az network vnet update \
-  --resource-group JV-LAB \
+  --resource-group JV-RG-LAB \
   --name JV-VNET01 \
   --dns-servers 10.0.0.100
 {{< /card >}}
@@ -230,7 +230,7 @@ Use the following values:
 
 | Setting | Value |
 |---|---|
-| Resource group | JV-LAB |
+| Resource group | JV-RG-LAB |
 | Virtual machine name | JV-APP-SRV01 |
 | Region | West Europe |
 | Image | Windows Server 2022 |
@@ -324,7 +324,7 @@ Get-ADComputer -Filter * | Select-Object Name, Enabled
 When you are done, remove the resource group to prevent unexpected costs.
 
 - Open "Resource groups"
-- Open `JV-LAB`
+- Open `JV-RG-LAB`
 - Review all resources in the resource group
 - Click "Delete resource group"
 - Type the resource group name
@@ -333,7 +333,7 @@ When you are done, remove the resource group to prevent unexpected costs.
 You can also remove the resource group with Azure Cloud Shell.
 
 {{< card code=true header="**Bash**" lang="bash" >}}
-az group delete -n JV-LAB
+az group delete -n JV-RG-LAB
 {{< /card >}}
 
 The lab is now done, let's check your knowledge!
