@@ -144,8 +144,8 @@ Create the following Network Security Groups:
 
 | NSG name | Purpose |
 |---|---|
-| JV-NSG-DC-SRV01 | Network Security Group for the domain controller |
-| JV-NSG-APP-SRV01 | Network Security Group for the application server |
+| JV-NSG-DC | Network Security Group for the domain controller |
+| JV-NSG-APP | Network Security Group for the application server |
 
 Recommended inbound rules for this lab:
 
@@ -172,7 +172,7 @@ Use the following values:
 | Virtual network | JV-VNET01 |
 | Subnet | subnet-0 |
 | Private IP address | 10.69.0.100 |
-| Network Security Group | JV-NSG-DC-SRV01 |
+| Network Security Group | JV-NSG-DC |
 
 After creating the VM, open the Network Interface of the VM and make sure the private IP address is static.
 
@@ -237,7 +237,7 @@ Use the following values:
 | Virtual network | JV-VNET01 |
 | Subnet | subnet-0 |
 | Private IP address | 10.69.0.101 |
-| Network Security Group | JV-NSG-APP-SRV01 |
+| Network Security Group | JV-NSG-APP |
 
 After creating the VM, open the Network Interface of the VM and make sure the private IP address is static.
 
