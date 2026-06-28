@@ -80,6 +80,16 @@ a {
   color: #77B0DE;
 }
 
+
+/* Table styling: keep tables readable and replace the default grey striped rows */
+.td-table:not(.td-initial),
+.td-content table:not(.td-initial),
+.td-box table:not(.td-initial) {
+  min-width: 640px;
+  --bs-table-striped-bg: rgba(119, 176, 222, 0.12);
+  --bs-table-hover-bg: rgba(119, 176, 222, 0.16);
+}
+
 /* Default navbar styling */
 .td-navbar {
   --bs-link-underline-opacity: 0.65;
