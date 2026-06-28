@@ -1,15 +1,15 @@
 ---
 title: "What is MTA-STS and how to use it to protect your email flow"
-date: 2026-01-08
 slug: "what-is-mta-sts-and-how-to-protect-your-email-flow"
-categories:
-  - Email security
+date: 2026-06-29
 tags:
-  - Concepts
-  - Step by Step guides
-  - Knowledge check
-description: >
-  MTA-STS is a standard for ensuring TLS is always used for email transmission. This increases security and data protection because emails cannot be read by a Man in the Middle. It works like this for inbound and outbound email to ensure security is applied to all of the messages processed by your emailing solution and domains. In this guide I will explain how it works. Because it is a domain specific configuration, it can work with any service and is not bound to for example Exchange Online. In this guide we use Azure to host our MTA-STS policy. I present you 2 different options for you to choose, and of course only one is needed. You can also choose to use another solution, its it supports HTTPS and hosting a single TXT file, it should work.
+- Concepts
+- Step by Step guides
+- Knowledge check
+categories:
+- Email security
+description: "In this post I will be configuring MTA-STS for better email security alongside the theoretical explaination including different hosting options you can use."
+hidden: false
 ---
 
 ## Requirements
@@ -17,7 +17,7 @@ description: >
 - Around 30 minutes of your time
 - Access to your domains' DNS hosting to create DNS records
 - An Azure Subscription if you want to publish your policy with a Static Web App
-  - A Github account if you use this option
+	- A Github account if you use this option
 - An Azure Subscription if you want to publish your policy with a Function App
 - Basic knowledge of DNS records
 - Basic knowledge of Email security
@@ -30,7 +30,7 @@ MTA-STS overlaps with the [newer SMTP DANE](https://justinverstijnen.nl/configur
 
 |  |  |  |
 | --- | --- | --- |
-|  | **MTA-STS** | **SMTP DANE** |
+|  | MTA-STS | SMTP DANE |
 | *Requires DNSSEC at DNS hosting* | No | Yes |
 | *Requires hosting a TXT file* | Yes | No |
 | *Secures inbound and outbound* | Yes | Yes |
@@ -50,16 +50,16 @@ My advice is to configure both when possible, because not every email service do
 
 MTA-STS (Mail Transfer Agent Strict Transport Security) is a standard that improves email security by always using SMTP TLS encryption and validating certificates during email transmission. It's designed to prevent man-in-the-middle (MitM) attacks, ensuring email servers cannot be tricked into falling back to insecure delivery. This increases security and protects your data.
 
-{{% alert color="info" %}}
+{{% alert title="Info" color="info" %}}
 MTA-STS works very similar to how HSTS works for webservers.
 {{% /alert %}}
 
 MTA-STS consists of the following components:
 
-1. **Policy publication**: A domain publishes its MTA-STS policy by using a DNS record and a TXT file which is publicly accessable to publish its policy
-2. **Policy fetching**: A mailserver that sends to our protected domain checks our DNS record and then our policy from the published TXT file
-3. **Policy enforcement**: A mailserver that sends to our protected domain ensures that it matches our policy.
-   - If it doesn't match, we can reject the mail based on the policy settings
+1. **Policy publication** : A domain publishes its MTA-STS policy by using a DNS record and a TXT file which is publicly accessable to publish its policy
+2. **Policy fetching** : A mailserver that sends to our protected domain checks our DNS record and then our policy from the published TXT file
+3. **Policy enforcement** : A mailserver that sends to our protected domain ensures that it matches our policy.
+	- If it doesn't match, we can reject the mail based on the policy settings
 
 ---
 
@@ -82,8 +82,8 @@ _mta-sts.yourdomain.com. 3600 IN TXT v=STSv1; id=20250101000000Z;
 
 The first part must contain your domain instead of *yourdomain.com* and the last part after the ID contains the timestamp of the record being published.
 
-{{% alert color="info" %}}
-Tip: you can use my (Microsoft 365) DNS Record Generator tool for customizing your MTA-STS record: <https://tools.justinverstijnen.nl/365recordsgenerator>
+{{% alert title="Info" color="info" %}}
+Tip: you can use my (Microsoft 365) DNS Record Generator tool for customizing your MTA-STS record: [https://tools.justinverstijnen.nl/365recordsgenerator](https://tools.justinverstijnen.nl/365recordsgenerator)
 {{% /alert %}}
 
 I have logged in into the DNS hosting and added my TXT record there. My record looks like this:
@@ -109,23 +109,123 @@ mx: justinverstijnen-nl.r-v1.mx.microsoft
 max_age: 1209600
 {{< /card >}}
 
-- The version must be v1 and exactly the same.
-- The mode can be **enforce**, **testing** and **none**. Use enforce to get the most out of the configuration.
-- **MX record**: this is the MX record for your domain. You can copy and paste this from your DNS hosting panel. Make sure you dont copy the "priority" part.
-  - You can find your MX record in Microsoft 365 or look it up with: <https://tools.justinverstijnen.nl/dnsmegatool>
-- Max\_age: This is the time in seconds a sender may cache your MTA-STS in their policy. Best practice is to use between 7 and 30 days. I use 14 days here (3600 seconds x 24 hours x 14 days)
+- The version must be v1 and exactly the same
+- The mode can be **enforce** , **testing** or **none** . Use enforce to get the most out of the configuration and we will use it for the purpose of this guide
+- **MX record** : this is the MX record for your domain. You can copy and paste this from your DNS hosting panel. Make sure you dont copy the "priority" part
+	- You can find your MX record in Microsoft 365 or look it up with: [https://tools.justinverstijnen.nl/dnsmegatool](https://tools.justinverstijnen.nl/dnsmegatool)
+- Max_age: This is the time in seconds a sender may cache your MTA-STS in their policy. Best practice is to use between 7 and 30 days. I use 14 days here (3600 seconds x 24 hours x 14 days)
 
 Save this information to a TXT file named "mta-sts.txt" and now we must publish this on a webserver, so when a visitor goes to https://mta-sts.yourdomain.com/.well-known/mta-sts.txt, they will see this TXT file.
 
 ---
 
-## Hosting option 1: Azure Static Web Apps
+## MTA-STS Policy hosting options
 
-My first option is the most simple way to host your TXT file for your MTA-STS policy. We will do this with Azure Static Web Apps in coorperation with GitHub. This sounds complex but is very easy.
+As we must host our MTA-STS .txt file in a public place, we can host it in several ways. I will give a step-by-step guide for 3 hosting options which are GitHub and Azure minded. You can also host this on your own public web server, as long as it complies with the DNS and policy requirements and is publicly available. The whole world must know what your domains policy is of course.
 
-### Creating the repository on Github
+- GitHub Pages (recommended option)
+- Azure Static Web Apps (Or Azure App Service)
+- Azure Functions
 
-Before we dive into Azure, we will start by creating a reposiroty on Github. This is a space where all files of your application resides. In this case, this will only be the TXT file.
+---
+
+## Hosting option 1: GitHub Pages
+
+The most easiest way to host an MTA-STS policy is to host it on GitHub Pages. This is a very easy way to host static websites directly from your repository. To learn more about GitHub Pages, [check out this guide.](https://justinverstijnen.nl/getting-started-with-github-pages/)
+
+For now, I will give you the steps to place and host your MTA-STS policy from GitHub, assuming you already have an account.
+
+### Creating the repository on GitHub
+
+Login to GitHub at [https://github.com.](https://github.com.) Then create a new repository for your MTA-STS policy if not already have one. Navigate to "Repositories" and click "New".
+
+[![jv-media-7057-34cda536e5b2.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-34cda536e5b2.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-34cda536e5b2.png)
+
+Give it a clear name, which is not relevant but must be something you can recognize yourself. The visibility must be public, as free GitHub Pages instances must be public. Sharing is caring :)
+
+[![jv-media-7057-6c04630b4ca4.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-6c04630b4ca4.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-6c04630b4ca4.png)
+
+Then create the repository and navigate to it.
+
+### Preparing the repository
+
+We must now create te required files for the instance to work, but as it is a web server, it also needs at least one web-file.
+
+You can download my example code to easily prepare your repository. The web files in my repository automatically redirect any request to the domain to the correct file. Download my repository from here:
+
+<a class="btn btn-primary" href="https://github.com/JustinVerstijnen/MTA-STS-justinverstijnen-nl" target="_blank" rel="noreferrer">View on my GitHub page</a>
+
+[![jv-media-7057-7b5005a045fc.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-7b5005a045fc.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-7b5005a045fc.png)
+
+On my repository, click on "<> Code" and then on "Download ZIP". This downloads my whole example repository which is ready to use after some minor changes.
+
+Unzip the file and change these file: Index.html: change the domain-name on line 5 and 7
+
+[![jv-media-7057-f8a10834b8d6.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-f8a10834b8d6.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-f8a10834b8d6.png)
+
+After that, we can upload the files in your goal-repository:
+
+[![jv-media-7057-94dcd2db8858.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-94dcd2db8858.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-94dcd2db8858.png)
+
+You now need to create another file, which is the policy file itself. Create a new file:
+
+[![jv-media-7057-7d943ad92b6f.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-7d943ad92b6f.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-7d943ad92b6f.png)
+
+Name it: **.well-known/mta-sts.txt** where GitHub will automatically create a folder and the file. Paste the MTA-STS policy there as text. Now commit the changes which is "saving" the file.
+
+The repo must now look like this, having a index.html and a folder .well-known and a file called mta-sts.txt in that folder.
+
+[![jv-media-7057-ea3c5c2935d7.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-ea3c5c2935d7.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-ea3c5c2935d7.png)
+
+### Creating the GitHub Pages website
+
+Now that our repository is ready, let's create the GitHub Pages instance to host the policy file. Go to the "Settings" tab on the repository:
+
+[![jv-media-7057-764273d00319.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-764273d00319.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-764273d00319.png)
+
+From the left, click on "Pages".
+
+[![jv-media-7057-722f077d8bea.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-722f077d8bea.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-722f077d8bea.png)
+
+On the "Pages" section, click on the branch to deploy the website from which should be the "main" branch. Then save the configuration which automatically creates the website.
+
+[![jv-media-7057-3d15f1d813b1.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-3d15f1d813b1.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-3d15f1d813b1.png)
+
+Now we are able to connect our custom domain name to the GitHub Pages instance, which should be mta-sts.yourdomain.com, or mta-sts.justinverstijnen.nl in my case. Then we need to create another DNS record to point the mta-sts host to Github Pages.
+
+| Record name | Type | Value |
+| --- | --- | --- |
+| mta-sts | CNAME | justinverstijnen.github.io. |
+
+It will show on your end what the GitHub.io domain exactly is, but in most cases its your username added with github.io.
+
+Here I have created the DNS record at my DNS hosting service:
+
+[![jv-media-7057-3155c2b875ed.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-3155c2b875ed.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-3155c2b875ed.png)
+
+As this is an external CNAME, you may have to end the value with a trailing dot as I already done.
+
+Now go back to GitHub and verify the domain. After around 15-30 minutes it should be validated and we can set "Enforce HTTPS".
+
+[![jv-media-7057-c4a3be4e4658.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-c4a3be4e4658.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-c4a3be4e4658.png)
+
+After the MTA-STS policy is up, you can check this by going to your domain name, and then navigating to the .txt file you just created.
+
+- [https://mta-sts.justinverstijnen.nl/.well-known/mta-sts.txt](https://mta-sts.justinverstijnen.nl/.well-known/mta-sts.txt)
+
+This should show your policy directly in your browser:
+
+[![jv-media-7057-be66796dd631.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-be66796dd631.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-be66796dd631.png)
+
+---
+
+## Hosting option 2: Azure Static Web Apps
+
+Another option to host your TXT file for your MTA-STS policy is through Azure Static Web Apps. We will do this with GitHub, where we create a repository with our file and then connect the Static Web App instance to our repository. Then any change to your repository will also be pushed to Azure.
+
+### Creating the repository on GitHub
+
+Before we dive into Azure, we will start by creating a reposiroty on GitHub. This is a space where all files of your application resides. In this case, this will only be the TXT file.
 
 Create an account on Github or login to proceed.
 
@@ -139,7 +239,7 @@ Create the repository.
 
 ### Prepare the repository
 
-I have my repository public, and you can check out that to have an example of the correct configuration. We must download the index.html file from here: <https://github.com/JustinVerstijnen/MTA-STS>
+I have my repository public, and you can check out that to have an example of the correct configuration. We must download the index.html file from here: [https://github.com/JustinVerstijnen/MTA-STS](https://github.com/JustinVerstijnen/MTA-STS)
 
 [![jv-media-2198-07d1f2c07212.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/what-is-mta-sts-and-how-to-protect-your-email-flow-2198/jv-media-2198-07d1f2c07212.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/what-is-mta-sts-and-how-to-protect-your-email-flow-2198/jv-media-2198-07d1f2c07212.png)
 
@@ -225,7 +325,7 @@ Go to your DNS hosting service and login. Then go to your DNS records overview.
 
 Create a new CNAME record with the name "mta-sts" and paste the value you copied from the Azure Portal. Add a dot "." to the value of the record because it is a external domain. In my case, the value is:
 
-{{< card code=true header="**V**" lang="v" >}}
+{{< card code=true header="**v**" lang="v" >}}
 orange-coast-05c818d03.6.azurestaticapps.net.
 {{< /card >}}
 
@@ -247,9 +347,9 @@ You can skip option 2 and proceed to "[Testing the MTA-STS configuration](#testi
 
 ---
 
-## Hosting option 2: Azure Functions
+## Hosting option 3: Azure Functions
 
-My second option is to host the TXT file with an Azure Function. This is a bit more complicated than option 1, but I will guide you through.
+My third and hardest option is to host the TXT file with an Azure Function. This is a bit more complicated than the other options, but I will guide you through.
 
 ### Creating the Azure Function
 
@@ -282,8 +382,6 @@ It should look like this:
 
 Save the file, and now it is prepared to host a MTA-STS policy for us.
 
----
-
 ### Publishing the MTA-STS policy
 
 Create a new Function in the function app:
@@ -292,7 +390,7 @@ Select the HTTP trigger, give it a name and select the "Anonymous" authorization
 
 Now we can paste some code into the function. We have to wrap this into a .NET website:
 
-{{< card code=true header="**CSHARP**" lang="csharp" >}}
+{{< card code=true header="**csharp**" lang="csharp" >}}
 #r "Newtonsoft.Json"
 
 using System.Net;
@@ -308,7 +406,6 @@ public static async Task&lt;IActionResult> Run(HttpRequest req, ILogger log)
 
     return new OkObjectResult(responseMessage);
 }
-
 {{< /card >}}
 
 On line 12 there is the policy where you need to paste your settings in. Paste the final code into the Azure Portal and save/publish the function.
@@ -332,13 +429,11 @@ We are have bound the URL WEBSITE/.well-known/mta-sts.txt to our function and th
 
 We can now test if this works by forming the URL with the function app and the added route:
 
-- <https://jv-mta-sts.azurewebsites.net/.well-known/mta-sts.txt>
+- [https://jv-mta-sts.azurewebsites.net/.well-known/mta-sts.txt](https://jv-mta-sts.azurewebsites.net/.well-known/mta-sts.txt)
 
 [![jv-media-2198-4c9178b13e2c.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/what-is-mta-sts-and-how-to-protect-your-email-flow-2198/jv-media-2198-4c9178b13e2c.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/what-is-mta-sts-and-how-to-protect-your-email-flow-2198/jv-media-2198-4c9178b13e2c.png)
 
 It works not by going to the Function App URL but we now need to add our custom domain.
-
----
 
 ### Redirect your custom domain to Function App
 
@@ -364,13 +459,11 @@ Here I created them:
 
 Now hit "Validate" and let Azure check the records. This can take up to 1 hour before Azure knows your records due to DNS propagation processes. In my case, this worked after 3 minutes.
 
-Now we can check if the full URL works like expected: <https://mta-sts.justinverstijnen.nl/.well-known/mta-sts.txt>
+Now we can check if the full URL works like expected: [https://mta-sts.justinverstijnen.nl/.well-known/mta-sts.txt](https://mta-sts.justinverstijnen.nl/.well-known/mta-sts.txt)
 
 [![jv-media-2198-a9faf38fe8cd.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/what-is-mta-sts-and-how-to-protect-your-email-flow-2198/jv-media-2198-a9faf38fe8cd.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/what-is-mta-sts-and-how-to-protect-your-email-flow-2198/jv-media-2198-a9faf38fe8cd.png)
 
 As you can see, our policy is succesfully published.
-
----
 
 ## Testing the MTA-STS configuration
 
@@ -378,7 +471,7 @@ From here, you can test with all sorts of hosting the policy, like the 2 options
 
 You can test your current MTA-STS configuration with my DNS MEGAtool:
 
-- <https://tools.justinverstijnen.nl/dnsmegatool>
+- [https://tools.justinverstijnen.nl/dnsmegatool](https://tools.justinverstijnen.nl/dnsmegatool)
 
 This tests our configuration of MTA-STS and tells us exactly what is wrong in case of an error:
 
