@@ -24,6 +24,8 @@ The script does five simple steps:
 4. Catches and shows errors if the action fails
 5. Waits and shows possible errors for 15 seconds and closes the PowerShell window
 
+---
+
 ## Script settings at a glance
 
 There is only one setting you normally need to change:
