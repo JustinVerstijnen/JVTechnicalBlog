@@ -1,7 +1,7 @@
 ---
 title: "What is MTA-STS and how to use it to protect your email flow"
 slug: "what-is-mta-sts-and-how-to-protect-your-email-flow"
-date: 2026-06-29
+date: 2026-06-28
 tags:
 - Concepts
 - Step by Step guides
