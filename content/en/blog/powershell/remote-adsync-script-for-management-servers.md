@@ -60,9 +60,11 @@ Then you can run the script without any errors for the duration of the PowerShel
 .\JV-RemoteADSyncScript.ps1
 {{< /card >}}
 
-If the remote connection works and the sync starts correctly, the script prints the returned result and checks whether the result equals `Success`.
+This will look like this:
 
-If something fails, the `catch` block prints the error so you immediately know what needs attention.
+[![Screenshot 2026-06-29 163438.jpg](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/remote-entra-connect-sync-script-for-management-servers/jv-media-8517-c3ecebddfe07.jpg)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/remote-entra-connect-sync-script-for-management-servers/jv-media-8517-c3ecebddfe07.jpg)
+
+If the remote connection works and the sync starts correctly, the script prints the returned result and checks whether the result equals `Success` followed by a green line that the synchronization has been successfully executed. Otherwise, the exact error will be printed as error into the same window. This gives you the chance to immediately fix that particular issue.
 
 ---
 
@@ -78,9 +80,8 @@ Thank you for reading this post and I hope it was helpful!
 
 These sources helped me by writing and research for this post;
 
-1. https://github.com/JustinVerstijnen/JV-RemoteADSyncScript
-2. https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sync-feature-scheduler
-3. https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about _remote_ requirements?view=powershell-7.6
+1. https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sync-feature-scheduler
+2. [https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/08-powershell-remoting?view=powershell-7.6](https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/08-powershell-remoting?view=powershell-7.6)
 
 {{< ads >}}
 
