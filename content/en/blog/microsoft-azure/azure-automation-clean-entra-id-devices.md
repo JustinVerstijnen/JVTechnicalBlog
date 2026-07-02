@@ -41,7 +41,7 @@ In this guide we will use:
 - A PowerShell runbook
 - A Managed Identity
 - Microsoft Graph permissions
-- A schedule to run automatically
+- A schedule to run automation automatically
 
 <!-- draw.io diagram with fixed white background -->
 <div style="background:#ffffff; padding:24px; border-radius:12px; overflow:auto;">
