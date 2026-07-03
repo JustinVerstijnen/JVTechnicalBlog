@@ -3,8 +3,6 @@ title: "6: Windows Admin Center"
 slug: "6-windows-admin-center"
 date: 2025-01-01
 tags:
-- Lab Objective
-- Knowledge Check
 categories:
 description: "In this objective, you will learn how to enable and use Windows Admin Center in Microsoft Azure to manage the guest operating system of a Windows Server virtual machine. Make sure you use your own Azure subscription, tenant, and resource groups when completing the tasks. The goal of this lab is to gain hands-on experience with secure server management in Azure."
 hidden: false
