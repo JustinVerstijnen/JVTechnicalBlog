@@ -1,7 +1,7 @@
 ---
 title: "Getting started with Bicep"
 slug: "getting-started-with-bicep"
-date: 2026-07-03
+date: 2026-10-20
 tags:
 - Step by Step guides
 - Knowledge check
@@ -16,6 +16,8 @@ hidden: false
 Bicep is a framework from Microsoft that lets you manage Azure infrastructure with text files only. You can see Bicep as a more readable language for Azure Resource Manager deployments. Bicep is not a separate cloud platform and it does not replace Azure Resource Manager. Instead, Bicep is compiled into an ARM template and then Azure Resource Manager deploys the resources.
 
 Bicep code is declarative code. This means you describe the desired end result instead of writing every manual step the system needs to take, like you would often do in a PowerShell script. In this case, we tell ARM to create a Virtual Machine with the name, IP address, network, security rules, and other settings we specify. It is a bit like telling a chef which dish you want and which ingredients to use, and then letting the chef prepare it for you.
+
+Bicep is very similar to Terraform, but has less complex features and does not have multi-cloud support which Terraform has.
 
 **In simple words:**
 
@@ -37,11 +39,9 @@ The topology of the resources we will deploy in this guide is:
 | VM | vm-jv-<project> |
 | VM extension | install-ad-ds |
 
-After the resources are deployed, a Custom Script Extension is executed in the VM to install the Active Directory Domain Services role and to configure a new forest.
+After the resources are deployed, a PowerShell script is executed in the VM to install the Active Directory role and to configure it.
 
-In this guide, I will show how to install the needed Bicep tooling, prepare your Azure login, start using Bicep, and run a single server Bicep setup I have made with the needed dependencies and basic security.
-
-> This setup is made as a lab example. The VM receives a public IP address, but RDP is limited to the IP address you configure. For production environments, consider using Azure Bastion, VPN, Just-in-Time access, or another secure management method instead of exposing RDP.
+In this guide, I will show how to install the requirements, prepare your Azure login, start using Bicep and run a single server Bicep setup I have made with the needed dependencies and security.
 
 ---
 
@@ -57,9 +57,19 @@ In this guide, I will show how to install the needed Bicep tooling, prepare your
 
 ---
 
+## My Bicep example project
+
+For the purpose of this guide, I created a simple Bicep project which we can use to deploy using Azure CLI and Bicep. You can find the project here:
+
+<a class="btn btn-primary" href="https://github.com/JustinVerstijnen/JV-Bicep-SingleWindowsServerActiveDirectory" target="_blank" rel="noreferrer">View on my GitHub page</a>
+
+## 
+
+---
+
 ## Step 1: Installation of Azure CLI
 
-We can start by installing Azure CLI if it is not already installed. Azure CLI is used to login to Microsoft Azure and to run the Bicep deployment.
+We can start by installing Azure CLI if it is not already installed. Azure CLI is used to login to Microsoft Azure and to run the Bicep deployment. The Azure CLI shoots your Bicep file to the Azure Resource Manager, where this ARM converts it into an actual building plan and builds your written deployment.
 
 The most easy way to install Azure CLI on Windows is through `winget`.
 
@@ -70,6 +80,8 @@ winget install --exact --id Microsoft.AzureCLI
 {{< /card >}}
 
 The installation can take some time, so please have a little patience.
+
+[![jv-media-8517-87f539b93794.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-87f539b93794.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-87f539b93794.png)
 
 After the installation is completed, close all open PowerShell and Visual Studio Code windows. This is needed so Windows can reload the new environment variables and initialize the commands needed.
 
@@ -84,116 +96,106 @@ If Azure CLI is installed correctly, the Azure CLI version information will be s
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
 PS C:\Users\InfoJustinVerstijnen> az version
 {
-  "azure-cli": "2.86.0",
-  "azure-cli-core": "2.86.0",
+  "azure-cli": "2.87.0",
+  "azure-cli-core": "2.87.0",
   "azure-cli-telemetry": "1.1.0"
 }
 {{< /card >}}
 
-Azure CLI is now installed and ready to use.
+[![jv-media-8517-d6311e2b4d87.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-d6311e2b4d87.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-d6311e2b4d87.png)
+
+Azure CLI is now installed and ready to use. If you get any error on this step, the installation might not be fully completed. You will need to troubleshoot this first, restart PowerShell and restart your computer before going any further to save you some time.
 
 ---
 
-## Step 2: Checking Bicep on your computer
+## Step 2: Installation of Bicep
 
-When you use Bicep together with Azure CLI, Azure CLI can install and use the Bicep CLI automatically. You can check if the Bicep command is available by running this command:
-
-{{< card code=true header="**PowerShell**" lang="powershell" >}}
-az bicep version
-{{< /card >}}
-
-If Bicep is not installed yet, install it using:
+When you use Bicep together with Azure CLI, Azure CLI can install and use the Bicep CLI automatically. If Bicep is not installed yet, install it using:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
 az bicep install
 {{< /card >}}
 
-If Bicep is already installed but you want to update it, run:
+[![jv-media-8517-3fb9cd97bcb1.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-3fb9cd97bcb1.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-3fb9cd97bcb1.png)
+
+Bicep will now be installed.
+
+You can then check the Bicep installation by running this command:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
-az bicep upgrade
+az bicep version
 {{< /card >}}
 
 Now Bicep is ready to use from Azure CLI.
 
-For the best editing experience, also install the Bicep extension in Visual Studio Code. This gives you syntax highlighting, IntelliSense, validation, and resource autocompletion while writing `.bicep` files.
+[![jv-media-8517-bb07f6c95b32.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-bb07f6c95b32.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-bb07f6c95b32.png)
+
+For the best editing experience, also install the Bicep extension in Visual Studio Code. This gives you syntax highlighting, validation, and resource autocompletion while writing `.bicep` files. You can also execute the Bicep files directly using the built-in Terminal, so win-win.
+
+[![jv-media-8517-54e86ff3e5d2.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-54e86ff3e5d2.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-54e86ff3e5d2.png)
+
+Identifier: ms-azuretools.vscode-bicep
 
 ---
 
 ## Step 3: Creating my Single Server Bicep setup
 
-For the ease of this guide, I have a full template available that deploys the resources as stated in the description at the top of the page. We only need to change some parameters to your likings.
+We will now prepare the Bicep example project for deployment. If you have not already downloaded the files yet, do this now.
 
-Create a new folder on your computer, for example:
+Place the files on your computer on a good place, like your Desktop or C:\Temp. Then open Visual Studio and open the `main.bicep` file from my example project.
 
-{{< card code=true header="**PowerShell**" lang="powershell" >}}
-New-Item -Path "C:\Temp\JV-Bicep-SingleWindowsServerActiveDirectory" -ItemType Directory
-{{< /card >}}
+[![jv-media-8517-3c839608fff1.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-3c839608fff1.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-3c839608fff1.png)
 
-Open this folder in Visual Studio Code and create a new file named:
+[![jv-media-8517-8a7da4f662fc.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-8a7da4f662fc.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-8a7da4f662fc.png)
 
-{{< card code=true header="**File name**" lang="text" >}}
-main.bicep
-{{< /card >}}
-
-The setup contains one file:
-
-| File name | Contains |
-| --- | --- |
-| main.bicep | The resources, variables, parameters, security rule, VM, and the Custom Script Extension that installs Active Directory Domain Services |
-
-The `main.bicep` file deploys these resources into the resource group you target with Azure CLI.
-
-> In this guide, the resource group is created with Azure CLI first. This keeps the Bicep file simple and easy to understand. Bicep can also create resource groups from subscription scope, but for this beginner guide I keep all resources in a single resource group deployment.
-
-Now we are ready to change the project to your likings.
+This `main.bicep` file deploys these resources into the resource group you target with Azure CLI. You can now take some time to review the content of the file as we are ready to change the project to your likings.
 
 ---
 
 ## Step 4: Changing the project parameters
 
-At the top of the `main.bicep` file, you can change the project parameters. These parameters are where you set values like the project name, IP address, VM size, and Active Directory domain details.
+As it can be a quite complex file, I will guide you through which values can be changed and on which Line they exist:
 
-The most important parameters are:
+| Line | Parameter | Example value | Description |
+| --- | --- | --- | --- |
+| 6 | projectName | biceptst | Short project name used in the resource names |
+|  | location | westeurope | Azure region where the resources are created |
+| 12 | adminUsername | jvadmin | Local administrator username for the VM |
+| 15 | adminPassword | Use a strong password | Local administrator password and DSRM password |
+| 19 | sourceIpAddress | 1.2.3.4 | Your public IP address for RDP whitelisting |
+| 22 | vmSize | Standard_B2ms | Size of the Windows Server VM |
+| 34 | domainName | jvlab.local | Active Directory domain name |
+| 39 | domainNetbiosName | JVLAB | Active Directory NetBIOS name |
 
-| Parameter | Example value | Description |
-| --- | --- | --- |
-| projectName | biceplab | Short project name used in the resource names |
-| location | westeurope | Azure region where the resources are created |
-| adminUsername | jvadmin | Local administrator username for the VM |
-| adminPassword | Use a strong password | Local administrator password and DSRM password |
-| sourceIpAddress | 1.2.3.4 | Your public IP address for RDP whitelisting |
-| vmSize | Standard_B2ms | Size of the Windows Server VM |
-| domainName | jvlab.local | Active Directory domain name |
-| domainNetbiosName | JVLAB | Active Directory NetBIOS name |
-
-The things you are required to change before deployment are:
-
-- Resource group name in the Azure CLI command
-- `projectName`
-- `sourceIpAddress`
-- `adminUsername`
-- `adminPassword`
-- `domainName`
-- `domainNetbiosName`
-
-Do not store real passwords in GitHub or in screenshots. For this guide, the password is passed as a secure Bicep parameter.
+The password is passed as a secure string to Bicep and the source IP address is your Public IP address, which will be whitelisted only for RDP access for high security.
 
 ---
 
 ## Step 5: Validating the Bicep file
 
-Before deploying the Bicep file, we can let Bicep build the file into an ARM template. This is a nice first check to see if the file can be parsed.
+Before deploying the Bicep file, we can let Bicep build the file into an ARM template. This is a nice first check to see if the file can be parsed. In Visual Studio Code, open a new Terminal through the "Terminal" menu:
 
-Navigate to the folder of your Bicep project in the Visual Studio Code terminal and run:
+[![jv-media-8517-27ad68dce957.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-27ad68dce957.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-27ad68dce957.png)
+
+This opens a terminal below your Bicep file, where we can execute the file and instantly change something if needed.
+
+Navigate to the folder of your Bicep project in the Visual Studio Code terminal by using the `cd` command and paste in the folder location where your `.bicep` file is:
+
+[![jv-media-8517-1ecf723fee8d.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-1ecf723fee8d.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-1ecf723fee8d.png)
+
+Then run the command to build your Bicep project where the project is validated on errors, compatibility and such:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
 az bicep build --file .\main.bicep
 {{< /card >}}
 
-If the command finishes without errors, Bicep has created a generated `main.json` ARM template in the same folder.
+[![jv-media-8517-1928cf5b058a.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-1928cf5b058a.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-1928cf5b058a.png)
 
-You do not have to edit this JSON file. The `.bicep` file is the file we maintain.
+If the command finishes without errors, Bicep has created a generated `main.json` ARM template in the same folder. Let's check the file:
+
+[![jv-media-8517-e49d7001244c.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-e49d7001244c.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-e49d7001244c.png)
+
+This JSON file is the Azure-ready file. You don't need to change that file as this might break the deployment. The `.bicep` file is the file we maintain, and build a new JSON from if needed.
 
 ---
 
@@ -201,61 +203,83 @@ You do not have to edit this JSON file. The `.bicep` file is the file we maintai
 
 Now we are finally ready to deploy our Bicep project to Azure. We will login to Azure CLI, create the target resource group, run a what-if check, and then deploy the Bicep file.
 
-Let's sign in to Azure CLI using this command:
+Let's sign in to Azure CLI within the Visual Studio Code terminal using this command:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
 az login
 {{< /card >}}
 
-Then login to your Azure account where the deployment must be done. Also be sure to perform the additional verification steps.
+Then login to your Azure account where the deployment must be done. Also be sure to perform the additional verification steps. The login window can appear behind any other windows, so be aware if executing the command and nothing happens.
 
-If you have multiple subscriptions, set the subscription you want to use:
+If you have multiple subscriptions, set the subscription you want to use by typing the number:
 
-{{< card code=true header="**PowerShell**" lang="powershell" >}}
-az account set --subscription "<subscription-id>"
-{{< /card >}}
+[![jv-media-8517-d0a072f097be.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-d0a072f097be.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-d0a072f097be.png)
 
-Now create the resource group for this deployment:
+Now create the resource group for this demonstration deployment:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
-az group create --name "rg-jv-biceplab" --location "westeurope"
+az group create --name "rg-jv-biceptst" --location "westeurope"
 {{< /card >}}
 
-Now run a what-if deployment. This is comparable to checking the plan before applying the change.
+[![jv-media-8517-ab3f0eedac67.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-ab3f0eedac67.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-ab3f0eedac67.png)
+
+This successfully created the resource group for the deployment. Here is also where you choose the Azure region of the full deployment. Now we should run a what-if deployment. This is comparable to checking the plan before applying the change. This will give you an overview of what resources are being created. This also shows possible errors.
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
 az deployment group what-if `
-  --resource-group "rg-jv-biceplab" `
+  --resource-group "rg-jv-biceptst" `
   --template-file .\main.bicep `
   --parameters `
-    projectName="biceplab" `
-    sourceIpAddress="<your-public-ip>" `
+    projectName="biceptst" `
+    sourceIpAddress="1.2.3.4" `
     adminUsername="jvadmin" `
-    adminPassword="<strong-password>" `
+    adminPassword="Pa$$w0rd!" `
     domainName="jvlab.local" `
     domainNetbiosName="JVLAB"
 {{< /card >}}
 
-Review the what-if output. It should show that Azure will create the network resources, public IP address, NIC, VM, OS disk, and VM extension.
+[![jv-media-8517-b32fe9953e0d.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-b32fe9953e0d.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-b32fe9953e0d.png)
 
-If the what-if output looks correct, start the deployment:
+After around 25 seconds, the output will be given and summarized how many resources there will be created:
+
+[![jv-media-8517-901f8a475116.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-901f8a475116.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-901f8a475116.png)
+
+6 resources; the network resources, public IP address, NIC, VM, OS disk, and VM extension.
+
+Now let's deploy the project to Azure by executing this command block:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
 az deployment group create `
-  --resource-group "rg-jv-biceplab" `
+  --resource-group "rg-jv-biceptst" `
   --template-file .\main.bicep `
   --parameters `
-    projectName="biceplab" `
-    sourceIpAddress="<your-public-ip>" `
+    projectName="biceptst" `
+    sourceIpAddress="1.2.3.4" `
     adminUsername="jvadmin" `
-    adminPassword="<strong-password>" `
+    adminPassword="Pa$$w0rd!" `
     domainName="jvlab.local" `
     domainNetbiosName="JVLAB"
 {{< /card >}}
 
 Azure will now start the full deployment based on your Bicep file and parameters.
 
-The VM is created first. After that, the Custom Script Extension runs inside the VM. This extension installs the Active Directory Domain Services role, creates the new forest, installs DNS, and schedules a restart of the server.
+[![jv-media-8517-6beccc469b76.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-6beccc469b76.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-6beccc469b76.png)
+
+The dependencies like disk, NIC, Public IP and NSG will be created first, then the VM. After that, the Custom Script Extension runs inside the VM. This extension installs the Active Directory Domain Services role, creates the new forest, installs DNS, and schedules a restart of the server. This makes the server ready for some Active Directory experiments.
+
+Very fast after executing the create command, the resources will be visible in the Azure Portal:
+
+[![jv-media-8517-59766e928950.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-59766e928950.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-59766e928950.png)
+
+You can even watch the deployment live by clicking the "Deploying" button and then open the "main" deployment:
+
+[![jv-media-8517-e92c4d1f7477.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-e92c4d1f7477.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-e92c4d1f7477.png)
+
+You can now see much more than only "Running..". The total deployment takes about 8 minutes in total, where the after deployment script will take the most time.
+
+[![jv-media-8517-21419b7b686c.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-21419b7b686c.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-21419b7b686c.png)
+
+[![jv-media-8517-76b7721dc60f.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-76b7721dc60f.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-76b7721dc60f.png)
 
 After the deployment is finished, Azure CLI shows the outputs configured in the Bicep file. These outputs include information like the public IP address and an example RDP command.
 
@@ -265,7 +289,7 @@ If you need to remove all the resources created in this guide, delete the resour
 az group delete --name "rg-jv-biceplab" --yes --no-wait
 {{< /card >}}
 
-This removes the complete lab resource group.
+This removes the complete lab resource group in a single command.
 
 ---
 
@@ -275,11 +299,8 @@ After `az deployment group create` finishes, Azure has built the resources defin
 
 Let's check the results:
 
-- check the output shown by Azure CLI in your terminal,
-- check the Azure resources in the Azure Portal for the resource group that was created,
-- check if the VM has a private IP address that matches the DNS server configured in the VNET,
-- check if the Custom Script Extension has completed,
-- and after the restart, test signing in to the VM.
+- Check if the NSG and source IP address
+- Login to the VM to check Active Directory status
 
 The deployed resource group should contain the dependent resources like the VM, OS disk, NIC, NSG, VNET, and public IP address.
 
@@ -294,25 +315,20 @@ Pretty cool and much faster and more according to plan than deploying everything
 If you change something in the Bicep setup, for example the VM size, tags, or allowed RDP source IP address, you can update Azure again by running these commands:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
-az deployment group what-if `
-  --resource-group "rg-jv-biceplab" `
-  --template-file .\main.bicep `
-  --parameters `
-    projectName="biceplab" `
-    sourceIpAddress="<your-public-ip>" `
-    adminUsername="jvadmin" `
-    adminPassword="<strong-password>" `
-    domainName="jvlab.local" `
-    domainNetbiosName="JVLAB"
+az bicep build --file .\main.bicep
+{{< /card >}}
 
+And then deploy the project again:
+
+{{< card code=true header="**PowerShell**" lang="powershell" >}}
 az deployment group create `
-  --resource-group "rg-jv-biceplab" `
+  --resource-group "rg-jv-biceptst" `
   --template-file .\main.bicep `
   --parameters `
-    projectName="biceplab" `
-    sourceIpAddress="<your-public-ip>" `
+    projectName="biceptst" `
+    sourceIpAddress="1.2.3.4" `
     adminUsername="jvadmin" `
-    adminPassword="<strong-password>" `
+    adminPassword="Pa$$w0rd!" `
     domainName="jvlab.local" `
     domainNetbiosName="JVLAB"
 {{< /card >}}
@@ -321,19 +337,13 @@ Azure Resource Manager will compare what is in your Bicep file with what already
 
 Be aware that normal resource group deployments use incremental mode. This means Azure adds or updates the resources in the template, but it does not automatically delete every existing resource in the resource group that is missing from the Bicep file.
 
-If you want to remove everything completely, delete the resource group:
-
-{{< card code=true header="**PowerShell**" lang="powershell" >}}
-az group delete --name "rg-jv-biceplab" --yes --no-wait
-{{< /card >}}
-
 ---
 
 ## Knowledge check
 
 {{< quiz >}}
 {
-  "intro": "Answer these questions to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "intro": "Answer these question(s) to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
   "questions": [
     {
       "question": "What does it mean that Bicep code is declarative?",
