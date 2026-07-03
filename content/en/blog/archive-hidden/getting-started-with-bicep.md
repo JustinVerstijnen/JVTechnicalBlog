@@ -1,7 +1,7 @@
 ---
 title: "Getting started with Bicep"
 slug: "getting-started-with-bicep"
-date: 2026-10-20
+date: 2026-07-03
 tags:
 - Step by Step guides
 - Knowledge check
@@ -161,7 +161,6 @@ As it can be a quite complex file, I will guide you through which values can be 
 | 6 | projectName | biceptst | Short project name used in the resource names |
 |  | location | westeurope | Azure region where the resources are created |
 | 12 | adminUsername | jvadmin | Local administrator username for the VM |
-| 15 | adminPassword | Use a strong password | Local administrator password and DSRM password |
 | 19 | sourceIpAddress | 1.2.3.4 | Your public IP address for RDP whitelisting |
 | 22 | vmSize | Standard_B2ms | Size of the Windows Server VM |
 | 34 | domainName | jvlab.local | Active Directory domain name |
@@ -233,12 +232,10 @@ az deployment group what-if `
     projectName="biceptst" `
     sourceIpAddress="1.2.3.4" `
     adminUsername="jvadmin" `
-    adminPassword="Pa$$w0rd!" `
+    adminPassword="YourPassw0rd!" `
     domainName="jvlab.local" `
     domainNetbiosName="JVLAB"
 {{< /card >}}
-
-[![jv-media-8517-b32fe9953e0d.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-b32fe9953e0d.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-b32fe9953e0d.png)
 
 After around 25 seconds, the output will be given and summarized how many resources there will be created:
 
@@ -256,14 +253,13 @@ az deployment group create `
     projectName="biceptst" `
     sourceIpAddress="1.2.3.4" `
     adminUsername="jvadmin" `
-    adminPassword="Pa$$w0rd!" `
-    domainName="jvlab.local" `
+    adminPassword="YourPassw0rd!" `    domainName="jvlab.local" `
     domainNetbiosName="JVLAB"
 {{< /card >}}
 
 Azure will now start the full deployment based on your Bicep file and parameters.
 
-[![jv-media-8517-6beccc469b76.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-6beccc469b76.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-6beccc469b76.png)
+[![jv-media-8517-fecfa3e52728.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-fecfa3e52728.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-fecfa3e52728.png)
 
 The dependencies like disk, NIC, Public IP and NSG will be created first, then the VM. After that, the Custom Script Extension runs inside the VM. This extension installs the Active Directory Domain Services role, creates the new forest, installs DNS, and schedules a restart of the server. This makes the server ready for some Active Directory experiments.
 
@@ -295,18 +291,17 @@ This removes the complete lab resource group in a single command.
 
 ## Step 7: The results
 
-After `az deployment group create` finishes, Azure has built the resources defined in the Bicep setup. In my case, this type of deployment should only take several minutes, after which the virtual machine restarts to complete the Active Directory installation.
+After the `az deployment group create` command finishes, Azure has built the resources defined in the Bicep setup. After the whole deployment was completed. the virtual machine restarts to complete the Active Directory installation.
 
 Let's check the results:
 
 - Check if the NSG and source IP address
-- Login to the VM to check Active Directory status
+- Check the resource names
+- Login to the VM with RDP to check Active Directory status
 
-The deployed resource group should contain the dependent resources like the VM, OS disk, NIC, NSG, VNET, and public IP address.
+[![jv-media-8517-58e2d9b2ba15.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-58e2d9b2ba15.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-bicep/jv-media-8517-58e2d9b2ba15.png)
 
-The VNET DNS server is also changed to the private IP address of the created server. This makes the server usable as the DNS server for this lab network.
-
-Pretty cool and much faster and more according to plan than deploying everything by hand.
+As you can see, Active Directory has been successfully installed and configured.
 
 ---
 
@@ -328,8 +323,7 @@ az deployment group create `
     projectName="biceptst" `
     sourceIpAddress="1.2.3.4" `
     adminUsername="jvadmin" `
-    adminPassword="Pa$$w0rd!" `
-    domainName="jvlab.local" `
+    adminPassword="YourPassw0rd!" `    domainName="jvlab.local" `
     domainNetbiosName="JVLAB"
 {{< /card >}}
 
@@ -356,7 +350,7 @@ Be aware that normal resource group deployments use incremental mode. This means
           "message": "Incorrect. Declarative code means you describe the desired end result, not every individual manual step."
         },
         {
-          "text": "You describe the desired end result, and Azure Resource Manager figures out how to create or change the resources",
+          "text": "You describe the desired end resultresources",
           "correct": true,
           "message": "Correct! With Bicep, you define what the infrastructure should look like, and Azure Resource Manager deploys that desired state."
         },
@@ -366,9 +360,9 @@ Be aware that normal resource group deployments use incremental mode. This means
           "message": "Incorrect. Bicep files can be deployed to Azure through Azure Resource Manager."
         },
         {
-          "text": "Bicep only works after resources are created manually first in the Azure Portal",
+          "text": "You define every action like a PowerShell script",
           "correct": false,
-          "message": "Incorrect. Bicep is used to deploy and manage resources from code."
+          "message": "Incorrect"
         }
       ]
     },
@@ -388,9 +382,9 @@ Be aware that normal resource group deployments use incremental mode. This means
           "message": "Correct! The what-if operation previews the changes before you deploy the Bicep file."
         },
         {
-          "text": "az group delete",
+          "text": "az deployment group create",
           "correct": false,
-          "message": "Incorrect. az group delete removes the resource group."
+          "message": "Incorrect. This will instantly start the deployment process."
         },
         {
           "text": "az logout",
@@ -436,7 +430,7 @@ Be aware that normal resource group deployments use incremental mode. This means
 
 Bicep helps you deploy Azure resources in a repeatable way using Infrastructure as Code. With the steps above, you installed Azure CLI, checked Bicep, prepared your settings, then used `az bicep build`, `az deployment group what-if`, and `az deployment group create` to deploy your single server setup.
 
-The advantages of Bicep are readable Azure-native Infrastructure as Code, easy repeatable deployments, what-if previews, and a strong editing experience in Visual Studio Code.
+The advantages of Bicep are readable Azure-native Infrastructure as Code, easy repeatable deployments, what-if previews, and a strong editing experience in Visual Studio Code. How I use Bicep is to easily and fastly deploy some servers with a set configuration to take away the manual work for a guide.
 
 Thank you for reading this post and I hope it was helpful!
 
