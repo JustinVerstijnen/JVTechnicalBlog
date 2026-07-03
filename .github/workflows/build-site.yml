@@ -388,7 +388,7 @@ jobs:
           du -sh public
 
           echo "First files in public:"
-          find public -maxdepth 2 -type f | head -50
+          find public -maxdepth 2 -type f | awk 'NR <= 50 { print }'
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
