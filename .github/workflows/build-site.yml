@@ -17,17 +17,25 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: "pages-${{ github.workflow }}"
   cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
 
 env:
   EXCLUDED_CONTENT_DIR: content/en/blog/archive-hidden
   HUGO_IGNOREFILES: '[/\\]content[/\\]en[/\\]blog[/\\]archive-hidden[/\\].*'
   HUGO_VERSION: "0.160.0"
-  NODE_VERSION: "24"
+  NODE_VERSION: "22"
+  HUGO_ENVIRONMENT: production
+  HUGO_ENV: production
+  HUGO_CACHEDIR: /tmp/hugo_cache
 
 jobs:
   build:
+    name: Build Hugo site
     runs-on: ubuntu-latest
 
     steps:
@@ -41,12 +49,13 @@ jobs:
         id: pages
         uses: actions/configure-pages@v6
 
-      - name: Setup Node.js (for PostCSS)
+      - name: Setup Node.js for PostCSS
         uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
 
-      - name: Install Node dependencies (PostCSS, etc.)
+      - name: Install Node dependencies
         run: |
           if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
             npm ci
@@ -58,6 +67,8 @@ jobs:
 
       - name: Setup Hugo extended
         run: |
+          set -euo pipefail
+
           curl -L -o hugo.tar.gz "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
           mkdir -p "${HOME}/.local/hugo"
           tar -xzf hugo.tar.gz -C "${HOME}/.local/hugo"
@@ -91,7 +102,6 @@ jobs:
               try:
                   return path.is_relative_to(EXCLUDED_CONTENT_DIR)
               except AttributeError:
-                  # Fallback voor oudere Python-versies.
                   try:
                       path.relative_to(EXCLUDED_CONTENT_DIR)
                       return True
@@ -364,8 +374,21 @@ jobs:
 
       - name: Sanity check build output
         run: |
+          echo "Checking public directory..."
+          test -d public
           test -f public/index.html
-          ls -la public
+
+          echo "Checking for symlinks..."
+          if find public -type l | grep -q .; then
+            echo "Error: symlinks found in public directory"
+            find public -type l
+            exit 1
+          fi
+
+          echo "Checking artifact size..."
+          du -sh public
+
+          echo "First files in public:"
           find public -maxdepth 2 -type f | head -50
 
       - name: Upload Pages artifact
@@ -374,6 +397,7 @@ jobs:
           path: public
 
   deploy:
+    name: Deploy to GitHub Pages
     needs: build
     runs-on: ubuntu-latest
 
