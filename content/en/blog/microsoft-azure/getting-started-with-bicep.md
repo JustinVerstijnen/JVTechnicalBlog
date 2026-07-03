@@ -1,7 +1,7 @@
 ---
 title: "Getting started with Bicep"
 slug: "getting-started-with-bicep"
-date: 2025-07-03
+date: 2026-07-03
 tags:
 - Step by Step guides
 - Knowledge check
@@ -431,6 +431,8 @@ Be aware that normal resource group deployments use incremental mode. This means
 Bicep helps you deploy Azure resources in a repeatable way using Infrastructure as Code. With the steps above, you installed Azure CLI, checked Bicep, prepared your settings, then used `az bicep build`, `az deployment group what-if`, and `az deployment group create` to deploy your single server setup.
 
 The advantages of Bicep are readable Azure-native Infrastructure as Code, easy repeatable deployments, what-if previews, and a strong editing experience in Visual Studio Code. How I use Bicep is to easily and fastly deploy some servers with a set configuration to take away the manual work for a guide.
+
+Bicep is very similar to Terraform and both have their advantages. I think Bicep is more easy and needs less dependencies to work. However, it also does have less features and less community support than Terraform.
 
 Thank you for reading this post and I hope it was helpful!
 
