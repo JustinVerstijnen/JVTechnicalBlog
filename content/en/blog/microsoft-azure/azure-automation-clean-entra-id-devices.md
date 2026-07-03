@@ -8,7 +8,7 @@ tags:
 - Knowledge check
 categories:
 - Microsoft Azure
-description: "Over time, Microsoft Entra ID environments often become filled with old and inactive devices. These can be devices from former employees, reinstalled systems, test devices or machines that simply no longer exist. Cleaning up these devices manually takes time and is easy to forget. By using Azure Automation, we can fully automate this process and remove devices that have been inactive for more than 180 days. Azure Automation is a service in Azure that allows you to automate tasks. Automation tasks usually work with schedules/timers and scripts and normally require infrastructure to run. In traditional environments this often means deploying and maintaining servers or virtual machines. In the cloud era we naturally want to avoid this as much as possible. With Azure Automation you can run different types of scripts whenever you want. These scripts run directly on the Azure platform without the need to deploy, design, maintain or secure your own server. This makes it a very robust solution. Azure Automation can also run in the context of a Managed Identity connected to the Automation Account. This removes the need for separate service accounts."
+description: "Over time, Microsoft Entra ID environments often become filled with old and inactive devices.  Cleaning up these devices manually takes time and is easy to forget. By using Azure Automation, we can fully automate this process and remove devices that have been inactive for more than 180 days."
 hidden: false
 ---
 
