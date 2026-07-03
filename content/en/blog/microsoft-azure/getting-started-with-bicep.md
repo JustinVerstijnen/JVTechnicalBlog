@@ -1,7 +1,7 @@
 ---
 title: "Getting started with Bicep"
 slug: "getting-started-with-bicep"
-date: 2026-07-03
+date: 2026-07-23
 tags:
 - Step by Step guides
 - Knowledge check
@@ -62,8 +62,6 @@ In this guide, I will show how to install the requirements, prepare your Azure l
 For the purpose of this guide, I created a simple Bicep project which we can use to deploy using Azure CLI and Bicep. You can find the project here:
 
 <a class="btn btn-primary" href="https://github.com/JustinVerstijnen/JV-Bicep-SingleWindowsServerActiveDirectory" target="_blank" rel="noreferrer">View on my GitHub page</a>
-
-## 
 
 ---
 
@@ -159,9 +157,7 @@ As it can be a quite complex file, I will guide you through which values can be 
 | Line | Parameter | Example value | Description |
 | --- | --- | --- | --- |
 | 6 | projectName | biceptst | Short project name used in the resource names |
-|  | location | westeurope | Azure region where the resources are created |
 | 12 | adminUsername | jvadmin | Local administrator username for the VM |
-| 19 | sourceIpAddress | 1.2.3.4 | Your public IP address for RDP whitelisting |
 | 22 | vmSize | Standard_B2ms | Size of the Windows Server VM |
 | 34 | domainName | jvlab.local | Active Directory domain name |
 | 39 | domainNetbiosName | JVLAB | Active Directory NetBIOS name |
@@ -323,7 +319,8 @@ az deployment group create `
     projectName="biceptst" `
     sourceIpAddress="1.2.3.4" `
     adminUsername="jvadmin" `
-    adminPassword="YourPassw0rd!" `    domainName="jvlab.local" `
+    adminPassword="YourPassw0rd!" `
+    domainName="jvlab.local" `
     domainNetbiosName="JVLAB"
 {{< /card >}}
 
@@ -350,7 +347,7 @@ Be aware that normal resource group deployments use incremental mode. This means
           "message": "Incorrect. Declarative code means you describe the desired end result, not every individual manual step."
         },
         {
-          "text": "You describe the desired end resultresources",
+          "text": "You describe the desired end result(s)",
           "correct": true,
           "message": "Correct! With Bicep, you define what the infrastructure should look like, and Azure Resource Manager deploys that desired state."
         },
