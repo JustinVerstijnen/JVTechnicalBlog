@@ -5,6 +5,8 @@ on:
     branches:
       - main
 
+  workflow_dispatch:
+
   schedule:
     - cron: "0 0 * * *"
       timezone: "Europe/Amsterdam"
@@ -16,11 +18,13 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 env:
   EXCLUDED_CONTENT_DIR: content/en/blog/archive-hidden
   HUGO_IGNOREFILES: '[/\\]content[/\\]en[/\\]blog[/\\]archive-hidden[/\\].*'
+  HUGO_VERSION: "0.160.0"
+  NODE_VERSION: "24"
 
 jobs:
   build:
@@ -28,15 +32,19 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           submodules: recursive
           fetch-depth: 0
 
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v6
+
       - name: Setup Node.js (for PostCSS)
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Install Node dependencies (PostCSS, etc.)
         run: |
@@ -48,11 +56,18 @@ jobs:
             echo "No package.json found, skipping npm install"
           fi
 
-      - name: Setup Hugo (extended)
-        uses: peaceiris/actions-hugo@v3
-        with:
-          hugo-version: "0.160.0"
-          extended: true
+      - name: Setup Hugo extended
+        run: |
+          curl -L -o hugo.tar.gz "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
+          mkdir -p "${HOME}/.local/hugo"
+          tar -xzf hugo.tar.gz -C "${HOME}/.local/hugo"
+          echo "${HOME}/.local/hugo" >> "${GITHUB_PATH}"
+
+      - name: Show versions
+        run: |
+          hugo version
+          node --version
+          npm --version
 
       - name: Generate planned posts page
         run: |
@@ -340,22 +355,33 @@ jobs:
         run: rm -rf public
 
       - name: Build site
-        run: hugo --minify --cleanDestinationDir --gc
+        run: |
+          hugo \
+            --minify \
+            --cleanDestinationDir \
+            --gc \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - name: Sanity check build output
-        run: test -f public/index.html
+        run: |
+          test -f public/index.html
+          ls -la public
+          find public -maxdepth 2 -type f | head -50
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: public
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
+
     environment:
       name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+        id: deployment
+        uses: actions/deploy-pages@v5
