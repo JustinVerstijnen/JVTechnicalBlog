@@ -282,7 +282,7 @@ After the deployment is finished, Azure CLI shows the outputs configured in the 
 If you need to remove all the resources created in this guide, delete the resource group:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
-az group delete --name "rg-jv-biceplab" --yes --no-wait
+az group delete --name "rg-jv-biceptst" --yes --no-wait
 {{< /card >}}
 
 This removes the complete lab resource group in a single command.
