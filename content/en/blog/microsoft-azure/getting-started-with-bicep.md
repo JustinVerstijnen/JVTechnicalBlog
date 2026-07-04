@@ -7,7 +7,7 @@ tags:
 - Knowledge check
 categories:
 - Microsoft Azure
-description: "In this guide, I show the path from installation to deployment: I install the needed Bicep tooling, I prepare my Azure login using Azure CLI, and then I run a single server Bicep setup so you can see the process end-to-end."
+description: "In this guide, I show the path from installation to deployment: I install the needed Bicep software, I prepare my Azure login using Azure CLI, and then I run a single server Bicep setup so you can see the process end-to-end."
 hidden: false
 ---
 
