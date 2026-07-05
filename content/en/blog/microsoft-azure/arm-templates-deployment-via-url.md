@@ -11,7 +11,9 @@ description: "In this post I will show you how to deploy ARM templates directly 
 hidden: false
 ---
 
-Some time ago, I [s](https://justinverstijnen.nl/arm-templates-and-azure-vm-script-deployment/)[pent some time on ARM templates](https://justinverstijnen.nl/arm-templates-and-azure-vm-script-deployment/) and creating them through the portal and then redeploying them to save time. As I need to test some things very often for blog posts, for example updates for FSLogix and AVD, I needed a way to deploy some resources into Azure much faster. Here I want to save much of the clickwork and actually have more time on to the tesing and research themselves.
+Some time ago, I [s](https://justinverstijnen.nl/arm-templates-and-azure-vm-script-deployment/)[pent some time on ARM templates](https://justinverstijnen.nl/arm-templates-and-azure-vm-script-deployment/) and creating them through the portal and then redeploying them to save time. As I need to test some things very often for blog posts, for example updates for FSLogix and AVD, I needed a way to deploy some resources into Azure much faster. Here I want to save much of the clickwork and actually have more time on to the tesing and research themselves. Therefore, we will create template for these buttons:
+
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FJustinVerstijnen%2FAzureDeploymentTemplates%2Frefs%2Fheads%2Fmain%2Fazurevirtualdesktopkerberos%2Fmain.json" target="_blank" rel="noopener noreferrer"><img src="https://aka.ms/deploytoazurebutton" alt="Deploy to Azure" /></a>
 
 After some testing and successfully be able to deploy different ARM templates, I dived even deeper in this world and was able to deploy them through a URI. This gave me inspiration to make my own gallery of ARM templates for fast deployment. It works like, you go to the URL, click on the Deploy to Azure button and you will be redirected to Azure and make minor customizations before deploying it into your environment.
 
