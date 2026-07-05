@@ -8,17 +8,16 @@ tags:
 categories:
 - Microsoft Azure
 description: "In this post I will show you how to deploy ARM templates directly from a public URL, how to create a Deploy to Azure button, and why converting Bicep to ARM JSON is the easy part."
+hidden: false
 ---
 
-Sometimes you do not want to explain a full deployment process to someone. You just want to send a link or place a button on a webpage, and let Azure open the deployment screen with your template already loaded.
+Some time ago, I [s](https://justinverstijnen.nl/arm-templates-and-azure-vm-script-deployment/)[pent some time on ARM templates](https://justinverstijnen.nl/arm-templates-and-azure-vm-script-deployment/) and creating them through the portal and then redeploying them to save time. As I need to test some things very often for blog posts, for example updates for FSLogix and AVD, I needed a way to deploy some resources into Azure much faster. Here I want to save much of the clickwork and actually have more time on to the tesing and research themselves.
 
-That is exactly what ARM template deployment via URL does.
+After some testing and successfully be able to deploy different ARM templates, I dived even deeper in this world and was able to deploy them through a URI. This gave me inspiration to make my own gallery of ARM templates for fast deployment. It works like, you go to the URL, click on the Deploy to Azure button and you will be redirected to Azure and make minor customizations before deploying it into your environment.
 
-This is especially nice when you store your templates in GitHub and want to share them fast with colleagues, customers or for your own lab work. And if your template is written in Bicep first, that is no problem at all. Bicep to ARM is super easy, and after that you can use the normal Deploy to Azure button method.
+In this guide, I will explain how this actually works and how you could setup this yourself.
 
-For this post I used my own repository and tool as inspiration:
-
-<p><a class="btn btn-primary" href="https://github.com/JustinVerstijnen/AzureDeploymentTemplates" target="_blank" rel="noreferrer">View templates on GitHub</a>&nbsp;<a class="btn btn-primary" href="https://tools.justinverstijnen.nl/azuredeploymenttemplates/" target="_blank" rel="noreferrer">Open deployment templates tool</a></p>
+<a class="btn btn-primary" href="https://tools.justinverstijnen.nl/azuredeploymenttemplates/" target="_blank" rel="noreferrer">Visit Deployment Templates gallery</a>
 
 ---
 
@@ -27,44 +26,37 @@ For this post I used my own repository and tool as inspiration:
 For this method you need the following:
 
 - An Azure subscription
-- A public GitHub repository or another public location to host the ARM JSON file
-- A template in ARM JSON, or a Bicep file that you convert first
-- Basic knowledge of Azure and GitHub
+- Basic to Moderate knowledge of ARM
+- A GitHub account or alternative public way of hosting JSON files
+- An existing Bicep template is great
 
 ---
 
-## How this works
+## How ARM templates work
 
-The flow is actually very simple:
+As Azure has Azure Resource Manager which can build its resources from a JSON file. We can say that the JSON file is a recipe/cookbook which we pass to Azure Resource Manager and he will build the environment based on our cookbook. If we have a correct template, this saves us a lot of time clicking through the portal and deploying the resources by hand. Also we cannot forget some crucial settings and saves us a lot of time, and can help us if we need to deploy a specific resource/setup into multiple environments.
 
-| Part | What it does |
-| --- | --- |
-| `main.bicep` | Your source template if you write in Bicep |
-| `main.json` | The ARM JSON file that Azure loads through the URL |
-| Raw GitHub URL | Public direct link to the JSON file |
-| URL-encoded raw URL | Needed because the raw URL is placed inside the Azure portal link |
-| Azure portal deployment link | Opens the deployment screen with your template loaded |
-| Deploy to Azure button | A nicer way to present that same portal link |
+What is also very nice is that we cannot only automate the deployment of resources, but also enabling managed identities and setting role assignments. For the example which I will demonstrate later on in this guide, I have built a demo Azure Virtual Desktop environment with variables built in to assign the correct roles to user groups.
 
-The important part to remember is this: the simple Deploy to Azure button method works with a remote ARM JSON template, not with a remote Bicep file.
+This JSON file can be created through at least 3 ways:
+
+- A deployment in the Portal and downloading the automation template
+- Building a Bicep template which actually generates the JSON file
+- Write the JSON yourself or generate a template by using Artificial Intelligence
+
+	- Note here to test the template thoroughly before using in production
 
 ---
 
-## Step 1:
+## Step 1: Create a JSON file
 
-Prepare your template first.
+Before we can deploy any template, we must first have a JSON file which contains the cookbook for Azure Resource Manager and the instructions on what to build, what settings must be used and which name structure you want. The most easiest way to get an ARM template is by configuring a resource in the Azure Portal, and then clicking the "Download a template for automation" button below:
 
-If you already have a working ARM template in JSON format, you can skip to the next step.
+[![jv-media-8519-5346b0a7c45b.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/arm-templates-deployment-via-url/jv-media-8519-5346b0a7c45b.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/arm-templates-deployment-via-url/jv-media-8519-5346b0a7c45b.png)
 
-If you work with Bicep, convert it to ARM JSON first. This is the easy part and takes one command. Open a terminal in the folder where your Bicep file lives and run:
+I created a simple virtual network for the purpose of this guide. We can now view the cookbook/code itself which Azure uses:
 
-{{< card code=true header="**PowerShell**" lang="powershell" >}}
-az bicep build --file main.bicep --outfile main.json
-{{< /card >}}
-
-This creates the `main.json` file that you can publish and use for the deployment URL.
-
-If you prefer, you can keep the Bicep file for editing and only use `main.json` for the button and portal deployment link.
+[![jv-media-8519-5a300df83664.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/arm-templates-deployment-via-url/jv-media-8519-5a300df83664.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/arm-templates-deployment-via-url/jv-media-8519-5a300df83664.png)
 
 ---
 
@@ -90,7 +82,7 @@ Create the Azure portal deployment URL.
 
 The base URL is this:
 
-{{< card code=true header="**TEXT**" lang="text" >}}
+{{< card code=true header="**Plain text**" lang="text" >}}
 https://portal.azure.com/#create/Microsoft.Template/uri/
 {{< /card >}}
 
@@ -98,7 +90,7 @@ After that base URL, append your URL-encoded raw `main.json` URL.
 
 So the full result looks like this structure:
 
-{{< card code=true header="**TEXT**" lang="text" >}}
+{{< card code=true header="**Plain text**" lang="text" >}}
 https://portal.azure.com/#create/Microsoft.Template/uri/<URL-ENCODED-RAW-JSON-URL>
 {{< /card >}}
 
