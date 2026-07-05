@@ -1,14 +1,13 @@
 ---
 title: "ARM templates deployment via URL"
 slug: "arm-templates-deployment-via-url"
-date: 2025-10-04
+date: 2026-08-04
 tags:
 - Step by Step guides
 - Tools and Scripts
 categories:
 - Microsoft Azure
 description: "In this post I will show you how to deploy ARM templates directly from a public URL, how to create a Deploy to Azure button, and why converting Bicep to ARM JSON is the easy part."
-hidden: false
 ---
 
 Some time ago, I [s](https://justinverstijnen.nl/arm-templates-and-azure-vm-script-deployment/)[pent some time on ARM templates](https://justinverstijnen.nl/arm-templates-and-azure-vm-script-deployment/) and creating them through the portal and then redeploying them to save time. As I need to test some things very often for blog posts, for example updates for FSLogix and AVD, I needed a way to deploy some resources into Azure much faster. Here I want to save much of the clickwork and actually have more time on to the tesing and research themselves. Therefore, we will create template for these buttons:
@@ -20,6 +19,8 @@ After some testing and successfully be able to deploy different ARM templates, I
 In this guide, I will explain how this actually works and how you could setup this yourself.
 
 <a class="btn btn-primary" href="https://tools.justinverstijnen.nl/azuredeploymenttemplates/" target="_blank" rel="noreferrer">Visit Deployment Templates gallery</a>
+
+[![tool-azuredeploymenttemplates.jpg](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/tools-2375/tool-azuredeploymenttemplates.jpg)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/tools-2375/tool-azuredeploymenttemplates.jpg)
 
 ---
 
