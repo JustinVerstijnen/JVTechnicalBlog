@@ -1,7 +1,7 @@
 ---
 title: "Getting started with Terraform"
 slug: "getting-started-with-terraform"
-date: 2026-07-16
+date: 2026-07-09
 tags:
 - Step by Step guides
 - Knowledge check
