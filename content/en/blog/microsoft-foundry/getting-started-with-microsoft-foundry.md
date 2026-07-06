@@ -13,4 +13,4 @@ build:
   list: never
 ---
 
-Lol retry
+Lol retry 3
