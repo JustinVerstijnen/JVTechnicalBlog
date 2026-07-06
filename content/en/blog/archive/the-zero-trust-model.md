@@ -3,7 +3,7 @@ title: "The Zero Trust-model"
 date: 2024-11-25
 slug: "the-zero-trust-model"
 categories:
-  - Microsoft Entra
+- Archive
 tags:
   - Concepts
 description: >

@@ -3,7 +3,7 @@ title: "Introduction to the Azure Well-Architected Framework"
 date: 2024-04-02
 slug: "introduction-of-azure-well-architected-framework"
 categories:
-  - Microsoft Azure
+- Archive
 tags:
   - Concepts
 description: >

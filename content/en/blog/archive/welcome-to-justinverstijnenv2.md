@@ -1,6 +1,8 @@
 ---
 title: "Welcome to justinverstijnen.nl v2"
 date: 2026-04-20
+categories:
+- Archive
 ---
 ## Welcome to justinverstijnen.nl v2
 

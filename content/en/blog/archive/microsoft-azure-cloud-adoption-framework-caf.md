@@ -3,12 +3,11 @@ title: "Cloud Adoption Framework Introduction (CAF)"
 date: 2024-01-04
 slug: "microsoft-azure-cloud-adoption-framework-caf"
 categories:
-  - Microsoft Azure
+- Archive
 tags:
   - Concepts
 description: >
   More and more organizations are moving to the cloud. In order to do this succesfully, we can use the Cloud Adoption Framework which is de...
-hidden: true
 ---
 More and more organizations are moving to the cloud. In order to do this succesful, we can use the Cloud Adoption Framework which is described by Microsoft.
 

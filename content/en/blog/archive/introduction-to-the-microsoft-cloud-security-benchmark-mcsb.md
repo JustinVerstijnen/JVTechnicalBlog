@@ -3,7 +3,7 @@ title: "Introduction to the Microsoft Cloud Security Benchmark (MCSB)"
 date: 2024-04-16
 slug: "introduction-to-the-microsoft-cloud-security-benchmark-mcsb"
 categories:
-  - Microsoft Azure
+- Archive
 tags:
   - Concepts
 description: >

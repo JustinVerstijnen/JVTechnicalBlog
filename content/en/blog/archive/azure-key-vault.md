@@ -3,7 +3,7 @@ title: "Azure Key Vault"
 date: 2024-11-26
 slug: "azure-key-vault"
 categories:
-  - Microsoft Azure
+- Archive
 tags:
   - Concepts
 description: >

@@ -3,7 +3,7 @@ title: "The MITRE ATTACK Framework"
 date: 2024-11-25
 slug: "the-mitre-attck-framework"
 categories:
-  - Microsoft Defender XDR
+- Archive
 tags:
   - Concepts
 description: >

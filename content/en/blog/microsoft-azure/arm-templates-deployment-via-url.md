@@ -4,7 +4,7 @@ slug: "arm-templates-deployment-via-url"
 date: 2026-08-20
 tags:
 - Step by Step guides
-- Tools and Scripts
+- Knowledge check
 categories:
 - Microsoft Azure
 description: "In this post I will show you how to deploy ARM templates directly from a public URL, how to create a Deploy to Azure button, and why converting Bicep to ARM JSON is the easy part."
@@ -182,6 +182,67 @@ And let's check the resource names in the Azure Portal:
 [![azurevirtualdesktopkerberos.png.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/arm-templates-deployment-via-url/jv-media-8519-9c4776462c5c.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/arm-templates-deployment-via-url/jv-media-8519-9c4776462c5c.png)
 
 All looking pretty good and happy with the results.
+
+---
+
+## Knowledge check
+
+{{< quiz >}}
+{
+  "intro": "Answer these question(s) to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "questions": [
+    {
+      "question": "What is the Base URL for deploying custom ARM templates?",
+      "reference": "Step 3: Azure Deployment URL",
+      "referenceUrl": "#step3-azure-deployment-url",
+      "answers": [
+        {
+          "text": "https://portal.azure.com/#create/Microsoft.Template/uri/",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        },
+        {
+          "text": "https://portal.azure.com/deploy",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "https://arm.azure.com/#create/Microsoft.Template/",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        }
+      ]
+    },
+    {
+      "question": "What is NOT a way to publish the ARM template?",
+      "reference": "Step 4: Deploy to Azure button HTML",
+      "referenceUrl": "#step4-deploy-to-azure-button-html",
+      "answers": [
+        {
+          "text": "On a GitHub README or your documentation",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "On a blog",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "On a page with multiple templates",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "On the Azure Marketplace",
+          "correct": true,
+          "message": "Correct! Only verified publishers can publish templates on the Azure Marketplace."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
 
 ---
 

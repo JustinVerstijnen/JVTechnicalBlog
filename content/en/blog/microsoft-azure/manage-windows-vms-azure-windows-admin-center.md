@@ -4,6 +4,7 @@ slug: "manage-windows-vms-azure-windows-admin-center"
 date: 2026-08-14
 tags:
 - Step by Step guides
+- Knowledge check
 categories:
 - Microsoft Azure
 - Windows Server
