@@ -1,6 +1,6 @@
 SC-500 (Al afgenomen, wachtend op resultaat)
 
-GH-900 (Voucher 25%) Q3
+GH-900 24 juli
 AB-900 (Voucher 15 juli) Q3
 GH-100 (Voucher AI fest)
 
