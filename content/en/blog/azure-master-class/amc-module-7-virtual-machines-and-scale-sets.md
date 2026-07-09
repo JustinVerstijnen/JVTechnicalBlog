@@ -20,7 +20,7 @@ Virtual Machines are one of the most commonly used services in Microsoft Azure. 
 
 Technically, all virtual machines run on Microsoft's hardware within Azure. A server that hosts one or more virtual machines is known as a Hypervisor. In on-premises environments, this could be Hyper-V, VMware, or VirtualBox.
 
-With virtual machines, the system administrator or customer is responsible for everything within the VM. This makes it an **IaaS** *(Infrastructure as a Service)* solution. Microsoft ensures the VM runs properly from a technical standpoint, but the customer is responsible for everything from the VM's operating system and beyond.
+With virtual machines, the system administrator or customer is responsible for everything within the VM. This makes it an IaaS *(Infrastructure as a Service)* solution. Microsoft ensures the VM runs properly from a technical standpoint, but the customer is responsible for everything from the VM's operating system and beyond.
 
 ### Virtual Machine Extensions
 
@@ -89,9 +89,9 @@ The family of a virtual machine determines the type of use the virtual machine i
 
 The following virtual machine families/editions are available:
 
-|  |  |  |  |
+| | | | |
 | --- | --- | --- | --- |
-| **Type** | **Ratio vCPU:RAM** | **Letters family** | **Purpose** |
+| Type | Ratio vCPU:RAM | Letters family | Purpose |
 | General Purpose | 1:4 | B, D, DC, DS | Desktops/testing/web servers |
 | Compute-optimized | 1:2 | F, FX | Data analytics/machine learning |
 | Memory-optimized | 1:8 | E, M | (in memory) database servers |
@@ -114,9 +114,9 @@ Each type of virtual machine in Azure is identified by a name, such as E8s\_v5, 
 
 ## Virtual Machine naming convention
 
-|  |
+| |
 | --- |
-| **VM size name** |
+| VM size name |
 | D4\_v5 |
 | E8s\_v3 |
 | EC8as\_v5 |
@@ -124,19 +124,19 @@ Each type of virtual machine in Azure is identified by a name, such as E8s\_v5, 
 
 This name derives from a convention that works like this:
 
-|  |  |  |  |  |
+| | | | | |
 | --- | --- | --- | --- | --- |
-| **Family** | **# of vCPUs** | **Functions** | **Accelerator** | **Version** |
+| Family | # of vCPUs | Functions | Accelerator | Version |
 
 So all features and details are included in the name of the VM, but if a machine does not have a certain feature, the part is not included. Lets break down some names:
 
-|  |  |  |  |  |  |
+| | | | | | |
 | --- | --- | --- | --- | --- | --- |
-| **VM name** | **Family** | **# of vCPUs** | **Functions** | **Accelerator** | **Version** |
+| VM name | Family | # of vCPUs | Functions | Accelerator | Version |
 | D4\_v5 | D-series | 4 | N/A | N/A | 5 |
 | E8s\_v3 | E-series | 8 | Premium Storage | N/A | 3 |
-| EC8as\_v5 | E-series | 8 | Confidential Computing   AMD   Premium Storage | N/A | 5 |
-| ND96amsr\_A100\_v4 | ND-series | 96 | AMD   Memory upgrade   Premium Storage   RDMA capable | Nvidia A100 | 4 |
+| EC8as\_v5 | E-series | 8 | Confidential Computing AMD Premium Storage | N/A | 5 |
+| ND96amsr\_A100\_v4 | ND-series | 96 | AMD Memory upgrade Premium Storage RDMA capable | Nvidia A100 | 4 |
 
 ---
 
@@ -147,34 +147,34 @@ Virtual machines also have specific features, which are indicated in the VM name
 These features are always indicated in lowercase letters:
 
 - **a**: The letter "a" in a VM size indicates that the VM uses AMD processors.
-  *Example*: D8asv4
+ *Example*: D8asv4
 - **d**: The letter "d" in a VM size indicates that the VM runs on NVMe SSDs.
-  *Example*: D8dv4
+ *Example*: D8dv4
 - **i**: The letter "i" in a VM size indicates that the VM is isolated.
-  *Example*: D8iv4
+ *Example*: D8iv4
 - **L**: The letter "L" in a VM size indicates that the VM has less RAM compared to other machines in the same family.
-  *Example*: D2lv4
+ *Example*: D2lv4
 - **m**: The letter "m" in a VM size indicates that the VM has more RAM compared to other machines in the same family.
-  *Example*: D2mv3
+ *Example*: D2mv3
 - **p**: The letter "p" in a VM size indicates that the VM uses ARM processors.
-  *Example*: D4plsv5
+ *Example*: D4plsv5
 - **s**: The letter "s" in a VM size indicates that the VM is optimized for use with Premium SSDs or Ultra Disks/SSDs.
-  *Example*: D2sv5
+ *Example*: D2sv5
 - **t**: The letter "t" in a VM size indicates that the VM has much less (tiny) RAM compared to other machines in the same family.
-  *Example*: E4tv5
+ *Example*: E4tv5
 
 ### Virtual Machine accelerators
 
 Certain types of virtual machines also include an accelerator, which is often a GPU. Azure has several different types of GPUs for different purposes:
 
 - **NVIDIA Tesla V100**
-  *Use Cases*: Simulations, Deep Learning, AI
+ *Use Cases*: Simulations, Deep Learning, AI
 - **NVIDIA A100**
-  *Use Cases*: HPC-optimized applications
+ *Use Cases*: HPC-optimized applications
 - **NVIDIA Tesla M60**
-  *Use Cases*: Remote visualizations, streaming, gaming, encoding, VDI
+ *Use Cases*: Remote visualizations, streaming, gaming, encoding, VDI
 - **AMD Radeon MI25**
-  *Use Cases*: VDI, Remote visualizations
+ *Use Cases*: VDI, Remote visualizations
 
 The type of GPU is directly reflected in the virtual machine name, such as:
 
@@ -192,13 +192,13 @@ The biggest factor influencing performance is the CPU. The higher the version nu
 
 Azure is based on Hyper-V, where you also deal with Generation 1 and Generation 2 virtual machines. The differences are as follows:
 
-#### **Generation 1 (Gen 1)**
+#### Generation 1 (Gen 1)
 
 - BIOS-based
 - IDE boot (max. 2TB disk)
 - MBR (Master Boot Record)
 
-#### **Generation 2 (Gen 2)**
+#### Generation 2 (Gen 2)
 
 - UEFI-based
 - Secure Boot
@@ -237,13 +237,13 @@ In Microsoft Azure, by default, your virtual machine is placed on a hypervisor. 
 
 However, there may be cases where a company, due to legal or regulatory requirements, cannot run virtual machines on the same server as another company. For such cases, Azure offers the following options:
 
-### **Azure Isolated VM**
+### Azure Isolated VM
 
 - An Azure Isolated VM is a VM that runs exclusively on a physical server, without any other VMs from your own company or others.
 - Drawbacks: These VMs have a relatively short lifespan as they are often replaced by Microsoft, and they tend to be more expensive, starting with editions that have 72 vCPUs.
 - Alternative: In such cases, Azure Dedicated Host may be a better option.
 
-### **Azure Dedicated Host**
+### Azure Dedicated Host
 
 - With Azure Dedicated Host, you rent an entire physical server according to your specifications, and you can populate it with your own VMs.
 - Advantages: This server is dedicated solely to your tenant and will not be used by Azure for other purposes, ensuring complete isolation.
@@ -290,13 +290,13 @@ What type of scenario's can really profit from scale sets?
 
 ## Maintenance and Hotpatching
 
-Microsoft automatically maintains virtual machines and hypervisors. It’s possible for Microsoft to put a VM into a **"freeze"** mode, where the virtual machine does not need to be turned off, but critical updates can still be applied, often without the customer noticing.
+Microsoft automatically maintains virtual machines and hypervisors. It’s possible for Microsoft to put a VM into a "freeze" mode, where the virtual machine does not need to be turned off, but critical updates can still be applied, often without the customer noticing.
 
 To protect your applications from these micro-outages, it’s recommended to place multiple virtual machines in an availability set. Here, you can define different update domains, ensuring that not all VMs are patched at the same time.
 
 ### Azure Guest Patch Orchestration
 
-Azure Guest Patch Orchestration is an extension for the VM that automatically installs Windows updates on a schedule. This solution always works according to the “**Availability-first**” model, meaning it will not update all virtual machines in the same region simultaneously.
+Azure Guest Patch Orchestration is an extension for the VM that automatically installs Windows updates on a schedule. This solution always works according to the “Availability-first” model, meaning it will not update all virtual machines in the same region simultaneously.
 
 ### Azure Update Manager
 

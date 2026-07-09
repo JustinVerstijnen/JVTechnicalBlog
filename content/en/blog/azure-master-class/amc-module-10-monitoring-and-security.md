@@ -64,7 +64,7 @@ This dashboard gets information from various places, like Virtual Machine insigh
 
 ### Resource Insights
 
-In almost every resource in Azure, you can view resource-specific insights. This is information relevant to the selected resource and can be found under **"**Monitoring**"** and then "Insights".
+In almost every resource in Azure, you can view resource-specific insights. This is information relevant to the selected resource and can be found under "Monitoring" and then "Insights".
 
 However, this information is predefined and cannot be customized. Additionally, it only covers a small portion of the entire application you want to monitor.
 
@@ -167,7 +167,7 @@ The Zero Trust model is also considered as a must-have security pillar today. Yo
 
 ## Zero Trust solutions in Azure
 
-Solutions that help facilitate **Zero Trust** in Microsoft Azure include:
+Solutions that help facilitate Zero Trust in Microsoft Azure include:
 
 - **Conditional Access:** Enforces access policies based on conditions such as user identity, device compliance, location, and risk level.
 - **Privileged Identity Management (PIM):** Provides just-in-time access and role-based access control (RBAC) to minimize the risk of excessive permissions.
@@ -245,13 +245,13 @@ The main advantage is that they do not use passwords or secrets that need to be 
 ### Types of Managed Identities in Azure:
 
 1. **System-Assigned Managed Identity:**
-   - Directly tied to one specific resource.
-   - Exclusive to the resource where it was created.
-   - Automatically deleted when the resource is removed.
-     - *Advantage: No maintenance required.*
+ - Directly tied to one specific resource.
+ - Exclusive to the resource where it was created.
+ - Automatically deleted when the resource is removed.
+ - *Advantage: No maintenance required.*
 2. **User-Assigned Managed Identity:**
-   - Created separately and can be linked to multiple resources.
-     - *Advantage: More flexibility and customization in identity management.*
+ - Created separately and can be linked to multiple resources.
+ - *Advantage: More flexibility and customization in identity management.*
 
 Mostly you use a System-assigned MI when you must allow access to for example a storage account for one resource, but if you need to have multiple resources needing access to this storage account you use a User-asssigned MI. This to have one Managed Identity and minimize administrative effort.
 
@@ -283,13 +283,13 @@ To retrieve information from a Key Vault, a Managed Identity is used. This is co
 Access to Azure Key Vault can be managed in two ways:
 
 1. **Access Policies**
-   - Provides access to a specific category but not individual entries.
+ - Provides access to a specific category but not individual entries.
 2. **RBAC (Recommended Option)**
-   - Allows access to be granted at the entry level.
+ - Allows access to be granted at the entry level.
 
 A Managed Identity can also be used in languages like PHP. In this case, you first request an access token, which then provides access to the information in the vault.
 
-There is also a **Premium** option, which ensures that Keys in a Key Vault are stored on a hardware security module (HSM). This allows the use of a higher level of encryption keys and meets certain compliance standards that require this level of security.
+There is also a Premium option, which ensures that Keys in a Key Vault are stored on a hardware security module (HSM). This allows the use of a higher level of encryption keys and meets certain compliance standards that require this level of security.
 
 ---
 

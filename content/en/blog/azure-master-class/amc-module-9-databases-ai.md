@@ -20,11 +20,11 @@ In this we will explore various possibilities of Databases and AI in Microsoft A
 Data in general can be stored in different ways for various purposes.
 
 - **Relational:** Relational data consists of rows and columns following a predefined schema. The schema is represented as a table, which is essentially a type of spreadsheet where the rows contain entities and the columns store properties. For example, in an online webshop, orders would be represented as rows (entities), while columns would contain data such as the order ID, customer address, timestamp, payment method, etc.
-  - Examples: SQL Server, MySQL, PostgreSQL
+ - Examples: SQL Server, MySQL, PostgreSQL
 - **Non-relational:** Non-relational data is less structured, such as a document or a JSON file. However, it is self-descriptive, meaning the file itself makes it clear how the data is stored.
-  - Examples: NoSQL, MongoDB, Gremlin, Cosmos DB
+ - Examples: NoSQL, MongoDB, Gremlin, Cosmos DB
 - **Unstructured:** Unstructured data consists of various file types where the structure is not clearly defined.
-  - Examples:.docx, .xlsx, .jpg, .mp4 and other standalone files
+ - Examples:.docx, .xlsx, .jpg, .mp4 and other standalone files
 
 ---
 
@@ -50,7 +50,7 @@ It is possible to build an SQL database within a virtual machine. This provides 
 
 This option has the most supported 3rd party solutions because it is not very different from an on-premises server with SQL installed.
 
-#### **Azure SQL Database (PaaS)**
+#### Azure SQL Database (PaaS)
 
 In Microsoft Azure, you can create a serverless SQL Server, where Microsoft manages the host, and you, as the customer, only manage the database itself. This service can be deployed in four options:
 
@@ -108,18 +108,18 @@ By default, Microsoft-managed keys provide encryption for databases without requ
 ### Encryption Options in Azure Databases
 
 1. **Transparent Data Encryption (TDE)**
-   - Encrypts data at rest automatically.
-   - Protects against unauthorized access to storage.
-   - Works without requiring application changes.
+ - Encrypts data at rest automatically.
+ - Protects against unauthorized access to storage.
+ - Works without requiring application changes.
 2. **Always Encrypted**
-   - Ensures end-to-end encryption, so even database administrators cannot view sensitive data.
-   - Uses client-side encryption with keys stored externally.
+ - Ensures end-to-end encryption, so even database administrators cannot view sensitive data.
+ - Uses client-side encryption with keys stored externally.
 3. **Data Masking**
-   - Dynamically obscures sensitive data in query results.
-   - Used to protect personal data such as credit card numbers, email addresses, and phone numbers.
+ - Dynamically obscures sensitive data in query results.
+ - Used to protect personal data such as credit card numbers, email addresses, and phone numbers.
 4. **TLS Encryption for Data in Transit**
-   - Encrypts all data transfers between the database and the client using Transport Layer Security (TLS).
-   - Protects against man-in-the-middle (MITM) attacks and ensures secure connections.
+ - Encrypts all data transfers between the database and the client using Transport Layer Security (TLS).
+ - Protects against man-in-the-middle (MITM) attacks and ensures secure connections.
 
 ### Customer-Managed Keys (CMK) for Database Encryption
 
@@ -218,41 +218,41 @@ With this approach, Azure can process images, extract content, or retrieve infor
 Microsoft has established several guidelines and recommendations for implementing and handling AI solutions to ensure the are ethically responsible:
 
 - **Fairness**:
-  - AI must not discriminate and should ensure fairness for all users.
-  - Example: A machine learning model approving loans should not consider gender, ethnicity, or religion.
+ - AI must not discriminate and should ensure fairness for all users.
+ - Example: A machine learning model approving loans should not consider gender, ethnicity, or religion.
 - **Reliability and Safety**:
-  - AI systems must be reliable and safe to avoid harmful consequences.
-  - Example: AI used in autonomous vehicles or medical diagnosis must be rigorously tested before deployment.
+ - AI systems must be reliable and safe to avoid harmful consequences.
+ - Example: AI used in autonomous vehicles or medical diagnosis must be rigorously tested before deployment.
 - **Privacy and Security**:
-  - AI solutions must protect sensitive personal data and respect privacy regulations.
-  - Even after deployment, data security and privacy monitoring should continue.
+ - AI solutions must protect sensitive personal data and respect privacy regulations.
+ - Even after deployment, data security and privacy monitoring should continue.
 - **Inclusiveness**:
-  - AI should be beneficial to everyone, regardless of gender, ethnicity, or physical accessibility.
-  - It should support and enhance human capabilities rather than exclude certain groups.
+ - AI should be beneficial to everyone, regardless of gender, ethnicity, or physical accessibility.
+ - It should support and enhance human capabilities rather than exclude certain groups.
 - **Transparency**:
-  - AI systems must be understandable and transparent.
-  - Users should be aware of how the AI works, its purpose, and its limitations.
+ - AI systems must be understandable and transparent.
+ - Users should be aware of how the AI works, its purpose, and its limitations.
 - **Accountability**:
-  - Humans remain responsible for AI decisions and outcomes.
-  - Developers must follow ethical frameworks and organizational principles to ensure responsible AI usage.
+ - Humans remain responsible for AI decisions and outcomes.
+ - Developers must follow ethical frameworks and organizational principles to ensure responsible AI usage.
 
 ## Machine Learning
 
 Machine Learning is a term used to describe software that learns from the data it receives. It is considered the foundation of most AI solutions. To build an intelligent solution, Machine Learning is often the starting point, as it allows the system to be trained with data and make predictions or decisions.
 
-### **Examples of Machine Learning in Practice**
+### Examples of Machine Learning in Practice
 
 - **Example 1:** After analyzing 15 images of apples, the software can recognize an apple. By adding more images, it can determine how ripe or rotten an apple is with a certain percentage of accuracy. In a production/sorting process, this can be used to automatically classify apples as B-grade and filter them accordingly.
 - **Example 2:** If multiple photos of a particular flower species are imported, the software can identify the flower in different images or through cameras.
 
-### **Azure Machine Learning Capabilities**
+### Azure Machine Learning Capabilities
 
 - **Automated Machine Learning:** Allows non-experts to quickly create a machine learning model using data.
 - **Azure Machine Learning Designer:** A graphical interface for no-code development of machine learning solutions.
 - **Data and Compute Management:** A cloud-based storage solution for data analysts to run large-scale experiments.
 - **Pipelines:** Enables data analysts, software developers, and IT specialists to define pipelines for model training and management tasks.
 
-### **Two Types of Machine Learning Outcomes**
+### Two Types of Machine Learning Outcomes
 
 - **Regression:** Used to predict a continuous value, such as daily sales numbers, inventory forecasting, or monthly/yearly revenue.
 - **Classification:** Used to categorize values, such as weather predictions or diagnosing medical conditions.

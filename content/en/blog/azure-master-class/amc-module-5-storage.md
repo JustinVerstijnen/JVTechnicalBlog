@@ -19,13 +19,13 @@ This module focuses purely on the various storage services that Azure offers and
 Storage fundamentally exists in three different types:
 
 - **Structured:** Structured data is information stored according to a specific structure or model, allowing queries to be written to retrieve data.
-  - *Examples:* Databases, Database tables
+ - *Examples:* Databases, Database tables
 - **Semi-structured:** Semi-structured data is not stored according to a strict schema, but each file contains a clear structure, making the data understandable.
-  - *Examples:* XML files, JSON files
+ - *Examples:* XML files, JSON files
 - **Unstructured:** Unstructured data consists of individual files, each containing its own data.
-  - *Examples:* Text files, Video files, Images, Emails
+ - *Examples:* Text files, Video files, Images, Emails
 
-In this chapter, we will primarily focus on **Unstructured** data.
+In this chapter, we will primarily focus on Unstructured data.
 
 [![jv-media-901-39c027f1677e.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-5-storage-901/jv-media-901-39c027f1677e.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-5-storage-901/jv-media-901-39c027f1677e.png)
 
@@ -33,7 +33,7 @@ In this chapter, we will primarily focus on **Unstructured** data.
 
 ## Storage accounts
 
-For most storage services, you need an Azure Storage Account. You can think of this as a file server—a top-level, logical container for all storage services and shares. It is possible to create multiple Storage Accounts within a subscription.
+For most storage services, you need an Azure Storage Account. You can think of this as a file server, a top-level, logical container for all storage services and shares. It is possible to create multiple Storage Accounts within a subscription.
 
 - **Standard/General Purpose V2:** This option provides all storage services in one but uses HDD-based storage.
 
@@ -93,13 +93,13 @@ Azure Storage is a service provided by Azure for storing data in the cloud. Inst
 An important aspect of storage in Azure is that different SLAs exist for resiliency, interaction, and durability:
 
 - **Durability**: Azure ensures data is stored securely and reliably, with extremely high SLAs to protect against data corruption:
-  - LRS: 99.99999999999% (11 nines)
-  - ZRS: 99.999999999999% (12 nines)
-  - GRS: 99.9999999999999999% (16 nines)
+ - LRS: 99.99999999999% (11 nines)
+ - ZRS: 99.999999999999% (12 nines)
+ - GRS: 99.9999999999999999% (16 nines)
 - **Interaction/Availability**: The ability to access data and ensure its availability has a lower SLA compared to durability but is still very high:
-  - LRS: 99.99%
-  - ZRS: 99.999%
-  - GRS: 99.9999%
+ - LRS: 99.99%
+ - ZRS: 99.999%
+ - GRS: 99.9999%
 
 ---
 
@@ -115,13 +115,13 @@ Storage redundancy is divided into three main methods:
 - **ZRS (Zone-Redundant Storage)**: Stores three instances of the data across different availability zones within an Azure region.
 - **GRS (Geographically Redundant Storage)**: Stores three instances of the data in one data center and an additional three instances in a paired region.
 
-*Note: Synchronizations between regions are **asynchronous**.*
+*Note: Synchronizations between regions are asynchronous.*
 
 Aside from the options LRS, ZRS and GRS there is a 4th option available;
 
-**GZRS (Geo-Zone-Redundant Storage)** stores three instances of the data across three availability zones within a region and an additional three instances in a paired region.
+GZRS (Geo-Zone-Redundant Storage) stores three instances of the data across three availability zones within a region and an additional three instances in a paired region.
 
-It is possible to enable **read-access (RA)**, which allows the storage to be accessed via a secondary URL for failover purposes. This adds **RA-** to the redundancy type, resulting in **RA-GRS** or **RA-GZRS**.
+It is possible to enable read-access (RA), which allows the storage to be accessed via a secondary URL for failover purposes. This adds RA- to the redundancy type, resulting in RA-GRS or RA-GZRS.
 
 ---
 
@@ -143,13 +143,13 @@ These tiers are designed for the customer to choose exactly the option needed. I
 Billing for Azure Storage is done in 2 different types:
 
 - **Provisioning based billing**: This means you pay a fixed price at some discount for "provisioning" a block of storage. I can be cheaper when storing huge amounts of data and is a little commitment to Azure.
-  - For Managed Disks
+ - For Managed Disks
 - **Consumption based billing**: This means you pay exactly what you use. More storage and transactions means paying more money.
-  - For Storage accounts
+ - For Storage accounts
 
 ### Provisioning based billing
 
-Azure Storage will increase **IOPS, throughput, and reduce latency** when you allocate more storage space for **Premium options or managed disks**. See the image below:
+Azure Storage will increase IOPS, throughput, and reduce latency when you allocate more storage space for Premium options or managed disks. See the image below:
 
 ### Consumption based billing
 
@@ -164,7 +164,7 @@ The lower-tier Azure Storage options are always billed based on usage. This incl
 
 ## Encryption storage
 
-All Azure Storage options are encrypted with **AES-256** by default for security reasons. This encryption is on platform-level and is the basic level which cannot be disabled.
+All Azure Storage options are encrypted with AES-256 by default for security reasons. This encryption is on platform-level and is the basic level which cannot be disabled.
 
 ---
 
@@ -198,7 +198,7 @@ The topology of Azure File Sync is broadly structured as follows:
 
 ## Managed Disks
 
-Azure provides the ability to create custom disks for use with virtual machines. It is possible to attach a single virtual disk to **up to three** virtual machines (*MaxShares*). If you pay for more capacity, this limit increases, like described earlier (Provisional based billing).
+Azure provides the ability to create custom disks for use with virtual machines. It is possible to attach a single virtual disk to up to three virtual machines (*MaxShares*). If you pay for more capacity, this limit increases, like described earlier (Provisional based billing).
 
 The different options:
 
@@ -217,7 +217,7 @@ Goog to know, a Managed Disk can be resized but only increased. You cannot downg
 
 ### Managed Disk Availability
 
-Managed Disks are redundant with LRS and ZRS (Premium SSD only). These managed disks do not support **GRS**, as the disk is often used in conjunction with a virtual machine, making GRS unnecessary in this case.
+Managed Disks are redundant with LRS and ZRS (Premium SSD only). These managed disks do not support GRS, as the disk is often used in conjunction with a virtual machine, making GRS unnecessary in this case.
 
 With Azure Site Recovery, it is possible to create a copy of the VM along with the associated disk in another region. However, this process is asynchronous, and data loss may occur.
 
@@ -229,13 +229,13 @@ Virtual Machines rely on Managed Disks to store their data on. The disks where t
 
 A virtual machine is placed on a host by Azure, and as a customer, you have no control over this placement. Azure uses an algorithm to do this automatically.
 
-The storage for a virtual machine is by default always a **managed disk**, as this disk is accessible throughout the entire region within Azure.
+The storage for a virtual machine is by default always a managed disk, as this disk is accessible throughout the entire region within Azure.
 
 ### Temporary Disks
 
-Some VM generations include a **“Temporary Disk”** as the D: drive (or /dev/sdb1 for Linux). As the name suggests, this is temporary storage. After a machine is restarted or moved to another host/hypervisor, the data on this disk will be lost.
+Some VM generations include a “Temporary Disk” as the D: drive (or /dev/sdb1 for Linux). As the name suggests, this is temporary storage. After a machine is restarted or moved to another host/hypervisor, the data on this disk will be lost.
 
-The purpose of this disk is to store the **pagefile** and **cache**. The performance of this disk is very high since it runs on the same host and uses the VM bus. This is why it is used for cache and pagefile (the Windows variant of Swap).
+The purpose of this disk is to store the pagefile and cache. The performance of this disk is very high since it runs on the same host and uses the VM bus. This is why it is used for cache and pagefile (the Windows variant of Swap).
 
 ---
 
@@ -252,7 +252,7 @@ The different tools for working with Azure Storage are:
 
 Azure offers a service for importing or exporting large amounts of data.
 
-- **Azure Data Box:** Microsoft sends you a hard drive, you load the data onto it along with a CSV file specifying where each file should go, and then send it back to Microsoft. This is an offline method. For **Export**, the process works in reverse.
+- **Azure Data Box:** Microsoft sends you a hard drive, you load the data onto it along with a CSV file specifying where each file should go, and then send it back to Microsoft. This is an offline method. For Export, the process works in reverse.
 
 To go back to the navigation page: <https://justinverstijnen.nl/blog/azure-master-class/>
 

@@ -18,7 +18,7 @@ Check out the AZ-700 Azure Networking Certification at: <https://learn.microsoft
 
 ## Introduction to generic Networking
 
-A **network** is described as a group of devices who communicate with each other. In Microsoft Azure, we have to create and design networks for our resources to communicatie with each other. We only use TCP/IP networking, which works with IP addresses, DHCP, routing etcetera.
+A network is described as a group of devices who communicate with each other. In Microsoft Azure, we have to create and design networks for our resources to communicatie with each other. We only use TCP/IP networking, which works with IP addresses, DHCP, routing etcetera.
 
 To keep things basic at the beginning, we have 2 types of networks:
 
@@ -33,7 +33,7 @@ On a network, we have traffic. Just like you have roads and highways with cars a
 
 A virtual network in Azure is a private network within the Azure cloud. Within this network, you can deploy various services and extend an existing physical network into the cloud.
 
-This Azure service does not require physical switches or routers. When creating a virtual network, you specify an address space, which defines the range of IP addresses available for subnet creation. An example of an address space would be: **10.0.0.0/16**. This is the default setting when creating a virtual network in Microsoft Azure.
+This Azure service does not require physical switches or routers. When creating a virtual network, you specify an address space, which defines the range of IP addresses available for subnet creation. An example of an address space would be: 10.0.0.0/16. This is the default setting when creating a virtual network in Microsoft Azure.
 
 [![jv-media-937-13c6e27e0f18.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-6-networking-in-microsoft-azure-937/jv-media-937-13c6e27e0f18.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-6-networking-in-microsoft-azure-937/jv-media-937-13c6e27e0f18.png)
 
@@ -52,12 +52,12 @@ The most important features of virtual networks in Azure are:
 - **IPv4-based:** All virtual networks in Azure use IPv4 with the option to also use IPv6.
 - **Highly available within a region:** Virtual networks and subnets use Availability Zones to ensure redundancy and high availability. This is enabled by default and cannot be disabled.
 - **Reserved IP addresses per subnet**: Azure automatically reserves specific IP addresses in each subnet:
-  - *`x.x.x.0` → Network ID*
-  - *`x.x.x.1` → Gateway service*
-  - *`x.x.x.2` → DNS*
-  - *`x.x.x.3` → DNS*
-  - *`x.x.x.255` → Broadcast address*
-  - For example: a /29 subnet, which in generic networks supports 6 devices, can only use 3 IP addresses in Azure.
+ - *`x.x.x.0` → Network ID*
+ - *`x.x.x.1` → Gateway service*
+ - *`x.x.x.2` → DNS*
+ - *`x.x.x.3` → DNS*
+ - *`x.x.x.255` → Broadcast address*
+ - For example: a /29 subnet, which in generic networks supports 6 devices, can only use 3 IP addresses in Azure.
 - **Azure Virtual Networks are free**: You only pay for data throughput (measured in Gbps) and for traffic over peerings or VPNs.
 - **CIDR-based addressing**: Networks must be based on CIDR ranges (as per RFC1918).
 - **Software-Defined Networking (SDN)**: Azure Virtual Networks operate using SDN, allowing for flexibility and scalability.
@@ -71,22 +71,22 @@ The most important features of virtual networks in Azure are:
 
 Before going ahead and building the network without thinking, we first want to design our network. We want to prevent some fundamental errors which can be a huge challenge later on.
 
-- **IPv4 address spaces:** When defining the address space for an Azure Virtual Network, it must comply with **RFC 1918** private IP address ranges:
-  - *10.0.0.0 - 10.255.255.255* *(/8 prefix)*
-  - *172.16.0.0 - 172.31.255.255 (/12 prefix)*
-  - *192.168.0.0 - 192.168.255.255 (/16 prefix)*
+- **IPv4 address spaces:** When defining the address space for an Azure Virtual Network, it must comply with RFC 1918 private IP address ranges:
+ - *10.0.0.0 - 10.255.255.255* *(/8 prefix)*
+ - *172.16.0.0 - 172.31.255.255 (/12 prefix)*
+ - *192.168.0.0 - 192.168.255.255 (/16 prefix)*
 - **IPv6 address spaces**: When defining the address space for an Azure Virtual Network in IPv6, it must comply with RFC 4862 private IP address ranges:
-  - *Unique Local Address Range: `fc00::/7`*
-    - *`fd00::/8` is the most commonly used part of this space.*
+ - *Unique Local Address Range: `fc00::/7`*
+ - *`fd00::/8` is the most commonly used part of this space.*
 - The address space must not overlap with other networks which must be connected to each other
-  - 1: It is not possible to route to the same network ID
-  - 2: It makes your task very hard if you read an IP address and first having to lookup if its network 1, 2 or 3. Make your network numbering logical, easy and effective.
+ - 1: It is not possible to route to the same network ID
+ - 2: It makes your task very hard if you read an IP address and first having to lookup if its network 1, 2 or 3. Make your network numbering logical, easy and effective.
 - Ensure additional isolation if required for security or compliance.
 - Verify that all subnets have enough allocated IP addresses to accommodate expected growth.
 - Determine if the network needs to connect to on-premises networks via VPN or ExpressRoute.
 - Identify whether Azure services require a dedicated Virtual Network, such as:
-  - Azure Site Recovery
-  - Azure Image Builder
+ - Azure Site Recovery
+ - Azure Image Builder
 
 ---
 
@@ -98,9 +98,9 @@ Within an Azure Virtual Network, you can create subnets that use a smaller porti
 
 For example, if the Azure network uses the address space 172.16.0.0/16, it theoretically provides 65,535 available addresses. This space can be divided into segments, typically used to group specific services and apply security measures at the subnet level. Let's share an example of a possible real-world scenario:
 
-|  |  |  |
+| | | |
 | --- | --- | --- |
-| **Subnet name** | **Purpose subnet** | **Network space** |
+| Subnet name | Purpose subnet | Network space |
 | GatewaySubnet | VPN connection to on premises | 172.16.0.0/27 (27 hosts) |
 | Subnet-1 | Infrastructure | 172.16.1.0/24 (250 hosts) |
 | Subnet-2 | Azure Virtual Desktop hosts | 172.16.2.0/24 (250 hosts) |
@@ -157,11 +157,11 @@ With VNET Peering, it is possible to connect to VNETs in other regions and subsc
 
 There are two ways to connect your entire Azure network to your on-premises, physical network:
 
-### 1. **Site-to-Site (S2S) VPN Connection**
+### 1. Site-to-Site (S2S) VPN Connection
 
-A Site-to-Site VPN allows you to connect an on-premises network to a **virtual network gateway** in Azure via a router or firewall.
+A Site-to-Site VPN allows you to connect an on-premises network to a virtual network gateway in Azure via a router or firewall.
 
-#### **When to choose this solution:**
+#### When to choose this solution:
 
 - Cost savings
 - No low latency or high bandwidth requirements
@@ -170,11 +170,11 @@ A Site-to-Site VPN allows you to connect an on-premises network to a **virtual n
 
 [![jv-media-937-496a42d97651.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-6-networking-in-microsoft-azure-937/jv-media-937-496a42d97651.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-6-networking-in-microsoft-azure-937/jv-media-937-496a42d97651.png)
 
-### 2. **ExpressRoute**
+### 2. ExpressRoute
 
 ExpressRoute is a private connection to an Azure datacenter. Microsoft establishes a dedicated connection based on MPLS, and you receive a router that connects to your Azure Virtual Network.
 
-#### **When to choose this solution:**
+#### When to choose this solution:
 
 - Cost is not a limiting factor
 - High bandwidth requirements (up to 10 Gbps)
@@ -183,20 +183,20 @@ ExpressRoute is a private connection to an Azure datacenter. Microsoft establish
 
 ## Point-to-Site (P2S) VPN Connections (users)
 
-It is also possible to connect a single or multiple devices to a **Virtual Network Gateway (VNG)** in Microsoft Azure. This is often more cost-efficient than deploying a router and establishing a **Site-to-Site (S2S) VPN** connection.
+It is also possible to connect a single or multiple devices to a Virtual Network Gateway (VNG) in Microsoft Azure. This is often more cost-efficient than deploying a router and establishing a Site-to-Site (S2S) VPN connection.
 
-### **Supported Protocols for Azure Virtual Network Gateways**
+### Supported Protocols for Azure Virtual Network Gateways
 
 - **OpenVPN**
-  - Uses port **443 TCP** with **TLS**
+ - Uses port 443 TCP with TLS
 - **SSTP (Secure Socket Tunneling Protocol)**
-  - Uses port **443 TCP** with **TLS**
+ - Uses port 443 TCP with TLS
 - **IKEv2 (Internet Key Exchange version 2)**
-  - Uses ports **500 and 4500 UDP**
+ - Uses ports 500 and 4500 UDP
 
-VPN clients that support these protocols will work with **VPN options in Microsoft Azure**. For the best integration, Azure provides its own **VPN client**.
+VPN clients that support these protocols will work with VPN options in Microsoft Azure. For the best integration, Azure provides its own VPN client.
 
-To configure a Point-to-Site VPN, navigate to **"Settings" → "Point-to-site configuration"** in the Virtual Network Gateway. From there, you can download a **.zip file** containing the required installation files and the correct VPN profile.
+To configure a Point-to-Site VPN, navigate to "Settings" → "Point-to-site configuration" in the Virtual Network Gateway. From there, you can download a .zip file containing the required installation files and the correct VPN profile.
 
 [![jv-media-937-cf8715612f62.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-6-networking-in-microsoft-azure-937/jv-media-937-cf8715612f62.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-6-networking-in-microsoft-azure-937/jv-media-937-cf8715612f62.png)
 
@@ -215,9 +215,9 @@ To keep the connection secure, authentication/login must be performed on the VPN
 In Azure, there are two ways to secure a network:
 
 - **Azure Firewall**: A serverless firewall that can be linked to subnets and virtual networks to define rules for allowed and denied traffic.
-  - Operates on Layer 3, 4, and 7 of the OSI model (Network, Transport & Application).
+ - Operates on Layer 3, 4, and 7 of the OSI model (Network, Transport & Application).
 - **Network Security Groups (NSG)**: In Microsoft Azure, it is possible to create network security groups that control incoming and outgoing traffic on top of the firewall of resources (e.g., Windows Firewall). NSGs operate at the subnet level and the network interface level.
-  - Operates on Layer 4 of the OSI model (Transport).
+ - Operates on Layer 4 of the OSI model (Transport).
 
 Because we use Network Security Groups a lot, and Azure Firewall way less, [we will cover that later](#azure-firewall) and stick to Network Security Groups.
 
@@ -258,7 +258,7 @@ For outbound connections, the order of rule processing is reversed:
 2. NSG of the NIC
 3. NSG of the subnet
 
-Traffic must be allowed at all levels. If traffic is blocked at any point, it will be **dropped**, and so the connection will not work.
+Traffic must be allowed at all levels. If traffic is blocked at any point, it will be dropped, and so the connection will not work.
 
 ## Why use Network Security Groups?
 
@@ -278,7 +278,7 @@ Microsoft Azure Virtual Networks primarily operate at Layer 3 of the OSI model. 
 - UDP
 - ICMP
 
-The following protocols are **blocked** by Microsoft in virtual networks:
+The following protocols are blocked by Microsoft in virtual networks:
 
 - Multicast
 - Broadcast
@@ -287,7 +287,7 @@ The following protocols are **blocked** by Microsoft in virtual networks:
 - VLANs (Layer 2)
 - DHCP (Blocked)
 
-The reason for these restrictions is that all networking capabilities in Azure are virtualized and based on **Software Defined Networking (SDN)**. This means there are no physical wires connecting your resources.
+The reason for these restrictions is that all networking capabilities in Azure are virtualized and based on Software Defined Networking (SDN). This means there are no physical wires connecting your resources.
 
 ---
 
@@ -311,14 +311,14 @@ Every network uses routing to determine where specific traffic should be directe
 
 System routes are the default routes that Azure creates. These ensure that resources automatically have access to the internet and other resources/networks. The default routes created by Azure include:
 
-### **System Routes (Default Routing)**
+### System Routes (Default Routing)
 
 - Internet access
 - VNET Peering (ARM-only)
 - Virtual Network Gateway
 - Virtual Network Service Endpoint (ARM-only)
 
-### **Custom Routes (User-Defined Routing)**
+### Custom Routes (User-Defined Routing)
 
 In addition to the system routes automatically created by Azure, you can define your own custom routes. These take precedence over system routes and allow traffic to be routed according to specific needs.
 
@@ -327,7 +327,7 @@ Examples:
 - Using a custom firewall for traffic control.
 - Implementing a NAT Gateway for specific outbound traffic.
 
-### **Route presedence/order in Azure**
+### Route presedence/order in Azure
 
 When determining how network traffic is routed, Azure follows this order:
 
@@ -346,11 +346,11 @@ When creating routes, you need to know several values to ensure the route functi
 - Next Hop address (if applicable)
 - Next Hop type
 
-After this step there are different **Next Hop types**, each with its own purpose:
+After this step there are different Next Hop types, each with its own purpose:
 
-|  |  |
+| | |
 | --- | --- |
-| **Next Hop Type** | **Purpose** |
+| Next Hop Type | Purpose |
 | Virtual Network Gateway | Route traffic to Virtual Network Gateway/VPN |
 | Virtual Network | Route traffic to Virtual Network |
 | Internet | Route traffic to the Internet |
@@ -435,13 +435,13 @@ This increases:
 
 Because I find both terms still really confusing till this day, I have created a table to describe the exact differences:
 
-|  |  |
+| | |
 | --- | --- |
-| **Service Endpoint** | **Private Endpoint** |
+| Service Endpoint | Private Endpoint |
 | Access through public IP | Access through private IP |
 | Isolation from VNETs | Complete isolation |
 | Public DNS | Private DNS |
-|  | Better performance by limiting hops |
+| | Better performance by limiting hops |
 
 ---
 
@@ -454,7 +454,7 @@ This service is available in two service types:
 - **Public DNS**: Publicly accessible DNS records for your website, servers, etc.
 - **Private DNS**: Internal DNS for naming servers, databases, or web servers within your virtual network.
 
-The default IP address for all DNS/DHCP-related services in Azure is **168.63.129.16**. You can use this IP address as secondary or tertiary DNS server.
+The default IP address for all DNS/DHCP-related services in Azure is 168.63.129.16. You can use this IP address as secondary or tertiary DNS server.
 
 ---
 
@@ -518,19 +518,19 @@ For using Azure ExpressRoute, there are 4 methods of connecting your network wit
 
 [![jv-media-937-84dd45fda480.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-6-networking-in-microsoft-azure-937/jv-media-937-84dd45fda480.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-6-networking-in-microsoft-azure-937/jv-media-937-84dd45fda480.png)
 
-### **Co-location in a Cloud Exchange**
+### Co-location in a Cloud Exchange
 
 If you are located at the same site as a cloud exchange, you can request virtual overlapping connections to the Microsoft Cloud via the co-location provider’s Ethernet exchange. Co-location providers can offer Layer 2 overlapping connections or managed Layer 3 overlapping connections between your infrastructure in the co-location facility and the Microsoft Cloud.
 
-### **Point-to-Point Ethernet Connections**
+### Point-to-Point Ethernet Connections
 
 You can connect your on-premises data centers/offices to the Microsoft Cloud through point-to-point Ethernet links. Point-to-point Ethernet providers can offer Layer 2 connections or managed Layer 3 connections between your location and the Microsoft Cloud.
 
-### **Any-to-Any (IPVPN) Networks**
+### Any-to-Any (IPVPN) Networks
 
 You can integrate your WAN with the Microsoft Cloud. IPVPN providers (typically MPLS VPN) offer any-to-any connectivity between your branches and data centers. The Microsoft Cloud can also be connected to your WAN, making it appear as just another branch. WAN providers generally offer managed Layer 3 connectivity.
 
-### **Direct from ExpressRoute Sites**
+### Direct from ExpressRoute Sites
 
 You can connect directly to Microsoft's global network at a strategically located peering site worldwide. ExpressRoute Direct provides dual connectivity of 100 Gbps or 10 Gbps, supporting active/active connectivity at scale.
 
@@ -545,17 +545,17 @@ When having to load balance external traffic to for example webservers, database
 The solutions mentioned above each have their own use cases but work best with the following applications:
 
 - **Azure Traffic Manager**
-  - Non-HTTP/HTTPS
+ - Non-HTTP/HTTPS
 - **Azure Load Balancer**
-  - Non-HTTP/HTTPS
+ - Non-HTTP/HTTPS
 - **Azure Front Door**
-  - HTTP/HTTPS
+ - HTTP/HTTPS
 - **Azure Application Gateway**
-  - HTTP/HTTPS
+ - HTTP/HTTPS
 
 ## Azure Application Gateway
 
-Azure Application Gateway is an HTTP/HTTPS load balancer with advanced functionality. Like other load balancing options in Azure, it is a **serverless** solution.
+Azure Application Gateway is an HTTP/HTTPS load balancer with advanced functionality. Like other load balancing options in Azure, it is a serverless solution.
 
 The features of Azure Application Gateway include:
 
@@ -584,7 +584,7 @@ A load balancer also typically includes a health probe rule. This checks whether
 
 ## Azure Front Door
 
-Azure Front Door is a **Content Delivery Network (CDN)** that runs on Azure. It is not a regional service and can be deployed across multiple regions. Essentially, it acts as a large index of all resources a company has and selects the appropriate backend resource for a client. In this sense, it also functions as a type of load balancer.
+Azure Front Door is a Content Delivery Network (CDN) that runs on Azure. It is not a regional service and can be deployed across multiple regions. Essentially, it acts as a large index of all resources a company has and selects the appropriate backend resource for a client. In this sense, it also functions as a type of load balancer.
 
 To learn more about Front Door, please review the image below:
 

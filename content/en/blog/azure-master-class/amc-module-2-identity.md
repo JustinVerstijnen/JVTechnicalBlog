@@ -66,9 +66,9 @@ This was previously known as Azure Active Directory which sounds similar to the 
 
 However, it differs some from the old Active Directory Domain Services protocols:
 
-|  |  |  |
+| | | |
 | --- | --- | --- |
-|  | **Active Directory Domain Services** | **Microsoft Entra ID** |
+| | Active Directory Domain Services | Microsoft Entra ID |
 | Verification protocols | NTLM & Kerberos | Open ID, OAuth 2.0, SAML, WS-FED |
 | Query protocols | LDAP | Powershell |
 
@@ -89,13 +89,13 @@ It is possible to create multiple Azure ADs within a single .onmicrosoft tenant.
 Microsoft Entra ID consists of 4 different licenses:
 
 - **Microsoft Entra ID Free**
-  - Microsoft Entra ID Free is the default you get when your tenant has 0 licenses.
+ - Microsoft Entra ID Free is the default you get when your tenant has 0 licenses.
 - **Microsoft Entra ID for Microsoft 365**
-  - You get this SKU when you have Microsoft 365 licenses.
+ - You get this SKU when you have Microsoft 365 licenses.
 - **Microsoft Entra ID Premium P1**
-  - You get this SKU when one or more users have Microsoft Entra ID Premium P1 licenses.
+ - You get this SKU when one or more users have Microsoft Entra ID Premium P1 licenses.
 - **Microsoft Entra ID Premium P2**
-  - You get this SKU when one or more users have Microsoft Entra ID Premium P2 licenses.
+ - You get this SKU when one or more users have Microsoft Entra ID Premium P2 licenses.
 
 Each SKU has its own functionality and features. For the actual list of features, please visit: <https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-licensing#available-versions-of-azure-ad-multi-factor-authentication>
 
@@ -131,7 +131,7 @@ All types of identities stored in Microsoft Entra ID are:
 - **Users**: Real people/employees or shared accounts.
 - **Guest Users**: Individuals from external companies who have an account with reduced rights within your tenant.
 - **Groups**: A group of users or devices.
-  Groups can be **Assigned** or **Dynamic**, where you define a rule for membership in the group. For example, all users with the role "IT Specialist."
+ Groups can be Assigned or Dynamic, where you define a rule for membership in the group. For example, all users with the role "IT Specialist."
 - **Devices**: Devices such as laptops, phones, tablets, PDAs.
 - **Enterprise Applications and App Registrations**: Used for Single Sign-On (SSO) or assigning specific API permissions with OAuth 2.0.
 - **Service Principals (PowerShell only)**: A service principal is an entity that obtains access to resources secured by Microsoft Entra ID. For instance, you need a service principal to grant an enterprise application permissions to users/groups, etc.
@@ -147,11 +147,11 @@ Devices can be added to Microsoft Entra ID for various reasons:
 - Device registration for auditing what device made what request or change
 - Security with compliance policies.
 
-Devices can be added to **Microsoft Entra ID in multiple ways, for different purposes/reasons:
+Devices can be added to Microsoft Entra ID in multiple ways, for different purposes/reasons:
 
 - **Microsoft Entra ID registered**: to register devices such as BYOD (Bring Your Own Device). Works with Windows/Mac/Android/iOS/Ubuntu. No configuration capabilities, just registration to track which accounts are used on which device.
 - **Microsoft Entra ID joined**: to manage and register devices. In addition, it provides Single Sign-On. This is supported on Windows 10 and later (no support for Windows Server).
-- **Hybrid Microsoft Entra ID joined**\*: devices are added to Active Directory Domain Services (AD DS) and synced to **Microsoft Entra ID**. This offers the benefits of both AD DS and Microsoft Entra ID. Supported on Windows 10 and later (no support for Windows Server).
+- **Hybrid Microsoft Entra ID joined**\*: devices are added to Active Directory Domain Services (AD DS) and synced to Microsoft Entra ID. This offers the benefits of both AD DS and Microsoft Entra ID. Supported on Windows 10 and later (no support for Windows Server).
 
 *\*Active Directory Domain Services and Entra ID Connect required*
 
@@ -168,11 +168,11 @@ Synchronizing traditional Active Directory (AD DS) to Microsoft Entra ID offers 
 To synchronize AD DS with Microsoft Entra ID, there are two solutions available:
 
 1. **Microsoft Entra ID Connect**: This is installed as an agent on a domain-joined server and initiates synchronization to Microsoft Entra ID. However, this is a single point of failure.
-   - **Advantages**: Supports Hybrid Entra ID join.
-   - **Disadvantages**: Single point of failure.
+ - **Advantages**: Supports Hybrid Entra ID join.
+ - **Disadvantages**: Single point of failure.
 2. **Microsoft Entra ID Cloud Sync**: This is a newer variant initiated from the cloud. A small agent is installed on each domain-joined server, allowing synchronization access to AD DS resources. Settings can be managed in the cloud, and the major benefit is that synchronization can be made redundant.
-   - **Advantages**: Cloud-only, highly available.
-   - **Disadvantages**: Does not support Hybrid Entra ID join.
+ - **Advantages**: Cloud-only, highly available.
+ - **Disadvantages**: Does not support Hybrid Entra ID join.
 
 ---
 
@@ -240,7 +240,7 @@ This works in 3 steps:
 - **Verify/Grant**: In this step, you can specify whether access should be allowed or blocked. It's also possible to enforce MFA.
 - **Session**: In the Session step, you can specify how long a session remains active.
 
-**Examples**:
+Examples:
 
 - A user tries to access Windows 365 from IP address 88.134.65.213. For this, they must complete an MFA challenge every 2 hours.
 - A user logs in into a service from a blocked country -> Block access
@@ -270,21 +270,21 @@ Microsoft Entra ID supports Multi-Factor Authentication. This means that, in add
 During authentication (AuthN), it is verified whether you are truly who you say you are, and whether your identity is valid. Multi-Factor Authentication means that you can perform two or more of the following methods:
 
 - **Something you know**
-  - Password/PIN/Secret
+ - Password/PIN/Secret
 - **Something you have**
-  - A phone
-  - A FIDO hardware key
-  - A laptop
-  - A token
+ - A phone
+ - A FIDO hardware key
+ - A laptop
+ - A token
 - **Something you are**
-  - Biometric verification
-  - Facial recognition
+ - Biometric verification
+ - Facial recognition
 
 ### Complexity levels for MFA methods
 
-|  |  |  |
+| | | |
 | --- | --- | --- |
-| **Method** | **Level** | **Explanation** |
+| Method | Level | Explanation |
 | Password | Not secure | Passwords can be guessed, hacked, or stolen. With only a password, an account is not sufficiently protected in 2025. |
 | PIN code | Not secure | A PIN code can also be guessed or stolen alongside a password. |
 | Secret | Not secure | A secret, alongside a password, can also be guessed or stolen, regardless of its complexity or length. |

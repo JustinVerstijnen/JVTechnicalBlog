@@ -21,11 +21,11 @@ In this module, we cover Azure: Infrastructure as Code (IaC) and DevOps. This mo
 There are multiple environments to manage Azure and its resources:
 
 - **Azure Portal**: This is the web-based environment, which is the easiest to use.
-  - *Advantages: Intuitive, organized, and easy to navigate.*
+ - *Advantages: Intuitive, organized, and easy to navigate.*
 - **PowerShell**: This is the PowerShell-based environment for Azure.
-  - *It allows you to manage Azure resources via scripts and command-line commands.*
+ - *It allows you to manage Azure resources via scripts and command-line commands.*
 - **CLI (Command-Line Interface)**: This is the CLI-based environment for Azure.
-  - *Like PowerShell, it provides command-line management, but it’s based on the cross-platform Azure CLI.*
+ - *Like PowerShell, it provides command-line management, but it’s based on the cross-platform Azure CLI.*
 
 Each of these environments offers different levels of flexibility and control, with the portal being more user-friendly for beginners, and PowerShell/CLI being preferred for automation and advanced scripting. We IT guys don't want to eternally click around to do some basic tasks, don't we?
 
@@ -101,7 +101,7 @@ Azure Resource Graph is purely a central point for data retrieval, and it does n
 
 ### Azure Resource Graph Explorer-tool
 
-Azure Resource Graph also provides a tool for visual data retrieval, called **Azure Resource Graph Explorer**. This tool allows you to view and fetch live data using Kusto (KQL) and includes a query builder to write queries without needing extensive technical knowledge.
+Azure Resource Graph also provides a tool for visual data retrieval, called Azure Resource Graph Explorer. This tool allows you to view and fetch live data using Kusto (KQL) and includes a query builder to write queries without needing extensive technical knowledge.
 
 Check out the Resource Graph Explorer tool here: <https://portal.azure.com/#view/HubsExtension/ArgQueryBlade>
 
@@ -125,15 +125,15 @@ Here's an example to show the difference in syntax between Bicep and JSON when i
 
 ### Using Bicep with Azure
 
-#### **Step 1: Install Visual Studio Code**
+#### Step 1: Install Visual Studio Code
 
 If you haven't already installed Visual Studio Code (VS Code), follow these steps:
 
 - Download and install Visual Studio Code from the official website: <https://code.visualstudio.com/>.
 
-#### **Step 2: Install the Bicep Extension for VS Code**
+#### Step 2: Install the Bicep Extension for VS Code
 
-To make it easier to work with **Bicep**, you can install the Bicep extension for VS Code. This way VS Code will know exactly what you are working on and can auto complete your scripts.
+To make it easier to work with Bicep, you can install the Bicep extension for VS Code. This way VS Code will know exactly what you are working on and can auto complete your scripts.
 
 1. Open Visual Studio Code.
 2. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window or pressing *Ctrl + Shift + X*.
@@ -142,24 +142,24 @@ To make it easier to work with **Bicep**, you can install the Bicep extension fo
 
 This extension provides syntax highlighting, IntelliSense, and support for deploying Bicep templates directly from VS Code.
 
-#### **Step 3: Install Azure CLI**
+#### Step 3: Install Azure CLI
 
 To deploy directly to Azure from VS Code, you'll need the Azure CLI. If you don't already have it installed, you can install it by following the instructions [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli).
 
 Once installed, log in to Azure using the following command in your terminal:
 
-{{< card code=true header="**BASH**" lang="bash" >}}
+{{< card code=true header="BASH" lang="bash" >}}
 az login
 {{< /card >}}
 
-#### **Step 4: Write Your First Bicep Template in VS Code**
+#### Step 4: Write Your First Bicep Template in VS Code
 
 1. Open VS Code and create a new file with the .bicep extension (e.g., storage-account.bicep).
 2. Write a simple Bicep template to create an Azure Storage Account.
 
 Example Bicep template:
 
-{{< card code=true header="**BICEP**" lang="bicep" >}}
+{{< card code=true header="BICEP" lang="bicep" >}}
 resource myStorageAccount 'Microsoft.Storage/storageAccounts@2021-04-01' = {
   name: 'mystorageaccount001'
   location: 'East US'
@@ -174,16 +174,16 @@ In this template:
 
 - The resource is a Storage Account
 - The name of the storage account is *mystorageaccount001* (must be globally unique)
-- We are using the Standard\_LRS SKU (Locally Redundant Storage) and the **StorageV2** kind
+- We are using the Standard\_LRS SKU (Locally Redundant Storage) and the StorageV2 kind
 
-#### **Step 5: Deploy the Bicep Template Directly from VS Code**
+#### Step 5: Deploy the Bicep Template Directly from VS Code
 
 To deploy the Bicep template directly from VS Code, you can use the Azure CLI integrated into the Terminal in VS Code.
 
 1. Open the Terminal in VS Code by navigating to Terminal -> New Terminal or pressing Ctrl + (backtick).
 2. Run the following command to deploy the Bicep template:
 
-{{< card code=true header="**BASH**" lang="bash" >}}
+{{< card code=true header="BASH" lang="bash" >}}
 az deployment group create --resource-group *YourResourceGroupName* --template-file storage-account.bicep
 {{< /card >}}
 
@@ -191,7 +191,7 @@ az deployment group create --resource-group *YourResourceGroupName* --template-f
 
 This command will deploy the Bicep template defined in *storage-account.bicep* to your Azure resource group.
 
-#### **Step 6: Verify the Deployment**
+#### Step 6: Verify the Deployment
 
 Once the deployment command is successfully executed, we can verify the deployment in the Azure Portal:
 
@@ -200,31 +200,31 @@ Once the deployment command is successfully executed, we can verify the deployme
 
 Alternatively, we can check the deployment using the Azure CLI:
 
-{{< card code=true header="**BASH**" lang="bash" >}}
+{{< card code=true header="BASH" lang="bash" >}}
 az storage account show --name mystorageaccount001 --resource-group *YourResourceGroupName*
 {{< /card >}}
 
-#### **Step 7: Modify and Redeploy the Template**
+#### Step 7: Modify and Redeploy the Template
 
 If we need to make changes to your template (e.g., changing the SKU or location), simply edit the Bicep file and redeploy it using the same command:
 
-{{< card code=true header="**BASH**" lang="bash" >}}
+{{< card code=true header="BASH" lang="bash" >}}
 az deployment group create --resource-group &lt;YourResourceGroupName> --template-file storage-account.bicep
 {{< /card >}}
 
 Azure will handle the update automatically.
 
-#### **Step 8: (Optional) Convert Bicep to JSON ARM Template**
+#### Step 8: (Optional) Convert Bicep to JSON ARM Template
 
 If you ever need to generate a traditional ARM template (JSON), we can compile the Bicep file to JSON using the following command in VS Code's terminal:
 
-{{< card code=true header="**BASH**" lang="bash" >}}
+{{< card code=true header="BASH" lang="bash" >}}
 bicep build storage-account.bicep
 {{< /card >}}
 
 This will generate a storage-account.json file containing the equivalent ARM template in JSON format.
 
-#### **Conclusion**
+#### Conclusion
 
 That's it! You we have a workflow for writing Bicep templates in Visual Studio Code and deploying them directly to Azure using the Azure CLI. The Bicep extension in VS Code makes it easier to manage your Azure resources with a simplified syntax compared to traditional JSON-based ARM templates.
 
@@ -259,7 +259,7 @@ If you don't already have Terraform installed, follow these steps to install it:
 2. Download and install the appropriate version of Terraform for your operating system.
 3. Verify the installation by running the following command in your terminal:
 
-{{< card code=true header="**BASH**" lang="bash" >}}
+{{< card code=true header="BASH" lang="bash" >}}
 terraform --version
 {{< /card >}}
 
@@ -267,22 +267,22 @@ This should return the installed version of Terraform.
 
 #### Step 4: Install Azure CLI
 
-You will also need the **Azure CLI** installed to interact with Azure. Follow the instructions to install the **Azure CLI** from the official documentation: <https://docs.microsoft.com/en-us/cli/azure/install-azure-cli>.
+You will also need the Azure CLI installed to interact with Azure. Follow the instructions to install the Azure CLI from the official documentation: <https://docs.microsoft.com/en-us/cli/azure/install-azure-cli>.
 
 Once installed, log in to Azure by running:
 
-{{< card code=true header="**BASH**" lang="bash" >}}
+{{< card code=true header="BASH" lang="bash" >}}
 az login
 {{< /card >}}
 
 #### Step 5: Write Your First Terraform Configuration
 
-Now, let's create a simple **Terraform** configuration that provisions an **Azure Storage Account**.
+Now, let's create a simple Terraform configuration that provisions an Azure Storage Account.
 
 1. Open Visual Studio Code and create a new file with the .tf extension (e.g., main.tf).
 2. Add the following Terraform configuration to the file:
 
-{{< card code=true header="**JSON**" lang="json" >}}
+{{< card code=true header="JSON" lang="json" >}}
 # Configure the Azure provider
 provider "azurerm" {
   features {}
@@ -315,7 +315,7 @@ Before deploying your resources, you need to initialize Terraform. Initializatio
 1. Open the Terminal in VS Code by navigating to Terminal -> New Terminal or pressing Ctrl + (backtick).
 2. Run the following command to initialize the Terraform configuration:
 
-{{< card code=true header="**BASH**" lang="bash" >}}
+{{< card code=true header="BASH" lang="bash" >}}
 terraform init
 {{< /card >}}
 
@@ -323,11 +323,11 @@ Terraform will download the required provider and prepare your environment for d
 
 #### Step 7: Plan the Deployment
 
-Once the configuration is initialized, you can run a **terraform plan** to preview the actions Terraform will take based on your configuration. This is a safe way to ensure everything is correct before making changes.
+Once the configuration is initialized, you can run a terraform plan to preview the actions Terraform will take based on your configuration. This is a safe way to ensure everything is correct before making changes.
 
 Run the following command in the terminal:
 
-{{< card code=true header="**BASH**" lang="bash" >}}
+{{< card code=true header="BASH" lang="bash" >}}
 terraform plan
 {{< /card >}}
 
@@ -339,7 +339,7 @@ Once you're happy with the plan, you can apply the configuration to deploy the r
 
 1. Run the following command to apply the Terraform configuration:
 
-{{< card code=true header="**BASH**" lang="bash" >}}
+{{< card code=true header="BASH" lang="bash" >}}
 terraform apply
 {{< /card >}}
 
@@ -358,13 +358,13 @@ Once the Terraform apply process completes, you can verify the deployment in the
 
 If you need to make changes (e.g., update the account tier of the storage account), simply edit the `main.tf` file, then run:
 
-{{< card code=true header="**BASH**" lang="bash" >}}
+{{< card code=true header="BASH" lang="bash" >}}
 terraform plan
 {{< /card >}}
 
 This will show you the changes Terraform will make. If everything looks good, run:
 
-{{< card code=true header="**BASH**" lang="bash" >}}
+{{< card code=true header="BASH" lang="bash" >}}
 terraform apply
 {{< /card >}}
 
@@ -372,7 +372,7 @@ terraform apply
 
 If you no longer need the resources and want to clean them up, you can run the following command to destroy the resources created by Terraform:
 
-{{< card code=true header="**BASH**" lang="bash" >}}
+{{< card code=true header="BASH" lang="bash" >}}
 terraform destroy
 {{< /card >}}
 

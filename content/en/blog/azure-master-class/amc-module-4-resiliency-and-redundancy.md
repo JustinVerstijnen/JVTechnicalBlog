@@ -19,17 +19,17 @@ This module is all about resiliency and redundancy in Microsoft Azure. Resilienc
 The different layers where you can and should apply resiliency and how you can improve the area are:
 
 - **Software**: Operating system, application, runtime
-  - *Replication*
+ - *Replication*
 - **Hardware**: UPS, server, switch, infrastructure, network, data center
-  - *Replication*
+ - *Replication*
 - **Corruption/Encryption**: Ransomware, corrupted data, avoid using replication as a backup
-  - *Backup*
+ - *Backup*
 - **Attack/DDoS**: DDoS protection, firewall
-  - *Isolated export/backup/other*
+ - *Isolated export/backup/other*
 - **Regulatory Requirements**: Uptime according to an SLA, specific methods for data storage
-  - *Backup*
+ - *Backup*
 - **Humans:** Human errors, wrong implemented changes or processes
-  - Processes
+ - Processes
 
 ---
 
@@ -110,7 +110,7 @@ To achieve resiliency in your Azure application, these constructs must always be
 
 ## Fault Domains, Availability Sets and Virtual Machine Scale Sets (VMSS)
 
-A **Fault Domain** is a feature of **Availability Sets** and **VM Scale Sets** that ensures multiple virtual machines remain online in the event of a failure within a physical datacenter. However, true resiliency requires designing and configuring the application to handle such disruptions effectively, as fault domains are only one part of the broader resiliency strategy.
+A Fault Domain is a feature of Availability Sets and VM Scale Sets that ensures multiple virtual machines remain online in the event of a failure within a physical datacenter. However, true resiliency requires designing and configuring the application to handle such disruptions effectively, as fault domains are only one part of the broader resiliency strategy.
 
 [![jv-media-521-c8f4728a267f.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-4-resiliency-and-redundancy-521/jv-media-521-c8f4728a267f.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-4-resiliency-and-redundancy-521/jv-media-521-c8f4728a267f.png)
 
@@ -127,7 +127,7 @@ Availability Sets, Virtual Machine Scale Sets, and Fault Domains do not provide 
 
 ## Availability Zones
 
-Nearly every Microsoft Azure region has **3 Availability Zones**. These are groups of datacenters with independent power, network, and cooling systems. This allows you to make solutions **zone-redundant**, protecting your application from failures at the datacenter level. However, this redundancy and resiliency must be specifically designed. This can be done by using a method like the method below:
+Nearly every Microsoft Azure region has 3 Availability Zones. These are groups of datacenters with independent power, network, and cooling systems. This allows you to make solutions zone-redundant, protecting your application from failures at the datacenter level. However, this redundancy and resiliency must be specifically designed. This can be done by using a method like the method below:
 
 [![jv-media-521-e1ae77533c1d.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-4-resiliency-and-redundancy-521/jv-media-521-e1ae77533c1d.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-4-resiliency-and-redundancy-521/jv-media-521-e1ae77533c1d.png)
 
@@ -145,12 +145,12 @@ Here’s a concise comparison of the options with their uptime and redundancy:
 
 | **Option** | **Uptime** | **Redundancy** |
 | --- | --- | --- |
-| **Availability Set** | 99.95% | Locally redundant |
-| **Availability Zone** | 99.99% | Zone-redundant |
+| Availability Set | 99.95% | Locally redundant |
+| Availability Zone | 99.99% | Zone-redundant |
 
 ## Proximity Placement Group
 
-Azure does not guarantee that multiple virtual machines will be physically located close to each other to minimize latency. However, with a **Proximity Placement Group (PPG)**, you can instruct Azure: *"I want these machines to be as close to each other as possible."* Azure will then place the machines based on latency, ensuring they are located as close together as possible within the physical infrastructure.
+Azure does not guarantee that multiple virtual machines will be physically located close to each other to minimize latency. However, with a Proximity Placement Group (PPG), you can instruct Azure: *"I want these machines to be as close to each other as possible."* Azure will then place the machines based on latency, ensuring they are located as close together as possible within the physical infrastructure.
 
 This is particularly useful for applications where low latency between virtual machines is critical, such as high-performance computing (HPC) workloads or latency-sensitive databases.
 
@@ -162,21 +162,21 @@ You can configure this Proximity Placement Group on your Virtual Machines.
 
 Azure offers two distinct services to configure backups for your resources:
 
-1.**Recovery Services Vault**:
+1.Recovery Services Vault:
 
 - Designed for broad disaster recovery and backup scenarios.
-- Supports **Azure Backup**, **Azure Site Recovery**, and other recovery solutions.
+- Supports Azure Backup, Azure Site Recovery, and other recovery solutions.
 - Ideal for long-term data retention and regulatory compliance.
 - Commonly used for virtual machine backups, SQL Server backups, and more.
 
-2.**Backup Vault**:
+2.Backup Vault:
 
-- A lightweight and cost-optimized service specifically for **Azure Backup**.
-- Focused on **storing backup data for IaaS VMs**, databases, and file shares.
-- Designed for **simplified deployment** and management of backup solutions.
+- A lightweight and cost-optimized service specifically for Azure Backup.
+- Focused on storing backup data for IaaS VMs, databases, and file shares.
+- Designed for simplified deployment and management of backup solutions.
 - Ideal for environments where disaster recovery is not a primary concern.
 
-**Key Difference**:
+Key Difference:
 
 - **Recovery Services Vault** is a comprehensive solution for backup and disaster recovery needs, including advanced scenarios. We also use this solution often in business workloads.
 - **Backup Vault** is a streamlined, cost-effective solution for basic backup storage and operations. We often use this solution for testing purposes.

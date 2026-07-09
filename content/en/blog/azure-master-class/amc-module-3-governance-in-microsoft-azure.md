@@ -38,13 +38,13 @@ The main goals of Azure Policy are:
 
 To better understand how Azure Policy works, here are its key components:
 
-**Definitions**: A definition outlines what actions, configurations, or tasks are allowed or not. It can include multiple rules, so you can enforce or allow several things with one definition. Azure also offers many built-in definitions that you can use.
+Definitions: A definition outlines what actions, configurations, or tasks are allowed or not. It can include multiple rules, so you can enforce or allow several things with one definition. Azure also offers many built-in definitions that you can use.
 
-**Initiatives**: An initiative is a collection of definitions, so you can group policies together under a single initiative for things like company-wide policies or specific applications. Azure also has standard initiatives available, like checking if a subscription meets country regulations, NIST 800, or ISO 27001.
+Initiatives: An initiative is a collection of definitions, so you can group policies together under a single initiative for things like company-wide policies or specific applications. Azure also has standard initiatives available, like checking if a subscription meets country regulations, NIST 800, or ISO 27001.
 
-**Assignments**: These are the subscriptions that the policies apply to.
+Assignments: These are the subscriptions that the policies apply to.
 
-**Exemptions**: Exemptions are exceptions to a policy, like for a specific resource or type. You can also set an expiry date to make the exemption temporary. There are two types:
+Exemptions: Exemptions are exceptions to a policy, like for a specific resource or type. You can also set an expiry date to make the exemption temporary. There are two types:
 
 - **Mitigated**: The exemption is given because the policy's goal was met through a different method.
 - **Waiver**: The exemption is given because the resource is temporarily allowed to not follow the policy.
@@ -94,7 +94,7 @@ To learn more about Azure Roles and assignments, check out my easy Azure Roles g
 
 ## Effective access tool
 
-At every level in Microsoft Azure, it's possible to check the access permissions for a specific user or group. In the **Access Control (IAM)** blade of any level (such as subscription, resource group, or resource), you can click on the **"Check Access"** tab, and then on the **"Check Access"** button.
+At every level in Microsoft Azure, it's possible to check the access permissions for a specific user or group. In the Access Control (IAM) blade of any level (such as subscription, resource group, or resource), you can click on the "Check Access" tab, and then on the "Check Access" button.
 
 Azure will then display a clear overview of the roles assigned to the user and the associated permissions. This feature helps ensure that you can easily verify who has access to what resources and at what level of control.
 
@@ -106,8 +106,8 @@ A role in Azure is structured as follows:
 
 1. **Role Name:** This is the name of the role, used to locate the role within the system and for documentation purposes.
 2. **Resource Permissions:** Permissions are assigned in two basic ways: *Actions* and *notActions*. Permissions are granted based on the resource providers in Azure (more on this later).
-   - **Actions** are the actions a user is allowed to perform (whitelist).
-   - **notActions** are the actions a user is not allowed to perform. This option takes precedence over Actions. (If a user has multiple roles where the same action is defined in both Actions and notActions, access to this action will be blocked) (blacklist).
+ - **Actions** are the actions a user is allowed to perform (whitelist).
+ - **notActions** are the actions a user is not allowed to perform. This option takes precedence over Actions. (If a user has multiple roles where the same action is defined in both Actions and notActions, access to this action will be blocked) (blacklist).
 3. **Data Permissions:** For SQL/Storage accounts, *DataActions* and *notDataActions* are used, following the same principles but applying to underlying data rather than at the resource level.
 4. **Scope:** The level at which the role assignment should be applied.
 
@@ -148,21 +148,21 @@ Please take a look at the following image for a practice example:
 [![jv-media-482-43c0c16a53d9.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-3-governance-in-microsoft-azure-482/jv-media-482-43c0c16a53d9.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-3-governance-in-microsoft-azure-482/jv-media-482-43c0c16a53d9.png)
 
 1. **Azure Account**: At the top, we have the main Azure Account, which can be self-managed or provided through a Cloud Solution Provider (CSP).
-2. **Root Tenant**: Under the Azure Account is the Root Tenant, which serves as the primary identity and management boundary within Azure. This is typically linked to **Microsoft Entra ID** and represents the overall organization.
+2. **Root Tenant**: Under the Azure Account is the Root Tenant, which serves as the primary identity and management boundary within Azure. This is typically linked to Microsoft Entra ID and represents the overall organization.
 3. **Management Groups**: Below the Root Tenant are Management Groups, which are used to organize subscriptions into logical groups, often aligned by departments, business functions, or regions. These groups enable centralized management and control. In this example, there are three management groups:
-   - **IT**: Used to manage resources related to IT infrastructure.
-   - **Business**: Focused on resources that support business operations.
-   - **Location**: Organized by specific locations, potentially representing geographical groupings.
-4. **Subscriptions**: Within each Management Group, there are individual **Subscriptions**. Subscriptions act as containers for billing and access control and are aligned with different environments or purposes:
-   - **IT Core** and **IT IaaS** under the IT Management Group.
-   - **Business Prod** under the Business Management Group, used for production-related resources.
-   - **Business Sandbox** under the Location Management Group, likely used for testing and sandbox purposes.
-5. **Resource Groups**: Each subscription contains **Resource Groups**. These are logical containers to host specific sets of related resources that work together on a particular application or project.
-6. **Azure Resources**: Finally, within each Resource Group are the actual **Azure Resources**. These can include:
-   - Compute resources (e.g., Virtual Machines, Kubernetes clusters),
-   - Storage accounts,
-   - SQL databases,
-   - Networking components, and more.
+ - **IT**: Used to manage resources related to IT infrastructure.
+ - **Business**: Focused on resources that support business operations.
+ - **Location**: Organized by specific locations, potentially representing geographical groupings.
+4. **Subscriptions**: Within each Management Group, there are individual Subscriptions. Subscriptions act as containers for billing and access control and are aligned with different environments or purposes:
+ - **IT Core** and IT IaaS under the IT Management Group.
+ - **Business Prod** under the Business Management Group, used for production-related resources.
+ - **Business Sandbox** under the Location Management Group, likely used for testing and sandbox purposes.
+5. **Resource Groups**: Each subscription contains Resource Groups. These are logical containers to host specific sets of related resources that work together on a particular application or project.
+6. **Azure Resources**: Finally, within each Resource Group are the actual Azure Resources. These can include:
+ - Compute resources (e.g., Virtual Machines, Kubernetes clusters),
+ - Storage accounts,
+ - SQL databases,
+ - Networking components, and more.
 
 ---
 
@@ -219,7 +219,7 @@ When using Microsoft Azure, there are multiple ways to save money:
 - Using the right sizes and specifications
 - Using serverless solutions rather than using in VM solutions
 - Using Reserved instances for virtual machines
-  - You reserve your size VM for 1 or 3 years for a 40% or 60% discount, but you can't stop, upgrade or downgrade your VM
+ - You reserve your size VM for 1 or 3 years for a 40% or 60% discount, but you can't stop, upgrade or downgrade your VM
 - Using Azure Savings Plans for flexible savings
 
 ---

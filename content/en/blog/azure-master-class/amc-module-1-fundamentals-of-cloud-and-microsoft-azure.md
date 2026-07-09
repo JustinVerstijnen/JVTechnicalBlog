@@ -18,11 +18,11 @@ This chapter is about the term "Cloud" and the fundamentals of Microsoft Azure a
 
 The Cloud is a widely used term to say, "That runs elsewhere on the internet." There are many different definitions, but the National Institute of Standards and Technology (NIST) in the United States has identified five characteristics that a service/solution must meet to call itself a cloud service:
 
-1.  On-demand self-service
-2.  Broad network access
-3.  Resource pooling and pay-per-use
-4.  Rapid elasticity or flexible up/downscaling
-5.  Measured service
+1. On-demand self-service
+2. Broad network access
+3. Resource pooling and pay-per-use
+4. Rapid elasticity or flexible up/downscaling
+5. Measured service
 
 ---
 
@@ -30,11 +30,11 @@ The Cloud is a widely used term to say, "That runs elsewhere on the internet." T
 
 Within cloud services, we have two different concepts of the Cloud: Public Cloud and Private Cloud:
 
-**Public Cloud:** In the case of a Public Cloud, we refer to a cloud service such as Microsoft Azure, Google Cloud, or Amazon Web Services. With these services, servers are shared among different customers. Hence the term "Public Cloud." However, data security is well-managed to ensure that sensitive business data doesn't become publicly exposed, and various security options are available. In the case of the Public Cloud, you run your workload on servers in a data center owned by the Cloud Service Provider.
+Public Cloud: In the case of a Public Cloud, we refer to a cloud service such as Microsoft Azure, Google Cloud, or Amazon Web Services. With these services, servers are shared among different customers. Hence the term "Public Cloud." However, data security is well-managed to ensure that sensitive business data doesn't become publicly exposed, and various security options are available. In the case of the Public Cloud, you run your workload on servers in a data center owned by the Cloud Service Provider.
 
-**Private Cloud:** With a Private Cloud/On-premises solution, a company hosts its own servers on its premises or in a rented data center. The customer is also responsible for resolving outages, designing the appropriate hardware configurations, managing the correct licenses, software, maintenance, and security.
+Private Cloud: With a Private Cloud/On-premises solution, a company hosts its own servers on its premises or in a rented data center. The customer is also responsible for resolving outages, designing the appropriate hardware configurations, managing the correct licenses, software, maintenance, and security.
 
-**Community Cloud:** In a Community Cloud, a cloud provider makes part of the infrastructure available to, for example, government agencies and other non-profit organizations. These may be further isolated, and different pricing models apply, often with fixed pricing agreements.
+Community Cloud: In a Community Cloud, a cloud provider makes part of the infrastructure available to, for example, government agencies and other non-profit organizations. These may be further isolated, and different pricing models apply, often with fixed pricing agreements.
 
 ---
 
@@ -48,22 +48,22 @@ What is important to understand about different cloud services is that as a cust
 
 In general, there are three main types of cloud services:
 
-**Infrastructure-as-a-Service (IaaS):** With IaaS, a company/customer is only responsible for the operating system layer and above. The infrastructure is provided as a service and is managed by the provider.
+Infrastructure-as-a-Service (IaaS): With IaaS, a company/customer is only responsible for the operating system layer and above. The infrastructure is provided as a service and is managed by the provider.
 
-*   _Examples:_ Virtual machines, Virtual Desktop, Virtual network, SQL on VM
+* _Examples:_ Virtual machines, Virtual Desktop, Virtual network, SQL on VM
 
-**Platform-as-a-Service (PaaS):** With PaaS, a company/customer is only responsible for the applications and data.
+Platform-as-a-Service (PaaS): With PaaS, a company/customer is only responsible for the applications and data.
 
-*   _Examples:_ Azure SQL, Cosmos DB
+* _Examples:_ Azure SQL, Cosmos DB
 
-**Software-as-a-Service (SaaS):** With SaaS, a company/customer is only responsible for the configuration and permissions of the software. All underlying infrastructure and software are managed by the provider.
+Software-as-a-Service (SaaS): With SaaS, a company/customer is only responsible for the configuration and permissions of the software. All underlying infrastructure and software are managed by the provider.
 
-*   _Examples:_ Microsoft 365, Dynamics 365, Power Platform, AFAS Online, TOPdesk
+* _Examples:_ Microsoft 365, Dynamics 365, Power Platform, AFAS Online, TOPdesk
 
 And we call self hosted servers:
 
-*   **On-premises:** With on-premises, a company/customer is 100% responsible for all components but also has the most information and control.
-    *   _Examples:_ Own servers/hypervisors
+* **On-premises:** With on-premises, a company/customer is 100% responsible for all components but also has the most information and control.
+ * _Examples:_ Own servers/hypervisors
 
 ---
 
@@ -77,9 +77,9 @@ Good consultation with the customer and solid technical insight will help provid
 
 Other good scenarios for choosing the Public Cloud include:
 
-*   **Predicted or unpredictable scaling**
-*   **Rapidly growing companies**
-*   **On-and-off scenarios**, such as seasons, during the Olympics or the FIFA World Cup.
+* **Predicted or unpredictable scaling**
+* **Rapidly growing companies**
+* **On-and-off scenarios**, such as seasons, during the Olympics or the FIFA World Cup.
 
 ---
 
@@ -91,13 +91,13 @@ This is because prices may initially seem quite high. However, when you take int
 
 For on-premises (local) servers, for example, you incur the following costs that you don't have in the cloud:
 
-*   Applying patches/updates to hardware
-*   Daily/weekly/monthly maintenance of physical hardware
-*   Downtime
-*   Electricity costs
-*   Backup power supply
-*   Cooling systems
-*   Tuning performance
+* Applying patches/updates to hardware
+* Daily/weekly/monthly maintenance of physical hardware
+* Downtime
+* Electricity costs
+* Backup power supply
+* Cooling systems
+* Tuning performance
 
 ---
 
@@ -109,14 +109,14 @@ Microsoft Azure is an Infrastructure-as-a-Service (IaaS) cloud service designed 
 
 It can serve as a replacement for physical servers and consists of dozens of different services, such as:
 
-*   Virtual Machines
-*   Azure Storage
-*   Azure SQL
-*   Azure Cosmos DB
-*   Azure Virtual Desktop
-*   Azure Firewall
-*   Azure Virtual Network
-*   Azure Backup (with Recovery Services)
+* Virtual Machines
+* Azure Storage
+* Azure SQL
+* Azure Cosmos DB
+* Azure Virtual Desktop
+* Azure Firewall
+* Azure Virtual Network
+* Azure Backup (with Recovery Services)
 
 Most services in Microsoft Azure are "serverless." This means you use a service without needing to manage or secure a server. Serverless solutions require the least maintenance, and Microsoft manages them for us and the customer.
 
@@ -124,11 +124,11 @@ Most services in Microsoft Azure are "serverless." This means you use a service 
 
 ## Costs management in Microsoft Azure
 
-**Microsoft Azure works with the "Pay-as-you-go" model.** This means you pay based on the usage of the cloud service and its resources. This makes the platform very flexible in terms of pricing.
+Microsoft Azure works with the "Pay-as-you-go" model. This means you pay based on the usage of the cloud service and its resources. This makes the platform very flexible in terms of pricing.
 
 [![jv-media-450-150ee8daf588.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-1-fundamentals-of-cloud-and-microsoft-azure-450/jv-media-450-150ee8daf588.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-1-fundamentals-of-cloud-and-microsoft-azure-450/jv-media-450-150ee8daf588.png)
 
-Billing by Azure to a customer or reseller happens at the **Subscription level**, and payment methods are quite limited, usually to various types of credit cards.
+Billing by Azure to a customer or reseller happens at the Subscription level, and payment methods are quite limited, usually to various types of credit cards.
 
 To get an idea of what a specific service with your custom configuration costs, you can use the official Azure calculator, which can be found here: [Pricing Calculator | Microsoft Azure](https://azure.microsoft.com/en-us/pricing/calculator/).
 
@@ -158,11 +158,11 @@ Connecting many data centers and servers together requires a solid hierarchy and
 
 Azure is structured as follows:
 
-*   **Continents/Global:** The world consists of different continents with several Azure Regions. Some Azure services are global.
-*   **Azure Regions:** Across various continents around the world, Azure has designed several regions.
-*   **Availability Zones:** In different Azure regions, Microsoft has divided data centers into Availability Zones. These are logical groups of data centers with independent power, cooling, networking, and other essentials, but with extremely fast interconnections of \<2 ms latency.
-*   **Data Centers:** Within the different Availability Zones, the data centers are divided. A data center is a large building housing a collection of servers, sometimes up to 5,000 servers per building.
-*   **Servers:** Inside the Azure data centers are the physical servers that host the full range of Microsoft Azure services.
+* **Continents/Global:** The world consists of different continents with several Azure Regions. Some Azure services are global.
+* **Azure Regions:** Across various continents around the world, Azure has designed several regions.
+* **Availability Zones:** In different Azure regions, Microsoft has divided data centers into Availability Zones. These are logical groups of data centers with independent power, cooling, networking, and other essentials, but with extremely fast interconnections of \<2 ms latency.
+* **Data Centers:** Within the different Availability Zones, the data centers are divided. A data center is a large building housing a collection of servers, sometimes up to 5,000 servers per building.
+* **Servers:** Inside the Azure data centers are the physical servers that host the full range of Microsoft Azure services.
 
 ---
 
@@ -170,10 +170,10 @@ Azure is structured as follows:
 
 Microsoft Azure puts a lot of effort into ensuring the best availability for its customers and has the best options in place for this. However, there are differences in how Azure services are available or can be made available. This is important to consider when designing a solution architecture on Azure.
 
-*   **Global:** A global service is an Azure service that operates Azure-wide and is not deployed in a specific region. A failure in an Azure region will not cause issues for global services.
-*   **Regional:** A regional service is an Azure service deployed in a specific region. Failure of this region will mean an interruption of the service.
-*   **Zone-redundant:** A zone-redundant service is an Azure service distributed across the 3 availability zones within a single region. This makes the service redundant and able to withstand the failure of one or more data centers but not the complete region. However, this extra redundancy must always be configured and selected.
-*   **Zonal:** A zonal service is an Azure service deployed in a specific availability zone, or a service that can be deployed in Availability Zones but isn’t. Failure of a data center in this case would mean an interruption of the service.
+* **Global:** A global service is an Azure service that operates Azure-wide and is not deployed in a specific region. A failure in an Azure region will not cause issues for global services.
+* **Regional:** A regional service is an Azure service deployed in a specific region. Failure of this region will mean an interruption of the service.
+* **Zone-redundant:** A zone-redundant service is an Azure service distributed across the 3 availability zones within a single region. This makes the service redundant and able to withstand the failure of one or more data centers but not the complete region. However, this extra redundancy must always be configured and selected.
+* **Zonal:** A zonal service is an Azure service deployed in a specific availability zone, or a service that can be deployed in Availability Zones but isn’t. Failure of a data center in this case would mean an interruption of the service.
 
 The table below shows which services can be categorized under the above concepts:
 

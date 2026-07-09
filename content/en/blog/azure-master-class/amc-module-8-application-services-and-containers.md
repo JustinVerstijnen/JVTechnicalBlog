@@ -19,13 +19,13 @@ This module is about application services in Microsoft Azure. It mainly focuses 
 
 We can categorize servers/VMs into two categories: Stateful and Stateless:
 
-**Stateful:** Stateful servers are uniquely configured and have a specific role, for example:
+Stateful: Stateful servers are uniquely configured and have a specific role, for example:
 
 - SQL servers
 - Domain Controllers with FSMO roles
 - Application servers
 
-**Stateless:** Stateless servers do not have a unique role and can be easily replicated, for example:
+Stateless: Stateless servers do not have a unique role and can be easily replicated, for example:
 
 - Web servers that connect to a database
 - Application servers that connect to a database
@@ -95,7 +95,7 @@ With virtual machines, each VM installs updates individually, and every update n
 
 ## Azure Container Instances (ACI)
 
-Azure Container Instances (ACI) is the simplest Azure solution for running containers as a Platform-as-a-Service (PaaS) offering. With ACI, customers are not responsible for the infrastructure or operating system— only the container and how their application runs on ACI.
+Azure Container Instances (ACI) is the simplest Azure solution for running containers as a Platform-as-a-Service (PaaS) offering. With ACI, customers are not responsible for the infrastructure or operating system, only the container and how their application runs on ACI.
 
 Azure Container Instances support both Windows and Linux, with Linux offering the most features.
 
@@ -104,8 +104,8 @@ Azure Container Instances support both Windows and Linux, with Linux offering th
 - You can select an image from your own repository or the Azure Marketplace.
 - The container receives a Public or Private IP address, allowing access either from the internet or only within an Azure Virtual Network.
 - The container gets a restart policy, which can be configured to either:
-  - Restart immediately on failure.
-  - Restart at a scheduled time.
+ - Restart immediately on failure.
+ - Restart at a scheduled time.
 - Isolation by default: ACI does not share the kernel between containers, ensuring security.
 - A fast and cost-effective way to deploy multiple containers without managing a Kubernetes cluster.
 
@@ -128,35 +128,35 @@ Kubernetes has become the industry standard for container management. With Azure
 
 AKS is available in two pricing tiers in Microsoft Azure:
 
-|  |  |
+| | |
 | --- | --- |
-| **Free (AKS Free)** | **Standard (AKS Standard)** |
+| Free (AKS Free) | Standard (AKS Standard) |
 | The Kubernetes control plane is free, meaning you don't pay for the management and orchestration services. | Includes an SLA-backed Kubernetes control plane for higher availability and reliability. |
 | You only pay for the underlying virtual machines (VMs), storage, and networking used by your worker nodes. | Advanced security features, including Azure Defender for Kubernetes and private cluster options. |
 | No Service Level Agreement (SLA) is provided for the uptime of the control plane. | Enhanced scalability and performance options. |
-|  | Ideal for production workloads requiring enterprise-grade support and uptime guarantees. |
+| | Ideal for production workloads requiring enterprise-grade support and uptime guarantees. |
 | Price: Free | Price: $0.10 per cluster per hour + Pay as you go pricing for other resources |
 
 ## Azure Kubernetes Management
 
 In Azure Kubernetes Service (AKS), users can manage their Kubernetes clusters through two primary methods:
 
-### **Azure Kubernetes UI (Web Interface)**
+### Azure Kubernetes UI (Web Interface)
 
 - Available via the Azure Portal, providing a graphical overview of AKS clusters.
 - Enables users to:
-  - View cluster health, node status, and deployed applications.
-  - Manage and scale workloads.
-  - Access logs and monitoring insights via Azure Monitor and Log Analytics.
+ - View cluster health, node status, and deployed applications.
+ - Manage and scale workloads.
+ - Access logs and monitoring insights via Azure Monitor and Log Analytics.
 - Ideal for users who prefer a visual interface and need basic Kubernetes management without the CLI.
 
-### **KubeCTL CLI (Command-Line Interface)**
+### KubeCTL CLI (Command-Line Interface)
 
 - The kubectl CLI is used for managing AKS clusters via Azure Cloud Shell, PowerShell, or a local terminal.
 - Provides full control over Kubernetes resources, allowing users to:
-  - Deploy, scale, and update applications running in AKS.
-  - View and modify cluster configurations.
-  - Manage networking, secrets, and storage within the AKS environment.
+ - Deploy, scale, and update applications running in AKS.
+ - View and modify cluster configurations.
+ - Manage networking, secrets, and storage within the AKS environment.
 - Ideal for DevOps engineers and those who need automation and scripting capabilities for Kubernetes workloads.
 
 The key points for using the tools are:
@@ -195,47 +195,47 @@ Azure Container Apps are microservices that are deployed in containers. This mea
 
 Some key points of Azure Container Apps are:
 
-### **1. Serverless Containers**
+### 1. Serverless Containers
 
 - Azure Container Apps provide a fully managed serverless platform for running containers without managing infrastructure
 - Unlike Azure Kubernetes Service (AKS), you don't need to configure nodes, scaling, or networking manually. This is all managed by the service itself
 
-### **2. Microservices and Event-driven Architecture**
+### 2. Microservices and Event-driven Architecture
 
 - Container Apps are designed for microservices architectures, allowing independent deployment and scaling of services
 - They integrate well with event-driven processing, making them ideal for applications with real-time event handling
 
-### **3. Autoscaling with KEDA**
+### 3. Autoscaling with KEDA
 
 - Azure Container Apps use KEDA (Kubernetes Event-Driven Autoscaling) to scale containers automatically based on:
-  - HTTP requests
-  - CPU/memory usage
-  - Message queue events (e.g., Azure Service Bus, Kafka)
-  - Custom event triggers
+ - HTTP requests
+ - CPU/memory usage
+ - Message queue events (e.g., Azure Service Bus, Kafka)
+ - Custom event triggers
 
-### **4. Ingress Traffic Control**
+### 4. Ingress Traffic Control
 
 - Built-in ingress supports internal and external traffic routing
 - Supports HTTP/HTTPS-based ingress for securely exposing services
 - Fully compatible with Azure API Management for API gateways
 
-### **5. Integrated Dapr Support**
+### 5. Integrated Dapr Support
 
 - Dapr (Distributed Application Runtime) is built-in, enabling service-to-service communication, state management, pub/sub messaging, and secret management
 - Helps developers build resilient and portable microservices
 
-### **6. Secure and Managed Environment**
+### 6. Secure and Managed Environment
 
 - Supports managed identity for authentication and access to other Azure services
 - Secure connections to Azure Key Vault, Azure Monitor, and Application Insights
 - Private networking with VNET integration
 
-### **7. Flexible Deployment Options**
+### 7. Flexible Deployment Options
 
 - Supports container images from Azure Container Registry (ACR), Docker Hub, or other registries
 - Can be deployed via CI/CD pipelines, Bicep, Terraform, or Azure CLI
 
-### **8. Built-in Logging & Monitoring**
+### 8. Built-in Logging & Monitoring
 
 - Native integration with Azure Monitor, Log Analytics, and Application Insights for real-time observability
 - Provides structured logging, distributed tracing, and application performance monitoring
@@ -255,22 +255,22 @@ Microsoft Azure originally started with App Services as a Platform-as-a-Service 
 In Azure App Services, you can run the following types of applications:
 
 1. From Code
-   - Deploy applications written in .NET, Java, Node.js, Python, PHP, and Ruby.
-   - Supports CI/CD pipelines for automated deployments.
+ - Deploy applications written in .NET, Java, Node.js, Python, PHP, and Ruby.
+ - Supports CI/CD pipelines for automated deployments.
 2. From Containers
-   - Run web apps in Docker containers using Linux or Windows-based images.
-   - Supports Azure Container Registry (ACR) and Docker Hub.
+ - Run web apps in Docker containers using Linux or Windows-based images.
+ - Supports Azure Container Registry (ACR) and Docker Hub.
 3. Static Web Apps
-   - Ideal for Jamstack applications and front-end frameworks like React, Angular, and Vue.js.
-   - Supports serverless APIs with Azure Functions.
+ - Ideal for Jamstack applications and front-end frameworks like React, Angular, and Vue.js.
+ - Supports serverless APIs with Azure Functions.
 
-### **Key Advantages of Azure App Services**
+### Key Advantages of Azure App Services
 
 - Simplicity:
-  - Setting up a web server is easy – you simply create an App Service resource and upload your website files via FTP, Git, or Azure DevOps.
+ - Setting up a web server is easy – you simply create an App Service resource and upload your website files via FTP, Git, or Azure DevOps.
 - Built-in Scaling & Redundancy:
-  - Supports Auto-Scaling, Load Balancing, and Geo-Redundancy for high availability.
-  - Can scale up/down based on traffic demand.
+ - Supports Auto-Scaling, Load Balancing, and Geo-Redundancy for high availability.
+ - Can scale up/down based on traffic demand.
 
 ## App Service Plans
 
@@ -360,7 +360,7 @@ However, it is possible to perform server-side calculations using Azure Function
 
 Azure Event Grid is a fully managed event routing service that enables event-driven architectures by delivering events from various Azure services services such as AKS, ACI, App Services, Blobs and custom sources to event handlers or subscribers. It uses a publish-subscribe model, ensuring reliable, scalable, and real-time event delivery.
 
-### **Key Features of Azure Event Grid**
+### Key Features of Azure Event Grid
 
 - Event-driven: Enables real-time communication between services without polling.
 - Fully managed: No need to set up or maintain infrastructure.
@@ -372,17 +372,17 @@ Azure Event Grid is a fully managed event routing service that enables event-dri
 Some use cases of Azure Event Grid are:
 
 - Storage Event Handling
-  - Automatically trigger an Azure Function when a new file is uploaded to Azure Blob Storage.
+ - Automatically trigger an Azure Function when a new file is uploaded to Azure Blob Storage.
 - Serverless Workflows
-  - Combine Event Grid with Logic Apps to create automated workflows, such as sending notifications when an event occurs.
+ - Combine Event Grid with Logic Apps to create automated workflows, such as sending notifications when an event occurs.
 - Kubernetes Event Monitoring
-  - Collect AKS (Azure Kubernetes Service) events and send alerts or logs to a monitoring service.
+ - Collect AKS (Azure Kubernetes Service) events and send alerts or logs to a monitoring service.
 - Automated Deployment Triggers
-  - Notify a CI/CD pipeline when a new container image is pushed to Azure Container Registry (ACR).
+ - Notify a CI/CD pipeline when a new container image is pushed to Azure Container Registry (ACR).
 - IoT Event Processing
-  - Route IoT device telemetry data to a Stream Analytics service for processing.
+ - Route IoT device telemetry data to a Stream Analytics service for processing.
 - Audit and Security Alerts
-  - Capture and forward Azure Security Center alerts to a SIEM (Security Information and Event Management) system.
+ - Capture and forward Azure Security Center alerts to a SIEM (Security Information and Event Management) system.
 
 ---
 
