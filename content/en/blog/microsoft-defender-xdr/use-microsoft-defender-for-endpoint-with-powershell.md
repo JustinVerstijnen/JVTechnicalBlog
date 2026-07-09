@@ -1,6 +1,6 @@
 ---
 title: "Use Microsoft Defender for Endpoint with PowerShell"
-date: 2026-09-01
+date: 2025-12-21
 slug: "use-microsoft-defender-for-endpoint-with-powershell"
 categories:
   - Microsoft Defender XDR
