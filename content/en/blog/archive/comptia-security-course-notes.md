@@ -1,10 +1,12 @@
 ---
 title: "CompTIA Security+ Course notes"
-date: 2025-01-05
 slug: "comptia-security-course-notes"
+date: 2025-01-05
+tags: []
 categories:
-  - Archive
+- Archive
 description: "This page contains my (unfinished) CompTIA Security+ notes."
+hidden: false
 ---
 
 ## Introduction to the study course
@@ -15,12 +17,9 @@ For this study I'll follow the official book called: CompTIA Security+ Complete 
 
 The objectives are:
 
-- Assess the security posture of an enterprise environment and
-  recommend and implement appropriate security solutions.
-- Monitor and secure hybrid environments, including cloud, mobile,
-  Internet of Things (IoT), and operational technology.
-- Operate with an awareness of applicable regulations and policies,
-  including principles of governance, risk, and compliance.
+- Assess the security posture of an enterprise environment and recommend and implement appropriate security solutions.
+- Monitor and secure hybrid environments, including cloud, mobile, Internet of Things (IoT), and operational technology.
+- Operate with an awareness of applicable regulations and policies, including principles of governance, risk, and compliance.
 - Identify, analyze, and respond to security events and incidents
 
 The scoring is:
@@ -45,7 +44,7 @@ Security can be very complex, because it is not a license we can buy, or somethi
 
 |  |  |
 | --- | --- |
-| **Layer** | **Explaination** |
+| Layer | Explaination |
 | 1. Physical security | Access to the physical systems must be secured so no unpermitted users can physically touch these devices. |
 | 2. Network security | The network and data flow of your company must be secure. Most attacks come through a network. This not only means that the architecture is enough, the network also needs to be monitored and have advanced treat detection with certain software. |
 | 3. Perimeter security | Gateways, firewalls and routers which can connect to your internal network has to be secure by configuring them, allowing only specified traffic, protocols, ports and proactively monitored. |
@@ -54,7 +53,9 @@ Security can be very complex, because it is not a license we can buy, or somethi
 | 6. Data security | The data stored and in transit on your network has to be secured. For data at-rest we can use encryption and integrity scanning and for data in-transit we can use encrypted transmission with SSL. |
 | 7. User education | End users work with the data, applications and endpoints. They have to constantly be up to date with the latest type of attacks and must have a caring mentality. What you don't want is users that don't care and do anything a attacker states in an email for example. |
 
-To bump up your security posture to around 99% which is logically the maximum percentage, we need to implement security over all these domains.
+To bump up your security posture to around 99% which is logically the maximum percentage, we need to implement security over all these domains. Security is inhertiable most of the time. This means that compromise on a particular layer means also access to underlying layers. Let's say, a hacker has breached a server. On that server runs a database, and on the database the (sensitive) data.
+
+[![jv-media-145-28a06c6fef81.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/comptia-security-course-notes/jv-media-145-28a06c6fef81.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/comptia-security-course-notes/jv-media-145-28a06c6fef81.png)
 
 ### 2.1.1 Security Controls
 
@@ -64,7 +65,7 @@ The controls that are available are:
 
 |  |  |  |
 | --- | --- | --- |
-| **Control** | **Focus** | **Real world examples** |
+| Control | Focus | Real world examples |
 | Technical | Technology | Firewall   Intrusion Detection   Bitlocker   MFA   Basic Access Controls   Time based access   Anti Malware |
 | Managerial | Governance | Best practices   Compliance against security guidelines   Risk assessments |
 | Operational | Procedures | Backup procedures   Incident Response   Security Awareness Trainings   Sharing sensitive information secure |
@@ -76,9 +77,9 @@ Security is all about preventing, deterrenting, detecting, correcting and compen
 
 Tthe CIA triad are 3 principles of information security:
 
-- **Confidentiality**: Ensure only wanted in dividuals have access to specific data or resources
-- **Integrity**: Ensure the accuracy and trustworthiness of data. Ensure it is not tampered and when so, you have integrity scanning with notifications
-- **Availability**: Ensure resources are accessible to users when needed
+- **Confidentiality** : Ensure only wanted in dividuals have access to specific data or resources
+- **Integrity** : Ensure the accuracy and trustworthiness of data. Ensure it is not tampered and when so, you have integrity scanning with notifications
+- **Availability** : Ensure resources are accessible to users when needed
 
 These three principles align with the "Verify explicitly" pillar of the Zero trust model, where we want to verify the integrity and only give the right users access at the right time. This CIA triad is also known as:
 
@@ -102,7 +103,7 @@ These 3 processes exist in almost every computer-system and are super important 
 
 |  |  |  |
 | --- | --- | --- |
-| **Authentication** | **Authorization** | **Accounting** |
+| Authentication | Authorization | Accounting |
 | Ensure users are authenticated with strong credentials | Ensure users don't have too much permissions, only what they need | Ensure all login and change actions are audited |
 | Ensure users are authenticated with a strong second factor (MFA/Passkeys) | Ensure users don't have permissions at all times | Ensure changes done by users are monitored and double checked |
 | Ensure your users are hard to breach with tranings | Ensure users' permissions are assigned through RBAC processes |  |
@@ -118,7 +119,7 @@ In a Gap analysis, you analyze your environment against where you want to be. In
 
 In the Zero Trust model, you do exactly what is stated. We don't trust anything. Great that a device is in our building and our network, but is it safe? Probably not.
 
-For more information about the Zero Trust model where I completely wrote down the model and principles: <https://justinverstijnen.nl/the-zero-trust-model/>
+For more information about the Zero Trust model where I completely wrote down the model and principles: [https://justinverstijnen.nl/the-zero-trust-model/](https://justinverstijnen.nl/the-zero-trust-model/)
 
 ### 2.2.6 Physical Security
 
@@ -155,13 +156,13 @@ A Public Key Infrastructure is a process where data is encrypted using a public 
 
 It works like this:
 
-![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/comptia-security-course-830/jv-media-830-8b4c06546f91.png)
+[![](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/comptia-security-course-830/jv-media-830-8b4c06546f91.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/comptia-security-course-830/jv-media-830-8b4c06546f91.png)
 
 - The sender encrypts the data using a public key
 - Invisibly, a private key is generated. This is the "password" to de-encryption
 - The data is encrypted and sent to the recipient
 - The data is de-encrypted by matching the public and private key
-  - If these don't match, de-encryption is not possible
+	- If these don't match, de-encryption is not possible
 - The recipient can view the data after a succesful match
 
 ### 2.4.2 Encryption
@@ -237,7 +238,7 @@ Threat actors can be classified into:
 
 |  |  |  |
 | --- | --- | --- |
-| **Type of Actor** | **Primary motivation** | **Real world example** |
+| Type of Actor | Primary motivation | Real world example |
 | *Nation-state actor* | Government and national interests, may be diplomatic | Russian interference in the 2016 U.S. elections |
 | *Unskilled attackers* | Mostly hacking for fun, using predefined code | DDoS attacks or defacement of small websites |
 | *Hacktivists* | Performing cyber-attacks for social or political agenda's | Right wing person bringing down a left-wing political party's website or environmental person bringing down the website of Shell or KLM. |
@@ -263,7 +264,9 @@ All channels used must comply with an company policy because they are configured
 In this module we discuss various threat vectors and surfaces of attack where we as IT guys can further secure and minimize the chance of data stealing.
 
 {% alert color="info" %}
+
 The threat vector is known as the channel where an threat is coming through.
+
 {% /alert %}
 
 ### 3.2.1 Message-based and files
@@ -358,6 +361,7 @@ Always keep your software updated to address as much vulnerabilities as possible
 #### 3.3.3 OS based Vulnerabilities
 
 Operating Systems like Windows, Linux, or macOS can have vulnerabilities such as privilege escalation or insecure file permissions. Maintain OS patches and updates to ensure that known
+
 vulnerabilities are mitigated. Make sure those OS's are updated as much as possible.
 
 #### 3.3.4 Web-based Vulnerabilities
@@ -371,11 +375,13 @@ Even physical components can have vulnerabilities. The Meltdown and Spectre vuln
 #### 3.3.6 Virtualization Vulnerabilities
 
 Virtualization software can also be susceptible. Issues might include weak isolation between virtual machines or insecure data transfer between them. Isolate different workloads and ensure secure
+
 configurations for your hypervisor.
 
 #### 3.3.7 Cloud-specific Vulnerabilities
 
 Cloud services may have configuration issues like improperly set permissions or unprotected data storage buckets. Use Cloud Security Posture Management (CSPM) tools to continuously monitor cloud
+
 configurations.
 
 #### 3.3.8 Supply Chain Vulnerabilities
@@ -389,11 +395,13 @@ Weak encryption algorithms or poor key management can lead to cryptographic vuln
 #### 3.3.10 Misconfigurations
 
 Even the best systems can be vulnerable if improperly configured, such as leaving debugging mode enabled in production. Conduct regular audits of your system configurations against best-practice
+
 checklists.
 
 #### 3.3.11 Mobile Device Vulnerabilities
 
 With the proliferation of smartphones, vulnerabilities like insecure data storage or communication are increasingly common. Use Mobile Device Management (MDM) software to manage and secure corporate
+
 devices.
 
 Also, keep business data and apps away from personal owned devices and personal owned data from business owned devices.
@@ -445,14 +453,19 @@ In these attacks, multiple failed login attempts or account lockouts can serve a
 #### 3.4.8 Indicators
 
 Common indicators across different attack vectors include:
+
 ● Unusual account activity
+
 ● Unexpected data flows
+
 ● Altered configurations
+
 ● New or unexpected software installation
 
 ### 3.5 Mitigation Techniques
 
 Mitigations refer to actions taken to reduce the severity or impact of threats and vulnerabilities. These actions might involve procedural, technical, or management-based controls, and aim to lower the risk to
+
 an acceptable level.
 
 #### 3.5.1 Why mitigations are neccessary
@@ -464,6 +477,7 @@ Mitigations are essential because threats and vulnerabilities are constantly evo
 #### 3.5.2 Segmentation
 
 Segmentation involves dividing a network into smaller parts to isolate different types of traffic and make it harder for attackers to move laterally within the network. For example, you can separate
+
 accounting and R&D into different subnets.
 
 #### 3.5.3 Access Control and Least privilege
@@ -511,10 +525,14 @@ This module goes into the ifferent cybersecurity incidents which we can resolve 
 When we talk about architectures, we’re discussing the foundational design and organization of IT systems. This design influences how data flows, how users interact with applications, and how system components communicate with one another. The architecture chosen can significantly impact the system’s security posture:
 
 - A tightly controlled centralized system may offer better control
-  over data but might present a single point of failure.
+
+over data but might present a single point of failure.
+
 - A decentralized system might provide redundancy and failover
-  options but introduces challenges in data consistency and
-  synchronization.
+
+options but introduces challenges in data consistency and
+
+synchronization.
 
 #### 4.1.1 Cloud
 
