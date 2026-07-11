@@ -1,21 +1,13 @@
 ---
-title: "Introduction to PowerShell"
-slug: "introduction-to-powershell"
+title: "Getting started with PowerShell"
+slug: "getting-started-with-powershell"
 date: 2024-07-27
 tags:
 - Concepts
+- Knowledge check
 categories:
 - PowerShell
-description: ""
-hidden: false
----
-
-PowerShell is a powerful command-line shell and scripting language that can help you inspect systems, automate repetitive tasks, and manage computers more efficiently.
-
-At first, a command-line interface can look intimidating. Fortunately, PowerShell is designed around a fairly consistent command structure, making it easier to learn than it may first appear.
-
-This article introduces the basic concepts of PowerShell and includes a few simple commands that you can try yourself.
-
+description: "PowerShell is a powerful command-line shell and scripting language that can help you inspect systems, automate repetitive tasks, and manage computers more efficiently. At first, a command-line interface can look intimidating. Fortunately, PowerShell is designed around a fairly consistent command structure, making it easier to learn than it may first appear. This article introduces the basic concepts of PowerShell and includes a few simple commands that you can try yourself."
 ---
 
 ## 1: What is PowerShell?
