@@ -7,7 +7,7 @@ tags:
 - Concepts
 categories:
 - Microsoft 365
-description: "If someone sends an email by mistake, Message Recall can sometimes help to remove or replace that message. Historically, Message Recall worked inside the same Microsoft 365 tenant boundary. Cross-Tenant Message Recall changes that by letting a receiving tenant explicitly allow trusted external tenants to request a recall for messages delivered to the receiving tenant’s mailboxes."
+description: "We have all been there. A email is sent and you forgot to add the attachment or the wrong recipient. Exchange Online already has the feature recall messages inside your own tenant but now the cross tenant recall feature is announced, meaning we can recall messages sent to external users which also use Microsoft 365."
 hidden: false
 ---
 
