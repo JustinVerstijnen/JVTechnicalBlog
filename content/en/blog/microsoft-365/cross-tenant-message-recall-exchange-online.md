@@ -48,7 +48,7 @@ You also need to have the newest version available which will contain the new Cr
 Enabling cross-tenant recall and configuring allow list tenants changes how Message Recall requests are honored for messages delivered to your users. Review the allow list carefully before enabling.
 {{% /alert %}}
 
-After connecting to Exchange Onlin owerShell, we can execute this command:
+After connecting to Exchange Online PowerShell, we can execute this command:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
 Set-CrossTenantRecallConfiguration -CrossTenantRecallEnabled $true
