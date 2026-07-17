@@ -4,6 +4,7 @@ slug: "web-filtering-with-azure-virtual-desktop"
 date: 2026-09-17
 tags:
 - Step by Step guides
+- Concepts
 categories:
 - Azure Virtual Desktop
 description: "Learn how to configure web filtering for Azure Virtual Desktop using Microsoft Defender for Endpoint and Microsoft Intune."
@@ -92,8 +93,6 @@ You can play around with the rules to ensure only the right devices are added au
 
 [![jv-media-8522-da0db325ac19.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/web-filtering-with-azure-virtual-desktop/jv-media-8522-da0db325ac19.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/web-filtering-with-azure-virtual-desktop/jv-media-8522-da0db325ac19.png)
 
-## 
-
 ---
 
 ## Step 3: Configure the Web Content Filtering policy
@@ -110,11 +109,33 @@ Here we can select the blocked categories on this device group. For the purpose 
 
 Assign the policy to the Azure Virtual Desktop device group. In my experience, this took a relogin for my device group to actually show up at this step.
 
+{{% alert title="Warning" color="warning" %}}
+If you are using Microsoft 365 Business Premium or Microsoft Defender for Business, you can only define a single web content filtering policy for your environment.
+{{% /alert %}}
+
 After applying the policy, blocked websites will display a Microsoft Defender block page.
 
 ---
 
-## Step 4: Enable Network Protection
+## Step 4: Enable Microsoft Edge Smartscreen
+
+We now must enable Microsoft Edge SmartScreen. This must be done for every browser you use in your organization but I will do the demonstration of Microsoft Edge.
+
+Open the Microsoft Intune admin center at https://intune.microsoft.com and go to "Devices", and then "Windows". Create a new policy here.
+
+[![jv-media-8522-5d15f5cab16e.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/web-filtering-with-azure-virtual-desktop/jv-media-8522-5d15f5cab16e.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/web-filtering-with-azure-virtual-desktop/jv-media-8522-5d15f5cab16e.png)
+
+Give the policy a descriptive name and description and advance to the "Configuration settings" tab.
+
+Now search for the "Configure Microsoft Defender SmartScreen" option and enable it.
+
+[![jv-media-8522-97f400aac45b.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/web-filtering-with-azure-virtual-desktop/jv-media-8522-97f400aac45b.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/web-filtering-with-azure-virtual-desktop/jv-media-8522-97f400aac45b.png)
+
+Then apply the policy to your group containing the session hosts.
+
+---
+
+## Step 5: Enable Network Protection
 
 Network Protection is a great feature to extends filtering capabilities outside Microsoft Edge. Without Network Protection, filtering is more limited and doesnt work in for example Google Chrome or other applications.
 
@@ -136,7 +157,7 @@ Then assign the policy to your Azure Virtual Desktop session hosts and wait for 
 
 ---
 
-## Step 5: Test the filtering
+## Step 6: Test the filtering
 
 After policy deployment:
 
@@ -167,9 +188,8 @@ Thank you for reading this post and I hope it was helpful!
 
 These sources helped me by writing and research for this post;
 
-1. https://learn.microsoft.com/en-us/defender-endpoint/onboard-windows-multi-session-device
-2. https://learn.microsoft.com/en-us/defender-endpoint/web-content-filtering
-3. https://learn.microsoft.com/en-us/defender-endpoint/web-protection-overview
+1. https://learn.microsoft.com/en-us/defender-endpoint/web-content-filtering
+2. https://learn.microsoft.com/en-us/defender-endpoint/web-protection-overview
 
 {{< ads >}}
 
