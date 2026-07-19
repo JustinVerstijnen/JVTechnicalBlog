@@ -43,8 +43,8 @@ body:
       description: Explain what is currently wrong and how you would prefer it to be presented or changed.
       placeholder: |
         Please describe:
-        - What is currently wrong or unclear
-        - What you expected to see
+        - What exactly is currently wrong or unclear
+        - What you expected to see or want to see
         - How the page or website could be improved
     validations:
       required: true
@@ -53,7 +53,7 @@ body:
     id: screenshots
     attributes:
       label: Screenshots
-      description: Upload any screenshots that help explain the issue. Please remove sensitive or personal information before uploading.
+      description: Upload any screenshots that help explain the issue. Please exclude sensitive or personal information (PII) before uploading.
     validations:
       required: false
       accept: ".png,.jpg,.jpeg,.gif,.webp"
