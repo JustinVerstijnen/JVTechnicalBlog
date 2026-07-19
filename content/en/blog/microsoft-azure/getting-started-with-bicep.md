@@ -1,7 +1,7 @@
 ---
 title: "Getting started with Bicep"
 slug: "getting-started-with-bicep"
-date: 2026-08-04
+date: 2026-08-14
 tags:
 - Step by Step guides
 - Knowledge check

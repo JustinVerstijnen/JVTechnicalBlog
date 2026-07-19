@@ -1,7 +1,7 @@
 ---
 title: "Use Session Shadowing with Azure Virtual Desktop"
-slug: "use-shadowing-with-azure-virtual-desktop"
-date: 2026-07-23
+slug: "shadowing-azure-virtual-desktop"
+date: 2026-05-23
 tags:
 - Step by Step Guides
 categories:

@@ -1,7 +1,7 @@
 ---
 title: "Remote Entra Connect Sync script for management servers"
 slug: "remote-entra-connect-sync-script-for-management-servers"
-date: 2026-10-01
+date: 2026-11-16
 tags:
 - Tools and Scripts
 categories:

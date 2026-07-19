@@ -1,7 +1,7 @@
 ---
 title: "Setup a Public Image storage with Azure Blob"
 slug: "setup-a-public-image-storage-with-azure-blob"
-date: 2026-09-14
+date: 2026-01-10
 tags:
 - Concepts
 categories:
