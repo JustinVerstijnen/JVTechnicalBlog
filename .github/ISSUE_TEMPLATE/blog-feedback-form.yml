@@ -1,6 +1,6 @@
 name: Blog feedback form
 description: Report an issue, correction, complaint, or improvement for the technical blog.
-title: ""
+title: "[Blog feedback]: "
 
 body:
   - type: dropdown
