@@ -1,0 +1,59 @@
+name: Website feedback
+description: Report an issue, correction, complaint, or improvement for the technical blog.
+title: "[Website feedback]: "
+
+body:
+  - type: dropdown
+    id: problem-type
+    attributes:
+      label: Type of issue
+      description: Select the option that best describes the issue.
+      options:
+        - Typo
+        - Incorrect information
+        - Outdated information
+        - Display issue
+        - Website feature not working
+        - Complaint
+    validations:
+      required: true
+
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: Enter the URL or Markdown file path of the page related to this issue.
+      placeholder: "Example: docs/intune/deploy-applications.md"
+    validations:
+      required: true
+
+  - type: input
+    id: section
+    attributes:
+      label: Section
+      description: Which section of the page does this issue relate to?
+      placeholder: 'Example: "Configure the deployment policy" or "Entire page"'
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested-improvement
+    attributes:
+      label: How should this be improved?
+      description: Explain what is currently wrong and how you would prefer it to be presented or changed.
+      placeholder: |
+        Please describe:
+        - What is currently wrong or unclear
+        - What you expected to see
+        - How the page or website could be improved
+    validations:
+      required: true
+
+  - type: upload
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Upload any screenshots that help explain the issue. Please remove sensitive or personal information before uploading.
+    validations:
+      required: false
+      accept: ".png,.jpg,.jpeg,.gif,.webp"
