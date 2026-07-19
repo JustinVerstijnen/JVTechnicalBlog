@@ -7,9 +7,9 @@ body:
     id: problem-type
     attributes:
       label: Type of issue
-      description: Select the option that best describes the issue.
+      description: Select the option that best describes your issue with the page.
       options:
-        - Typo
+        - Type, spell or grammar error
         - Incorrect information
         - Outdated information
         - Display issue
@@ -22,7 +22,7 @@ body:
     id: page
     attributes:
       label: Page
-      description: Enter the URL or Markdown file path of the page related to this issue.
+      description: Enter the URL or Markdown file path of the page related to this issue. This will be automatically filled when reporting from an article.
       placeholder: "Example: docs/intune/deploy-applications.md"
     validations:
       required: true
