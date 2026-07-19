@@ -125,7 +125,7 @@ And there are the fields you also filled in earlier.
 
 ## Testing the solution
 
-To test the detections of Defender EASM, I have deployed a virtual machine with the "Damn Vulnerable Web App" image off the Azure Marketplace. This will become our Honeypot, an intended vulnerable attacking machine. We will then add this to the Defender EASM configuration and scan the host. We are certainly sure that it must find "some" vulnerabilities.
+To test the detections of Defender EASM, I have deployed a virtual machine with the "Damn Vulnerable Web App" image from the Azure Marketplace. This will become our Honeypot, an intended vulnerable attacking machine. We will then add this to the Defender EASM configuration and scan the host. We are certainly sure that it must find "some" vulnerabilities.
 
 [![jv-media-8503-5425ab73e0f2.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/microsoft-defender-external-attack-surface-management/jv-media-8503-5425ab73e0f2.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/microsoft-defender-external-attack-surface-management/jv-media-8503-5425ab73e0f2.png)
 
