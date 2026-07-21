@@ -33,7 +33,7 @@ We could have multiple reasons to configure Watermarking in Azure Virtual Deskto
 - Faster troubleshooting, because IT can use the information from the watermark to identify the correct session and session host
 - Better incident investigation when sensitive information is leaked through a screenshot, screen recording or photo taken with an external device
 
-Its more like a in between setting for not completely blocking screenshot ability, but also not fully permit them.
+Its more like an in between setting for not completely blocking screenshot ability, but also not fully permit them.
 
 ---
 
