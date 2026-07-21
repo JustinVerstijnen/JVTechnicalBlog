@@ -46,14 +46,11 @@ This website is completely free to use. However, maintaining and hosting a websi
 
 This website mainly focuses on the following areas:
 
-- **Education**  
-  The primary goal is to provide educational resources that help readers expand their knowledge in a practical and understandable way.
+- **Education**: The primary goal is to provide educational resources that help readers expand their knowledge in a practical and understandable way
+- **Knowledge Sharing**: I aim to build a useful repository of information across a broad range of topics. My content is intended to go beyond simply presenting solutions by also explaining the reasoning behind them
+- **Technical Innovation**: I am passionate about technology and its ability to transform the world. This website highlights technical developments, ideas, and implementations, with the goal of encouraging curiosity and deeper understanding
 
-- **Knowledge Sharing**  
-  I aim to build a useful repository of information across a broad range of topics. My content is intended to go beyond simply presenting solutions by also explaining the reasoning behind them.
-
-- **Technical Innovation**  
-  I am passionate about technology and its ability to transform the world. This website highlights technical developments, ideas, and implementations, with the goal of encouraging curiosity and deeper understanding.
+{{< ads >}}
 
 ## 6. User Responsibilities
 
@@ -63,7 +60,7 @@ You agree not to misuse the knowledge shared on this site. You are also responsi
 
 I do not accept responsibility for any damage, loss, or consequences resulting from the use or implementation of information shared on this website, in responses to posts, or in any other form of communication.
 
-## 7. Content Accuracy and Practical Use
+## 7. Content Accuracy, Practical Use and Reporting Problems
 
 I make every effort to ensure that the content on this website is accurate and reliable. However, I do **not** guarantee that all information is always complete, error-free, or fully up to date.
 
@@ -78,6 +75,16 @@ Some of the solutions or ideas shared here may be suitable for practical or prod
 At the end of some posts, you can find some quiz questions to check your own knowledge of the content of the blog posts. Answers given are not saved, sent or used in any form. All types of checking your answers are done using front-end code only, so on your local device.
 
 The primary language of this website is English, even though my native language is Dutch. I aim to write in a way that makes the content understandable to as many people as possible.
+
+If you find unexpected problems or issues on this website like typing errors, outdated or incorrect information or technical problems, you can report an issue at the end of the page, using the report button:
+
+[![jv-media-152-8e2318c2ddfb.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/terms-conditions-152/jv-media-152-8e2318c2ddfb.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/terms-conditions-152/jv-media-152-8e2318c2ddfb.png)
+
+This will open the issue form on Github which is a simple form that asks you what exactly is your problem with the website.
+
+[![jv-media-152-4522945ad0f7.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/terms-conditions-152/jv-media-152-4522945ad0f7.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/terms-conditions-152/jv-media-152-4522945ad0f7.png)
+
+Please submit your issue and I will aim to fix the problem as soon as possible!
 
 ## 8. Use of Artificial Intelligence (AI)
 
@@ -123,6 +130,8 @@ All content is made freely available because I believe in open access to informa
 
 Your acknowledgment is appreciated and helps support the continued availability of this resource.
 
+{{< ads >}}
+
 ## 10. External Links and Tools
 
 This website may contain links to external websites, tools, or services that are not operated or maintained by me.
@@ -146,8 +155,6 @@ Any changes will be posted on this page. By continuing to use the website after 
 ## 12. Contact
 
 If you have questions, concerns, or feedback regarding these Terms and Conditions, you are welcome to get in touch.
-
-Whether you are asking for clarification, reporting an issue, or sharing suggestions, I appreciate your message and value transparency and respectful communication.
 
 You can find my contact details on the [About](https://justinverstijnen.nl/about) page.
 
