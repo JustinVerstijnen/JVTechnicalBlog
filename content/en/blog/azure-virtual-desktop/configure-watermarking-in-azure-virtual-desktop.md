@@ -120,3 +120,7 @@ Thank you for reading this post and I hope it was helpful!
 These sources helped me by writing and research for this post;
 
 1. [https://learn.microsoft.com/en-us/azure/virtual-desktop/watermarking?tabs=intune](https://learn.microsoft.com/en-us/azure/virtual-desktop/watermarking?tabs=intune)
+
+ {{< ads >}}
+
+ {{< article-footer >}}
