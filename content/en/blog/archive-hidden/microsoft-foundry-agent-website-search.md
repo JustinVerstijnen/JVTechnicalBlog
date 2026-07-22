@@ -1,5 +1,5 @@
 ---
-title: "Microsaoft Foundry"
+title: "Microsoft Foundry"
 date: 2025-01-10
 slug: "microsoft-foundry-agent"
 categories:
