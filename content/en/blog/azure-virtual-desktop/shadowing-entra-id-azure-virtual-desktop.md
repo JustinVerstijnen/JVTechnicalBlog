@@ -108,6 +108,10 @@ Then save the policy to apply it to the session hosts.
 
 ---
 
+{{< ads >}}
+
+---
+
 ## Step 4: Execute a script for Shadow permissions
 
 Now we have to give the user group permission to use Shadow on the AVD session hosts. Unfortunately, we do not have a policy for this, so it must be done with a PowerShell script.
