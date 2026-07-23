@@ -59,13 +59,13 @@ It is possible to create multiple Azure ADs within a single .onmicrosoft tenant.
 Microsoft Entra ID consists of 4 different licenses:
 
 - **Microsoft Entra ID Free**
- - Microsoft Entra ID Free is the default you get when your tenant has 0 licenses.
+  - Microsoft Entra ID Free is the default you get when your tenant has 0 licenses.
 - **Microsoft Entra ID for Microsoft 365**
- - You get this SKU when you have Microsoft 365 licenses.
+  - You get this SKU when you have Microsoft 365 licenses.
 - **Microsoft Entra ID Premium P1**
- - You get this SKU when one or more users have Microsoft Entra ID Premium P1 licenses.
+  - You get this SKU when one or more users have Microsoft Entra ID Premium P1 licenses.
 - **Microsoft Entra ID Premium P2**
- - You get this SKU when one or more users have Microsoft Entra ID Premium P2 licenses.
+  - You get this SKU when one or more users have Microsoft Entra ID Premium P2 licenses.
 
 Each SKU has its own functionality and features. For the actual list of features, please visit: <https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-licensing#available-versions-of-azure-ad-multi-factor-authentication>
 

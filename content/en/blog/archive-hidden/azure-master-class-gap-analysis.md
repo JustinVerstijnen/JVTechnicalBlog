@@ -1,27 +1,5 @@
 Idea for a 2026 update of the Azure Master Class. For ARM, Terraform and Bicep I know have deep dive guides for getting started with them.
 
-## Module 1: Fundamentals
-
-Mostly complete.
-
-Optional improvement:
-
-- Make the shared responsibility model more visually explicit if the existing image is not enough
-
-No major content migration needed.
-
----
-
-## Module 2: Identity
-
-Add:
-
-- Identity Protection
-- User risk and sign-in risk
-- Risk-based Conditional Access
-- Service principals and app registrations
-- Enterprise applications versus app registrations versus managed identities
-
 ---
 
 ## Module 3: Governance
