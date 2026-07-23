@@ -48,22 +48,21 @@ What is important to understand about different cloud services is that as a cust
 
 In general, there are three main types of cloud services:
 
-Infrastructure-as-a-Service (IaaS): With IaaS, a company/customer is only responsible for the operating system layer and above. The infrastructure is provided as a service and is managed by the provider.
+1. Infrastructure-as-a-Service (IaaS): With IaaS, a company/customer is only responsible for the operating system layer and above. The infrastructure is provided as a service and is managed by the provider.
+- _Examples:_ Virtual machines, Virtual Desktop, Virtual network, SQL on VM
 
-* _Examples:_ Virtual machines, Virtual Desktop, Virtual network, SQL on VM
+2. Platform-as-a-Service (PaaS): With PaaS, a company/customer is only responsible for the applications and data.
+- _Examples:_ Azure SQL, Cosmos DB
 
-Platform-as-a-Service (PaaS): With PaaS, a company/customer is only responsible for the applications and data.
-
-* _Examples:_ Azure SQL, Cosmos DB
-
-Software-as-a-Service (SaaS): With SaaS, a company/customer is only responsible for the configuration and permissions of the software. All underlying infrastructure and software are managed by the provider.
-
-* _Examples:_ Microsoft 365, Dynamics 365, Power Platform, AFAS Online, TOPdesk
+3. Software-as-a-Service (SaaS): With SaaS, a company/customer is only responsible for the configuration and permissions of the software. All underlying infrastructure and software are managed by the provider.
+- _Examples:_ Microsoft 365, Dynamics 365, Power Platform, AFAS Online, TOPdesk
 
 And we call self hosted servers:
 
 * **On-premises:** With on-premises, a company/customer is 100% responsible for all components but also has the most information and control.
- * _Examples:_ Own servers/hypervisors
+- _Examples:_ Own servers/hypervisors
+
+Back to the image, which is the shared responsibility model, which means that you stay responsible for certain area's, even if you buy cloud services. For example in PaaS solutions, you don't need to maintain servers or OS's but you always need to still manage the data and applications.
 
 ---
 
