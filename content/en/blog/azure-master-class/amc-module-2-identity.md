@@ -7,45 +7,15 @@ categories:
 tags:
   - Concepts
 description: >
-  This Azure Master Class (AMC) chapter is all about Identity in Microsoft Azure. This means we discuss the following: Users, Groups, Ente...
+  This Azure Master Class (AMC) chapter is all about Identity in Microsoft Azure. This means we discuss the following: Users, Groups, Devices, Enterprise Applications, Service Principals, Authentication and advanced features like COnditional Access, Identity Protection and Privileged Identity Management (PIM).
 weight: 2
 ---
-This Azure Master Class (AMC) chapter is all about Identity in Microsoft Azure. This means we discuss the following:
-
-- Users
-- Groups
-- Devices
-- Enterprise Applications
-- Service Principals
-- Authentication
 
 ## What is identity?
 
-For every service that a user accesses, it is necessary to have an identity. Access needs to be determined, and the service must know who the user is in order to open the correct environment.
+For every service that a user accesses, it is necessary to have an identity. Access needs to be determined, and the service must know who the user is in order to open the correct environment. During **authentication**, a system will double check if a user is who it says it is which we can do in various ways today. We can only allow a password or go better and more secured by using MFA, Passkeys, physical authentication etc.
 
-Best practice is to always assign the least possible privileges. A person who performs 3 tasks does not need permissions for 200 tasks, but for the 3 tasks only. "Least privilege" is one of the 3 key principals of the Zero Trust model.
-
----
-
-## Central Identities/Identity Provider
-
-To store identities, you need an Identity Provider. In Azure, we have a built-in identity provider called Azure Active Directory. An Identity Provider itself is a database where all identities are stored, and it can securely release them through Single Sign-On applications.
-
-An overview of what this process looks like:
-
-[![jv-media-463-6d45f3ce80bb.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-2-identity-463/jv-media-463-6d45f3ce80bb.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-2-identity-463/jv-media-463-6d45f3ce80bb.png)
-
-In this diagram, Azure Active Directory, our Identity Provider, is at the center. When an application is set up, a 'trust' is established with the Identity Provider. This allows a user to log in to third-party applications through the Identity Provider using the same credentials, and they will be logged in automatically.
-
----
-
-## Decentralized Identities
-
-Another possibility is to use the Decentralized Identity model. In this model, the user owns all their application credentials and can decide for themselves which entities/applications they share their credentials with.
-
-An overview of what this process looks like:
-
-[![jv-media-463-7a5b8d931605.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-2-identity-463/jv-media-463-7a5b8d931605.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-2-identity-463/jv-media-463-7a5b8d931605.png)
+Then we get the **authorization** phase; what is a user able to do after checking in is completed. Best practice is to always assign the least possible privileges. A person who performs 3 tasks does not need permissions for 200 tasks, but for the 3 tasks only. "Least privilege" is one of the 3 key principals of the Zero Trust model.
 
 ---
 
@@ -74,7 +44,7 @@ However, it differs some from the old Active Directory Domain Services protocols
 
 ### Federation
 
-The Federation process means that an application trusts a federation server, allowing it to issue tokens for Single Sign-On.
+The Federation process means that an application trusts a federation server, allowing it to issue tokens for Single Sign-On. In the past we had Active Directory Federation Services as a role, which makes AD authentication and SSO possible to 3rd party applications.
 
 ---
 
@@ -138,6 +108,40 @@ All types of identities stored in Microsoft Entra ID are:
 
 ---
 
+## Enterprise Applications
+
+An Enterprise Application is the local representation of an application inside your Microsoft Entra ID tenant. It is mainly used to configure who is allowed to access the application and how users authenticate.
+
+Within an Enterprise Application, you can configure:
+
+- User and group assignments
+- Single Sign-On with SAML, OpenID Connect or password-based authentication
+- Conditional Access policies
+- Automatic user provisioning
+- Permissions and consent
+- Sign-in and audit logs
+
+When an application is added from the Microsoft Entra application gallery or consent is given to an external application, an Enterprise Application is automatically created in the tenant.
+
+---
+
+## App Registrations
+
+An App Registration is used to create an identity for an application that needs to authenticate against Microsoft Entra ID. This is commonly used for custom applications, scripts, APIs and automated services.
+
+An App Registration contains settings such as:
+
+- Application (client) ID
+- Directory (tenant) ID
+- Redirect URIs
+- API permissions
+- Client secrets and certificates
+- Supported account types
+
+The App Registration describes the application itself, while the Enterprise Application is the actual instance of that application inside a Microsoft Entra ID tenant. This Enterprise Application instance is also called a **Service Principal**. This is a identity which can be assigned various permissions and possibly risky.
+
+---
+
 ## Entra ID Join/Hybrid Entra ID Joined/Entra ID Registered
 
 Devices can be added to Microsoft Entra ID for various reasons:
@@ -176,6 +180,28 @@ To synchronize AD DS with Microsoft Entra ID, there are two solutions available:
 
 ---
 
+## Central Identities/Identity Provider
+
+To store identities, you need an Identity Provider. In Azure, we have a built-in identity provider called Azure Active Directory. An Identity Provider itself is a database where all identities are stored, and it can securely release them through Single Sign-On applications.
+
+An overview of what this process looks like:
+
+[![jv-media-463-6d45f3ce80bb.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-2-identity-463/jv-media-463-6d45f3ce80bb.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-2-identity-463/jv-media-463-6d45f3ce80bb.png)
+
+In this diagram, Azure Active Directory, our Identity Provider, is at the center. When an application is set up, a 'trust' is established with the Identity Provider. This allows a user to log in to third-party applications through the Identity Provider using the same credentials, and they will be logged in automatically.
+
+---
+
+## Decentralized Identities
+
+Another possibility is to use the Decentralized Identity model. In this model, the user owns all their application credentials and can decide for themselves which entities/applications they share their credentials with.
+
+An overview of what this process looks like:
+
+[![jv-media-463-7a5b8d931605.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-2-identity-463/jv-media-463-7a5b8d931605.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-2-identity-463/jv-media-463-7a5b8d931605.png)
+
+---
+
 ## Roles and Administrative units
 
 Microsoft Entra ID has several built-in roles, which are packages with predefined permissions. These can be assigned to users to grant them access to specific functions. It is possible to create a custom role using JSON, defining actions that a user can or cannot perform (Actions/NotActions).
@@ -202,34 +228,6 @@ However, administrative units have some limitations/security constraints:
 
 ---
 
-## Privileged Identity Management (P2)
-
-Privileged Identity Management (PIM) is a feature in Microsoft Entra ID to reinforce the "least privilege" concept. With PIM, you can assign roles to users or groups, but also for specific time periods. Does someone need to make a change between 12:00 PM and 12:30 PM but otherwise doesn’t need these permissions? Why should they always have those rights?
-
-Privileged Identity Management is your central tool for assigning all permissions to users within your Microsoft Entra ID tenant and Azure subscriptions.
-
-Privileged Identity Management works for Microsoft Entra ID roles and Azure Resource Manager roles, ensuring a systematic approach to resolving changes.
-
-[![jv-media-463-f6a7d64286b3.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-2-identity-463/jv-media-463-f6a7d64286b3.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-2-identity-463/jv-media-463-f6a7d64286b3.png)
-
-The four pillars of Entra ID Privileged Identity Management
-
-There are 3 types of assignments:
-
-- **Eligible**: This means that a user or group can be granted the permissions, but they are not active. A PIM administrator can activate these roles at any time or schedule them for a specific time. During activation, for example, you can add a reference number. You can also set in the assignment wizard how long Eligible assignments remain valid.
-- **Active**: An active assignment is a role that is currently active.
-- **Permanent**: A permanent assignment is an assignment that does not expire, meaning the user has the specified access until it is revoked or the account is disabled.
-
----
-
-## Access Reviews (P2)
-
-Another option in Microsoft Entra ID is access reviews. This allows you to periodically review user assignments to groups and ensure that users who no longer need access are removed.
-
-Access reviews can assist by notifying administrators about users, but also by sending an email to the users themselves, asking whether access is still needed. If they respond with "no" or fail to respond within a set number of days, the assignment is removed, and access is revoked. This enhances the level of security while also reducing the workload for administrators.
-
----
-
 ## Conditional Access (P1)
 
 Conditional Access is a feature of Microsoft Entra ID that allows users to access resources based on "if-then" rules.
@@ -250,12 +248,74 @@ Examples:
 
 ### Conditional Access Policy presedence
 
-Because you can create many different policies for Conditional Access to secure access to your resources, these policies work slightly differently than you might expect. For example, with firewall rules, only the first policy that is triggered applies.
+Because you are able to create many different policies for Conditional Access to secure access to your resources, these policies work slightly differently than you might expect. For example, with firewall rules, only the first policy that is triggered applies.
 
 With Conditional Access, the effective policy for a user is determined by all the available policies, and they are combined. In addition, the following two rules are taken into account:
 
 - **Blocking takes precedence over allowing**: If the same user is subject to two policies, where one blocks access and the other allows access, the effective access will be blocked.
 - **The most restrictive policy wins over the less restrictive policy**: This means the policy that allows the least access will be effectively applied.
+
+Further the policies are being merged to apply as much to the identity as possible, let's say:
+
+- Policy 1: Requires MFA
+- Policy 2: Requires login from trusted locations
+
+The effect is that the user must do MFA and loggin in from the trusted locations to be able to login.
+
+---
+
+## Identity Protection (User/Sign-in risk) (P2)
+
+Identity Protection was formerly known as a separate option but today it is integrated into Conditional Access. It lets administrators block sign ins based on different automated signals:
+
+- Anonymous IP address usage
+- Malicious IP addresses
+- Password spray attacks
+- Leaked credentials
+- Impossible travel
+
+The general guideline for Identity Protection is to create two separate CA policies:
+
+- Policy 1: User risks: Block from High
+- Policy 2: Sign-in risks: Block Medium and High
+
+Combining these policies will result in the policy not actually working, as the user then must comply with both conditions before any blocking happens.
+
+{{% alert title="Info" color="info" %}}
+To read more about the specifics of Identity Protection, check out: https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection
+{{% /alert %}}
+
+---
+
+## Privileged Identity Management (P2)
+
+Privileged Identity Management (PIM) is a feature in Microsoft Entra ID to reinforce the "least privilege" concept. With PIM, you can assign roles to users or groups, but also for specific time periods. Does someone need to make a change between 12:00 PM and 12:30 PM but otherwise doesn’t need these permissions? Why should they always have those rights?
+
+Privileged Identity Management is your central tool for assigning all permissions to users within your Microsoft Entra ID tenant and Azure subscriptions. It also is a tool to build up a history on who did what change at what time.
+
+[![jv-media-463-89911edfff46.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-2-identity-463/jv-media-463-89911edfff46.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-2-identity-463/jv-media-463-89911edfff46.png)
+
+Here is an example of how this looks in the portal, where I have requested permissions to test a function of Microsoft Defender.
+
+Privileged Identity Management works for Microsoft Entra ID roles and Azure Resource Manager roles, ensuring a systematic approach to resolving changes.
+
+[![jv-media-463-f6a7d64286b3.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-2-identity-463/jv-media-463-f6a7d64286b3.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/amc-module-2-identity-463/jv-media-463-f6a7d64286b3.png)
+
+_The four pillars of Entra ID Privileged Identity Management._
+
+There are 3 types of assignments:
+
+- **Eligible**: This means that a user or group can be granted the permissions, but they are not active. A PIM administrator can activate these roles at any time or schedule them for a specific time. During activation, for example, you can add a reference number. You can also set in the assignment wizard how long Eligible assignments remain valid.
+- **Active**: An active assignment is a role that is currently active.
+- **Permanent**: A permanent assignment is an assignment that does not expire, meaning the user has the specified access until it is revoked or the account is disabled.
+
+---
+
+## Access Reviews (P2)
+
+Another option in Microsoft Entra ID is access reviews. This allows you to periodically review user assignments to groups and ensure that users who no longer need access are removed.
+
+Access reviews can assist by notifying administrators about users, but also by sending an email to the users themselves, asking whether access is still needed. If they respond with "no" or fail to respond within a set number of days, the assignment is removed, and access is revoked. This enhances the level of security while also reducing the workload for administrators.
 
 ---
 
@@ -318,7 +378,7 @@ You can find the portal to reset your password via the link below, or by pressin
 
 ---
 
-## B2B en B2C (Business to Business en Business to Customer)
+## B2B en B2C (Business to Business and Business to Customer)
 
 B2B and B2C can be seen as similar to how trusts used to work. This allows a user in an external Microsoft Entra ID tenant to access resources such as Teams channels or SharePoint sites in your own Microsoft Entra ID. The external user will be created as a guest in your Microsoft Entra ID, but the user from the external Microsoft Entra ID will use their own credentials and MFA. This provides high security and ease of use.
 
@@ -328,9 +388,9 @@ With B2C, it is entirely focused on customers. Customers can, for example, log i
 
 ---
 
-## Azure Active Directory Domain Services (Azure AD DS)
+## Entra Domain Services
 
-The traditional Active Directory with OUs and Group Policies is an outdated solution but is still needed for some applications/use cases (AVD/FSLogix). It is possible to get this as a service in Azure. A subscription to Azure is required for this.
+The traditional Active Directory with OUs and Group Policies is an outdated solution but is still needed for some applications/use cases (AVD/FSLogix/SQL). It is possible to get this as a service in Azure. A subscription to Azure is required for this.
 
 With this solution, it is no longer necessary to set up and configure a separate VM as a Domain Controller. By default, this service is configured redundantly with 2 servers and a load balancer and costs about half (~90-100 euros per month, depending on the SKU and the number of objects) compared to a good server (~200 euros).
 
@@ -340,10 +400,12 @@ However, it has some limitations:
 - Administrative groups are predefined, and OU delegation is not possible.
 - OUs are created by default and cannot be modified, only custom OUs can be created.
 - Users cannot be divided into custom OUs.
-- Azure AD DS joined machines cannot be managed with Intune.
-- Azure AD DS joined machines cannot be added to Microsoft Defender for Endpoint.
+- Entra Domain Services joined machines cannot be managed with Intune.
+- Entra Domain Services joined machines cannot be added to Microsoft Defender for Endpoint.
 
-All in all, Microsoft Entra Domain Services is a good and quick solution with minimal administrative overhead for a company with a maximum of 30 employees and not too many different groups. For larger companies, I would definitely recommend 2 domain controllers and a self-hosted Active Directory.
+All in all, Microsoft Entra Domain Services is a good and quick solution with minimal administrative overhead for a company with a maximum of 30 employees and not too many different groups. For larger companies, I would definitely recommend 2 domain controllers and a self-hosted Active Directory. 
+
+This feature was formerly known as Azure Active Directory Domain Services.
 
 ---
 
