@@ -32,7 +32,7 @@ In this post, I will describe how I got this to work.
 
 We must first create a security group whose members are allowed to use Shadowing. In my case, I have an AVD Admins group that I will use, but you can also be more granular by creating a group specifically for this purpose.
 
-I created a group in Entra ID with all the AVD admins in it. We can use this group for the permissions.
+I created a group in Entra ID with all the AVD admins in it. We can use this group for the permissions to be able to start Shadow Sessions.
 
 [![jv-media-8523-5c98f26d2864.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/shadowing-entra-id-azure-virtual-desktop/jv-media-8523-5c98f26d2864.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/shadowing-entra-id-azure-virtual-desktop/jv-media-8523-5c98f26d2864.png)
 
@@ -59,6 +59,20 @@ Here, select the setting "Set rules for remote control of Remote Desktop Service
 Here, we can enable the setting and select which permissions are linked to it. I will choose "Full Control without user's permission" for the demonstration in this guide.
 
 [![jv-media-8521-0cdba2d99df5.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-shadowing-with-azure-virtual-desktop/jv-media-8521-0cdba2d99df5.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/use-shadowing-with-azure-virtual-desktop/jv-media-8521-0cdba2d99df5.png)
+
+All the options are:
+
+1. **No remote control allowed**: Disallows an administrator to use remote control or view a remote user session.
+2. **Full Control with user's permission**: Allows the administrator to interact with the session, with the user's consent.
+3. **Full Control without user's permission**: Allows the administrator to interact with the session, without the user's consent.
+4. **View Session with user's permission**: Allows the administrator to watch the session of a remote user with the user's consent. 
+5. **View Session without user's permission**: Allows the administrator to watch the session of a remote user without the user's consent.
+
+You can also set this in the registry with this command:
+
+{{< card code=true header="**cmd**" lang="cmd" >}}
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v Shadow /t REG_DWORD /d 2 /f
+{{< /card >}}
 
 Save the policy and apply it to the group containing your Azure Virtual Desktop session hosts.
 
