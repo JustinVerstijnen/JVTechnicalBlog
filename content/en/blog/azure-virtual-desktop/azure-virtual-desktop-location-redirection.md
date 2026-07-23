@@ -3,7 +3,6 @@ title: "Configure Location redirection in Azure Virtual Desktop"
 slug: "azure-virtual-desktop-location-redirection"
 date: 2024-09-23
 tags:
-- Concepts
 - Step by Step guides
 categories:
 - Azure Virtual Desktop
