@@ -15,6 +15,7 @@ Coole blog over hoe je de beveiliging nog verder kan opkrikken:
 - Private Endpoint voor Hostpool
 - Device Redirections
 - Screen capture en watermerkbeveiliging
+- Web filtering met Defender for Endpoint
 - Azure Firewall voor AVD netwerk
 - Maximum SMB security
 - Least privilege access voor Storage account
