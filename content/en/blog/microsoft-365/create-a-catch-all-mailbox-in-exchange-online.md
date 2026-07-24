@@ -121,6 +121,8 @@ $aliasdistributiongroup = "exclude-from-catchall"
 New-DynamicDistributionGroup -Name '$distributiongroup' -Alias '$aliasdistributiongroup' -OrganizationalUnit $null -IncludedRecipients 'MailboxUsers'
 {{< /card >}}
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Create the Mailflow Rule

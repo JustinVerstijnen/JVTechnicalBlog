@@ -96,6 +96,7 @@ Select "Azure Bastion" at the subnet purpose field, this is a template for the n
 
 Click on "Add" to finish the creation of this subnet.
 
+
 ### Deploy Azure Bastion instance
 
 Now go back to "Bastions" and we can create a new instance:
@@ -121,6 +122,8 @@ You can also deploy Azure Bastion when creating a virtual network:
 [![jv-media-3240-74fff95e8855.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/everything-you-need-to-know-about-azure-bastion-3240/jv-media-3240-74fff95e8855.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/everything-you-need-to-know-about-azure-bastion-3240/jv-media-3240-74fff95e8855.png)
 
 However, this option has less control over naming structure and placement. Something we don't always want :)
+
+{{< ads >}}
 
 ---
 

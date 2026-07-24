@@ -88,6 +88,8 @@ You can use tags to mark different environments. This way every administrator wo
 
 Here I marked a resource as a Testing resource as an example.
 
+{{< ads >}}
+
 ---
 
 ## 3: Responsable person or departments
@@ -147,6 +149,8 @@ Tags could be used excellently to define the maintenance hours and Restore Time 
 [![jv-media-4968-271689ef62c9.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/10-ways-to-use-tags-in-microsoft-azure-4968/jv-media-4968-271689ef62c9.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/10-ways-to-use-tags-in-microsoft-azure-4968/jv-media-4968-271689ef62c9.png)
 
 Here I have created 2 tags, defining the maintenance hours including the timezone and the Restore Time Objective.
+
+{{< ads >}}
 
 ---
 

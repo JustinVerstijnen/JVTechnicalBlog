@@ -87,6 +87,8 @@ The script can take up to 20 minutes, so have a little patience.
 
 After every task is completed the server will reboot and you will be presented with the new settings.
 
+{{< ads >}}
+
 ---
 
 ## Before and after the script

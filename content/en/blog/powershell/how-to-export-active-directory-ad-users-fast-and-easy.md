@@ -19,6 +19,8 @@ For the fast pass, I uploaded the script to my Github page:
 
 <p><a class="btn btn-primary" href="https://github.com/JustinVerstijnen/JV-ExportADUsers"><i class="fa-brands fa-github"></i> Download script from GitHub</a></p>
 
+{{< ads >}}
+
 ---
 
 ## How to export the AD users by hand

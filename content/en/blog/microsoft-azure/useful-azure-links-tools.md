@@ -44,6 +44,8 @@ You can also check on Azure Service Health if there are any issues which impacts
 
 <https://portal.azure.com/#view/Microsoft_Azure_Health/AzureHealthBrowseBlade/~/serviceIssues>
 
+{{< ads >}}
+
 ---
 
 ## 3. Azure Pricing Calculator

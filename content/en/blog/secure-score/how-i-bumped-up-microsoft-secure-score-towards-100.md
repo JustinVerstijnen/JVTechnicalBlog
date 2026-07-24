@@ -57,6 +57,8 @@ When started out, my tenant contained around 8 users and 2 devices and have Busi
 
 While I mostly use the Secure Score of the security.microsoft.com portal, as this contains every pillar we also have the secure score from the Entra portal. As you can see, they are a bit inconsistent. For Zero Trust to work, we have to defend ourselves on every pillar.
 
+{{< ads >}}
+
 ---
 
 ## Licensing requirements

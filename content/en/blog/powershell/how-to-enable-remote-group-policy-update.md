@@ -49,6 +49,8 @@ Select all rules of both of the predefined rulesets.
 
 After this link the GPO to the right OU and do a last manual GPupdate or wait for the scheduled GPupdate to finish.
 
+{{< ads >}}
+
 ---
 
 ## Performing remote Group Policy updates

@@ -111,6 +111,8 @@ Also save the certificate password. We need this password in the next step when 
 
 If your provider also gives you the Root CA and Intermediate CA certificates, download those as well. We need the certificate chain later to configure Exchange Online.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Installing the certificate

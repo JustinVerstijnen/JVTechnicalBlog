@@ -63,6 +63,8 @@ JV-ServerInventoryReport
 
 This immediately runs the script and saves the output to your desktop folder.
 
+{{< ads >}}
+
 ---
 
 ## How to use the script manually

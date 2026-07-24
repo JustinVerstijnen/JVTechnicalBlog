@@ -49,6 +49,8 @@ A sign-in window will appear. Sign in with an account that has the required perm
 
 If the sign-in was succesful, you will not receive any further error messages and we are ready to go to the next step.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Remove the connector

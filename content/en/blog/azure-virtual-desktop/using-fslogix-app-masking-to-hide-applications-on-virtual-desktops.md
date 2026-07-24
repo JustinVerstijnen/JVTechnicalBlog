@@ -81,6 +81,8 @@ Now repeat those steps for the other applications, by creating a rule for every 
 
 In the next step we will apply the security to those rules to make them effective.
 
+{{< ads >}}
+
 ---
 
 ## Assign the security groups to the hiding rules

@@ -147,6 +147,8 @@ PS C:\Users\InfoJustinVerstijnen> az version
 
 Azure CLI is now also installed and ready to use.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Downloading my Single Server Terraform setup

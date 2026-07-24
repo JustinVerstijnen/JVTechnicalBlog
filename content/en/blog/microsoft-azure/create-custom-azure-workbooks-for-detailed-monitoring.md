@@ -141,3 +141,9 @@ You can download the original sample workbook here:
 Azure Workbooks provide a flexible and scalable way to visualize operational data in Azure. Start with templates, then evolve toward dashboards tailored to your own workloads.
 
 [![jv-media-1468-bea4d456f8dc.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-custom-azure-workbooks-for-detailed-monitoring-1468/jv-media-1468-bea4d456f8dc.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-custom-azure-workbooks-for-detailed-monitoring-1468/jv-media-1468-bea4d456f8dc.png)
+
+Thank you for reading this post and I hope it was helpful!
+
+{{< ads >}}
+
+{{< article-footer >}}

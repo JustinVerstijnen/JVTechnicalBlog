@@ -40,6 +40,8 @@ The "Emissions Reductions" detail pane contains advices about how to reduce emis
 
 In my environment I have only 1 recommendation, and that is to downgrade one of the servers that has more resources than it needs. However, we have to stick to system requirements of an specific application that needs those resources at minimum.
 
+{{< ads >}}
+
 ---
 
 ## Types/Scopes of emissions

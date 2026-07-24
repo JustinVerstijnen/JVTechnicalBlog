@@ -79,6 +79,8 @@ Go to "Custom Attributes" and add the attribute like shown below;
 
 When a mailbox had this attribute in field 1, it will be excluded from the dynamic distribution group.
 
+{{< ads >}}
+
 ---
 
 ## Check recipients of dynamic distribution group

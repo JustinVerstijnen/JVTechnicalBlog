@@ -187,6 +187,8 @@ Click OK and your XML file with all customizations will be downloaded:
 
 [![jv-media-4259-1919590e6f0a.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/customize-office-apps-installation-for-azure-virtual-desktop-4259/jv-media-4259-1919590e6f0a.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/customize-office-apps-installation-for-azure-virtual-desktop-4259/jv-media-4259-1919590e6f0a.png)
 
+{{< ads >}}
+
 ---
 
 ## Installing Office on Windows

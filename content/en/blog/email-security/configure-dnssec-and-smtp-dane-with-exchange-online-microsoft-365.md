@@ -84,6 +84,8 @@ Connect-ExchangeOnline
 
 Login with your credentials, and we are ready.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Enable DNSSEC

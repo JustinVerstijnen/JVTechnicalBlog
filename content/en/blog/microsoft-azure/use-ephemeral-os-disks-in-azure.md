@@ -70,6 +70,8 @@ Now let's outline the pro's and cons of Ephemeral OS Disks before jumping into t
 
 As you can see, this is exactly why I warned you for the cons, because these cons make it unusable for most workloads. However, there is at least one use-case where I can think of where the pros weigh up to the cons: Azure Virtual Desktop.
 
+{{< ads >}}
+
 ---
 
 ## Theoretical performance difference

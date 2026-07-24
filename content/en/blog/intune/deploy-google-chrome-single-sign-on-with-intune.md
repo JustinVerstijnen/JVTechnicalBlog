@@ -111,6 +111,8 @@ Then click "Next" and assign it to your devices. In my case, I selected "All dev
 
 Click "Next" and then "Create" to deploy the script that will install the extension.
 
+{{< ads >}}
+
 ---
 
 ## The results on the client machine

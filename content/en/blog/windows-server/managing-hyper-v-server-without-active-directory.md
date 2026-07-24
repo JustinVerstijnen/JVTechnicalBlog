@@ -72,6 +72,8 @@ This enables CredSSP authentication and accepts local users on the server to aut
 
 We can now head over to our client workstation for some configurations and the Hyper-V server can reboot in the meanwhile.
 
+{{< ads >}}
+
 ---
 
 ## Client side configuration

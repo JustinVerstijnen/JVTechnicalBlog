@@ -79,6 +79,8 @@ As you can see, the impact on the costs is great, according to the times you ena
 
 There can be some downsides to this, like users wanting to work in the evening hours or on weekends. The servers are unavailable, so is their work.
 
+{{< ads >}}
+
 ---
 
 ## Deploying the Start/Stop solution

@@ -117,6 +117,8 @@ Now everything in your template will be deployed into Azure:
 
 As you can see, you can repeat these steps if you need multiple similar virtual machines as we only need to load the files and change 2 settings. This saves a lot of time of everything in the normal VM wizard and this decreases human errors.
 
+{{< ads >}}
+
 ---
 
 ## Add Powershell script to ARM template

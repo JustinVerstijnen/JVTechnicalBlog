@@ -107,6 +107,8 @@ The advantages of configuring SPF records are:
 - Much less false positives
 - Higher chance of your email actually reaching the receiver
 
+{{< ads >}}
+
 ---
 
 ## DKIM - Domain Keys Identified Mail

@@ -72,6 +72,8 @@ Create the networks and select your preferred IP address ranges.
 
 [![jv-media-2132-b3983ff6fd49.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-to-implement-azure-firewall-to-secure-your-azure-environment-2132/jv-media-2132-b3983ff6fd49.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-to-implement-azure-firewall-to-secure-your-azure-environment-2132/jv-media-2132-b3983ff6fd49.png)
 
+{{< ads >}}
+
 ---
 
 ## Peering the networks

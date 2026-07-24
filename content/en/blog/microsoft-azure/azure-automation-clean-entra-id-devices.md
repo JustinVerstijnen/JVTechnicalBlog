@@ -325,3 +325,7 @@ These sources helped me by writing and research for this post;
 3. https://learn.microsoft.com/en-us/entra/identity/devices/manage-stale-devices
 4. https://github.com/JustinVerstijnen/JV-AA-CleanEntraIDDevices/tree/main
 5. https://learn.microsoft.com/en-us/azure/automation/enable-managed-identity-for-automation
+
+{{< ads >}}
+
+{{< article-footer >}}

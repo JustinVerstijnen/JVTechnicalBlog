@@ -42,6 +42,8 @@ This are 8 recommendations which we will perform now. Most of these recommendati
 
 [![jv-media-5349-377c5978938d.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/microsoft-secure-score-apps-5349/jv-media-5349-377c5978938d.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/microsoft-secure-score-apps-5349/jv-media-5349-377c5978938d.png)
 
+{{< ads >}}
+
 ---
 
 ## EO 1: Ensure 'External sharing' of calendars is not available
@@ -165,6 +167,8 @@ Uncheck the following three options:
 
 Then save the policy.
 
+{{< ads >}}
+
 ---
 
 ## EO 6: Ensure the customer lockbox feature is enabled
@@ -282,6 +286,8 @@ Set-CsTeamsMeetingPolicy -Identity Global -AllowAnonymousUsersToJoinMeeting $Fal
 [![jv-media-5349-12c17d365bed.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/microsoft-secure-score-apps-5349/jv-media-5349-12c17d365bed.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/microsoft-secure-score-apps-5349/jv-media-5349-12c17d365bed.png)
 
 This now forbids uninvited users from accessing your Teams meetings.
+
+{{< ads >}}
 
 ---
 

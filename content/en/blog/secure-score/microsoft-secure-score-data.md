@@ -39,6 +39,8 @@ This gives us these four recommendation we must address:
 
 Let's solve them step-by-step.
 
+{{< ads >}}
+
 ---
 
 ## Data #1: Ensure DLP policies are enabled

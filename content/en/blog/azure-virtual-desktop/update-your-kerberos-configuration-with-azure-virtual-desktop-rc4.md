@@ -80,6 +80,8 @@ You can also retrieve all current tickets on your computer to check all tickets 
 klist
 {{< /card >}}
 
+{{< ads >}}
+
 ---
 
 ## Check your configuration - Active Directory

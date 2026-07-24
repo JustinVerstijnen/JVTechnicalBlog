@@ -59,6 +59,8 @@ We have the following plans and prices when running on Linux:
 
 For the Standard and Premium offerings there is also an option to reserve your instance for a year for a 40% discount.
 
+{{< ads >}}
+
 ---
 
 ## Architecture of the Wordpress solution
@@ -113,6 +115,8 @@ Now after selecting the option, we have 4 different plans which we can choose. T
 [![jv-media-2625-d1409fa6f079.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-d1409fa6f079.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-d1409fa6f079.png)
 
 For this guide, we will choose the Basic as we want to actually host on a custom domain name. Select the free plan and continue.
+
+{{< ads >}}
 
 ### Resource group and App Service plan
 
@@ -293,6 +297,8 @@ We can also visit the Wordpress admin panel on this URL now by adding /wp-admin:
 - https://wordpresstest.justinverstijnen.nl/wp-admin
 
 [![jv-media-2625-f085d4defaf6.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-f085d4defaf6.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-f085d4defaf6.png)
+
+{{< ads >}}
 
 ---
 

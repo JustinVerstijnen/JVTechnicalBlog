@@ -5,9 +5,13 @@ date: 2026-05-09
 tags:
 - Step by Step guides
 categories:
-- Microsoft Entra
+- Archive
 description: "On this page I will show the advanced and custom CSS controls available for Entra ID prompts to style this to your likings or organization branding."
 ---
+
+{{% alert title="Info" color="info" %}}
+This feature of Entra ID has been deprecated which I find very unfortunate, but security first. Source: https://learn.microsoft.com/en-us/entra/fundamentals/reference-company-branding-css-template
+{{% /alert %}}
 
 Everybody who is managing Entra ID tenants ever saw this Custom CSS option during the wizard:
 
@@ -178,6 +182,8 @@ Now I have opened the custom CSS file into Visual Studio Code. Now determine you
 The border-radius values defines the rounded corners. You could also change that, but thats up to you.
 
 Save the file to a CSS file and let's head to Entra ID.
+
+{{< ads >}}
 
 ---
 

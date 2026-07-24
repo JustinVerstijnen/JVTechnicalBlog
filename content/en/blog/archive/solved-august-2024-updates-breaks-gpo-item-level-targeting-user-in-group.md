@@ -3,7 +3,7 @@ title: "Solved: August 2024 updates breaks GPO Item level targeting - user in gr
 date: 2024-09-09
 slug: "solved-august-2024-updates-breaks-gpo-item-level-targeting-user-in-group"
 categories:
-  - Windows Server
+  - Archive
 tags:
   - Step by Step guides
 description: >

@@ -97,6 +97,8 @@ Let's check this in the Windows Task Scheduler:
 
 As you can see, the script is succesfully installed to Task Scheduler. This ensures it runs every first of the month at 03:00 (or at your own defined schedule). Also, the script has been placed in C:\Scripts for a good overview of the scripts of the system.
 
+{{< ads >}}
+
 ## How to install the Windows Update script manually
 
 If you want to define your own schedule and script location, it can be better to install the script yourself or only using it when you need it.

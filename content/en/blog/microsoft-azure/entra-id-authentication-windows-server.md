@@ -88,6 +88,8 @@ If having multiple VMs with this cause in one resource group, you can also assig
 
 Step 2 is now completed.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Enable the System Assigned Managed Identity

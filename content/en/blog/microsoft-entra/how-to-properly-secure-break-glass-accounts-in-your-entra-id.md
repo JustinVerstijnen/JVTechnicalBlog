@@ -50,6 +50,8 @@ For administrator accounts, and especially break glass administrator accounts, i
 
 I have seen this happening in production, and so using the .onmicrosoft.com domain helps you gaining quicker access in case of emergency.
 
+{{< ads >}}
+
 ---
 
 ## 4: Exclude Break Glass administrator accounts from Conditional Access

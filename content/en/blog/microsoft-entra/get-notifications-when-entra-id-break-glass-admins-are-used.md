@@ -70,6 +70,8 @@ Quick note before diving into the log analytics workspace and checking the logs.
 
 And another note, sign in logs take up to 5-10 minutes before showing in the Portal and before written to Log Analytics.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Configure the query

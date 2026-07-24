@@ -50,6 +50,8 @@ As you can see, the bottom 4 items are already done. The top 4 items must be add
 | 10. Ensure user consent to apps accessing company data on their behalf is not allowed | Disable users to have permissions to allow 3rd party apps accessing their data. |
 | 11. Designate more than one global admin | Always ensure you have one or two back-up accounts. This is to avoid being locked out. Also always exclude on of the accounts from all policies with a very strong password and use this as "break-glass" account. |
 
+{{< ads >}}
+
 ---
 
 ## 1/2: Create a Risk-based Conditional Access policy
@@ -109,6 +111,8 @@ Under "Conditions", select "Client Apps" and select the options:
 - Other clients
 
 Then under "Grant", select "Block access" to block any legacy authentication protocols from being used.
+
+{{< ads >}}
 
 ---
 

@@ -91,6 +91,8 @@ The role assignment is required because users will be loggin into a virtual mach
 
 You can do this on Resource, Resource Group and Subscription level, but mostly we will be placing similar hosts in the same resource group. My advice in such situation would be to use the resource group for the permissions.
 
+{{< ads >}}
+
 ---
 
 ## 2: Create Azure Virtual Desktop hostpool
@@ -233,6 +235,8 @@ You also need to exclude the application from your Conditional Access policies. 
 In my case, the name did not pop-up so I used the Application ID instead.
 
 Add this to the excluded resource of every Conditional Access policy in your tenant to make sure this will not interrupt.
+
+{{< ads >}}
 
 ---
 

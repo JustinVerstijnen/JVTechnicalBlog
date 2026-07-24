@@ -127,6 +127,8 @@ With either option correctly configured:
 - Internet access should function
 - External access to TCP/UDP ports should work
 
+{{< ads >}}
+
 ---
 
 ## Phase 3: Post-check and completion

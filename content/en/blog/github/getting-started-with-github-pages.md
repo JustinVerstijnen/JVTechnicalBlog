@@ -79,6 +79,8 @@ Your repository should have those three files in the root/main branch now:
 
 [![jv-media-7057-4cf9caf82354.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-4cf9caf82354.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-4cf9caf82354.png)
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Enable GitHub Pages

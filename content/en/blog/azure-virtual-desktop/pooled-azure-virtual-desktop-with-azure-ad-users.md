@@ -132,6 +132,8 @@ Click on "+ Add" to add our user or user group here:
 
 Select your user or group here and save. The user/group is now allowed to logon to the hostpool and get the workspace in the Windows App.
 
+{{< ads >}}
+
 ## Step 3: Create a dynamic group for session hosts (optional)
 
 {{< alert color="info" >}}

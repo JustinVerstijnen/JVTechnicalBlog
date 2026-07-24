@@ -51,6 +51,8 @@ After running the script, the service does run:
 
 [![jv-media-6576-aff9b0ebc8df.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/solved-adsync-service-stopped-entra-connect-sync-6576/jv-media-6576-aff9b0ebc8df.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/solved-adsync-service-stopped-entra-connect-sync-6576/jv-media-6576-aff9b0ebc8df.png)
 
+{{< ads >}}
+
 ---
 
 ## Installing the clean script automatically

@@ -46,6 +46,8 @@ The script itself has 6 steps:
 6. Removing cache for Chrome and Edge
 7. Rebooting the server.
 
+{{< ads >}}
+
 ---
 
 ## How to install the Disk cleaning script Automatically

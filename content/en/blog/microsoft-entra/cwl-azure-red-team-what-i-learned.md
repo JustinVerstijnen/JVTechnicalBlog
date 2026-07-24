@@ -141,6 +141,8 @@ Some resources in Azure needs security on both the control and data planes of th
 - **Control plane** : What users can access the resource, during what time windows and what are their privileges?
 - **Data plane** : What users can access what data of the resources, during what time windows and what are their privileges? Dataplanes are also more vulnerable as secrets are a possibility, which are just longer passwords
 
+{{< ads >}}
+
 ---
 
 ## 2: Red Team Operations in Azure Resource Manager
@@ -244,6 +246,8 @@ To extract PRT's you can use the tool mimikatz, which you can find here:
 <a class="btn btn-primary" href="https://github.com/ParrotSec/mimikatz" target="_blank" rel="noreferrer">Mimikatz</a>
 
 This tool you can run on a Windows device and it extracts the PRT and session key which can be used on another device to pass this new token.
+
+{{< ads >}}
 
 ---
 

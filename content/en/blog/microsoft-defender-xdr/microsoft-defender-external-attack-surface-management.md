@@ -85,6 +85,8 @@ I have added some of my domains and emailaddresses for the purpose of this guide
 
 Now we can click confirm to add all the assets to the workspace. It will automatically start scanning your resources, but this initial scanning can take up to 48 hours. You can check the status on the EASM workspace, in my case the first numbers already arrived within 5 minutes.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Checking the status of the assets

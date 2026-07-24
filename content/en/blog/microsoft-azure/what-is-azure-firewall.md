@@ -99,6 +99,8 @@ How this translates into the different aspects is shown by the diagram below:
 
 [![jv-media-2107-0f8dfd879dc3.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/what-is-azure-firewall-2107/jv-media-2107-0f8dfd879dc3.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/what-is-azure-firewall-2107/jv-media-2107-0f8dfd879dc3.png)
 
+{{< ads >}}
+
 ---
 
 ## Firewall and Policies

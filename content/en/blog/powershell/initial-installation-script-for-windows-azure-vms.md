@@ -36,6 +36,8 @@ The script itself has 6 steps:
 6. Enables response to ping for local networks
 7. Reboots the server
 
+{{< ads >}}
+
 ---
 
 ## Using the initial server installation script

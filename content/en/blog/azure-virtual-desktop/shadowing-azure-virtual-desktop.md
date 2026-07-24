@@ -60,6 +60,8 @@ Here we can enable the setting and which permissions are linked to this. I will 
 
 Save the policy and apply this to your Azure Virtual Desktop session hosts.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Execute script for Shadow permissions

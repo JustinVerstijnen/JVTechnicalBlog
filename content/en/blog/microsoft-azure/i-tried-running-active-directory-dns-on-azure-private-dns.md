@@ -40,6 +40,8 @@ Place it in the right resource group and name the domain your desired domain nam
 
 In my case, I will name it *internal.justinverstijnen.nl*
 
+{{< ads >}}
+
 ---
 
 ## Link the DNS zone to your network

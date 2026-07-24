@@ -10,6 +10,8 @@ description: >
   Sometimes we need to have the original installed Windows Product Key just for documentation purposes. This post explains how to retrieve your activation key from the registry.
 ---
 
+{{< ads >}}
+
 We simply can do this with one command in PowerShell:
 
 {{< card code=true header="**POWERSHELL**" lang="powershell" >}}

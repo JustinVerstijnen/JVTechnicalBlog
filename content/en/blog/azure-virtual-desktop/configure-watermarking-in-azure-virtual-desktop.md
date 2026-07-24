@@ -81,6 +81,8 @@ Then in Microsoft Intune, advance to the tab "Assignments" and assign the policy
 
 If the policy is applied and changed, it will be applied during sign-in of a user, so you can relatively easy check and modify your settings like the opacity.
 
+{{< ads >}}
+
 ---
 
 ## Option 2: Configure with Group Policy

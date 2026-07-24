@@ -109,6 +109,8 @@ The IP address 172.16.254.1 can be represented in binary format like shown in th
 
 So an IP address is basically a human readable way of how the devices work under the hood. All based on 0's and 1's.
 
+{{< ads >}}
+
 ---
 
 ## Subnets, Segmentation and VLANs

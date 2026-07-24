@@ -53,6 +53,8 @@ To connect with this module to your Microsoft tenant, use this command:
 Connect-ExchangeOnline
 {{< /card >}}
 
+{{< ads >}}
+
 ---
 
 ## 3: Azure PowerShell (Az module)
@@ -142,6 +144,8 @@ To connect with this module to your Microsoft tenant, use this command:
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
 Connect-SPOService -Url https://contoso-admin.sharepoint.com
 {{< /card >}}
+
+{{< ads >}}
 
 ---
 

@@ -67,6 +67,8 @@ Data Roles are used to control what a principal can do with the data/content a r
 
 To make your permissions management a lot granular, you might want to have a person managing the resource and another person te manage the content of the resouce. In this case you need those data roles.
 
+{{< ads >}}
+
 ---
 
 ## What are Custom Roles?

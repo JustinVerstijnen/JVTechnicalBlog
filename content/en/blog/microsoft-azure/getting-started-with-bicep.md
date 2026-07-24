@@ -134,6 +134,8 @@ For the best editing experience, also install the Bicep extension in Visual Stud
 
 Identifier: ms-azuretools.vscode-bicep
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Creating my Single Server Bicep setup

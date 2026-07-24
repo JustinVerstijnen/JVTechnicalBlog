@@ -104,6 +104,8 @@ Then configure when the Logic App must run. In my example, I configured it to ru
 
 Then save the Logic App.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Create the Azure Files connection and list step

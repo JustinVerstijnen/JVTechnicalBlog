@@ -40,6 +40,8 @@ On this page, I will show how to address the recommendations of the Microsoft De
 
 It may be very boring to do this by hand, but is actually very useful to learn. I am sorry for the bitwhat boring page this time, but my focus is on the reader to set all settings easily.
 
+{{< ads >}}
+
 ---
 
 ## Task 1: Update Windows

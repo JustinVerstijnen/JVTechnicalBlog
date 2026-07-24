@@ -18,6 +18,8 @@ Microsoft has to patch or replace their hardware regularly, and by configuring t
 
 If the gateway is already up-to-date during the maintenance window, nothing will happen.
 
+{{< ads >}}
+
 ---
 
 ## How to configure a maintenance configuration

@@ -102,6 +102,8 @@ Connect-MgGraph -Scopes "User.ReadWrite.All"
 
 Login with your Microsoft Entra ID administrator account.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Set the new Immutable ID in Microsoft Entra

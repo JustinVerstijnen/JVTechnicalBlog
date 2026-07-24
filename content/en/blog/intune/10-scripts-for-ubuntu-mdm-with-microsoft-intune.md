@@ -152,6 +152,8 @@ You can change this URL on Line 16 of this script.
 
 [![jv-media-8512-2facf3f453a7.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/10-scripts-for-ubuntu-mdm-with-microsoft-intune/jv-media-8512-2facf3f453a7.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/10-scripts-for-ubuntu-mdm-with-microsoft-intune/jv-media-8512-2facf3f453a7.png)
 
+{{< ads >}}
+
 ---
 
 ## 7. Set color theme

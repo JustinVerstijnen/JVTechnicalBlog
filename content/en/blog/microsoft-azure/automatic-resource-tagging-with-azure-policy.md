@@ -78,6 +78,8 @@ Now I created a dummy resource, just to check if it gets a tags assigned and tes
 
 Now we have to wait for some time, as the remediation task can take up to an hour to actually add the tag. In my case, it took a few minutes.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Let's test the results

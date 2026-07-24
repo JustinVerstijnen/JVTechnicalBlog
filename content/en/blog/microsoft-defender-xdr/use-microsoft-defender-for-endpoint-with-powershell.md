@@ -126,6 +126,8 @@ To focus only on key scan events, filter by event IDs 1000, 1001, and 1002 To gi
 
 As you can see, this perfectly correspond to what we see in the GUI of Defender.
 
+{{< ads >}}
+
 ---
 
 ## 3. Checking Defender scan status overview

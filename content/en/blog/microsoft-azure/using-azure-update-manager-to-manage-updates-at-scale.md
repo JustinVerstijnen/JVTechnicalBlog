@@ -62,6 +62,8 @@ Select under periodic assessment the option "Enable" to enable the service to au
 
 Does your VM support Hotpatching, this must be disabled to take benefit from Azure Update Manager.
 
+{{< ads >}}
+
 ---
 
 ## Enroll a bunch of servers into Azure Update Manager

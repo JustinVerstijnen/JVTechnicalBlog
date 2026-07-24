@@ -76,6 +76,8 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v Shado
 
 Save the policy and apply it to the group containing your Azure Virtual Desktop session hosts.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Add group membership to the Administrators group

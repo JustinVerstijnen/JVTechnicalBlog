@@ -60,6 +60,8 @@ There are 2 types of rules in a Network Security Group, inbound rules and outbou
   - A Azure server on your network accessing a application on port 52134
   - Restricting outbound traffic by only allowing some ports
 
+{{< ads >}}
+
 ---
 
 ## NSGs of Azure in practice

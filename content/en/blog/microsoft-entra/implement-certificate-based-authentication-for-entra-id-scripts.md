@@ -45,6 +45,8 @@ In the old Windows Server days, we could sometimes find really unsecure jokes li
 
 This is something that is **really unsecure** and I advice you to never do actions like these. With certificate-based authentication we eliminate the need for this by a lot.
 
+{{< ads >}}
+
 ---
 
 ## Generating a self signed certificate

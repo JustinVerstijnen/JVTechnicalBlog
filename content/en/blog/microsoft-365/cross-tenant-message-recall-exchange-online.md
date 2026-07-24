@@ -62,6 +62,8 @@ Set-CrossTenantRecallConfiguration -CrossTenantRecallEnabled $false
 
 Cross-Tenant Message Recall is disabled by default, and no cross-tenant recall happens until an admin adds at least one tenant to the allow list.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Add allowed sender tenants (the allow list)

@@ -108,6 +108,8 @@ Then click "OK" to save the configuration. This will bring us to this window:
 
 We have now made a start-up script which will run at every startup of the machine. If you place a updated script as the same name in the same directory, this new version will be executed.
 
+{{< ads >}}
+
 ---
 
 ## The results on the client machine

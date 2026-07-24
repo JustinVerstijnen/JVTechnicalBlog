@@ -79,6 +79,8 @@ Select the role and click "Next". Now select the required user:
 
 After this step complete the wizard to finish assigning the role.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Storage Account Security

@@ -57,6 +57,8 @@ It will save all needed files in this folder, so you can copy the whole folder a
 
 [![jv-media-324-2d71683c68b3.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/migrate-group-policy-objects-to-a-new-server-or-domain-like-a-pro-324/jv-media-324-2d71683c68b3.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/migrate-group-policy-objects-to-a-new-server-or-domain-like-a-pro-324/jv-media-324-2d71683c68b3.png)
 
+{{< ads >}}
+
 ---
 
 ## Using the import script to migrate Group Policies

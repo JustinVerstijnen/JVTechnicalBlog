@@ -34,6 +34,8 @@ The official "ExchangeOnlineManagement" module is an example of a module dat is 
 
 It has a report-system where malicious scripts and modules can get reported and the deleted, so we can state that it's pretty secure to use the PowerShell Gallery.
 
+{{< ads >}}
+
 ---
 
 ## Introduction to Github and Github Actions
@@ -114,6 +116,8 @@ When you are done pasting and changing the script information, we can save the c
 [![jv-media-5232-3de33c50c6d5.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-to-upload-powershell-script-to-gallery-with-github-actions-5232/jv-media-5232-3de33c50c6d5.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-to-upload-powershell-script-to-gallery-with-github-actions-5232/jv-media-5232-3de33c50c6d5.png)
 
 Press again to change the file, and we have prepared our script to be uploaded.
+
+{{< ads >}}
 
 ---
 

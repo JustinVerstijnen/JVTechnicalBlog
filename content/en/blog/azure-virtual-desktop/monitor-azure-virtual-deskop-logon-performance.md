@@ -61,6 +61,8 @@ At this section there are some tasks that happens in the background. In this cas
 
 [![jv-media-1938-955aa258a0e5.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitor-azure-virtual-deskop-logon-performance-1938/jv-media-1938-955aa258a0e5.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitor-azure-virtual-deskop-logon-performance-1938/jv-media-1938-955aa258a0e5.png)
 
+{{< ads >}}
+
 ### Login scheduled tasks
 
 Here the script assessed the scheduled tasks on the machine that ran on the login of the user. Some tasks can take much time to perform, but in this case it was really fast.

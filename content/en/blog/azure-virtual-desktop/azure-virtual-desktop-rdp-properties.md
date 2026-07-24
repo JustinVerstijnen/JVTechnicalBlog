@@ -57,6 +57,8 @@ audioqualitymode:i:2;displayconnectionbar:i:0;drivestoredirect:s:dynamicdrives;u
 
 Mostly the default configuration, but I like the Connection bar hided by default.
 
+{{< ads >}}
+
 ---
 
 ## The location to change RDP properties

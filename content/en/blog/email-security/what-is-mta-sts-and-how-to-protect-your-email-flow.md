@@ -217,6 +217,8 @@ This should show your policy directly in your browser:
 
 [![jv-media-7057-be66796dd631.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-be66796dd631.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-github-pages-7057/jv-media-7057-be66796dd631.png)
 
+{{< ads >}}
+
 ---
 
 ## Hosting option 2: Azure Static Web Apps

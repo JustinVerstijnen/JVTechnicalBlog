@@ -131,6 +131,8 @@ After this go to the last tab and review your settings:
 
 Then create the virtual machine and we are good to go! Create the virtual machine and advance to the next part of the guide.
 
+{{< ads >}}
+
 ---
 
 ## Securing inbound connections
@@ -377,6 +379,8 @@ I directly restarted the server to check if the secondary disk is mounted like e
 [![jv-media-1573-1a5f391594a3.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-a-minecraft-server-on-azure-1573/jv-media-1573-1a5f391594a3.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-a-minecraft-server-on-azure-1573/jv-media-1573-1a5f391594a3.png)
 
 As you can see this works like a charm.
+
+{{< ads >}}
 
 ---
 

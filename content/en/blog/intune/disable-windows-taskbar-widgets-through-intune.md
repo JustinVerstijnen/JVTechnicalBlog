@@ -60,6 +60,8 @@ This sets 3 registry keys to the desired setting. In this case disabling widgets
 
 After these keys are set, the computer must reboot to apply the changes.
 
+{{< ads >}}
+
 ---
 
 ## Summary

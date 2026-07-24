@@ -79,6 +79,8 @@ cd "C:\Users\justin-admin\Downloads\AzFilesHybrid"
 
 This will directly navigate PowerShell to the module folder itself so we can execute each command.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Executing the script to join the Storage Account to Active Directory

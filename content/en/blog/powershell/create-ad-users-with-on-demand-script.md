@@ -52,6 +52,8 @@ Change this to your own OU when using. You can find this by enabling the "Advanc
 
 Search for the "DistinguishedName" attribute and copy that value.
 
+{{< ads >}}
+
 ---
 
 ## Using the create AD users on demand script

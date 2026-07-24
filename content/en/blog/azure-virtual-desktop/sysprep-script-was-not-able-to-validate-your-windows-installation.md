@@ -61,6 +61,8 @@ Another common issue is BitLocker protection being enabled. Sysprep cannot gener
 
 Then manually removing packages one by one with PowerShell commands until Sysprep finally works. This becomes even worse on Windows 11 multi-session images because there are many built-in AppX packages and some are updated automatically during image preparation.
 
+{{< ads >}}
+
 ---
 
 ## Running the script

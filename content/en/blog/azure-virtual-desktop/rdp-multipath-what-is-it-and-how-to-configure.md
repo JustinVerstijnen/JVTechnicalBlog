@@ -83,6 +83,8 @@ Save the key and close registry editor.
 
 Now a new session to the machine must be made to make RDP Multipath active.
 
+{{< ads >}}
+
 ---
 
 ## Option 3: Configure RDP Multipath using Microsoft Intune/Powershell Script

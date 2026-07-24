@@ -130,8 +130,6 @@ Microsoft's configuration guidance does not require a separate client-side time 
 
 Unlike location redirection, the current Microsoft documentation does not list a separate Azure Virtual Desktop host pool RDP property for time zone redirection. The configuration is applied on the session hosts through policy or the registry.
 
----
-
 {{< ads >}}
 
 ---

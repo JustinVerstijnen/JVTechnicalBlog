@@ -39,6 +39,8 @@ When working in Azure every day, naming is not “just for looks”. It helps me
 
 However, some resources cannot be named beforehand. Like a Virtual Machine that automatically gets a disk and NIC. If we get the chance to rename the resource, we will do this of course. The automatic names also make very clear what the resource is related to.
 
+{{< ads >}}
+
 ## The format itself
 
 I like a naming format that is easy to use but tells every Azure Engineer what the purpose is of a particular resource.

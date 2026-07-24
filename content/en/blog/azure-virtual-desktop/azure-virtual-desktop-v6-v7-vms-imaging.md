@@ -110,6 +110,8 @@ And finally installed the latest updates and applications. I dont like preview u
 
 [![jv-media-7340-93699f654fec.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-virtual-desktop-v6-v7-vms-imaging-7340/jv-media-7340-93699f654fec.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-virtual-desktop-v6-v7-vms-imaging-7340/jv-media-7340-93699f654fec.png)
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Sysprepping the Virtual Machine

@@ -96,6 +96,8 @@ On the last tab, set the beginning of the off-peak hours or the end of business 
 
 After the schedule is created successfully, let's head to Step 3.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Assign scaling plan

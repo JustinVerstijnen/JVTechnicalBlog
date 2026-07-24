@@ -121,6 +121,8 @@ You can also walk the fast path and copy the complete Rule syntax below into you
 
 Save the group and go to the next step.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Join Ubuntu device to Microsoft Intune

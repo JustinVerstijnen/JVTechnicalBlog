@@ -30,6 +30,8 @@ You can download the ISO file for Windows Server 2025 Evaluation here: <https://
 
 You first have to install your instance of Windows Server Evaluation. After this you can install the latest updates and configure the rest of your needs.
 
+{{< ads >}}
+
 ---
 
 ## Step 2: Upgrade Evaluation to Datacenter/Standard

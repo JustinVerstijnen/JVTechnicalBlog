@@ -28,6 +28,8 @@ The Dynamic Groups feature of Microsoft Entra is a great tool for auto-managing 
 
 Dynamic group don't need any manual assignment or un-assignment. Instead of that, members will be automatically added based on the rules. Great feature for automation purposes!
 
+{{< ads >}}
+
 ---
 
 ## Creating a dynamic group for acces to Windows 365
@@ -45,8 +47,6 @@ Now we have the group, we need to create the rules for the group to determine wh
 To filter on users with a specific assigned license, we need to use the "assignedPlans" property. The operator needs to be "Equals".
 
 Now at the "Value" field, we need to have the Service Plan ID of the license. Every Entra ID assignable license has an underlying Service Plan ID which represents the license. A list of all this Service Plan ID'a can be found here: <https://learn.microsoft.com/en-us/entra/identity/users/licensing-service-plan-reference>
-
-###
 
 In my environment, we have 2 types of Windows 365 licenses available:
 

@@ -50,6 +50,8 @@ The script has the domain *justinverstijnen.nl* everywhere in it. This has to be
 - EmailAddress
 - OtherAttributes
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Run PowerShell script to create AD users

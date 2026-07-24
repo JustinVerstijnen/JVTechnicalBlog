@@ -52,6 +52,8 @@ PS C:\Windows\system32> Get-MgUser -UserId aa5c5d7b-2bde-40f4-94f1-b29ff664e669
 
 Now we know which user gives us the errors, let's solve the problem.
 
+{{< ads >}}
+
 ---
 
 ## How to solve the problem

@@ -140,6 +140,8 @@ On the "Budget" page, you can set a budget, or maximum amount of money you want 
 
 Finish the policy and we are ready to go.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Connect Microsoft 365 Backup service to billing policy

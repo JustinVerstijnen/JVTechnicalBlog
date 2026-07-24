@@ -91,6 +91,8 @@ Users can also manually configure this new Backup in the Windows Settings:
 
 This is the overview after I have configured it in Intune and synced to my device. It automatically enabled the feature and should be ready to restore in case I'll do a reinstall of my computer.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Restoring a backup (Step-by-step)

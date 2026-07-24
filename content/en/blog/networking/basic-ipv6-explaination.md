@@ -48,6 +48,8 @@ With the rapid increase in devices worldwide, the shortage of IPv4 addresses bec
 
 To fulfill the shortage of IP addresses, IPv6 was born in 1998 which has as primary goal to fulfill the requirement of having enough addresses available for everyone. Fortunately, they did not go way over the top and instead used a 128 bits (2128) address space. In this space, the total usable addresses in IPv6 are 340.282.366.920.938.463.463.374.607.431.768.211.456 (340 undecillion).
 
+{{< ads >}}
+
 ---
 
 ## Addressing scheme

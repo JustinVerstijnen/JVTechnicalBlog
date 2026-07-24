@@ -65,6 +65,8 @@ After confirming this action, your blade should look like this:
 
 [![jv-media-7022-a34576803f5d.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/receive-periodic-azure-consumption-costs-with-logic-apps-7022/jv-media-7022-a34576803f5d.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/receive-periodic-azure-consumption-costs-with-logic-apps-7022/jv-media-7022-a34576803f5d.png)
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Setting up the Managed Identity permissions

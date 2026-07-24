@@ -136,6 +136,8 @@ After a minute or 5, the software is installed succesfully:
 
 [![jv-media-999-f9c7092db2e3.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-to-defend-your-active-directory-with-defender-for-identity-999/jv-media-999-f9c7092db2e3.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/how-to-defend-your-active-directory-with-defender-for-identity-999/jv-media-999-f9c7092db2e3.png)
 
+{{< ads >}}
+
 ---
 
 ## Configuring the MDI sensor

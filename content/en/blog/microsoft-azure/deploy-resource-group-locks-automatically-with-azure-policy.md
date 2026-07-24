@@ -102,6 +102,8 @@ Then paste the code above into the Policy rule field in Azure:
 
 After that, save the policy definition and we are done with creating the policy definition.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Assign the Policy to your subscription(s)

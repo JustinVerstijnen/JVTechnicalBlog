@@ -91,6 +91,8 @@ Now we can download the required registration key to register our migration/proc
 
 Save the VaultCredentials file to a location, we will need this in a further step to register the agents to the Migration project.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Installing the Configuration/Processing server

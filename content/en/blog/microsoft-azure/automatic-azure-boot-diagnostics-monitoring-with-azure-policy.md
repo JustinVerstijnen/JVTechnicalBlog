@@ -61,6 +61,8 @@ At the "Encryption" tab we can configure the encryption, if your company policie
 
 Create the storage account.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: How to create the Azure Policy definition

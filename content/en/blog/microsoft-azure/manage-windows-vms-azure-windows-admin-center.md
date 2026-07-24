@@ -64,6 +64,8 @@ Select the user which needs access. This can also be a group but for the purpose
 
 Finish the wizard to assign the role.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Open up the ports (optional)

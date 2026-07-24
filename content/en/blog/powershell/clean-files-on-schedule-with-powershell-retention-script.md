@@ -57,6 +57,8 @@ I will refer to the line numbers of the script on GitHub:
 
 [![jv-media-262-29e335edfd63.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/clean-files-on-schedule-with-powershell-retention-script-262/jv-media-262-29e335edfd63.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/clean-files-on-schedule-with-powershell-retention-script-262/jv-media-262-29e335edfd63.png)
 
+{{< ads >}}
+
 ---
 
 ## Installing the clean script automatically

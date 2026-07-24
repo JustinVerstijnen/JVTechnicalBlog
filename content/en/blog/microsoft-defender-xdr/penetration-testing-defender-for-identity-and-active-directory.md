@@ -240,6 +240,8 @@ Tag the user and select it from the list.
 
 After that save the account and let's generate some alerts.
 
+{{< ads >}}
+
 ---
 
 ## Use the Honeytoken to try and gain access

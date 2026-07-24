@@ -62,6 +62,8 @@ Save the configuration.
 
 This setting is configured per host pool. If you have multiple host pools, repeat this step for each host pool where you want to enable this behavior.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Test the result

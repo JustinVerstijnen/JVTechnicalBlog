@@ -65,6 +65,8 @@ Get-Help Get-Process
 
 You see, PowerShell is a really simple approach for very deep and forcefull computer and server administration tasks.
 
+{{< ads >}}
+
 ---
 
 ## 3: Windows PowerShell and PowerShell
@@ -171,6 +173,8 @@ This can be useful when troubleshooting network or application connectivity. The
 tnc justinverstijnen.nl -Port 443
 {{< /card >}}
 
+{{< ads >}}
+
 ---
 
 ## 5. The pipeline
@@ -260,6 +264,8 @@ else {
 {{< /card >}}
 
 This is a simple example of how PowerShell can retrieve information, evaluate it, and return a different result depending on the situation.
+
+{{< ads >}}
 
 ---
 

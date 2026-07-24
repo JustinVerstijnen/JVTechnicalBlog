@@ -44,6 +44,11 @@ My advice is to explore the portal and train yourself to do simple tasks like:
 2. Create a virtual network and network peering
 3. Create network security groups
 4. Create a virtual machine and backup it
+5. Create a static web app and host a simple HTML file
+6. Create a storage account to host some files with blobs or SMB shares
+7. Create multiple virtual networks with a 3rd party firewall
+
+{{< ads >}}
 
 ---
 
@@ -106,6 +111,8 @@ I have one note when using the practice exams for training. The actual exam is h
 - Hot Area: You get one or more pictures about a configuration and you have to spot an error, configuration, mistake etc.
 
 <p><a class="btn btn-primary" href="https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/practice/assessment?assessment-type=practice&assessmentId=21&practice-assessment-type=certification">AZ-104 Practice Assessment</a></p>
+
+{{< ads >}}
 
 ---
 

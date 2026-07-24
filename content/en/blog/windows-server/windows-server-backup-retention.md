@@ -22,6 +22,8 @@ The script itself consists of the following command:
 wbadmin delete backup -keepVersions:30 -quiet
 {{< /card >}}
 
+{{< ads >}}
+
 ### Explanation of the command
 
 - **wbadmin:** The command-line tool that makes this solution possible. It is part of Windows Server Backup.

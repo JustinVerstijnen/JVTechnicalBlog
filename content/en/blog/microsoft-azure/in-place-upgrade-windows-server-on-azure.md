@@ -16,6 +16,8 @@ When having your server hosted on Microsoft Azure, this proces can look a bit co
 
 Because Windows Server 2025 is now out for almost a year and runs really stable, we will focus in this post on upgrading from 2022 to Windows Server 2025. If you don't use Azure, you can exclude steps 2 and 3 but the rest of the guide still tells you how to upgrade on other systems like Amazon/Google or on-premise/virtualization.
 
+However, in-place upgrades are technically possible, the best way is to create a new server alongside the old and migrate the roles. This is the best way in the long term, as in-place upgrades may introduce minor and major errors.
+
 ---
 
 ## Requirements
@@ -136,6 +138,8 @@ After the script has run successfully, I will give a summary of the performed ac
 After running the script in the Azure Powershell window, the disk is available in the Azure Portal:
 
 [![jv-media-134-dd58ad0837bc.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/in-place-upgrade-windows-server-on-azure-134/jv-media-134-dd58ad0837bc.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/in-place-upgrade-windows-server-on-azure-134/jv-media-134-dd58ad0837bc.png)
+
+{{< ads >}}
 
 ---
 

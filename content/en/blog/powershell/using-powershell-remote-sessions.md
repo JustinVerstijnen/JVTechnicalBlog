@@ -93,6 +93,8 @@ Add-Item WSMan:\localhost\Client\TrustedHosts -Value "10.20.0.*"
 
 If you have set this up like one of the methods above, we are all set and done.
 
+{{< ads >}}
+
 ---
 
 ## 3. Setting up an PowerShell Remote session

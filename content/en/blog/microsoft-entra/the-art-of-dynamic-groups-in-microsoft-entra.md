@@ -89,6 +89,8 @@ Change the "displayname" property to the starting string of your AVD hosts.
 
 Above rule syntax can be copied to your group.
 
+{{< ads >}}
+
 ---
 
 ## Option 2: All enabled internal users (exclude guests and shared mailboxes)

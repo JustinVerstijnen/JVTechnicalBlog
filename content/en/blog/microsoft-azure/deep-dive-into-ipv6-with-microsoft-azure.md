@@ -86,6 +86,8 @@ Now we have assigned a new IP configuration on the same network interface so we 
 
 Here you can see that we have both IPv4 and IPv6 addresses in our own configured address spaces.
 
+{{< ads >}}
+
 ---
 
 ## Create a IPv6 Public IP address

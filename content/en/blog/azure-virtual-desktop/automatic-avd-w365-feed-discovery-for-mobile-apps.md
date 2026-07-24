@@ -54,6 +54,8 @@ Let's login to our DNS hosting for the domain, and create the record:
 
 Then save your configuration and wait for a few minutes.
 
+{{< ads >}}
+
 ---
 
 ## Let's test the configuration

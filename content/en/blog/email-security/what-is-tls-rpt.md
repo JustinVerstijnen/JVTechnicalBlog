@@ -151,6 +151,8 @@ This table shows the TLS-RPT reports from Microsoft and Google as senders and sh
 | 2026-05-14 | Microsoft Corporation | 134245570067423518+justinverstijnen.nl | tlsrpt-noreply@microsoft.com | TLSA, STS | 12 | 0 |
 | Total |  |  |  |  | 23 | 0 |
 
+{{< ads >}}
+
 ### Policy Summary
 
 This table shows the results of the MTA-STS policy being enforced and the TLSA records. As I am using Microsoft 365, I don't have to manage the TLSA records. This is managed by the emailserver (MX) service, in this case Microsoft.

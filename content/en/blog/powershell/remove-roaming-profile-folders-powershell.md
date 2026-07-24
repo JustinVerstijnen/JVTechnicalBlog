@@ -74,6 +74,8 @@ Paste that value in the variable on Line 2:
 
 You can also change the value on Line 4 to change the temporary directory needed for the fallback method. This folder is cleaned before the script is finished.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Running the script

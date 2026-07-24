@@ -80,7 +80,7 @@ This was a VM image with almost nothing installed, but let it increase to 15 cen
 
 ---
 
-## Create a Azure Compute Gallery
+## Step 1: Create a Azure Compute Gallery
 
 Let's dive into the Azure Portal, and navigate to "Azure Compute Gallery" to create a new gallery:
 
@@ -101,7 +101,7 @@ After you made your choice, proceed to the last page of the wizard and create th
 
 ---
 
-## Create a VM image definition
+## Step 2: Create a VM image definition
 
 {{% alert color="info" %}}
 VM image definitions can be created manually like this step, but also through a image you capture. Most of the information will be filled in automatically when choosing the second option.
@@ -141,9 +141,11 @@ After defining everything, we can advance to the last page of the wizard and cre
 
 [![jv-media-3436-e784eb588a24.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-compute-gallery-and-avd-vm-images-3436/jv-media-3436-e784eb588a24.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-compute-gallery-and-avd-vm-images-3436/jv-media-3436-e784eb588a24.png)
 
+{{< ads >}}
+
 ---
 
-## Capture a VM and store it in the gallery
+## Step 3: Capture a VM and store it in the gallery
 
 For demonstrating how to capture a virtual machine into the gallery/definition, I already created a ready virtual machine with Windows Server 2025. Let's perform some pre-capturing tasks in the VM:
 

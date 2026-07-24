@@ -96,6 +96,8 @@ Now we have those terms to indicate the performance, but what do they mean exact
 We can compare IOPS and throughput to a car, where the IOPS are the rotations per minute (RPM) of the engine and the throughput is the actual speed of the car.
 {{% /alert %}}
 
+{{< ads >}}
+
 ---
 
 ## Standard VS Premium performance and pricing example

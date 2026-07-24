@@ -73,6 +73,8 @@ When the Logic App is created, you can go to the "Logic App Designer" in your cr
 
 We always start with a trigger, this is the definition of when the flow starts.
 
+{{< ads >}}
+
 ---
 
 ## Authentication from Logic App to Virtual Machines

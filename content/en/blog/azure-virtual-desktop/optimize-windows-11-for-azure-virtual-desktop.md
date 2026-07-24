@@ -78,6 +78,8 @@ You can download the package from my Github (includes Import script).
 
 [Download ZIP file](https://github.com/JustinVerstijnen/Windows11AVDOptimizations/archive/refs/heads/main.zip)
 
+{{< ads >}}
+
 ---
 
 ## Virtual Desktop Optimization Tool (VDOT)

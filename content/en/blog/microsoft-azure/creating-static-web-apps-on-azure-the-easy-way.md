@@ -50,6 +50,8 @@ After that you have the option of choosing a license. I assigned the MIT license
 
 Click on "Create repository" to create the repository and we are done with this step.
 
+{{< ads >}}
+
 ---
 
 ## Upload the project files into Github

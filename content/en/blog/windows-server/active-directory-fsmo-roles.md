@@ -40,6 +40,8 @@ Depending on your environment, these roles can run on one or multiple domain con
 
 According to the table, the PDC Emulator is the role with the highest user impact. Outage will mean no NTP, no password updates which happens daily in bigger environments and no Group Policy updates are possible.
 
+{{< ads >}}
+
 ---
 
 ## An effective distribution of FSMO roles

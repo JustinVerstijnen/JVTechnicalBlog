@@ -102,6 +102,8 @@ Paste the secret value you have copied during Step 1 and click "Add secret".
 
 After this is done, go to Step 3.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Insert GitHub Actions file

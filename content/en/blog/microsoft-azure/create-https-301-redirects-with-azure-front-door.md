@@ -148,6 +148,8 @@ The full rule looks like this:
 
 Now we can update the rule/rule set and do the rest of the configurations.
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Custom domain configuration
