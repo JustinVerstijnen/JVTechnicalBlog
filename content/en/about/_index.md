@@ -130,6 +130,13 @@ title: "About"
           </div>
         </article>
         <article class="about-cert-tile">
+          <strong>GitHub Certified: Foundations</strong>
+          <div class="about-cert-meta-row">
+            <div class="about-cert-meta"><span>Exam code</span><small>GH-900</small></div>
+            <div class="about-cert-meta"><span>Earned</span><small>2026</small></div>
+          </div>
+        </article>
+        <article class="about-cert-tile">
           <strong>Hurricane Electric IPv6 Networking Sage</strong>
           <div class="about-cert-meta-row">
             <div class="about-cert-meta"><span>Exam code</span><small>IPv6</small></div>
