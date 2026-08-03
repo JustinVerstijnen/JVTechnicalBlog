@@ -109,6 +109,13 @@ title: "About"
           </div>
         </article>
         <article class="about-cert-tile">
+          <strong>Microsoft Certified: Cloud and AI Security Engineer Associate</strong>
+          <div class="about-cert-meta-row">
+            <div class="about-cert-meta"><span>Exam code</span><small>SC-500</small></div>
+            <div class="about-cert-meta"><span>Earned</span><small>2026</small></div>
+          </div>
+        </article>
+        <article class="about-cert-tile">
           <strong>Microsoft Certified: Azure Solutions Architect Expert</strong>
           <div class="about-cert-meta-row">
             <div class="about-cert-meta"><span>Exam code</span><small>AZ-305</small></div>
@@ -183,13 +190,6 @@ title: "About"
           <div class="about-cert-meta-row">
             <div class="about-cert-meta"><span>Exam code</span><small>SC-300</small></div>
             <div class="about-cert-meta"><span>Earned</span><small>2024</small></div>
-          </div>
-        </article>
-        <article class="about-cert-tile">
-          <strong>Microsoft Certified: Azure Security Engineer Associate</strong>
-          <div class="about-cert-meta-row">
-            <div class="about-cert-meta"><span>Exam code</span><small>AZ-500</small></div>
-            <div class="about-cert-meta"><span>Earned</span><small>2023</small></div>
           </div>
         </article>
         <article class="about-cert-tile">
