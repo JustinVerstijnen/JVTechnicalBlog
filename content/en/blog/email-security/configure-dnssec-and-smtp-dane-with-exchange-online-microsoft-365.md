@@ -69,6 +69,21 @@ My domain is DNSSEC capable and a DS record is published from the registrar to t
 
 You can find this on the last row of the table in the DNS MEGAtool. If the status is red or an error is in the value field, the configuration of your domain is not correct.
 
+I have a simple script to configure SMTP DANE in Exchange Online PowerShell which also can be used:
+
+{{< card code=true header="**PowerShell**" lang="powershell" >}}
+$domain = "domain.com"
+Enable-DnssecForVerifiedDomain -DomainName $domain
+Start-Sleep -Seconds 20
+Enable-SmtpDaneInbound -DomainName $domain
+Rotate-DkimSigningConfig -Identity $domain
+Get-DkimSigningConfig -Identity $domain | Format-List
+{{< /card >}}
+
+https://gist.github.com/JustinVerstijnen/83569262e8a3acafa382f183de1bb942
+
+But for the first time, I reccomend you to just follow the steps.
+
 ---
 
 ## Step 2: Login into Microsoft Exchange Online Powershell
