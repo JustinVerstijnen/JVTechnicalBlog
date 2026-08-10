@@ -96,7 +96,6 @@ First, login into Exchange Online Powershell:
 Connect-ExchangeOnline
 {{< /card >}}
 
-
 Login with your credentials, and we are ready.
 
 {{< ads >}}
@@ -113,7 +112,7 @@ Enable-DnssecForVerifiedDomain -DomainName "justinverstijnen.nl"
 
 [![jv-media-499-2c556bcd39f4.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/configure-dnssec-and-smtp-dane-with-exchange-online-microsoft-365-499/jv-media-499-2c556bcd39f4.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/configure-dnssec-and-smtp-dane-with-exchange-online-microsoft-365-499/jv-media-499-2c556bcd39f4.png)
 
-The output of the command gives us a new, DNSSEC enabled MX-record.
+The output of the command gives us a new and DNSSEC enabled MX-record. This command configures SMTP DANE for the domain but does not enforce/use it yet, as we need to configure this into our DNS zone.
 
 ---
 
@@ -171,7 +170,7 @@ Enable-SmtpDaneInbound -DomainName "justinverstijnen.nl"
 
 [![jv-media-499-8598a10ef5c0.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/configure-dnssec-and-smtp-dane-with-exchange-online-microsoft-365-499/jv-media-499-8598a10ef5c0.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/configure-dnssec-and-smtp-dane-with-exchange-online-microsoft-365-499/jv-media-499-8598a10ef5c0.png)
 
-This is only a command to enable SMTP DANE for inbound email, here is no additional DNS change needed.
+This is only a command to enable SMTP DANE for inbound email, here is no additional DNS change needed. Effectively, this command ensures the required TLSA-records are being published at the Microsoft side.
 
 ---
 
