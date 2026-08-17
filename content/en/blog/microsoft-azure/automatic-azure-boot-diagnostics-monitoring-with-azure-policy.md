@@ -65,7 +65,25 @@ Create the storage account.
 
 ---
 
-## Step 3: How to create the Azure Policy definition
+## Step 3: Storage Account Security
+
+As we always want to achieve the highest level of security by not exposing any services to the world wide web and only relying on the authentication layer, we might want to configure the firewall for our storage account.
+
+After the storage account is done creating, let's head to it in the Azure Portal, by searching for "Storage accounts". Open your just created storage account and click "Networking".
+
+[![jv-media-5828-f8429a72577e.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-virtual-desktop-fslogix-and-native-kerberos-authentication-5828/jv-media-5828-f8429a72577e.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/azure-virtual-desktop-fslogix-and-native-kerberos-authentication-5828/jv-media-5828-f8429a72577e.png)
+
+Here you can add all of your virtual networks which contains the virtual machines. Allowing this allows the resources in those networks access to your storage account.
+
+If you also want to use the serial console, you also need to add some region-specific IP-addresses to this firewall. You can find the addresses to add for your region here: https://learn.microsoft.com/nl-nl/troubleshoot/azure/virtual-machines/linux/serial-console-linux#serial-console-security
+
+[![jv-media-3766-e2a96afe960e.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-azure-boot-diagnostics-monitoring-with-azure-policy-3766/jv-media-3766-e2a96afe960e.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-azure-boot-diagnostics-monitoring-with-azure-policy-3766/jv-media-3766-e2a96afe960e.png)
+
+Here I added the IP-addresses for the West Europe region. Now we are done securing our Storage account.
+
+---
+
+## Step 4: How to create the Azure Policy definition
 
 We can now create our Azure Policy that alters the virtual machine settings to save the diagnostics into the custom storage account. The policy overrides every other setting, like disabled or enabled with managed storage account. It 100% ensures all VMs in the scope will save their data in our custom storage account.
 
@@ -162,13 +180,13 @@ Leave the "Role definitions" field to the default setting and click on "Save".
 
 ---
 
-## Step 4: Assigning the boot diagnostics policy definition
+## Step 5: Assigning the boot diagnostics policy definition
 
 Now we have defined our policy, we can assign it to the scope where it must be active. After saving the policy you will get to the correct menu:
 
 [![jv-media-3766-90394671a374.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-azure-boot-diagnostics-monitoring-with-azure-policy-3766/jv-media-3766-90394671a374.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-azure-boot-diagnostics-monitoring-with-azure-policy-3766/jv-media-3766-90394671a374.png)
 
-Otherwise, you can go to "Policy", then to "[Definitions](https://portal.azure.com/#view/Microsoft_Azure_Policy/PolicyMenuBlade/~/Definitions)" just like in step 3 and lookup your just created definition.
+Otherwise, you can go to "Policy", then to "[Definitions](https://portal.azure.com/#view/Microsoft_Azure_Policy/PolicyMenuBlade/~/Definitions)" just like in step 4 and lookup your just created definition.
 
 On the Assign policy page, we can once again define our scope. We can now set "Exclusions" to apply to all, but some according to your configurations. You can also select one or multiple specific resources to exclude from your Policy.
 
@@ -190,7 +208,7 @@ Advance to the "Review + create" tab and finish the assignment of the policy.
 
 ---
 
-## Step 5: Test the configuration
+## Step 6: Test the configuration
 
 Now that we finished the configuration of our Azure Policy, we can now test the configuration. We have to wait for around 30 minutes when assigning the policy to become active. When the policy is active, the processing of Azure policies are much faster.
 
@@ -212,7 +230,7 @@ This took about 20 minutes in my case. Now we have access to the boot configurat
 
 ---
 
-## Step 6: Monitor your policy compliance (optional)
+## Step 7: Monitor your policy compliance (optional)
 
 You can monitor the compliance of the policy by going to "Policy" and search for your assignment:
 
