@@ -1,7 +1,7 @@
 ---
 title: "ARM templates deployment via URL"
 slug: "arm-templates-deployment-via-url"
-date: 2026-09-11
+date: 2026-09-28
 tags:
 - Step by Step guides
 - Knowledge check

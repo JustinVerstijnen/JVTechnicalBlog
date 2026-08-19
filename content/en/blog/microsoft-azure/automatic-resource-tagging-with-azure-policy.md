@@ -1,6 +1,6 @@
 ---
 title: "Automatic resource tagging with Azure Policy"
-date: 2026-10-16
+date: 2026-09-06
 slug: "automatic-resource-tagging-with-azure-policy"
 categories:
   - Microsoft Azure

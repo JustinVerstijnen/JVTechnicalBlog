@@ -231,9 +231,11 @@ Now head to your registrar and search for the DNSSEC options. Make sure the regi
 
 Here I have added the key tag, set the algorythm, flags and pasted the public key. This step may defer depending on the registrar you use.
 
-After this has been configured, this can take a while to actually perform. You can check with my DNS MEGAtool if DNSSEC is active and an active record is found:
+After this has been configured, this can take a while to actually perform. You can check with my DNS MEGAtool at [https://tools.justinverstijnen.nl/dnsmegatool](https://tools.justinverstijnen.nl/dnsmegatool) if DNSSEC is active and an active record is found:
 
+[![jv-media-8527-ba786ad0e2a6.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-azure-dns/jv-media-8527-ba786ad0e2a6.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-azure-dns/jv-media-8527-ba786ad0e2a6.png)
 
+Green and a checkmark icon means an DNSSEC DS record is found and active.
 
 ---
 

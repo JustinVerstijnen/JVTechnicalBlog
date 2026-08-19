@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Analyzing Email Headers"
 slug: "introduction-to-analyzing-email-headers"
-date: 2026-09-27
+date: 2026-10-10
 tags:
 - Concepts
 categories:
