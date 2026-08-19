@@ -6,8 +6,8 @@ categories:
   - Microsoft Azure
 tags:
   - Step by Step guides
-description: >
-  In Azure we can link tags onto different resources, resource groups and subscriptions. We can use resource tagging for various reasons. With Azure Policy we can automate this process even further, linking different resources automatically based on what we want to achieve. For example, giving every resource in a specific resource group a tag.
+description:
+  In Azure we can link tags onto different resources, resource groups and subscriptions. We can use resource tagging for various reasons. With Azure Policy we can automate this process even further, linking different resources automatically based on what we want to achieve. For example, giving every resource in a specific resource group a tag."
 ---
 
 For some inspiration on to how to actually use Azure Tags, check out my earlier blog: <https://justinverstijnen.nl/10-ways-to-use-tags-in-microsoft-azure/>
