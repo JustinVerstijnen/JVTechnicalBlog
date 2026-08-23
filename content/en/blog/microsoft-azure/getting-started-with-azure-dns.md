@@ -1,7 +1,7 @@
 ---
 title: "Getting started with Azure DNS"
 slug: "getting-started-with-azure-dns"
-date: 2026-10-01
+date: 2026-08-23
 tags:
 - Step by Step guides
 - Concepts
