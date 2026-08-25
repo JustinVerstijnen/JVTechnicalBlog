@@ -1,9 +1,152 @@
-<script defer src="https://cloud.umami.is/script.js" data-website-id="3ce7d7a4-539b-4d3c-981e-e96189fa5ac8"></script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4082816808518335" crossorigin="anonymous"></script>
+{{- /*
+==========================================================
+Canonical URL
+==========================================================
+
+Use Hugo's canonical output format so all HTML pages point
+to their primary HTML URL, even when additional output
+formats such as RSS, print or Markdown are enabled.
+*/ -}}
+
+{{- with .OutputFormats.Canonical }}
+<link rel="{{ .Rel }}" href="{{ .Permalink }}">
+{{- end }}
+
+
+{{- /*
+==========================================================
+Identity structured data
+Homepage: Person
+==========================================================
+*/ -}}
+
+{{- if .IsHome }}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://justinverstijnen.nl/#person",
+  "name": "Justin Verstijnen",
+  "url": "https://justinverstijnen.nl/",
+  "mainEntityOfPage": "https://justinverstijnen.nl/",
+  "image": "https://justinverstijnen.nl/img/profile_picture.jpg",
+  "sameAs": [
+    "https://www.linkedin.com/in/justinverstijnen/",
+    "https://learn.microsoft.com/en-us/users/justinverstijnen/",
+    "https://github.com/JustinVerstijnen",
+    "https://www.powershellgallery.com/profiles/JustinVerstijnen",
+    "https://substack.com/@justinverstijnen",
+    "https://www.youtube.com/@JustinVerstijnen"
+  ],
+  "knowsAbout": [
+    "Microsoft Azure",
+    "Azure Virtual Desktop",
+    "Windows 365",
+    "Microsoft 365",
+    "Microsoft Entra",
+    "Microsoft Intune",
+    "Microsoft Defender",
+    "PowerShell",
+    "Networking",
+    "Windows Server",
+    "Cloud Security"
+  ]
+}
+</script>
+
+{{- end }}
+
+
+{{- /*
+==========================================================
+Identity structured data
+About page: ProfilePage + Person
+==========================================================
+*/ -}}
+
+{{- if eq .RelPermalink "/about/" }}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": "https://justinverstijnen.nl/about/#profilepage",
+  "url": "https://justinverstijnen.nl/about/",
+  "name": "About Justin Verstijnen",
+  "mainEntity": {
+    "@type": "Person",
+    "@id": "https://justinverstijnen.nl/#person",
+    "name": "Justin Verstijnen",
+    "url": "https://justinverstijnen.nl/",
+    "image": "https://justinverstijnen.nl/img/profile_picture.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/justinverstijnen/",
+      "https://learn.microsoft.com/en-us/users/justinverstijnen/",
+      "https://github.com/JustinVerstijnen",
+      "https://www.powershellgallery.com/profiles/JustinVerstijnen",
+      "https://substack.com/@justinverstijnen",
+      "https://www.youtube.com/@JustinVerstijnen"
+    ],
+    "knowsAbout": [
+      "Microsoft Azure",
+      "Azure Virtual Desktop",
+      "Windows 365",
+      "Microsoft 365",
+      "Microsoft Entra",
+      "Microsoft Intune",
+      "Microsoft Defender",
+      "PowerShell",
+      "Networking",
+      "Windows Server",
+      "Cloud Security"
+    ]
+  }
+}
+</script>
+
+{{- end }}
+
+
+{{- /*
+==========================================================
+Umami Analytics
+==========================================================
+*/ -}}
+
+<script
+  defer
+  src="https://cloud.umami.is/script.js"
+  data-website-id="3ce7d7a4-539b-4d3c-981e-e96189fa5ac8">
+</script>
+
+
+{{- /*
+==========================================================
+Google AdSense
+==========================================================
+*/ -}}
+
+<script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4082816808518335"
+  crossorigin="anonymous">
+</script>
+
+
+{{- /*
+==========================================================
+External links
+Open external URLs in a new tab.
+==========================================================
+*/ -}}
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+
     /**
+     * Configure an external link.
+     *
      * @param {HTMLAnchorElement} link
      */
     function configureExternalLink(link) {
@@ -38,19 +181,38 @@
         relValues.add('noopener');
         relValues.add('noreferrer');
 
-        link.setAttribute('rel', Array.from(relValues).join(' '));
+        link.setAttribute(
+          'rel',
+          Array.from(relValues).join(' ')
+        );
+
       } catch (error) {
-        console.warn('Link kon niet worden gecontroleerd:', href, error);
+        console.warn(
+          'Link kon niet worden gecontroleerd:',
+          href,
+          error
+        );
       }
     }
 
+
+    /*
+     * Configure all links that are already present.
+     */
     document
       .querySelectorAll('a[href]')
       .forEach(configureExternalLink);
 
+
+    /*
+     * Also configure links that are dynamically added later.
+     */
     const observer = new MutationObserver(function (mutations) {
+
       mutations.forEach(function (mutation) {
+
         mutation.addedNodes.forEach(function (node) {
+
           if (!(node instanceof HTMLElement)) {
             return;
           }
@@ -62,13 +224,18 @@
           node
             .querySelectorAll('a[href]')
             .forEach(configureExternalLink);
+
         });
+
       });
+
     });
+
 
     observer.observe(document.body, {
       childList: true,
       subtree: true
     });
+
   });
 </script>
