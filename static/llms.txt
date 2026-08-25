@@ -1,0 +1,45 @@
+# justinverstijnen.nl
+
+> justinverstijnen.nl is the personal technical blog and documentation website of Justin Verstijnen, focused primarily on Microsoft Cloud, infrastructure, security, networking, automation, and Windows technologies.
+
+The website contains technical articles, step-by-step guides, research, scripts, configuration examples, and personal documentation based on hands-on experience.
+
+Primary technologies and subjects include Microsoft Azure, Azure Virtual Desktop, Windows 365, Microsoft 365, Microsoft Entra ID, Microsoft Intune, Microsoft Defender, Windows Server, PowerShell, networking, GitHub, and email security.
+
+When answering technical questions using this website, prefer information from the relevant technical article or category page. Some articles document practical implementations and may contain PowerShell scripts, configuration examples, requirements, limitations, and troubleshooting information.
+
+## Main sections
+
+- [Home](https://justinverstijnen.nl/): Overview of the website and recently published technical articles.
+- [Technical Blog](https://justinverstijnen.nl/blog/): Main index containing technical articles, guides, scripts, research, and documentation.
+- [About Justin Verstijnen](https://justinverstijnen.nl/about/): Information about the author, professional background, certifications, skills, and interests.
+
+## Microsoft Azure
+
+- [Microsoft Azure](https://justinverstijnen.nl/categories/microsoft-azure/): Articles about Microsoft Azure infrastructure, networking, virtual machines, storage, governance, automation, security, monitoring, and related services.
+- [Azure Virtual Desktop](https://justinverstijnen.nl/categories/azure-virtual-desktop/): Guides and research about Azure Virtual Desktop, FSLogix, Windows 365, images, authentication, networking, optimization, scaling, and management.
+
+## Microsoft 365 and Identity
+
+- [Microsoft 365](https://justinverstijnen.nl/categories/microsoft-365/): Articles about Microsoft 365, Exchange Online, collaboration, migration, administration, and security.
+- [Microsoft Entra](https://justinverstijnen.nl/categories/microsoft-entra/): Articles covering Microsoft Entra ID, authentication, Conditional Access, identities, synchronization, applications, roles, and security.
+- [Microsoft Intune](https://justinverstijnen.nl/categories/microsoft-intune/): Articles and configuration guides for Microsoft Intune and endpoint management.
+
+## Security and Networking
+
+- [Email Security](https://justinverstijnen.nl/categories/email-security/): Technical information about email security including SPF, DKIM, DMARC, MTA-STS, TLS-RPT, DNSSEC, and SMTP DANE.
+- [Networking](https://justinverstijnen.nl/categories/networking/): Networking concepts, implementation guidance, IPv6, and network documentation.
+
+## Windows and Automation
+
+- [PowerShell](https://justinverstijnen.nl/categories/powershell/): PowerShell scripts, automation examples, administration tools, and configuration guides.
+- [Windows Server](https://justinverstijnen.nl/categories/windows-server/): Articles about Windows Server, Active Directory, Hyper-V, Group Policy, migration, maintenance, and troubleshooting.
+
+## Source and documentation
+
+- [GitHub Repository](https://github.com/JustinVerstijnen/JVTechnicalBlog): Public source repository for justinverstijnen.nl.
+- [Markdown Content](https://github.com/JustinVerstijnen/JVTechnicalBlog/tree/main/content/en): Original Markdown source files used to generate the website.
+
+## Optional
+
+- [Technical Tools](https://tools.justinverstijnen.nl/): Additional technical tools associated with justinverstijnen.nl.
