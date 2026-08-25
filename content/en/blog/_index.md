@@ -1,5 +1,6 @@
 ---
-title: Blog
+title: Technical Blog
+description: Technical articles, guides and research about Microsoft Azure, Microsoft 365, Entra, Intune, PowerShell, networking, security and Windows Server.
 aliases: [/blog/*]
 ---
 
