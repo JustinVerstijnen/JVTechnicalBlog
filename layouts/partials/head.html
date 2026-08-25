@@ -1,4 +1,5 @@
 {{/* cSpell:ignore docsearch opengraph outputformat */ -}}
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -35,6 +36,7 @@
   (function() {
     const themeKey = 'td-color-theme';
     const storedTheme = localStorage.getItem(themeKey);
+
     let theme = storedTheme || (
       window.matchMedia('(prefers-color-scheme: dark)').matches
         ? 'dark'
@@ -75,31 +77,35 @@
 {{ partialCached "favicons.html" . }}
 
 
-{{/* ==========================================================
+{{/*
+==========================================================
 SEO TITLE
-Homepage can use seo_title from front matter.
-All other pages keep the standard Docsy title structure.
-========================================================== */}}
 
-<title>
-  {{- if .IsHome -}}
+Homepage:
+Uses seo_title from the homepage front matter when available.
 
-    {{- with .Params.seo_title -}}
-      {{ . }}
-    {{- else -}}
-      {{ .Site.Title }}
-    {{- end -}}
+Other pages:
+Uses "Page title | Justin Verstijnen".
+==========================================================
+*/}}
 
-  {{- else -}}
+{{- $seoTitle := .Site.Title -}}
 
-    {{- with .Title -}}
-      {{ . }} | 
-    {{- end -}}
+{{- if .IsHome -}}
 
-    {{ .Site.Title }}
-
+  {{- with .Params.seo_title -}}
+    {{- $seoTitle = . -}}
   {{- end -}}
-</title>
+
+{{- else -}}
+
+  {{- with .Title -}}
+    {{- $seoTitle = printf "%s | %s" . $.Site.Title -}}
+  {{- end -}}
+
+{{- end -}}
+
+<title>{{ $seoTitle }}</title>
 
 
 <meta
