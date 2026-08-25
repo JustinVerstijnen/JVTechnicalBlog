@@ -1,6 +1,7 @@
 ---
-title: Technical Blog
-description: Technical articles, guides and research about Microsoft Azure, Microsoft 365, Entra, Intune, PowerShell, networking, security and Windows Server.
+title: Justin Verstijnen
+seo_title: Justin Verstijnen | Microsoft Cloud & Infrastructure Blog
+description: Technical articles, guides and hands-on experience focused on Microsoft Azure, Azure Virtual Desktop, Microsoft Entra, Intune, Networking, PowerShell, Windows Server and Security.
 aliases: [/blog/*]
 ---
 
