@@ -1,5 +1,130 @@
-<meta name="description" content="{{ .Site.Params.description }}">
-<meta property="og:title" content="{{ .Title }}">
-<meta property="og:description" content="{{ .Site.Params.description }}">
-<meta property="og:type" content="website">
+{{- /* ---------------------------------------------------------
+SEO Title
+--------------------------------------------------------- */ -}}
+
+{{- $title := .Title -}}
+
+{{- if .IsHome -}}
+  {{- $title = printf "%s | Microsoft Azure, Entra, Intune & PowerShell" .Site.Title -}}
+{{- else -}}
+  {{- $title = printf "%s | %s" .Title .Site.Title -}}
+{{- end -}}
+
+
+{{- /* ---------------------------------------------------------
+SEO Description
+
+Priority:
+1. Page description from front matter
+2. Hugo generated summary
+3. Global site description
+--------------------------------------------------------- */ -}}
+
+{{- $description := .Site.Params.description -}}
+
+{{- with .Description -}}
+  {{- $description = . -}}
+{{- else -}}
+  {{- with .Summary -}}
+    {{- $description = . | plainify | htmlUnescape | truncate 160 -}}
+  {{- end -}}
+{{- end -}}
+
+
+{{- /* ---------------------------------------------------------
+Page type
+--------------------------------------------------------- */ -}}
+
+{{- $ogType := "website" -}}
+
+{{- if .IsPage -}}
+  {{- $ogType = "article" -}}
+{{- end -}}
+
+
+{{- /* ---------------------------------------------------------
+Basic SEO
+--------------------------------------------------------- */ -}}
+
+<title>{{ $title }}</title>
+
+<meta name="description" content="{{ $description }}">
+
+<link rel="canonical" href="{{ .Permalink }}">
+
+
+{{- /* ---------------------------------------------------------
+Open Graph
+--------------------------------------------------------- */ -}}
+
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:type" content="{{ $ogType }}">
 <meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+
+
+{{- /* ---------------------------------------------------------
+Article metadata
+Only generated for normal content pages
+--------------------------------------------------------- */ -}}
+
+{{- if .IsPage }}
+
+<meta property="article:published_time" content="{{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" }}">
+<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+
+{{- with .Params.categories }}
+  {{- range . }}
+<meta property="article:section" content="{{ . }}">
+  {{- end }}
+{{- end }}
+
+{{- with .Params.tags }}
+  {{- range . }}
+<meta property="article:tag" content="{{ . }}">
+  {{- end }}
+{{- end }}
+
+{{- end }}
+
+
+{{- /* ---------------------------------------------------------
+Open Graph image
+
+Article front matter example:
+image: "/images/article-image.png"
+
+Fallback:
+site.Params.image (if configured)
+--------------------------------------------------------- */ -}}
+
+{{- $image := "" -}}
+
+{{- with .Params.image -}}
+  {{- $image = . | absURL -}}
+{{- else -}}
+  {{- with .Site.Params.image -}}
+    {{- $image = . | absURL -}}
+  {{- end -}}
+{{- end -}}
+
+{{- with $image }}
+
+<meta property="og:image" content="{{ . }}">
+<meta property="og:image:alt" content="{{ $.Title }}">
+
+{{- end }}
+
+
+{{- /* ---------------------------------------------------------
+Twitter / X Cards
+--------------------------------------------------------- */ -}}
+
+<meta name="twitter:card" content="{{ if $image }}summary_large_image{{ else }}summary{{ end }}">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $description }}">
+
+{{- with $image }}
+<meta name="twitter:image" content="{{ . }}">
+{{- end }}
