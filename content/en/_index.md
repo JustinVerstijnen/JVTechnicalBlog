@@ -1,6 +1,6 @@
 ---
 title: Justin Verstijnen
-seo_title: "Microsoft Cloud & Infrastructure"
+seo_title: "Microsoft Cloud & Infrastructure | Justin Verstijnen"
 description: Cloud mysteries revealed for you
 params:
   body_class: td-navbar-links-all-active home-navbar-transparent
