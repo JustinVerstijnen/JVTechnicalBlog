@@ -1,5 +1,5 @@
 baseURL: https://justinverstijnen.nl
-title: Microsoft Cloud & Infrastructure Technical Blog
+title: Justin Verstijnen
 contentDir: content/en
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: false
@@ -11,9 +11,11 @@ enableGitInfo: true
 permalinks:
   blog: "/:slug/"
 
+
 # Disable archive-hidden pages
 ignoreFiles:
   - "/content/en/blog/archive-hidden/"
+
 
 # Navbar menu
 menu:
@@ -21,19 +23,24 @@ menu:
     - name: Home
       url: /
       weight: 1
+
     - name: Blog
       url: /blog/
       weight: 10
+
     - name: Tools
       url: https://tools.justinverstijnen.nl
       weight: 20
+
     - name: About
       url: /about/
       weight: 30
 
+
 taxonomies:
   tag: tags
   category: categories
+
 
 # Highlighting config
 pygmentsCodeFences: true
@@ -41,9 +48,11 @@ pygmentsUseClasses: false
 pygmentsUseClassic: false
 pygmentsStyle: tango
 
+
 mediaTypes:
   text/redirects:
     delimiter: ''
+
 
 outputFormats:
   redirects:
@@ -52,20 +61,23 @@ outputFormats:
     mediaType: text/redirects
     root: true
 
+
 imaging:
   resampleFilter: CatmullRom
   quality: 75
   anchor: smart
 
+
 # Language configuration
 languages:
   en:
     languageName: English
-    title: justinverstijnen.nl
+    title: Justin Verstijnen
     params:
-      description: On this website, I will share my technical experience, focussing on Microsoft Azure, Virtual Desktop, Entra, Intune, Networking, PowerShell and Windows Server with Securiry in mind.
-  # cSpell:disable
+      description: Technical articles, guides and hands-on experience focused on Microsoft Azure, Azure Virtual Desktop, Microsoft Entra, Intune, Networking, PowerShell, Windows Server and Security.
 
+
+# Markdown configuration
 markup:
   goldmark:
     parser:
@@ -73,21 +85,40 @@ markup:
         block: true
     renderer:
       unsafe: true
+
   highlight:
     style: tango
     noClasses: false # Required for dark-mode support of code blocks
 
+
+# Hugo output types
 outputs:
-  home: [HTML, print, RSS, redirects]
-  section: [HTML, print, RSS]
+  home:
+    - HTML
+    - print
+    - RSS
+    - redirects
+
+  section:
+    - HTML
+    - print
+    - RSS
+
 
 params:
   offlineSearch: true
   offlineSearchMaxResults: 7
+
   taxonomy:
-    taxonomyCloud: [tags, categories]
-    taxonomyCloudTitle: [Tags, Categories]
-    taxonomyPageHeader: [tags, categories]
+    taxonomyCloud:
+      - tags
+      - categories
+    taxonomyCloudTitle:
+      - Tags
+      - Categories
+    taxonomyPageHeader:
+      - tags
+      - categories
 
   privacy_policy: /blog/terms-conditions/
 
@@ -95,18 +126,23 @@ params:
   archived_version: false
   version: 0.14.3
   versionWithBuildId: 0.14.3
+
   github_repo: https://github.com/JustinVerstijnen/JVTechnicalBlog
   github_project_repo: https://github.com/JustinVerstijnen/JVTechnicalBlog
   github_branch: main
-  #gcs_engine_id: d72aa9b2712488cc3
+
+  # gcs_engine_id: d72aa9b2712488cc3
+
   prism_syntax_highlighting: false
 
-# #ooter
+
+  # Footer
   copyright:
     authors: >-
-       | Justin Verstijnen |
+      | Justin Verstijnen |
     from_year: 2024
     to_year: present
+
 
   # User interface configuration
   ui:
@@ -114,7 +150,6 @@ params:
     navbar_logo: true
     logo: /icons/logo.svg
     navbar_translucent_over_cover_disable: true
-
     sidebar_menu_foldable: true
     sidebar_menu_compact: false
     sidebar_search_disable: false
@@ -133,8 +168,9 @@ params:
 
     readingtime:
       enable: true
-  btn-lg: class="btn btn-lg btn-{1}" role="button"
-  FA: <i class="fa-{1} fa-{2} text-{3} px-1"></i>
+
+  btn-lg: 'class="btn btn-lg btn-{1}" role="button"'
+  FA: '<i class="fa-{1} fa-{2} text-{3} px-1"></i>'
 
   links:
     developer:
@@ -142,26 +178,30 @@ params:
         url: /blog/header-photo/
         icon: fa-regular fa-camera
         desc: Header picture
+
       - name: Send me an email
         url: mailto:info@justinverstijnen.nl
         icon: fa fa-envelope
         desc: Discuss development issues around the project
+
       - name: Sitemap
         url: /sitemap.xml
         icon: fa-solid fa-rss
         desc: Sitemap
 
+
 security:
-  funcs: # cspell:disable-line
-    getenv: # cspell:disable-line
-      # Netlify build env var
+  funcs:
+    getenv:
+      # Netlify build env vars
       - ^(BRANCH|BUILD_ID|COMMIT_REF|CONTEXT|DEPLOY_ID|NETLIFY|PULL_REQUEST|REVIEW_ID)$
 
-module:
 
+module:
   hugoVersion:
     extended: true
     min: 0.155.0
+
   imports:
     - path: github.com/google/docsy
       disable: false
