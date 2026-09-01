@@ -27,16 +27,18 @@ defaults:
 env:
   EXCLUDED_CONTENT_DIR: content/en/blog/archive-hidden
   HUGO_IGNOREFILES: '[/\\]content[/\\]en[/\\]blog[/\\]archive-hidden[/\\].*'
-  HUGO_VERSION: "0.160.0"
-  NODE_VERSION: "22"
+  HUGO_VERSION: "0.164.0"
+  NODE_VERSION: "24"
   HUGO_ENVIRONMENT: production
   HUGO_ENV: production
   HUGO_CACHEDIR: /tmp/hugo_cache
+  DART_SASS_VERSION: "1.103.1"
 
 jobs:
   build:
     name: Build Hugo site
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout repository
@@ -54,30 +56,105 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: Install Node dependencies
-        run: |
-          if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
-            npm ci
-          elif [ -f package.json ]; then
-            npm install
-          else
-            echo "No package.json found, skipping npm install"
-          fi
+      - name: Setup Hugo Extended
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
 
-      - name: Setup Hugo extended
+      # Hugo/Docsy 0.17 requires the standalone Dart Sass executable.
+      # Installing sass-embedded from npm is not the same as putting the
+      # standalone Dart Sass binary in PATH for Hugo's embedded protocol.
+      - name: Install standalone Dart Sass
         run: |
           set -euo pipefail
 
-          curl -L -o hugo.tar.gz "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
-          mkdir -p "${HOME}/.local/hugo"
-          tar -xzf hugo.tar.gz -C "${HOME}/.local/hugo"
-          echo "${HOME}/.local/hugo" >> "${GITHUB_PATH}"
+          curl -L \
+            "https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz" \
+            -o /tmp/dart-sass.tar.gz
 
-      - name: Show versions
+          tar -xzf /tmp/dart-sass.tar.gz -C /tmp
+          sudo rm -rf /opt/dart-sass
+          sudo mv /tmp/dart-sass /opt/dart-sass
+          echo "/opt/dart-sass" >> "$GITHUB_PATH"
+
+      - name: Show tool versions
         run: |
+          echo "Hugo:"
           hugo version
+          echo
+          echo "Node:"
           node --version
+          echo
+          echo "npm:"
           npm --version
+          echo
+          echo "Go:"
+          go version
+          echo
+          echo "Dart Sass:"
+          sass --version
+          echo
+          echo "Dart Sass path:"
+          which sass
+          echo
+          echo "Embedded protocol test:"
+          sass --embedded --version
+
+      - name: Show Hugo module graph
+        run: |
+          hugo mod graph
+
+      - name: Generate Docsy npm package
+        run: |
+          set -euo pipefail
+
+          hugo mod npm pack
+
+          if [ ! -f packages/hugoautogen/package.json ]; then
+            echo "ERROR: packages/hugoautogen/package.json was not generated"
+            exit 1
+          fi
+
+          npm pkg set 'name="@jvtechnicalblog/hugoautogen"' private=true --json --prefix packages/hugoautogen
+
+          echo "Generated Hugo npm package:"
+          cat packages/hugoautogen/package.json
+
+      - name: Install Node dependencies
+        run: |
+          set -euo pipefail
+
+          # package.json declares packages/hugoautogen as a workspace, so this
+          # installs both the site's tooling and Docsy's generated npm deps.
+          npm install --ignore-scripts
+
+      - name: Verify Docsy module
+        run: |
+          echo "Hugo modules:"
+          hugo mod graph
+          echo
+          echo "Docsy module:"
+          hugo mod graph | grep "github.com/google/docsy/theme@v0.17.0" || {
+            echo "ERROR: Docsy 0.17.0 module not found"
+            exit 1
+          }
+
+      - name: Verify Dart Sass
+        run: |
+          if ! command -v sass >/dev/null 2>&1; then
+            echo "ERROR: Dart Sass is not available in PATH"
+            exit 1
+          fi
+
+          echo "Dart Sass executable:"
+          which sass
+          echo
+          echo "Dart Sass version:"
+          sass --version
+          echo
+          echo "Testing embedded protocol:"
+          sass --embedded --version
 
       - name: Generate planned posts page
         run: |
@@ -364,11 +441,14 @@ jobs:
         run: rm -rf public
 
       - name: Build site
+        timeout-minutes: 10
         run: |
+          echo "Starting Hugo production build..."
           hugo \
             --minify \
             --cleanDestinationDir \
             --gc \
+            --logLevel info \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - name: Sanity check build output

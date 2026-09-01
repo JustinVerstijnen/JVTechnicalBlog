@@ -1,6 +1,6 @@
 {
   "name": "docsy-example-site",
-  "version": "0.14.3",
+  "version": "0.17.0",
   "version.next": "0.14.2-dev-unreleased",
   "description": "Example site that uses Docsy theme for technical documentation.",
   "repository": "github:google/docsy-example",
@@ -16,7 +16,7 @@
     "_commit:public": "HASH=$(git rev-parse --short main); cd public && git add -A && git commit --allow-empty -m \"Site at $HASH\"",
     "_diff:check": "git diff --name-only --exit-code",
     "_fix:permissions": "chmod -R u+w public/* 2>/dev/null || true",
-    "_get:docsy": "hugo mod get github.com/google/docsy@v$npm_package_version",
+    "_get:docsy": "hugo mod get github.com/google/docsy/theme@v$npm_package_version",
     "_hugo-dev": "npm run _hugo -- -e dev --logLevel info -DFE",
     "_hugo": "hugo --cleanDestinationDir",
     "_local": "npx cross-env HUGO_MODULE_WORKSPACE=docsy.work",
@@ -44,17 +44,18 @@
     "test-and-fix": "npm run fix && npm run test-only",
     "test-only": "npm run check:links",
     "test": "npm run test-and-fix",
-    "update:docsy:main": "hugo mod get -u github.com/google/docsy@main && hugo mod tidy",
-    "update:docsy:mod": "hugo mod get -u github.com/google/docsy && hugo mod tidy",
+    "update:docsy:main": "hugo mod get -u github.com/google/docsy/theme@main && hugo mod tidy",
+    "update:docsy:mod": "hugo mod get -u github.com/google/docsy/theme && hugo mod tidy",
     "update:hugo": "npm install --save-dev --save-exact hugo-extended@latest",
     "update:main": "npm run update:packages && npm run update:docsy:main",
     "update:packages": "npx npm-check-updates -u",
-    "update": "npm run update:packages && npm run update:docsy:mod"
+    "update": "npm run update:packages && npm run update:docsy:mod",
+    "update:docsy:pack": "hugo mod npm pack && npm pkg set 'name=\"@jvtechnicalblog/hugoautogen\"' private=true --json --prefix packages/hugoautogen && npm install --ignore-scripts"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.24",
     "cross-env": "^10.1.0",
-    "hugo-extended": "0.155.3",
+    "hugo-extended": "0.164.0",
     "postcss-cli": "^11.0.1",
     "rtlcss": "^4.3.0"
   },
@@ -63,12 +64,19 @@
     "prettier": "^3.8.1"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=24",
+    "npm": ">=11"
   },
   "private": true,
   "prettier": {
     "proseWrap": "always",
     "singleQuote": true
   },
-  "cSpell:ignore": ""
+  "cSpell:ignore": "",
+  "workspaces": [
+    "packages/hugoautogen"
+  ],
+  "overrides": {
+    "adm-zip": "^0.6.0"
+  }
 }

@@ -1,5 +1,7 @@
 baseURL: https://justinverstijnen.nl
 title: Justin Verstijnen
+
+# Language settings
 contentDir: content/en
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: false
@@ -7,15 +9,13 @@ enableMissingTranslationPlaceholders: true
 enableRobotsTXT: true
 enableGitInfo: true
 
-# Blog en datum uitschakelen uit URL
+# /Blog en datum uitschakelen uit URL
 permalinks:
   blog: "/:slug/"
-
 
 # Disable archive-hidden pages
 ignoreFiles:
   - "/content/en/blog/archive-hidden/"
-
 
 # Navbar menu
 menu:
@@ -36,48 +36,24 @@ menu:
       url: /about/
       weight: 30
 
-
+# Taxonomies
 taxonomies:
   tag: tags
   category: categories
 
-
-# Highlighting config
-pygmentsCodeFences: true
-pygmentsUseClasses: false
-pygmentsUseClassic: false
-pygmentsStyle: tango
-
-
-mediaTypes:
-  text/redirects:
-    delimiter: ''
-
-
-outputFormats:
-  redirects:
-    baseName: _redirects
-    isPlainText: true
-    mediaType: text/redirects
-    root: true
-
-
+# Image processing
 imaging:
   resampleFilter: CatmullRom
-  quality: 75
-  anchor: smart
-
 
 # Language configuration
 languages:
   en:
-    languageName: English
+    label: English
     title: Justin Verstijnen
     params:
       description: Technical articles, guides and hands-on experience focused on Microsoft Azure, Azure Virtual Desktop, Microsoft Entra, Intune, Networking, PowerShell, Windows Server and Security.
 
-
-# Markdown configuration
+# Markdown / syntax highlighting
 markup:
   goldmark:
     parser:
@@ -88,23 +64,21 @@ markup:
 
   highlight:
     style: tango
-    noClasses: false # Required for dark-mode support of code blocks
+    noClasses: false
 
-
-# Hugo output types
+# Output formats
 outputs:
   home:
     - HTML
     - print
     - RSS
-    - redirects
 
   section:
     - HTML
     - print
     - RSS
 
-
+# Docsy configuration
 params:
   offlineSearch: true
   offlineSearchMaxResults: 7
@@ -121,56 +95,28 @@ params:
       - categories
 
   privacy_policy: /blog/terms-conditions/
-
-  version_menu: Releases
-  archived_version: false
-  version: 0.14.3
-  versionWithBuildId: 0.14.3
-
   github_repo: https://github.com/JustinVerstijnen/JVTechnicalBlog
-  github_project_repo: https://github.com/JustinVerstijnen/JVTechnicalBlog
   github_branch: main
-
-  # gcs_engine_id: d72aa9b2712488cc3
-
   prism_syntax_highlighting: false
-
-
-  # Footer
   copyright:
     authors: >-
       | Justin Verstijnen |
     from_year: 2024
     to_year: present
 
-
   # User interface configuration
   ui:
     breadcrumb_disable: false
     navbar_logo: true
-    logo: /icons/logo.svg
     navbar_translucent_over_cover_disable: true
     sidebar_menu_foldable: true
     sidebar_menu_compact: false
     sidebar_search_disable: false
     showLightDarkModeMenu: true
-
     feedback:
       enable: false
-      yes: >-
-        Glad to hear it! Please <a
-        href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we
-        can improve</a>.
-      no: >-
-        Sorry to hear that. Please <a
-        href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we
-        can improve</a>.
-
     readingtime:
       enable: true
-
-  btn-lg: 'class="btn btn-lg btn-{1}" role="button"'
-  FA: '<i class="fa-{1} fa-{2} text-{3} px-1"></i>'
 
   links:
     developer:
@@ -189,19 +135,12 @@ params:
         icon: fa-solid fa-rss
         desc: Sitemap
 
-
-security:
-  funcs:
-    getenv:
-      # Netlify build env vars
-      - ^(BRANCH|BUILD_ID|COMMIT_REF|CONTEXT|DEPLOY_ID|NETLIFY|PULL_REQUEST|REVIEW_ID)$
-
-
+# Hugo Module / Docsy
 module:
   hugoVersion:
     extended: true
-    min: 0.155.0
+    min: 0.160.1
 
   imports:
-    - path: github.com/google/docsy
+    - path: github.com/google/docsy/theme
       disable: false
