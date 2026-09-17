@@ -25,14 +25,14 @@ This section explains the configuration on the Azure side. Existing configuratio
 
 ### Step 1.1: Create the GatewaySubnet
 
-We start by creating a GatewaySubnet in the virtual network where the Virtual Network Gateway will be placed. Open the virtual network, then go to "Settings" and "Subnets" from the left.
+We start by creating a GatewaySubnet in the virtual network where the Virtual Network Gateway will be placed. Open the virtual network, then go to `Settings` and `Subnets` from the left.
 
 [![jv-media-5716-9f6a27ec264d.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-9f6a27ec264d.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-9f6a27ec264d.png)
 
 Check whether the virtual network already has a subnet named `GatewaySubnet`. If it does not, follow these steps:
 
-1. Click on "+ Subnet"
-2. Under "Subnet purpose", select "Virtual Network Gateway". This acts as a template for the subnet
+1. Click on `+ Subnet`
+2. Under `Subnet purpose`, select `Virtual Network Gateway`. This acts as a template for the subnet
 3. Adjust the IP address range as required
 
 [![jv-media-5716-2e0a1a5d68df.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-2e0a1a5d68df.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-2e0a1a5d68df.png)
@@ -47,7 +47,7 @@ Save the subnet and check the settings. Then continue with Step 1.2.
 
 ### Step 1.2: Create the Virtual Network Gateway
 
-In Azure, you need to create a resource called a "Virtual Network Gateway". This is the resource type with the blue lock icon:
+In Azure, you need to create a resource called a `Virtual Network Gateway`. This is the resource type with the blue lock icon:
 
 [![jv-media-5716-4bc9a803cfdf.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-4bc9a803cfdf.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-4bc9a803cfdf.png)
 
@@ -57,7 +57,7 @@ If your virtual network does not yet have a Virtual Network Gateway, we have to 
 Creating a Virtual Network Gateway takes approximately 45 minutes. This is why I start with the Azure configuration, so you can use part of the time to configure UniFi in the meantime.
 {{% /alert %}}
 
-On the Virtual Network Gateway page, click "+ New" to create a new gateway for your network.
+On the Virtual Network Gateway page, click `+ New` to create a new gateway for your network.
 
 [![jv-media-5716-02967f95fe01.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-02967f95fe01.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-02967f95fe01.png)
 
@@ -65,7 +65,7 @@ After creating the gateway, the deployment will take around 45 minutes to comple
 
 ### Step 1.3: Create the Local Network Gateway
 
-Once you have a Virtual Network Gateway ready or deploying, search for "Local Network Gateway" and create one for the company. A Local Network Gateway represents a physical site and contains the WAN IP address and the local network address ranges which are available in your UniFi environment:
+Once you have a Virtual Network Gateway ready or deploying, search for `Local Network Gateway` and create one for the company. A Local Network Gateway represents a physical site and contains the WAN IP address and the local network address ranges which are available in your UniFi environment:
 
 [![jv-media-5716-44a376421623.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-44a376421623.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-44a376421623.png)
 
@@ -83,9 +83,9 @@ Make a note of the following value:
 
 - The **public IP address** of the Virtual Network Gateway, as shown on the screenshot above
 
-To create the connection, under "Settings", go to "Connections". Click "+ Add" to add a VPN connection. Select the correct resource group and choose "Site-to-Site (IPsec)" as the Connection type:
+To create the connection, under `Settings`, go to `Connections`. Click `+ Add` to add a VPN connection. Select the correct resource group and choose `Site-to-Site (IPsec)` as the Connection type:
 
-Give the connection an appropriate name according to the naming policy, then continue to the "Settings" tab.
+Give the connection an appropriate name according to the naming policy, then continue to the `Settings` tab.
 
 Select the Virtual Network Gateway and Local Network Gateway that you want to use for the connection:
 
@@ -93,7 +93,7 @@ Select the Virtual Network Gateway and Local Network Gateway that you want to us
 
 Generate a complex pre-shared key (PSK) containing different character types and with a length of 50 to 64 characters. UniFi has a maximum limit of 64 characters, so let's stay under this value. Store the PSK in a good and safe place like a password manager. You will also need it when configuring UniFi. The PSK acts as a connection password and prevents just anyone on the internet from connecting to your VPN router.
 
-Select "IKEv2" as the IKE protocol and for IPsec / IKE policy, select "Custom". The default settings in UniFi and Azure are different. We therefore do not use either platform's defaults and configure the same, stronger policy on both sides.
+Select `IKEv2` as the IKE protocol and for IPsec / IKE policy, select `Custom`. The default settings in UniFi and Azure are different. We therefore do not use either platform's defaults and configure the same, stronger policy on both sides.
 
 Configure the settings as shown below:
 
@@ -118,19 +118,19 @@ The following steps must be completed in UniFi, so open up your UniFi environmen
 
 ### Step 2.1: Create the VPN tunnel
 
-In UniFi, go to "Settings", then to "VPN" and select "Site-to-Site VPN". Here we can configure a new VPN tunnel to our Azure environment.
+In UniFi, go to `Settings`, then to `VPN` and select `Site-to-Site VPN`. Here we can configure a new VPN tunnel to our Azure environment.
 
 [![jv-media-5716-614b77d5f3f7.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-614b77d5f3f7.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-614b77d5f3f7.png)
 
-Click on "Create Site-to-Site VPN", give the tunnel a name and select the primary WAN connection:
+Click on `Create Site-to-Site VPN`, give the tunnel a name and select the primary WAN connection:
 
 [![jv-media-5716-1b752b3e9902.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-1b752b3e9902.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-1b752b3e9902.png)
 
 - The VPN connection type must be IPsec
 - Give the tunnel a name and enter the same pre-shared key (PSK) that you configured in Azure
 - The local IP should correspond to the WAN connection of your UniFi gateway
-- Under "Remote IP / Hostname", enter the public IP address of the Azure Virtual Network Gateway
-- The VPN method must be "Route-based"
+- Under `Remote IP / Hostname`, enter the public IP address of the Azure Virtual Network Gateway
+- The VPN method must be `Route-based`
 - Add all your Azure subnets to the subnets section. You can also choose to add the whole address space including all subnets
 
 In Step 2.2 we will configure the advanced cryptographic settings.
@@ -148,11 +148,11 @@ IPsec works in two phases:
 
 	- The devices establish the IPsec Security Association used to encrypt and authenticate traffic through the tunnel.
 
-Let's configure these phases now. The tunnel's cryptographic settings must be configured as shown below. Scroll down on the tunnel configuration page and set "Advanced" to "Manual".
+Let's configure these phases now. The tunnel's cryptographic settings must be configured as shown below. Scroll down on the tunnel configuration page and set `Advanced` to `Manual`.
 
 [![jv-media-5716-ba57dc2a3c35.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-ba57dc2a3c35.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-ba57dc2a3c35.png)
 
-Set the connection to use "IKEv2".
+Set the connection to use `IKEv2`.
 
 Under IKE, select the following options:
 
@@ -168,7 +168,7 @@ Under ESP, select the following options:
 - DH group 24.
 - Lifetime: `3600` seconds, which is 1 hour.
 
-At the bottom of the page, enable "Perfect Forward Secrecy (PFS)". Other settings can be left at their defaults. Then save the connection in UniFi.
+At the bottom of the page, enable `Perfect Forward Secrecy (PFS)`. Other settings can be left at their defaults. Then save the connection in UniFi.
 
 Wait approximately 30 seconds and the connection should come online if the connection is already created in Azure. If not, first follow Step 3 to create this connection afterwards.
 
@@ -188,7 +188,7 @@ If you continued with the UniFi configuration while the Virtual Network Gateway 
 
 ## Step 4: Testing the connection
 
-Seeing "Online" or "Connected" on both the Azure and UniFi side does not automatically mean that traffic is passing through the tunnel successfully. Test several things to confirm that the VPN connection works correctly.
+Seeing `Online` or `Connected` on both the Azure and UniFi side does not automatically mean that traffic is passing through the tunnel successfully. Test several things to confirm that the VPN connection works correctly.
 
 ### Step 4.1: Basic network testing
 
