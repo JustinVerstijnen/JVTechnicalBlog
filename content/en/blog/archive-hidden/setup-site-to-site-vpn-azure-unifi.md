@@ -25,14 +25,14 @@ This section explains the configuration on the Azure side. Existing configuratio
 
 ### Step 1.1: Create the GatewaySubnet
 
-We start by creating a GatewaySubnet in the virtual network where the Virtual Network Gateway will be placed. Open the virtual network and open **Settings > Subnets**from the left.
+We start by creating a GatewaySubnet in the virtual network where the Virtual Network Gateway will be placed. Open the virtual network and open "Settings**"**and then "Subnets**"**from the left.
 
 [![jv-media-5716-9f6a27ec264d.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-9f6a27ec264d.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-9f6a27ec264d.png)
 
 Check whether the virtual network already has a subnet named `GatewaySubnet`. If it does not, follow these steps:
 
-1. Click **+ Subnet** .
-2. Under **Subnet purpose** , select **Virtual Network Gateway** . This acts as a template for the subnet.
+1. Click on "+ Subnet **"** .
+2. Under "Subnet purpose", select "Virtual Network Gateway **"** . This acts as a template for the subnet.
 3. Adjust the IP address range as required.
 
 [![jv-media-5716-2e0a1a5d68df.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-2e0a1a5d68df.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-2e0a1a5d68df.png)
@@ -176,13 +176,14 @@ Under **ESP**, select the following options:
 - DH group 24.
 - Lifetime: `3600` seconds, which is 1 hour.
 
-At the bottom of the page, enable **Perfect Forward Secrecy (PFS)**. Other settings can be left default and save the connection in UniFi.
+At the bottom of the page, enable "Perfect Forward Secrecy (PFS)". Other settings can be left default and save the connection in UniFi.
 
 Wait approximately 30 seconds and connection should come be online if the connection is already created in Azure. If not, first follow Step 3 to create this connection afterwards.
 
 [![jv-media-5716-a94be4efb123.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-a94be4efb123.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-a94be4efb123.png)
 
 And after the connection has been stablished:
+
 [![jv-media-5716-c333fcfcb711.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-c333fcfcb711.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-c333fcfcb711.png)
 
 ---
@@ -197,7 +198,7 @@ If continued during the Virtual Network Gateway tunnel in step 1.4, we need to c
 
 ## Step 4: Testing the connection
 
-Seeing **Online** and **Connected** on both sides does not automatically mean that traffic is passing through the tunnel. Test several things to confirm that the VPN connection works correctly.
+Seeing "Online" or "Connected" on both sides does not automatically mean that traffic is passing through the tunnel. Test several things to confirm that the VPN connection works correctly.
 
 ### Step 4.1: Ping from Azure to the local network
 
