@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Analyzing Email Headers"
 slug: "introduction-to-analyzing-email-headers"
-date: 2026-10-10
+date: 2026-10-01
 tags:
 - Concepts
 categories:
@@ -202,11 +202,9 @@ These values are commonly used during investigations when users report missing e
 
 ## Using an email header analyzer
 
-Raw email headers can be difficult to read because they often contain hundreds of lines.
+Raw email headers can be difficult to read because they often contain hundreds of lines. To simplify this process, you can use an analyzer tool that parses the headers into readable sections.
 
-To simplify this process, you can use an analyzer tool that parses the headers into readable sections.
-
-I created a free tool for this purpose:
+I created a free and simple tool for exactly this purpose:
 
 https://tools.justinverstijnen.nl/emailheaderanalyzer
 
@@ -221,6 +219,12 @@ The tool helps you quickly identify:
 You simply paste the raw email headers into the analyzer and review the parsed output.
 
 This can significantly speed up troubleshooting and phishing investigations.
+
+On my GitHub repository, I have some examples of Email Headers which can be used to test the tool and the effective information stored in the text. You can find the examples here:
+
+<a class="btn btn-primary" href="https://github.com/JustinVerstijnen/EmailHeaderAnalyzer/tree/main/header-examples" target="_blank" rel="noreferrer">View on my GitHub page</a>
+
+However these are real world examples, some information is masked but the amount of masking is minimized.
 
 ---
 
