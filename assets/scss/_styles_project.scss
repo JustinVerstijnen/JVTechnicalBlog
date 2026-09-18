@@ -83,8 +83,10 @@ a {
 }
 
 /* Code labels */
-.td-content code {
-    background-color: #77b0de1f;
+.td-content p code,
+.td-content li > code,
+.td-content table code {
+    background-color: rgba(119, 176, 222, 0.35) !important;
 }
 
 /* Table styling: keep tables readable and replace the default grey striped rows */
