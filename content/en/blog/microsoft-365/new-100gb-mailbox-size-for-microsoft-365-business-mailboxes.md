@@ -58,6 +58,8 @@ So when checking your licenses, make sure you look at the actual license assigne
 
 A standalone Exchange Online Plan 1 license still gives you a 50 GB primary mailbox. Exchange Online Plan 2 still provides 100 GB. The change here is mainly that the Microsoft 365 Business licenses now also have that same 100 GB primary mailbox size.
 
+{{< ads >}}
+
 ---
 
 ## How to verify the effective mailbox quota
