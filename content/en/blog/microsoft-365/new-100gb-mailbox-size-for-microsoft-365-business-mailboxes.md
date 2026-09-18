@@ -10,11 +10,15 @@ description: "Microsoft 365 Business Basic, Standard, and Premium mailboxes now 
 hidden: false
 ---
 
-Microsoft has increased the mailbox storage limit for Microsoft 365 Business subscriptions. Users with Microsoft 365 Business Basic, Business Standard, or Business Premium can now have a primary mailbox of up to `100 GB`. Previously, these subscriptions supported a primary mailbox of up to 50 GB. This change gives users more space without requiring an `Exchange Online Plan 2` subscription solely to obtain a larger primary mailbox.
+Microsoft has increased the mailbox size for Microsoft 365 Business subscriptions. And this is actually a pretty nice change! Users with Microsoft 365 Business Basic, Business Standard, or Business Premium can now have a primary mailbox of up to `100 GB`.
+
+Previously, these subscriptions were limited to 50 GB. If you needed a bigger primary mailbox, an `Exchange Online Plan 2` license was often added just to get that extra storage. With this change, that is no longer needed in many situations.
+
+---
 
 ## Which Microsoft 365 subscriptions receive 100 GB?
 
-Every Microsoft 365 Business license will benefit from this free gift of Microsoft:
+The nice thing about this change is that all three Microsoft 365 Business subscriptions get the larger mailbox. There is no additional license or configuration needed just to become eligible for it.
 
 | Microsoft 365 subscription | Previous mailbox limit | New mailbox limit |
 | --- | --- | --- |
@@ -22,7 +26,7 @@ Every Microsoft 365 Business license will benefit from this free gift of Microso
 | Microsoft 365 Business Standard | 50 GB | 100 GB |
 | Microsoft 365 Business Premium | 50 GB | 100 GB |
 
-The new capacity limits are:
+With the new 100 GB mailbox, Microsoft also uses the following quota limits:
 
 | Mailbox status | Quota |
 | --- | --- |
@@ -30,13 +34,17 @@ The new capacity limits are:
 | Prohibit sending | 99 GB |
 | Prohibit sending and receiving | 100 GB |
 
-Good to know: when a mailbox reaches 98 GB, the user receives only a warning. At 99 GB, the user can no longer send new messages. When the mailbox reaches 100 GB, Exchange Online prevents the mailbox from sending and receiving messages until sufficient space is available again.
+So there is still some room between the first warning and a completely full mailbox. At 98 GB, the user will receive a warning that the mailbox is almost full.
 
-Microsoft notes that service limit changes can take time to reach all existing customers. This means that administrators might not immediately see the new quota on every eligible mailbox.
+When the mailbox reaches 99 GB, the user can still receive mail but can no longer send new messages. At 100 GB, Exchange Online blocks both sending and receiving until some space is made available again.
+
+Good to know: Microsoft notes that service limit changes can take some time before they are available for every existing customer. So don't be surprised when one tenant or mailbox already shows 100 GB while another one still shows the old 50 GB limit.
+
+---
 
 ## Exchange Online Plan 1 remains different
 
-The new limit is connected to the eligible Microsoft 365 Business subscriptions. It does not change the standalone Exchange Online Plan 1 mailbox limit.
+There is one important thing to keep in mind here. This change applies to the eligible Microsoft 365 Business subscriptions. It does **not** mean that Exchange Online Plan 1 suddenly also gets a 100 GB mailbox.
 
 | Subscription or plan | Primary mailbox limit |
 | --- | --- |
@@ -46,27 +54,36 @@ The new limit is connected to the eligible Microsoft 365 Business subscriptions.
 | Exchange Online Plan 1 | 50 GB |
 | Exchange Online Plan 2 | 100 GB |
 
-This distinction is important when reviewing user licenses. A standalone Exchange Online Plan 1 license continues to provide a 50 GB primary mailbox, while Exchange Online Plan 2 provides a 100 GB primary mailbox.
+So when checking your licenses, make sure you look at the actual license assigned to the user.
 
-## Verify the effective mailbox quota
+A standalone Exchange Online Plan 1 license still gives you a 50 GB primary mailbox. Exchange Online Plan 2 still provides 100 GB. The change here is mainly that the Microsoft 365 Business licenses now also have that same 100 GB primary mailbox size.
 
-Administrators can use Exchange Online PowerShell to check the quota currently applied to a mailbox.
+---
+
+## How to verify the effective mailbox quota
+
+Of course, we don't just want to assume that the new quota is already active. We can easily check this with Exchange Online PowerShell.
 
 First, install the Exchange Online PowerShell module if it is not already available:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
+
 Install-Module ExchangeOnlineManagement -Scope CurrentUser
+
 {{< /card >}}
 
-Connect to Exchange Online:
+Then connect to Exchange Online:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
+
 Connect-ExchangeOnline
+
 {{< /card >}}
 
-Specify the user principal name of the mailbox and retrieve its quota:
+Now specify the user principal name of the mailbox you want to check and retrieve its current quota:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
+
 $userId = "user@justinverstijnen.nl"
 
 Get-Mailbox -Identity $userId |
@@ -75,42 +92,52 @@ Get-Mailbox -Identity $userId |
         ProhibitSendQuota,
         ProhibitSendReceiveQuota,
         UseDatabaseQuotaDefaults
+
 {{< /card >}}
 
-Replace `user@justinverstijnen.nl` with your user principal name or email address of the mailbox you want to check.
+Replace `user@justinverstijnen.nl` with the user principal name or email address of the mailbox you want to check.
 
-For a mailbox that has received the new limits, the output should show values similar to:
+When the mailbox has received the new limits, you should see something similar to this:
 
 {{< card code=true header="**Plain text**" lang="text" >}}
+
 IssueWarningQuota        : 98 GB
 ProhibitSendQuota        : 99 GB
 ProhibitSendReceiveQuota : 100 GB
+
 {{< /card >}}
 
-The `ProhibitSendReceiveQuota` property represents the point at which Exchange Online prevents the mailbox from sending and receiving messages.
+The most important value here is `ProhibitSendReceiveQuota`. This is the actual point where Exchange Online stops the mailbox from both sending and receiving messages.
 
-To check the effective quota for all user mailboxes, run:
+If you want to check all user mailboxes in the tenant at once, we can also do that:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
+
 Get-Mailbox -RecipientTypeDetails UserMailbox -ResultSize Unlimited |
     Select-Object DisplayName,
         UserPrincipalName,
         IssueWarningQuota,
         ProhibitSendQuota,
         ProhibitSendReceiveQuota
+
 {{< /card >}}
 
-This provides an overview of the quotas applied to each user mailbox and helps identify mailboxes that still use the previous limits.
+This gives you a quick overview of the quotas currently applied to all user mailboxes. Pretty useful when you want to check whether Microsoft has already rolled out the new limits across your tenant.
+
+---
 
 ## Custom mailbox quotas still apply
 
-The license determines the maximum supported mailbox size, but administrators can configure a lower custom quota for an individual mailbox.
+There is one thing that can make the results a little confusing: custom mailbox quotas.
 
-For example, a mailbox might be eligible for 100 GB while still having a manually configured limit of 20 GB. The higher license entitlement does not automatically remove that custom configuration.
+The license determines how large the mailbox is allowed to become, but an administrator can still configure a lower quota manually.
 
-You can check for custom quota values with:
+For example, a mailbox can be eligible for 100 GB while someone previously configured the mailbox with a maximum size of 20 GB. In that case, the mailbox will not suddenly jump to 100 GB just because the license now supports it.
+
+We can check this with PowerShell as well:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
+
 $userId = "user@justinverstijnen.nl"
 
 Get-Mailbox -Identity $userId |
@@ -119,34 +146,59 @@ Get-Mailbox -Identity $userId |
         IssueWarningQuota,
         ProhibitSendQuota,
         ProhibitSendReceiveQuota
+
 {{< /card >}}
 
-If the returned quota remains lower than expected, review whether a custom quota was previously assigned to the mailbox. The following command changes the mailbox quota. Verify the mailbox identity and confirm that its assigned subscription supports a 100 GB primary mailbox before running it.
+If the returned quota is still lower than expected, it is worth checking whether someone manually configured a custom quota on the mailbox in the past.
+
+If needed, the following command can be used to configure the mailbox with the new limits. Before doing this, make sure you have the correct mailbox and verify that the assigned subscription actually supports a 100 GB primary mailbox.
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
+
 $userId = "user@justinverstijnen.nl"
 
 Set-Mailbox -Identity $userId `
     -IssueWarningQuota 98GB `
     -ProhibitSendQuota 99GB `
     -ProhibitSendReceiveQuota 100GB
+
 {{< /card >}}
+
+---
 
 ## Primary mailbox storage only
 
-The new 100 GB limit applies to the user's `primary mailbox`. It does not increase archive mailbox storage or add archive functionality to a subscription.
+Another important detail: the new 100 GB limit is specifically for the user's `primary mailbox`.
 
-Shared mailboxes follow separate licensing rules. An unlicensed shared mailbox is limited to `50 GB`. A suitable Exchange Online license is required when a shared mailbox needs a capacity of up to `100 GB`.
+It does not suddenly give the user a larger archive mailbox and it also does not add archive functionality to a subscription that did not already have it.
+
+Shared mailboxes also have their own licensing rules. An unlicensed shared mailbox is still limited to `50 GB`. If you need a shared mailbox of up to `100 GB`, you will need to assign a suitable Exchange Online license to it.
+
+So while 100 GB is becoming much more common now, it does not mean that every type of mailbox automatically gets 100 GB.
+
+---
 
 ## What this means for administrators
 
-Administrators should check whether eligible Microsoft 365 Business mailboxes have received the updated quota before assigning additional licensing solely for mailbox capacity.
+For administrators, I think this is mainly a good moment to check why certain users currently have additional Exchange Online licensing.
 
-Users who previously received `Exchange Online Plan 2` only to increase their primary mailbox from 50 GB to 100 GB might no longer need that additional plan. However, Exchange Online Plan 2 includes other capabilities, so review the complete licensing requirements before removing or changing an existing license.
+If an eligible Microsoft 365 Business user received `Exchange Online Plan 2` only because the 50 GB primary mailbox was too small, that additional license might no longer be required now that the Business license itself supports 100 GB.
+
+But don't immediately start removing all your Exchange Online Plan 2 licenses. Plan 2 contains more functionality than just a larger primary mailbox, so always check why the license was assigned before removing or changing anything.
+
+The easiest approach is to first check the effective mailbox quota with PowerShell and then review the additional licenses for users that were only using them for mailbox capacity.
+
+---
 
 ## Summary
 
-Microsoft 365 Business Basic, Business Standard, and Business Premium now support primary mailboxes of up to 100 GB. Administrators can use Exchange Online PowerShell to verify the effective quota and identify custom mailbox settings that might prevent an eligible mailbox from using the updated capacity. This is great so every mailbox now has the same size from 365 Business Basic and up.
+Microsoft 365 Business Basic, Business Standard, and Business Premium now support primary mailboxes of up to 100 GB. Previously these subscriptions were limited to 50 GB, so this is a pretty nice free upgrade from Microsoft.
+
+Administrators can use Exchange Online PowerShell to check whether the new quota is already active and to see if any custom mailbox quotas are still limiting the mailbox.
+
+Especially for users who previously needed Exchange Online Plan 2 just to get a 100 GB primary mailbox, this change can be useful. Just make sure the Plan 2 license is not being used for any of its other features before removing it.
+
+Overall, I really like this change. From Microsoft 365 Business Basic and up, we now have the same 100 GB primary mailbox size, which makes licensing a little easier as well.
 
 Thank you for reading this post and I hope it was helpful!
 
@@ -154,8 +206,8 @@ Thank you for reading this post and I hope it was helpful!
 
 These sources helped me by writing and research for this post;
 
-1. https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits
-2. https://learn.microsoft.com/en-us/troubleshoot/exchange/user-and-shared-mailboxes/increase-or-customize-mailbox-size
+1. [https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits](https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits)
+2. [https://learn.microsoft.com/en-us/troubleshoot/exchange/user-and-shared-mailboxes/increase-or-customize-mailbox-size](https://learn.microsoft.com/en-us/troubleshoot/exchange/user-and-shared-mailboxes/increase-or-customize-mailbox-size)
 
 {{< ads >}}
 
