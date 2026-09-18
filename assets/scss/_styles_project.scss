@@ -1161,3 +1161,223 @@ body.has-ps-about-page .ps-markdown [id] {
     margin-top: 0.85rem;
   }
 }
+
+/* Windows 11-inspired code blocks.
+ * Presentation only: retain Docsy's copy handler and Chroma token colors.
+ * Remove this section to return to the previous code-block appearance.
+ */
+:root,
+[data-bs-theme='light'] {
+  --jv-code-header: #f5f7fa;
+  --jv-code-border: #d5dce5;
+  --jv-code-text: #243549;
+  --jv-code-button: #ffffff;
+  --jv-code-button-hover: #e7f0f9;
+  --jv-code-accent: #286a9e;
+  --jv-code-shadow: 0 4px 16px rgba(14, 32, 44, 0.07);
+}
+
+[data-bs-theme='dark'] {
+  --jv-code-header: #252b33;
+  --jv-code-border: #424b57;
+  --jv-code-text: #edf3fa;
+  --jv-code-button: #343e4b;
+  --jv-code-button-hover: #40536a;
+  --jv-code-accent: #9dcef5;
+  --jv-code-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+}
+
+/* A toolbar for ordinary fenced blocks, including those without a card. */
+.td-content .highlight {
+  position: relative;
+  min-width: 0;
+  max-width: 100%;
+  margin: 1.4rem 0;
+  padding: 0;
+  border: 1px solid var(--jv-code-border);
+  border-radius: 12px;
+  background: var(--jv-code-header);
+  box-shadow: var(--jv-code-shadow);
+}
+
+.td-content .highlight::before {
+  content: 'Code';
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 64px;
+  padding: 12px 156px 12px 20px;
+  border-bottom: 1px solid var(--jv-code-border);
+  border-radius: 11px 11px 0 0;
+  color: var(--jv-code-text);
+  background: var(--jv-code-header);
+  font: 600 14px/1.5 'Segoe UI Variable', 'Segoe UI', sans-serif;
+  white-space: normal;
+}
+
+/* Do not overwrite backgrounds or colors belonging to syntax highlighting. */
+.td-content .highlight pre {
+  position: static;
+  max-width: 100%;
+  margin: 0;
+  padding: 20px;
+  border: 0;
+  border-radius: 0 0 11px 11px;
+  overflow-x: auto;
+  font-family: 'Cascadia Code', 'Cascadia Mono', Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.75;
+  tab-size: 4;
+}
+
+.td-content .highlight pre code {
+  font-family: inherit;
+  font-size: inherit;
+  white-space: pre;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+/* Reuse the existing button: no second handler, no change to copied text. */
+.td-content .highlight pre button.td-click-to-copy {
+  position: absolute;
+  z-index: 2;
+  inset: 10px 12px auto auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 120px;
+  min-height: 44px;
+  margin: 0;
+  padding: 8px 12px;
+  border: 1px solid var(--jv-code-border);
+  border-radius: 7px;
+  color: var(--jv-code-text);
+  background: var(--jv-code-button);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  font: 600 13px/1.2 'Segoe UI Variable', 'Segoe UI', sans-serif;
+  white-space: nowrap;
+  opacity: 1;
+  visibility: visible;
+  cursor: pointer;
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+
+.td-content .highlight pre button.td-click-to-copy::after {
+  content: 'Copy';
+}
+
+.td-content .highlight pre button.td-click-to-copy:hover {
+  color: var(--jv-code-text);
+  background: var(--jv-code-button-hover);
+  border-color: var(--jv-code-accent);
+}
+
+.td-content .highlight pre button.td-click-to-copy:focus-visible {
+  outline: 2px solid var(--jv-code-accent);
+  outline-offset: 2px;
+}
+
+.td-content .highlight pre button.td-click-to-copy:active {
+  color: var(--jv-code-text);
+  background: var(--jv-code-button-hover);
+  transform: none;
+}
+
+/* Code-only Docsy cards use their existing title instead of a second toolbar.
+ * Multi-block / prose cards retain independent toolbars for each code block.
+ */
+.td-content .td-card.card:has(> .card-body > .highlight:only-child),
+.td-content .td-card.card:has(> .highlight) {
+  position: relative;
+  min-width: 0;
+  max-width: 100%;
+  border: 1px solid var(--jv-code-border);
+  border-radius: 12px;
+  background: var(--jv-code-header);
+  box-shadow: var(--jv-code-shadow);
+
+  > .card-header {
+    display: flex;
+    align-items: center;
+    min-height: 64px;
+    padding: 12px 156px 12px 20px;
+    border-bottom: 1px solid var(--jv-code-border);
+    border-radius: 11px 11px 0 0;
+    color: var(--jv-code-text);
+    background: var(--jv-code-header);
+    font: 600 14px/1.5 'Segoe UI Variable', 'Segoe UI', sans-serif;
+    overflow-wrap: anywhere;
+  }
+
+  > .card-header::before {
+    content: '>_';
+    flex: 0 0 auto;
+    margin-right: 10px;
+    color: var(--jv-code-accent);
+    font: 700 16px/1 Consolas, monospace;
+  }
+
+  > .card-body {
+    position: static;
+    min-width: 0;
+    padding: 0;
+  }
+
+  > .highlight,
+  > .card-body > .highlight {
+    margin: 0;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0 0 11px 11px;
+  }
+
+  /* Only move a copy button into a header when that header exists. */
+  &:has(> .card-header) > .highlight,
+  &:has(> .card-header) > .card-body > .highlight {
+    position: static;
+
+    &::before {
+      content: none;
+    }
+  }
+}
+
+/* Chroma line-number tables must not inherit general content table sizing. */
+.td-content .highlight:has(.lntable) {
+  overflow-x: auto;
+}
+
+.td-content .highlight table.lntable {
+  min-width: 0;
+  margin: 0;
+  border: 0;
+}
+
+.td-content .highlight table.lntable td {
+  padding: 0;
+  border: 0;
+}
+
+.td-content .highlight table.lntable code {
+  background-color: inherit !important;
+  padding: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .td-content .highlight pre button.td-click-to-copy {
+    transition: none;
+  }
+}
+
+@media print {
+  .td-content .highlight pre button.td-click-to-copy {
+    display: none;
+  }
+
+  .td-content .highlight,
+  .td-content .td-card.card:has(.highlight) {
+    box-shadow: none;
+  }
+}
