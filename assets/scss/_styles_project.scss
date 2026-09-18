@@ -1264,6 +1264,20 @@ body.has-ps-about-page .ps-markdown [id] {
   transition: background-color 120ms ease, border-color 120ms ease;
 }
 
+/* Text-only copy button: hide icon-font glyphs and embedded icons. */
+.td-content .highlight pre button.td-click-to-copy::before {
+  content: none !important;
+  display: none !important;
+}
+
+.td-content .highlight pre button.td-click-to-copy > i,
+.td-content .highlight pre button.td-click-to-copy > svg,
+.td-content .highlight pre button.td-click-to-copy > .fa,
+.td-content .highlight pre button.td-click-to-copy > .fas,
+.td-content .highlight pre button.td-click-to-copy > .fa-solid {
+  display: none !important;
+}
+
 .td-content .highlight pre button.td-click-to-copy::after {
   content: 'Copy';
 }
