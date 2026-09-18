@@ -1379,6 +1379,14 @@ body.has-ps-about-page .ps-markdown [id] {
   padding: 0;
 }
 
+/* Dark mode: transparent backgrounds on code text and syntax tokens.
+ * Keep the pre surface and syntax foreground colors unchanged.
+ */
+[data-bs-theme='dark'] .td-content .highlight pre code,
+[data-bs-theme='dark'] .td-content .highlight pre code * {
+  background: transparent !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .td-content .highlight pre button.td-click-to-copy {
     transition: none;
