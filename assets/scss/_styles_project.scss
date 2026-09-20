@@ -150,13 +150,91 @@ a {
     background-color: rgba(119, 176, 222, 0.15) !important;
 }
 
-/* Table styling: keep tables readable and replace the default grey striped rows */
+/* Tables: blue header, alternating rows, rounded corners and a subtle shadow */
 .td-table:not(.td-initial),
 .td-content table:not(.td-initial),
 .td-box table:not(.td-initial) {
   min-width: 640px;
-  --bs-table-striped-bg: rgba(119, 176, 222, 0.12);
-  --bs-table-hover-bg: rgba(119, 176, 222, 0.16);
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  --bs-table-hover-bg: rgba(119, 176, 222, 0.18);
+}
+
+/* Header is always the first blue row */
+.td-table:not(.td-initial) > thead > tr > th,
+.td-content table:not(.td-initial) > thead > tr > th,
+.td-box table:not(.td-initial) > thead > tr > th {
+  --bs-table-bg: #77B0DE;
+  --bs-table-color: #ffffff;
+  background-color: #77B0DE;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+/* Start alternating only after the header */
+.td-table:not(.td-initial) > tbody > tr:nth-child(odd) > *,
+.td-content table:not(.td-initial) > tbody > tr:nth-child(odd) > *,
+.td-box table:not(.td-initial) > tbody > tr:nth-child(odd) > * {
+  --bs-table-bg: #ffffff;
+  --bs-table-bg-type: transparent;
+  background-color: #ffffff;
+}
+
+.td-table:not(.td-initial) > tbody > tr:nth-child(even) > *,
+.td-content table:not(.td-initial) > tbody > tr:nth-child(even) > *,
+.td-box table:not(.td-initial) > tbody > tr:nth-child(even) > * {
+  --bs-table-bg: rgba(119, 176, 222, 0.12);
+  --bs-table-bg-type: transparent;
+  background-color: rgba(119, 176, 222, 0.12);
+}
+
+/* Make all four table corners visibly rounded */
+.td-table:not(.td-initial) > thead:first-child > tr:first-child > th:first-child,
+.td-content table:not(.td-initial) > thead:first-child > tr:first-child > th:first-child,
+.td-box table:not(.td-initial) > thead:first-child > tr:first-child > th:first-child {
+  border-top-left-radius: 0.5rem;
+}
+
+.td-table:not(.td-initial) > thead:first-child > tr:first-child > th:last-child,
+.td-content table:not(.td-initial) > thead:first-child > tr:first-child > th:last-child,
+.td-box table:not(.td-initial) > thead:first-child > tr:first-child > th:last-child {
+  border-top-right-radius: 0.5rem;
+}
+
+.td-table:not(.td-initial) > tbody:last-child > tr:last-child > td:first-child,
+.td-content table:not(.td-initial) > tbody:last-child > tr:last-child > td:first-child,
+.td-box table:not(.td-initial) > tbody:last-child > tr:last-child > td:first-child {
+  border-bottom-left-radius: 0.5rem;
+}
+
+.td-table:not(.td-initial) > tbody:last-child > tr:last-child > td:last-child,
+.td-content table:not(.td-initial) > tbody:last-child > tr:last-child > td:last-child,
+.td-box table:not(.td-initial) > tbody:last-child > tr:last-child > td:last-child {
+  border-bottom-right-radius: 0.5rem;
+}
+
+/* Dark mode: keep the blue header and use subtle translucent striping */
+[data-bs-theme='dark'] .td-table:not(.td-initial) > tbody > tr:nth-child(odd) > *,
+[data-bs-theme='dark'] .td-content table:not(.td-initial) > tbody > tr:nth-child(odd) > *,
+[data-bs-theme='dark'] .td-box table:not(.td-initial) > tbody > tr:nth-child(odd) > * {
+  --bs-table-bg: rgba(255, 255, 255, 0.035);
+  background-color: rgba(255, 255, 255, 0.035);
+}
+
+[data-bs-theme='dark'] .td-table:not(.td-initial) > tbody > tr:nth-child(even) > *,
+[data-bs-theme='dark'] .td-content table:not(.td-initial) > tbody > tr:nth-child(even) > *,
+[data-bs-theme='dark'] .td-box table:not(.td-initial) > tbody > tr:nth-child(even) > * {
+  --bs-table-bg: rgba(119, 176, 222, 0.12);
+  background-color: rgba(119, 176, 222, 0.12);
+}
+
+[data-bs-theme='dark'] .td-table:not(.td-initial),
+[data-bs-theme='dark'] .td-content table:not(.td-initial),
+[data-bs-theme='dark'] .td-box table:not(.td-initial) {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* Default navbar styling */
