@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 665" role="img" aria-labelledby="title desc">
+  <title id="title">Vlag van Vollenhove</title>
+  <desc id="desc">Rode en witte vlag met vier witte zespuntige sterren en één gele zespuntige ster in het midden.</desc>
+  <rect width="1000" height="665" fill="#ffffff"/>
+  <rect x="0" y="0" width="400" height="232" fill="#e00000"/>
+  <rect x="584" y="0" width="416" height="232" fill="#e00000"/>
+  <rect x="0" y="435" width="400" height="230" fill="#e00000"/>
+  <rect x="584" y="435" width="416" height="230" fill="#e00000"/>
+
+  <g fill="#ffffff">
+    <path d="M178 29 L200 75 L253 76 L226 121 L254 176 L201 175 L178 219 L154 176 L99 177 L127 121 L96 77 L153 76 Z"/>
+    <path d="M817 25 L841 74 L895 75 L866 121 L895 173 L842 172 L818 216 L793 173 L738 173 L767 121 L735 76 L792 75 Z"/>
+    <path d="M178 462 L201 510 L255 511 L226 557 L256 610 L202 609 L178 655 L153 610 L98 611 L127 557 L95 512 L153 511 Z"/>
+    <path d="M820 461 L844 510 L899 511 L869 557 L899 607 L845 607 L820 653 L795 608 L741 608 L769 557 L739 512 L794 511 Z"/>
+  </g>
+
+  <path fill="#fff500" d="M490 237 L516 282 L567 282 L541 330 L568 380 L517 379 L490 425 L463 379 L409 379 L437 330 L405 282 L463 282 Z"/>
+</svg>
