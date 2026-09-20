@@ -1,27 +1,48 @@
-# Weer in Vollenhove
+# JVTechnicalBlog
 
-Een simpele statische website voor het weer in Vollenhove.
+This repository contains my technical blog website which can be found on [https://justinverstijnen.nl](https://justinverstijnen.nl).
 
-## Bestanden
+## Project layout
 
-- `index.html`
-- `assets/styles.css`
-- `assets/app.js`
-- `assets/vollenhove-background.png`
-- `assets/og.png`
-- `assets/favicon.svg`
-- `assets/vlag-vollenhove.svg`
+The layout of this project is:
 
-## Lokaal openen
+| Folder name | Folder description |
+| --- | --- |
+| .github | Folder for the project workflows. |
+| .well-known | Folder for different website add-ons like security.txt. |
+| assets | Folder containing different additional CSS and Logos. |
+| content | Folder containing all categories and pages. |
+| i18n | Folder containing translation-files. |
+| layouts | Folder containing custom pages, shortcodes, layouts and suffixes. |
+| public | Folder containing fallback assets needed for building the website. |
+| resources | Folder containing resources needed for building the website. |
+| static | Folder containing add-ons to the original CSS and Javascript. |
 
-Je kunt `index.html` direct openen in je browser.
+## What content to expect?
 
-Omdat de pagina live weerdata ophaalt bij Open-Meteo, moet je internetverbinding actief zijn.
+On this website you can expect content about various technical topics like;
 
-## Publiceren op GitHub Pages
+- Microsoft Azure
+- Azure Virtual Desktop
+- Microsoft Intune
+- Microsoft Entra ID
+- Windows Server
+- PowerShell
+- GitHub
+- Networking
 
-1. Maak een nieuwe GitHub-repo.
-2. Upload de inhoud van deze map.
-3. Zet GitHub Pages aan voor de branch met `index.html`.
+## Technical information
 
-De site ververst de weerdata automatisch elke 10 minuten zolang de pagina open staat.
+This project is a combination of 5 different solutions:
+
+- **GitHub Pages**: GitHub pages is being used to host the website and repository publicly.
+- **Hugo**: Hugo is being used as site-generation tool.
+- **Docsy**: Docsy is the Hugo-theme being used with some changes to the default appearance.
+- **Markdown**: Markdown is the markup-language used in blogposts.
+- **Umami**: Umami is the views and visitors tracking solution used in this website.
+
+## License
+
+This project is licensed under the **Apache-2.0 license**.
+
+The official Terms and Conditions of my website and GitHub repository can be found on: [https://justinverstijnen.nl/blog/terms-conditions/](https://justinverstijnen.nl/blog/terms-conditions/)
