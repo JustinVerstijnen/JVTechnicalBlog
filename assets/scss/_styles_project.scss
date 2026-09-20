@@ -76,14 +76,19 @@ nav.foldable-nav .ul-1 .with-child>input:checked~label::before {
   text-decoration: none;
 }
 
-/* Count badge: visual circle/pill only; no padding, width, height or font-size changes */
+/* Count badge: keep the original label size, with a centered white badge */
 .taxonomy-terms-cloud .taxonomy-count,
 .taxonomy-terms-article .taxonomy-count {
+  position: static;
+  display: inline-block;
+  vertical-align: middle;
   background-color: #ffffff;
   border-radius: 999px;
   box-shadow: 0 0 0 0.12rem #ffffff;
   color: #4b92cb;
+  font-size: .7em;
   font-weight: 600;
+  line-height: 1;
 }
 /* Hide the language selector in the navbar */
 .td-navbar .td-lang-menu {
