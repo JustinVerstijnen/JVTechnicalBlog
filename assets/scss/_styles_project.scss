@@ -1351,10 +1351,21 @@ body.has-ps-about-page .ps-markdown [id] {
   --jv-code-header: #f5f7fa;
   --jv-code-border: #d5dce5;
   --jv-code-text: #243549;
-  --jv-code-button: #77b0de;
-  --jv-code-button-hover: #6da1cb;
+  --jv-code-button: #ffffff;
+  --jv-code-button-hover: #e7f0f9;
   --jv-code-accent: #286a9e;
   --jv-code-shadow: 0 4px 16px rgba(14, 32, 44, 0.07);
+}
+
+/* Light mode only: use the site blue for Docsy's copy-to-clipboard tooltip.
+ * The tooltip is rendered directly under <body>, so :has() scopes this to the
+ * tooltip shown by a .td-click-to-copy button without affecting dark mode.
+ */
+html:not([data-bs-theme='dark'])
+  body:not([data-bs-theme='dark']):has(.td-click-to-copy[aria-describedby])
+  > .tooltip.show {
+  --bs-tooltip-bg: #77b0de;
+  --bs-tooltip-color: #ffffff;
 }
 
 [data-bs-theme='dark'] {
