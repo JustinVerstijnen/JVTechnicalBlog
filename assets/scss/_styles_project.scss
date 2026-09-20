@@ -1363,7 +1363,7 @@ body.has-ps-about-page .ps-markdown [id] {
  */
 html:not([data-bs-theme='dark'])
   body:not([data-bs-theme='dark']):has(.td-click-to-copy[aria-describedby])
-  > .tooltip.show {
+  > .tooltip {
   --bs-tooltip-bg: #77b0de;
   --bs-tooltip-color: #ffffff;
 }
