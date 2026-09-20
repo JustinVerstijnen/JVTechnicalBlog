@@ -1583,3 +1583,63 @@ body.has-ps-about-page .ps-markdown [id] {
     box-shadow: none;
   }
 }
+
+/* Sidebar folder open/close animation */
+nav.foldable-nav {
+  /* Allows height to animate between 0 and auto in modern browsers. */
+  interpolate-size: allow-keywords;
+}
+
+nav.foldable-nav ul.foldable {
+  display: block;
+  height: 0;
+  margin-top: 0 !important;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-0.2rem);
+  pointer-events: none;
+  transition:
+    height 0.24s ease,
+    margin-top 0.24s ease,
+    opacity 0.16s ease,
+    transform 0.24s ease;
+}
+
+nav.foldable-nav input:checked ~ ul.foldable {
+  display: block;
+  height: auto;
+  margin-top: 0.1em !important;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Keep the existing arrow rotation, but make it a little smoother and quicker. */
+nav.foldable-nav .ul-1 .with-child > label::before {
+  transition: transform 0.24s ease, color 0.18s ease;
+}
+
+/* Fallback for browsers that cannot animate to/from auto height yet. */
+@supports not (interpolate-size: allow-keywords) {
+  nav.foldable-nav ul.foldable {
+    height: auto;
+    max-height: 0;
+    transition:
+      max-height 0.28s ease,
+      margin-top 0.28s ease,
+      opacity 0.16s ease,
+      transform 0.28s ease;
+  }
+
+  nav.foldable-nav input:checked ~ ul.foldable {
+    max-height: 120rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  nav.foldable-nav ul.foldable,
+  nav.foldable-nav .ul-1 .with-child > label::before {
+    transition: none;
+  }
+}
+
