@@ -225,52 +225,57 @@ a {
   border-bottom-right-radius: 0.5rem;
 }
 
-/* Dark mode: dark row surfaces, readable text and a deeper blue header */
+/* Dark mode: muted Windows 11/code-block inspired table styling */
 [data-bs-theme='dark'] .td-content table:not(.td-initial),
 [data-bs-theme='dark'] .td-box table:not(.td-initial) {
-  --bs-table-color: #e8eef3;
-  --bs-table-border-color: rgba(255, 255, 255, 0.10);
-  --bs-table-hover-color: #ffffff;
-  --bs-table-hover-bg: rgba(119, 176, 222, 0.16);
-  color: #e8eef3;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.30);
+  --bs-table-color: var(--jv-code-text, #edf3fa);
+  --bs-table-border-color: var(--jv-code-border, #424b57);
+  --bs-table-hover-color: var(--jv-code-text, #edf3fa);
+  --bs-table-hover-bg: rgba(157, 206, 245, 0.06);
+  color: var(--jv-code-text, #edf3fa);
+  border: 1px solid var(--jv-code-border, #424b57);
+  background: var(--jv-code-header, #252b33);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
 }
 
+/* Header stays distinct, but uses the same muted surface palette as code blocks. */
 [data-bs-theme='dark'] .td-content table:not(.td-initial) > thead > tr > th,
 [data-bs-theme='dark'] .td-box table:not(.td-initial) > thead > tr > th {
-  --bs-table-bg: #397eB6;
-  --bs-table-color: #ffffff;
-  --bs-table-border-color: rgba(255, 255, 255, 0.14);
-  background-color: #397eB6;
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.14);
+  --bs-table-bg: var(--jv-code-button, #343e4b);
+  --bs-table-color: var(--jv-code-text, #edf3fa);
+  --bs-table-border-color: var(--jv-code-border, #424b57);
+  background-color: var(--jv-code-button, #343e4b);
+  color: var(--jv-code-text, #edf3fa);
+  border-color: var(--jv-code-border, #424b57);
 }
 
+/* First body row uses the same calm dark surface as the code-block toolbar. */
 [data-bs-theme='dark'] .td-content table:not(.td-initial) > tbody > tr:nth-child(odd) > *,
 [data-bs-theme='dark'] .td-box table:not(.td-initial) > tbody > tr:nth-child(odd) > * {
-  --bs-table-bg: #17242d;
+  --bs-table-bg: var(--jv-code-header, #252b33);
   --bs-table-bg-type: transparent;
-  --bs-table-color: #e8eef3;
-  --bs-table-border-color: rgba(255, 255, 255, 0.09);
-  background-color: #17242d;
-  color: #e8eef3;
-  border-color: rgba(255, 255, 255, 0.09);
+  --bs-table-color: var(--jv-code-text, #edf3fa);
+  --bs-table-border-color: var(--jv-code-border, #424b57);
+  background-color: var(--jv-code-header, #252b33);
+  color: var(--jv-code-text, #edf3fa);
+  border-color: var(--jv-code-border, #424b57);
 }
 
+/* Alternate only slightly, rather than using a strong blue stripe. */
 [data-bs-theme='dark'] .td-content table:not(.td-initial) > tbody > tr:nth-child(even) > *,
 [data-bs-theme='dark'] .td-box table:not(.td-initial) > tbody > tr:nth-child(even) > * {
-  --bs-table-bg: #1c3343;
+  --bs-table-bg: #2b323b;
   --bs-table-bg-type: transparent;
-  --bs-table-color: #e8eef3;
-  --bs-table-border-color: rgba(255, 255, 255, 0.09);
-  background-color: #1c3343;
-  color: #e8eef3;
-  border-color: rgba(255, 255, 255, 0.09);
+  --bs-table-color: var(--jv-code-text, #edf3fa);
+  --bs-table-border-color: var(--jv-code-border, #424b57);
+  background-color: #2b323b;
+  color: var(--jv-code-text, #edf3fa);
+  border-color: var(--jv-code-border, #424b57);
 }
 
 [data-bs-theme='dark'] .td-content table:not(.td-initial) a,
 [data-bs-theme='dark'] .td-box table:not(.td-initial) a {
-  color: #8fc7ef;
+  color: var(--jv-code-accent, #9dcef5);
 }
 
 /* Default navbar styling */
