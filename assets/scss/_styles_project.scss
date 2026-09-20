@@ -60,6 +60,8 @@ nav.foldable-nav .ul-1 .with-child>input:checked~label::before {
 /* Tags and categories: keep Docsy's original sizing, only change the visual style */
 .taxonomy-terms-cloud .taxonomy-term,
 .taxonomy-terms-article .taxonomy-term {
+  display: inline-flex;
+  align-items: center;
   background-color: rgba(119, 176, 222, 0.15);
   border-radius: 0.35rem;
   color: #4b92cb !important;
@@ -76,12 +78,15 @@ nav.foldable-nav .ul-1 .with-child>input:checked~label::before {
   text-decoration: none;
 }
 
-/* Count badge: keep the original label size, with a centered white badge */
+/* Count badge: keep the original label size and center the badge vertically */
 .taxonomy-terms-cloud .taxonomy-count,
 .taxonomy-terms-article .taxonomy-count {
   position: static;
-  display: inline-block;
-  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  vertical-align: initial;
   background-color: #ffffff;
   border-radius: 999px;
   box-shadow: 0 0 0 0.12rem #ffffff;
@@ -89,6 +94,28 @@ nav.foldable-nav .ul-1 .with-child>input:checked~label::before {
   font-size: .7em;
   font-weight: 600;
   line-height: 1;
+}
+
+/* Dark mode: keep the labels readable and make the count badge softly translucent grey */
+[data-bs-theme='dark'] .taxonomy-terms-cloud .taxonomy-term,
+[data-bs-theme='dark'] .taxonomy-terms-article .taxonomy-term {
+  background-color: rgba(119, 176, 222, 0.18);
+  color: #9dcef5 !important;
+}
+
+[data-bs-theme='dark'] .taxonomy-terms-cloud .taxonomy-term:hover,
+[data-bs-theme='dark'] .taxonomy-terms-cloud .taxonomy-term:focus,
+[data-bs-theme='dark'] .taxonomy-terms-article .taxonomy-term:hover,
+[data-bs-theme='dark'] .taxonomy-terms-article .taxonomy-term:focus {
+  background-color: rgba(119, 176, 222, 0.27);
+  color: #b9dcf8 !important;
+}
+
+[data-bs-theme='dark'] .taxonomy-terms-cloud .taxonomy-count,
+[data-bs-theme='dark'] .taxonomy-terms-article .taxonomy-count {
+  background-color: rgba(233, 236, 239, 0.18);
+  box-shadow: 0 0 0 0.12rem rgba(233, 236, 239, 0.18);
+  color: #c8e4fa;
 }
 /* Hide the language selector in the navbar */
 .td-navbar .td-lang-menu {
