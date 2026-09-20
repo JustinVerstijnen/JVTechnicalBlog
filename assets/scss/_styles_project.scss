@@ -54,7 +54,7 @@ nav.foldable-nav .ul-1 .with-child>input:checked~label::before {
 }
 
 .taxonomy-terms-cloud .taxonomy-title {
-    color: #77B0DE;
+    color: #212529bf;
 }
 
 /* Tags and categories: keep Docsy's original sizing, only change the visual style */
@@ -151,9 +151,21 @@ a {
 }
 
 /* Tables: compact width, blue header, alternating rows, rounded corners and subtle shadow */
-.td-table:not(.td-initial),
+/*
+ * Docsy can wrap Markdown tables in a .td-table container. That wrapper is a
+ * block element and therefore spans the full content width. Keep that wrapper
+ * visually neutral so the radius/shadow follow the actual table only.
+ */
+.td-content .td-table:not(table),
+.td-box .td-table:not(table) {
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none !important;
+}
+
 .td-content table:not(.td-initial),
 .td-box table:not(.td-initial) {
+  display: table;
   width: auto !important;
   max-width: 100%;
   border-collapse: separate;
@@ -165,7 +177,6 @@ a {
 }
 
 /* Header is always the first blue row */
-.td-table:not(.td-initial) > thead > tr > th,
 .td-content table:not(.td-initial) > thead > tr > th,
 .td-box table:not(.td-initial) > thead > tr > th {
   --bs-table-bg: #77B0DE;
@@ -177,7 +188,6 @@ a {
 }
 
 /* Start alternating only after the header */
-.td-table:not(.td-initial) > tbody > tr:nth-child(odd) > *,
 .td-content table:not(.td-initial) > tbody > tr:nth-child(odd) > *,
 .td-box table:not(.td-initial) > tbody > tr:nth-child(odd) > * {
   --bs-table-bg: #ffffff;
@@ -186,7 +196,6 @@ a {
   background-color: #ffffff;
 }
 
-.td-table:not(.td-initial) > tbody > tr:nth-child(even) > *,
 .td-content table:not(.td-initial) > tbody > tr:nth-child(even) > *,
 .td-box table:not(.td-initial) > tbody > tr:nth-child(even) > * {
   --bs-table-bg: rgba(119, 176, 222, 0.12);
@@ -196,32 +205,27 @@ a {
 }
 
 /* Make all four table corners visibly rounded */
-.td-table:not(.td-initial) > thead:first-child > tr:first-child > th:first-child,
 .td-content table:not(.td-initial) > thead:first-child > tr:first-child > th:first-child,
 .td-box table:not(.td-initial) > thead:first-child > tr:first-child > th:first-child {
   border-top-left-radius: 0.5rem;
 }
 
-.td-table:not(.td-initial) > thead:first-child > tr:first-child > th:last-child,
 .td-content table:not(.td-initial) > thead:first-child > tr:first-child > th:last-child,
 .td-box table:not(.td-initial) > thead:first-child > tr:first-child > th:last-child {
   border-top-right-radius: 0.5rem;
 }
 
-.td-table:not(.td-initial) > tbody:last-child > tr:last-child > td:first-child,
 .td-content table:not(.td-initial) > tbody:last-child > tr:last-child > td:first-child,
 .td-box table:not(.td-initial) > tbody:last-child > tr:last-child > td:first-child {
   border-bottom-left-radius: 0.5rem;
 }
 
-.td-table:not(.td-initial) > tbody:last-child > tr:last-child > td:last-child,
 .td-content table:not(.td-initial) > tbody:last-child > tr:last-child > td:last-child,
 .td-box table:not(.td-initial) > tbody:last-child > tr:last-child > td:last-child {
   border-bottom-right-radius: 0.5rem;
 }
 
-/* Dark mode: use dark row surfaces, readable text and a slightly deeper blue header */
-[data-bs-theme='dark'] .td-table:not(.td-initial),
+/* Dark mode: dark row surfaces, readable text and a deeper blue header */
 [data-bs-theme='dark'] .td-content table:not(.td-initial),
 [data-bs-theme='dark'] .td-box table:not(.td-initial) {
   --bs-table-color: #e8eef3;
@@ -232,7 +236,6 @@ a {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.30);
 }
 
-[data-bs-theme='dark'] .td-table:not(.td-initial) > thead > tr > th,
 [data-bs-theme='dark'] .td-content table:not(.td-initial) > thead > tr > th,
 [data-bs-theme='dark'] .td-box table:not(.td-initial) > thead > tr > th {
   --bs-table-bg: #397eB6;
@@ -243,7 +246,6 @@ a {
   border-color: rgba(255, 255, 255, 0.14);
 }
 
-[data-bs-theme='dark'] .td-table:not(.td-initial) > tbody > tr:nth-child(odd) > *,
 [data-bs-theme='dark'] .td-content table:not(.td-initial) > tbody > tr:nth-child(odd) > *,
 [data-bs-theme='dark'] .td-box table:not(.td-initial) > tbody > tr:nth-child(odd) > * {
   --bs-table-bg: #17242d;
@@ -255,7 +257,6 @@ a {
   border-color: rgba(255, 255, 255, 0.09);
 }
 
-[data-bs-theme='dark'] .td-table:not(.td-initial) > tbody > tr:nth-child(even) > *,
 [data-bs-theme='dark'] .td-content table:not(.td-initial) > tbody > tr:nth-child(even) > *,
 [data-bs-theme='dark'] .td-box table:not(.td-initial) > tbody > tr:nth-child(even) > * {
   --bs-table-bg: #1c3343;
@@ -267,7 +268,6 @@ a {
   border-color: rgba(255, 255, 255, 0.09);
 }
 
-[data-bs-theme='dark'] .td-table:not(.td-initial) a,
 [data-bs-theme='dark'] .td-content table:not(.td-initial) a,
 [data-bs-theme='dark'] .td-box table:not(.td-initial) a {
   color: #8fc7ef;
