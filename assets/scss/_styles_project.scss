@@ -150,6 +150,22 @@ a {
     background-color: rgba(119, 176, 222, 0.15) !important;
 }
 
+/* Content images: subtle depth to improve separation from the page background */
+.td-content p > img,
+.td-content p > a > img,
+.td-content figure > img,
+.td-content figure > a > img {
+  box-shadow: 0 2px 5px rgba(14, 32, 44, 0.10);
+}
+
+/* Dark mode: use the same slightly deeper shadow language as the redesigned tables */
+[data-bs-theme='dark'] .td-content p > img,
+[data-bs-theme='dark'] .td-content p > a > img,
+[data-bs-theme='dark'] .td-content figure > img,
+[data-bs-theme='dark'] .td-content figure > a > img {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
 /* Tables: compact width, blue header, alternating rows, rounded corners and subtle shadow */
 /*
  * Docsy can wrap Markdown tables in a .td-table container. That wrapper is a
