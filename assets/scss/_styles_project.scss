@@ -278,6 +278,144 @@ a {
   color: var(--jv-code-accent, #9dcef5);
 }
 
+/* Alerts: flat redesign matching the table radius/shadow */
+/*
+ * Docsy's alert shortcode renders Bootstrap .alert components with one of the
+ * alert-info / alert-warning / alert-danger / alert-success variant classes.
+ * Keep the shortcode markup unchanged and style the four variants here.
+ */
+.td-content .alert.alert-info,
+.td-content .alert.alert-warning,
+.td-content .alert.alert-danger,
+.td-content .alert.alert-success,
+.td-box .alert.alert-info,
+.td-box .alert.alert-warning,
+.td-box .alert.alert-danger,
+.td-box .alert.alert-success {
+  --jv-alert-bg: #ffffff;
+  --jv-alert-border: rgba(14, 32, 44, 0.14);
+  --jv-alert-text: #24313b;
+  --jv-alert-heading: #24313b;
+  --jv-alert-link: #4b92cb;
+
+  --bs-alert-bg: var(--jv-alert-bg);
+  --bs-alert-border-color: var(--jv-alert-border);
+  --bs-alert-color: var(--jv-alert-text);
+  --bs-alert-link-color: var(--jv-alert-link);
+
+  margin: 1.25rem 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--jv-alert-border);
+  border-radius: 0.5rem;
+  background: var(--jv-alert-bg);
+  background-image: none;
+  color: var(--jv-alert-text);
+  box-shadow: 0 2px 5px rgba(14, 32, 44, 0.10);
+}
+
+/* Keep alert titles compact and visually separate from the body text. */
+.td-content .alert:is(.alert-info, .alert-warning, .alert-danger, .alert-success) .alert-heading,
+.td-box .alert:is(.alert-info, .alert-warning, .alert-danger, .alert-success) .alert-heading {
+  margin: 0 0 0.45rem;
+  color: var(--jv-alert-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* Remove the extra bottom gap from the final paragraph/list in an alert. */
+.td-content .alert:is(.alert-info, .alert-warning, .alert-danger, .alert-success) > :last-child,
+.td-box .alert:is(.alert-info, .alert-warning, .alert-danger, .alert-success) > :last-child {
+  margin-bottom: 0;
+}
+
+.td-content .alert:is(.alert-info, .alert-warning, .alert-danger, .alert-success) a,
+.td-box .alert:is(.alert-info, .alert-warning, .alert-danger, .alert-success) a {
+  color: var(--jv-alert-link);
+  font-weight: 600;
+}
+
+/* Light mode variant colors: soft surfaces, restrained borders, clear headings. */
+.td-content .alert.alert-info,
+.td-box .alert.alert-info {
+  --jv-alert-bg: #eef6fc;
+  --jv-alert-border: #b9d9f2;
+  --jv-alert-heading: #2f6f9f;
+  --jv-alert-link: #2f78b0;
+}
+
+.td-content .alert.alert-warning,
+.td-box .alert.alert-warning {
+  --jv-alert-bg: #fff8e6;
+  --jv-alert-border: #ecd28c;
+  --jv-alert-heading: #805c00;
+  --jv-alert-link: #775600;
+}
+
+.td-content .alert.alert-danger,
+.td-box .alert.alert-danger {
+  --jv-alert-bg: #fdf0ef;
+  --jv-alert-border: #e8b1ad;
+  --jv-alert-heading: #a63b32;
+  --jv-alert-link: #9b342c;
+}
+
+.td-content .alert.alert-success,
+.td-box .alert.alert-success {
+  --jv-alert-bg: #edf8f0;
+  --jv-alert-border: #add8ba;
+  --jv-alert-heading: #2f7d46;
+  --jv-alert-link: #28723d;
+}
+
+/* Dark mode: use the same muted surface language as tables and code blocks. */
+[data-bs-theme='dark'] .td-content .alert.alert-info,
+[data-bs-theme='dark'] .td-box .alert.alert-info {
+  --jv-alert-bg: #26323d;
+  --jv-alert-border: #3e6684;
+  --jv-alert-text: var(--jv-code-text, #edf3fa);
+  --jv-alert-heading: #9dcef5;
+  --jv-alert-link: #9dcef5;
+}
+
+[data-bs-theme='dark'] .td-content .alert.alert-warning,
+[data-bs-theme='dark'] .td-box .alert.alert-warning {
+  --jv-alert-bg: #343126;
+  --jv-alert-border: #75622e;
+  --jv-alert-text: var(--jv-code-text, #edf3fa);
+  --jv-alert-heading: #f2d27d;
+  --jv-alert-link: #f2d27d;
+}
+
+[data-bs-theme='dark'] .td-content .alert.alert-danger,
+[data-bs-theme='dark'] .td-box .alert.alert-danger {
+  --jv-alert-bg: #352a2c;
+  --jv-alert-border: #704247;
+  --jv-alert-text: var(--jv-code-text, #edf3fa);
+  --jv-alert-heading: #f3a6a6;
+  --jv-alert-link: #f3a6a6;
+}
+
+[data-bs-theme='dark'] .td-content .alert.alert-success,
+[data-bs-theme='dark'] .td-box .alert.alert-success {
+  --jv-alert-bg: #29332c;
+  --jv-alert-border: #416b4c;
+  --jv-alert-text: var(--jv-code-text, #edf3fa);
+  --jv-alert-heading: #a8ddb5;
+  --jv-alert-link: #a8ddb5;
+}
+
+[data-bs-theme='dark'] .td-content .alert.alert-info,
+[data-bs-theme='dark'] .td-content .alert.alert-warning,
+[data-bs-theme='dark'] .td-content .alert.alert-danger,
+[data-bs-theme='dark'] .td-content .alert.alert-success,
+[data-bs-theme='dark'] .td-box .alert.alert-info,
+[data-bs-theme='dark'] .td-box .alert.alert-warning,
+[data-bs-theme='dark'] .td-box .alert.alert-danger,
+[data-bs-theme='dark'] .td-box .alert.alert-success {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
 /* Default navbar styling */
 .td-navbar {
   --bs-link-underline-opacity: 0.65;

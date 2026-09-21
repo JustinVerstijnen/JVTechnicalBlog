@@ -21,6 +21,38 @@ We simply can do this with one command in PowerShell:
 
 Please note that I am not encouraging software abuse or pirating, just sharing a tip to make our IT life a bit easier. It happens that a server or computer gets installed and we forget to document the product key or just to match it with our known information.
 
+---
+
+{{% alert title="Info" color="info" %}}
+Just testing some blocks, pretty cool
+Just testing some blocks, pretty cool
+Just testing some blocks, pretty cool
+Just testing some blocks, pretty cool
+{{% /alert %}}
+
+{{% alert title="Warning" color="warning" %}}
+Just testing some blocks, pretty cool
+Just testing some blocks, pretty cool
+Just testing some blocks, pretty cool
+Just testing some blocks, pretty cool
+{{% /alert %}}
+
+{{% alert title="Failure" color="danger" %}}
+Just testing some blocks, pretty cool
+Just testing some blocks, pretty cool
+Just testing some blocks, pretty cool
+Just testing some blocks, pretty cool
+{{% /alert %}}
+
+{{% alert title="Success" color="success" %}}
+Just testing some blocks, pretty cool
+Just testing some blocks, pretty cool
+Just testing some blocks, pretty cool
+Just testing some blocks, pretty cool
+{{% /alert %}}
+
+---
+
 {{< ads >}}
 
 {{< article-footer >}}
