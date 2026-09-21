@@ -35,9 +35,8 @@ Terms to understand when planning and managing permissions:
 
 A role is basically a collection of permissions which can be assigned to a principal in Azure. While there are over 100 roles available, they all follow the structure below:
 
-|  |  |  |
-| --- | --- | --- |
 | **Reader** (1) | **Contributor** (2) | **Owner** (3) |
+| --- | --- | --- |
 | Can only read a resource but cannot edit anything.      "Read only" | You can change anything in the resource, except permissions.      "Read/write" | You can change anything in the resource including permissions.      "Read/Write/Permissions" |
 
 Those built in roles are available in Azure, but for more granular permissions there are some more defined roles:

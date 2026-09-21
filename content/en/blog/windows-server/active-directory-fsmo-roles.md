@@ -48,9 +48,8 @@ According to the table, the PDC Emulator is the role with the highest user impac
 
 In my environment, I have 3 domain controllers. This means we can separate all roles over the 3 servers. I also use Microsoft Azure to run them, and so placed the 3 servers into 3 availability zones.
 
-|  |  |  |
+| Server | Roles | Availability Zone |
 | --- | --- | --- |
-| **Server** | **Roles** | **Availability Zone** |
 | JV-DC01.justinverstijnen.nl | Primary Domain Controller (PDC) & Infrastructure master | Zone 1 |
 | JV-DC02.justinverstijnen.nl | Domain naming master & RID Master | Zone 2 |
 | JV-DC03.justinverstijnen.nl | Schema Master & Entra Connect Sync | Zone 3 |

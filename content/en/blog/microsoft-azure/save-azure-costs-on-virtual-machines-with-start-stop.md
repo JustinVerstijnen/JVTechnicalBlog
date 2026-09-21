@@ -25,9 +25,8 @@ description: >
 
 The Start/Stop solution is a complete solution and collection of predefined resources built by Microsoft itself. It is purely focussed on starting VMs and stopping VMs based on some rules you can configure. The solution consists of some different resources and dependencies:
 
-|  |  |
+| Type of resource | Purpose |
 | --- | --- |
-| **Type of resource** | **Purpose** |
 | Application Insights | Enables live logs in the Function App for troubleshooting |
 | Function App | Performs the underlying tasks |
 | Managed Identity (on Function App) | Gets the permissions on the needed scope and is the "service account" for starting and stopping |
@@ -63,9 +62,8 @@ With this solution you can start and stop virtual machines on scheduled times. T
 
 Let's say, we have 5 servers (E4s\_V5 + 256GB storage) without 1 or 3 year reservations and a full week, which is 168 hours. We are using the Azure calculator for these estimations:
 
-|  |  |  |  |  |
+| Running hours | Information | Hours | Costs (a week) | % costs saved |
 | --- | --- | --- | --- | --- |
-| **Running hours** | **Information** | **Hours** | **Costs (a week)** | **% costs saved** |
 | 168 hours | Full week | 24/7 | $ 619 | 0% |
 | 126 hours | Full week ex. nights | 6AM to 12PM | $ 517 | 16% |
 | 120 hours | Only workdays | 24/5 | $ 502 | 19% |

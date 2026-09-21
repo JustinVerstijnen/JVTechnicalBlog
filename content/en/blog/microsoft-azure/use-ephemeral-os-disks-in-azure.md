@@ -58,9 +58,8 @@ Configuring Ephemeral OS Disks so mean much less latency and much more performan
 
 Now let's outline the pro's and cons of Ephemeral OS Disks before jumping into the Azure Portal and configuring them:
 
-|  |  |  |
+| Pro | Con | Difference with managed disk |
 | --- | --- | --- |
-| **Pro** | **Con** | **Difference with managed disk** |
 | Very high disk performance and great user experience | Only support for VM sizes with local storage ([includes non-capital "d"](https://justinverstijnen.nl/amc-module-7-virtual-machines-and-scale-sets/#virtual-machine-features) in size: D8dv4, E4ds\_v6 | Managed disks support all VM sizes |
 | No disk costs | Deallocation of VM not possible, VMs must be on 24/7 | Deallocation possible, saving money when VMs are shutdown and deallocated |
 |  | Data storage is non-persistent, this means when a VM is redeployed or moved to another host, you data will be gone | Managed disks are persistent across a complete region |
@@ -80,11 +79,10 @@ According to the Azure Portal, you have the following performance difference whe
 
 When using a E4ds\_v6 VM size (and 128GB size disk);
 
-|  |  |  |  |
-| --- | --- | --- | --- |
-| **Disk type** | **IOPS** | **Throughput (Mbps)** |  |
-| Ephemeral OS disk | 18000 | 238 |  |
-| Managed OS disk | 500 | 100 |  |
+| Disk type | IOPS | Throughput (Mbps) |
+| --- | --- | --- |
+| Ephemeral OS disk | 18000 | 238 |
+| Managed OS disk | 500 | 100 |
 
 ---
 

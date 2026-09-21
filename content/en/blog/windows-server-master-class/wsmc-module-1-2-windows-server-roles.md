@@ -12,9 +12,8 @@ draft: true
 
 On Windows Server, we can install some Server Roles. These are pre-defined actions the server can do. Let's look into some of these roles, where I did my best to order them based on usage, in descending order:
 
-|  |  |
+| Server Role name | What it does |
 | --- | --- |
-| **Server Role name** | **What it does** |
 | **Active Directory Domain Services (AD DS)** | Provides centralized authentication, authorization, user/computer management, and domain control for Windows networks. |
 | **DNS Server** | Resolves hostnames to IP addresses and is essential for Active Directory and nearly all network communication. |
 | **File and Storage Services and Distributed File System (DFS)** | Enables file sharing (SMB), storage management, quotas, deduplication, and centralized data access. |

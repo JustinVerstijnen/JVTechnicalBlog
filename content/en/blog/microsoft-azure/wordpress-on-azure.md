@@ -49,9 +49,8 @@ In this guide, we will go for the official Microsoft option, as this has the mos
 
 We have the following plans and prices when running on Linux:
 
-|  |  |  |  |
+| Plan | Price per month | Specifications | Options and use |
 | --- | --- | --- | --- |
-| **Plan** | **Price per month** | **Specifications** | **Options and use** |
 | Free | 0$ | **App:** F1, 60 CPU minutes a day   **Database:** B1ms | Not for production use, only for hobby projects. No custom domain and SSL support |
 | Basic | ~ 25$ (consumption based) | **App:** B1 (1c 1,75RAM)   **Database:** B1s (1c 1RAM)   No autoscaling and CDN | Simple websites with same performance as free tier, but with custom domain and SSL support |
 | Standard | ~ 85$ per instance (consumption based) | **App:** P1v2 (1c 3,5RAM)   **Database:** B2s (2c 4RAM) | Simple websites who also need multiple instances for testing purposes. Also double the performance of the Basic plan. No autoscaling included. |

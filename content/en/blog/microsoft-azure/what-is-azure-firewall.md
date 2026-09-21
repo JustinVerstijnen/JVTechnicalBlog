@@ -66,9 +66,8 @@ This is purely the firewall, and no calculated data. This isn't that expensive, 
 
 Let's deep further into the service itself. Azure Firewalls knows 3 types of rules you can create:
 
-|  |  |  |
+| Type | Goal | Example |
 | --- | --- | --- |
-| **Type** | **Goal** | **Example** |
 | DNAT Rule | Allowing traffic from the internet | Port forwarding   Make your internal server available for the internet |
 | Network Rule | Allowing/Disallowing traffic between whole networks/subnets | Block outbound traffic for one subnet   DMZ configuration |
 | Application Rule | Allowing/Disallowing traffic to certain FQDNs or web categories | Blocking a website   Only allow certain websites/FQDN |

@@ -50,9 +50,8 @@ To understand more about generic Carbon emission calculating, I will add a simpl
 
 Carbon emissions for organizations are mostly calculated in those 3 scopes:
 
-|  |  |  |  |
+| Scope | Type of Emissions | Sources | Example |
 | --- | --- | --- | --- |
-| **Scope** | **Type of Emissions** | **Sources** | **Example** |
 | Scope 1 | Direct emissions | Company-owned sources | Company vehicles, on-site fuel combustion, refrigerant leaks |
 | Scope 2 | Indirect emissions from purchased energy | Electricity, heating, cooling | Powering offices, data centers, factories |
 | Scope 3 | Indirect emissions from the value chain | Upstream (suppliers) and downstream (customers) | Supply chain, product use, business travel, employee commuting |

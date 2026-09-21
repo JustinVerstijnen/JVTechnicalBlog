@@ -55,9 +55,8 @@ You will pay 5 x 25 x $0,15 per month which is $18,75 per month. The duplicate d
 
 An example of forecasted costs for an environment with backups enabled can be (with low and heavy users):
 
-|  |  |  |  |  |
+| Type | SharePoint size | Onedrive size | Mailboxes size | **Total costs/month**\* |
 | --- | --- | --- | --- | --- |
-| **Type** | **SharePoint size** | **Onedrive size** | **Mailboxes size** | **Total costs/month**\* |
 | 5 users (low) | 25GB | 32,5GB | 32,5GB | $ 13,50 ($2,70/user) |
 | 5 users (heavy) | 100GB | 125GB | 125GB | $ 52,50 ($10,50/user) |
 | 25 users (low) | 100GB | 125GB | 125GB | $ 52,50 ($2,10/user) |

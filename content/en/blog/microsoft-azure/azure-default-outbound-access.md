@@ -18,9 +18,8 @@ If you do not configure one of these methods, you will end up with a virtual mac
 
 The options in Azure we can use to facilitate outbound access are:
 
-|  |  |  |
+| Type | Pricing | When to use? |
 | --- | --- | --- |
-| **Type** | **Pricing** | **When to use?** |
 | Public IP address | 4$ per VM per month | Single VMs |
 | Load Balancer | 25$ - 75$ per network per month | Multiple different VMs (customizable SNAT) |
 | [NAT Gateway](https://justinverstijnen.nl/amc-module-6-networking-in-microsoft-azure/#azure-nat-gateway) | 25$ - 40$ per subnet per month | Multiple similar VMs (default SNAT) |

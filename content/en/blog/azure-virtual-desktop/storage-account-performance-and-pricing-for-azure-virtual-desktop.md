@@ -127,18 +127,16 @@ I first selected "Provisioned" with premium storage with default IOPS/throughput
 
 I put those numbers in the calculator, and this will cost as stated below (without extra options):
 
-|  |  |  |  |  |  |
+| Storage option | IOPS | Burst IOPS | Throughput** **(MB/s) | Costs per month | Latency (in ms) |
 | --- | --- | --- | --- | --- | --- |
-|  | **IOPS** | **Burst IOPS** | **Throughput** **(MB/s)** | **Costs per month** | **Latency (in ms)** |
 | (Premium) 500GB | 3500 | 10000 | 150 | $ 96 | 1-5 |
 | (Premium) 2500GB | 5500 | 10000 | 350 | $ 480 | 1-5 |
 | (Premium) 5000GB | 8000 | 15000 | 600 | $ 960 | 1-5 |
 
 You see, this is pretty much linear in terms of pricing. 96 dollars for every 500GB. Now let's check the standard provisioned options:
 
-|  |  |  |  |  |  |
+| Storage option | IOPS | Burst IOPS | Throughput** **(MB/s) | Costs per month | Latency (in ms) |
 | --- | --- | --- | --- | --- | --- |
-|  | **IOPS** | **Burst IOPS** | **Throughput** **(MB/s)** | **Costs per month** | **Latency (in ms)** |
 | (Standard) 500GB | 1100 | Not available | 70 | $ 68 | 10-30 |
 | (Standard) 2500GB | 1500 | Not available | 110 | $ 111 | 10-30 |
 | (Standard) 5000GB | 2000 | Not available | 160 | $ 165 | 10-30 |

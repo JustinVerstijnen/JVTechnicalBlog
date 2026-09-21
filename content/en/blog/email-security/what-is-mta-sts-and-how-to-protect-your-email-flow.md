@@ -28,9 +28,8 @@ hidden: false
 
 MTA-STS overlaps with the [newer SMTP DANE](https://justinverstijnen.nl/configure-dnssec-and-smtp-dane-with-exchange-online-microsoft-365/) option, and they both help securing your email flow but each in its own manner. Some differences:
 
-|  |  |  |
+| Feature | MTA-STS | SMTP DANE |
 | --- | --- | --- |
-|  | MTA-STS | SMTP DANE |
 | *Requires DNSSEC at DNS hosting* | No | Yes |
 | *Requires hosting a TXT file* | Yes | No |
 | *Secures inbound and outbound* | Yes | Yes |

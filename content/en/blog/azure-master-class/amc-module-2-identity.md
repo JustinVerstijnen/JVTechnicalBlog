@@ -36,7 +36,7 @@ This was previously known as Azure Active Directory which sounds similar to the 
 
 However, it differs some from the old Active Directory Domain Services protocols:
 
-| | Active Directory Domain Services | Microsoft Entra ID |
+| Protocol type | Active Directory Domain Services | Microsoft Entra ID |
 | --- | --- | --- |
 | Verification protocols | NTLM & Kerberos | Open ID, OAuth 2.0, SAML, WS-FED |
 | Query protocols | LDAP | Powershell |
@@ -341,9 +341,8 @@ During authentication (AuthN), it is verified whether you are truly who you say 
 
 ### Complexity levels for MFA methods
 
-| | | |
-| --- | --- | --- |
 | Method | Level | Explanation |
+| --- | --- | --- |
 | Password | Not secure | Passwords can be guessed, hacked, or stolen. With only a password, an account is not sufficiently protected in 2025. |
 | PIN code | Not secure | A PIN code can also be guessed or stolen alongside a password. |
 | Secret | Not secure | A secret, alongside a password, can also be guessed or stolen, regardless of its complexity or length. |

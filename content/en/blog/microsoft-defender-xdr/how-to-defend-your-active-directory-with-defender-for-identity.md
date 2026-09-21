@@ -184,9 +184,8 @@ Go to *Computer Configuration -> Policies -> Windows Settings -> Security Settin
 
 Here we have to change 3 settings:
 
-|  |  |
+| Setting name | Required option |
 | --- | --- |
-| **Setting name** | **Required option** |
 | Network security: Restrict NTLM: Outgoing NTLM traffic to remote servers | Audit all |
 | Network security: Restrict NTLM: Audit NTLM authentication in this domain | Enable all |
 | Network security: Restrict NTLM: Audit Incoming NTLM Traffic | Enable auditing for all accounts |
@@ -207,9 +206,8 @@ Now we have to make changes in several policy categories, where we enable auditi
 
 Change all of the audit policies below to the desired option. Take a look at the image below the table to exactly know where to find what option.
 
-|  |  |  |
+| Policy category** **(Red) | Setting name** **(green) | Required option** **(Blue) |
 | --- | --- | --- |
-| **Policy category** **(Red)** | **Setting name** **(green)** | **Required option** **(Blue)** |
 | Account Logon | Audit Credential Validation | Success and Failure |
 | Account Management | Audit Computer Account Management | Success and Failure |
 | Account Management | Audit Distribution Group Management | Success and Failure |

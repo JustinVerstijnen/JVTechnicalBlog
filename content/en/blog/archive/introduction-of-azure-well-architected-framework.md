@@ -12,9 +12,8 @@ description: >
 
 The 5 pillars of the Well-Architected Framework are:
 
-|  |  |
+| Pillar | Target |
 | --- | --- |
-| **Pillar** | **Target** |
 | Reliability | The ability to recover a system and/or contine to work |
 | Security | Secure the environment in all spots |
 | Cost Optimization | Maximize the value when minimizing the costs |

@@ -29,9 +29,8 @@ We cannot select "User in group", only "computer in group". This applies only to
 
 The cause of this problem are two updates which have to be removed to make it work again:
 
-|  |  |
+| Operating System | Update (KB) |
 | --- | --- |
-| **Operating System** | **Update (KB)** |
 | Windows Server 2019 | KB5042350 |
 | Windows Server 2022 | KB5041160 |
 

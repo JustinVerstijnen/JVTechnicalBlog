@@ -56,9 +56,8 @@ To fulfill the shortage of IP addresses, IPv6 was born in 1998 which has as prim
 
 Both IPv4 and IPv6 use a similar addressing scheme which is similar to your physical home address and number:
 
-|  |  |  |  |
+| Type | Network ID | Host ID | Full address |
 | --- | --- | --- | --- |
-| **Type** | **Network ID** | **Host ID** | **Full address** |
 | IPv4 | 192.168.10.0/24 | .25 | 192.168.10.25 |
 | IPv6 | fd12:3456:789a::/64 | ::100 | fd12:3456:789a::100 |
 
@@ -74,9 +73,8 @@ A great way to better understand this:
 
 Most of the time in our job, a higher number means faster. Unfortunately this is not the case with IPv6. IPv6's main job is to create more possible addresses. It does have some great advantages because at the time of founding there was more knowledge, like real world scenario's where IPv4 weak points were.
 
-|  |  |
+| Advantage IPv6 | More information |
 | --- | --- |
-| **Advantage IPv6** | **More information** |
 | Larger address space | IPv6 has more than a million IP addresses available per person on earth and IPv4 has 0,5 IP addresses per person. |
 | Better security with IPSec | IPv6 supports built in IPsec where every package is encrypted at sending and decrypted at receiving to prevent an attacker to steal packages and monitor your behaviour online. |
 | Easy network setup with SLAAC | IPv4 requires DHCP or static adressing where IPv6 the device can assign a address itself using duplicate detection, router advertisements and auto assignment. |
@@ -87,9 +85,8 @@ Most of the time in our job, a higher number means faster. Unfortunately this is
 
 When it comes to compare generic terms in networking, you can use the table below:
 
-|  |  |  |
+| Explaination | IPv4 | IPv6 |
 | --- | --- | --- |
-| **Explaination** | **IPv4** | **IPv6** |
 | Localhost address | 127.0.0.1 | ::1 |
 | No DHCP server (APIPA) | 169.254.0.0/16 | fe80::/10 |
 | Subnet mask | 255.255.255.0 | /64 |

@@ -55,9 +55,8 @@ This is an example of a use-case of Azure Compute Gallery, where we store images
 
 Azure Compute Gallery has some advantages over the "older" and more basic Managed Images which you may use. Let's dive into the key differences:
 
-|  |  |  |
+| Feature | Azure Compute Gallery | Managed Images |
 | --- | --- | --- |
-| **Feature** | **Azure Compute Gallery** | **Managed Images** |
 | Creating and storing generalized and specialized images | ✅ | ✅ |
 | Region availability | ✅ | ❌ |
 | Versioning | ✅ | ❌ |

@@ -26,9 +26,8 @@ This change means that we have to also use a NVMe capable image storage, and thi
 
 I used the managed images option in the past, as this was the most efficient option to deploy images very fast. However, NVMe controller VMs are **not** supported by those managed images and we can install up to V5 only.
 
-|  |  |
+| VM Version | Boot controller |
 | --- | --- |
-| **VM Version** | **Boot controller** |
 | v1-4 | SCSI |
 | v5 | SCSI |
 | v6 | NVMe |
@@ -45,9 +44,8 @@ Because I wondered what the performance difference could be between similar v5 a
 
 This gave pretty interesting results:
 
-|  |  |  |
+| Benchmark software | [**E4s\_v5**](https://browser.geekbench.com/v6/cpu/16996706) | [**E4as\_v7**](https://browser.geekbench.com/v6/cpu/16986414) |
 | --- | --- | --- |
-| **Benchmark software** | [**E4s\_v5**](https://browser.geekbench.com/v6/cpu/16996706) | [**E4as\_v7**](https://browser.geekbench.com/v6/cpu/16986414) |
 | Geekbench 6 Single Core | 1530 | 2377 |
 | Geekbench 6 Multi Core | 3197 | 5881 |
 | Passmark CPU | 5950 | 9092 |

@@ -340,9 +340,8 @@ Click on "Add settings" and navigate to the FSLogix policy settings.
 
 Under FSLogix -> Profile Containers, select the following settings, enable them and configure them:
 
-|  |  |
+| etting name | Value |
 | --- | --- |
-| **etting name** | **Value** |
 | Access Network as Computer Object | **Disabled** |
 | Delete Local Profile When VHD Should Apply | Enabled |
 | Enabled | Enabled |
@@ -362,9 +361,8 @@ Make sure the option "*Access Network as Computer Object*" is **Disabled**, as t
 
 Under FSLogix -> Profile Containers -> Container and Directory Naming, select the following settings, enable them and configure them:
 
-|  |  |
+| Setting name | Value |
 | --- | --- |
-| **Setting name** | **Value** |
 | No Profile Containing Folder | Enable |
 | VHD Name Match | %username% |
 | VHD Name Pattern | %username% |

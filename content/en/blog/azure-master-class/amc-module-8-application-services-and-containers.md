@@ -128,9 +128,8 @@ Kubernetes has become the industry standard for container management. With Azure
 
 AKS is available in two pricing tiers in Microsoft Azure:
 
-| | |
-| --- | --- |
 | Free (AKS Free) | Standard (AKS Standard) |
+| --- | --- |
 | The Kubernetes control plane is free, meaning you don't pay for the management and orchestration services. | Includes an SLA-backed Kubernetes control plane for higher availability and reliability. |
 | You only pay for the underlying virtual machines (VMs), storage, and networking used by your worker nodes. | Advanced security features, including Azure Defender for Kubernetes and private cluster options. |
 | No Service Level Agreement (SLA) is provided for the uptime of the control plane. | Enhanced scalability and performance options. |

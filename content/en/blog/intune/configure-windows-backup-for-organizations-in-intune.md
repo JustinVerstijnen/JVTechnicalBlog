@@ -29,9 +29,8 @@ Windows Backup for Organizations is a feature where Windows creates a backup of 
 
 Let's compare what is included in this new Windows Backup for Organizations feature versus Enterprise State Roaming
 
-|  |  |  |
+| Item | Windows Backup** **for Organizations | Enterprise State Roaming |
 | --- | --- | --- |
-| **Item** | **Windows Backup** **for Organizations** | **Enterprise State Roaming** |
 | Windows Settings | ✅ | ✅ |
 | Windows Personalization | ✅ | ❌ |
 | Windows Store apps and data | ✅ | ❌ |

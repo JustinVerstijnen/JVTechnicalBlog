@@ -19,9 +19,8 @@ The 3 primary principles are:
 
 At first, those terms seem very unclear to me. To further clarify the principles, I have added some practice examples to further understand what they mean:
 
-|  |  |
+| Principle | Outcomes |
 | --- | --- |
-| **Principle** | **Outcomes** |
 | Verify Explicity | Ensure people are really who they say they are   Audit every login attempt from specific users   Audit login attempts   Block access from non-approved countries |
 | Least privileged access | Assign users only the permissions they need, not more   Assign only the roles when they need them using PIM   Use custom roles when default roles expose too much permissions |
 | Assume breach | At every level, think about possible breaches   Segment your network   Password-based authentication only is too weak |

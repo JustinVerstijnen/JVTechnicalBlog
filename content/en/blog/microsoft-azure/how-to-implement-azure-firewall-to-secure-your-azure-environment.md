@@ -36,9 +36,8 @@ In this guide, we are going to build this network:
 
 The details of the networks are:
 
-|  |  |  |
+| VNET Name | Address Space | Goal |
 | --- | --- | --- |
-| **VNET Name** | **Address Space** | **Goal** |
 | jv-vnet-00-hub | 10.0.0.0/16 | Hub for the network, hosting the firewall |
 | jv-vnet-01-infrastructure | 10.1.0.0/16 | Network for servers |
 | jv-vnet-02-workstations | 10.2.0.0/16 | Network for workstations |
@@ -90,9 +89,8 @@ The peerings are "cables" between the networks. By default, all networks in Azur
 
 We have to create peerings with the following settings:
 
-|  |  |  |
+| Setting name | Hub to Spoke | Spoke to Hub |
 | --- | --- | --- |
-| **Setting name** | **Hub to Spoke** | **Spoke to Hub** |
 | Allow the peered virtual network to access \*remote vnet\* | Enabled | Enabled |
 | Allow the peered virtual network to receive forwarded traffic from \*remote vnet\* | Enabled | Disabled |
 | Allow gateway or route server in the peered virtual network to forward traffic to \*remote vnet\* | Disabled | Disabled |
@@ -239,7 +237,7 @@ Go to the Firewall Policy and then to "Network rules" and select your created ne
 
 Create a rule to allow your created VNET01 outbound access to the internet.
 
-|  |  |
+| Setting | Value |
 | --- | --- |
 | **Name** | Of your choice |
 | **Source type** | 10.1.0.0/16 |
@@ -276,7 +274,7 @@ The most important are the priority and the action, where the priority must be c
 
 Now create rules to block traffic from VNET03 to all of our spoke networks:
 
-|  |  |
+| Setting | Value |
 | --- | --- |
 | **Name** | Of your choice |
 | **Source type** | 10.3.0.0/16 |

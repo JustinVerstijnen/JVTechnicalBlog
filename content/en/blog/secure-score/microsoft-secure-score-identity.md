@@ -35,9 +35,8 @@ We then will get this list of items:
 
 As you can see, the bottom 4 items are already done. The top 4 items must be addressed but I will explain how to address them all.
 
-|  |  |
-| --- | --- |
 | **Recommendation** | Entra Information |
+| --- | --- |
 | 1. Enable Microsoft Entra ID Identity Protection sign-in risk policies | Ensure you block Medium and High sign-in risks with Conditional Access |
 | 2. Enable Microsoft Entra ID Identity Protection user risk policies | Ensure you block High user risks with Conditional Access |
 | 3. Ensure multifactor authentication is enabled for all users | Register MFA for all users and enforce it with Conditional Access. Registering is only making sure the user can use MFA. Enforcing it means we will actually use it. |
@@ -122,9 +121,8 @@ Make sure you use lower-privileged administrative roles for your users. This is 
 
 Microsoft Entra ID has some lower-privileged roles which we must utilize. I will give some good examples of practice use of lower privileged roles, to minimize the Global Administrator role.
 
-|  |  |
+| Requirement | Correct role |
 | --- | --- |
-| **Requirement** | **Correct role** |
 | User must be able to export users for billing purposes | User Administrator |
 | User must be able to change licenses and add new products | Billing Administrator |
 | User must be able to invite guest users | Guest Inviter |

@@ -34,9 +34,8 @@ Azure Bastion is an instance which you deploy in a virtual network in Azure. You
 
 Azure Bastion has a lot of features today. Some years ago, it only was a method to connect to a server in the Azure Portal, but it is much more than that. I will highlight some key functionality of the service here:
 
-|  |  |  |  |
+| Feature | Basic | Standard | Premium |
 | --- | --- | --- | --- |
-| **Feature** | **Basic** | **Standard** | **Premium** |
 | Connecting to Windows VMs | ✅ | ✅ | ✅ |
 | Connecting to Linux VMs | ✅ | ✅ | ✅ |
 | Concurrent connections | ✅ | ✅ | ✅ |
@@ -55,9 +54,8 @@ Azure Bastion Instances are available in different tiers, as with most of the Az
 
 The fixed pricing is by default for 2 instances:
 
-|  |  |  |
+| SKU | Hourly price | Monthly price (730 hours) |
 | --- | --- | --- |
-| **SKU** | **Hourly price** | **Monthly price (730 hours)** |
 | Basic | $ 0,19 | $ 138,70 |
 | Standard | $ 0,29 | $ 211,70 |
 | Premium | $ 0,45 | $ 328,50 |
@@ -68,9 +66,8 @@ The cost is based on the time of existence in the Azure Subscription. We don't p
 
 For the Standard and Premium SKUs of Azure Bastion, it is possible to get more than 2 instances which are a discounted price. These instances are half the prices of the base prices above and will cost you:
 
-|  |  |  |
+| SKU | Hourly price | Monthly price (730 hours) |
 | --- | --- | --- |
-| **SKU** | **Hourly price** | **Monthly price (730 hours)** |
 | Standard | $ 0,14 | $ 102,20 |
 | Premium | $ 0,22 | $ 160,60 |
 
@@ -219,9 +216,8 @@ In the storage account, open the section "Resource sharing (CORS)"
 
 Here fill in the following:
 
-|  |  |  |  |  |
+| Allowed Origins | Allowed methods | Allowed headers | Exposed headers | Max age |
 | --- | --- | --- | --- | --- |
-| **Allowed Origins** | **Allowed methods** | **Allowed headers** | **Exposed headers** | **Max age** |
 | Bastion DNS name\* | GET | \* | \* | 86400 |
 
 *\*in my case: https://bst-a04c37f2-e3f1-41cf-8e49-840d54224001.bastion.azure.com*

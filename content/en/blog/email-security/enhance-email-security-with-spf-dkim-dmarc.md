@@ -154,9 +154,8 @@ DMARC is an email verification and reporting protocol that helps domain owners p
 
 DMARC uses the SPF and DKIM checks as a sort of top layer to determine if a sender is spoofing a domain. If the SPF check or DKIM check fails, we can decice what to do then by configuring one of the 3 available DMARC policies to decide what to do:
 
-|  |  |  |
+| DMARC Policy | Description | Effect |
 | --- | --- | --- |
-| **DMARC Policy** | **Description** | **Effect** |
 | p=none | No action taken, just collect reports | All emails are delivered normally |
 | p=quarantine | Suspicious emails are sent to spam | Reduces phishing but still delivers spoofed emails to end users Junk box |
 | p=reject | Strict enforcement: email sent without SPF or DKIM check are blocked | Maximum protection against spoofing and phishing |
@@ -212,9 +211,8 @@ Log in to your DNS-hosting service where you can create and change DNS records.
 
 Now check if there is already an existing SPF record, otherwise create a new one. This is always the same for each domain:
 
-|  |  |  |
+| Type | Name | Value |
 | --- | --- | --- |
-| **Type** | **Name** | **Value** |
 | TXT-record | @ | v=spf1 include:spf.protection.outlook.com -all |
 
 When using more than only Microsoft 365 for emailing from your domain, ensure that you don't overwrite the record but add those services into the record. Also, the maximum number of DNS lookups in your SPF record is 10.
@@ -247,9 +245,8 @@ Log in to your DNS-hosting service where you can create and change DNS records.
 
 Create those 2 records in your DNS hosting service. In my case this configured:
 
-|  |  |  |  |
+| Type | Name | Value | TTL |
 | --- | --- | --- | --- |
-| **Type** | **Name** | **Value** | **TTL** |
 | CNAME-record | selector1.\_domainkey | selector1-justinverstijnen-nl.\_domainkey.JustinVerstijnen.onmicrosoft.com | Provider default |
 | CNAME-record | selector2.\_domainkey | selector2-justinverstijnen-nl.\_domainkey.JustinVerstijnen.onmicrosoft.com | Provider default |
 
@@ -283,9 +280,8 @@ v=DMARC1; p=reject;
 
 We have to create or change an existing record to make this DMARC policy effective. The full record can look like this:
 
-|  |  |  |  |
+| Type | Name | Value | TTL |
 | --- | --- | --- | --- |
-| **Type** | **Name** | **Value** | **TTL** |
 | TXT-record | \_dmarc | v=DMARC1; p=reject; | Provider default |
 
 My configured record for reference:

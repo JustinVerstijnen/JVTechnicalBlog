@@ -212,16 +212,14 @@ Now we must do this 6 times as we have 6 files. We have to tell Windows where to
 
 We now must configure the sources and destinations in this format:
 
-|  |  |
+| Source | Destination |
 | --- | --- |
-| **Source** | **Destination** |
 | \\server\share\file.fxa | C:\Program Files\FSLogix\Apps\Rules\file.fxa |
 
 So in my case this must be:
 
-|  |  |
+| Source | Destination |
 | --- | --- |
-| **Source** | **Destination** |
 | \\vm-jv-dc1\Systems Management\FSLogix Rules\FS-JV-Adobe.fxa | C:\Program Files\FSLogix\Apps\Rules\FS-JV-Adobe.fxa |
 | \\vm-jv-dc1\Systems Management\FSLogix Rules\FS-JV-Adobe.fxr | C:\Program Files\FSLogix\Apps\Rules\FS-JV-Adobe.fxr |
 | \\vm-jv-dc1\Systems Management\FSLogix Rules\FS-JV-Chrome.fxa | C:\Program Files\FSLogix\Apps\Rules\FS-JV-Chrome.fxa |

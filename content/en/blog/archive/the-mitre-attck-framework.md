@@ -34,9 +34,8 @@ The framework can be found on this website: [MITRE ATT&CK®](https://attack.mitr
 
 Each cybersecurity attack follows multiple or all stages below. Also, I added a summary of that the stage contains:
 
-|  |  |
+| Stage | Primary goal |
 | --- | --- |
-| **Stage** | **Primary goal** |
 | Reconnaissance | Gathering information prior to the attack |
 | Resource Development | Aquiring the components to perform the attack |
 | Initial Access | Initial attempts to get access, the attack starts |

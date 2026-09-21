@@ -89,9 +89,8 @@ The family of a virtual machine determines the type of use the virtual machine i
 
 The following virtual machine families/editions are available:
 
-| | | | |
-| --- | --- | --- | --- |
 | Type | Ratio vCPU:RAM | Letters family | Purpose |
+| --- | --- | --- | --- |
 | General Purpose | 1:4 | B, D, DC, DS | Desktops/testing/web servers |
 | Compute-optimized | 1:2 | F, FX | Data analytics/machine learning |
 | Memory-optimized | 1:8 | E, M | (in memory) database servers |
@@ -124,15 +123,13 @@ Each type of virtual machine in Azure is identified by a name, such as E8s\_v5, 
 
 This name derives from a convention that works like this:
 
-| | | | | |
-| --- | --- | --- | --- | --- |
 | Family | # of vCPUs | Functions | Accelerator | Version |
+| --- | --- | --- | --- | --- |
 
 So all features and details are included in the name of the VM, but if a machine does not have a certain feature, the part is not included. Lets break down some names:
 
-| | | | | | |
-| --- | --- | --- | --- | --- | --- |
 | VM name | Family | # of vCPUs | Functions | Accelerator | Version |
+| --- | --- | --- | --- | --- | --- |
 | D4\_v5 | D-series | 4 | N/A | N/A | 5 |
 | E8s\_v3 | E-series | 8 | Premium Storage | N/A | 3 |
 | EC8as\_v5 | E-series | 8 | Confidential Computing AMD Premium Storage | N/A | 5 |

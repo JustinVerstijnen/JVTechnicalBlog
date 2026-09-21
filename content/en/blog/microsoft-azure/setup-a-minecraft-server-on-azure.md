@@ -26,9 +26,8 @@ description: >
 
 For a typical Minecraft server, without Mods, the guidelines and system requirements are as stated below:
 
-|  |  |  |  |
+| Processor cores | Ram | Player Slots | World Size |
 | --- | --- | --- | --- |
-| **Processor cores** | **Ram** | **Player Slots** | **World Size** |
 | 2 | 8GB | Up to 10 | Up to 8GB |
 | 4 | 16GB | Up to 20 | Up to 15GB |
 | 8 | 32GB | Up to 50 | Up to 20GB |
@@ -171,9 +170,8 @@ Go to "Inbound Security rules"
 
 Create a new rule with the following settings:
 
-|  |  |
+| Setting | Option |
 | --- | --- |
-| **Setting** | **Option** |
 | Source | Any\* |
 | Source port ranges | \* (Any) |
 | Destination | Any |

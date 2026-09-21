@@ -35,9 +35,8 @@ Now the client wants a URL, but we don't want to fill in this URL for every devi
 
 To configure your automatic Feed Discovery, we must create this DNS record:
 
-|  |  |  |
+| Record type | Host | Value |
 | --- | --- | --- |
-| **Record type** | **Host** | **Value** |
 | TXT | \_msradc | https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery |
 
 Small note, we must configure this record for every domain which is used for one of the 2 remote desktop solutions. If your company uses e.g.:

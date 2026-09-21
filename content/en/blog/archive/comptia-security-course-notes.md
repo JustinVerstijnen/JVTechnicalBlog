@@ -42,9 +42,8 @@ Module 1 is all about the exam, how to use the study resources and how to learn.
 
 Security can be very complex, because it is not a license we can buy, or something that we can switch on or off. Security is a team-sport where the primary goal is to secure your company-data, secrets devices and personal information and this data is as secure as the weakest switch in the loop. This loop is a very big scope and can be categorized in 7 layers, where the order is important because it is almost similar to the generic OSI model.
 
-|  |  |
-| --- | --- |
 | Layer | Explaination |
+| --- | --- |
 | 1. Physical security | Access to the physical systems must be secured so no unpermitted users can physically touch these devices. |
 | 2. Network security | The network and data flow of your company must be secure. Most attacks come through a network. This not only means that the architecture is enough, the network also needs to be monitored and have advanced treat detection with certain software. |
 | 3. Perimeter security | Gateways, firewalls and routers which can connect to your internal network has to be secure by configuring them, allowing only specified traffic, protocols, ports and proactively monitored. |
@@ -63,9 +62,8 @@ To improve your security on certain domains, we implement security controls. The
 
 The controls that are available are:
 
-|  |  |  |
-| --- | --- | --- |
 | Control | Focus | Real world examples |
+| --- | --- | --- |
 | Technical | Technology | Firewall   Intrusion Detection   Bitlocker   MFA   Basic Access Controls   Time based access   Anti Malware |
 | Managerial | Governance | Best practices   Compliance against security guidelines   Risk assessments |
 | Operational | Procedures | Backup procedures   Incident Response   Security Awareness Trainings   Sharing sensitive information secure |
@@ -101,9 +99,8 @@ The 3 A's are:
 
 These 3 processes exist in almost every computer-system and are super important to understand, because some things and best practices need to be done at certain levels. For example:
 
-|  |  |  |
-| --- | --- | --- |
 | Authentication | Authorization | Accounting |
+| --- | --- | --- |
 | Ensure users are authenticated with strong credentials | Ensure users don't have too much permissions, only what they need | Ensure all login and change actions are audited |
 | Ensure users are authenticated with a strong second factor (MFA/Passkeys) | Ensure users don't have permissions at all times | Ensure changes done by users are monitored and double checked |
 | Ensure your users are hard to breach with tranings | Ensure users' permissions are assigned through RBAC processes |  |
@@ -236,9 +233,8 @@ Threat actors can be classified into:
 6. Ethical
 7. Shadow IT
 
-|  |  |  |
-| --- | --- | --- |
 | Type of Actor | Primary motivation | Real world example |
+| --- | --- | --- |
 | *Nation-state actor* | Government and national interests, may be diplomatic | Russian interference in the 2016 U.S. elections |
 | *Unskilled attackers* | Mostly hacking for fun, using predefined code | DDoS attacks or defacement of small websites |
 | *Hacktivists* | Performing cyber-attacks for social or political agenda's | Right wing person bringing down a left-wing political party's website or environmental person bringing down the website of Shell or KLM. |
