@@ -13,7 +13,7 @@ Sometimes in IT, we have software or solutions that need to to save temporary fi
 
 To let this files clean on schedule I have created a Powershell script which cleans those files in specific folders after they are not modified in \*specfied\* days . You can define the folders and number of days at the parameters section of the script.
 
-{{% alert color="warning" %}}
+{{% alert title="Warning" color="warning" %}}
 Note: Think out very carefully how long the retention must be. Deleting files is a irreverible action!
 {{% /alert %}}
 
