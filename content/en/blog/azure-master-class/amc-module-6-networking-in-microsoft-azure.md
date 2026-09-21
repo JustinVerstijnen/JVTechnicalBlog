@@ -98,9 +98,8 @@ Within an Azure Virtual Network, you can create subnets that use a smaller porti
 
 For example, if the Azure network uses the address space 172.16.0.0/16, it theoretically provides 65,535 available addresses. This space can be divided into segments, typically used to group specific services and apply security measures at the subnet level. Let's share an example of a possible real-world scenario:
 
-| | | |
-| --- | --- | --- |
 | Subnet name | Purpose subnet | Network space |
+| --- | --- | --- |
 | GatewaySubnet | VPN connection to on premises | 172.16.0.0/27 (27 hosts) |
 | Subnet-1 | Infrastructure | 172.16.1.0/24 (250 hosts) |
 | Subnet-2 | Azure Virtual Desktop hosts | 172.16.2.0/24 (250 hosts) |
@@ -348,9 +347,8 @@ When creating routes, you need to know several values to ensure the route functi
 
 After this step there are different Next Hop types, each with its own purpose:
 
-| | |
-| --- | --- |
 | Next Hop Type | Purpose |
+| --- | --- |
 | Virtual Network Gateway | Route traffic to Virtual Network Gateway/VPN |
 | Virtual Network | Route traffic to Virtual Network |
 | Internet | Route traffic to the Internet |
@@ -435,9 +433,8 @@ This increases:
 
 Because I find both terms still really confusing till this day, I have created a table to describe the exact differences:
 
-| | |
-| --- | --- |
 | Service Endpoint | Private Endpoint |
+| --- | --- |
 | Access through public IP | Access through private IP |
 | Isolation from VNETs | Complete isolation |
 | Public DNS | Private DNS |
