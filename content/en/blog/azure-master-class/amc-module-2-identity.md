@@ -36,9 +36,8 @@ This was previously known as Azure Active Directory which sounds similar to the 
 
 However, it differs some from the old Active Directory Domain Services protocols:
 
-| | | |
-| --- | --- | --- |
 | | Active Directory Domain Services | Microsoft Entra ID |
+| --- | --- | --- |
 | Verification protocols | NTLM & Kerberos | Open ID, OAuth 2.0, SAML, WS-FED |
 | Query protocols | LDAP | Powershell |
 
