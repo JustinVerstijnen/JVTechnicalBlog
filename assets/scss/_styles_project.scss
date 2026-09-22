@@ -2640,3 +2640,39 @@ body:not(.home-navbar-transparent) .td-navbar .td-search__input.form-control:foc
     --jv-article-block-gutter: 0.5rem;
   }
 }
+
+/* =========================================================
+   Article separator lines
+   ========================================================= */
+
+.td-content hr {
+  width: calc(100% - (var(--jv-article-block-gutter, 1rem) * 2));
+  max-width: calc(100% - (var(--jv-article-block-gutter, 1rem) * 2));
+
+  height: 1px;
+  margin: 2rem auto;
+
+  border: 0;
+  opacity: 1;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(119, 176, 222, 0.55) 8%,
+    rgba(119, 176, 222, 0.75) 50%,
+    rgba(119, 176, 222, 0.55) 92%,
+    transparent 100%
+  );
+}
+
+/* Dark mode */
+[data-bs-theme="dark"] .td-content hr {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(157, 206, 245, 0.35) 8%,
+    rgba(157, 206, 245, 0.60) 50%,
+    rgba(157, 206, 245, 0.35) 92%,
+    transparent 100%
+  );
+}
