@@ -5,19 +5,79 @@
 {{ .Content }}
 </div>
 
-{{ if (and .Parent .Parent.IsHome) -}}
+{{ $isBlogOverview := and .Parent .Parent.IsHome -}}
+{{ if $isBlogOverview -}}
 {{ $.Scratch.Set "blog-pages" (where .Site.RegularPages "Section" .Section) -}}
 {{ else -}}
 {{$.Scratch.Set "blog-pages" .Pages -}}
 {{ end -}}
 
 {{- if .Pages -}}
-<div class="td-blog-posts">
+<div class="td-blog-posts{{ if $isBlogOverview }} jv-blog-overview{{ end }}">
 {{ $pager := .Paginate (( $.Scratch.Get "blog-pages").GroupByDate "2006" ) -}}
 {{ range $pager.PageGroups -}}
 <div class="h2">{{ T "post_posts_in" }} {{ .Key }}</div>
 <ul class="td-blog-posts-list">
 {{ range .Pages -}}
+
+{{ if $isBlogOverview -}}
+<li class="td-blog-posts-list__item">
+<div class="td-blog-posts-list__body">
+<h5 class="mt-0"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h5>
+
+<div class="jv-blog-card__meta" aria-label="Post information">
+  <span class="jv-blog-card__meta-tool">
+    <span class="jv-blog-card__meta-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+    </span>
+    <span>{{ .Date.Format ($.Param "time_format_blog") }}</span>
+  </span>
+
+  {{- with .GetTerms "categories" }}
+  <span class="jv-blog-card__meta-tool jv-blog-card__meta-tool--accent">
+    <span class="jv-blog-card__meta-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M3 7h7l2 2h9v10H3z"/></svg>
+    </span>
+    <span class="visually-hidden">Category: </span>
+    <span>
+      {{- range $index, $term := . -}}
+        {{- if $index }}, {{ end -}}<a href="{{ $term.RelPermalink }}">{{ $term.LinkTitle }}</a>
+      {{- end -}}
+    </span>
+  </span>
+  {{- end }}
+
+  {{- with .GetTerms "tags" }}
+  <span class="jv-blog-card__meta-tool jv-blog-card__meta-tool--accent">
+    <span class="jv-blog-card__meta-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M20 13l-7 7-9-9V4h7z"/><circle cx="8.5" cy="8.5" r="1.3"/></svg>
+    </span>
+    <span class="visually-hidden">Tag: </span>
+    <span>
+      {{- range $index, $term := . -}}
+        {{- if $index }}, {{ end -}}<a href="{{ $term.RelPermalink }}">{{ $term.LinkTitle }}</a>
+      {{- end -}}
+    </span>
+  </span>
+  {{- end }}
+
+  {{- if (and (not .Params.hide_readingtime) (.Site.Params.ui.readingtime.enable)) }}
+  <span class="jv-blog-card__meta-tool">
+    <span class="jv-blog-card__meta-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+    </span>
+    <span>{{ .ReadingTime }} min read</span>
+  </span>
+  {{- end }}
+</div>
+
+{{- partial "featured-image.html" (dict "p" . "w" 250 "h" 125 "class" "float-start me-3 pt-1 d-none d-md-block") -}}
+<p class="jv-blog-card__excerpt pt-0">{{ .Plain | safeHTML | truncate 250 }}</p>
+<p class="jv-blog-card__footer"><a class="btn btn-primary" href="{{ .RelPermalink }}" aria-label="{{ T "ui_read_more"}} - {{ .LinkTitle }}">{{ T "ui_read_more"}}</a></p>
+</div>
+</li>
+
+{{ else -}}
 <li class="td-blog-posts-list__item">
 <div class="td-blog-posts-list__body">
 <h5 class="mt-0 mb-1"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h5>
@@ -35,6 +95,8 @@
 <p class="pt-0"><a class="btn btn-primary" href="{{ .RelPermalink }}" aria-label="{{ T "ui_read_more"}} - {{ .LinkTitle }}">{{ T "ui_read_more"}}</a></p>
 </div>
 </li>
+{{ end -}}
+
 {{ end -}}
 </ul>
 {{ end -}}
