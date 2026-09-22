@@ -2206,3 +2206,40 @@ nav.foldable-nav .ul-1 .with-child > label::before {
     margin-left: 0.35rem;
   }
 }
+
+/* =========================================================
+   Disabled primary buttons
+   ========================================================= */
+
+.btn.btn-primary:disabled,
+.btn.btn-primary.disabled,
+fieldset:disabled .btn.btn-primary {
+  --bs-btn-disabled-color: #f7f9fb;
+  --bs-btn-disabled-bg: #a6b4c0;
+  --bs-btn-disabled-border-color: #98a7b3;
+  --bs-btn-disabled-opacity: 1;
+
+  color: #f7f9fb;
+  background-color: #a6b4c0;
+  border-color: #98a7b3;
+  opacity: 1;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Dark mode */
+[data-bs-theme="dark"] .btn.btn-primary:disabled,
+[data-bs-theme="dark"] .btn.btn-primary.disabled,
+[data-bs-theme="dark"] fieldset:disabled .btn.btn-primary {
+  --bs-btn-disabled-color: #aeb8c2;
+  --bs-btn-disabled-bg: #46515c;
+  --bs-btn-disabled-border-color: #596674;
+  --bs-btn-disabled-opacity: 1;
+
+  color: #aeb8c2;
+  background-color: #46515c;
+  border-color: #596674;
+  opacity: 1;
+  cursor: not-allowed;
+  box-shadow: none;
+}
