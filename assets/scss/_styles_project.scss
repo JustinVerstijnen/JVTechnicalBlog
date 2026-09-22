@@ -2601,3 +2601,42 @@ body:not(.home-navbar-transparent) .td-navbar .td-search__input.form-control:foc
   min-width: 0;
   max-width: 100%;
 }
+
+/* =========================================================
+   Blog post blocks - align width with code blocks
+   ========================================================= */
+
+:root {
+  --jv-article-block-gutter: 1rem;
+}
+
+/* Post information block */
+.td-content .jv-post-meta {
+  width: calc(100% - (var(--jv-article-block-gutter) * 2));
+  max-width: calc(100% - (var(--jv-article-block-gutter) * 2));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Article footer cards */
+.td-content .article-footer-actions {
+  width: calc(100% - (var(--jv-article-block-gutter) * 2));
+  max-width: calc(100% - (var(--jv-article-block-gutter) * 2));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Terms text directly underneath the footer */
+.td-content .article-footer-terms {
+  width: calc(100% - (var(--jv-article-block-gutter) * 2));
+  max-width: calc(100% - (var(--jv-article-block-gutter) * 2));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Slightly smaller gutter on phones */
+@media (max-width: 600px) {
+  :root {
+    --jv-article-block-gutter: 0.5rem;
+  }
+}
