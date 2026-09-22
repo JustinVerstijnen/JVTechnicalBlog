@@ -2603,48 +2603,58 @@ body:not(.home-navbar-transparent) .td-navbar .td-search__input.form-control:foc
 }
 
 /* =========================================================
-   Blog post blocks - align exactly with normal content/code
+   Blog post blocks - align left with text and right with code blocks
    ========================================================= */
 
-/* Post information: same left and right boundaries as code blocks */
+/*
+ * Docsy code cards leave a small amount of space on the right side of the
+ * article column. Keep the normal text alignment on the left, and use that
+ * same visual inset on the right for the custom article components.
+ */
+.td-content {
+  --jv-article-code-right-inset: 1.5rem;
+}
+
+/* Post information */
 .td-content .jv-post-meta {
-  width: 100%;
-  max-width: 100%;
+  width: auto;
+  max-width: none;
   margin-left: 0;
-  margin-right: 0;
+  margin-right: var(--jv-article-code-right-inset);
   box-sizing: border-box;
 }
 
-/* Article footer cards: same left and right boundaries as code blocks */
+/* Article footer cards */
 .td-content .article-footer-actions {
-  width: 100%;
-  max-width: 100%;
+  width: auto;
+  max-width: none;
   margin-left: 0;
-  margin-right: 0;
+  margin-right: var(--jv-article-code-right-inset);
   box-sizing: border-box;
 }
 
 /* Terms text directly underneath the footer */
 .td-content .article-footer-terms {
-  width: 100%;
-  max-width: 100%;
+  width: auto;
+  max-width: none;
   margin-left: 0;
-  margin-right: 0;
+  margin-right: var(--jv-article-code-right-inset);
   box-sizing: border-box;
 }
 
 /* =========================================================
-   Article separator lines - same width/alignment as code
+   Article separator lines - same horizontal alignment
    ========================================================= */
 
 .td-content hr {
-  width: 100%;
-  max-width: 100%;
+  width: auto;
+  max-width: none;
   height: 1px;
-  margin: 2rem 0;
+  margin: 2rem var(--jv-article-code-right-inset) 2rem 0;
 
   border: 0;
   opacity: 1;
+  box-sizing: border-box;
 
   background: linear-gradient(
     90deg,
