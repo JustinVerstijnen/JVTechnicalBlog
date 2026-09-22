@@ -2550,3 +2550,39 @@ fieldset:disabled .btn.btn-primary {
     box-shadow: none;
   }
 }
+
+/* =========================================================
+   Search field - top navbar only
+   ========================================================= */
+
+/* Light mode */
+body:not(.home-navbar-transparent) .td-navbar .td-search__input,
+body:not(.home-navbar-transparent) .td-navbar .td-search .form-control,
+body:not(.home-navbar-transparent) .td-navbar .td-search__input.form-control {
+  border-color: #000000a6 !important;
+}
+
+/* Light mode - focus */
+body:not(.home-navbar-transparent) .td-navbar .td-search__input:focus,
+body:not(.home-navbar-transparent) .td-navbar .td-search .form-control:focus,
+body:not(.home-navbar-transparent) .td-navbar .td-search__input.form-control:focus {
+  border-color: #000000a6 !important;
+}
+
+
+/* =========================================================
+   Dark mode
+   ========================================================= */
+
+[data-bs-theme="dark"] body:not(.home-navbar-transparent) .td-navbar .td-search__input,
+[data-bs-theme="dark"] body:not(.home-navbar-transparent) .td-navbar .td-search .form-control,
+[data-bs-theme="dark"] body:not(.home-navbar-transparent) .td-navbar .td-search__input.form-control {
+  border-color: #ffffffa6 !important;
+}
+
+/* Dark mode - focus */
+[data-bs-theme="dark"] body:not(.home-navbar-transparent) .td-navbar .td-search__input:focus,
+[data-bs-theme="dark"] body:not(.home-navbar-transparent) .td-navbar .td-search .form-control:focus,
+[data-bs-theme="dark"] body:not(.home-navbar-transparent) .td-navbar .td-search__input.form-control:focus {
+  border-color: #ffffffa6 !important;
+}
