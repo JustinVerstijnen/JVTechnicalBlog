@@ -2070,3 +2070,139 @@ nav.foldable-nav .ul-1 .with-child > label::before {
     box-shadow: none;
   }
 }
+
+/* --------------------------------------------------------------------------
+ * Breadcrumbs: soft labels + chevrons (Design 1)
+ *
+ * This section only restyles Docsy's breadcrumb navigation. It intentionally
+ * does not change the blog post information/summary component.
+ * -------------------------------------------------------------------------- */
+.td-breadcrumbs {
+  margin-bottom: 1rem;
+}
+
+.td-breadcrumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.td-breadcrumbs__item {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0;
+  color: #647487;
+  font-size: 0.82rem;
+  line-height: 1.2;
+}
+
+/* Remove Docsy/Bootstrap's default breadcrumb divider. */
+.td-breadcrumbs__item + .td-breadcrumbs__item::before {
+  display: none !important;
+  content: none !important;
+  padding: 0 !important;
+}
+
+/* Add a compact chevron between breadcrumb labels. */
+.td-breadcrumbs__item:not(:last-child)::after {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  margin-left: 0.4rem;
+  color: #77b0de;
+  content: "›";
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Clickable breadcrumb labels. */
+.td-breadcrumbs__item > a {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0.38rem 0.62rem;
+  border: 1px solid #d3e8f8;
+  border-radius: 0.5rem;
+  background: #edf6fd;
+  color: #4b92cb;
+  font-weight: 600;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.td-breadcrumbs__item > a:hover,
+.td-breadcrumbs__item > a:focus-visible {
+  border-color: #b8d9f1;
+  background: #e3f1fb;
+  color: #397dac;
+  text-decoration: none;
+}
+
+/* Current page: a quieter neutral label so the navigation path stays primary. */
+.td-breadcrumbs__item[aria-current='page'] {
+  padding: 0.38rem 0.62rem;
+  border: 1px solid #dfe7ee;
+  border-radius: 0.5rem;
+  background: #f7f9fb;
+  color: #647487;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+/* Dark mode: use the same restrained surfaces and blue accent as code/alerts. */
+[data-bs-theme='dark'] .td-breadcrumbs__item {
+  color: #aebbc8;
+}
+
+[data-bs-theme='dark'] .td-breadcrumbs__item:not(:last-child)::after {
+  color: var(--jv-code-accent, #9dcef5);
+}
+
+[data-bs-theme='dark'] .td-breadcrumbs__item > a {
+  border-color: #38576d;
+  background: #22384a;
+  color: var(--jv-code-accent, #9dcef5);
+}
+
+[data-bs-theme='dark'] .td-breadcrumbs__item > a:hover,
+[data-bs-theme='dark'] .td-breadcrumbs__item > a:focus-visible {
+  border-color: #4b6f89;
+  background: #29465c;
+  color: #c8e4fa;
+}
+
+[data-bs-theme='dark'] .td-breadcrumbs__item[aria-current='page'] {
+  border-color: var(--jv-code-border, #424b57);
+  background: var(--jv-code-header, #252b33);
+  color: #b8c2cc;
+}
+
+/* Keep long breadcrumb titles usable on phones without horizontal overflow. */
+@media (max-width: 575.98px) {
+  .td-breadcrumbs__list {
+    gap: 0.35rem;
+  }
+
+  .td-breadcrumbs__item {
+    font-size: 0.78rem;
+  }
+
+  .td-breadcrumbs__item > a,
+  .td-breadcrumbs__item[aria-current='page'] {
+    padding: 0.34rem 0.52rem;
+  }
+
+  .td-breadcrumbs__item:not(:last-child)::after {
+    margin-left: 0.35rem;
+  }
+}
