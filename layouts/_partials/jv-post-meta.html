@@ -1,0 +1,82 @@
+{{/*
+  JV Technical Blog post metadata card.
+  Replaces Docsy's separate date, taxonomy and reading-time blocks on blog posts.
+*/}}
+<header class="jv-post-meta" aria-label="Article information">
+  <div class="jv-post-meta__grid">
+    <div class="jv-post-meta__item">
+      <span class="jv-post-meta__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" focusable="false">
+          <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+          <path d="M8 3v4M16 3v4M3 10h18"></path>
+        </svg>
+      </span>
+      <div class="jv-post-meta__content">
+        <span class="jv-post-meta__label">Published</span>
+        <time class="jv-post-meta__value" datetime="{{ .Date.Format "2006-01-02" }}">
+          {{ .Date.Format .Site.Params.time_format_blog }}
+        </time>
+      </div>
+    </div>
+
+    {{ with .GetTerms "tags" }}
+      <div class="jv-post-meta__item">
+        <span class="jv-post-meta__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="M20 13l-7 7-9-9V4h7z"></path>
+            <circle cx="8.5" cy="8.5" r="1.3"></circle>
+          </svg>
+        </span>
+        <div class="jv-post-meta__content">
+          <span class="jv-post-meta__label">Tag</span>
+          <div class="jv-post-meta__value jv-post-meta__terms">
+            {{- range $index, $term := . -}}
+              {{- if $index }}<span class="jv-post-meta__separator" aria-hidden="true">, </span>{{ end -}}
+              <a href="{{ $term.RelPermalink }}">{{ $term.LinkTitle }}</a>
+            {{- end -}}
+          </div>
+        </div>
+      </div>
+    {{ end }}
+
+    {{ with .GetTerms "categories" }}
+      <div class="jv-post-meta__item">
+        <span class="jv-post-meta__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="M3 7h7l2 2h9v10H3z"></path>
+          </svg>
+        </span>
+        <div class="jv-post-meta__content">
+          <span class="jv-post-meta__label">Category</span>
+          <div class="jv-post-meta__value jv-post-meta__terms">
+            {{- range $index, $term := . -}}
+              {{- if $index }}<span class="jv-post-meta__separator" aria-hidden="true">, </span>{{ end -}}
+              <a href="{{ $term.RelPermalink }}">{{ $term.LinkTitle }}</a>
+            {{- end -}}
+          </div>
+        </div>
+      </div>
+    {{ end }}
+
+    {{ if (and (not .Params.hide_readingtime) (.Site.Params.ui.readingtime.enable)) }}
+      <div class="jv-post-meta__item">
+        <span class="jv-post-meta__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M12 7v5l3 2"></path>
+          </svg>
+        </span>
+        <div class="jv-post-meta__content">
+          <span class="jv-post-meta__label">Reading time</span>
+          <span class="jv-post-meta__value">
+            {{- if gt .ReadingTime 1 -}}
+              {{ .ReadingTime }} {{ T "post_reading_time" }}
+            {{- else -}}
+              {{ T "post_less_than_a_minute_read" }}
+            {{- end -}}
+          </span>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</header>

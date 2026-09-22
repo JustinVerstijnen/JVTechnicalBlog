@@ -1,0 +1,14 @@
+<div class="td-content">
+<h1>{{ .Title }}</h1>
+{{ with .Params.description }}<div class="lead">{{ . | markdownify }}</div>{{ end }}
+{{ partial "jv-post-meta.html" . -}}
+{{ .Render "_td-content-after-header" -}}
+{{ .Content }}
+{{ if (.Site.Config.Services.Disqus.Shortname) -}}
+<br />
+{{- partial "disqus-comment.html" . -}}
+<br />
+{{ end -}}
+{{ partial "pager.html" . }}
+{{ partial "page-meta-lastmod.html" . -}}
+</div>
