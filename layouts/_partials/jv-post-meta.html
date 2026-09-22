@@ -19,26 +19,6 @@
       </div>
     </div>
 
-    {{ with .GetTerms "tags" }}
-      <div class="jv-post-meta__item">
-        <span class="jv-post-meta__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" focusable="false">
-            <path d="M20 13l-7 7-9-9V4h7z"></path>
-            <circle cx="8.5" cy="8.5" r="1.3"></circle>
-          </svg>
-        </span>
-        <div class="jv-post-meta__content">
-          <span class="jv-post-meta__label">Tag</span>
-          <div class="jv-post-meta__value jv-post-meta__terms">
-            {{- range $index, $term := . -}}
-              {{- if $index }}<span class="jv-post-meta__separator" aria-hidden="true">, </span>{{ end -}}
-              <a href="{{ $term.RelPermalink }}">{{ $term.LinkTitle }}</a>
-            {{- end -}}
-          </div>
-        </div>
-      </div>
-    {{ end }}
-
     {{ with .GetTerms "categories" }}
       <div class="jv-post-meta__item">
         <span class="jv-post-meta__icon" aria-hidden="true">
@@ -75,6 +55,26 @@
               {{ T "post_less_than_a_minute_read" }}
             {{- end -}}
           </span>
+        </div>
+      </div>
+    {{ end }}
+
+    {{ with .GetTerms "tags" }}
+      <div class="jv-post-meta__item">
+        <span class="jv-post-meta__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="M20 13l-7 7-9-9V4h7z"></path>
+            <circle cx="8.5" cy="8.5" r="1.3"></circle>
+          </svg>
+        </span>
+        <div class="jv-post-meta__content">
+          <span class="jv-post-meta__label">Tag</span>
+          <div class="jv-post-meta__value jv-post-meta__terms">
+            {{- range $index, $term := . -}}
+              {{- if $index }}<span class="jv-post-meta__separator" aria-hidden="true">, </span>{{ end -}}
+              <a href="{{ $term.RelPermalink }}">{{ $term.LinkTitle }}</a>
+            {{- end -}}
+          </div>
         </div>
       </div>
     {{ end }}

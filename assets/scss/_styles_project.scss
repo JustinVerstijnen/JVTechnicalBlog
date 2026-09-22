@@ -2025,27 +2025,33 @@ nav.foldable-nav .ul-1 .with-child > label::before {
   color: var(--bs-secondary-color);
 }
 
+/* Dark mode: match the muted surface palette used by code and alert blocks. */
 [data-bs-theme='dark'] .jv-post-meta {
-  border-color: #25323e;
-  background: #151c23;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  border-color: var(--jv-code-border, #424b57);
+  background: var(--jv-code-header, #252b33);
+  box-shadow: var(--jv-code-shadow, 0 6px 20px rgba(0, 0, 0, 0.22));
 }
 
-[data-bs-theme='dark'] .jv-post-meta__label {
-  color: var(--bs-secondary-color);
+[data-bs-theme='dark'] .jv-post-meta__value {
+  color: var(--jv-code-text, #edf3fa);
 }
 
+[data-bs-theme='dark'] .jv-post-meta__label,
 [data-bs-theme='dark'] .jv-post-meta__icon {
-  color: #9dcef5;
+  color: var(--jv-code-accent, #9dcef5);
 }
 
 [data-bs-theme='dark'] .jv-post-meta__terms a {
-  color: #b8dcf7;
+  color: var(--jv-code-accent, #9dcef5);
 }
 
 [data-bs-theme='dark'] .jv-post-meta__terms a:hover,
 [data-bs-theme='dark'] .jv-post-meta__terms a:focus-visible {
-  color: #d3eafb;
+  color: #c8e4fa;
+}
+
+[data-bs-theme='dark'] .jv-post-meta__separator {
+  color: #aab5c2;
 }
 
 @media (max-width: 600px) {
