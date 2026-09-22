@@ -2243,3 +2243,33 @@ fieldset:disabled .btn.btn-primary {
   cursor: not-allowed;
   box-shadow: none;
 }
+
+/* =========================================================
+   Navbar search field border
+   ========================================================= */
+
+/* Light mode */
+.td-search-input,
+.td-search__input {
+  border-color: #000000a6 !important;
+}
+
+/* Light mode - focus */
+.td-search-input:focus,
+.td-search__input:focus {
+  border-color: #000000a6 !important;
+  box-shadow: 0 0 0 0.15rem #0000001f;
+}
+
+/* Dark mode */
+[data-bs-theme="dark"] .td-search-input,
+[data-bs-theme="dark"] .td-search__input {
+  border-color: #ffffffa6 !important;
+}
+
+/* Dark mode - focus */
+[data-bs-theme="dark"] .td-search-input:focus,
+[data-bs-theme="dark"] .td-search__input:focus {
+  border-color: #ffffffa6 !important;
+  box-shadow: 0 0 0 0.15rem #ffffff1f;
+}
