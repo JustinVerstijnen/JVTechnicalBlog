@@ -145,13 +145,12 @@ Location redirection in Azure Virtual Desktop helps applications inside the remo
 
 Thank you for reading this post and I hope it was helpful!
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
 1. https://learn.microsoft.com/en-us/azure/virtual-desktop/redirection-configure-location
 2. https://learn.microsoft.com/en-us/azure/virtual-desktop/redirection-remote-desktop-protocol
 3. https://learn.microsoft.com/en-us/azure/virtual-desktop/rdp-properties
+{{% /alert %}}
 
 {{< ads >}}
 

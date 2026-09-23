@@ -234,13 +234,10 @@ You can search through the list with the search function of your browser, and su
 
 This page contains a lot of different RDP settings which we can still use today. Some of the RDP settings are categorized by Microsoft as not supported but will do their work in Azure Virtual Desktop too, for example the option to hide the connection bar by default.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/azure/virtual-desktop/rdp-properties>
-
-Thank you for reading this post and I hope it was helpful!
+1. https://learn.microsoft.com/en-us/azure/virtual-desktop/rdp-properties
+{{% /alert %}}
 
 {{< ads >}}
 

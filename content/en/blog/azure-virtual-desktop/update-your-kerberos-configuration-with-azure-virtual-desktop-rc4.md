@@ -125,11 +125,10 @@ If your environment already uses AES-based Kerberos encryption for Azure Files, 
 
 Thank you for visiting this page and I hope it was helpful.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/windows-server/security/kerberos/detect-remediate-rc4-kerberos>
+1. https://learn.microsoft.com/en-us/windows-server/security/kerberos/detect-remediate-rc4-kerberos
+{{% /alert %}}
 
 {{< ads >}}
 

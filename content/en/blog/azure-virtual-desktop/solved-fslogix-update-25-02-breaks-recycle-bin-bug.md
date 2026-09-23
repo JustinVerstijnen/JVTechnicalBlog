@@ -87,9 +87,11 @@ After some more research, I came across a page of Microsoft about a lot of featu
 
 If I helped you with this guide to fix this bug, it was my pleasure and thank you for reading it.
 
-### Sources
-1. <https://learn.microsoft.com/en-us/fslogix/reference-configuration-settings?tabs=profiles#roamrecyclebin>
-2. <https://learn.microsoft.com/en-us/fslogix/overview-release-notes>
+{{% alert title="Sources 🕮" color="info" %}}
+These sources helped me by writing and research for this post;
+1. https://learn.microsoft.com/en-us/fslogix/reference-configuration-settings?tabs=profiles#roamrecyclebin
+2. https://learn.microsoft.com/en-us/fslogix/overview-release-notes
+{{% /alert %}}
 
 {{< ads >}}
 

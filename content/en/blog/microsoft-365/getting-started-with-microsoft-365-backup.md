@@ -364,13 +364,12 @@ I honestly see this as a last resort, when actions are too destructive to rely o
 
 Thank you for visiting this page and I hope it was helpful.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/microsoft-365/backup/backup-pricing?view=o365-worldwide>
-2. <https://learn.microsoft.com/en-us/microsoft-365/backup/backup-setup?view=o365-worldwide>
-3. <https://learn.microsoft.com/en-us/microsoft-365/backup/backup-restore-data?view=o365-worldwide&tabs=onedrive>
+1. https://learn.microsoft.com/en-us/microsoft-365/backup/backup-pricing?view=o365-worldwide
+2. https://learn.microsoft.com/en-us/microsoft-365/backup/backup-setup?view=o365-worldwide
+3. https://learn.microsoft.com/en-us/microsoft-365/backup/backup-restore-data?view=o365-worldwide&tabs=onedrive
+{{% /alert %}}
 
 {{< ads >}}
 

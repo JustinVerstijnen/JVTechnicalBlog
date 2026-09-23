@@ -255,9 +255,10 @@ This guide described how we can change some advanced appearance settings in Entr
 
 Thank you for visiting this page and I hope it was helpful!
 
-### Sources
-
-1. [https://learn.microsoft.com/en-us/entra/fundamentals/reference-company-branding-css-template](https://learn.microsoft.com/en-us/entra/fundamentals/reference-company-branding-css-template)
+{{% alert title="Sources 🕮" color="info" %}}
+These sources helped me by writing and research for this post;
+1. https://learn.microsoft.com/en-us/entra/fundamentals/reference-company-branding-css-template
+{{% /alert %}}
 
 {{< ads >}}
 

@@ -80,11 +80,10 @@ The one thing which pushes me away from using RemoteApp is the missing drag and 
 
 I also couldn't get it to work with the validation environment setting only. In my case, I had to create the registry key.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/azure/virtual-desktop/remoteapp-enhancements#enable-remoteapp-enhancements-preview>
+1. https://learn.microsoft.com/en-us/azure/virtual-desktop/remoteapp-enhancements#enable-remoteapp-enhancements-preview
+{{% /alert %}}
 
 {{< ads >}}
 

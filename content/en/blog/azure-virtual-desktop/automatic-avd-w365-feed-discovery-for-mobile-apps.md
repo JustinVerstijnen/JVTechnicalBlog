@@ -108,13 +108,10 @@ Now the application automatically finds the domain and imports the feed discover
 
 Creating this DNS record saves a lot of problems and headache for users and administrators of Azure Virtual Desktop and/or Windows 365. I hope I explained clearly how to configure this record and described the problem.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/rds-email-discovery>
-
-Thank you for visiting this website!
+1. https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/rds-email-discovery
+{{% /alert %}}
 
 {{< ads >}}
 

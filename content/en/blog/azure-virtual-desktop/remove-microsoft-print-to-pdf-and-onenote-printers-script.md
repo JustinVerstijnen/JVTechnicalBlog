@@ -128,11 +128,9 @@ Removing the default software printers may be strange but can help enhancing the
 
 Thank you for reading this guide and I hope it was helpful.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-- None
+{{% /alert %}}
 
 {{< ads >}}
 

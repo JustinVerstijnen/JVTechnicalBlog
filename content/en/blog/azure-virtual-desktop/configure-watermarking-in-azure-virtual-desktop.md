@@ -117,11 +117,10 @@ Watermarking is a great feature which can increase your data security and awaren
 
 Thank you for reading this post and I hope it was helpful!
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. [https://learn.microsoft.com/en-us/azure/virtual-desktop/watermarking?tabs=intune](https://learn.microsoft.com/en-us/azure/virtual-desktop/watermarking?tabs=intune)
+1. https://learn.microsoft.com/en-us/azure/virtual-desktop/watermarking?tabs=intune
+{{% /alert %}}
 
  {{< ads >}}
 

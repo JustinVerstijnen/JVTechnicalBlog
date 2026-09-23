@@ -412,11 +412,12 @@ Next week I have a new post going further in some management with Ubuntu devices
 
 I hope this post was helpful and thank you for reading!
 
-### Sources
-
-1. [https://learn.microsoft.com/en-us/intune/fundamentals/ref-supported-platforms#linux](https://learn.microsoft.com/en-us/intune/fundamentals/ref-supported-platforms#linux)
-2. [https://rufus.ie/en/](https://rufus.ie/en/)
-3. [https://learn.microsoft.com/en-us/intune/device-enrollment/guide-linux](https://learn.microsoft.com/en-us/intune/device-enrollment/guide-linux)
+{{% alert title="Sources 🕮" color="info" %}}
+These sources helped me by writing and research for this post;
+1. https://learn.microsoft.com/en-us/intune/fundamentals/ref-supported-platforms#linux
+2. https://rufus.ie/en/
+3. https://learn.microsoft.com/en-us/intune/device-enrollment/guide-linux
+{{% /alert %}}
 
 {{< ads >}}
 

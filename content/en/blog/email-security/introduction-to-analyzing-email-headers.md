@@ -234,13 +234,12 @@ Email headers provide detailed technical information about how a message was pro
 
 Thank you for reading this post and I hope it was helpful!
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
 1. https://learn.microsoft.com/en-us/defender-office-365/message-headers-eop-mdo
 2. https://learn.microsoft.com/en-us/defender-office-365/anti-spam-protection-about
 3. https://github.com/JustinVerstijnen/EmailHeaderAnalyzer
+{{% /alert %}}
 
 {{< ads >}}
 

@@ -122,15 +122,14 @@ My usual setup is straightforward: use Power management autoscaling, configure o
 
 Thank you for reading this post and I hope it was helpful!
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
 1. https://learn.microsoft.com/en-us/azure/virtual-desktop/autoscale-glossary
 2. https://learn.microsoft.com/en-us/azure/virtual-desktop/autoscale-create-assign-scaling-plan
 3. https://learn.microsoft.com/en-us/azure/virtual-desktop/autoscale-scenarios#scenario-1-when-does-autoscale-turn-virtual-machines-on
 4. https://learn.microsoft.com/en-us/azure/virtual-desktop/start-virtual-machine-connect
 5. https://learn.microsoft.com/en-us/azure/virtual-desktop/configure-host-pool-load-balancing
+{{% /alert %}}
 
 {{< ads >}}
 

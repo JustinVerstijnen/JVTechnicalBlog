@@ -173,12 +173,11 @@ Configuring RDP Multipath will enhance the user experience. With some minor netw
 
 Thank you for reading this guide and I hope it was helpful.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/azure/virtual-desktop/rdp-multipath>
-2. <https://www.youtube.com/watch?v=fkXZZixOMjc>
+1. https://learn.microsoft.com/en-us/azure/virtual-desktop/rdp-multipath
+2. https://www.youtube.com/watch?v=fkXZZixOMjc
+{{% /alert %}}
 
 {{< ads >}}
 

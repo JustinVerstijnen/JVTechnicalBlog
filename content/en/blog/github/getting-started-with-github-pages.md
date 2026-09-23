@@ -227,12 +227,11 @@ You can easily host documentation, portfolios, memes, and lightweight projects, 
 
 Thank you for visiting my website and I hope it was helpful.
 
-### Sources
-
-These sources helped me with writing and research for this post:
-
-1. <https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site>
-2. <https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages>
+{{% alert title="Sources 🕮" color="info" %}}
+These sources helped me by writing and research for this post;
+1. https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site
+2. https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages
+{{% /alert %}}
 
 {{< ads >}}
 

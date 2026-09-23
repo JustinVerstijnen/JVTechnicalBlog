@@ -260,11 +260,10 @@ This new setup helps me utilizing Github and Azure Static Web Apps way better in
 
 Thank you for reading this post and I hope it was helpful.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
 1. https://github.com/features/actions
+{{% /alert %}}
 
 {{< ads >}}
 

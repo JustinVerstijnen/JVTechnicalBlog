@@ -670,13 +670,12 @@ Going completely cloud only enhances the manageability of the environement keeps
 
 Thank you for reading this page and I hope it was helpful.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/entra/identity/authentication/kerberos#how-microsoft-entra-kerberos-works>
-2. <https://learn.microsoft.com/en-us/microsoft-365/enterprise/manage-microsoft-365-accounts?view=o365-worldwide#cloud-only>
-3. <https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-assign-share-level-permissions?WT.mc_id=Portal-Microsoft_Azure_FileStorage&tabs=azure-portal#choose-how-to-assign-share-level-permissions>
+1. https://learn.microsoft.com/en-us/entra/identity/authentication/kerberos#how-microsoft-entra-kerberos-works
+2. https://learn.microsoft.com/en-us/microsoft-365/enterprise/manage-microsoft-365-accounts?view=o365-worldwide#cloud-only
+3. https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-assign-share-level-permissions?WT.mc_id=Portal-Microsoft_Azure_FileStorage&tabs=azure-portal#choose-how-to-assign-share-level-permissions
+{{% /alert %}}
 
 {{< ads >}}
 

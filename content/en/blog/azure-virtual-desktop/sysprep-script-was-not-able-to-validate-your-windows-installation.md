@@ -98,15 +98,14 @@ My PowerShell script automates a large part of this process by scanning the logs
 
 Thank you for reading this post and I hope it was helpful!
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
 1. https://github.com/JustinVerstijnen/JV-AVD-Sysprep
 2. https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview
 3. https://learn.microsoft.com/en-us/azure/virtual-machines/shared-image-galleries
 4. https://learn.microsoft.com/en-us/windows/application-management/appx-package-manager/appx-and-msix-faq
 5. https://justinverstijnen.nl/azure-compute-gallery-and-avd-vm-images/
+{{% /alert %}}
 
 {{< ads >}}
 

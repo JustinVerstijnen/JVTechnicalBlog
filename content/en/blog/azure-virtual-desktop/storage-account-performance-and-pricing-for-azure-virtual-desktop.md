@@ -187,17 +187,16 @@ This guide further clarifies the difference in costs and practice of Premium vs 
 
 I hope this guide was very helpful and thank you for reading.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://azure.microsoft.com/en-us/pricing/calculator/>
-2. <https://azure.microsoft.com/en-us/pricing/details/storage/files/>
-3. <https://learn.microsoft.com/en-us/azure/storage/files/understanding-billing>
-4. <https://learn.microsoft.com/en-us/azure/storage/files/understand-performance?#glossary>
-5. <https://learn.microsoft.com/en-us/azure/storage/blobs/storage-performance-checklist>
-6. <https://justinverstijnen.nl/monitor-azure-virtual-deskop-logon-performance/>
-7. <https://testfiles.ah-apps.de/>
+1. https://azure.microsoft.com/en-us/pricing/calculator/
+2. https://azure.microsoft.com/en-us/pricing/details/storage/files/
+3. https://learn.microsoft.com/en-us/azure/storage/files/understanding-billing
+4. https://learn.microsoft.com/en-us/azure/storage/files/understand-performance?#glossary
+5. https://learn.microsoft.com/en-us/azure/storage/blobs/storage-performance-checklist
+6. https://justinverstijnen.nl/monitor-azure-virtual-deskop-logon-performance/
+7. https://testfiles.ah-apps.de/
+{{% /alert %}}
 
 {{< ads >}}
 

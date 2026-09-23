@@ -122,11 +122,10 @@ This preset is intended for highly sensitive workloads with strict compliance an
 
 Thank you for reading this guide and I hope it was helpful.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/azure/storage/files/files-smb-protocol?tabs=azure-portal>
+1. https://learn.microsoft.com/en-us/azure/storage/files/files-smb-protocol?tabs=azure-portal
+{{% /alert %}}
 
 {{< ads >}}
 

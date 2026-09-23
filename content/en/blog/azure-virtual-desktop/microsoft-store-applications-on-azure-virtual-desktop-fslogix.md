@@ -109,11 +109,10 @@ Now this guide shows how I solved the problem of users not able to use apps on A
 
 In my opinion, I think its the best way to handle the applications. If the application has an option to install through a .exe or .msi file, that will work much better. I use this only for some applications that can be downloaded exclusively from the Windows Store.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/fslogix/troubleshooting-appx-issues>
+1. https://learn.microsoft.com/en-us/fslogix/troubleshooting-appx-issues
+{{% /alert %}}
 
 {{< ads >}}
 

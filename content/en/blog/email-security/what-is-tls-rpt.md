@@ -234,14 +234,13 @@ TLS-RPT is basically DMARC-style reporting for TLS and secure mail transport. It
 
 Thank you for reading this post and I hope it was helpful!
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
 1. https://datatracker.ietf.org/doc/html/rfc8460
 2. https://support.google.com/a/answer/10032169
 3. https://learn.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-best-practices/mta-sts-and-tls-reporting
 4. https://datatracker.ietf.org/doc/html/rfc8461
+{{% /alert %}}
 
 {{< ads >}}
 

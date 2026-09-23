@@ -219,13 +219,10 @@ Azure Compute Gallery is a great way to stora and maintain images in a fairly ea
 
 If you already know the process with Managed Images, the only thing changed is the location of where you store the images. I think Azure Compute Gallery is the better option because of centralizing storage of images instead of random in your resource group and having support for trusted launch.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/azure/virtual-machines/azure-compute-gallery>
-
-Thank you for reading and I hope it was helpful.
+1. https://learn.microsoft.com/en-us/azure/virtual-machines/azure-compute-gallery
+{{% /alert %}}
 
 {{< ads >}}
 
