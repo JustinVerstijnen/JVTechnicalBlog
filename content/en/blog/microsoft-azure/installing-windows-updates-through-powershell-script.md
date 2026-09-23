@@ -195,9 +195,10 @@ Installing Windows Updates is critical for maintaining and securing your servers
 
 This script is useful when doing update installations by hand. When searching for automatic installation of Windows Updates in Azure, I would recommend using [Azure Update Manager](https://justinverstijnen.nl/using-azure-update-manager-to-manage-updates-at-scale/).
 
-### Sources
-
-1. <https://www.powershellgallery.com/packages/pswindowsupdate/2.2.1.5>
+{{% alert title="Sources 🕮" color="info" %}}
+These sources helped me by writing and research for this post;
+1. https://www.powershellgallery.com/packages/pswindowsupdate/2.2.1.5
+{{% /alert %}}
 
 {{< ads >}}
 

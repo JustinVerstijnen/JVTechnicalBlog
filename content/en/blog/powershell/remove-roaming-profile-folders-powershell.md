@@ -121,12 +121,11 @@ The folder is now completely gone and not bothering us anymore, which is great. 
 
 Thank you for reading this post and I hope it was helpful!
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. [https://learn.microsoft.com/powershell/module/microsoft.powershell.management/remove-item](https://learn.microsoft.com/powershell/module/microsoft.powershell.management/remove-item)
-2. [https://learn.microsoft.com/windows-server/administration/windows-commands/takeown](https://learn.microsoft.com/windows-server/administration/windows-commands/takeown)
+1. https://learn.microsoft.com/powershell/module/microsoft.powershell.management/remove-item
+2. https://learn.microsoft.com/windows-server/administration/windows-commands/takeown
+{{% /alert %}}
 
 {{< ads >}}
 

@@ -390,11 +390,10 @@ The advantages of Terraform are fast deployment, modular setup in code, and easy
 
 Thank you for reading this post and I hope it was helpful!
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. [https://developer.hashicorp.com/terraform/install](https://developer.hashicorp.com/terraform/install)
+1. https://developer.hashicorp.com/terraform/install
+{{% /alert %}}
 
 {{< ads >}}
 

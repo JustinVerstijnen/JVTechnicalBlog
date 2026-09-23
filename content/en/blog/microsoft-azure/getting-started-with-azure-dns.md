@@ -245,13 +245,12 @@ Azure DNS allows you to centrally host and manage public DNS zones directly from
 
 Thank you for reading this post and I hope it was helpful!
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
 1. https://learn.microsoft.com/en-us/azure/dns/dns-overview
 2. https://learn.microsoft.com/en-us/azure/dns/dns-getstarted-portal
 3. https://learn.microsoft.com/en-us/powershell/module/az.dns
+{{% /alert %}}
 
 {{< ads >}}
 

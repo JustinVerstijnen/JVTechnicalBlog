@@ -154,12 +154,11 @@ cmdkey /add:*servername* /user:justin-admin /pass:Pa$$W0rd!
 
 You see, setting this up is relatively easy. It's somewhat more work but definitely worth it against other virtualization tools. When I had my own lab for the first time, this got me in some real errors. Fixing those is pretty easy.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/install-hyper-v?tabs=powershell&pivots=windows>
-2. <https://learn.microsoft.com/en-us/powershell/module/netconnection/get-netconnectionprofile?view=windowsserver2025-ps>
+1. https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/install-hyper-v?tabs=powershell&pivots=windows
+2. https://learn.microsoft.com/en-us/powershell/module/netconnection/get-netconnectionprofile?view=windowsserver2025-ps
+{{% /alert %}}
 
 {{< ads >}}
 

@@ -235,16 +235,13 @@ So this way we know within minutes which applications we must monitor and even d
 
 I hope I convinced you with this guide how much of an risk the applications in Microsoft Entra ID really can be. They can be used by threat actors, as Break glass application or by attackers to leave backdoors in a tenant after a breach.
 
-### Sources
-
-These sources helped me by writing and research for this post:
-
-1. <https://learn.microsoft.com/en-us/entra/identity-platform/application-consent-experience>
-2. <https://learn.microsoft.com/en-us/graph/permissions-overview?tabs=http#comparison-of-delegated-and-application-permissions>
-3. <https://learn.microsoft.com/en-us/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0#use-client-secret-credentials>
-4. <https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users/?view=graph-powershell-1.0>
-
-I hope I informed you well with this post and thank you for reading. I also hope my PowerShell script comes in very handy, because I couldn't find a good one working online.
+{{% alert title="Sources 🕮" color="info" %}}
+These sources helped me by writing and research for this post;
+1. https://learn.microsoft.com/en-us/entra/identity-platform/application-consent-experience
+2. https://learn.microsoft.com/en-us/graph/permissions-overview?tabs=http#comparison-of-delegated-and-application-permissions
+3. https://learn.microsoft.com/en-us/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0#use-client-secret-credentials
+4. https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users/?view=graph-powershell-1.0
+{{% /alert %}}
 
 {{< ads >}}
 

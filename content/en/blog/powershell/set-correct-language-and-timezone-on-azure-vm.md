@@ -127,14 +127,13 @@ In the beginning of creating Azure VMs this was something I found to be annoying
 
 I hope the script is useful and thank you for reading.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/language-codes>
-2. <https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/default-time-zones?view=windows-11#time-zones>
-3. <https://learn.microsoft.com/en-us/windows/win32/intl/table-of-geographical-locations>
-4. <https://learn.microsoft.com/en-us/powershell/module/languagepackmanagement/set-systempreferreduilanguage?view=windowsserver2025-ps>
+1. https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/language-codes
+2. https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/default-time-zones?view=windows-11#time-zones
+3. https://learn.microsoft.com/en-us/windows/win32/intl/table-of-geographical-locations
+4. https://learn.microsoft.com/en-us/powershell/module/languagepackmanagement/set-systempreferreduilanguage?view=windowsserver2025-ps
+{{% /alert %}}
 
 {{< ads >}}
 

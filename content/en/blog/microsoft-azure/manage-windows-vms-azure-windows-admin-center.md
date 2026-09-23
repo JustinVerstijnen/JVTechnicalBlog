@@ -235,9 +235,10 @@ I also showed some of the features in the video where I clicked around the Windo
 
 Thank you for reading this post and I hope it was helpful.
 
-### Sources
-
-1. [https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/azure/manage-vm](https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/azure/manage-vm)
+{{% alert title="Sources 🕮" color="info" %}}
+These sources helped me by writing and research for this post;
+1. https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/azure/manage-vm
+{{% /alert %}}
 
 {{< ads >}}
 

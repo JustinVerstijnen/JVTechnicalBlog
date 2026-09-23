@@ -130,11 +130,10 @@ Now your on-premises user and cloud user have been matched!
 
 Hardmatching users is relatively easy, but requires some steps that are good to know. After doing this around 3 times you will perform this completely on "auto-pilot".
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://www.powershellgallery.com/packages/Microsoft.Graph/2.24.0>
+1. https://www.powershellgallery.com/packages/Microsoft.Graph/2.24.0
+{{% /alert %}}
 
 {{< ads >}}
 

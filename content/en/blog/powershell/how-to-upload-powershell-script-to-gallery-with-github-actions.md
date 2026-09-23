@@ -310,14 +310,11 @@ The script will run directly which is very nice and useful for mass use.
 
 This setup for uploading scripts to the PowerShell Gallery is really great. We can change our script on one place and it will automatically upload to the live gallery for users to download.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/powershell/gallery/getting-started?view=powershellget-3.x>
-2. <https://docs.github.com/en/actions/get-started/understand-github-actions>
-
-Thank you for reading this guide and I hope it was helpful.
+1. https://learn.microsoft.com/en-us/powershell/gallery/getting-started?view=powershellget-3.x
+2. https://docs.github.com/en/actions/get-started/understand-github-actions
+{{% /alert %}}
 
 {{< ads >}}
 

@@ -247,11 +247,10 @@ The only downside is that Microsoft does not support upgrading Windows Server Az
 
 Thank you for reading ths guide and I hope it helped you out upgrading your server to the latest and most secured version.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
 1. https://learn.microsoft.com/en-us/windows-server/get-started/upgrade-overview
+{{% /alert %}}
 
 {{< ads >}}
 

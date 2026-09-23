@@ -214,11 +214,10 @@ We IT guys' work is to minimize disruptions and ensure end users don't need to c
 
 Thank you for reading this post and I hope it was helpful.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cleanmgr>
+1. https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cleanmgr
+{{% /alert %}}
 
 {{< ads >}}
 

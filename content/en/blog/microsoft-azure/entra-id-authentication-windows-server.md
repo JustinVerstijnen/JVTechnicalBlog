@@ -219,13 +219,11 @@ This shows that the machine is actually Entra ID joined now:
 
 This guides describes how you can enable Entra ID authentication into your Azure VMs which can be useful in some situations. This enables multiple users to login with their own account instead of using local account. You can then manage all user accounts in the Entra ID and Azure Portal. Most of it is done through initial configuration.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. [https://learn.microsoft.com/en-us/entra/identity/authentication/overview-authentication](https://learn.microsoft.com/en-us/entra/identity/authentication/overview-authentication)
-
-2. [https://learn.microsoft.com/en-us/entra/identity/devices/howto-vm-sign-in-azure-ad-windows](https://learn.microsoft.com/en-us/entra/identity/devices/howto-vm-sign-in-azure-ad-windows)
+1. https://learn.microsoft.com/en-us/entra/identity/authentication/overview-authentication
+2. https://learn.microsoft.com/en-us/entra/identity/devices/howto-vm-sign-in-azure-ad-windows
+{{% /alert %}}
 
 {{< ads >}}
 

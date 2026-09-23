@@ -179,11 +179,10 @@ Make sure to change the \*server\* placeholder to the correct server names in yo
 
 Every now and then, we need to move some FSMO roles to other servers or we need this when setting up. Dividing the roles onto multiple servers ensure not the whole domain is interrupted with one server failing and so creates redundancy and availability for your users.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/troubleshoot/windows-server/active-directory/fsmo-roles>
+1. https://learn.microsoft.com/en-us/troubleshoot/windows-server/active-directory/fsmo-roles
+{{% /alert %}}
 
 {{< ads >}}
 

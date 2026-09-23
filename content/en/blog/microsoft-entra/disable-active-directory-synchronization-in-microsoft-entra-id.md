@@ -113,12 +113,11 @@ In this post, I showed how to disable Active Directory synchronization in Micros
 
 Thank you for reading this post and I hope it was helpful!
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
 1. https://learn.microsoft.com/entra/identity/hybrid/connect/how-to-uninstall-entra-connect
 2. https://learn.microsoft.com/powershell/module/microsoft.graph.identity.directorymanagement/update-mgorganization
+{{% /alert %}}
 
 {{< ads >}}
 

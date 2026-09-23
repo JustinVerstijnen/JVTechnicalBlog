@@ -313,11 +313,9 @@ Dynamic Groups are an excellent way to automate some things in your Microsoft En
 
 Thank you for visiting this website!
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-- <https://justinverstijnen.nl/dynamic-group-for-access-to-windows-365/>
+{{% /alert %}}
 
 {{< ads >}}
 

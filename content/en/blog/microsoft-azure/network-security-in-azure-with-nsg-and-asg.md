@@ -123,11 +123,10 @@ Network Security Groups (NSG)s are an great way to protect your Azure network on
 
 I hope this guide was interesting and thank you for reading.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview>
+1. https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
+{{% /alert %}}
 
 {{< ads >}}
 

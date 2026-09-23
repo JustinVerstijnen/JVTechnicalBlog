@@ -123,11 +123,10 @@ This script can ultimately be used when all users must be created in the same wa
 
 Thank you for reading this post and I hope it is helpful.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/powershell/module/activedirectory/new-aduser?view=windowsserver2025-ps>
+1. https://learn.microsoft.com/en-us/powershell/module/activedirectory/new-aduser?view=windowsserver2025-ps
+{{% /alert %}}
 
 {{< ads >}}
 

@@ -63,12 +63,11 @@ This page shows an easy way to export all your AD users in a great and readable 
 
 Thank you for reading and I hope it was helpful.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/powershell/module/activedirectory/get-aduser?view=windowsserver2025-ps#filter>
-2. <https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/03-discovering-objects?view=powershell-7.5#active-directory>
+1. https://learn.microsoft.com/en-us/powershell/module/activedirectory/get-aduser?view=windowsserver2025-ps#filter
+2. https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/03-discovering-objects?view=powershell-7.5#active-directory
+{{% /alert %}}
 
 {{< ads >}}
 

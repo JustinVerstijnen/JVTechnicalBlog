@@ -138,12 +138,11 @@ Everything is placed in nice and clear tabs so information is categorized, and t
 
 I hope my script is helpful for you and thank you for viewing.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/09-functions?view=powershell-7.5>
-2. <https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertto-html?view=powershell-7.5>
+1. https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/09-functions?view=powershell-7.5
+2. https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertto-html?view=powershell-7.5
+{{% /alert %}}
 
 {{< ads >}}
 

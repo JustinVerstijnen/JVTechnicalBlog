@@ -62,11 +62,10 @@ Service Groups are an great addition for managing permissions to our Azure resou
 
 This can now be done, only with inheriting permissions flowing down, which means big privileges and big scopes. With this new function we can only select the underlying resources we want and so permit a limited set of permissions. This provider much more granular premissions assignments, and all of that free of charge!
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/azure/governance/service-groups/overview>
+1. https://learn.microsoft.com/en-us/azure/governance/service-groups/overview
+{{% /alert %}}
 
 {{< ads >}}
 

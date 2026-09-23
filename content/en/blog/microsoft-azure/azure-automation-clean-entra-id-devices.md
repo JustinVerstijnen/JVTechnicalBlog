@@ -316,15 +316,14 @@ Because the solution runs fully in Azure and uses Managed Identity authenticatio
 
 Thank you for reading this post and I hope it was helpful!
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
 1. https://learn.microsoft.com/en-us/azure/automation/overview
 2. https://learn.microsoft.com/en-us/powershell/microsoftgraph/overview
 3. https://learn.microsoft.com/en-us/entra/identity/devices/manage-stale-devices
 4. https://github.com/JustinVerstijnen/JV-AA-CleanEntraIDDevices/tree/main
 5. https://learn.microsoft.com/en-us/azure/automation/enable-managed-identity-for-automation
+{{% /alert %}}
 
 {{< ads >}}
 

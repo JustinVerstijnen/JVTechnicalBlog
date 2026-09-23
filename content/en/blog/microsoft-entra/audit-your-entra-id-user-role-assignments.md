@@ -63,13 +63,10 @@ Microsoft Entra ID P2 or Governance license is required. Script will continue to
 
 This very short blog post shows the capabilities of this users script. In my opnion, the GUI shows most of the information, but is not particularly good at summarizing information from multiple pages. Powershell is, as we can get information from everywhere and put it in one single file.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference>
-
-I hope my script is useful and thank you for reading.
+1. https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference
+{{% /alert %}}
 
 {{< ads >}}
 

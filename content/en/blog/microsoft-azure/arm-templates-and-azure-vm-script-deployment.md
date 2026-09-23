@@ -202,12 +202,11 @@ ARM is a great step between deploying resources completely by hand and IaC solut
 
 Thank you for visiting this webpage and I hope this was helpful.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview>
-2. <https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-windows>
+1. https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview
+2. https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-windows
+{{% /alert %}}
 
 {{< ads >}}
 

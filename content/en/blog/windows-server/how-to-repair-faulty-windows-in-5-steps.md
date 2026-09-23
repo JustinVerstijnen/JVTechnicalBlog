@@ -161,14 +161,13 @@ With these steps you can repair many common Windows issues without directly rein
 
 Thank you for reading this post and I hope it was helpful!
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
 1. https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/repair-a-windows-image
 2. https://learn.microsoft.com/nl-nl/windows-server/administration/windows-commands/sfc#syntax
 3. https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/chkdsk?tabs=hdd%2Cevent-viewer#syntax
 4. https://learn.microsoft.com/en-us/troubleshoot/windows-client/installing-updates-features-roles/additional-resources-for-windows-update
+{{% /alert %}}
 
 {{< ads >}}
 

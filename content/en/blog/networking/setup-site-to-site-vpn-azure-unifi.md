@@ -214,12 +214,13 @@ This connection allows systems at the physical site to communicate securely with
 
 Thank you for reading this post and I hope it was helpful!
 
-### Sources
-
-1. [https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways](https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways)
-2. [https://learn.microsoft.com/en-us/azure/vpn-gateway/tutorial-site-to-site-portal](https://learn.microsoft.com/en-us/azure/vpn-gateway/tutorial-site-to-site-portal)
-3. [https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-ipsecikepolicy-rm-powershell](https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-ipsecikepolicy-rm-powershell)
-4. [https://help.ui.com/hc/en-us/articles/7983431932439-UniFi-Gateway-Site-to-Site-IPsec-VPN-with-Third-Party-Gateways-Advanced](https://help.ui.com/hc/en-us/articles/7983431932439-UniFi-Gateway-Site-to-Site-IPsec-VPN-with-Third-Party-Gateways-Advanced)
+{{% alert title="Sources 🕮" color="info" %}}
+These sources helped me by writing and research for this post;
+1. https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways
+2. https://learn.microsoft.com/en-us/azure/vpn-gateway/tutorial-site-to-site-portal
+3. https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-ipsecikepolicy-rm-powershell
+4. https://help.ui.com/hc/en-us/articles/7983431932439-UniFi-Gateway-Site-to-Site-IPsec-VPN-with-Third-Party-Gateways-Advanced
+{{% /alert %}}
 
 {{< ads >}}
 

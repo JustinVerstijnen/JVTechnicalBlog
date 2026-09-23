@@ -102,13 +102,12 @@ Assigning tags automatically with Azure Policy is a great way to automate the pr
 
 Thank you for reading this blog and I hope it was helpful.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://justinverstijnen.nl/10-ways-to-use-tags-in-microsoft-azure/>
-2. <https://justinverstijnen.nl/deploy-resource-group-locks-automatically-with-azure-policy/>
-3. <https://justinverstijnen.nl/automatic-azure-boot-diagnostics-monitoring-with-azure-policy/>
+1. https://justinverstijnen.nl/10-ways-to-use-tags-in-microsoft-azure/
+2. https://justinverstijnen.nl/deploy-resource-group-locks-automatically-with-azure-policy/
+3. https://justinverstijnen.nl/automatic-azure-boot-diagnostics-monitoring-with-azure-policy/
+{{% /alert %}}
 
 {{< ads >}}
 

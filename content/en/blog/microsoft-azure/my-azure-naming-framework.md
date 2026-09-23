@@ -69,13 +69,12 @@ Here is the framework again, but then in image.
 
 Thank you for reading this post and I hope it was helpful!
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
 1. https://learn.microsoft.com/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming
 2. https://learn.microsoft.com/azure/governance/policy/overview
 3. https://learn.microsoft.com/azure/governance/policy/concepts/effects
+{{% /alert %}}
 
 {{< ads >}}
 

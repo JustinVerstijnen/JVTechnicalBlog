@@ -435,15 +435,14 @@ Bicep is very similar to Terraform and both have their advantages. I think Bicep
 
 Thank you for reading this post and I hope it was helpful!
 
-### Sources
-
-These sources helped me by writing and research for this post:
-
-1. [https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview)
-2. [https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/install](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/install)
-3. [https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-cli](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-cli)
-4. [https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-what-if](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-what-if)
-5. [https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/visual-studio-code](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/visual-studio-code)
+{{% alert title="Sources 🕮" color="info" %}}
+These sources helped me by writing and research for this post;
+1. https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview
+2. https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/install
+3. https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-cli
+4. https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-what-if
+5. https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/visual-studio-code
+{{% /alert %}}
 
 {{< ads >}}
 

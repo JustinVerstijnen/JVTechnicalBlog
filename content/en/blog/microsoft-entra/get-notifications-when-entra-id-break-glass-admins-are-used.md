@@ -183,12 +183,11 @@ Monitoring the use of your Break Glass Admins is very important. Those accounts 
 
 Thank you for reading this post and I hope it was helpful.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://azure.microsoft.com/en-us/pricing/details/monitor/>
-2. <https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics>
+1. https://azure.microsoft.com/en-us/pricing/details/monitor/
+2. https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics
+{{% /alert %}}
 
 {{< ads >}}
 

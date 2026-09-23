@@ -322,11 +322,9 @@ I only described the operational commands of using Defender in case of incident 
 
 Thank you for reading this guide and I hope it was helpful.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-- <https://learn.microsoft.com/en-us/powershell/module/defender/>
+{{% /alert %}}
 
 {{< ads >}}
 

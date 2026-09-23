@@ -197,13 +197,12 @@ Configuring these data protection measures is an important step in preventing da
 
 Thank you for taking the time to read this guide. I hope it was helpful and gives you a solid starting point for improving your data protection setup.
 
-### Sources
-
-These sources helped me by writing and research for this post:
-
-1. <https://learn.microsoft.com/en-us/purview/data-map-sensitivity-labels>
-2. <https://learn.microsoft.com/en-us/purview/data-map-sensitivity-labels-apply>
-3. <https://learn.microsoft.com/en-us/purview/dlp-overview-plan-for-dlp>
+{{% alert title="Sources 🕮" color="info" %}}
+These sources helped me by writing and research for this post;
+1. https://learn.microsoft.com/en-us/purview/data-map-sensitivity-labels
+2. https://learn.microsoft.com/en-us/purview/data-map-sensitivity-labels-apply
+3. https://learn.microsoft.com/en-us/purview/dlp-overview-plan-for-dlp
+{{% /alert %}}
 
 {{< ads >}}
 

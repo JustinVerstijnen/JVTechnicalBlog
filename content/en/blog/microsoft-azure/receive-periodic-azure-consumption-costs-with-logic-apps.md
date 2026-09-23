@@ -168,11 +168,10 @@ As we already have a base ready for Logic Apps, we can also use this to send Tea
 
 Thank you for reading this blog and I hope it was helpful.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/assign-access-acm-data>
+1. https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/assign-access-acm-data
+{{% /alert %}}
 
 {{< ads >}}
 

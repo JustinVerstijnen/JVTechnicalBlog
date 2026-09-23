@@ -236,11 +236,10 @@ Check out this guide here: <https://justinverstijnen.nl/renameable-name-tags-to-
 
 Tags in Microsoft Azure are a great addition to your environment and to make it perfect. It helps a way more when managing an environment with multiple persons or parties when tags are available or we could use some custom views based on tags. In bigger environments with multiple people managing a set of resources, Tags would be unmissable.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources>
+1. https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources
+{{% /alert %}}
 
 {{< ads >}}
 

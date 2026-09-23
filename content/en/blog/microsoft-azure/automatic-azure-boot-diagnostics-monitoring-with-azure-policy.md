@@ -250,12 +250,11 @@ Azure Policy is a great way to automate, monitor and ensure your Azure Resources
 
 I hope I helped you with this guide and thank you for visiting my website.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/azure/governance/policy/overview>
-2. <https://learn.microsoft.com/en-us/azure/virtual-machines/boot-diagnostics>
+1. https://learn.microsoft.com/en-us/azure/governance/policy/overview
+2. https://learn.microsoft.com/en-us/azure/virtual-machines/boot-diagnostics
+{{% /alert %}}
 
 {{< ads >}}
 

@@ -204,13 +204,12 @@ Azure Policy helps you on top of locks themselves to place Locks automatically o
 
 Thank you for reading this guide and I hope it was helpful.
 
-### Sources
-
+{{% alert title="Sources 🕮" color="info" %}}
 These sources helped me by writing and research for this post;
-
-1. <https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-deploy-if-not-exists>
-2. <https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources?tabs=json>
-3. <https://learn.microsoft.com/nl-nl/azure/governance/policy/how-to/remediate-resources?tabs=azure-portal#how-remediation-security-works>
+1. https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-deploy-if-not-exists
+2. https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources?tabs=json
+3. https://learn.microsoft.com/nl-nl/azure/governance/policy/how-to/remediate-resources?tabs=azure-portal#how-remediation-security-works
+{{% /alert %}}
 
 {{< ads >}}
 

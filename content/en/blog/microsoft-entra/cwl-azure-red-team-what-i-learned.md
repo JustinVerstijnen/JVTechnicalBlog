@@ -315,9 +315,9 @@ In this post, I share my experiences of the CWL Certified Azure Red Team Special
 
 I hope I gave you a good understanding of my experience with this course and would recommend it to everyone interested.
 
-### Sources
-
-- [https://cyberwarfare.live](https://cyberwarfare.live/)
+{{% alert title="Sources 🕮" color="info" %}}
+These sources helped me by writing and research for this post;
+{{% /alert %}}
 
 {{< ads >}}
 
