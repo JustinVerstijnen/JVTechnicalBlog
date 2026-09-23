@@ -2,12 +2,12 @@
 title: "How to upload PowerShell script to Gallery with Github Actions"
 date: 2025-01-02
 slug: "how-to-upload-powershell-script-to-gallery-with-github-actions"
+description: "When using the PowerShell Gallery to upload and publish your scripts and PowerShell modules to the world it's recommended to use Github Actions for CI/CD to automatically update your live packages on the PowerShell Gallery. At first, this looked somewhat complex to me but it's relatively easy."
 categories:
   - Powershell
 tags:
   - Step by Step guides
 ---
-When using the PowerShell Gallery to upload and publish your scripts and PowerShell modules to the world it's recommended to use Github Actions for CI/CD to automatically update your live packages on the PowerShell Gallery. At first, this looked somewhat complex to me but it's relatively easy.
 
 On this page I will show how I've uploaded scripts from Github to the PowerShell Gallery with using a Github Action.
 
