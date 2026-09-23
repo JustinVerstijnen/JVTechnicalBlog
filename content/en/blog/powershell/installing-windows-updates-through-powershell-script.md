@@ -2,13 +2,12 @@
 title: "Installing Windows Updates through PowerShell (script)"
 date: 2025-07-27
 slug: "installing-windows-updates-through-powershell-script"
+description: "Sometimes we want to install updates by hand because of the need for fast patching. But logging into every server and installing them manually is a hell of a task and takes a lot of time."
 categories:
   - Powershell
 tags:
   - Tools and Scripts
 ---
-
-Sometimes we want to install updates by hand because of the need for fast patching. But logging into every server and installing them manually is a hell of a task and takes a lot of time.
 
 I have made a very simple script to install Windows Updates by hand using PowerShell including logging to exactly know which updates there were installed for monitoring later on.
 
