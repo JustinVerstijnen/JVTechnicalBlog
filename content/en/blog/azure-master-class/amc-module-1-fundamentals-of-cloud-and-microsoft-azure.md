@@ -11,8 +11,6 @@ description: "This chapter is about the term `Cloud` and the fundamentals of Mic
 weight: 1
 ---
 
-This chapter is about the term "Cloud" and the fundamentals of Microsoft Azure and Cloud Services in general.
-
 ## What is "the Cloud"?
 
 The Cloud is a widely used term to say, "That runs elsewhere on the internet." There are many different definitions, but the National Institute of Standards and Technology (NIST) in the United States has identified five characteristics that a service/solution must meet to call itself a cloud service:
