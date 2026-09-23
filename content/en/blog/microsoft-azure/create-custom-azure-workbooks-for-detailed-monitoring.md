@@ -39,23 +39,17 @@ Then select `Workbooks` and open `Overview`, or choose one of the other availabl
 
 [![jv-media-1468-718a21d9fa1c.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-custom-azure-workbooks-for-detailed-monitoring-1468/jv-media-1468-718a21d9fa1c.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-custom-azure-workbooks-for-detailed-monitoring-1468/jv-media-1468-718a21d9fa1c.png)
 
-This already gives us a good idea of what is possible with Azure Workbooks.
-
-But of course, we are not limited to the templates that are available directly in the Azure portal.
+This already gives us a good idea of what is possible with Azure Workbooks. But of course, we are not limited to the templates that are available directly in the Azure portal and we will create our custom Workbook in this post later on.
 
 ---
 
 ## Step 2: Finding Workbook templates
 
-Microsoft has a public GitHub repository containing many different Azure Workbook examples and templates.
-
-You can find the repository here:
+Microsoft has a public GitHub repository containing many different Azure Workbook examples and templates. You can find that repository here:
 
 [https://github.com/microsoft/Application-Insights-Workbooks/tree/master/Workbooks](https://github.com/microsoft/Application-Insights-Workbooks/tree/master/Workbooks)
 
-There are hundreds of examples in this repository for different Azure services and monitoring scenarios.
-
-This is also a great place to look around if you want some inspiration before creating your own Workbook.
+There are hundreds of examples in this repository for different Azure services and monitoring scenarios. You can use the complete workbooks or some of the queries for some inspiration before creating your own Workbook.
 
 [![jv-media-1468-054c08b65b8e.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-custom-azure-workbooks-for-detailed-monitoring-1468/jv-media-1468-054c08b65b8e.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-custom-azure-workbooks-for-detailed-monitoring-1468/jv-media-1468-054c08b65b8e.png)
 
@@ -63,15 +57,11 @@ This is also a great place to look around if you want some inspiration before cr
 
 ## Step 3: Importing an existing Workbook
 
-Instead of creating everything from scratch, we can also import an existing Workbook.
-
-Create a new Workbook in Azure and open the `Advanced Editor`.
+Instead of creating everything from scratch, we can also import an existing Workbook. Create a new Workbook in Azure and open the `Advanced Editor`.
 
 [![jv-media-1468-b8f66398adf1.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-custom-azure-workbooks-for-detailed-monitoring-1468/jv-media-1468-b8f66398adf1.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-custom-azure-workbooks-for-detailed-monitoring-1468/jv-media-1468-b8f66398adf1.png)
 
-The Advanced Editor allows us to edit the JSON behind the Workbook.
-
-We can now copy the JSON from one of the examples on GitHub.
+The Advanced Editor allows us to edit the JSON behind the Workbook. We can now copy the JSON from one of the examples on GitHub.
 
 [![jv-media-1468-bc401700d54b.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-custom-azure-workbooks-for-detailed-monitoring-1468/jv-media-1468-bc401700d54b.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-custom-azure-workbooks-for-detailed-monitoring-1468/jv-media-1468-bc401700d54b.png)
 
@@ -161,21 +151,15 @@ Now our custom Workbook is saved and we can start improving the layout.
 
 ## Step 6: Improving the visualizations
 
-Getting the data into a Workbook is one thing, but displaying it in a useful way is just as important.
-
-There are a few simple changes we can make to improve the overview.
+Getting the data into a Workbook is one thing, but displaying it in a useful way is just as important. There are a few simple changes we can make to improve the overview. Good data visualisations are simple and give a great overview within seconds.
 
 ### 6.1: Adding titles
 
-When you have multiple graphs and metrics on the same page, clear titles make the Workbook much easier to understand.
-
-Open the `Advanced Settings` of a visualization and configure a title for the chart.
+When you have multiple graphs and metrics on the same page, clear titles make the Workbook much easier to understand. Open the `Advanced Settings` of a visualization and configure a title for the chart.
 
 ### 6.2: Changing the tile order and size
 
-You can also move the different tiles around and change their width.
-
-For example, setting two tiles to a width of `50%` allows us to place two visualizations next to each other.
+You can also move the different tiles around and change their width. For example, setting two tiles to a width of `50%` allows us to place two visualizations next to each other.
 
 This is especially useful when you want to compare different metrics without making the Workbook unnecessarily long.
 
