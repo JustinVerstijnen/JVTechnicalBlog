@@ -6,13 +6,11 @@ categories:
   - Azure Master Class
 tags:
   - Concepts
-description: >
-  Governance in Azure refers to the enforcement of rules and the establishment of standards in solutions, naming conventions...
+description: "Governance in Azure refers to the enforcement of rules and the establishment of standards in solutions, naming conventions, technology, etc. This is achieved through the management and importance of Management Groups, Subscriptions, Resource Groups, Policies, RBAC, and Budgets."
 weight: 3
 ---
-## Introduction to Govenance in Azure
 
-Governance in Azure refers to the enforcement of rules and the establishment of standards in solutions, naming conventions, technology, etc. This is achieved through the management and importance of Management Groups, Subscriptions, Resource Groups, Policies, RBAC, and Budgets.
+## Introduction to Govenance in Azure
 
 In the cloud, Governance is crucial because processes and behaviors differ significantly from on-premises hardware. Additionally, certain services can be made publicly accessible, which requires an extra layer of security.
 

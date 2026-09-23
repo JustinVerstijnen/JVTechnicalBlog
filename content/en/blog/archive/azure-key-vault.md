@@ -6,8 +6,7 @@ categories:
 - Archive
 tags:
   - Concepts
-description: >
-  Azure Key Vault is a type of vault used to store sensitive technical information, such as: Certificates, Secrets and Keys. What sets Azure...
+description: "Azure Key Vault is a type of vault used to store sensitive technical information, such as: Certificates, Secrets and Keys."
 ---
 
 Azure Key Vault is a type of vault used to store sensitive technical information, such as:

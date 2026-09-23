@@ -6,8 +6,7 @@ categories:
 - Archive
 tags:
   - Concepts
-description: >
-  More and more organizations are moving to the cloud. In order to do this succesfully, we can use the Cloud Adoption Framework which is de...
+description: "More and more organizations are moving to the cloud. In order to do this succesfully, we can use the Cloud Adoption Framework."
 ---
 More and more organizations are moving to the cloud. In order to do this succesful, we can use the Cloud Adoption Framework which is described by Microsoft.
 

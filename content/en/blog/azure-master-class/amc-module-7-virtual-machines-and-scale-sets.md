@@ -6,12 +6,8 @@ categories:
   - Azure Master Class
 tags:
   - Concepts
-description: >
-  This module explicitly covers virtual machines and virtual machines in combination with VMSS (Virtual Machine Scale Sets). Also we cover...
+description: "This module explicitly covers virtual machines and virtual machines in combination with VMSS (Virtual Machine Scale Sets). Also we cover most of the VM family names, their breakdown, and advanced VM features."
 weight: 7
----
-This module explicitly covers virtual machines and virtual machines in combination with VMSS (Virtual Machine Scale Sets). Also we cover most of the VM family names, their breakdown, and advanced VM features.
-
 ---
 
 ## Virtual Machines (VMs)

@@ -7,8 +7,7 @@ categories:
 - Azure Master Class
 tags:
 - Concepts
-description: >  
-    This chapter is about the term "Cloud" and the fundamentals of Microsoft Azure and Cloud Services in general.
+description: "This chapter is about the term `Cloud` and the fundamentals of Microsoft Azure and Cloud Services in general."
 weight: 1
 ---
 

@@ -6,8 +6,7 @@ categories:
   - Azure Master Class
 tags:
   - Concepts
-description: >
-  This Azure Master Class (AMC) chapter is all about Identity in Microsoft Azure. This means we discuss the following: Users, Groups, Devices, Enterprise Applications, Service Principals, Authentication and advanced features like COnditional Access, Identity Protection and Privileged Identity Management (PIM).
+description: "This Azure Master Class (AMC) chapter is all about Identity in Microsoft Azure. This means we discuss the following: Users, Groups, Devices, Enterprise Applications, Service Principals, Authentication and advanced features like COnditional Access, Identity Protection and Privileged Identity Management (PIM)."
 weight: 2
 ---
 

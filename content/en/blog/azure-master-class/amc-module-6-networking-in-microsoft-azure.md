@@ -6,11 +6,9 @@ categories:
   - Azure Master Class
 tags:
   - Concepts
-description: >
-  In Module 6, we will explore all the possibilities of Azure regarding networking, VPNs, load balancing methods, proxies, and gateways. This...
+description: "In Module 6, we will explore all the possibilities of Azure regarding networking, VPNs, load balancing methods, proxies, and gateways. This chapter also covers most the topics and solutions included in the AZ-700 exam, the Azure Networking certification."
 weight: 6
 ---
-In Module 6, we will explore all the possibilities of Azure regarding networking, VPNs, load balancing methods, proxies, and gateways. This chapter also covers most the topics and solutions included in the AZ-700 exam, the Azure Networking certification.
 
 Check out the AZ-700 Azure Networking Certification at: <https://learn.microsoft.com/en-us/credentials/certifications/azure-network-engineer-associate/?practice-assessment-type=certification>
 
