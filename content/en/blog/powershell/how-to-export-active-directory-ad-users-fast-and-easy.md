@@ -2,14 +2,11 @@
 title: "How to Export Active Directory (AD) users fast and easy"
 date: 2024-11-14
 slug: "how-to-export-active-directory-ad-users-fast-and-easy"
+description: "Sometimes we need to export all of our AD users. The one time for applying changes, sometimes for monitoring the inventory but often for licensing purposes. At this page I will show you how to export all your AD users fast and easy."
 categories:
   - Powershell
 tags:
   - Tools and Scripts
----
-Sometimes we need to export all of our AD users. The one time for applying changes, sometimes for monitoring the inventory but often for licensing purposes.
-
-At this page I will show you how to export all your AD users fast and easy.
 
 ---
 
