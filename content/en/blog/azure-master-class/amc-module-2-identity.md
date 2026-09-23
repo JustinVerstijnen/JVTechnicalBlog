@@ -328,17 +328,13 @@ Microsoft Entra ID supports Multi-Factor Authentication. This means that, in add
 During authentication (AuthN), it is verified whether you are truly who you say you are, and whether your identity is valid. Multi-Factor Authentication means that you can perform two or more of the following methods:
 
 - **Something you know**
-
 	- Password/PIN/Secret
-
 - **Something you have**
-
 	- A phone
 	- A FIDO hardware key
 	- A laptop
 	- A token
 - **Something you are**
-
 	- Biometric verification
 	- Facial recognition
 
