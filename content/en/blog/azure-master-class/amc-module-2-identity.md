@@ -12,9 +12,9 @@ weight: 2
 
 ## What is identity?
 
-For every service that a user accesses, it is necessary to have an identity. Access needs to be determined, and the service must know who the user is in order to open the correct environment. During **authentication**, a system will double check if a user is who it says it is which we can do in various ways today. We can only allow a password or go better and more secured by using MFA, Passkeys, physical authentication etc.
+For every service that a user accesses, it is necessary to have an identity. Access needs to be determined, and the service must know who the user is in order to open the correct environment. During `authentication`, a system will double check if a user is who it says it is which we can do in various ways today. We can only allow a password or go better and more secured by using MFA, Passkeys, physical authentication etc.
 
-Then we get the **authorization** phase; what is a user able to do after checking in is completed. Best practice is to always assign the least possible privileges. A person who performs 3 tasks does not need permissions for 200 tasks, but for the 3 tasks only. "Least privilege" is one of the 3 key principals of the Zero Trust model.
+Then we get the `authorization` phase; what is a user able to do after checking in is completed. Best practice is to always assign the least possible privileges. A person who performs 3 tasks does not need permissions for 200 tasks, but for the 3 tasks only. "Least privilege" is one of the 3 key principals of the Zero Trust model.
 
 ---
 
@@ -328,15 +328,19 @@ Microsoft Entra ID supports Multi-Factor Authentication. This means that, in add
 During authentication (AuthN), it is verified whether you are truly who you say you are, and whether your identity is valid. Multi-Factor Authentication means that you can perform two or more of the following methods:
 
 - **Something you know**
- - Password/PIN/Secret
+
+	- Password/PIN/Secret
+
 - **Something you have**
- - A phone
- - A FIDO hardware key
- - A laptop
- - A token
+
+	- A phone
+	- A FIDO hardware key
+	- A laptop
+	- A token
 - **Something you are**
- - Biometric verification
- - Facial recognition
+
+	- Biometric verification
+	- Facial recognition
 
 ### Complexity levels for MFA methods
 
@@ -369,7 +373,7 @@ With Microsoft Entra ID security defaults, all users must register for MFA but d
 
 Self-Service Password Reset is a feature of Microsoft Entra ID that allows a user to change their password without the intervention of the IT department by performing a backup method, such as MFA, an alternate private email address, or a phone number.
 
-You can find the portal to reset your password via the link below, or by pressing CTRL+ALT+DELETE on a Microsoft Entra ID-joined computer and then selecting "Change Password". Otherwise, this is the link:
+You can find the portal to reset your password via the link below, or by pressing `CTRL+ALT+DELETE` on a Microsoft Entra ID-joined computer and then selecting "Change Password". Otherwise, this is the link:
 
 <https://passwordreset.microsoftonline.com>
 
