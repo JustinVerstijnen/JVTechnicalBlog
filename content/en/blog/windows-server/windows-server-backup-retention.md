@@ -6,6 +6,7 @@ tags:
 categories:
 - Windows Server
 slug: "windows-server-backup-retention"
+description: "This page explains a simple script/task to have backup retention for Windows Server Backup."
 ---
 
 For more information about the wbadmin tool, see:
