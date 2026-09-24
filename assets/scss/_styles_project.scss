@@ -163,7 +163,10 @@ a {
 [data-bs-theme='dark'] .td-content p > a > img,
 [data-bs-theme='dark'] .td-content figure > img,
 [data-bs-theme='dark'] .td-content figure > a > img {
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.10),
+    0 2px 8px rgba(255, 255, 255, 0.08),
+    0 4px 14px rgba(0, 0, 0, 0.22);
 }
 
 /* Tables: compact width, blue header, alternating rows, rounded corners and subtle shadow */
