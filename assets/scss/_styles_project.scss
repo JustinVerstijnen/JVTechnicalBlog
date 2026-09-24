@@ -155,7 +155,7 @@ a {
 .td-content p > a > img,
 .td-content figure > img,
 .td-content figure > a > img {
-  box-shadow: 0 2px 5px rgba(14, 32, 44, 0.10);
+  box-shadow: 0 2px 5px rgba(14, 32, 44, 0.12);
 }
 
 /* Dark mode: use the same slightly deeper shadow language as the redesigned tables */
@@ -163,7 +163,7 @@ a {
 [data-bs-theme='dark'] .td-content p > a > img,
 [data-bs-theme='dark'] .td-content figure > img,
 [data-bs-theme='dark'] .td-content figure > a > img {
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
 }
 
 /* Tables: compact width, blue header, alternating rows, rounded corners and subtle shadow */
