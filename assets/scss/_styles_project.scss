@@ -1839,9 +1839,32 @@ nav.foldable-nav input:checked ~ ul.foldable {
   pointer-events: auto;
 }
 
-/* Keep the existing arrow rotation, but make it a little smoother and quicker. */
+/* Keep the existing arrow rotation, but make it a little smoother and quicker.
+ * Keep the arrow neutral on hover; only an opened/selected category uses the site accent.
+ */
 nav.foldable-nav .ul-1 .with-child > label::before {
+  color: #6c757d !important;
   transition: transform 0.24s ease, color 0.18s ease;
+}
+
+nav.foldable-nav .ul-1 .with-child > label:hover::before,
+nav.foldable-nav .ul-1 .with-child > label:focus::before {
+  color: #6c757d !important;
+}
+
+nav.foldable-nav .ul-1 .with-child > input:checked ~ label::before {
+  color: #77B0DE !important;
+}
+
+/* Dark mode: neutral arrows stay readable; opened/selected remains the site accent. */
+[data-bs-theme='dark'] nav.foldable-nav .ul-1 .with-child > label::before,
+[data-bs-theme='dark'] nav.foldable-nav .ul-1 .with-child > label:hover::before,
+[data-bs-theme='dark'] nav.foldable-nav .ul-1 .with-child > label:focus::before {
+  color: #c7cdd4 !important;
+}
+
+[data-bs-theme='dark'] nav.foldable-nav .ul-1 .with-child > input:checked ~ label::before {
+  color: #77B0DE !important;
 }
 
 /* Fallback for browsers that cannot animate to/from auto height yet. */
