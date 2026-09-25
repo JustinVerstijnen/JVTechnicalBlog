@@ -1,168 +1,265 @@
 ---
 title: "Terms and Conditions"
-description: "This page contains my general Terms and Conditions. Please review them accordingly before using my website."
+description: "This page contains the Terms and Conditions for using justinverstijnen.nl and its content."
 date: 2024-06-19
+lastmod: 2026-09-25
 slug: "terms-conditions"
 build:
   render: always
   list: never
 ---
 
-Welcome to **justinverstijnen.nl**. By accessing or using this website, its pages, posts, and tools, you agree to be bound by these Terms and Conditions.
+Welcome to **justinverstijnen.nl**.
 
-This website serves as my personal documentation platform, where I write about concepts, ideas, and technical topics I have worked through myself. While the content is primarily created to help me understand topics more deeply, I also aim to make it useful and understandable for a broader audience.
+This website is mainly my personal technical documentation platform. I use it to write down things I learn, test, build, troubleshoot, or simply want to remember later. If that information helps someone else along the way, even better.
+
+By using this website, its pages, posts, scripts, downloads, tools, or other content, you agree to the terms below.
 
 {{< ads >}}
 
-## 1. Introduction
+## 1. About this website
 
-This website is intended to share knowledge, practical insights, and educational content. I strive to explain concepts clearly and make them accessible to readers who may not already be familiar with the subject matter.
+The main purpose of this website is to share technical knowledge, practical experience, examples, and educational content.
 
-## 2. No Cookies Policy
+Most of the content is written from the perspective of one IT person sharing information with another. I try to keep things practical and understandable instead of turning every article into formal documentation.
 
-I am committed to protecting your privacy. This website uses Umami, a privacy-friendly analytics tool, to monitor page views and visitor activity in a respectful and minimal way.
+This website is not official documentation for Microsoft, Google, GitHub, Ubiquiti, or any other company or product mentioned here unless explicitly stated otherwise.
 
-Umami does not use cookies and is designed to avoid collecting unnecessary personal data or tracking your browsing behavior across websites.
+Products, services, portals, commands, licensing, interfaces, best practices, and technical recommendations can change over time. Always check current official documentation when it matters.
 
-Your privacy is important to me, and I believe in offering a browsing experience that is both informative and respectful of your data.
+## 2. Privacy, cookies and analytics
+
+I prefer to keep tracking on this website limited, but the website is no longer completely cookie-free.
+
+There are two main reasons why website-related data may be processed: basic website analytics and advertising.
+
+### 2.1 Umami Analytics
+
+I use **Umami** to get basic insight into how the website is being used, for example which pages are viewed and general website traffic.
+
+Umami is a privacy-focused analytics platform and is designed to work without cookies. It is separate from Google advertising on this website.
+
+The goal of using Umami is simply to understand whether pages are being read and which content is useful to visitors, rather than to follow individual visitors around the internet.
+
+### 2.2 Google advertising
+
+This website may display advertisements provided by **Google**, including Google AdSense.
+
+Google and its advertising partners may use technologies such as cookies, web beacons, IP addresses, and other identifiers to serve, measure, limit the frequency of, and report on advertisements.
+
+Depending on your location, consent choices, and Google's settings, advertisements may be personalized or non-personalized. Even non-personalized advertisements may use cookies or similar technologies for things such as frequency capping and aggregated advertising reports.
+
+Google may also use information from visits to this website or other websites when personalized advertising is allowed.
+
+You can read more about how Google uses information from partner websites here:
+
+[How Google uses information from sites or apps that use its services](https://policies.google.com/technologies/partner-sites)
+
+You can manage Google advertising personalization here:
+
+[Google Ads Settings](https://adssettings.google.com/)
+
+Where consent is legally required, advertising cookies or similar technologies should only be used in line with the consent choices provided to you.
+
+### 2.3 Third-party services
+
+Some content may load resources from third-party services. Those services may process technical information needed to provide their functionality.
+
+Once you interact with an external service or leave a Justin Verstijnen-owned domain, the privacy policy and terms of that external service also apply.
 
 ## 3. Advertisements
 
-This website, including its subpages and subdomains, may contain advertisements.
+Running a website, hosting content, testing cloud services, and maintaining technical examples costs time and money.
 
-Running a website and testing cloud-based solutions takes time and money. To help cover some of these costs, limited advertisements may be displayed.
+To help cover part of those costs, advertisements may be shown on this website, including advertisements provided by Google.
 
-Ads will be kept to a minimum to maintain a good user experience. They will only appear in non-intrusive locations, such as at the top or bottom of pages, and not in between the main content.
+Advertisements can appear in different locations on a page. I try to keep them reasonably limited and avoid making them unnecessarily disruptive to the main content.
 
-## 4. Non-Commercial Purpose
+The presence of an advertisement does not mean that I personally recommend, approve, or have tested the advertised product or service.
 
-This website is created primarily for educational and informational purposes. I do not offer products or services for sale through this website, and the main goal is not commercial profit.
+Unless I explicitly say otherwise, advertisers do not influence the technical opinions, tutorials, scripts, or other editorial content published on this website.
 
-My aim is to share useful knowledge freely and contribute to a better internet by publishing high-quality information that anyone can access.
+## 4. Purpose of the website
 
-This website is completely free to use. However, maintaining and hosting a website requires time, effort, and money. To help compensate for those costs, there may be limited advertisements and donation options. Even so, the primary purpose of this website remains non-commercial.
+This website is primarily educational and informational.
 
-## 5. Focus Areas
+The content is made freely available and the main goal is still knowledge sharing, even though advertising or donation options may be used to help cover website-related costs.
 
-This website mainly focuses on the following areas:
+I do not provide a support contract, service-level agreement, consultancy agreement, or other professional service simply because information is published here or because you use it.
 
-- **Education**: The primary goal is to provide educational resources that help readers expand their knowledge in a practical and understandable way
-- **Knowledge Sharing**: I aim to build a useful repository of information across a broad range of topics. My content is intended to go beyond simply presenting solutions by also explaining the reasoning behind them
-- **Technical Innovation**: I am passionate about technology and its ability to transform the world. This website highlights technical developments, ideas, and implementations, with the goal of encouraging curiosity and deeper understanding
+Nothing published on this website should automatically be treated as professional, legal, financial, compliance, security, or other specialist advice for your specific situation.
 
-{{< ads >}}
+## 5. Using information from this website
 
-## 6. User Responsibilities
+You are welcome to learn from and use the technical information on this website.
 
-As a user of this website, you are expected to use the information and resources provided here responsibly.
+That includes things such as:
 
-You agree not to misuse the knowledge shared on this site. You are also responsible for ensuring that your use of any information complies with the laws and regulations that apply in your country or jurisdiction.
+- commands
+- scripts
+- configuration examples
+- troubleshooting steps
+- architectural ideas
+- technical explanations
+- tutorials
+- recommendations
 
-I do not accept responsibility for any damage, loss, or consequences resulting from the use or implementation of information shared on this website, in responses to posts, or in any other form of communication.
+However, you are responsible for deciding whether something is suitable for your own environment.
 
-## 7. Content Accuracy, Practical Use and Reporting Problems
+A command that works perfectly in my lab or environment may behave differently in yours. A setting that makes sense for one tenant, network, server, endpoint, or organization may be a bad choice somewhere else.
 
-I make every effort to ensure that the content on this website is accurate and reliable. However, I do **not** guarantee that all information is always complete, error-free, or fully up to date.
+Before using information in a production environment, I strongly recommend that you understand what it does, check current vendor documentation, make appropriate backups, and test it first where possible.
 
-Users are encouraged to verify any information before relying on it for important, legal, financial, technical, or safety-critical purposes.
+You are also responsible for making sure that your use of the information complies with the laws, regulations, contracts, licenses, security requirements, and internal policies that apply to you.
 
-Where possible, I include the resources and references used to create my content at the bottom of relevant pages.
+## 6. Accuracy and outdated information
 
-In my writing, I often aim for practical and efficient solutions with minimal complexity. Although I try to follow best practices and general guidelines where appropriate, the main goal of this website is knowledge transfer.
+I make a reasonable effort to keep information accurate, useful, and understandable, but I cannot promise that every page is always complete, error-free, or fully up to date.
 
-Some of the solutions or ideas shared here may be suitable for practical or production use, but they may come with limited support or no support at all.
+Technology changes quickly. A post can be correct when written and become outdated later because a vendor changes a portal, API, product name, feature, command, license, security recommendation, or default setting.
 
-At the end of some posts, you can find some quiz questions to check your own knowledge of the content of the blog posts. Answers given are not saved, sent or used in any form. All types of checking your answers are done using front-end code only, so on your local device.
+Dates on posts can help you judge how old information is, but age alone does not tell you whether something is still correct.
 
-The primary language of this website is English, even though my native language is Dutch. I aim to write in a way that makes the content understandable to as many people as possible.
+For important, production, security-sensitive, legal, financial, or business-critical changes, verify the information with current official documentation before relying on it.
 
-If you find unexpected problems or issues on this website like typing errors, outdated or incorrect information or technical problems, you can report an issue at the end of the page, using the report button:
+Where useful, I include references or source material in posts so you can check the original information yourself.
 
-[![jv-media-152-8e2318c2ddfb.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/terms-conditions-152/jv-media-152-8e2318c2ddfb.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/terms-conditions-152/jv-media-152-8e2318c2ddfb.png)
+### 6.1 Reporting problems
 
-This will open the issue form on Github which is a simple form that asks you what exactly is your problem with the website.
+If you find a typo, outdated instruction, broken link, incorrect technical detail, or another problem, feel free to report it.
 
-[![jv-media-152-4522945ad0f7.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/terms-conditions-152/jv-media-152-4522945ad0f7.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/terms-conditions-152/jv-media-152-4522945ad0f7.png)
+Some pages contain a report button that opens a GitHub issue form. Please include enough information for me to understand what needs to be checked.
 
-Please submit your issue and I will aim to fix the problem as soon as possible!
+I will try to correct genuine problems when I can, but I cannot promise a specific response or resolution time.
 
-## 8. Use of Artificial Intelligence (AI)
+## 7. Use at your own risk and liability
+
+Technical content can have real-world consequences. A PowerShell command, firewall rule, Conditional Access policy, DNS change, script, registry change, cloud configuration, or other technical action can cause unexpected results when used incorrectly or in a different environment.
+
+For that reason, all information and materials on this website are provided on an **as-is** and **use-at-your-own-risk** basis.
+
+You remain responsible for what you do with the information.
+
+To the maximum extent permitted by applicable law, I am not liable for damage, loss, or other consequences resulting from the use, misuse, interpretation, copying, modification, or implementation of information from this website.
+
+This includes, where applicable:
+
+- loss or corruption of data
+- system or service outages
+- loss of availability
+- configuration mistakes
+- security incidents
+- loss of revenue, profit, or business
+- business interruption
+- additional costs
+- loss of reputation or goodwill
+- reputational damage
+- third-party claims
+- other direct or indirect financial or non-financial loss
+
+This also applies when information was incomplete, outdated, incorrect, misunderstood, or used in an environment for which it was not originally written.
+
+Nothing in these Terms is intended to exclude or limit liability where doing so is not permitted by applicable law.
+
+## 8. Scripts, downloads and tools
+
+Some pages may include scripts, code, downloadable files, calculators, or other tools.
+
+I try to publish material that is useful and safe, but you should still review scripts and code before running them and understand what they change.
+
+Do not assume that a script is suitable for production simply because it is available on this website.
+
+Unless explicitly stated otherwise, tools and scripts are provided without guaranteed support, maintenance, compatibility, availability, or future updates.
+
+If a script or project contains its own license, that license takes priority for the code covered by it.
+
+## 9. Use of Artificial Intelligence (AI)
 
 Some content on this website may include material generated or supported by Artificial Intelligence (AI).
 
-I remain the final person responsible for reviewing, editing, and publishing the content. In some cases, content may be written fully by me. In other cases, AI may be used to generate a first draft or baseline, which I then improve, expand, and combine with personal experience or practical examples.
+I remain the person who decides what gets published. AI may be used for things such as creating a first draft, improving structure, helping with explanations, or generating part of a script or image. I may then review, edit, test, expand, or combine that material with my own practical experience.
 
-### 8.1 AI Content Tagging
+AI-generated content can still contain mistakes. The same rules about accuracy, verification, and use at your own risk apply to AI-assisted content.
 
-To maintain transparency, pages that contain AI-generated content are tagged  on the top of the page with:
+### 9.1 AI Content Tagging
+
+Where I consider it relevant for transparency, content that contains AI-generated material may be tagged with:
 
 `AI-Generated-Content`
 
-[![jv-media-152-780bfb38de10.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/terms-conditions-152/jv-media-152-780bfb38de10.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/terms-conditions-152/jv-media-152-780bfb38de10.png)
+A tag does not necessarily mean that the complete page was generated by AI. It can also mean that only part of the text, code, image, or other content involved AI assistance.
 
-This tag means that **any part** of the page may contain AI-generated content, even if only a small portion of the content was created with AI assistance.
+For example, tagged content can be found here:
 
-You can view all tagged pages here:
+[AI Generated Content on justinverstijnen.nl](https://justinverstijnen.nl/tags/ai-generated-content/)
 
-[AI-Generated-Content tag overview](https://flightblog.justinverstijnen.nl/tags/ai-generated-content/)
+[AI Generated Content on the Flight Blog](https://flightblog.justinverstijnen.nl/tags/ai-generated-content/)
 
-### 8.2 Scope of AI Usage
+### 9.2 Scope of AI usage
 
-Section 8 applies to the following types of content:
+AI assistance may be used for:
 
 - blog post content
 - text
 - images
 - scripts
+- code examples
 
-Section 8 does **not** apply to:
+Not every use of spelling correction, translation, formatting, metadata, or other small editorial assistance will necessarily receive an AI tag.
 
-- translations of blog posts
-- featured images
-- SEO/SEA information
-- other site-specific technical or administrative data
+## 10. Re-use and re-publishing
 
-## 9. Re-use or Re-publishing My Content
+One of the main reasons this website exists is to make technical knowledge useful to other people.
 
-The main purpose of this website is to help people by sharing tutorials, ideas, and useful knowledge.
+You may use technical ideas, commands, examples, and scripts from the website in your own work or environment, subject to the terms on this page and any separate license that applies.
 
-All content is made freely available because I believe in open access to information. However, if you copy and republish content exactly as it appears here, I kindly ask that you provide proper credit by linking back to the original source.
+Using information is different from re-publishing my content.
 
-Your acknowledgment is appreciated and helps support the continued availability of this resource.
+If you copy or re-publish a substantial part of an article, image, guide, or other original content, please clearly credit the source and link back to the original page.
 
-{{< ads >}}
+Do not present my original content as if you created it yourself.
 
-## 10. External Links and Tools
+Third-party trademarks, screenshots, documentation, code, images, or other materials referenced on this website remain subject to the rights and licenses of their respective owners.
 
-This website may contain links to external websites, tools, or services that are not operated or maintained by me.
+## 11. External links and third-party tools
 
-I do not control the content, privacy policies, security, or practices of third-party websites, and I cannot accept responsibility for any issues that may arise from visiting or using them.
+This website may link to websites, documentation, downloads, tools, products, or services operated by other parties.
 
-I make every effort to link only to reputable and trustworthy sources. However, you are responsible for reviewing the terms, privacy policies, and safety of any external websites you choose to use.
+I do not control those external services and cannot guarantee their content, security, privacy practices, availability, accuracy, or future behavior.
 
-While I try to share safe and reliable links, I cannot guarantee the security, legitimacy, or long-term availability of third-party content.
+A link from this website does not automatically mean that I endorse everything on the linked website.
 
-These Terms and Conditions apply only to content and tools provided directly through Justin Verstijnen-owned domains, accounts, and email communication.
+You are responsible for checking whether an external website, download, tool, or service is suitable and safe for your own use.
 
-This also includes my tools pages and the tools hosted there. Once you leave these domains, you are subject to the terms and policies of the external website or service you visit.
+Once you leave a Justin Verstijnen-owned domain, the terms and privacy policies of the external service apply.
 
-## 11. Changes to these terms
+## 12. Availability and changes
 
-I reserve the right to update or modify these Terms and Conditions at any time without prior notice.
+I may change, move, update, or remove website content at any time.
 
-Any changes will be posted on this page. By continuing to use the website after changes have been published, you acknowledge and accept the updated Terms and Conditions.
+I also cannot guarantee that this website, a specific page, download, script, image, tool, or external reference will always remain available.
 
-## 12. Contact
+Links may break, products may disappear, and old content may eventually be archived or removed.
 
-If you have questions, concerns, or feedback regarding these Terms and Conditions, you are welcome to get in touch.
+## 13. Changes to these Terms
 
-You can find my contact details on the [About](https://justinverstijnen.nl/about) page.
+These Terms and Conditions may be updated when the website, its features, advertising, analytics, or the way content is published changes.
 
-## 13. Conclusion
+The latest version will be available on this page.
 
-Thank you for visiting my website.
+Continuing to use the website after an update means that the current version of these Terms applies to your use of the website.
 
-I hope you find the educational content, technical explanations, and shared knowledge valuable. This website is intended as a personal documentation space and a place to share ideas, experiences, and practical knowledge with the community, without excessive advertising or strong commercial interests.
+## 14. Contact
+
+If you have a question about these Terms, spot something that is incorrect, or want to report a problem, you can contact me.
+
+My contact details are available on the [About](https://justinverstijnen.nl/about/) page.
+
+## 15. Final note
+
+The idea behind this website is simple: share useful technical knowledge with other people without pretending that a blog post can account for every possible environment.
+
+Use the information, learn from it, improve it where needed, and always check what a change will do before applying it somewhere important.
 
 ---
 
