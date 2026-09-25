@@ -2733,3 +2733,40 @@ body:not(.home-navbar-transparent) .td-navbar .td-search__input.form-control:foc
     rgba(157, 206, 245, 0.60) 100%
   );
 }
+
+/* =========================================================
+   Blog RSS button - compact circular button
+   ========================================================= */
+
+/* Make the RSS button a true circle and roughly 25% smaller. */
+.td-blog .td-rss-button {
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border-radius: 50% !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.td-blog .td-rss-button .fa-rss,
+.td-blog .td-rss-button .fa-rss-square,
+.td-blog .td-rss-button i {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Keep the circular RSS button consistent in dark mode. */
+[data-bs-theme="dark"] .td-blog .td-rss-button {
+  background-color: #77B0DE;
+  border-color: #77B0DE;
+  color: #0f1720;
+}
+
+[data-bs-theme="dark"] .td-blog .td-rss-button:hover,
+[data-bs-theme="dark"] .td-blog .td-rss-button:focus {
+  background-color: #8fc0e7;
+  border-color: #8fc0e7;
+  color: #0f1720;
+}
