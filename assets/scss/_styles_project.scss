@@ -746,6 +746,16 @@ body:not(.home-navbar-transparent) .td-navbar .td-search .form-control:-ms-input
   color: #77B0DE !important;
 }
 
+/* Keep the main sidebar/blog section title neutral, even when Docsy marks the
+ * parent section as active because a child page is currently open.
+ */
+.td-sidebar-nav__section-title,
+.td-sidebar-nav__section-title a,
+.td-sidebar-nav__section-title a.active,
+.td-sidebar-nav__section-title a[aria-current='page'] {
+  color: #5f6368 !important;
+}
+
 /* Dark mode: neutral items remain readable; hover/focus and active/current
  * items keep the same light-blue site accent.
  */
@@ -777,6 +787,14 @@ body:not(.home-navbar-transparent) .td-navbar .td-search .form-control:-ms-input
 [data-bs-theme='dark'] .td-sidebar-nav .td-sidebar-link__page.active,
 [data-bs-theme='dark'] .td-sidebar-nav a[aria-current='page'] {
   color: #77B0DE !important;
+}
+
+/* Dark mode equivalent for the main sidebar/blog section title. */
+[data-bs-theme='dark'] .td-sidebar-nav__section-title,
+[data-bs-theme='dark'] .td-sidebar-nav__section-title a,
+[data-bs-theme='dark'] .td-sidebar-nav__section-title a.active,
+[data-bs-theme='dark'] .td-sidebar-nav__section-title a[aria-current='page'] {
+  color: #c7cdd4 !important;
 }
 
 /* Add breathing room below code blocks and code cards */
