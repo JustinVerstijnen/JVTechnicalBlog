@@ -707,8 +707,9 @@ body:not(.home-navbar-transparent) .td-navbar .td-search .form-control:-ms-input
 }
 
 /* Sidebar navigation colors
- * Keep normal and hover states neutral.
- * Only the active/current item uses the site accent color.
+ * Normal items stay neutral. Only the item being hovered/focused and the
+ * active/current item use the site accent color. This avoids a parent hover
+ * state turning multiple sidebar entries blue at once.
  */
 .td-sidebar-nav a,
 .td-sidebar .nav-link,
@@ -720,21 +721,20 @@ body:not(.home-navbar-transparent) .td-navbar .td-search .form-control:-ms-input
   color: #5f6368 !important;
 }
 
+/* Hover/focus: only the actual item under the pointer becomes theme blue. */
 .td-sidebar-nav a:hover,
-.td-sidebar-nav a:focus,
+.td-sidebar-nav a:focus-visible,
 .td-sidebar .nav-link:hover,
-.td-sidebar .nav-link:focus,
+.td-sidebar .nav-link:focus-visible,
 .td-sidebar-link:hover,
-.td-sidebar-link:focus,
-.td-sidebar-nav__section-title:hover,
-.td-sidebar-nav__section-title:focus,
+.td-sidebar-link:focus-visible,
 .td-sidebar-nav__section-title a:hover,
-.td-sidebar-nav__section-title a:focus,
+.td-sidebar-nav__section-title a:focus-visible,
 .td-sidebar-nav .td-sidebar-link__page:hover,
-.td-sidebar-nav .td-sidebar-link__page:focus,
+.td-sidebar-nav .td-sidebar-link__page:focus-visible,
 .td-sidebar-nav .nav-item summary:hover,
-.td-sidebar-nav .nav-item summary:focus {
-  color: #5f6368 !important;
+.td-sidebar-nav .nav-item summary:focus-visible {
+  color: #77B0DE !important;
 }
 
 /* Active/current sidebar item */
@@ -746,8 +746,8 @@ body:not(.home-navbar-transparent) .td-navbar .td-search .form-control:-ms-input
   color: #77B0DE !important;
 }
 
-/* Dark mode sidebar navigation: neutral items stay readable,
- * while the selected/current item keeps the light-blue accent.
+/* Dark mode: neutral items remain readable; hover/focus and active/current
+ * items keep the same light-blue site accent.
  */
 [data-bs-theme='dark'] .td-sidebar-nav a,
 [data-bs-theme='dark'] .td-sidebar .nav-link,
@@ -755,24 +755,22 @@ body:not(.home-navbar-transparent) .td-navbar .td-search .form-control:-ms-input
 [data-bs-theme='dark'] .td-sidebar-nav__section-title,
 [data-bs-theme='dark'] .td-sidebar-nav__section-title a,
 [data-bs-theme='dark'] .td-sidebar-nav .td-sidebar-link__page,
-[data-bs-theme='dark'] .td-sidebar-nav .nav-item summary,
-[data-bs-theme='dark'] .td-sidebar-nav a:hover,
-[data-bs-theme='dark'] .td-sidebar-nav a:focus,
-[data-bs-theme='dark'] .td-sidebar .nav-link:hover,
-[data-bs-theme='dark'] .td-sidebar .nav-link:focus,
-[data-bs-theme='dark'] .td-sidebar-link:hover,
-[data-bs-theme='dark'] .td-sidebar-link:focus,
-[data-bs-theme='dark'] .td-sidebar-nav__section-title:hover,
-[data-bs-theme='dark'] .td-sidebar-nav__section-title:focus,
-[data-bs-theme='dark'] .td-sidebar-nav__section-title a:hover,
-[data-bs-theme='dark'] .td-sidebar-nav__section-title a:focus,
-[data-bs-theme='dark'] .td-sidebar-nav .td-sidebar-link__page:hover,
-[data-bs-theme='dark'] .td-sidebar-nav .td-sidebar-link__page:focus,
-[data-bs-theme='dark'] .td-sidebar-nav .nav-item summary:hover,
-[data-bs-theme='dark'] .td-sidebar-nav .nav-item summary:focus {
+[data-bs-theme='dark'] .td-sidebar-nav .nav-item summary {
   color: #c7cdd4 !important;
 }
 
+[data-bs-theme='dark'] .td-sidebar-nav a:hover,
+[data-bs-theme='dark'] .td-sidebar-nav a:focus-visible,
+[data-bs-theme='dark'] .td-sidebar .nav-link:hover,
+[data-bs-theme='dark'] .td-sidebar .nav-link:focus-visible,
+[data-bs-theme='dark'] .td-sidebar-link:hover,
+[data-bs-theme='dark'] .td-sidebar-link:focus-visible,
+[data-bs-theme='dark'] .td-sidebar-nav__section-title a:hover,
+[data-bs-theme='dark'] .td-sidebar-nav__section-title a:focus-visible,
+[data-bs-theme='dark'] .td-sidebar-nav .td-sidebar-link__page:hover,
+[data-bs-theme='dark'] .td-sidebar-nav .td-sidebar-link__page:focus-visible,
+[data-bs-theme='dark'] .td-sidebar-nav .nav-item summary:hover,
+[data-bs-theme='dark'] .td-sidebar-nav .nav-item summary:focus-visible,
 [data-bs-theme='dark'] .td-sidebar-nav a.active,
 [data-bs-theme='dark'] .td-sidebar .nav-link.active,
 [data-bs-theme='dark'] .td-sidebar-link.active,
@@ -1840,7 +1838,8 @@ nav.foldable-nav input:checked ~ ul.foldable {
 }
 
 /* Keep the existing arrow rotation, but make it a little smoother and quicker.
- * Keep the arrow neutral on hover; only an opened/selected category uses the site accent.
+ * The arrow follows the same interaction as the category text: neutral normally,
+ * theme blue on hover/focus and while the category is opened.
  */
 nav.foldable-nav .ul-1 .with-child > label::before {
   color: #6c757d !important;
@@ -1848,21 +1847,21 @@ nav.foldable-nav .ul-1 .with-child > label::before {
 }
 
 nav.foldable-nav .ul-1 .with-child > label:hover::before,
-nav.foldable-nav .ul-1 .with-child > label:focus::before {
-  color: #6c757d !important;
+nav.foldable-nav .ul-1 .with-child > label:focus-visible::before {
+  color: #77B0DE !important;
 }
 
 nav.foldable-nav .ul-1 .with-child > input:checked ~ label::before {
   color: #77B0DE !important;
 }
 
-/* Dark mode: neutral arrows stay readable; opened/selected remains the site accent. */
-[data-bs-theme='dark'] nav.foldable-nav .ul-1 .with-child > label::before,
-[data-bs-theme='dark'] nav.foldable-nav .ul-1 .with-child > label:hover::before,
-[data-bs-theme='dark'] nav.foldable-nav .ul-1 .with-child > label:focus::before {
+/* Dark mode: neutral arrows stay readable; hover/focus and opened stay accented. */
+[data-bs-theme='dark'] nav.foldable-nav .ul-1 .with-child > label::before {
   color: #c7cdd4 !important;
 }
 
+[data-bs-theme='dark'] nav.foldable-nav .ul-1 .with-child > label:hover::before,
+[data-bs-theme='dark'] nav.foldable-nav .ul-1 .with-child > label:focus-visible::before,
 [data-bs-theme='dark'] nav.foldable-nav .ul-1 .with-child > input:checked ~ label::before {
   color: #77B0DE !important;
 }
