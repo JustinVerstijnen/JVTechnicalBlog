@@ -6,12 +6,8 @@ tags:
 - Step by Step Guides
 categories:
 - Azure Virtual Desktop
-description: "In this post, I will be showing how to use Session Shadowing with Azure Virtual Desktop. Shadowing is a option we had in the past with Remote Desktop Services, and before that Terminal Services."
+description: "We can use Session Shadowing to help a user by taking over their Azure Virtual Desktop session without the use of 3rd party software. However, this is disabled by default for security reasons, but in this post I will show you how to configure Session Shadowing and how we can use it. We must create a security group of users which are allowed to use shadow. Then we need to enable the option and whitelist our created group to be able to use Shadowing."
 hidden: false
----
-
-We can use Session Shadowing to help a user by taking over their Azure Virtual Desktop session without the use of 3rd party software. However, this is disabled by default for security reasons, but in this post I will show you how to configure Session Shadowing and how we can use it.
-We must create a security group of users which are allowed to use shadow. Then we need to enable the option and whitelist our created group to be able to use Shadowing.
 ---
 
 ## Step 1: Create a security group for allowed Shadow users
