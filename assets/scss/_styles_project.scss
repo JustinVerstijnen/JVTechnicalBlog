@@ -92,6 +92,17 @@ nav.foldable-nav .ul-1 .with-child>input:checked~label::before { color: #77B0DE;
 
 a { color: #4b92cb; text-decoration: none; }
 
+/* Mobile: allow long links in blog content to wrap instead of overflowing */
+@media (max-width: 767.98px) {
+  .td-content p a,
+  .td-content li a,
+  .td-content td a,
+  .td-content th a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
+
 .td-heading-self-link { color: #77B0DE; }
 
 .td-content p code, .td-content li > code, .td-content table code { background-color: rgba(119, 176, 222, 0.15) !important; }
