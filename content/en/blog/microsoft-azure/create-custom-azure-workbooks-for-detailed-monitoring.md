@@ -171,7 +171,7 @@ For quick health checks, this can make it easier to compare the different values
 
 [![jv-media-1468-580ef53592cd.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-custom-azure-workbooks-for-detailed-monitoring-1468/jv-media-1468-580ef53592cd.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/create-custom-azure-workbooks-for-detailed-monitoring-1468/jv-media-1468-580ef53592cd.png)
 
-### Using a grid view
+### 6.4 Using a grid view
 
 A grid view is useful when we want to see information from multiple Virtual Machines in one overview.
 
