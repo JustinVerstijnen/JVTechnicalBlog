@@ -1,5 +1,6 @@
 ---
 title: Microsoft Cloud & Infrastructure Blog
+linkTitle: Blog
 seo_title: Microsoft Cloud & Infrastructure Blog
 description: Technical articles, guides and hands-on experience focused on Microsoft Azure, Azure Virtual Desktop, Microsoft Entra, Intune, Networking, PowerShell, Windows Server and Security.
 aliases: [/blog/*]
