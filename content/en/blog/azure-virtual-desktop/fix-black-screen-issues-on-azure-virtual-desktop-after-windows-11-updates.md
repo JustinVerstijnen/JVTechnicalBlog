@@ -131,6 +131,7 @@ These sources helped me by writing and research for this post;
 
 1. https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-25h2#devices-might-experience-a-black-screen-or-desktop-loading-issues-after-sign-in
 2. https://learn.microsoft.com/en-us/troubleshoot/windows-client/group-policy/use-group-policy-to-deploy-known-issue-rollback
+3. https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-25h2#5006msgdesc
 {{% /alert %}}
 
 {{< ads >}}
