@@ -28,7 +28,25 @@ The issue affects Windows 11 version 24H2, Windows 11 version 25H2 and Windows 1
 Source: [https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-25h2#5006msgdesc](https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-25h2#5006msgdesc)
 {{% /alert %}}
 
+In this post, I will give a temporary fix which helps minimize this problem. However, this is only possible through Group Policy at this time.
+
 {{< ads >}}
+
+---
+
+## What is causing the black screen?
+
+As we want to know the technical reason of this problem, the black screen itself is not caused by the Azure Virtual Desktop connection failing. The user is already signed in to Windows, but the Windows shell does not start correctly.
+
+Microsoft has confirmed that the black screen is caused by explorer.exe crashing during shell startup. Explorer.exe is responsible for loading important parts of the Windows desktop, including the taskbar, Start menu and File Explorer.
+
+When explorer.exe crashes during the sign-in process, the AVD session itself can remain active but Windows never finishes loading the desktop. This explains why manually starting explorer.exe from Task Manager can immediately make the desktop available again.
+
+The issue has mainly been observed on Azure Virtual Desktop session hosts using FSLogix, and Microsoft states that it seems to occur more frequently with some existing user profiles.
+
+{{% alert title="Root cause" color="info" %}}
+At the time of writing, Microsoft has not published the root cause yet. It is confirmed that a Windows change introduced with update KB5120998 and included in subsequent updates can cause explorer.exe to crash during shell startup. Microsoft has also confirmed the higher occurrence in AVD environments using FSLogix, but has not documented exactly why FSLogix profiles trigger the problem more frequently. We hope to learn more from Microsoft in the near future.
+{{% /alert %}}
 
 ---
 
@@ -36,63 +54,40 @@ Source: [https://learn.microsoft.com/en-us/windows/release-health/status-windows
 
 For environments where this happens too often, Microsoft has released a Known Issue Rollback package (KIR). A KIR disables only the Windows change which is causing the problem instead of uninstalling the complete Windows update. Microsoft provides a different KIR package depending on the Windows 11 version you use.
 
-| Windows 11 24H2 | Windows 11 25H2 | Windows 11 26H1 |
-| --- | --- | --- |
+<a class="btn btn-primary" href="https://download.microsoft.com/download/8c71622d-e0eb-4838-b25c-ddb99a7bf971/Windows%2011%2024H2%2C%20Windows%2011%2025H2%20and%20Windows%20Server%202025%20KB5124010%20260924_20021%20Known%20Issue%20Rollback.msi" target="_blank" rel="noreferrer">Windows 11 24H2</a>
 
-| <a class="btn btn-primary" href="https://download.microsoft.com/download/8c71622d-e0eb-4838-b25c-ddb99a7bf971/Windows%2011%2024H2%2C%20Windows%2011%2025H2%20and%20Windows%20Server%202025%20KB5124010%20260924_20021%20Known%20Issue%20Rollback.msi" target="_blank" rel="noreferrer">Download KIR for Windows 11 24H2 / 25H2</a>
+<a class="btn btn-primary" href="https://download.microsoft.com/download/8c71622d-e0eb-4838-b25c-ddb99a7bf971/Windows%2011%2024H2%2C%20Windows%2011%2025H2%20and%20Windows%20Server%202025%20KB5124010%20260924_20021%20Known%20Issue%20Rollback.msi" target="_blank" rel="noreferrer">Windows 11 25H2</a>
 
-| <a class="btn btn-primary" href="https://download.microsoft.com/download/8c71622d-e0eb-4838-b25c-ddb99a7bf971/Windows%2011%2024H2%2C%20Windows%2011%2025H2%20and%20Windows%20Server%202025%20KB5124010%20260924_20021%20Known%20Issue%20Rollback.msi" target="_blank" rel="noreferrer">Download KIR for Windows 11 24H2 / 25H2</a>
+<a class="btn btn-primary" href="https://download.microsoft.com/download/09efb4c6-54f4-4e63-83c7-4314187230bf/Windows%2011%2026H1%20KB5124006%20260924_20071%20Known%20Issue%20Rollback.msi" target="_blank" rel="noreferrer">Windows 11 26H1</a>
 
-| <a class="btn btn-primary" href="https://download.microsoft.com/download/09efb4c6-54f4-4e63-83c7-4314187230bf/Windows%2011%2026H1%20KB5124006%20260924_20071%20Known%20Issue%20Rollback.msi" target="_blank" rel="noreferrer">Download KIR for Windows 11 26H1</a>
+After downloading the package, proceed to the next steps.
 
-|
+### Deploy the KIR using Group Policy
 
-### Windows 11 24H2 and 25H2
+Download the correct MSI package for your Windows version and install it on your management server which you use to manage Group Policy. The policy definition will be installed in:
 
-Use the following Microsoft KIR package:
+- C:\Windows\PolicyDefinitions
 
-<a class="btn btn-primary" href="https://download.microsoft.com/download/8c71622d-e0eb-4838-b25c-ddb99a7bf971/Windows%2011%2024H2%2C%20Windows%2011%2025H2%20and%20Windows%20Server%202025%20KB5124010%20260924_20021%20Known%20Issue%20Rollback.msi" target="_blank" rel="noreferrer">Download KIR for Windows 11 24H2 / 25H2</a>
+If you use a Group Policy Central Store, copy the installed ADMX and ADML files to your Central Store (`\\domain.local\SYSVOL\domain.local\Policies\PolicyDefinitions\`) as you would with other administrative templates.
 
-### Windows 11 26H1
-
-Use this package when your AVD session hosts are running Windows 11 26H1:
-
-<a class="btn btn-primary" href="https://download.microsoft.com/download/09efb4c6-54f4-4e63-83c7-4314187230bf/Windows%2011%2026H1%20KB5124006%20260924_20071%20Known%20Issue%20Rollback.msi" target="_blank" rel="noreferrer">Download KIR for Windows 11 26H1</a>
-
----
-
-## Deploy the KIR using Group Policy
-
-Download the correct MSI package for your Windows version and install it on the computer you use to manage Group Policy.
-
-The policy definition will be installed in:
-
-{{< card code=true header="**Plain text**" lang="text" >}}
-C:\Windows\PolicyDefinitions
-{{< /card >}}
-
-If you use a Group Policy Central Store, copy the installed ADMX and ADML files to your Central Store as you would with other administrative templates.
-
-Now open the Group Policy Management Console (**gpmc.msc**) and create a new Group Policy or use an existing policy which is assigned to your Azure Virtual Desktop session hosts.
+Now open the Group Policy Management Console (`gpmc.msc`) and create a new Group Policy or use an existing policy which is assigned to your Azure Virtual Desktop session hosts.
 
 Navigate to:
 
-_Computer Configuration - Administrative Templates - Known Issue Rollback policy installed by the KIR package_
+_`_Computer Configuration - Administrative Templates - Known Issue Rollback policy installed by the KIR package_`_
 
-Open the rollback policy and set it to **Disabled**. This disables the Windows change which is causing the issue and therefore activates the Known Issue Rollback.
+Open the rollback policy and set it to Disabled. This disables the Windows change which is causing the issue and therefore activates the Known Issue Rollback. Then save the Group Policy and apply it to the affected AVD session hosts.
 
-Save the Group Policy and apply it to the affected AVD session hosts.
+You can force a Group Policy refresh on the client side using:
 
-You can force a Group Policy refresh using:
-
-{{< card code=true header="**PowerShell**" lang="powershell" >}}
+{{< card code=true header="**cmd**" lang="cmd" >}}
 gpupdate /force
 {{< /card >}}
 
-The session hosts must be **restarted** after receiving the policy before the Known Issue Rollback becomes active.
+Then the session hosts must first be restarted after receiving the policy before the Known Issue Rollback becomes active.
 
 {{% alert title="Important" color="info" %}}
-The Known Issue Rollback is a temporary mitigation. Microsoft is working on a permanent resolution which will be released in a future Windows update.
+The Known Issue Rollback is a temporary fix. Microsoft is working on a permanent resolution which will be released automatically in a future Windows update.
 {{% /alert %}}
 
 {{< ads >}}
@@ -101,23 +96,19 @@ The Known Issue Rollback is a temporary mitigation. Microsoft is working on a pe
 
 ## Workaround 2: Start Windows Explorer manually
 
-A temporary workaround for an affected user is to manually start Windows Explorer after signing in.
+A temporary workaround for an affected user is to manually start Windows Explorer after signing in. However this will work, this will not be our preferred way for end users to "fix" this problem.
 
-Open Task Manager using:
+On the black login screen. open Task Manager using:
 
-{{< card code=true header="**Plain text**" lang="text" >}}
-Ctrl + Shift + Esc
-{{< /card >}}
+- Ctrl + Shift + Esc
 
-Click **Run new task** and enter:
+Click `Run new task` and enter:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
 explorer.exe
 {{< /card >}}
 
-Click **OK**. Windows Explorer should now start and the desktop should become available for the user.
-
-This is only a temporary workaround and must be repeated when the problem happens again.
+Click OK and Windows Explorer should now start and the desktop should become available for the user. This is only a temporary workaround and must be repeated when the problem happens again at the next logon(s).
 
 ---
 
@@ -129,30 +120,21 @@ If your Azure Virtual Desktop session hosts are managed using Active Directory G
 
 ---
 
-## Current status
-
-Microsoft opened the known issue on **September 24, 2026** and currently lists the issue as **Mitigated**.
-
-The current workaround is either to manually start **explorer.exe** for an affected user or to deploy the Microsoft Known Issue Rollback to centrally managed devices. Microsoft is working on a permanent resolution which will be included in a future Windows update.
-
----
-
 ## Summary
 
 If users suddenly receive a black screen after signing in to Azure Virtual Desktop, and your session hosts are running Windows 11 with FSLogix, this known issue is something you should check first. Especially environments which installed KB5120998 or a newer Windows update can be affected.
 
-For a temporary workaround, users can manually start **explorer.exe** from Task Manager. For centrally managed AVD environments, Microsoft provides a Known Issue Rollback which can be deployed to the affected session hosts, followed by a restart.
+For a temporary workaround, users can manually start `explorer.exe` from Task Manager. For centrally managed AVD environments, Microsoft provides a Known Issue Rollback which can be deployed to the affected session hosts, followed by a restart.
 
-Once Microsoft releases a permanent fix, the KIR will no longer be necessary.
+Once Microsoft releases a permanent fix, this KIR will no longer be necessary and this post will be obsolete.
 
 Thank you for reading this post and I hope it was helpful!
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources📖" color="info" %}}
 These sources helped me by writing and research for this post;
 
 1. https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-25h2#devices-might-experience-a-black-screen-or-desktop-loading-issues-after-sign-in
 2. https://learn.microsoft.com/en-us/troubleshoot/windows-client/group-policy/use-group-policy-to-deploy-known-issue-rollback
-3. https://www.dutchitchannel.nl/news/761079/windows-11-update-veroorzaakt-zwarte-schermen-op-azure-virtual-desktop
 {{% /alert %}}
 
 {{< ads >}}
