@@ -161,7 +161,7 @@ With these steps you can repair many common Windows issues without directly rein
 
 Thank you for reading this post and I hope it was helpful!
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/repair-a-windows-image
 2. https://learn.microsoft.com/nl-nl/windows-server/administration/windows-commands/sfc#syntax

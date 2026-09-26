@@ -198,7 +198,7 @@ Especially Microsoft Graph, Az PowerShell and Exchange Online PowerShell are mod
 
 Thank you for reading this post and I hope it was helpful!
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://www.powershellgallery.com/packages/Microsoft.Graph
 2. https://www.powershellgallery.com/packages/ExchangeOnlineManagement

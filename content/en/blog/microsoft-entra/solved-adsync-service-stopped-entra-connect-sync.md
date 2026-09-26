@@ -122,7 +122,7 @@ This simple script resolved me a lot of problems, checking the service automatic
 
 Thank you for visiting this page and I hope it was helpful.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 {{% /alert %}}
 

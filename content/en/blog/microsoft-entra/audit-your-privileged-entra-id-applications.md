@@ -235,7 +235,7 @@ So this way we know within minutes which applications we must monitor and even d
 
 I hope I convinced you with this guide how much of an risk the applications in Microsoft Entra ID really can be. They can be used by threat actors, as Break glass application or by attackers to leave backdoors in a tenant after a breach.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/entra/identity-platform/application-consent-experience
 2. https://learn.microsoft.com/en-us/graph/permissions-overview?tabs=http#comparison-of-delegated-and-application-permissions

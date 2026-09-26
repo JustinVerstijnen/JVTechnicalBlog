@@ -90,7 +90,7 @@ The process is simple:
 
 Thank you for reading this post and I hope it was helpful!
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/universal-print/fundamentals/universal-print-remove-connector-howto
 {{% /alert %}}

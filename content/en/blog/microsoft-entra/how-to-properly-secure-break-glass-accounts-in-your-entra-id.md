@@ -121,7 +121,7 @@ It is really important to have back-up/break glass accounts available in your en
 
 I hope this guide was helpful and thank you for reading.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/security/benchmark/azure/overview
 2. https://www.cisecurity.org/cis-benchmarks

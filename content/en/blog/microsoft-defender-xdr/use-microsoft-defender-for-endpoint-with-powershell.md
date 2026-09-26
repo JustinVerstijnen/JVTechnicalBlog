@@ -322,7 +322,7 @@ I only described the operational commands of using Defender in case of incident 
 
 Thank you for reading this guide and I hope it was helpful.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 {{% /alert %}}
 

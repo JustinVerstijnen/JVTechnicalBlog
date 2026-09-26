@@ -267,7 +267,7 @@ This page contains all the recommendations to enhance your Secure Score for the 
 
 Thank you for reading this post and I hope it was helpful.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies#microsofts-recommendation
 {{% /alert %}}

@@ -162,7 +162,7 @@ Implementing Certificate based authentication is a must for unattended access to
 
 This can also be used with 3rd party applications when supported. Most of the applications will only support Client ID and secrets, as this is much easier to implement.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-self-signed-certificate
 2. https://learn.microsoft.com/en-us/powershell/microsoftgraph/installation?view=graph-powershell-1.0

@@ -127,7 +127,7 @@ In the beginning of creating Azure VMs this was something I found to be annoying
 
 I hope the script is useful and thank you for reading.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/language-codes
 2. https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/default-time-zones?view=windows-11#time-zones

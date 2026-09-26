@@ -90,7 +90,7 @@ This is a great script to use for installing Windows Servers on initial. These a
 
 Thank you for reading the post and I hope the script is useful.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/windows/win32/intl/table-of-geographical-locations
 2. https://learn.microsoft.com/en-us/powershell/module/international/set-culture?view=windowsserver2025-ps

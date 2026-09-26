@@ -214,7 +214,7 @@ This connection allows systems at the physical site to communicate securely with
 
 Thank you for reading this post and I hope it was helpful!
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways
 2. https://learn.microsoft.com/en-us/azure/vpn-gateway/tutorial-site-to-site-portal

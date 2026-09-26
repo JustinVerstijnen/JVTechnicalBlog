@@ -313,7 +313,7 @@ Dynamic Groups are an excellent way to automate some things in your Microsoft En
 
 Thank you for visiting this website!
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 {{% /alert %}}
 
