@@ -24,10 +24,15 @@
             {{ end }}
 
             <p class="card-text flex-grow-1">
+              {{ $description := .Summary | plainify | htmlUnescape }}
               {{ with .Description }}
-                {{ . }}
+                {{ $description = . | plainify | htmlUnescape }}
+              {{ end }}
+              {{ $descriptionWords := findRE `\S+` $description }}
+              {{ if gt (len $descriptionWords) 46 }}
+                {{ delimit (first 46 $descriptionWords) " " }}...
               {{ else }}
-                {{ .Summary | plainify | truncate 160 }}
+                {{ $description }}
               {{ end }}
             </p>
 
