@@ -35,6 +35,10 @@ nav.foldable-nav .ul-1 .with-child>input:checked~label::before { color: #77B0DE;
 .page-link.active, .active>.page-link { z-index: 3; color: var(--bs-pagination-active-color); background-color: #77B0DE; border-color: #77B0DE; }
 
 .taxonomy-terms-cloud .taxonomy-title { color: #212529bf; }
+
+[data-bs-theme='dark'] .taxonomy-terms-cloud .taxonomy-title {
+  color: var(--jv-code-accent, #9dcef5);
+}
 /* Taxonomy */
 .taxonomy-terms-cloud .taxonomy-term, .taxonomy-terms-article .taxonomy-term {
   display: inline-flex;
