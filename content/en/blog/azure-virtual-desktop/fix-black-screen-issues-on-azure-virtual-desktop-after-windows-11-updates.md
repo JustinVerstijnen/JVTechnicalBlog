@@ -1,5 +1,5 @@
 ---
-title: "Fix Black Screen Issues on Azure Virtual Desktop after Windows 11 Updates"
+title: "Fix black-screen issues on Azure Virtual Desktop after Windows 11 Updates"
 slug: "fix-black-screen-azure-virtual-desktop-windows-11"
 date: 2026-09-25
 tags:
