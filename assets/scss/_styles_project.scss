@@ -96,12 +96,15 @@ a { color: #4b92cb; text-decoration: none; }
 
 .td-content p code, .td-content li > code, .td-content table code { background-color: rgba(119, 176, 222, 0.15) !important; }
 
-.td-content p > img, .td-content p > a > img, .td-content figure > img, .td-content figure > a > img { box-shadow: 0 2px 5px rgba(14, 32, 44, 0.16); }
+.td-content p > img, .td-content p > a > img, .td-content figure > img, .td-content figure > a > img {
+  box-shadow: 0 2px 4px rgba(14, 32, 44, 0.12),
+    0 5px 12px rgba(14, 32, 44, 0.24);
+}
 
 [data-bs-theme='dark'] .td-content p > img, [data-bs-theme='dark'] .td-content p > a > img, [data-bs-theme='dark'] .td-content figure > img, [data-bs-theme='dark'] .td-content figure > a > img {
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14),
-    0 2px 8px rgba(255, 255, 255, 0.11),
-    0 4px 14px rgba(0, 0, 0, 0.30);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18),
+    0 3px 10px rgba(255, 255, 255, 0.15),
+    0 6px 18px rgba(0, 0, 0, 0.40);
 }
 /* Tables */
 .td-content .td-table:not(table), .td-box .td-table:not(table) { background: transparent; border-radius: 0; box-shadow: none !important; }
