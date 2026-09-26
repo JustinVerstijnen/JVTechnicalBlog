@@ -85,11 +85,11 @@ params:
 
   taxonomy:
     taxonomyCloud:
-      - tags
       - categories
+      - tags
     taxonomyCloudTitle:
-      - Tags
       - Categories
+      - Tags
     taxonomyPageHeader:
       - tags
       - categories
