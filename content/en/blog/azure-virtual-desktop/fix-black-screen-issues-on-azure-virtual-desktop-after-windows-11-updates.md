@@ -1,7 +1,7 @@
 ---
 title: "Fix Black Screen Issues on Azure Virtual Desktop after Windows 11 Updates"
 slug: "fix-black-screen-azure-virtual-desktop-windows-11"
-date: 2026-09-26
+date: 2026-09-25
 tags:
 - Step by Step Guides
 categories:
@@ -58,19 +58,31 @@ For environments where this happens too often, Microsoft has released a Known Is
 
 After downloading the package, proceed to the next steps.
 
-### Deploy the KIR using Group Policy
+### Installing KIR package
 
-Download the correct MSI package for your Windows version and install it on your management server which you use to manage Group Policy. The policy definition will be installed in:
+Download the correct MSI package for your Windows version and install it on your management server which you use to manage Group Policy. From there install the MSI file:
+
+[![jv-media-8531-b17639720724.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/fix-black-screen-azure-virtual-desktop-windows-11/jv-media-8531-b17639720724.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/fix-black-screen-azure-virtual-desktop-windows-11/jv-media-8531-b17639720724.png)
+
+The policy definition will be installed in:
 
 - C:\Windows\PolicyDefinitions
 
-If you use a Group Policy Central Store, copy the installed ADMX and ADML files to your Central Store (`\\domain.local\SYSVOL\domain.local\Policies\PolicyDefinitions\`) as you would with other administrative templates.
+[![jv-media-8531-62314eda5396.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/fix-black-screen-azure-virtual-desktop-windows-11/jv-media-8531-62314eda5396.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/fix-black-screen-azure-virtual-desktop-windows-11/jv-media-8531-62314eda5396.png)
 
-Now open the Group Policy Management Console (`gpmc.msc`) and create a new Group Policy or use an existing policy which is assigned to your Azure Virtual Desktop session hosts.
+If you use a Group Policy Central Store, copy the installed ADMX and ADML files to your Central Store (`\\domain.local\SYSVOL\domain.local\Policies\PolicyDefinitions\`) as you would with other administrative templates. Search for the file named something like "KB5124010_260924_2002_1_KnownIssueRollback.admx" and adml and copy them to your central store if using this feature.
 
-Navigate to:
+### Creating Group Policy
 
-`Computer Configuration - Administrative Templates - Known Issue Rollback policy installed by the KIR package`
+Now open the Group Policy Management Console (`gpmc.msc`) and create a new Group Policy or re-use an existing policy which is already assigned to your Azure Virtual Desktop session hosts. If creating a new policy, right-click the correct OU and click `Create a GPO in this domain, and Link it here...`.
+
+[![jv-media-8531-ad3cb2fb8ead.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/fix-black-screen-azure-virtual-desktop-windows-11/jv-media-8531-ad3cb2fb8ead.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/fix-black-screen-azure-virtual-desktop-windows-11/jv-media-8531-ad3cb2fb8ead.png)
+
+In the Group Policy Object, navigate to:
+
+`Computer Configuration - Policies - Administrative Templates - Known Issue Rollback policy installed by the KIR package`
+
+[![jv-media-8531-1a09b348c0c2.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/fix-black-screen-azure-virtual-desktop-windows-11/jv-media-8531-1a09b348c0c2.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/fix-black-screen-azure-virtual-desktop-windows-11/jv-media-8531-1a09b348c0c2.png)
 
 Open the rollback policy and set it to Disabled. This disables the Windows change which is causing the issue and therefore activates the Known Issue Rollback. Then save the Group Policy and apply it to the affected AVD session hosts.
 
@@ -113,6 +125,10 @@ Click OK and Windows Explorer should now start and the desktop should become ava
 Microsoft also supports deploying Known Issue Rollback policies to Intune-managed devices. This is done using ADMX ingestion and a Custom configuration profile.
 
 If your Azure Virtual Desktop session hosts are managed using Active Directory Group Policy, you can deploy the supplied KIR through Group Policy. If your AVD session hosts are managed through Microsoft Intune, Microsoft documents how to ingest the supplied ADMX policy and configure the rollback through a Custom profile.
+
+Uploading the ADMX and ADML files are yet not supported in this case. I tried this in my environment but got multiple errors. However, you could deploy the MSI package via Intune and configure the policy manually using `gpedit.msc` or just use the Custom profile option of Microsoft.
+
+[![jv-media-8531-c8b378a28771.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/fix-black-screen-azure-virtual-desktop-windows-11/jv-media-8531-c8b378a28771.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/fix-black-screen-azure-virtual-desktop-windows-11/jv-media-8531-c8b378a28771.png)
 
 ---
 
