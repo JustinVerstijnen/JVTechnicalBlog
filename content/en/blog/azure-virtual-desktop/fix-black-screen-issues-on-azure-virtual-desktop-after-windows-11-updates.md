@@ -40,6 +40,8 @@ As we want to know the technical reason of this problem, the black screen itself
 
 Microsoft has confirmed that the black screen is caused by explorer.exe crashing during shell startup. Explorer.exe is responsible for loading important parts of the Windows desktop, including the taskbar, Start menu and File Explorer.
 
+[![jv-media-8531-d061d20c50ad.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/fix-black-screen-azure-virtual-desktop-windows-11/jv-media-8531-d061d20c50ad.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/fix-black-screen-azure-virtual-desktop-windows-11/jv-media-8531-d061d20c50ad.png)
+
 When explorer.exe crashes during the sign-in process, the AVD session itself can remain active but Windows never finishes loading the desktop. This explains why manually starting explorer.exe from Task Manager can immediately make the desktop available again.
 
 The issue has mainly been observed on Azure Virtual Desktop session hosts using FSLogix, and Microsoft states that it seems to occur more frequently with some existing user profiles.
@@ -109,6 +111,8 @@ A temporary workaround for an affected user is to manually start Windows Explore
 On the black login screen. open Task Manager using:
 
 - Ctrl + Shift + Esc
+
+[![jv-media-8531-d061d20c50ad.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/fix-black-screen-azure-virtual-desktop-windows-11/jv-media-8531-d061d20c50ad.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/fix-black-screen-azure-virtual-desktop-windows-11/jv-media-8531-d061d20c50ad.png)
 
 Click `Run new task` and enter:
 
