@@ -234,7 +234,7 @@ TLS-RPT is basically DMARC-style reporting for TLS and secure mail transport. It
 
 Thank you for reading this post and I hope it was helpful!
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://datatracker.ietf.org/doc/html/rfc8460
 2. https://support.google.com/a/answer/10032169

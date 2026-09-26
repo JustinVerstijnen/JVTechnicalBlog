@@ -68,7 +68,7 @@ Then you can finish the wizard and the maintenance configuration will be applied
 
 Configuring maintenance configuration is relatively easy to do and it helps your environment to be more predictable. However this may never be the case, we know for sure that Microsoft doesn’t apply updates to our VPN gateway during business hours.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/azure/vpn-gateway/customer-controlled-gateway-maintenance
 {{% /alert %}}

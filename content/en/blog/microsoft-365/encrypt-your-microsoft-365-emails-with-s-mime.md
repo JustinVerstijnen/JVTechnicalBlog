@@ -405,7 +405,7 @@ Signing proves that the message came from you and that the content was not chang
 
 S/MIME is not the easiest mail security feature to configure, but after the first setup it works very nice for sending sensitive information between trusted contacts.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/exchange/security-and-compliance/smime-exo/configure-smime-exo
 2. https://learn.microsoft.com/en-us/exchange/security-and-compliance/smime-exo/smime-exo

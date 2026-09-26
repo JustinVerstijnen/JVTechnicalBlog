@@ -66,7 +66,7 @@ This is a very strange thing to happen but a relatively easy solution. I also tr
 
 Thank you for reading this guide and I hope it was helpful.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/answers/questions/4915924/permanently-remove-send-to-onenote-printer-(set-as
 {{% /alert %}}

@@ -68,7 +68,7 @@ Disabling self-service trials and purchases for Microsoft Teams Premium removes 
 
 Thank you for reading this post and I hope it was helpful!
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/microsoft-365/commerce/subscriptions/manage-self-service-purchases-admins?view=o365-worldwide
 2. https://learn.microsoft.com/en-us/microsoft-365/commerce/subscriptions/allowselfservicepurchase-powershell?view=o365-worldwide

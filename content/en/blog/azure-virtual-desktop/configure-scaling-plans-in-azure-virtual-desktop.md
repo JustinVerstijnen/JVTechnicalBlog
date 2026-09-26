@@ -122,7 +122,7 @@ My usual setup is straightforward: use Power management autoscaling, configure o
 
 Thank you for reading this post and I hope it was helpful!
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/azure/virtual-desktop/autoscale-glossary
 2. https://learn.microsoft.com/en-us/azure/virtual-desktop/autoscale-create-assign-scaling-plan

@@ -134,7 +134,7 @@ To build a public image repository with Azure Blob Storage, create a container, 
 
 Thank you for reading this post and I hope it was helpful!
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/azure/storage/blobs/blob-containers-portal
 2. https://learn.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-overview

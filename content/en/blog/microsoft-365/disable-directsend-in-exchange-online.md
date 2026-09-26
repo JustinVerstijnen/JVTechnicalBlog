@@ -87,7 +87,7 @@ We cannot disable DirectSend on specific users first, this is because its an ten
 
 Thank you for reading this guide and I hope it was helpful.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://techcommunity.microsoft.com/blog/exchange/introducing-more-control-over-direct-send-in-exchange-online/4408790
 {{% /alert %}}

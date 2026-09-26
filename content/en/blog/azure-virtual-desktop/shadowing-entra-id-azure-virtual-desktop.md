@@ -210,7 +210,7 @@ I hope we get this option in the Azure Portal in the future, as we can already s
 
 Thank you for reading this post, and I hope it was helpful!
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/shadow
 2. https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/mstsc

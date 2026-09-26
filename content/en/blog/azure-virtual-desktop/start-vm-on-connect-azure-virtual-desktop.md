@@ -90,7 +90,7 @@ This feature is especially useful when combined with scaling plans because it al
 
 Thank you for reading this post. I hope you found it helpful!
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/azure/virtual-desktop/start-virtual-machine-connect
 2. https://learn.microsoft.com/en-us/azure/virtual-desktop/service-principal-assign-roles

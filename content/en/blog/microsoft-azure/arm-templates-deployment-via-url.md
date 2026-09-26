@@ -260,7 +260,7 @@ For me this is one of the easiest ways to share reusable Azure deployments. It k
 
 Thank you for reading this post and I hope it was helpful!
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-azure-button
 2. https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/bicep-cli

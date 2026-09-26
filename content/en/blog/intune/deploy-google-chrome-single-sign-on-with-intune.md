@@ -137,7 +137,7 @@ Also the guide can be used to deploy other extensions for Google Chrome and Edge
 
 Thank you for reading this guide and I hope it was helpful.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://support.google.com/chrome/a/answer/12129062?hl=en
 {{% /alert %}}

@@ -355,7 +355,7 @@ This post gave a simple overview of how Azure AI can be used:
 
 Thank you for reading this post and I hope it was helpful!
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://www.youtube.com/watch?v=bTkUTkXrqOQ
 2. https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wGpB

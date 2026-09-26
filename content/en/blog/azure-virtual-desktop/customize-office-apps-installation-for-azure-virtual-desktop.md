@@ -261,7 +261,7 @@ The Office Deployment Toolkit is your go-to customization toolkit for installing
 
 Thank you for reading this guide and I hope it was helpful.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/microsoft-365-apps/admin-center/overview-office-customization-tool
 2. https://learn.microsoft.com/en-us/microsoft-365-apps/licensing-activation/device-based-licensing

@@ -89,7 +89,7 @@ This new feature is one of the greater updates to the Windows 11 operating syste
 
 I hope I have made this clear to use and thank you for reading my post.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://support.microsoft.com/en-us/topic/policy-based-removal-of-pre-installed-microsoft-store-apps-e1d41a92-b658-4511-95a6-0fbcc02b4e9c
 {{% /alert %}}

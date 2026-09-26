@@ -118,7 +118,7 @@ Then Intune enrollment will usually work without these DNS records. But if you s
 
 Thank you for reading this post and I hope it was helpful!
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/intune/device-enrollment/windows/create-cname-autodiscovery
 2. https://learn.microsoft.com/en-us/intune/device-enrollment/windows/enable-automatic-mdm

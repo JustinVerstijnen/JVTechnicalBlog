@@ -231,7 +231,7 @@ This is not a major problem, but it differs from device management on Windows de
 
 Another downside is that management is very limited. We cannot wipe devices from the portal and support is limited to Ubuntu only. Most people who use Linux distributions do not use only Ubuntu and may want more customization with other distros, but these are not yet supported.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/intune/device-security/compliance/custom-settings
 2. https://learn.microsoft.com/en-us/intune/user-help/enrollment/enroll-linux

@@ -275,7 +275,7 @@ I hope I give you a good understanding of how the FSLogix App Masking solution w
 
 Thank you for reading this guide and I hope I helped you out.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/fslogix/overview-what-is-fslogix
 2. https://learn.microsoft.com/en-us/fslogix/tutorial-application-rule-sets

@@ -412,7 +412,7 @@ Next week I have a new post going further in some management with Ubuntu devices
 
 I hope this post was helpful and thank you for reading!
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/intune/fundamentals/ref-supported-platforms#linux
 2. https://rufus.ie/en/

@@ -356,7 +356,7 @@ In my opinion, it is better than managing a 3rd party firewall in a seperate pan
 
 I hope this guide was helpful and thank you for reading.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/azure/firewall/overview
 2. https://azure.microsoft.com/en-us/pricing/details/azure-firewall/

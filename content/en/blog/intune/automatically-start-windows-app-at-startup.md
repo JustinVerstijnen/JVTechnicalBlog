@@ -83,7 +83,7 @@ Automatically startint the Windows App can help end users to automate a bit of t
 
 Thank you for visiting my website and I hope it was helpful.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 {{% /alert %}}
 

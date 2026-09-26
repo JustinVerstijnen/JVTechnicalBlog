@@ -212,7 +212,7 @@ Azure Front Door does also manage your SSL certificates used in the redirections
 
 Thank you for visiting this guide and I hope it wass helpful.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://azure.microsoft.com/en-in/pricing/details/frontdoor/?msockid=0e4eda4e5e6161d61121ccd95f0d60f5
 2. https://learn.microsoft.com/en-us/azure/frontdoor/front-door-url-redirect?pivots=front-door-standard-premium

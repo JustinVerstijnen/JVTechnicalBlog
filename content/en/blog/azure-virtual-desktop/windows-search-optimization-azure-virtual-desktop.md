@@ -82,7 +82,7 @@ For better optimization, I included some Group Policy settings for Windows and F
 
 Thank you for reading this post and I hope this was helpful.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 {{% /alert %}}
 

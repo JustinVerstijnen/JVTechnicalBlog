@@ -150,7 +150,7 @@ Screenshots will be saved to C:\ to be backed-up after the OOBE flow.
 
 Windows Backup for Organizations is a great feature, especially for end users to keep their personal Windows Settings saved into their account. This in combination with OneDrive will make reinstalls pretty easy as we only have to install applications. The rest will be handled by Microsoft in this way.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/intune/intune-service/enrollment/windows-backup-restore?tabs=backup
 {{% /alert %}}

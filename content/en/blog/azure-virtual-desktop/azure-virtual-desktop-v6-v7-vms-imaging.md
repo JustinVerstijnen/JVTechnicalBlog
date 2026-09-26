@@ -339,7 +339,7 @@ I hope I also informed you a bit on how these newer VMs work and why you cloud g
 
 Thank you for reading this guide and I hope it was helpful.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/azure/virtual-machines/shared-image-galleries
 2. https://learn.microsoft.com/en-us/azure/virtual-machines/nvme-overview

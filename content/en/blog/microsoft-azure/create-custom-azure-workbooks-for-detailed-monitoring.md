@@ -210,7 +210,7 @@ By combining metrics such as CPU, memory, and disk activity with a clear layout,
 
 Thank you for visiting my website and I hope it was helpful.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 
 1. https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview

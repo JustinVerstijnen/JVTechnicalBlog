@@ -167,7 +167,7 @@ Ephemeral OS Disks ensure the VM is powered by great disk performance. Storage w
 
 If using VMs with Ephemeral OS disks, use it for cases where data loss is no issue om the OS disk. All other data like data disks, data on storage account for FSLogix or outside of the VM is unharmed.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/azure/virtual-machines/ephemeral-os-disks
 2. https://justinverstijnen.nl/amc-module-7-virtual-machines-and-scale-sets/

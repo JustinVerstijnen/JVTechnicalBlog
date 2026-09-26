@@ -353,7 +353,7 @@ Please use the Powershell script very carefully, this contains the credentials t
 
 I hope this guide was very helpful and thank you for reading!
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/azure/virtual-desktop/authentication
 2. https://learn.microsoft.com/en-us/azure/virtual-desktop/configure-single-sign-on

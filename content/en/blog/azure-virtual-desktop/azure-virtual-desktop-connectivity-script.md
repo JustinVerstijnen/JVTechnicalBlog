@@ -58,7 +58,7 @@ This script is really useful to test connectivity to Azure Virtual Desktop. It c
 
 Thank you for reading this guide and I hope it was useful.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. The old and discontinued "Azure Virtual Desktop Experience Estimator"
 2. https://learn.microsoft.com/en-us/azure/virtual-desktop/required-fqdn-endpoint?tabs=azure#end-user-devices

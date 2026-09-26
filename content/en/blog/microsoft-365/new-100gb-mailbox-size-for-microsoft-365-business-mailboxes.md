@@ -204,7 +204,7 @@ Overall, I really like this change. From Microsoft 365 Business Basic and up, we
 
 Thank you for reading this post and I hope it was helpful!
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits
 2. https://learn.microsoft.com/en-us/troubleshoot/exchange/user-and-shared-mailboxes/increase-or-customize-mailbox-size

@@ -111,7 +111,7 @@ This option may work flawlessly, I still don't recommend it in any production en
 
 The better option is to still use the Active Directory built-in DNS or Entra Domain Services and ensure this has the highest uptime possible by using availability zones.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/integrating-ad-ds-into-an-existing-dns-infrastructure
 2. https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc738266(v=ws.10)

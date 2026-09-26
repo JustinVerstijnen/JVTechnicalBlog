@@ -132,7 +132,7 @@ For organizations with mobile devices containing sensitive data, this is current
 
 Thank you for reading this post and I hope it was helpful!
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://thehackernews.com/2026/06/new-greatxml-exploit-bypasses-windows.html
 2. https://thehackernews.com/2026/06/microsoft-patches-record-206-flaws.html

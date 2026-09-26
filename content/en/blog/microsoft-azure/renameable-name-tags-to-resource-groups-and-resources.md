@@ -37,7 +37,7 @@ I thought of how this renameable titels can be used in production. I can think o
 - Documentation-purposes
 - Add critical warning to resource
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/community/content/hidden-tags-azure
 {{% /alert %}}

@@ -435,7 +435,7 @@ Bicep is very similar to Terraform and both have their advantages. I think Bicep
 
 Thank you for reading this post and I hope it was helpful!
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview
 2. https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/install

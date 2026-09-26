@@ -161,7 +161,7 @@ This process we have to do sometimes when building an environment but most of th
 
 Thank you for reading this post and I hope it was helpful.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-enable#run-join-azstorageaccount
 2. https://github.com/Azure-Samples/azure-files-samples/releases

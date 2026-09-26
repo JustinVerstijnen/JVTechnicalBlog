@@ -670,7 +670,7 @@ Going completely cloud only enhances the manageability of the environement keeps
 
 Thank you for reading this page and I hope it was helpful.
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/entra/identity/authentication/kerberos#how-microsoft-entra-kerberos-works
 2. https://learn.microsoft.com/en-us/microsoft-365/enterprise/manage-microsoft-365-accounts?view=o365-worldwide#cloud-only

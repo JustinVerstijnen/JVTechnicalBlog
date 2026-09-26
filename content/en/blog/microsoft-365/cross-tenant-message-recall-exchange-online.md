@@ -88,7 +88,7 @@ This way we can recall messages sent inter tenants to for example partners or su
 
 Thank you for reading this post and I hope it was helpful!
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://techcommunity.microsoft.com/blog/exchange/cross-tenant-message-recall-in-exchange-online/4535800
 2. https://techcommunity.microsoft.com/blog/exchange/cloud-based-message-recall-in-exchange-online/3744714

@@ -98,7 +98,7 @@ My PowerShell script automates a large part of this process by scanning the logs
 
 Thank you for reading this post and I hope it was helpful!
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://github.com/JustinVerstijnen/JV-AVD-Sysprep
 2. https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview

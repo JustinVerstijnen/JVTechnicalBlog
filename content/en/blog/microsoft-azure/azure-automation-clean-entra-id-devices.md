@@ -316,7 +316,7 @@ Because the solution runs fully in Azure and uses Managed Identity authenticatio
 
 Thank you for reading this post and I hope it was helpful!
 
-{{% alert title="Sources 🕮" color="info" %}}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/azure/automation/overview
 2. https://learn.microsoft.com/en-us/powershell/microsoftgraph/overview
