@@ -70,7 +70,7 @@ Now open the Group Policy Management Console (`gpmc.msc`) and create a new Group
 
 Navigate to:
 
-_`_Computer Configuration - Administrative Templates - Known Issue Rollback policy installed by the KIR package_`_
+`Computer Configuration - Administrative Templates - Known Issue Rollback policy installed by the KIR package`
 
 Open the rollback policy and set it to Disabled. This disables the Windows change which is causing the issue and therefore activates the Known Issue Rollback. Then save the Group Policy and apply it to the affected AVD session hosts.
 
