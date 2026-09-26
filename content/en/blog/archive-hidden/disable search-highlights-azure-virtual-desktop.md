@@ -444,9 +444,8 @@ Thank you for reading this post and I hope it was helpful!
 {{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 
-1. https://askaresh.com/2023/02/24/disable-search-highlights-on-windows-365-cloud-pc-and-azure-virtual-desktop-using-microsoft-intune/
-2. https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-search
-3. https://techcommunity.microsoft.com/blog/windows-itpro-blog/group-configuration-search-highlights-in-windows/3263989
+1. https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-search
+2. https://techcommunity.microsoft.com/blog/windows-itpro-blog/group-configuration-search-highlights-in-windows/3263989
 {{% /alert %}}
 
 {{< ads >}}
