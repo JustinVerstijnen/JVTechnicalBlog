@@ -1,7 +1,7 @@
 ---
 title: "I tried the new Windows 365 Developer Configuration image"
 slug: "i-tried-the-new-windows-365-developer-configuration-image"
-date: 2025-10-01
+date: 2026-10-01
 tags:
 - Try Outs
 - Step by Step Guides
