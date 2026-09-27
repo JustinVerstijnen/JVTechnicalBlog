@@ -43,7 +43,7 @@ App Registrations are applications who are mostly custom. These can be used for 
 App Registrations are commonly more privileged and can be dangerously **high privileged**, even not having a requirement for MFA. The only thing you need to use an app registration is:
 
 - Client ID
-- Tenant ID (public available: <https://tenantlookup.jvapp.nl>)
+- Tenant ID (public available: <https://tools.justinverstijnen.nl/tenantlookuptool/>)
 - Secret/Certificate
 
 App registrations can have permissions far above "Global Administrator", but we don't handle them like global administrators or even higher accounts. The Microsoft Secure Score also doesn't report them and they can be hard to find.

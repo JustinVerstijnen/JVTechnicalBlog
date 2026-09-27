@@ -29,7 +29,7 @@ Windows Backup for Organizations is a feature where Windows creates a backup of 
 
 Let's compare what is included in this new Windows Backup for Organizations feature versus Enterprise State Roaming
 
-| Item | Windows Backup** **for Organizations | Enterprise State Roaming |
+| Item | Windows Backup for Organizations | Enterprise State Roaming |
 | --- | --- | --- |
 | Windows Settings | ✅ | ✅ |
 | Windows Personalization | ✅ | ❌ |
@@ -58,7 +58,7 @@ Click Next.
 
 On the "Configuration settings" tab, click on "+ Add settings". Navigate to this setting:
 
-*Administrative Templates -> Windows Components -> Sync your settings*
+`Administrative Templates -> Windows Components -> Sync your settings`
 
 Then lookup the setting-name: "Enable Windows Backup" and select it.
 

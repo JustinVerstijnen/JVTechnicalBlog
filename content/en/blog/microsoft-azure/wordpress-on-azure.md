@@ -127,7 +127,7 @@ Scroll down and choose the "Basic" hosting plan. This is for the Azure App Servi
 
 ### Wordpress setup
 
-Then fill in the Wordpress Setup menu, this is the admin account for Wordpress that will be created. Fill in your email address, username and use a good password. You can also generate one with my password generator tool: <https://password.jvapp.nl/>
+Then fill in the Wordpress Setup menu, this is the admin account for Wordpress that will be created. Fill in your email address, username and use a good password. You can also generate one with my password generator tool: <https://tools.justinverstijnen.nl/passwordgenerator/>
 
 [![jv-media-2625-ff6b4add7660.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-ff6b4add7660.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-ff6b4add7660.png)
 
