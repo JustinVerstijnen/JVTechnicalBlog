@@ -14,7 +14,7 @@ hidden: false
 
 To start off with the fast pass, my script can be downloaded here from my Github page:
 
-<a class="btn btn-primary" href="https://github.com/JustinVerstijnen/JV-EntraIDGetPrivilegedEntApps" target="_blank" rel="noreferrer">__ Download script from GitHub</a>
+<a class="btn btn-primary" href="https://github.com/JustinVerstijnen/JV-EntraIDGetPrivilegedEntApps" target="_blank" rel="noreferrer">View on my GitHub page</a>
 
 This script can be used to get a report of all high privileged applications across the tenant. [Go to this section](https://justinverstijnen.nl/audit-your-privileged-entra-id-applications/#using-my-script-to-audit-all-high-privileged-applications) for instructions of how to use the script and the output.
 
@@ -25,14 +25,14 @@ This script can be used to get a report of all high privileged applications acro
 Enterprise Applications in Entra ID are the applications which will be registered when users need them. Somethimes, it can be for a add-on of Outlook or Teams, but other times this can be to enable Single Sign On to 3rd party applications.
 
 {{% alert title="Info" color="info" %}}
-In terms of Entra ID and Identity, we call such application a `Service Principal**`**. A principal for a service to give permissions to.
+In terms of Entra ID and Identity, we call such application a `Service Principal`. A principal for a service to give permissions to.
 {{% /alert %}}
 
 Enterprise applications are mostly pre-configured by the 3rd party publisher of the application that needs permission. However, a user can be prompted to give their information to a application. This looks like this:
 
 [![jv-media-3399-0cdeadf8bf3a.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/audit-your-privileged-entra-id-applications-3399/jv-media-3399-0cdeadf8bf3a.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/audit-your-privileged-entra-id-applications-3399/jv-media-3399-0cdeadf8bf3a.png)
 
-As we can see, the application gets the information of the calendars, the profile of the user and gets data. These alone aren't not that much privileged, but this can be much worse. Let's take a look at "App Registrations".
+As we can see, the application gets the information of the calendars, the profile of the user and gets data. These alone aren't not that much privileged, but this can be much worse. Let's take a look at `App Registrations`.
 
 ---
 
@@ -69,9 +69,9 @@ We can do several things to avoid being hacked by this sort of things:
 
 We will now create a high privileged app registration, purely to showcase the permissions and to show you how much of a deal this could be.
 
-Open the [Microsoft Entra admin center](https://entra.microsoft.com/) and go to: Applications -> App registrations
+Open the [Microsoft Entra admin center](https://entra.microsoft.com/) and go to: `Applications` and then click `App registrations`.
 
-Click on "+ New registration":
+Click on `+ New registration`:
 
 [![jv-media-3399-54556d0be245.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/audit-your-privileged-entra-id-applications-3399/jv-media-3399-54556d0be245.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/audit-your-privileged-entra-id-applications-3399/jv-media-3399-54556d0be245.png)
 
@@ -205,7 +205,7 @@ Now that we have created and abused our demo application, let's use my script to
 
 You can, once again, download the script here:
 
-<a class="btn btn-primary" href="https://github.com/JustinVerstijnen/JV-EntraIDGetPrivilegedEntApps" target="_blank" rel="noreferrer">Download script from GitHub</a>
+<a class="btn btn-primary" href="https://github.com/JustinVerstijnen/JV-EntraIDGetPrivilegedEntApps" target="_blank" rel="noreferrer">View on my GitHub page</a>
 
 I have already downloaded the script, and have it ready to execute:
 
@@ -217,9 +217,9 @@ When executed, it asks to login to a tenant. Here you have to login to the tenan
 When prompted that the Execution Policy is restricted, you can use this command below for a one-time bypass until the window closes.
 {{% /alert %}}
 
-```powershell
+{{< card code=true header="**PowerShell**" lang="powershell" >}}
 Set-ExecutionPolicy Unrestricted -Scope Process -Force
-```
+{{< /card >}}
 
 After the script finishes all the checks, it puts out a CSV file in the same folder as the script which we can now open to review the applications and their permissions:
 
