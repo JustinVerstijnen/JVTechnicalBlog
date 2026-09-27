@@ -1,20 +1,20 @@
 ---
 title: "Audit your privileged Entra ID applications"
-date: 2025-06-25
 slug: "audit-your-privileged-entra-id-applications"
-categories:
-  - Microsoft Entra
+date: 2025-06-25
 tags:
-  - Tools and Scripts
-description: >
-  In Microsoft Entra ID it's possible to create App registrations and Enterprise applications who can get high privileges if not managed and monitored regularly. We do our best with Identities to be secure, with security processes like MFA, access reviews and such, but most of the companies don't care that much about the Enterprise applications. In this post, I will try to convince you that this is as much as important as identities. For helping you to solve this I built a PowerShell script to get a complete overview of all the applications and their permissions.
+- Tools and Scripts
+categories:
+- Microsoft Entra
+description: "In Microsoft Entra ID it's possible to create App registrations and Enterprise applications who can get high privileges if not managed and monitored regularly. We do our best with Identities to be secure, with security processes like MFA, access reviews and such, but most of the companies don't care that much about the Enterprise applications. In this post, I will try to convince you that this is as much as important as identities. For helping you to solve this I built a PowerShell script to get a complete overview of all the applications and their permissions."
+hidden: false
 ---
 
 ## Entra ID Privileged Applications report script
 
 To start off with the fast pass, my script can be downloaded here from my Github page:
 
-<p><a class="btn btn-primary" href="https://github.com/JustinVerstijnen/JV-EntraIDGetPrivilegedEntApps"><i class="fa-brands fa-github"></i> Download script from GitHub</a></p>
+<a class="btn btn-primary" href="https://github.com/JustinVerstijnen/JV-EntraIDGetPrivilegedEntApps" target="_blank" rel="noreferrer">__ Download script from GitHub</a>
 
 This script can be used to get a report of all high privileged applications across the tenant. [Go to this section](https://justinverstijnen.nl/audit-your-privileged-entra-id-applications/#using-my-script-to-audit-all-high-privileged-applications) for instructions of how to use the script and the output.
 
@@ -24,8 +24,8 @@ This script can be used to get a report of all high privileged applications acro
 
 Enterprise Applications in Entra ID are the applications which will be registered when users need them. Somethimes, it can be for a add-on of Outlook or Teams, but other times this can be to enable Single Sign On to 3rd party applications.
 
-{{% alert color="info" %}}
-In terms of Entra ID and Identity, we call a Enterprise Application a "**Service Principal**". A principal for a service to give permissions to.
+{{% alert title="Info" color="info" %}}
+In terms of Entra ID and Identity, we call such application a `Service Principal**`**. A principal for a service to give permissions to.
 {{% /alert %}}
 
 Enterprise applications are mostly pre-configured by the 3rd party publisher of the application that needs permission. However, a user can be prompted to give their information to a application. This looks like this:
@@ -40,15 +40,15 @@ As we can see, the application gets the information of the calendars, the profil
 
 App Registrations are applications who are mostly custom. These can be used for Single Sign On integration with 3rd party applications or to provide access from another application to Microsoft Entra ID and subservices.
 
-App Registrations are commonly more privileged and can be dangerously **high privileged**, even not having a requirement for MFA. The only thing you need to use an app registration is:
+App Registrations are commonly more privileged and can be dangerously high privileged, even not having a requirement for MFA. The only thing you need to use an app registration is:
 
 - Client ID
-- Tenant ID (public available: <https://tools.justinverstijnen.nl/tenantlookuptool/>)
+- Tenant ID (public available: [https://tools.justinverstijnen.nl/tenantlookuptool/](https://tools.justinverstijnen.nl/tenantlookuptool/))
 - Secret/Certificate
 
 App registrations can have permissions far above "Global Administrator", but we don't handle them like global administrators or even higher accounts. The Microsoft Secure Score also doesn't report them and they can be hard to find.
 
-{{% alert color="warning" %}}
+{{% alert title="Warning" color="warning" %}}
 These applications are used in practice by hackers to leave backdoors in tenants to remain in the tenant. If they do this right, they can be unseen for months while still stealing company information.
 {{% /alert %}}
 
@@ -59,7 +59,7 @@ These applications are used in practice by hackers to leave backdoors in tenants
 We can do several things to avoid being hacked by this sort of things:
 
 - Audit all applications every X days, deleting apps that aren't needed
-  - You can use my script to help you audit
+    - You can use my script to help you audit
 - Saving App registration information in safe places only, don't transfer them in plain-text over email
 - Treat these applications as passwords and certificates
 
@@ -79,21 +79,21 @@ Fill in a name and the rest doesn't care for testing purposes. You can leave the
 
 [![jv-media-3399-5a841560a4c4.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/audit-your-privileged-entra-id-applications-3399/jv-media-3399-5a841560a4c4.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/audit-your-privileged-entra-id-applications-3399/jv-media-3399-5a841560a4c4.png)
 
-Click Register.
+Click Register to finish creating the application.
 
 ### Permissions and Assignment
 
-Now the application is created. Open it if not already redirected. Write down the "Client ID" and the "Tenant ID" because we will need them in a short moment. Then go to the section "API permissions".
+Now the application is created. Open it if not already redirected. Write down the `Client ID` and the `Tenant ID` because we will need them in a short moment. Then go to the section `API permissions`.
 
 [![jv-media-3399-83b9dfe6462a.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/audit-your-privileged-entra-id-applications-3399/jv-media-3399-83b9dfe6462a.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/audit-your-privileged-entra-id-applications-3399/jv-media-3399-83b9dfe6462a.png)
 
-Here you find all assigned permissions to the application. Click on "+ Add a permission" to add permissions to this application. Then click on "Microsoft Graph".
+Here you find all assigned permissions to the application. Click on `+ Add a permission` to add permissions to this application. Then click on `Microsoft Graph`.
 
 [![jv-media-3399-d6a933e90a59.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/audit-your-privileged-entra-id-applications-3399/jv-media-3399-d6a933e90a59.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/audit-your-privileged-entra-id-applications-3399/jv-media-3399-d6a933e90a59.png)
 
 Microsoft Graph is the new API of Microsoft that spans across most of the Microsoft Online services.
 
-Then click on "Application permissions":
+Click now on `Application permissions`:
 
 [![jv-media-3399-1740d396ab82.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/audit-your-privileged-entra-id-applications-3399/jv-media-3399-1740d396ab82.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/audit-your-privileged-entra-id-applications-3399/jv-media-3399-1740d396ab82.png)
 
@@ -136,13 +136,9 @@ Now copy both the Value, which is the secret itself and the Secret ID and store 
 
 ## Using this application to login on Microsoft Graph
 
-We can now use the application to login to Microsoft Graph with the following script:
+We can now use the application details to login to Microsoft Graph with the following script:
 
-{{% alert color="info" %}}
-Refer to my GitHub page for the requirements for using the script and Microsoft Graph.
-{{% /alert %}}
-
-{{< card code=true header="**POWERSHELL**" lang="powershell" >}}
+{{< card code=true header="**PowerShell**" lang="powershell" >}}
 # Fill in these 3 values
 $ApplicationClientId = '<your-app-client-id>'
 $TenantId = '<your-tenant-id>'
@@ -167,13 +163,13 @@ After logging in we can try to get and change information:
 
 Get all Users:
 
-{{< card code=true header="**POWERSHELL**" lang="powershell" >}}
+{{< card code=true header="**PowerShell**" lang="powershell" >}}
 Get-MgUser
 {{< /card >}}
 
 Create user:
 
-{{< card code=true header="**POWERSHELL**" lang="powershell" >}}
+{{< card code=true header="**PowerShell**" lang="powershell" >}}
 $PasswordProfile = @{
   Password = 'Pa$$w)rd!'
 }
@@ -182,15 +178,24 @@ New-MgUser -Displayname "Test" -MailNickname "test" -Userprincipalname "test@jus
 
 Remove user:
 
-{{< card code=true header="**POWERSHELL**" lang="powershell" >}}
+{{< card code=true header="**PowerShell**" lang="powershell" >}}
 Remove-MgUser -UserId "247f8ec8-c2fc-44a0-9665-48b85c19ada4" -Confirm
 {{< /card >}}
 
 Watch the demo video here:
 
-[Watch the demo video](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/audit-your-privileged-entra-id-applications-3399/jv-media-3399-be60423a607e.mp4)
+<div style="width: 100%; max-width: 960px; aspect-ratio: 16 / 9;">
+  <iframe
+    src="https://www.youtube.com/embed/g9XXJUewO9k?autoplay=1&mute=1&playsinline=1"
+    title="JV video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    style="display: block; width: 100%; height: 100%; border: 0;">
+  </iframe>
+</div>
 
-Now a user isn't that destructive, but given the scopes we assigned: we can do a lot more. For more Microsoft Graph commands, visit: <https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users/?view=graph-powershell-1.0>
+Now a user isn't that destructive, but given the scopes we assigned: we can do a lot more. For more Microsoft Graph commands, visit: [https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users/?view=graph-powershell-1.0](https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users/?view=graph-powershell-1.0)
 
 ---
 
@@ -200,7 +205,7 @@ Now that we have created and abused our demo application, let's use my script to
 
 You can, once again, download the script here:
 
-[Download script from GitHub](https://github.com/JustinVerstijnen/JV-EntraIDGetPrivilegedEntApps)
+<a class="btn btn-primary" href="https://github.com/JustinVerstijnen/JV-EntraIDGetPrivilegedEntApps" target="_blank" rel="noreferrer">Download script from GitHub</a>
 
 I have already downloaded the script, and have it ready to execute:
 
@@ -208,12 +213,13 @@ I have already downloaded the script, and have it ready to execute:
 
 When executed, it asks to login to a tenant. Here you have to login to the tenant you want to audit. After that it will be performing the checks. This can take a while with several applications.
 
-{{% alert color="info" %}}
-When prompted that the Execution Policy is restricted, you can use this command for a one-time bypass until the window closes:
-{{< card code=true header="**POWERSHELL**" lang="powershell" >}}
-Set-ExecutionPolicy Unrestricted -Scope Process
-{{< /card >}}
+{{% alert title="Info" color="info" %}}
+When prompted that the Execution Policy is restricted, you can use this command below for a one-time bypass until the window closes.
 {{% /alert %}}
+
+```powershell
+Set-ExecutionPolicy Unrestricted -Scope Process -Force
+```
 
 After the script finishes all the checks, it puts out a CSV file in the same folder as the script which we can now open to review the applications and their permissions:
 
@@ -237,6 +243,7 @@ I hope I convinced you with this guide how much of an risk the applications in M
 
 {{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
+
 1. https://learn.microsoft.com/en-us/entra/identity-platform/application-consent-experience
 2. https://learn.microsoft.com/en-us/graph/permissions-overview?tabs=http#comparison-of-delegated-and-application-permissions
 3. https://learn.microsoft.com/en-us/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0#use-client-secret-credentials
