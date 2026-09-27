@@ -75,9 +75,7 @@ From the right, select the `Allow Search Highlights` setting and on the left dis
 
 Little bit dissapointing Microsoft did not made an easy switch which makes this more clear such as other settings but no big deal. The technical reason behind this is that Microsoft uses the following CSP setting behind this configuration:
 
-```
 ./Device/Vendor/MSFT/Policy/Config/Search/AllowSearchHighlights
-```
 
 The value used for disabling Search Highlights is actually `0`.
 
@@ -111,7 +109,7 @@ Then click Apply and OK. Computers may need a re-login or reboot for the policy 
 
 ## Option 3: Configure through Registry
 
-You may not want to do this, but you can also configure this setting through Registry, so you know which key is altered with the Intune or Group Policy change.
+You may not want to do this, but you can also configure this setting through Registry, so you know which key is altered with the Intune or Group Policy change. Make sure to run this command with administrative permissions as we need to change the HKLM hive.
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
 reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search" /v "EnableDynamicContentInWSB" /t REG_DWORD /d 0 /f
