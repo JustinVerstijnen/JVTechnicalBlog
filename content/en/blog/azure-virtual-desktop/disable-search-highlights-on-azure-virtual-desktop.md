@@ -1,7 +1,7 @@
 ---
 title: "Disable Search Highlights on Azure Virtual Desktop"
 slug: "disable-search-highlights-azure-virtual-desktop"
-date: 2025-09-26
+date: 2026-10-04
 tags:
 - Step by Step Guides
 categories:
