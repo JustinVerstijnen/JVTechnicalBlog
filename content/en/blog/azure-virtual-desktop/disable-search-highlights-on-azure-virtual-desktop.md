@@ -12,7 +12,7 @@ hidden: false
 
 ## What are Search Highlights?
 
-Search Highlights is a Windows feature that can show additional dynamic content inside Windows Search, for example information about special days, events and other highlighted content. You can normally see this in Windows 11 when opening Windows Search or clicking inside the Search box.
+Search Highlights is a Windows feature that can show additional dynamic content inside Windows Search, for example information about special days, events and other highlighted content. You can normally see this in Windows 11 when opening Windows Search or clicking inside the Search box. Searching from the start menu is not affected as far as I could test.
 
 [![jv-media-8533-b9fcc625f69f.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/disable-search-highlights-azure-virtual-desktop/jv-media-8533-b9fcc625f69f.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/disable-search-highlights-azure-virtual-desktop/jv-media-8533-b9fcc625f69f.png)
 
