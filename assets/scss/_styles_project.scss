@@ -96,12 +96,51 @@ nav.foldable-nav .ul-1 .with-child>input:checked~label::before { color: #77B0DE;
 
 a { color: #4b92cb; text-decoration: none; }
 
-/* Mobile: allow long links in blog content to wrap instead of overflowing */
+/* Mobile: keep long links and nested lists inside the article viewport */
 @media (max-width: 767.98px) {
   .td-content p a,
   .td-content li a,
   .td-content td a,
   .td-content th a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .td-content ul,
+  .td-content ol {
+    max-width: 100%;
+    margin-right: 0;
+    padding-inline-start: 1.35rem;
+    padding-inline-end: 0;
+    box-sizing: border-box;
+  }
+
+  .td-content ul ul,
+  .td-content ul ol,
+  .td-content ol ul,
+  .td-content ol ol {
+    max-width: 100%;
+    padding-inline-start: 1.1rem;
+    padding-inline-end: 0;
+  }
+
+  .td-content li {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .td-content li > p,
+  .td-content li > div {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .td-content li > code {
+    white-space: normal;
     overflow-wrap: anywhere;
     word-break: break-word;
   }
