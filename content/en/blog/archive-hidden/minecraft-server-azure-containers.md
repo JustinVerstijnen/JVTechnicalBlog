@@ -1,1 +1,0 @@
-Try if Minecraft server can run on Azure Container Apps or such.
