@@ -1,0 +1,24 @@
+{{ define "main" -}}
+
+<div class="td-content">
+  <h1>{{ .Data.Singular | humanize | title }}: {{ .Title }}</h1>
+  {{ .Content }}
+</div>
+
+{{- if .Pages -}}
+<div class="td-blog-posts jv-blog-list">
+  <ul class="td-blog-posts-list">
+    {{- range .Pages }}
+      {{ partial "jv-blog-card.html" . }}
+    {{- end }}
+  </ul>
+</div>
+
+{{- with .Parent }}
+<div class="td-content mt-4">
+  <a class="btn btn-outline-primary" href="{{ .RelPermalink }}">All {{ .Title }}</a>
+</div>
+{{- end }}
+{{- end }}
+
+{{ end -}}

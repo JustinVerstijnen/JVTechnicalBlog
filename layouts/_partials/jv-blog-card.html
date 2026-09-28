@@ -1,0 +1,70 @@
+<li class="td-blog-posts-list__item">
+  <div class="td-blog-posts-list__body">
+    <h5 class="mt-0 jv-blog-card__title">
+      <a class="jv-blog-card__stretched-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </h5>
+
+    <div class="jv-blog-card__meta" aria-label="Post information">
+      <span class="jv-blog-card__meta-tool">
+        <span class="jv-blog-card__meta-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+        </span>
+        <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+      </span>
+
+      {{- if (and (not .Params.hide_readingtime) (.Site.Params.ui.readingtime.enable)) }}
+      <span class="jv-blog-card__meta-tool">
+        <span class="jv-blog-card__meta-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </span>
+        <span>{{ .ReadingTime }} min read</span>
+      </span>
+      {{- end }}
+
+      {{- with .GetTerms "categories" }}
+      <span class="jv-blog-card__meta-tool jv-blog-card__meta-tool--accent">
+        <span class="jv-blog-card__meta-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M3 7h7l2 2h9v10H3z"/></svg>
+        </span>
+        <span class="visually-hidden">Category: </span>
+        <span class="jv-blog-card__meta-values">
+          {{- range $index, $term := . -}}
+            {{- if $index }}<span class="jv-blog-card__meta-separator">, </span>{{ end -}}<a href="{{ $term.RelPermalink }}">{{ $term.LinkTitle }}</a>
+          {{- end -}}
+        </span>
+      </span>
+      {{- end }}
+
+      {{- with .GetTerms "tags" }}
+      <span class="jv-blog-card__meta-tool jv-blog-card__meta-tool--accent">
+        <span class="jv-blog-card__meta-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M20 13l-7 7-9-9V4h7z"/><circle cx="8.5" cy="8.5" r="1.3"/></svg>
+        </span>
+        <span class="visually-hidden">Tag: </span>
+        <span class="jv-blog-card__meta-values">
+          {{- range $index, $term := . -}}
+            {{- if $index }}<span class="jv-blog-card__meta-separator">, </span>{{ end -}}<a href="{{ $term.RelPermalink }}">{{ $term.LinkTitle }}</a>
+          {{- end -}}
+        </span>
+      </span>
+      {{- end }}
+    </div>
+
+    {{- partial "featured-image.html" (dict "p" . "w" 250 "h" 125 "class" "float-start me-3 pt-1 d-none d-md-block") -}}
+
+    {{- $description := .Summary | plainify | htmlUnescape -}}
+    {{- with .Description -}}
+      {{- $description = . | plainify | htmlUnescape -}}
+    {{- end -}}
+    {{- $descriptionWords := findRE `\S+` $description -}}
+    <p class="jv-blog-card__excerpt pt-0">
+      {{- if gt (len $descriptionWords) 46 -}}
+        {{ delimit (first 46 $descriptionWords) " " }}...
+      {{- else -}}
+        {{ $description }}
+      {{- end -}}
+    </p>
+
+    <p class="jv-blog-card__footer"><a class="btn btn-primary" href="{{ .RelPermalink }}" aria-label="{{ T "ui_read_more"}} - {{ .LinkTitle }}">{{ T "ui_read_more"}}</a></p>
+  </div>
+</li>
