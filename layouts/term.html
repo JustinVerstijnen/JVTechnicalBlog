@@ -1,24 +1,33 @@
 {{ define "main" -}}
 
-<div class="td-content">
-  <h1>{{ .Data.Singular | humanize | title }}: {{ .Title }}</h1>
-  {{ .Content }}
-</div>
+{{- $taxonomyLabel := .Data.Singular | humanize | title -}}
 
-{{- if .Pages -}}
-<div class="td-blog-posts jv-blog-list">
-  <ul class="td-blog-posts-list">
-    {{- range .Pages }}
-      {{ partial "jv-blog-card.html" . }}
+<div class="jv-taxonomy-page">
+  <header class="td-content jv-taxonomy-page__header">
+    <div class="jv-taxonomy-page__type">{{ $taxonomyLabel }}</div>
+    <h1>{{ .Title }}</h1>
+    {{- with .Content }}
+      <div class="jv-taxonomy-page__intro">{{ . }}</div>
     {{- end }}
-  </ul>
-</div>
+  </header>
 
-{{- with .Parent }}
-<div class="td-content mt-4">
-  <a class="btn btn-outline-primary" href="{{ .RelPermalink }}">All {{ .Title }}</a>
+  {{- if .Pages }}
+  <div class="td-blog-posts jv-blog-list jv-taxonomy-page__posts">
+    {{- $pager := .Paginate (.Pages.GroupByDate "2006") }}
+    {{- range $pager.PageGroups }}
+      <div class="h2">{{ T "post_posts_in" }} {{ .Key }}</div>
+      <ul class="td-blog-posts-list">
+        {{- range .Pages }}
+          {{ partial "jv-blog-card.html" . }}
+        {{- end }}
+      </ul>
+    {{- end }}
+  </div>
+
+  <div class="td-blog-posts__pagination jv-taxonomy-page__pagination">
+    {{ template "_internal/pagination.html" . -}}
+  </div>
+  {{- end }}
 </div>
-{{- end }}
-{{- end }}
 
 {{ end -}}
