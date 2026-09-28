@@ -1864,6 +1864,7 @@ body:not(.home-navbar-transparent) .td-navbar .td-search__input:focus, body:not(
 
 .jv-taxonomy-page__header {
   margin-bottom: 0;
+  padding-top: 1.75rem;
 }
 
 .jv-taxonomy-page__type {
@@ -1898,5 +1899,9 @@ body:not(.home-navbar-transparent) .td-navbar .td-search__input:focus, body:not(
 @media (max-width: 991.98px) {
   .jv-taxonomy-page {
     max-width: 100%;
+  }
+
+  .jv-taxonomy-page__header {
+    padding-top: 1.25rem;
   }
 }
