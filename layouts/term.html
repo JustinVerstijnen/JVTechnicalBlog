@@ -1,11 +1,21 @@
 {{ define "main" -}}
 
 {{- $taxonomyLabel := .Data.Singular | humanize | title -}}
+{{- $taxonomyName := .Title -}}
 
 <div class="jv-taxonomy-page">
   <header class="td-content jv-taxonomy-page__header">
     <div class="jv-taxonomy-page__type">{{ $taxonomyLabel }}</div>
-    <h1>{{ .Title }}</h1>
+    <h1>{{ $taxonomyName }}</h1>
+
+    {{- if eq .Data.Singular "category" }}
+      <p class="jv-taxonomy-page__description">You are viewing all posts in the <strong>{{ $taxonomyName }}</strong> category.</p>
+    {{- else if eq .Data.Singular "tag" }}
+      <p class="jv-taxonomy-page__description">You are viewing all posts tagged with <strong>{{ $taxonomyName }}</strong>.</p>
+    {{- else }}
+      <p class="jv-taxonomy-page__description">You are viewing all posts in <strong>{{ $taxonomyName }}</strong>.</p>
+    {{- end }}
+
     {{- with .Content }}
       <div class="jv-taxonomy-page__intro">{{ . }}</div>
     {{- end }}

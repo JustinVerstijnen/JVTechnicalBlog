@@ -1855,16 +1855,16 @@ body:not(.home-navbar-transparent) .td-navbar .td-search__input:focus, body:not(
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.34);
 }
 
-/* Taxonomy term pages: keep category/tag results aligned with blog section pages */
+/* Taxonomy term pages: use the blog chrome and keep the result list readable */
 .jv-taxonomy-page {
   width: 100%;
   max-width: 980px;
   margin: 0 auto;
+  padding-top: 1.5rem;
 }
 
 .jv-taxonomy-page__header {
   margin-bottom: 0;
-  padding-top: 1.75rem;
 }
 
 .jv-taxonomy-page__type {
@@ -1877,7 +1877,18 @@ body:not(.home-navbar-transparent) .td-navbar .td-search__input:focus, body:not(
 }
 
 .jv-taxonomy-page__header h1 {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.65rem;
+}
+
+.jv-taxonomy-page__description {
+  margin: 0 0 1.75rem;
+  color: #5f6f7e;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.jv-taxonomy-page__intro {
+  margin: -0.75rem 0 1.75rem;
 }
 
 .jv-taxonomy-page__intro > :last-child {
@@ -1885,7 +1896,11 @@ body:not(.home-navbar-transparent) .td-navbar .td-search__input:focus, body:not(
 }
 
 .jv-taxonomy-page__posts {
-  margin-top: 1.25rem;
+  margin-top: 0;
+}
+
+.jv-taxonomy-page__posts > .h2:first-child {
+  margin-top: 0;
 }
 
 .jv-taxonomy-page__pagination {
@@ -1896,12 +1911,13 @@ body:not(.home-navbar-transparent) .td-navbar .td-search__input:focus, body:not(
   color: #aeb9c5;
 }
 
+[data-bs-theme='dark'] .jv-taxonomy-page__description {
+  color: #b9c3cd;
+}
+
 @media (max-width: 991.98px) {
   .jv-taxonomy-page {
     max-width: 100%;
-  }
-
-  .jv-taxonomy-page__header {
     padding-top: 1.25rem;
   }
 }
