@@ -11,6 +11,8 @@ hidden: false
 
 {{< ads >}}
 
+## The command
+
 To open the old Devices and Printers control panel window, use the following command in Run or Windows PowerShell:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}

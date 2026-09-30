@@ -11,6 +11,7 @@ description: >
 
 {{< ads >}}
 
+## The command
 
 To get your device's serial number, use the following command in Windows PowerShell:
 
