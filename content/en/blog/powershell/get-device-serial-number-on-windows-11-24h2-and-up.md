@@ -6,7 +6,7 @@ categories:
   - Powershell
 tags:
 description: >
-  With Windows 24H2 and the deprecation of WMIC, a easy command to find your devices' serial number is gone. However, we can still look this up with Powershell.
+  With Windows 24H2 and the deprecation of WMIC, an easy command to find your devices' serial number is gone. However, we can still look this up with Powershell.
 ---
 
 {{< ads >}}
