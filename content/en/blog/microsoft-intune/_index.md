@@ -1,6 +1,5 @@
 ---
 title: Microsoft Intune
-slug: "intune"
 weight: 29
 ---
 
