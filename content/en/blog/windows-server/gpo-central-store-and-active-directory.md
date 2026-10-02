@@ -122,6 +122,8 @@ Now the folder is in the correct location and picked up by all servers in the do
 
 [![jv-media-7252-a2c68fb5e074.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/gpo-central-store-and-active-directory/jv-media-7252-a2c68fb5e074.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/gpo-central-store-and-active-directory/jv-media-7252-a2c68fb5e074.png)
 
+{{< ads >}}
+
 ---
 
 ## Step 3: Check the Central Store
