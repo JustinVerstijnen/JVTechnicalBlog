@@ -3,11 +3,10 @@ title: "Disable Windows Taskbar Widgets through Intune"
 date: 2025-11-06
 slug: "disable-windows-taskbar-widgets-through-intune"
 categories:
-  - Intune
+  - Microsoft Intune
 tags:
   - Step by Step guides
-description: >
-  Today a short guide on how to disable Windows Taskbar widgets through Intune. I mean this part of the Windows 11 taskbar.
+description: "Today a short guide on how to disable Windows Taskbar widgets through Intune. I mean this part of the Windows 11 taskbar."
 ---
 
 [![jv-media-5551-0e5b331ce973.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/disable-windows-taskbar-widgets-through-intune-5551/jv-media-5551-0e5b331ce973.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/disable-windows-taskbar-widgets-through-intune-5551/jv-media-5551-0e5b331ce973.png)

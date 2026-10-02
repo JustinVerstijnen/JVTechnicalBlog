@@ -3,7 +3,7 @@ title: "Using and configuring Windows Backup for Organizations in Intune"
 date: 2025-11-01
 slug: "configure-windows-backup-for-organizations-in-intune"
 categories:
-  - Intune
+  - Microsoft Intune
 tags:
   - Step by Step guides
 description: >

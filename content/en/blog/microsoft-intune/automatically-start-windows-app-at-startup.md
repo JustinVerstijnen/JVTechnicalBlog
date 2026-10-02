@@ -3,7 +3,7 @@ title: "Automatically start Windows App at startup"
 date: 2025-12-25
 slug: "automatically-start-windows-app-at-startup"
 categories:
-  - Intune
+  - Microsoft Intune
 tags:
   - Step by Step guides
 description: >

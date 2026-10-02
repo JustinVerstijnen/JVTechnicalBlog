@@ -3,7 +3,7 @@ title: "Remove Pre-installed Windows Store Apps with Intune"
 date: 2025-10-21
 slug: "remove-pre-installed-windows-store-apps-with-intune"
 categories:
-  - Intune
+  - Microsoft Intune
 tags:
   - Step by Step guides
 description: >
