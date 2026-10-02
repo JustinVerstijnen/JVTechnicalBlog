@@ -12,11 +12,11 @@ hidden: false
 
 ## Group Policy Central Store described
 
-When you manage Group Policies in an Active Directory environment, big change you use the Administrative Templates quite often. These templates contain the policy settings which you can configure for Windows, Microsoft products, and many third-party applications. By default, Group Policy Management can use the Administrative Template files which are installed locally on the computer where you edit your Group Policies.
+When you manage Group Policies in an Active Directory environment, big chance you use the Administrative Templates quite often. These templates contain the policy settings which you can configure for Windows, Microsoft products, and many third-party applications like FSLogix and Google Chrome. 
 
-This works, but can become confusing when multiple administrators or management servers are being used. One administrator could have newer or different sets of Administrative Templates installed than another admin. This is where the `Group Policy Central Store` comes in.
+By default, Group Policy Management can use the Administrative Template files which are installed locally on the computer where you edit your Group Policies. This works, but can become confusing when multiple administrators or management servers are being used. One administrator could have newer or different sets of Administrative Templates installed than another admin. This is where the `Group Policy Central Store` comes in.
 
-The Central Store is a shared location inside the `SYSVOL` folder of your Active Directory domain where we can centrally store our `.admx` and `.adml` files. All servers and clients can then fetch the configured policies from there ,because SYSVOL is shared and replicated between the Domain Controllers, the same Administrative Templates can then be used when editing Group Policies throughout the domain.
+The Central Store is a shared location inside the `SYSVOL` folder of your Active Directory domain where we can centrally store our `.admx` and `.adml` files. All servers and clients can then fetch the configured policies from there ,because SYSVOL is shared and replicated between the Domain Controllers, the same Administrative Templates can then be used when editing Group Policies throughout the domain. The replication of these files work with Distributed File System (DFS).
 
 In this guide, we will create one central location from where our Administrative Templates can be managed. This is crucial if having multiple domain controllers and/or management servers.
 
@@ -31,7 +31,7 @@ Before creating the Central Store, it is useful to understand the two different 
 
 For example:
 
-```
+{{< card code=true header="**Plain text**" lang="text" >}}
 PolicyDefinitions
 │
 ├── WindowsUpdate.admx
@@ -42,7 +42,7 @@ PolicyDefinitions
     ├── WindowsUpdate.adml
     ├── TerminalServer.adml
     └── WindowsDefender.adml
-```
+{{< /card >}}
 
 It is important that the ADMX and ADML files belong together. Copying a new ADMX file without the matching language file can result in errors or missing descriptions inside Group Policy Management.
 
@@ -60,9 +60,9 @@ It is important that the ADMX and ADML files belong together. Copying a new ADMX
 
 For this guide, I will use my Active Directory domain:
 
-```
+{{< card code=true header="**Plain text**" lang="text" >}}
 internal.justinverstijnen.nl
-```
+{{< /card >}}
 
 You will need to replace this with your own Active Directory domain name when following this guide in your own environment.
 
@@ -72,23 +72,19 @@ You will need to replace this with your own Active Directory domain name when fo
 
 Before we start to create anything, we should first check if the domain already has a Central Store. Open File Explorer on your Domain Controller or management computer and browse to:
 
-```
+{{< card code=true header="**Plain text**" lang="text" >}}
 \\<yourdomain>\SYSVOL\<yourdomain>\Policies
-```
+{{< /card >}}
 
 For my domain this is:
 
-```
+{{< card code=true header="**Plain text**" lang="text" >}}
 \\internal.justinverstijnen.nl\SYSVOL\internal.justinverstijnen.nl\Policies
-```
+{{< /card >}}
 
 [![jv-media-7252-688112abfa21.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/gpo-central-store-and-active-directory/jv-media-7252-688112abfa21.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/gpo-central-store-and-active-directory/jv-media-7252-688112abfa21.png)
 
-Inside the `Policies` folder, check if there is already a folder named:
-
-```
-PolicyDefinitions
-```
+Inside the `Policies` folder, check if there is already a folder named `PolicyDefinitions`.
 
 If the `PolicyDefinitions` folder already exists, your environment already has a Central Store. Do not create another `PolicyDefinitions` folder in that case. First check the existing files and make a backup before changing anything.
 
@@ -114,9 +110,9 @@ We will copy this folder `PolicyDefinitions` to the following location:
 
 Click `Copy`. Then navigate back to your SYSVOL folder:
 
-```
+{{< card code=true header="**Plain text**" lang="text" >}}
 \\internal.justinverstijnen.nl\SYSVOL\internal.justinverstijnen.nl\Policies
-```
+{{< /card >}}
 
 Paste the folder there:
 
@@ -151,14 +147,14 @@ Our Central Store is working, but over time we will probably need additional Adm
 
 The downloaded Administrative Template package will normally contain one or more `.admx` files and matching `.adml` language files. For example, a package could look like this:
 
-```
+{{< card code=true header="**Plain text**" lang="text" >}}
 Administrative Templates
 │
 ├── ExampleApplication.admx
 │
 └── en-US
     └── ExampleApplication.adml
-```
+{{< /card >}}
 
 The ADMX file must be placed in the `PolicyDefinitions` folder with the ADML file in the target subfolder of the preferred language. For my example, I will be installing the FSLogix Administrative Templates, which I downloaded from here: https://aka.ms/fslogix-latest
 
