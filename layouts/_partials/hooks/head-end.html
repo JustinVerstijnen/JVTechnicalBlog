@@ -17,19 +17,14 @@ formats such as RSS, print or Markdown are enabled.
 ==========================================================
 Homepage cover image preload
 
-Docsy's cover shortcode also emits preload hints, but it does
-so in the page body. Preloading the exact same processed image
-resources here lets the browser discover the hero image earlier.
+Preload the original homepage background image directly so the
+browser can start fetching it before the cover markup is parsed.
 ==========================================================
 */ -}}
 
 {{- if .IsHome }}
   {{- with (.Resources.ByType "image").GetMatch "**background*" }}
-    {{- if ne .MediaType.SubType "svg" }}
-      {{- $coverSmall := .Resize "1440x" }}
-<link rel="preload" as="image" href="{{ $coverSmall.RelPermalink }}" media="(max-width: 1200px)" fetchpriority="high">
-<link rel="preload" as="image" href="{{ .RelPermalink }}" media="(min-width: 1200px)" fetchpriority="high">
-    {{- end }}
+<link rel="preload" as="image" href="{{ .RelPermalink }}" fetchpriority="high">
   {{- end }}
 {{- end }}
 

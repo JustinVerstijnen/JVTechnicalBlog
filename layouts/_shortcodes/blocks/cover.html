@@ -7,30 +7,12 @@
 {{/* Height can be one of: auto, min, med, max, full. */ -}}
 {{ $height := .Get "height" | default "max" -}}
 {{ with $promo_image -}}
-  {{ $promo_image_big := . -}}
-  {{ $promo_image_small := . -}}
-  {{ if ne $promo_image.MediaType.SubType "svg" -}}
-    {{/*
-      Keep the source aspect ratio instead of pre-cropping to 16:9.
-      The previous Docsy defaults (960x540 / 1920x1080) could be
-      upscaled noticeably in a tall browser window. The browser can
-      now crop the higher-resolution 3:2 image itself with cover.
-    */ -}}
-    {{ $promo_image_small = .Resize "1440x" -}}
-  {{ end -}}
-<link rel="preload" as="image" href="{{ $promo_image_small.RelPermalink }}" media="(max-width: 1200px)">
-<link rel="preload" as="image" href="{{ $promo_image_big.RelPermalink }}" media="(min-width: 1200px)">
 <style>
 #{{ $blockID }} {
-  background-image: url({{ $promo_image_small.RelPermalink }});
+  background-image: url({{ .RelPermalink }});
   {{- if eq $image_anchor "top" }}
   background-position: center top;
   {{- end }}
-}
-@media only screen and (min-width: 1200px) {
-  #{{ $blockID }} {
-    background-image: url({{ $promo_image_big.RelPermalink }});
-  }
 }
 </style>
 {{ end -}}
