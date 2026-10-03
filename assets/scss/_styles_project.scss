@@ -352,6 +352,7 @@ body:not(.home-navbar-transparent) .td-navbar {
 }
 
 .home-navbar-transparent .td-navbar, .home-navbar-transparent .td-navbar.td-navbar-cover, .home-navbar-transparent .td-navbar.td-navbar-cover.td-navbar-transparent {
+  transition: none !important;
   background: rgba(255, 255, 255, 0.08) !important;
   background-image: none !important;
   -webkit-backdrop-filter: blur(10px) saturate(140%) !important;

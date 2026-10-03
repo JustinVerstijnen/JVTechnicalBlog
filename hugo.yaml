@@ -44,6 +44,8 @@ taxonomies:
 # Image processing
 imaging:
   resampleFilter: CatmullRom
+  jpeg:
+    quality: 85
 
 # Language configuration
 languages:
