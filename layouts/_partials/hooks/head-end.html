@@ -26,10 +26,9 @@ resources here lets the browser discover the hero image earlier.
 {{- if .IsHome }}
   {{- with (.Resources.ByType "image").GetMatch "**background*" }}
     {{- if ne .MediaType.SubType "svg" }}
-      {{- $coverSmall := .Fill "960x540 top" }}
-      {{- $coverBig := .Fill "1920x1080 top" }}
+      {{- $coverSmall := .Resize "1440x" }}
 <link rel="preload" as="image" href="{{ $coverSmall.RelPermalink }}" media="(max-width: 1200px)" fetchpriority="high">
-<link rel="preload" as="image" href="{{ $coverBig.RelPermalink }}" media="(min-width: 1200px)" fetchpriority="high">
+<link rel="preload" as="image" href="{{ .RelPermalink }}" media="(min-width: 1200px)" fetchpriority="high">
     {{- end }}
   {{- end }}
 {{- end }}
