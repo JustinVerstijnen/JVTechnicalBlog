@@ -27,7 +27,7 @@ In this guide, we will use Microsoft Graph PowerShell to check the current synch
 
 ---
 
-## Step 1. Install and Connect with Microsoft Graph
+## Step 1. Installing and connecting the PowerShell modules
 
 We first need to install the Microsoft Graph PowerShell modules, if you don't already have them installed. Let's open up PowerShell on your computer and run the commands below:
 
@@ -58,11 +58,9 @@ This should result in a list of details of your account, tenant and the granted 
 
 ---
 
-## Step 2. Complete the final synchronization
+## Step 2. Preparing to disable the synchronization for the user
 
-Before transferring the Source of Authority, make sure all current Active Directory changes for the user have been synchronized to Microsoft Entra ID.
-
-On your Microsoft Entra Connect Sync server, run:
+Before transferring the Source of Authority, make sure all current Active Directory changes for the user have been synchronized to Microsoft Entra ID. On your Microsoft Entra Connect Sync server, run:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
 Start-ADSyncSyncCycle -PolicyType Delta
@@ -70,7 +68,7 @@ Start-ADSyncSyncCycle -PolicyType Delta
 
 Wait for the synchronization cycle to complete before continuing. This should take up to 5 minutes.
 
-Then can now select the user we want to convert. Run the line below and change the UserPrincipalName below to the user you want to make cloud-managed/cloud-only:
+Then can now select the user we want to convert. Run the line below on your own computer or management server and change the UserPrincipalName below to the user you want to make cloud-managed/cloud-only:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
 $UserPrincipalName = "testuser@justinverstijnen.nl"
@@ -78,21 +76,11 @@ $UserPrincipalName = "testuser@justinverstijnen.nl"
 
 [![jv-media-8534-9f41fe44fc3b.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/disable-adsync-single-user-microsoft-entra-id/jv-media-8534-9f41fe44fc3b.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/disable-adsync-single-user-microsoft-entra-id/jv-media-8534-9f41fe44fc3b.png)
 
-This will create a variable which we can use in the further commands we are needed to run.
-
-{{< card code=true header="**PowerShell**" lang="powershell" >}}
-$User = Get-MgBetaUser `
-    -UserId $UserPrincipalName `
-    -Property "Id,DisplayName,UserPrincipalName,OnPremisesSyncEnabled"
-
-$User | Select-Object DisplayName, UserPrincipalName, Id, OnPremisesSyncEnabled
-{{< /card >}}
-
-For a user that is currently synchronized from your local Active Directory, OnPremisesSyncEnabled should show True.
+This will create a variable which we can use in the further commands we are needed to run in the steps below.
 
 ---
 
-## Step 3. Check the current Source of Authority
+## Step 3. Check the current status
 
 Now we have selected the correct user, let's check the current Source of Authority using Microsoft Graph PowerShell:
 
@@ -110,11 +98,9 @@ This means the local Active Directory is still the Source of Authority for this 
 
 ---
 
-## Step 4. Transfer the Source of Authority to Microsoft Entra ID
+## Step 4. Making the user cloud-only
 
-Now we can transfer the Source of Authority for this specific user to Microsoft Entra ID.
-
-Run the following command:
+Now we can transfer the Source of Authority for this specific user to Microsoft Entra ID, making it cloud only. Run the following command to perform this action:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
 Update-MgBetaUserOnPremiseSyncBehavior `
@@ -132,7 +118,7 @@ This is the main difference compared to disabling directory synchronization comp
 
 ---
 
-## Step 5. Verify the Source of Authority
+## Step 5. Verify the user
 
 After performing the change, we want to make sure the Source of Authority was successfully transferred.
 
@@ -154,9 +140,9 @@ Do not remove the local Active Directory user before IsCloudManaged shows True. 
 
 ## Step 6. Remove the local Active Directory user
 
-If the user no longer requires access to on-premises resources, you can now remove the local Active Directory account.
+If the user no longer requires access to on-premises resources, you can now remove the local Active Directory account if it's not longer needed.
 
-Microsoft Graph cannot manage your local Active Directory, so this part needs to be performed using the ActiveDirectory PowerShell module or by the GUI Active Directory Users and Computers (`dsa.msc`).
+Microsoft Graph cannot manage your local Active Directory, so this part needs to be performed using the ActiveDirectory PowerShell module or by the GUI Active Directory Users and Computers (`dsa.msc`) on your Actibve Directory management server.
 
 For example on how to perform it with PowerShell:
 
