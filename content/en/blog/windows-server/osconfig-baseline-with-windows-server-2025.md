@@ -1,7 +1,7 @@
 ---
 title: "OSConfig Baseline with Windows Server 2025"
 slug: "osconfig-baseline-with-windows-server-2025"
-date: 2025-11-19
+date: 2026-11-19
 tags:
 - Step by Step Guides
 categories:
