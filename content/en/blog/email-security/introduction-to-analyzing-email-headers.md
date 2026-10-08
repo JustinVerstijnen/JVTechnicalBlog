@@ -6,7 +6,7 @@ tags:
 - Concepts
 categories:
 - Email security
-description: "In this post, we will dive into how to analyze Email Headers and to use this information to enhance your email delivery. Also you can view why an message went up in a user's junk folder."
+description: "In this post, we will dive into how to analyze Email Headers and to use this information to enhance your email delivery. Also you can view why a message went up in a user's junk folder."
 hidden: false
 ---
 
