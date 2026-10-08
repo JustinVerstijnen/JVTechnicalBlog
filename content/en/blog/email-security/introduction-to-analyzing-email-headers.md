@@ -115,7 +115,7 @@ You can now copy all of this text and paste it into a Header Analyzer tool.
 
 ### Outlook Desktop (Classic)
 
-Open the email, select "File", select "Properties", and copy the content from the "Internet headers" box.
+Open the email, select "File", select `Properties`, and copy the content from the `Internet headers` box.
 
 ### Microsoft Defender portal
 
@@ -139,9 +139,9 @@ SPF validates whether the sending mail server is authorized to send email for th
 
 Example:
 
-```
+{{< card code=true header="**Plain text**" lang="text" >}}
 spf=pass
-```
+{{< /card >}}
 
 A failed SPF result can indicate spoofing or an incorrectly configured sender domain.
 
@@ -151,9 +151,9 @@ DKIM validates the digital signature attached to the message.
 
 Example:
 
-```
+{{< card code=true header="**Plain text**" lang="text" >}}
 dkim=pass
-```
+{{< /card >}}
 
 This helps verify that the email content was not modified during transport.
 
@@ -163,9 +163,9 @@ DMARC combines SPF and DKIM alignment checks and determines how receiving system
 
 Example:
 
-```
+{{< card code=true header="**Plain text**" lang="text" >}}
 dmarc=pass
-```
+{{< /card >}}
 
 A DMARC failure can explain why messages are quarantined or marked as suspicious.
 
@@ -184,17 +184,17 @@ One commonly analyzed value is the Spam Confidence Level (SCL).
 
 You may also see verdict values such as:
 
-```
+{{< card code=true header="**Plain text**" lang="text" >}}
 SFV:SPM
-```
+{{< /card >}}
 
 This indicates Microsoft classified the message as spam.
 
 Another example:
 
-```
+{{< card code=true header="**Plain text**" lang="text" >}}
 SFV:SKS
-```
+{{< /card >}}
 
 This indicates the message skipped spam filtering.
 
