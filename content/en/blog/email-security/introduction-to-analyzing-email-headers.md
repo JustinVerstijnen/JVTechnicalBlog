@@ -12,7 +12,7 @@ hidden: false
 
 # Introduction to Analyzing Email Headers
 
-When you troubleshoot mail flow, investigate phishing attempts, or validate spam filtering behavior, email headers are one of the most useful sources of information. Every email contains some hidden metadata (called the **Headers**) that shows how the message traveled across mail servers, which authentication checks were performed, and how spam filtering systems handled the message. This gives you an answer why that one mail ended up in the user's junk box.
+When you troubleshoot mail flow, investigate phishing attempts, or validate spam filtering behavior, email headers are one of the most useful sources of information. Every email contains some hidden metadata (called the `Headers` that shows how the message traveled across mail servers, which authentication checks were performed, and how spam filtering systems handled the message. This gives you an answer why that one mail ended up in the user's junk box.
 
 In Microsoft 365 and Exchange Online environments, analyzing email headers is a common task for administrators and support engineers which must be performed regularly.
 
@@ -91,7 +91,7 @@ Altough this contains a huge amount of information, we can basically extract som
 
 In Microsoft 365, the X-Forefront-Antispam-Report header is one of the most useful headers to check when investigating spam. Microsoft Defender adds several values here that show how the email was assessed.
 
-For example, you can see the **Spam Confidence Level (SCL)**, whether Microsoft considered the message to be spam, phishing, or legitimate, and information about the sending IP address and the checks that were performed on the message.
+For example, you can see the `Spam Confidence Level (SCL)`, whether Microsoft considered the message to be spam, phishing, or legitimate, and information about the sending IP address and the checks that were performed on the message.
 
 ---
 
@@ -119,7 +119,7 @@ Open the email, select "File", select `Properties`, and copy the content from th
 
 ### Microsoft Defender portal
 
-Open the Microsoft Defender portal at https://security.microsoft.com, go to "Email & collaboration", select "Explorer", open the message, and review the message details and headers.
+Open the Microsoft Defender portal at https://security.microsoft.com, go to `Email & collaboration`, select `Explorer`, open the message, and review the message details and headers.
 
 [![jv-media-8528-e82fccf50155.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/introduction-to-analyzing-email-headers/jv-media-8528-e82fccf50155.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/introduction-to-analyzing-email-headers/jv-media-8528-e82fccf50155.png)
 
