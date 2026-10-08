@@ -1,5 +1,5 @@
 ---
-title: "Email security"
+title: "Email Security"
 description: "This category contains some pages about how to increase your email security across all your owned domains by using various security mechanisms."
 date: 2024-06-19
 slug: "email-security"
