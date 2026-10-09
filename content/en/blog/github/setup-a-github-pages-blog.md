@@ -33,8 +33,8 @@ The components of my website are:
 
 - **GitHub Pages:** This is the place where my website runs and is maintained using all built-in functions of GitHub, and some scripts and configuration files are hosted on their separate repositories to keep everything centralized and online
 - **Docsy:** [Docsy](https://www.docsy.dev/docs/) is the GitHub Pages theme I am currently using and delivers the foundation and functions (framework) of the website, where I have done some additions and customizations to make it more to my likings
-- **Hugo:**Hugo is a document generator which converts your Markdown to static HTML pages in the theme you are using, lets say the engine of the theme
-- **Umami:**This tool I use to analyze the traffic on my website. Basically a visitor counter with a lot of options I don't use. This tool is much more privacy friendly than Google's counterpart
+- **Hugo:** Hugo is a document generator which converts your Markdown to static HTML pages in the theme you are using, lets say the engine of the theme
+- **Umami:** This tool I use to analyze the traffic on my website. Basically a visitor counter with a lot of options I don't use. This tool is much more privacy friendly than Google's counterpart
 - **Azure Blob Storage**: Azure Blob Storage is in use for hosting the images and other media files. For video's, I am using Youtube with embedding as that video player is much better than browsers' builtin player and saves a lot of storage.
 
 <!-- draw.io diagram -->
