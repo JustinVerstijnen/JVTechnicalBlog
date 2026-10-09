@@ -68,380 +68,159 @@ Before we start configuring Organizational Messages, there are some requirements
 
 For Windows messages, the devices need to meet the applicable Windows requirements and must be:
 
-- Microsoft Entra ID joined, or
-- Microsoft Entra hybrid joined
-
-The Organizational Messages platform also needs access to these endpoints:
-
-- `fd.api.orgmsg.microsoft.com`
-- `ris.prod.api.personalization.ideas.microsoft.com`
-
-For creating messages, the administrator needs the **Organizational Messages Writer** role.
-
-If custom messages need to go through an approval workflow, another administrator can be assigned the **Organizational Messages Approver** role.
-
-Custom Windows messages require one of the supported licenses, such as:
-
-- Windows Enterprise E3
-- Windows Enterprise E5
-- Microsoft 365 E3
-- Microsoft 365 E5
-
-Some pre-made messages can still be available without these advanced licensing requirements.
-
-{{% alert title="Note" color="warning" %}}
-The available message locations and features can depend on the Windows version, installed Windows updates and licensing in your tenant. Always check the latest Microsoft documentation before rolling this out organization-wide.
-{{% /alert %}}
+- Microsoft Entra ID joined or Entra hybrid joined
+- Windows Enterprise license on client devices
+- Microsoft 365 E3 or E5 licenses
+- Organizational Messages Writer role
 
 ---
 
-## Step 1: Assign the Organizational Messages Writer role
+## Step 1: Allow Organizational Messages using Microsoft Intune
 
-Let's first make sure our administrator has permissions to create Organizational Messages.
+We also need to configure the Windows devices to actually receive organizational messages. Open the Microsoft Intune admin center: [https://intune.microsoft.com](https://intune.microsoft.com)
 
-Open the Microsoft 365 admin center:
-
-[https://admin.microsoft.com](https://admin.microsoft.com)
-
-Go to:
-
-**Users > Active users**
-
-Select the administrator that should be allowed to create messages and open **Manage roles**.
-
-<!-- SCREENSHOT: Active users and Manage roles -->
-
-Under the available administrator roles, look for:
-
-**Organizational Messages Writer**
-
-Enable the role and save the changes.
-
-<!-- SCREENSHOT: Organizational Messages Writer role -->
-
-If your organization wants to use approval workflows for custom messages, you can also assign another administrator the:
-
-**Organizational Messages Approver**
-
-role.
-
-I recommend separating the Writer and Approver roles when you are going to use Organizational Messages for larger environments. This prevents one administrator from creating and approving their own communication.
-
----
-
-## Step 2: Allow Organizational Messages using Microsoft Intune
-
-Now we can configure the Windows devices.
-
-Open the Microsoft Intune admin center:
-
-[https://intune.microsoft.com](https://intune.microsoft.com)
-
-Then go to:
-
-**Devices > Configuration**
-
-Click:
-
-**+ Create > New policy**
-
-<!-- SCREENSHOT: Create new configuration policy -->
-
-Configure the profile like this:
+Then go to: `Devices > Configuration`  and click:  `+ Create > New policy` and configure the profile like this:
 
 | Option | Value |
 | --- | --- |
 | Platform | Windows 10 and later |
 | Profile type | Settings catalog |
 
-Click **Create**.
+Give the policy a recognizable name and description:
 
-Give the policy a recognizable name. For example:
+[![jv-media-8538-14bfad3552a1.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-14bfad3552a1.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-14bfad3552a1.png)
 
-**Windows - Organizational Messages**
-
-For the description I used:
-
-**Enables the required Windows settings to allow Organizational Messages.**
-
-<!-- SCREENSHOT: Basics settings -->
-
-Continue to **Configuration settings** and click **+ Add settings**.
-
-Search for the **Experience** category.
+Continue to `Configuration settings` and click on `+ Add settings` . Then search for the  ``Experience` category.
 
 We need to configure several settings because Windows features such as Notification Center and Windows Spotlight can otherwise block the messages.
 
-Add the following settings:
+Add the following settings and sub-settings in this order:
 
-- Enable delivery of organizational messages (User)
 - Allow Windows Spotlight (User)
-- Allow Windows Spotlight on Action Center (User)
-- Allow Windows Tips
+-
+    - Allow Windows Spotlight on Action Center (User)
+    - Allow Windows Tips
+    - Configure Windows Spotlight on Lock Screen (User)
 - Disable Cloud Optimized Content
-- Configure Windows Spotlight on Lock Screen (User)
+- Enable delivery of organizational messages (User
 
-<!-- SCREENSHOT: Settings picker with Organizational Messages -->
+[![jv-media-8538-ac90f7abe9d5.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-ac90f7abe9d5.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-ac90f7abe9d5.png)
 
-Configure them like this:
+Configure them like I have done:
 
 | Setting | Configuration |
 | --- | --- |
-| Enable delivery of organizational messages (User) | Allow |
+| Disable Cloud Optimized Content | Disabled |
 | Allow Windows Spotlight (User) | Allow |
 | Allow Windows Spotlight on Action Center (User) | Allow |
 | Allow Windows Tips | Allow |
-| Disable Cloud Optimized Content | Disabled |
 | Configure Windows Spotlight on Lock Screen (User) | Windows spotlight enabled |
-
-<!-- SCREENSHOT: Configured Settings Catalog options -->
+| Enable delivery of organizational messages (User) | Allow |
 
 {{% alert title="Important" color="warning" %}}
-Existing Device Restriction or Settings Catalog policies can block Organizational Messages. Make sure there are no conflicting policies disabling Windows Spotlight, Windows Tips or organizational messages.
+Existing Device Restriction or Settings Catalog policies can block Organizational Messages. Double check conflicting policies disabling Windows Spotlight, Windows Tips or organizational messages. Intune will show possible conflicts in Policy assignments.
 {{% /alert %}}
 
-Continue through the wizard and assign the policy to the users or devices that should be able to receive Organizational Messages.
+Continue through the wizard and assign the policy to the devices that should be able to receive Organizational Messages. In my case, this is the group containing all my Windows Endpoints.
 
-For testing purposes, I recommend starting with a small test group instead of assigning the policy to the complete organization immediately.
+[![jv-media-8538-ba84c9d45954.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-ba84c9d45954.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-ba84c9d45954.png)
 
-Finish the wizard by clicking **Create**.
-
----
-
-## Step 3: Check the Intune policy deployment
-
-Before creating our first message, let's verify that the configuration policy is successfully applied.
-
-Open the policy we just created and check:
-
-**Device and user check-in status**
-
-<!-- SCREENSHOT: Intune policy deployment status -->
-
-The targeted test device should eventually show the policy as **Succeeded**.
-
-You can also check the configuration locally on a Windows device if troubleshooting is required.
-
-Open:
-
-**Settings > Accounts > Access work or school**
-
-Select your connected organizational account and export the management logs.
-
-Windows saves these files to:
-
-{{< card code=true header="**Path**" lang="text" >}}
-C:\Users\Public\Documents\MDMDiagnostics
-{{< /card >}}
-
-These logs can be useful when Organizational Messages are not showing up even though the configuration looks correct in Microsoft Intune.
+Finish the wizard by clicking `Create`.
 
 ---
 
-## Step 4: Open Organizational Messages
+## Step 2: Check the Intune policy deployment
 
-Now comes the fun part: creating our actual message.
+Before creating our first message, let's verify that the configuration policy is successfully applied to our devices. Open the policy we just created and check:
 
-Open the Microsoft 365 admin center:
+`Device and user check-in status`
 
-[https://admin.microsoft.com](https://admin.microsoft.com)
+After creating the policy, this will show no results yet but this can take up to 60 minutes and a possible reboot of one of the endpoints:
 
-Go to:
+[![jv-media-8538-53fe4e91f0a6.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-53fe4e91f0a6.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-53fe4e91f0a6.png)
 
-**Reports > Organizational messages**
+Let's synchronize the latest settings to my testing machine:
 
-<!-- SCREENSHOT: Organizational Messages overview -->
+[![jv-media-8538-5d2a0397d1c0.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-5d2a0397d1c0.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-5d2a0397d1c0.png)
 
-The Organizational Messages page is basically the central location for everything related to the messages.
+After around 15 minutes and a reboot of my computer, the status shows this and the policies are active and Organizational Messages are ready to be sent:
 
-From here we have three important options:
-
-- **Manage messages**
-- **Create a message**
-- **Review activity**
-
-Manage messages shows messages that are currently active, scheduled or still saved as drafts.
-
-Create a message is logically where we create new communication.
-
-Review activity gives us statistics about the messages after they have been delivered.
-
-Let's click **Create a message**.
+[![jv-media-8538-39e7343a755f.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-39e7343a755f.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-39e7343a755f.png)
 
 ---
 
-## Step 5: Create an Organizational Message
+## Step 3: Create Organizational Messages
 
-The creation wizard guides us through the complete process.
+Now comes the fun part: creating our actual message to send to our end users. Open the Microsoft 365 admin center: [https://admin.microsoft.com](https://admin.microsoft.com)
 
-The first option is the **Objective**.
+And then go to: `Reports > Organizational messages`
 
-Depending on the features currently available in your tenant, objectives can include subjects such as:
+[![jv-media-8538-8def376141b4.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-8def376141b4.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-8def376141b4.png)
+
+The Organizational Messages page is basically the central location for everything related to the messages. From here we have three important options:
+
+- **Create a message:**Create a message is logically where we create new communication
+- **Manage messages:**Manage messages shows messages that are currently active, scheduled or still saved as drafts
+- **Review activity:**Review activity gives us statistics about the messages after they have been delivered.
+
+Let's click `Create a message`.
+
+[![jv-media-8538-5335f2b76798.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-5335f2b76798.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-5335f2b76798.png)
+
+We must first tell Microsoft 365 what the goal of our message is. The objectives can include subjects such as:
 
 - Adoption
 - Onboarding
 - Sustainability
 - Tech updates
 
-<!-- SCREENSHOT: Objective selection -->
+[![jv-media-8538-fc5115a783a3.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-fc5115a783a3.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-fc5115a783a3.png)
 
-For this example, I will create a message about an upcoming IT change.
+For this example, I will create a message about an upcoming IT change, the Windows 11 update to 26H2. This is not a very big change but is fun to have a use case for this guide. I have selected the `Tech updates` objective.
 
-Select the appropriate objective and continue.
-
-The next step is selecting where the message should be displayed.
-
-For Windows, some of the most interesting locations are:
+The next step is selecting where the message should be displayed. For Windows, some of the most interesting locations are:
 
 - Windows Spotlight
 - Taskbar
 - Notification Center
 
-<!-- SCREENSHOT: Select message location -->
+I selected the `Notifications area` just to test the message:
 
-For this example, I will use the **Notification Center**.
+[![jv-media-8538-c35f59af97c1.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-c35f59af97c1.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-c35f59af97c1.png)
 
-This is probably one of the easiest locations to start testing with because users are already familiar with Windows notifications.
+This is probably one of the easiest locations to start testing with because users are already familiar with Windows notifications. Select your preferred location and continue.
 
-Select the location and continue.
+Now we have to select a premade template which we can use. I will use the `Software` template as we will inform users about the Windows 11 26H2 update which is rolling out at the time of writing. You can fully customize your messages sent, but I don't have all the required licenses in my tenant ready for this option, which is greyed out.
 
----
+[![jv-media-8538-3eb123f50d80.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-3eb123f50d80.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-3eb123f50d80.png)
 
-## Step 6: Select a template or create your own message
+Now we have some predefined messages we can choose:
 
-Depending on your licensing and selected location, Microsoft provides different options for the actual content.
+[![jv-media-8538-a91c4107490d.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-a91c4107490d.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-a91c4107490d.png)
 
-We can use a pre-made Microsoft message or create our own custom message.
+And on the next step we can customize the message completely, adding a link to your organization's website or messages/helpdesk ticket or articles and a logo:
 
-For our example, I want full control over the communication, so I will use:
+[![jv-media-8538-1006c9b0ac09.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-1006c9b0ac09.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-1006c9b0ac09.png)
 
-**Create your own**
+We can then target different users in our organization. As I am the only user in my organization, I will use the `All company` group, but you could create a more granular group or use a department attribute.
 
-<!-- SCREENSHOT: Template selection -->
+[![jv-media-8538-23d3b5a81192.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-23d3b5a81192.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-23d3b5a81192.png)
 
-Now we can configure the actual message.
+Then we can configure the schedule, setting this starting today and the rest for the month and once a week:
 
-For example:
+[![jv-media-8538-50752baac735.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-50752baac735.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-50752baac735.png)
 
-**Title:**
+Now we can review the complete message and spot any possible errors before publishing:
 
-IT maintenance scheduled
+[![jv-media-8538-55b66bd94662.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-55b66bd94662.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-55b66bd94662.png)
 
-**Message:**
+Then finish the wizard and the message is ready to be sent to your users and devices which will happen automatically.
 
-Maintenance will be performed on our IT environment this Friday evening. Save your work before leaving the office.
-
-We can also provide a URL where users can find additional information.
-
-<!-- SCREENSHOT: Custom message configuration -->
-
-This is especially useful because the Organizational Message itself can remain short and clean while a knowledge base, SharePoint page or service portal contains the complete information.
-
-{{% alert title="Tip" color="info" %}}
-Keep Organizational Messages short and actionable. Users should immediately understand why they are seeing the message and what you expect them to do.
-{{% /alert %}}
+[![jv-media-8538-02441dab56dc.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-02441dab56dc.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-02441dab56dc.png)
 
 ---
 
-## Step 7: Select the recipients
-
-Next, we need to decide who should receive the message.
-
-Organizational Messages can target Microsoft Entra groups.
-
-Depending on the licensing and features enabled in the tenant, advanced targeting can also become available based on organizational information such as:
-
-- Company
-- Department
-- Location
-- Usage
-
-<!-- SCREENSHOT: Recipients selection -->
-
-For this guide, I will simply select my test group.
-
-Again, testing with a limited number of users before targeting the complete organization is something I strongly recommend.
-
-This gives us the chance to verify:
-
-- The message formatting
-- The configured URL
-- The Windows user experience
-- Delivery
-- Language
-- Frequency
-
-before showing the message to hundreds or thousands of users.
-
----
-
-## Step 8: Configure the schedule
-
-Now we can configure when the message should be displayed.
-
-Organizational Messages support a start and end date and, depending on the message type, a frequency.
-
-<!-- SCREENSHOT: Schedule options -->
-
-This is very useful compared to a traditional email.
-
-Instead of sending one email and hoping the user notices it, Windows can display the message again depending on the configured schedule and user interaction.
-
-Configure the schedule that fits your use case and continue.
-
-{{% alert title="Note" color="warning" %}}
-Organizational Messages should not be treated as a guaranteed instant notification platform. Windows retrieves messages using a pull mechanism and normal messages can take time before they appear on the endpoint.
-{{% /alert %}}
-
-Microsoft also provides an **Urgent message** option for supported Windows locations.
-
-Urgent messages are intended for time-sensitive communication and can currently be used with locations such as:
-
-- Taskbar
-- Notification Center
-
-Even with urgent delivery, message delivery is still best effort and should not replace emergency communication systems.
-
----
-
-## Step 9: Review and create the message
-
-The final page gives us the option to review everything we configured.
-
-Check:
-
-- Objective
-- Location
-- Message
-- URL
-- Recipients
-- Schedule
-
-<!-- SCREENSHOT: Review message -->
-
-If everything looks correct, finish the wizard.
-
-Pre-made messages can be scheduled directly.
-
-Custom messages can require approval when your organization uses the Organizational Messages approval workflow.
-
-Once submitted, the message will receive a status.
-
-Some statuses you might see are:
-
-| Status | Meaning |
-| --- | --- |
-| Draft | Message is saved but not yet completed |
-| Pending approval | Waiting for an approver |
-| Scheduled | Message is ready and waiting for its configured start |
-| Active | Message is currently being delivered |
-| Completed | Delivery period has finished |
-| Failed | Message couldn't be registered correctly |
-| Canceled | Message was canceled by an administrator |
-
----
-
-## Step 10: End-user experience
+## The result on the client side
 
 After the message becomes active and Windows retrieves the message, it will be shown to the targeted user.
 
@@ -467,205 +246,6 @@ If users receive organizational messages all the time, they will eventually star
 
 Use them for communication that actually provides value.
 
-{{< ads >}}
-
----
-
-## Monitoring Organizational Messages
-
-Creating messages is one thing, but we also want to know whether users actually see them.
-
-Open:
-
-**Reports > Organizational messages > Review activity**
-
-<!-- SCREENSHOT: Review activity -->
-
-Microsoft provides reporting information for Organizational Messages, including metrics such as:
-
-- Messages seen
-- Clicks
-- Clickthrough rate
-
-This makes Organizational Messages especially interesting for communication campaigns.
-
-For example, imagine that we announce a new Company Portal, security training or Copilot rollout.
-
-Instead of simply sending an email, we can now get an indication of whether users actually saw and interacted with the communication.
-
-The results can also help us decide if another communication method is needed.
-
----
-
-## Allow Organizational Messages but block Microsoft messages
-
-There is another interesting option.
-
-Organizations might want to use their own Organizational Messages but don't necessarily want additional Microsoft messages to appear through the same platform.
-
-This can be configured separately.
-
-Open:
-
-**Microsoft 365 admin center > Reports > Organizational messages**
-
-Click the **Settings** icon.
-
-From there, disable:
-
-**Allow Microsoft messages to display**
-
-<!-- SCREENSHOT: Allow Microsoft messages setting -->
-
-Your own organizational messages can then remain available while Microsoft-generated messages are disabled.
-
-This gives us a little more control over what users actually see.
-
----
-
-## When should you use Organizational Messages?
-
-I wouldn't replace all other communication channels with Organizational Messages.
-
-Instead, I see them as another useful tool in the communication toolbox.
-
-Some good use cases could be:
-
-- Planned IT maintenance
-- A new application rollout
-- Security awareness
-- Introducing Microsoft Copilot
-- Company Portal adoption
-- Windows upgrade communication
-- New employee onboarding
-- Training announcements
-- Important IT changes
-- Links to internal documentation
-
-An email can still contain all the details, but an Organizational Message can make sure users actually notice that something is happening.
-
-And because the messages appear directly inside Windows, they can be especially useful for IT-related communication.
-
----
-
-## Knowledge check
-
-{{< quiz >}}
-{
-  "intro": "Answer these question(s) to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
-  "questions": [
-    {
-      "question": "Where are Organizational Messages currently created and centrally managed?",
-      "reference": "How Organizational Messages work",
-      "referenceUrl": "#how-organizational-messages-work",
-      "answers": [
-        {
-          "text": "Microsoft 365 admin center",
-          "correct": true,
-          "message": "Correct! This is the right answer."
-        },
-        {
-          "text": "Microsoft Defender portal",
-          "correct": false,
-          "message": "Incorrect. Review the referenced section and try again."
-        },
-        {
-          "text": "Microsoft Entra admin center",
-          "correct": false,
-          "message": "Incorrect. Review the referenced section and try again."
-        },
-        {
-          "text": "Windows Settings",
-          "correct": false,
-          "message": "Incorrect. Review the referenced section and try again."
-        }
-      ]
-    },
-    {
-      "question": "What role is required to create Organizational Messages?",
-      "reference": "Step 1: Assign the Organizational Messages Writer role",
-      "referenceUrl": "#step-1-assign-the-organizational-messages-writer-role",
-      "answers": [
-        {
-          "text": "Organizational Messages Writer",
-          "correct": true,
-          "message": "Correct! This is the right answer."
-        },
-        {
-          "text": "Intune Help Desk Operator",
-          "correct": false,
-          "message": "Incorrect. This role doesn't provide the required authoring permissions."
-        },
-        {
-          "text": "Security Reader",
-          "correct": false,
-          "message": "Incorrect. Review the referenced section and try again."
-        },
-        {
-          "text": "Reports Reader",
-          "correct": false,
-          "message": "Incorrect. Review the referenced section and try again."
-        }
-      ]
-    },
-    {
-      "question": "Which Microsoft Intune profile type can we use to enable Organizational Messages on Windows?",
-      "reference": "Step 2: Allow Organizational Messages using Microsoft Intune",
-      "referenceUrl": "#step-2-allow-organizational-messages-using-microsoft-intune",
-      "answers": [
-        {
-          "text": "Settings catalog",
-          "correct": true,
-          "message": "Correct! This is the right answer."
-        },
-        {
-          "text": "Compliance policy",
-          "correct": false,
-          "message": "Incorrect. Compliance policies aren't used for this configuration."
-        },
-        {
-          "text": "Endpoint detection and response",
-          "correct": false,
-          "message": "Incorrect."
-        },
-        {
-          "text": "App configuration policy",
-          "correct": false,
-          "message": "Incorrect."
-        }
-      ]
-    },
-    {
-      "question": "Which of these is a supported Windows location for Organizational Messages?",
-      "reference": "Step 5: Create an Organizational Message",
-      "referenceUrl": "#step-5-create-an-organizational-message",
-      "answers": [
-        {
-          "text": "Notification Center",
-          "correct": true,
-          "message": "Correct! This is the right answer."
-        },
-        {
-          "text": "Windows Registry Editor",
-          "correct": false,
-          "message": "Incorrect."
-        },
-        {
-          "text": "Task Manager",
-          "correct": false,
-          "message": "Incorrect."
-        },
-        {
-          "text": "Device Manager",
-          "correct": false,
-          "message": "Incorrect."
-        }
-      ]
-    }
-  ]
-}
-{{< /quiz >}}
-
 ---
 
 ## Summary
@@ -688,7 +268,6 @@ These sources helped me by writing and research for this post;
 1. https://learn.microsoft.com/en-us/microsoft-365/admin/misc/organizational-messages-microsoft-365
 2. https://learn.microsoft.com/en-us/microsoft-365/admin/misc/organizational-messages-microsoft-365-faq
 3. https://learn.microsoft.com/windows/client-management/mdm/policy-csp-experience
-4. https://inthecloud247.com/microsoft-intune-organizational-messages-preview/
 {{% /alert %}}
 
 {{< ads >}}
