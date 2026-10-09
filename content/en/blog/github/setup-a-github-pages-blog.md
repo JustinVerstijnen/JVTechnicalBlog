@@ -186,7 +186,7 @@ My Azure Blob Storage account contains about 3.500 image files (1,2GB) and cost 
 
 ## Step 7: The conversion steps
 
-For converting the older Wordpress pages I have wrote from founding the website till the day I have migrated are converted by AI to Markdown with the correct shortcodes. At the time, I had around 140 pages which is not-done to do fully by hand. I stared with some of the posts where I was the most proud of and contained the most different blocks, and when I found that AI converted them to my likings, I converted the rest.
+For converting the older Wordpress pages I have wrote from founding the website till the day I have migrated are converted by AI to Markdown with the correct shortcodes. At the time, I had around 140 pages which is not-done to do fully by hand. I stared with some of the posts where I was the most proud of and contained the most different blocks, and when I found that AI converted them to my likings, I converted the rest. With a plugin in Wordpress I was able to export all image files from the Wordpress database and then uploaded to Azure Blob Storage.
 
 This sounds really easy but think of 140 articles which are converted and then checked by hand, and corrected in much ways. I like the use of AI, use it where possible but me as a human must have the latest hand on such actions in my opinion. This process took me the most time.
 
