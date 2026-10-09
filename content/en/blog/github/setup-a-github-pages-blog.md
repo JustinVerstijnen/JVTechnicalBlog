@@ -1,7 +1,7 @@
 ---
 title: "Setup a GitHub Pages Blog"
 slug: "setup-github-pages-blog"
-date: 2026-10-30
+date: 2026-06-11
 tags:
 - Step by Step Guides
 categories:
