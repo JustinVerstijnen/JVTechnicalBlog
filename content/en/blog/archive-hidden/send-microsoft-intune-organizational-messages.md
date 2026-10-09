@@ -4,7 +4,6 @@ slug: "send-organizational-messages-with-microsoft-intune"
 date: 2026-10-29
 tags:
 - Step by Step guides
-- Knowledge check
 categories:
 - Microsoft Intune
 description: "In this post, I will configure Organizational Messages using Microsoft Intune and the Microsoft 365 admin center to communicate directly with users through native Windows experiences such as the Taskbar, Notification Center and Windows Spotlight."
@@ -13,15 +12,9 @@ hidden: false
 
 ## Why use Organizational Messages?
 
-Communication with end users is an important part of IT management.
+Communication with end users is an important part of IT management. We can configure devices, deploy applications and enforce security settings with Microsoft Intune, but sometimes we simply need to tell our users something or announce an application update.
 
-We can configure devices, deploy applications and enforce security settings with Microsoft Intune, but sometimes we simply need to tell our users something.
-
-Of course, we can send an email or post something in Microsoft Teams. But let's be honest, not every email gets read and important IT communication can easily disappear between all the other messages users receive during the day.
-
-This is where **Organizational Messages** can be very useful.
-
-Organizational Messages allow us to communicate directly with users through locations they already interact with in Windows and Microsoft 365.
+Of course, we can send an email or post something in Microsoft Teams. But let's be honest, not every email gets read and important IT communication can easily disappear between all the other messages users receive during the day. This is where Organizational Messages can be very useful as Organizational Messages allow us to communicate directly with users through locations they already use in Windows and Microsoft 365.
 
 Some examples are:
 
@@ -41,9 +34,7 @@ In this post, I will configure Organizational Messages for Windows using Microso
 
 ## How Organizational Messages work
 
-Organizational Messages have changed quite a bit since Microsoft originally introduced the feature.
-
-The messages were originally created from Microsoft Intune, but Microsoft now provides a centralized **Organizational Messages** experience in the Microsoft 365 admin center.
+Organizational Messages have changed quite a bit since Microsoft originally introduced the feature. The messages were originally created from Microsoft Intune, but Microsoft now provides a centralized Organizational Messages experience in the Microsoft 365 admin center as this is a feature that spans Microsoft 365 and Windows.
 
 This means we basically have two parts:
 
@@ -52,13 +43,7 @@ This means we basically have two parts:
 | Microsoft Intune | Configure Windows policies required to allow Organizational Messages |
 | Microsoft 365 admin center | Create, schedule, target and monitor Organizational Messages |
 
-This separation actually makes sense.
-
-Microsoft Intune controls whether the Windows device is technically allowed to display the messages, while the Microsoft 365 admin center is used to manage the communication itself.
-
-{{% alert title="Important" color="info" %}}
-Older articles might show Organizational Messages directly under **Tenant administration** in Microsoft Intune. The current centralized authoring experience is available from the **Microsoft 365 admin center**.
-{{% /alert %}}
+Messages created in the Microsoft 365 admin center are being delivered within the first 24 hours of scheduling the message, but can take up loner. As far as I could found there is no way to force the notification to show by syncing or restarting the computer.
 
 ---
 
@@ -226,17 +211,7 @@ After the message becomes active and Windows retrieves the message, it will be s
 
 For a Notification Center message, the experience looks like a normal Windows notification but with the organizational content we configured earlier.
 
-<!-- SCREENSHOT: End-user Notification Center message -->
-
 The user can interact with the message and open the URL we configured.
-
-A Taskbar message is more noticeable and appears directly around the Windows taskbar area.
-
-<!-- SCREENSHOT: End-user Taskbar message -->
-
-Windows Spotlight provides another option for communication directly through Windows.
-
-<!-- SCREENSHOT: Windows Spotlight Organizational Message -->
 
 I really like this approach because the communication becomes part of the operating system instead of yet another email.
 
