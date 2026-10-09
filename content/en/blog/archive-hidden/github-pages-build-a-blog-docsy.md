@@ -1,1 +1,0 @@
-Kijkje in de keuken hoe ik mijn website heb gemaakt
