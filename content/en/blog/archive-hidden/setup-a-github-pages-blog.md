@@ -17,8 +17,8 @@ In this post, I will dive deeper into [this website](https://justinverstijnen.nl
 I will dive into these topics:
 
 - General overview of the different components
-- Setup a GitHub Repository and hosting
 - Find a theme that suit your needs
+- Setup a GitHub Repository and hosting
 - Hosting images and media files on Azure Blob Storage
 - Writing about topics in Markdown
 - General post management
@@ -32,14 +32,10 @@ As every website will and can be different, I will describe how my blogs are wor
 The components of my website are:
 
 - **GitHub Pages:** This is the place where my website runs and is maintained using all built-in functions of GitHub, and some scripts and configuration files are hosted on their separate repositories to keep everything centralized and online
-
 - **Docsy:** [Docsy](https://www.docsy.dev/docs/) is the GitHub Pages theme I am currently using and delivers the foundation and functions of the website, where I have done some additions and customizations
-
 - **Hugo:**Hugo is a document generator which converts your Markdown to static HTML pages in the theme you are using, lets say the engine of the theme
-
 - **Umami:**This tool I use to analyze the traffic on my website. Basically a visitor counter with a lot of options I don't use. This tool is much more privacy friendly than Google's counterpart
-
-- **Azure Blob Storage**: Azure Blob Storage is in use for hosting the images and other media files. For video's, I am using Youtube with embedding as that video player is much better than browsers' builtin player and saves alot of storage.
+- **Azure Blob Storage**: Azure Blob Storage is in use for hosting the images and other media files. For video's, I am using Youtube with embedding as that video player is much better than browsers' builtin player and saves a lot of storage.
 
 <!-- draw.io diagram -->
 <div class="drawio-white-background" style="background:#ffffff; padding:24px; border-radius:12px; overflow-x:auto;">
@@ -47,3 +43,90 @@ The components of my website are:
 </div>
 
 In this diagram, I visualized the overall website and the different components. From Markdown article to Github Pages and generation to Website which is readable for the user. Also how different media files and different other files are injected into the website.
+
+---
+
+## Step 1: Setup a GitHub Repository and hosting
+
+The first step into hosting a blog website is to create a GitHub account if you don't have an existing account and to create a repository to host your website. This is completely free with GitHub Pages, if you want to have your source code publicly available.
+
+I already described this process in an earlier blog post, so for Step 1, I will refer to that guide to keep my content as much as up-to-date as possible.
+
+<a class="btn btn-primary" href="https://justinverstijnen.nl/getting-started-with-github-pages/" target="_blank" rel="noreferrer">Visit the Setup GitHub Pages tutorial</a>
+
+---
+
+## Step 2: Find a theme for GitHub Pages
+
+Before you can further create a website, you need to select a GitHub Pages-compatible theme. This also decides which further actions must be taken. You can search this websites below on the different themes which are available. Some themes have more extra's like built-in Table of Contents, or different shortcodes.
+
+- [https://jekyllthemes.io/free](https://jekyllthemes.io/free)
+
+In my research on GitHub Pages, I was very happy with the Docsy theme. This catched my eye and has a lot of different options and features available by default. It's also very lightweight and fast and clear, so I decided to pick that one. It's available here:
+
+- [https://www.docsy.dev/](https://www.docsy.dev/)
+
+- [https://github.com/docsy/docsy/tree/main/docsy.dev](https://github.com/docsy/docsy/tree/main/docsy.dev)
+
+---
+
+## Step 3: Create GitHub Action
+
+After we created a repository and have our domain name linked to the GitHub Pages instance and we have our theme ready, we can configure a GitHub Action to generate the website. This works by re-generating the website every time a commit is done to the repository. After the commit is done, a GitHub Action with the Hugo component will build the website, and then deployed to the GitHub Pages hosting slot.
+
+To create your GitHub Action, copy the contents of this code and change the repository name on line 119:
+
+[https://gist.github.com/JustinVerstijnen/bf80883f2c03d3b6e1b8fd331da91c12](https://gist.github.com/JustinVerstijnen/bf80883f2c03d3b6e1b8fd331da91c12)
+
+Then create a folder named `.github`, then create another folder `workflows` in it and then the file `build-site.yml` and paste the contents. You can create a new file in the web interface from the root and directly type/paste this: `.github/workflows/build-site.yml`
+
+This automatically creates a GitHub Action in the repository which builds and deploys the current content into a website and places it into the hosting slot.
+
+[![jv-media-8535-31e91f49797a.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-github-pages-blog/jv-media-8535-31e91f49797a.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-github-pages-blog/jv-media-8535-31e91f49797a.png)
+
+After creating this file, we must configure GitHub Pages to deploy with this GitHub Action instead of building the site directly. Head to `Settings` and then to `Pages`. This is where you also configured the custom domain name in the GitHub Pages setup.
+
+Here select the `Build and deployment` method `GitHub Actions` to let the just created action build and deploy your site to the hosting slot.
+
+---
+
+## Step 4: Hosting media files on Azure Blob Storage
+
+If you want to host your image files on Azure Blob Storage which is easy and relatively cheap, you can check out this guide I wrote earlier. This describes exactly the steps needed to host the files and make them publicly accessible.
+
+<a class="btn btn-primary" href="https://justinverstijnen.nl/setup-a-public-image-storage-with-azure-blob/" target="_blank" rel="noreferrer">Visit the Setup Azure Blob Storage tutorial</a>
+
+Of course, you are not limited to this option. Any publicly available repository will do the trick. Azure Blob Storage is a very cheap option and is easy to manage and setup. My advice is to not use the GitHub repository for hosting the images as the repository will grow very fast, and we are limited to 1GB of storage in the free tier, so we want to
+
+My Azure Blob Storage account contains about 3.500 image files (1,2GB) and cost me around 50 cents a month.
+
+---
+
+## Step 5: Writing topics in Markdown
+
+For GitHub Pages our content must be in the Markdown format. Markdown is a very popular and more easy to write version of HTML, where text is made up using syntaxes. I will show you an example:
+
+{{< card code=true header="**Plain text**" lang="text" >}}
+# This is a first heading (H1)Some text to fill the space.## This is a subheading (H2)Some text to fill the space.### This is a heading below heading 2 (H3)Some text to fill the space.```powershellThis is a PowerShell command````This is a label`| Information 1 | Information 2 |
+| --- | --- |
+| Test | Test |
+| Testing | Testing |
+{{< /card >}}
+
+This will be translated by GitHub Pages to this visually:
+
+[![jv-media-8535-ad90fec3364c.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-github-pages-blog/jv-media-8535-ad90fec3364c.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-github-pages-blog/jv-media-8535-ad90fec3364c.png)
+
+This is a switch in writing some content. You can use any tool which visualizes Markdown text and gives you access to the code. I am using my own Markdown Editor tool for this which can be found here:
+
+- [https://tools.justinverstijnen.nl/markdowneditor](https://tools.justinverstijnen.nl/markdowneditor)
+
+This tool gives you a nice interface with some blocks and gives you directly access to the underlying code. I use this tool to write my guides and to automatically upload the images to Azure Blob Storage.
+
+To actually learn Markdown syntaxes, you can use this website:
+
+- [https://www.markdowntutorial.com/](https://www.markdowntutorial.com/)
+
+---
+
+## Step 6
