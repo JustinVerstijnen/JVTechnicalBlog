@@ -97,7 +97,7 @@ After downloading, right-click the downloaded installer and select Run as admini
 
 After running the Evergreen Standalone Installer as administrator, I checked the WebView2 version again with the same PowerShell command. This time, the registered version had been updated to `155.0.4283.45`.
 
-[![jv-media-8539-bbb92cd615e0.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/fix-windows-app-grey-screen-windows-11-26h2-webview2/jv-media-8539-bbb92cd615e0.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/fix-windows-app-grey-screen-windows-11-26h2-webview2/jv-media-8539-bbb92cd615e0.png)
+[![jv-media-8539-28cf340b8ca2.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/fix-windows-app-grey-screen-windows-11-26h2-webview2/jv-media-8539-28cf340b8ca2.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/fix-windows-app-grey-screen-windows-11-26h2-webview2/jv-media-8539-28cf340b8ca2.png)
 
 ---
 
