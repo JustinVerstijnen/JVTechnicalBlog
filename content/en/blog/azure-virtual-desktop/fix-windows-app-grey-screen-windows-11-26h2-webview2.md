@@ -18,7 +18,7 @@ I noticed the same behavior on multiple computers. Resetting Windows App, uninst
 
 In this post, I'll show you which logs I checked, how I verified the installed Microsoft Edge WebView2 version and what eventually solved the problem for me.
 
-[![jv-media-8539-0cfa8ad8052e.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/fix-windows-app-grey-screen-windows-11-26h2-webview2/jv-media-8539-0cfa8ad8052e.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/fix-windows-app-grey-screen-windows-11-26h2-webview2/jv-media-8539-0cfa8ad8052e.png)
+[![jv-media-8539-80e0b710faa6.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/fix-windows-app-grey-screen-windows-11-26h2-webview2/jv-media-8539-80e0b710faa6.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/fix-windows-app-grey-screen-windows-11-26h2-webview2/jv-media-8539-80e0b710faa6.png)
 
 _This was everything the Windows App showed in my case. Even after waiting for several minutes._
 
