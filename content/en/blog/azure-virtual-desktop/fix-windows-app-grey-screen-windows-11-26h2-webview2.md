@@ -6,7 +6,7 @@ tags:
 - Step by Step Guides
 categories:
 - Azure Virtual Desktop
-description: "After updating to Windows 11 26H2, I came across multiple instances of a new issue with the Windows App which opened with a blank grey screen before sign-in or even connecting to resources. In this post I explain how I fixed this issue and came across an error in WebView2 and how updating WebView2 with the Evergreen Standalone Installer solved the issue for me."
+description: "After updating to Windows 11 26H2, I came across multiple instances of a new issue with the Windows App which opened with a blank grey screen and the app not starting right before sign-in or even connecting to resources. In this post I explain how I fixed this issue and came across an error in WebView2 and how updating WebView2 with the Evergreen Standalone Installer solved the issue for me."
 hidden: false
 ---
 
