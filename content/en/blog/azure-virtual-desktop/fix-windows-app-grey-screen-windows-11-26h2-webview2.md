@@ -93,6 +93,10 @@ Open the official [Microsoft Edge WebView2 download page](https://developer.micr
 
 After downloading, right-click the downloaded installer and select Run as administrator and complete the installation.
 
+{{% alert title="Warning" color="warning" %}}
+This installer must be run as Administrator, otherwise you will get the notification that the software is already installed.
+{{% /alert %}}
+
 [![jv-media-8539-891d2c293318.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/fix-windows-app-grey-screen-windows-11-26h2-webview2/jv-media-8539-891d2c293318.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/fix-windows-app-grey-screen-windows-11-26h2-webview2/jv-media-8539-891d2c293318.png)
 
 After running the Evergreen Standalone Installer as administrator, I checked the WebView2 version again with the same PowerShell command. This time, the registered version had been updated to `155.0.4283.45`.
