@@ -59,7 +59,7 @@ Open the Microsoft Intune admin center and navigate to:
 
 `Devices > Scripts and remediations > Platform scripts`
 
-Click `+ Add` and select `Windows 10 and later to add a new script.`
+Click `+ Add` and select `Windows 10 and later` to add a new script.
 
 [![jv-media-8481-b6220640849d.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatically-accept-sso-prompt-on-windows/jv-media-8481-b6220640849d.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatically-accept-sso-prompt-on-windows/jv-media-8481-b6220640849d.png)
 
@@ -67,7 +67,7 @@ Give the script a good name and description:
 
 [![jv-media-8481-efd77cab6618.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatically-accept-sso-prompt-on-windows/jv-media-8481-efd77cab6618.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatically-accept-sso-prompt-on-windows/jv-media-8481-efd77cab6618.png)
 
-Then continue to the `Script settings` page. Create a `.ps1` file on your desktop with the following content and save/upload this file:
+Then continue to the `Script settings` page. Create a .ps1 file on your desktop with the following content and save/upload this file:
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
 New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AAD" -Force | Out-Null; New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AAD" -Name "AutoAcceptSsoPermission" -Value 1 -PropertyType DWord -Force | Out-Null
@@ -116,7 +116,7 @@ Configure the following settings:
 | Setting | Value |
 | --- | --- |
 | Action | Update |
-| Hive | HKEYLOCALMACHINE |
+| Hive | HKEY_LOCAL_MACHINE |
 | Key Path | SOFTWARE\Policies\Microsoft\Windows\AAD |
 | Value name | AutoAcceptSsoPermission |
 | Value type | REG_DWORD |
@@ -174,15 +174,9 @@ The `AutoAcceptSsoPermission` DWORD should have a value of `1`.
 
 ## Summary
 
-Microsoft introduced the `AutoAcceptSsoPermission` policy to give administrators control over the Windows `Continue to sign in?` SSO prompt on managed Windows devices.
+This guide demonstrated the new AutoAcceptSsoPermission configuration. We can deploy this setting using Microsoft Intune, Group Policy or directly through the Windows Registry.
 
-The setting is pretty simple:
-
-`HKLM\SOFTWARE\Policies\Microsoft\Windows\AAD\AutoAcceptSsoPermission = DWORD 1`
-
-We can deploy this setting using Microsoft Intune, Group Policy or directly through the Windows Registry.
-
-For Microsoft Intune environments I prefer deploying the setting using a device-context PowerShell script. For traditional Active Directory environments, Group Policy Preferences is an easy way to configure exactly the same registry value.
+For Microsoft Intune environments I prefer deploying the setting using a device-context PowerShell script. For traditional Active Directory environments, Group Policy Preferences is an easy way to configure exactly the same registry value, as we can change this relatively easy.
 
 After applying the policy, supported managed Windows devices can automatically accept the SSO permission for Microsoft Entra ID accounts, making the sign-in and onboarding experience a little bit more seamless.
 
@@ -193,6 +187,7 @@ These sources helped me by writing and research for this post;
 
 1. https://learn.microsoft.com/en-us/entra/identity/devices/sso-admin-control
 2. https://learn.microsoft.com/en-us/intune/device-management/tools/run-powershell-scripts-windows
+3. https://aka.ms/sso-info
 {{% /alert %}}
 
 {{< ads >}}
