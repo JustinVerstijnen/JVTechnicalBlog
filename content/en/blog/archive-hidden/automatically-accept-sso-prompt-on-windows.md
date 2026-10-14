@@ -49,7 +49,7 @@ Before configuring this setting, make sure your devices meet the following requi
 
 Personal Microsoft accounts are not affected by this policy. The prompt will also remain on unmanaged devices as we cannot set such configurations for them. The setting we are going to configure in this guide is:
 
-`HKLM\SOFTWARE\Policies\Microsoft\Windows\AAD`With the following value: AutoAcceptSsoPermission = 1
+`HKLM\SOFTWARE\Policies\Microsoft\Windows\AAD` With the following value: AutoAcceptSsoPermission = 1
 
 {{< ads >}}
 
