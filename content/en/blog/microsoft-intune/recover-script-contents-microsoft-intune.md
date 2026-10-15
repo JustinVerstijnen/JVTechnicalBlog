@@ -1,7 +1,7 @@
 ---
 title: "How to recover Script contents in Microsoft Intune"
 slug: "recover-script-contents-microsoft-intune"
-date: 2026-10-14
+date: 2026-11-26
 tags:
 - Step by Step Guides
 categories:
@@ -60,53 +60,71 @@ Then we can use the Microsoft Graph Explorer tool which we will use to fetch the
 
 ## Step 3: Grant permission to read Intune scripts
 
-To retrieve PowerShell scripts, Graph Explorer needs the following permission:
+Now we can retrieve the PowerShell script contents with Graph Explorer and to be able to do this, we need some permissions:
 
 `DeviceManagementScripts.Read.All`
 
-In Graph Explorer, open **Modify Permissions**, search for `DeviceManagementScripts`, expand the matching section, and click **Consent** next to **DeviceManagementScripts.Read.All**.
+In Graph Explorer, paste the following URL where we will perform the query:
 
-[![DeviceManagementScripts.Read.All permission in Graph Explorer](images/03-read-permission.png)](images/03-read-permission.png)
+{{< card code=true header="**Plain text**" lang="text" >}}
+https://graph.microsoft.com/beta/deviceManagement/deviceManagementScripts
+{{< /card >}}
 
-Microsoft will show another consent prompt. Review the requested permission and click **Accept** if you are authorized to grant it.
+Paste this into the window, and click on `Run query`. This will bring up a message that we need additional permissions. Click this message to assign the permissions.
 
-[![Microsoft Graph Explorer script read permission consent](images/04-permission-consent.png)](images/04-permission-consent.png)
+[![jv-media-8538-1dbc51e99eb8.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/recover-script-contents-microsoft-intune/jv-media-8538-1dbc51e99eb8.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/recover-script-contents-microsoft-intune/jv-media-8538-1dbc51e99eb8.png)
 
-You only need **read** permission to retrieve scripts. There is no need to grant `DeviceManagementScripts.ReadWrite.All`. Also, only select **Consent on behalf of your organization** when you intend to approve access at that scope and are authorized to do so.
+In the fly-in window, search for `DeviceManagementScripts`, expand the matching section, and click the `Consent` button next to the required permission `DeviceManagementScripts.Read.All`.
+
+[![jv-media-8538-c309e76f7017.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/recover-script-contents-microsoft-intune/jv-media-8538-c309e76f7017.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/recover-script-contents-microsoft-intune/jv-media-8538-c309e76f7017.png)
+
+Microsoft will show another consent prompt. Review the requested permission and click `Accept` if you are authorized to grant it. If you don't have permission, chance is that your administrator configured the approval flow in Entra ID, so request the access.
+
+[![jv-media-8538-490712fa64d4.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/recover-script-contents-microsoft-intune/jv-media-8538-490712fa64d4.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/recover-script-contents-microsoft-intune/jv-media-8538-490712fa64d4.png)
+
+_My apologies, this message is in Dutch but it states that permissions are required and we need to accept them._
+
+Click the `Accept` button to agree on the permissions. Also, only select `Consent on behalf of your organization` when you intend to approve access at that scope and are authorized to do so.
 
 If you previously received a `403 Forbidden` response, run the query again after granting the required permission. Remember that your signed-in account must also have the appropriate Intune access.
 
+---
+
 ## Step 4: List the uploaded PowerShell scripts
 
-Now set the request method to **GET**, select **beta**, and enter this URL in Graph Explorer:
+Now set the request method to `GET`, select `beta`, and enter this URL in Graph Explorer, or try the query again if it is still in your query bar:
 
-```http
+```
 https://graph.microsoft.com/beta/deviceManagement/deviceManagementScripts
 ```
 
-Click **Run query**. If everything is configured correctly, you should receive a `200 OK` response containing the uploaded scripts.
+Click `Run query`. If everything is set correctly, you should receive a `200 OK` response containing the uploaded scripts items.
 
-[![Graph Explorer response showing Intune scripts](images/05-script-list-graph.png)](images/05-script-list-graph.png)
+[![jv-media-8538-630f1b50dac7.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/recover-script-contents-microsoft-intune/jv-media-8538-630f1b50dac7.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/recover-script-contents-microsoft-intune/jv-media-8538-630f1b50dac7.png)
 
 Look for the script's `displayName`, and copy the corresponding `id` value. You may notice that `scriptContent` is `null` in this overview. That is also what we see in my example, so the next step is important.
 
+---
+
 ## Step 5: Retrieve the script content
 
-To get the actual contents, make a **second GET request**, this time targeting the script's individual ID:
+Now we can fetch the actual contents, make a second GET request, this time targeting the script's individual ID:
 
-```http
-https://graph.microsoft.com/beta/deviceManagement/deviceManagementScripts/SCRIPT_ID
+```
+https://graph.microsoft.com/beta/deviceManagement/deviceManagementScripts/script-id
 ```
 
-Replace `SCRIPT_ID` with the `id` copied from the previous response and click **Run query** again.
+Replace `script-id` with the `id` copied from the previous response and click Run query again, as I have done below. This will result in everything sbout the script:
 
-In the resulting JSON, find `scriptContent`. It should contain a long Base64-encoded string rather than readable PowerShell. Copy the complete value **without the surrounding quotation marks**.
+[![jv-media-8538-10adcf8cfa78.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/recover-script-contents-microsoft-intune/jv-media-8538-10adcf8cfa78.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/recover-script-contents-microsoft-intune/jv-media-8538-10adcf8cfa78.png)
 
-Base64 is an encoding format, not encryption. We only need to decode it to recover the original PowerShell script.
+In the resulting JSON, find you will find the `scriptContent` which is a long Base64-encoded string rather than readable PowerShell. Copy the complete value without the surrounding quotation marks. Base64 is an encoding format, not encryption. We only need to decode it to recover the original PowerShell script, which we will do in the next step.
+
+---
 
 ## Step 6: Decode the Base64 content with PowerShell
 
-Open PowerShell on your computer and run the following code. Replace `PASTE_YOUR_BASE64_VALUE_HERE` with the complete `scriptContent` value you copied from Graph Explorer.
+Now open PowerShell on your computer and run the script below, but replace `PASTE_YOUR_BASE64_VALUE_HERE` with the complete `scriptContent` value you copied from Graph Explorer, everything which is between the quotation marks.
 
 {{< card code=true header="**PowerShell**" lang="powershell" >}}
 $Base64 = @'
@@ -128,9 +146,9 @@ Write-Host "Script saved to: $OutputPath"
 
 The original script is now displayed as plain text, and a copy is saved to your desktop as `Recovered-Intune-Script.ps1`. Writing the original decoded bytes preserves the source file's encoding, including any UTF-8 byte-order mark.
 
-In my case, I successfully recovered the script that configures the `AutoAcceptSsoPermission` registry value.
+In my case, I successfully recovered the script that configures the `AutoAcceptSsoPermission` registry value from an earlier guide.
 
-[![Decoded Intune PowerShell script displayed in a PowerShell window](images/06-base64-decoded-powershell.png)](images/06-base64-decoded-powershell.png)
+[![jv-media-8538-c973aab298e0.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/recover-script-contents-microsoft-intune/jv-media-8538-c973aab298e0.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/recover-script-contents-microsoft-intune/jv-media-8538-c973aab298e0.png)
 
 ---
 
@@ -138,7 +156,7 @@ In my case, I successfully recovered the script that configures the `AutoAcceptS
 
 In this post, we retrieved an existing PowerShell script from Microsoft Intune using Graph Explorer and decoded its Base64 contents back into readable PowerShell. We only needed one read permission, two Graph requests and a few PowerShell commands.
 
-This is especially useful when the original `.ps1` file has been lost but the script is still available in Intune. One thing to remember is that this walkthrough is specifically for **Windows Platform scripts**; **Remediations** use a different Microsoft Graph endpoint.
+This is especially useful when the original `.ps1` file has been lost but the script is still available in Intune. One thing to remember is that this walkthrough is specifically for Windows Platform scripts; Remediations use a different Microsoft Graph endpoint.
 
 Thank you for reading this post, and I hope it was helpful!
 
