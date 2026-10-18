@@ -56,6 +56,7 @@ For Windows messages, the devices need to meet the applicable Windows requiremen
 - Microsoft Entra ID joined or Entra hybrid joined
 - Windows Enterprise license on client devices
 - Microsoft 365 E3 or E5 licenses
+    - Unlocking all Organizational Messages features can take up to 24 hours after aquiring a license
 - Organizational Messages Writer role
 
 ---
@@ -134,11 +135,9 @@ After around 15 minutes and a reboot of my computer, the status shows this and t
 
 ---
 
-## Step 3: Create Organizational Messages
+## Step 3: Create Custom Organizational Messages
 
-Now comes the fun part: creating our actual message to send to our end users. Open the Microsoft 365 admin center: [https://admin.microsoft.com](https://admin.microsoft.com)
-
-And then go to: `Reports > Organizational messages`
+Now comes the fun part: creating our actual message to send to our end users. Open the Microsoft 365 admin center: [https://admin.microsoft.com](https://admin.microsoft.com) and then go to: `Reports > Organizational messages`
 
 [![jv-media-8538-8def376141b4.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-8def376141b4.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-8def376141b4.png)
 
@@ -165,43 +164,64 @@ For this example, I will create a message about an upcoming IT change, the Windo
 
 The next step is selecting where the message should be displayed. For Windows, some of the most interesting locations are:
 
-- Windows Spotlight
+- Notification Area
 - Taskbar
-- Notification Center
+- In Microsoft Teams
+- Windows Spotlight
 
 I selected the `Notifications area` just to test the message:
 
 [![jv-media-8538-c35f59af97c1.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-c35f59af97c1.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-c35f59af97c1.png)
 
-This is probably one of the easiest locations to start testing with because users are already familiar with Windows notifications. Select your preferred location and continue.
+Then select the `Create your own` to completely customize your message. You can also choose one of the templates available if you like, but for the purpose of this guide, I will create a custom message.
 
-Now we have to select a premade template which we can use. I will use the `Software` template as we will inform users about the Windows 11 26H2 update which is rolling out at the time of writing. You can fully customize your messages sent, but I don't have all the required licenses in my tenant ready for this option, which is greyed out.
+[![jv-media-8538-910374e23211.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-910374e23211.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-910374e23211.png)
 
-[![jv-media-8538-3eb123f50d80.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-3eb123f50d80.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-3eb123f50d80.png)
+Now I have defined a simple message to the users that Windows is getting a new update, which it is getting actually almost daily but its a testcase for this demonstration, informing our users of a coming update.
 
-Now we have some predefined messages we can choose:
+[![jv-media-8538-e5aab4c04c36.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-e5aab4c04c36.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-e5aab4c04c36.png)
 
-[![jv-media-8538-a91c4107490d.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-a91c4107490d.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-a91c4107490d.png)
+Then click `Next` to advance through the wizard.
 
-And on the next step we can customize the message completely, adding a link to your organization's website or messages/helpdesk ticket or articles and a logo:
+Now we have to define which users will actually be informed. In my case, I will select the Azure Virtual Desktop (AVD) users group, as this update might be interesting for them.
 
-[![jv-media-8538-1006c9b0ac09.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-1006c9b0ac09.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-1006c9b0ac09.png)
+[![jv-media-8538-d3497d217560.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-d3497d217560.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-d3497d217560.png)
 
-We can then target different users in our organization. As I am the only user in my organization, I will use the `All company` group, but you could create a more granular group or use a department attribute.
+You can also select Companies, Departments, Locations or Usage if targeting specific employees with this feature.
 
-[![jv-media-8538-23d3b5a81192.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-23d3b5a81192.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-23d3b5a81192.png)
+[![jv-media-8538-e2cad278dfb4.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-e2cad278dfb4.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-e2cad278dfb4.png)
 
-Then we can configure the schedule, setting this starting today and the rest for the month and once a week:
+Then click `Next` to specify when to let users receive the messages. For getting the message as soon as possible, I selected `Weekly ten times` but you can also choose once a week or month.
 
-[![jv-media-8538-50752baac735.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-50752baac735.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-50752baac735.png)
+[![jv-media-8538-4d97639842ca.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-4d97639842ca.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-4d97639842ca.png)
 
 Now we can review the complete message and spot any possible errors before publishing:
 
-[![jv-media-8538-55b66bd94662.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-55b66bd94662.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-55b66bd94662.png)
+[![jv-media-8538-3e15f49ef88e.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-3e15f49ef88e.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-3e15f49ef88e.png)
 
-Then finish the wizard and the message is ready to be sent to your users and devices which will happen automatically.
+Then finish the wizard and the message is ready to be approved.
 
-[![jv-media-8538-02441dab56dc.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-02441dab56dc.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-02441dab56dc.png)
+[![jv-media-8538-970e537cf5ef.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-970e537cf5ef.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-970e537cf5ef.png)
+
+---
+
+## Step 4: Approve the Custom Organizational message
+
+Before an organizational message is sent to users and devices, we must first approve the message. Microsoft wants you to do this from a separate account, the four-eyes principle. In my case for demonstration, I will give my user account the correct (least) privilege role to be able to perform this action.
+
+In Microsoft 365 Admin Center or Microsoft Entra, go to the user which must approve the message, and assign the following role:
+
+`Organizational Messages Approver`
+
+[![jv-media-8538-c82cfbda9dd9.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-c82cfbda9dd9.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-c82cfbda9dd9.png)
+
+Apply the role assignment and login to the account with the just aquired permissions, and navigate back to `Reports` and then to  ``Organizational Messages`.
+
+[![jv-media-8538-f2b538d284d1.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-f2b538d284d1.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-f2b538d284d1.png)
+
+Input a comment if you like and approve the message to start rolling out the notification to the users and devices.
+
+[![jv-media-8538-1ea46f69b43e.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-1ea46f69b43e.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-1ea46f69b43e.png)
 
 ---
 
@@ -242,7 +262,8 @@ These sources helped me by writing and research for this post;
 
 1. https://learn.microsoft.com/en-us/microsoft-365/admin/misc/organizational-messages-microsoft-365
 2. https://learn.microsoft.com/en-us/microsoft-365/admin/misc/organizational-messages-microsoft-365-faq
-3. https://learn.microsoft.com/windows/client-management/mdm/policy-csp-experience
+3. [https://learn.microsoft.com/en-us/microsoft-365/admin/misc/organizational-messages-microsoft-365?view=o365-worldwide](https://learn.microsoft.com/en-us/microsoft-365/admin/misc/organizational-messages-microsoft-365?view=o365-worldwide)
+4. https://learn.microsoft.com/windows/client-management/mdm/policy-csp-experience
 {{% /alert %}}
 
 {{< ads >}}
