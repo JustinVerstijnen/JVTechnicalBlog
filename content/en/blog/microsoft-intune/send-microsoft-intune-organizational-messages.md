@@ -1,7 +1,7 @@
 ---
 title: "Send Organizational Messages with Microsoft Intune"
 slug: "send-organizational-messages-with-microsoft-intune"
-date: 2026-10-29
+date: 2026-12-03
 tags:
 - Step by Step guides
 categories:
@@ -26,7 +26,7 @@ Some examples are:
 
 This gives IT departments another communication channel without requiring users to install another application.
 
-<!-- SCREENSHOT: Example of Organizational Message on Windows -->
+[![jv-media-8538-a10569c47b26.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-a10569c47b26.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-a10569c47b26.png)
 
 In this post, I will configure Organizational Messages for Windows using Microsoft Intune and the Microsoft 365 admin center. We will configure the required Intune policy, create a message and check the end-user experience.
 
@@ -56,7 +56,7 @@ For Windows messages, the devices need to meet the applicable Windows requiremen
 - Microsoft Entra ID joined or Entra hybrid joined
 - Windows Enterprise license on client devices
 - Microsoft 365 E3 or E5 licenses
-    - Unlocking all Organizational Messages features can take up to 24 hours after aquiring a license
+    - Unlocking all Organizational Messages features can take up to 24 hours after aquiring a license, it did in my case
 - Organizational Messages Writer role
 
 ---
@@ -227,19 +227,13 @@ Input a comment if you like and approve the message to start rolling out the not
 
 ## The result on the client side
 
-After the message becomes active and Windows retrieves the message, it will be shown to the targeted user.
+After the message becomes active and Windows retrieves the message, it will be shown to the targeted user. For a Notification Center message, the experience looks like a normal Windows notification but with the organizational content we configured earlier.
 
-For a Notification Center message, the experience looks like a normal Windows notification but with the organizational content we configured earlier.
+[![jv-media-8538-a10569c47b26.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-a10569c47b26.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/send-organizational-messages-with-microsoft-intune/jv-media-8538-a10569c47b26.png)
 
-The user can interact with the message and open the URL we configured.
+The user can interact with the message and open the URL we configured. I really like this approach because the communication becomes part of the operating system instead of yet another email which users may miss.
 
-I really like this approach because the communication becomes part of the operating system instead of yet another email.
-
-But don't overdo it.
-
-If users receive organizational messages all the time, they will eventually start ignoring them just like emails and other notifications.
-
-Use them for communication that actually provides value.
+However this is pretty cool, we must limit the amout of those messages sent to users. If users receive organizational messages all the time, they will eventually start ignoring them just like emails and other notifications. Only use them for communication that actually provides value.
 
 ---
 
@@ -247,11 +241,7 @@ Use them for communication that actually provides value.
 
 Organizational Messages give IT administrators another way to communicate directly with users without completely relying on email or Microsoft Teams.
 
-The configuration consists of two main parts. We use Microsoft Intune to configure the required Windows policies and the Microsoft 365 admin center to create, target, schedule and monitor the actual messages.
-
-I especially like the fact that the messages can appear directly inside Windows. This makes Organizational Messages useful for things like IT maintenance, security communication, application rollouts and user adoption.
-
-The reporting functionality is also a welcome addition, as we can actually see whether messages are being viewed and clicked.
+The configuration consists of two main parts. We use Microsoft Intune to configure the required Windows policies and the Microsoft 365 admin center to create, target, schedule and monitor the actual messages. I especially like the fact that the messages can appear directly inside Windows. This makes Organizational Messages useful for things like IT maintenance, security communication, application rollouts and user adoption.
 
 Just make sure not to turn every small IT announcement into an Organizational Message. If we keep the messages relevant, they can become a useful additional communication channel instead of another notification users automatically dismiss.
 
