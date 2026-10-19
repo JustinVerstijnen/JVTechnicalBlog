@@ -1,7 +1,7 @@
 ---
-title: "Azure Virtual Desktop Checklist"
+title: "Azure Virtual Desktop User Readiness Checklist"
 date: 2022-11-21
-slug: "azure-virtual-desktop-checklist"
+slug: "azure-virtual-desktop-user-readiness-checklist"
 categories:
   - Archive
 tags:
