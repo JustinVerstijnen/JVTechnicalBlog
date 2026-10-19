@@ -6,8 +6,7 @@ categories:
 - Archive
 tags:
   - Concepts
-description: >
-  How does the MITRE ATTACK framework work? Let's find out in this guide.
+description: "How does the MITRE ATTACK framework work? Let's find out in this guide."
 ---
 The MITRE ATTACK (ATT&CK) Framework is a framework which describes all stages and methods cyberattacks attacks are launched on companies in the last 15 years. The main purpose of the framework is to help Red and Blue security teams to harden their systems and to provide a library of known attacks to help mitigate them.
 
