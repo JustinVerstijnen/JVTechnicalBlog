@@ -172,6 +172,13 @@ title: "About"
           </div>
         </article>
         <article class="about-cert-tile">
+          <strong>Microsoft 365 Certified: Copilot and Agent Administration Fundamentals</strong>
+          <div class="about-cert-meta-row">
+            <div class="about-cert-meta"><span>Exam code</span><small>AB-900</small></div>
+            <div class="about-cert-meta"><span>Earned</span><small>2026</small></div>
+          </div>
+        </article>
+        <article class="about-cert-tile">
           <strong>Microsoft 365 Certified: Administrator Expert</strong>
           <div class="about-cert-meta-row">
             <div class="about-cert-meta"><span>Exam code</span><small>MS-100, MS-101 (MS-102)</small></div>
