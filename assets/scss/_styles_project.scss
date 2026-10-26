@@ -950,7 +950,7 @@ html:not([data-bs-theme='dark']) body:not([data-bs-theme='dark']):has(.td-click-
   align-items: center;
   box-sizing: border-box;
   min-height: 64px;
-  padding: 12px 156px 12px 20px;
+  padding: 12px 256px 12px 20px;
   border-bottom: 1px solid var(--jv-code-border);
   border-radius: 11px 11px 0 0;
   color: var(--jv-code-text);
@@ -975,7 +975,8 @@ html:not([data-bs-theme='dark']) body:not([data-bs-theme='dark']):has(.td-click-
 
 .td-content .highlight pre code { font-family: inherit; font-size: inherit; white-space: pre; overflow-wrap: normal; word-break: normal; }
 
-.td-content .highlight pre button.td-click-to-copy {
+.td-content .highlight pre button.td-click-to-copy,
+.td-content .highlight pre button.jv-code-edit-button {
   position: absolute;
   z-index: 2;
   inset: 10px 12px auto auto;
@@ -1000,6 +1001,47 @@ html:not([data-bs-theme='dark']) body:not([data-bs-theme='dark']):has(.td-click-
   transition: background-color 120ms ease, border-color 120ms ease;
 }
 
+/* Place Edit directly to the left of Docsy's Copy button. */
+.td-content .highlight pre button.jv-code-edit-button {
+  inset: 10px 144px auto auto;
+  min-width: 92px;
+}
+
+/* Provide a native, plain-text editor with the code block's typography. */
+.td-content .highlight pre.jv-code-is-editing > :not(button):not(.jv-code-edit-textarea) {
+  display: none !important;
+}
+
+.td-content .highlight pre textarea.jv-code-edit-textarea {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 112px;
+  max-height: 560px;
+  margin: 0;
+  padding: 0;
+  resize: vertical;
+  overflow: auto;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  background: transparent;
+  color: var(--jv-code-text);
+  font: inherit;
+  line-height: inherit;
+  tab-size: 4;
+  white-space: pre;
+}
+
+.td-content .highlight pre textarea.jv-code-edit-textarea:focus-visible {
+  outline: 2px solid var(--jv-code-accent);
+  outline-offset: 5px;
+}
+
+.td-content .highlight pre button.td-click-to-copy.jv-code-copy-success::after { content: 'Copied!'; }
+.td-content .highlight pre button.td-click-to-copy.jv-code-copy-error::after { content: 'Failed'; }
+
 .td-content .highlight pre button.td-click-to-copy::before { content: none !important; display: none !important; }
 
 .td-content .highlight pre button.td-click-to-copy > i, .td-content .highlight pre button.td-click-to-copy > svg, .td-content .highlight pre button.td-click-to-copy > .fa, .td-content .highlight pre button.td-click-to-copy > .fas, .td-content .highlight pre button.td-click-to-copy > .fa-solid {
@@ -1008,11 +1050,11 @@ html:not([data-bs-theme='dark']) body:not([data-bs-theme='dark']):has(.td-click-
 
 .td-content .highlight pre button.td-click-to-copy::after { content: 'Copy'; }
 
-.td-content .highlight pre button.td-click-to-copy:hover { color: var(--jv-code-text); background: var(--jv-code-button-hover); border-color: var(--jv-code-accent); }
+.td-content .highlight pre button.td-click-to-copy:hover, .td-content .highlight pre button.jv-code-edit-button:hover { color: var(--jv-code-text); background: var(--jv-code-button-hover); border-color: var(--jv-code-accent); }
 
-.td-content .highlight pre button.td-click-to-copy:focus-visible { outline: 2px solid var(--jv-code-accent); outline-offset: 2px; }
+.td-content .highlight pre button.td-click-to-copy:focus-visible, .td-content .highlight pre button.jv-code-edit-button:focus-visible { outline: 2px solid var(--jv-code-accent); outline-offset: 2px; }
 
-.td-content .highlight pre button.td-click-to-copy:active { color: var(--jv-code-text); background: var(--jv-code-button-hover); transform: none; }
+.td-content .highlight pre button.td-click-to-copy:active, .td-content .highlight pre button.jv-code-edit-button:active { color: var(--jv-code-text); background: var(--jv-code-button-hover); transform: none; }
 
 .td-content .td-card.card:has(> .card-body > .highlight:only-child), .td-content .td-card.card:has(> .highlight) {
   position: relative;
@@ -1026,7 +1068,7 @@ html:not([data-bs-theme='dark']) body:not([data-bs-theme='dark']):has(.td-click-
     display: flex;
     align-items: center;
     min-height: 64px;
-    padding: 12px 156px 12px 20px;
+    padding: 12px 256px 12px 20px;
     border-bottom: 1px solid var(--jv-code-border);
     border-radius: 11px 11px 0 0;
     color: var(--jv-code-text);
@@ -1053,12 +1095,30 @@ html:not([data-bs-theme='dark']) body:not([data-bs-theme='dark']):has(.td-click-
 
 [data-bs-theme='dark'] .td-content .highlight pre code, [data-bs-theme='dark'] .td-content .highlight pre code * { background: transparent !important; }
 
+/* On phones, move the two actions below the header label. */
+@media (max-width: 560px) {
+  .td-content .highlight::before {
+    min-height: 118px;
+    padding: 12px 16px 68px 20px;
+  }
+
+  .td-content .td-card.card:has(.highlight) > .card-header {
+    min-height: 118px;
+    padding: 12px 16px 68px 20px;
+  }
+
+  .td-content .highlight pre button.td-click-to-copy,
+  .td-content .highlight pre button.jv-code-edit-button {
+    top: 63px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .td-content .highlight pre button.td-click-to-copy { transition: none; }
+  .td-content .highlight pre button.td-click-to-copy, .td-content .highlight pre button.jv-code-edit-button { transition: none; }
 }
 
 @media print {
-  .td-content .highlight pre button.td-click-to-copy { display: none; }
+  .td-content .highlight pre button.td-click-to-copy, .td-content .highlight pre button.jv-code-edit-button { display: none; }
   .td-content .highlight, .td-content .td-card.card:has(.highlight) { box-shadow: none; }
 }
 
