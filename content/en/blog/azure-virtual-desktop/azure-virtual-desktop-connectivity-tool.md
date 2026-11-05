@@ -26,11 +26,16 @@ I have the open-source tool available on my website, which can be opened here:
 
 [![tool-avdexperienceestimator.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/tools-2375/tool-avdexperienceestimator.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/tools-2375/tool-avdexperienceestimator.png)
 
+The tool automatically starts by measuring some of the most used regions out there. This is by design to save data and keep the screen clean. You can then perform a full lookup to most of the known regions to have support for Azure Virtual Desktop. From these lookups, some measurements are done:
+
+- Latency: The time in milliseconds a package travels from A to B
+- Round Trip Time: The time in milliseconds a package travels from A to B and back to A
+
 ---
 
 ## What is Round Trip Time (RTT)?
 
-The Round Trip Time is the time in milliseconds that a request needs to travel from its source to its destination and back to the source. In applications like Remote Desktop, a higher RTT can make actions like typing, clicking and moving windows feel less responsive.
+The Round Trip Time is the time in milliseconds that a request needs to travel from its source to its destination and back to the source. In applications like Remote Desktop, a higher RTT can make virtual desktop performance really slow and unresponsive like typing, clicking and moving windows will become slow, getting delayed and stuttery.
 
 According to Microsoft, an actual Azure Virtual Desktop connection with an RTT below `100ms` is generally ideal, while a connection above `200ms` can impact the user experience. Keep in mind that these are guidelines for actual AVD connections, not direct thresholds for the HTTPS measurements from this tool.
 
@@ -42,17 +47,15 @@ According to Microsoft, an actual Azure Virtual Desktop connection with an RTT b
 
 ## The online estimator described
 
-The tool compares HTTPS response times to Azure regions from the device and browser you are using. It works as follows:
+The tool compares HTTPS response times to Azure regions from the device and browser you are using. It works as described below:
 
-1. When opening the website, the tool automatically starts a lookup of the first `5` available regions with configured test endpoints.
-2. By clicking `Start full lookup`, the tool checks all regions that have a configured test endpoint. Multiple regions are tested in parallel.
-3. The results are displayed in a table with the Azure region, `Latency (est.)` and `RTT (HTTPS)`.
-4. You can sort the results by clicking on the column headers, for example to find the region with the lowest measured response time.
-5. By clicking `Export`, you can export the results to a JSON file for further analysis.
+1. When opening the website, the tool automatically starts a lookup of the first `5` available regions with configured test endpoints
+2. By clicking `Start full lookup`, the tool checks all regions that have a configured test endpoint. Multiple regions are tested in parallel
+3. The results are displayed in a table with the Azure region, `Latency (est.)` and `RTT (HTTPS)`
+4. You can sort the results by clicking on the column headers, for example to find the region with the lowest measured response time
+5. By clicking `Export`, you can export the results to a JSON file if needed
 
-The `RTT (HTTPS)` value is the median timing of browser HTTPS requests after a warmup. The `Latency (est.)` value is calculated as half of this RTT. This is only a rough estimate of one-way latency and is not a direct measurement.
-
-It is important to know that the tool does not measure the actual RTT of an RDP session or use ICMP ping. Factors like your internet connection, browser, VPN, proxy and the network path can influence the results. The tool also does not test all required Azure Virtual Desktop firewall endpoints. An unavailable result therefore does not automatically mean that Azure Virtual Desktop is blocked.
+It is important to know that the tool does not measure the actual RTT of an RDP session or use ICMP ping. Factors like your internet connection, browser, VPN, proxy and the network path can influence the results. The tool also does not test all required Azure Virtual Desktop firewall endpoints. An unavailable result therefore does not automatically mean that Azure Virtual Desktop is blocked. The tool is designed to be a replacement for the old discontinued AVD Experience Estimator tool from Microsoft.
 
 ---
 
