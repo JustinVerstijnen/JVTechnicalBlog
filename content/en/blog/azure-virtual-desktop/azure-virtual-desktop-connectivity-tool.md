@@ -1,6 +1,6 @@
 ---
 title: "Test Azure Virtual Desktop RTT with my AVD Experience Estimator"
-date: 2026-11-05
+date: 2026-11-08
 slug: "azure-virtual-desktop-connectivity-tool"
 categories:
   - Azure Virtual Desktop
