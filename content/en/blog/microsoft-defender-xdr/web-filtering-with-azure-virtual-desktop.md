@@ -1,7 +1,7 @@
 ---
 title: "Web filtering with Azure Virtual Desktop"
 slug: "web-filtering-with-azure-virtual-desktop"
-date: 2026-12-10
+date: 2026-12-17
 tags:
 - Step by Step guides
 - Concepts
