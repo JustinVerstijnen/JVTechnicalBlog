@@ -105,7 +105,11 @@ Now you need to do this for every app you want to install, but be careful not to
 Now we know how to install your own chosen apps using winget, we can create a script which installs the applications for us. This script will be very easy to build and maintain. An example of a script I used in the past:
 
 {{< card code=true header="**Bash**" lang="bash" >}}
-rem WhatsAppwinget install 9NKSQGP7F2NH --silent --accept-package-agreements --accept-source-agreementsrem Copilotwinget install Microsoft.365Copilot --silent --accept-package-agreements --accept-source-agreements
+rem WhatsApp
+winget install 9NKSQGP7F2NH --silent --accept-package-agreements --accept-source-agreements
+
+rem Copilot
+winget install Microsoft.365Copilot --silent --accept-package-agreements --accept-source-agreements
 {{< /card >}}
 
 Then save this script as a .cmd file. Now we need to place this on a readable shared network location, like a server or on the SYSVOL folder of the domain like I've done here:
