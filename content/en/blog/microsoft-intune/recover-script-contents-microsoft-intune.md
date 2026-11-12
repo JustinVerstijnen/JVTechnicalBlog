@@ -1,7 +1,7 @@
 ---
 title: "How to recover Script contents in Microsoft Intune"
 slug: "recover-script-contents-microsoft-intune"
-date: 2026-11-19
+date: 2026-11-26
 tags:
 - Step by Step Guides
 categories:

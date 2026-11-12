@@ -1,7 +1,7 @@
 ---
 title: "Send Organizational Messages with Microsoft Intune"
 slug: "send-organizational-messages-with-microsoft-intune"
-date: 2026-12-10
+date: 2026-12-23
 tags:
 - Step by Step guides
 categories:
