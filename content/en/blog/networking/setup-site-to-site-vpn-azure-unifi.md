@@ -110,6 +110,12 @@ Then set IPsec SA lifetime in seconds to `3600`, which is one hour. Leave the re
 
 Incorrect settings on either side will result in no VPN connection or no IP traffic. Check all settings carefully before continuing. Then create the connection in Azure, which will take approximately 60 seconds. You can immediately continue with the UniFi configuration for now as we have now done the first half of the configuration.
 
+### Using Azure Virtual WAN?
+
+If you use Azure Virtual WAN to be able to connect multiple sites through VPN, you can configure the cryptographic settings here:
+
+[![jv-media-5716-cf965fc2b41e.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-cf965fc2b41e.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/setup-site-to-site-vpn-azure-unifi/jv-media-5716-cf965fc2b41e.png)
+
 ---
 
 ## 2. UniFi-side guide
@@ -142,11 +148,9 @@ In UniFi, we now need to copy the IPsec policy that we configured in Azure becau
 IPsec works in two phases:
 
 - **Phase 1: Establishing the connection**
-
-	- The devices establish the IKE Security Association (SA) and exchange keying information to create a secure tunnel.
+    - The devices establish the IKE Security Association (SA) and exchange keying information to create a secure tunnel.
 - **Phase 2: Protecting data traffic**
-
-	- The devices establish the IPsec Security Association used to encrypt and authenticate traffic through the tunnel.
+    - The devices establish the IPsec Security Association used to encrypt and authenticate traffic through the tunnel.
 
 Let's configure these phases now. The tunnel's cryptographic settings must be configured as shown below. Scroll down on the tunnel configuration page and set `Advanced` to `Manual`.
 
@@ -216,6 +220,7 @@ Thank you for reading this post and I hope it was helpful!
 
 {{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
+
 1. https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways
 2. https://learn.microsoft.com/en-us/azure/vpn-gateway/tutorial-site-to-site-portal
 3. https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-ipsecikepolicy-rm-powershell
