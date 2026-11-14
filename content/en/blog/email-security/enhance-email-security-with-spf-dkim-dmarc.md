@@ -80,7 +80,7 @@ It works by publishing a DNS record as a sending party that states when an email
 v=spf1 mx ip4:123.123.123.123 include:spf.protection.outlook.com -all
 {{< /card >}}
 
-In this record you state all the emailing services, emailserver as IP address or add "mx" to always trust mails sent from your primary MX record-service.
+In this record you state all the configured emailing services, emailserver as IP address or add "mx" to always trust mails sent from your primary MX record-service.
 
 ### SPF policies
 
@@ -123,7 +123,7 @@ DKIM records must be configured for every sending domain, and every service that
 v=DKIM1; p=4ea8f9af900800ac9d10d6d2a1d36e24643aeba2
 {{< /card >}}
 
-This record is stating that it uses DKIM version 1 (no new version available) and has a public key. In this example case, it is "justinverstijnen.nl" in SHA1.
+This record is stating that it uses DKIM version 1 (no new version available) and has a public key. In this example case, it is `justinverstijnen.nl` in SHA1.
 
 When using Microsoft 365, DKIM consists of 2 DNS records which has to be added to the DNS records of your domain. After adding those records, we still need to activate DKIM for every domain. I will show this in depth [further in this guide.](#dkim-m365)
 
@@ -147,7 +147,7 @@ DMARC is an email verification and reporting protocol that helps domain owners p
 
 ### DMARC policies
 
-DMARC uses the SPF and DKIM checks as a sort of top layer to determine if a sender is spoofing a domain. If the SPF check or DKIM check fails, we can decice what to do then by configuring one of the 3 available DMARC policies to decide what to do:
+DMARC uses the SPF and DKIM checks as a sort of top layer to determine if a sender is spoofing a domain. If the SPF check or DKIM check fails, we can decide what to do then by configuring one of the 3 available DMARC policies to decide what to do:
 
 | DMARC Policy | Description | Effect |
 | --- | --- | --- |
@@ -169,7 +169,7 @@ _dmarc       v=DMARC1; p=reject;
 
 To have a step-by-step guide to configure this into your DNS, please go down to: [Configuring DMARC step-by-step](#configuring-dmarc-stepbystep)
 
-In production domains, I highly recommend only using the "reject" policy. Each email that does not pass through SPF and DKIM must not be delivered in a normal manner to employees as they will click on anything without proper training.
+In production domains, I highly recommend only using the `reject` policy. Each email that does not pass through SPF and DKIM must not be delivered in a normal manner to employees as they will click on anything without proper training.
 
 ### Monitoring using DMARC
 
@@ -220,13 +220,11 @@ This configuration must done for all your domains.
 
 To configure DKIM for your domain in Microsoft 365, go to the Security center or to this direct link: <https://security.microsoft.com/dkimv2>
 
-Then, under "Email & Collaboration" go to "Policies & Rules".
+Then, under `Email & Collaboration` go to `Policies & Rules`.
 
 [![jv-media-1462-6c7a3f0c134f.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/enhance-email-security-with-spf-dkim-dmarc-1462/jv-media-1462-6c7a3f0c134f.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/enhance-email-security-with-spf-dkim-dmarc-1462/jv-media-1462-6c7a3f0c134f.png)
 
-Click on "Threat policies".
-
-Then on "Email authentication settings".
+Click on `Threat policies` and then on `Email authentication settings`.
 
 Here you will find all your domains added to Microsoft 365 and the status of DKIM. In my case, I already configured all domains to do DKIM signing.
 
@@ -242,8 +240,8 @@ Create those 2 records in your DNS hosting service. In my case this configured:
 
 | Type | Name | Value | TTL |
 | --- | --- | --- | --- |
-| CNAME-record | selector1.\_domainkey | selector1-justinverstijnen-nl.\_domainkey.JustinVerstijnen.onmicrosoft.com | Provider default |
-| CNAME-record | selector2.\_domainkey | selector2-justinverstijnen-nl.\_domainkey.JustinVerstijnen.onmicrosoft.com | Provider default |
+| CNAME-record | selector1._domainkey | selector1-justinverstijnen-nl._domainkey.JustinVerstijnen.onmicrosoft.com | Provider default |
+| CNAME-record | selector2._domainkey | selector2-justinverstijnen-nl._domainkey.JustinVerstijnen.onmicrosoft.com | Provider default |
 
 For reference;
 
@@ -293,7 +291,7 @@ Ensure all systems are defined in SPF and use DKIM.
 
 ### Configure DMARC for your .onmicrosoft.com domain(s)
 
-It's also possible to configure DMARC on your Microsoft Online Email Routing Address (MOERA) domain, which is more widely known as your .onmicrosoft.com domain. I highly recommend doing this as this is practically also a domain that looks like your brand.
+It's also possible to configure DMARC on your Microsoft Online Email Routing Address (MOERA) domain, which is more widely known as your `.onmicrosoft.com` domain. I highly recommend doing this as this is practically also a domain that looks like your brand.
 
 To configure this, go to Microsoft 365 Admin Center and head to the domains section:
 
