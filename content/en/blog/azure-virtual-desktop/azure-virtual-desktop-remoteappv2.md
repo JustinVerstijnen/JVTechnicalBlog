@@ -7,18 +7,18 @@ categories:
 tags:
   - Concepts
   - Step by Step guides
-description: >
-  This blog post explains how to get started with Remote App V2 in Azure Virtual Desktop, and I will explain on what area's this new version is better and what area's still needs to improve.
+description: "This blog post explains how to get started with Remote App V2 in Azure Virtual Desktop, and I will explain on what area's this new version is better and what area's still needs to improve."
 ---
+
 Microsoft announced RemoteAppV2 under some pretty enhancements on top of the older RemoteApp engine. This newer version has some improvements like:
 
 - Better multi monitor support
 - Better resizing/window experience
 - Visuals like window shadows
 
-I cannot really show this in pictures, but if you test V2 alongside V1, you definitely notice these small visual enhancements. However, a wanted feature called "drag-and-drop" is still not possible on V2.
+I cannot really show this in pictures, but if you test V2 alongside V1, you definitely notice these small visual enhancements. However, a wanted feature called "drag-and-drop" of files is still not possible on this newer V2.
 
-Source: <https://learn.microsoft.com/en-us/azure/virtual-desktop/remoteapp-enhancements>
+Source: [https://learn.microsoft.com/en-us/azure/virtual-desktop/remoteapp-enhancements](https://learn.microsoft.com/en-us/azure/virtual-desktop/remoteapp-enhancements)
 
 ---
 
@@ -26,7 +26,7 @@ Source: <https://learn.microsoft.com/en-us/azure/virtual-desktop/remoteapp-enhan
 
 To enable RemoteAppV2, you need to set a registry key as long as the preview is running. Make sure you are compliant with the requirements as described on this page (client + hosts):
 
-<https://learn.microsoft.com/en-us/azure/virtual-desktop/remoteapp-enhancements#prerequisites>
+[https://learn.microsoft.com/en-us/azure/virtual-desktop/remoteapp-enhancements#prerequisites](https://learn.microsoft.com/en-us/azure/virtual-desktop/remoteapp-enhancements#prerequisites)
 
 We can do this manually or through a Powershell script which you can deploy with Intune:
 
@@ -35,7 +35,7 @@ We can do this manually or through a Powershell script which you can deploy with
 - **Value name**: EnableRemoteAppV2
 - **Value data**: 1
 
-{{< card code=true header="**POWERSHELL**" lang="powershell" >}}
+{{< card code=true header="**PowerShell**" lang="powershell" >}}
 $registryPath = "HKLM:\Software\Policies\Microsoft\Windows NT\Terminal Services"
 
 if (-not (Test-Path $registryPath)) {
@@ -56,7 +56,7 @@ This should look like this:
 
 ---
 
-## Check out the status
+## Checking the status
 
 When enabled the registry key, the host must be restarted to make the changes effective. After that, when opening a Remote App, press the following shortcut:
 
@@ -78,10 +78,11 @@ Under the Remote session type, you must see RemoteAppV2 now. Then the new enhanc
 
 The one thing which pushes me away from using RemoteApp is the missing drag and drop functionality. This is something a lot of users want when working in certain applications. This V2 version also lacks this functionality.
 
-I also couldn't get it to work with the validation environment setting only. In my case, I had to create the registry key.
+I also couldn't get it to work with the validation environment setting only. In my case, I had to create the registry key to get it to work.
 
 {{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
+
 1. https://learn.microsoft.com/en-us/azure/virtual-desktop/remoteapp-enhancements#enable-remoteapp-enhancements-preview
 {{% /alert %}}
 
