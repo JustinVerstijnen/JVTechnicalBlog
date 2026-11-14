@@ -9,7 +9,7 @@ tags:
 description: "In Azure we can link tags onto different resources, resource groups and subscriptions. We can use resource tagging for various reasons. With Azure Policy we can automate this process even further, linking different resources automatically based on what we want to achieve. For example, giving every resource in a specific resource group a tag."
 ---
 
-For some inspiration on to how to actually use Azure Tags, check out my earlier blog: <https://justinverstijnen.nl/10-ways-to-use-tags-in-microsoft-azure/>
+For some inspiration on to how to actually use Azure Tags in your environment, check out my earlier blog: [https://justinverstijnen.nl/10-ways-to-use-tags-in-microsoft-azure/](https://justinverstijnen.nl/10-ways-to-use-tags-in-microsoft-azure/)
 
 ---
 
@@ -29,21 +29,19 @@ In this Azure Policy, we will define that we want resource groups and underlying
 
 We can now create our Azure Policy that alters the resources and adds a tag just like we want to.
 
-Open the Azure Portal and go to “Policy”. We will land on the Policy compliancy dashboard:
+Open the Azure Portal and go to `Policy`. We will land on the Policy compliancy dashboard:
 
 [![jv-media-5017-70eb6b5c15f1.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-resource-tagging-with-azure-policy-5017/jv-media-5017-70eb6b5c15f1.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-resource-tagging-with-azure-policy-5017/jv-media-5017-70eb6b5c15f1.png)
 
 As for this purpose, Microsoft has already two templates ready which we can use. You can also choose to start from scratch. There are many more policy templates available from here, but they all need to be implemented the same as this guide.
 
-<https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-policies>
+[https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-policies](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-policies)
 
-I selected the "**Add a tag to resources**" policy template. Now we can select a scope, from where the policy must apply. We can also give it a custon name and description and possible exclusions.
+I selected the `Add a tag to resources` policy template. Now we can select a scope, from where the policy must apply. We can also give it a custom name and description and possible exclusions.
 
 [![jv-media-5017-fef734887c07.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-resource-tagging-with-azure-policy-5017/jv-media-5017-fef734887c07.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-resource-tagging-with-azure-policy-5017/jv-media-5017-fef734887c07.png)
 
-Click "Next".
-
-On the "Parameters" tab, fill in the tag name (1st) and tag value (2nd) part of the tag to assign:
+Click `Next`. On the `Parameters` tab, fill in the tag name (1st) and tag value (2nd) part of the tag to assign:
 
 [![jv-media-5017-a33279b2ff66.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-resource-tagging-with-azure-policy-5017/jv-media-5017-a33279b2ff66.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-resource-tagging-with-azure-policy-5017/jv-media-5017-a33279b2ff66.png)
 
@@ -51,17 +49,15 @@ For example, my testing resource group:
 
 [![jv-media-5017-bc29218b800c.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-resource-tagging-with-azure-policy-5017/jv-media-5017-bc29218b800c.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-resource-tagging-with-azure-policy-5017/jv-media-5017-bc29218b800c.png)
 
-Click "Next" and you reach the "Remediation" tab.
+Click `Next` and you reach the `Remediation` tab.
 
 [![jv-media-5017-ff1a4e8bf80b.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-resource-tagging-with-azure-policy-5017/jv-media-5017-ff1a4e8bf80b.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-resource-tagging-with-azure-policy-5017/jv-media-5017-ff1a4e8bf80b.png)
 
-The remediation task is the actual task that applies the tags. The definition is only stating what you want, the remediation task is the executor.
-
-Enable the checkbox and select the policy you just selected.
+The remediation task is the actual task that applies the tags. The definition is only stating what you want, the remediation task is the executor. Enable the checkbox and select the policy you just selected.
 
 [![jv-media-5017-e28b03c5ac1a.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-resource-tagging-with-azure-policy-5017/jv-media-5017-e28b03c5ac1a.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-resource-tagging-with-azure-policy-5017/jv-media-5017-e28b03c5ac1a.png)
 
-On the "Managed Identity" tab, select to use a System assigned managed identity and finish the wizard.
+On the `Managed Identity` tab, select to use a `System assigned managed identity` and finish the wizard.
 
 [![jv-media-5017-059dde37ebb3.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-resource-tagging-with-azure-policy-5017/jv-media-5017-059dde37ebb3.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-resource-tagging-with-azure-policy-5017/jv-media-5017-059dde37ebb3.png)
 
@@ -73,9 +69,11 @@ Now I created a dummy resource, just to check if it gets a tags assigned and tes
 
 [![jv-media-5017-252c314b6547.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-resource-tagging-with-azure-policy-5017/jv-media-5017-252c314b6547.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-resource-tagging-with-azure-policy-5017/jv-media-5017-252c314b6547.png)
 
+I finished the wizard and awaited the deployment of the public IP address.
+
 [![jv-media-5017-8df378386419.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-resource-tagging-with-azure-policy-5017/jv-media-5017-8df378386419.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-resource-tagging-with-azure-policy-5017/jv-media-5017-8df378386419.png)
 
-Now we have to wait for some time, as the remediation task can take up to an hour to actually add the tag. In my case, it took a few minutes.
+After the resource is deployed, we have to wait for some time, as the remediation task can take up to an hour to actually add the tag. In my case, it took a few minutes.
 
 {{< ads >}}
 
@@ -91,7 +89,7 @@ Now I will go back to the Public IP address and check the results:
 
 [![jv-media-5017-2cbd795d7a95.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-resource-tagging-with-azure-policy-5017/jv-media-5017-2cbd795d7a95.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/automatic-resource-tagging-with-azure-policy-5017/jv-media-5017-2cbd795d7a95.png)
 
-It indeed got the tag assigned automatically after about 5 minutes. This is really cool.
+It indeed got the tag assigned automatically after about 5 minutes which is really cool.
 
 ---
 
@@ -99,10 +97,13 @@ It indeed got the tag assigned automatically after about 5 minutes. This is real
 
 Assigning tags automatically with Azure Policy is a great way to automate the process. It ensures every resource is tagged and no manual intervention is needed where a person can forget to link things or make a minor mistake.
 
+By using Azure Policy we automate this task and we ensure our enviroment stays within our compliance for exisiting resources and newly created resources.
+
 Thank you for reading this blog and I hope it was helpful.
 
 {{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
+
 1. https://justinverstijnen.nl/10-ways-to-use-tags-in-microsoft-azure/
 2. https://justinverstijnen.nl/deploy-resource-group-locks-automatically-with-azure-policy/
 3. https://justinverstijnen.nl/automatic-azure-boot-diagnostics-monitoring-with-azure-policy/
