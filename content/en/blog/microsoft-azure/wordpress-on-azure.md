@@ -23,7 +23,7 @@ description: >
 
 ## What is Wordpress?
 
-For the people who may not know what Wordpress is; Wordpress is a tool to create and manage websites, without needing to have knowledge of code. It is a so-called content management system (CMS) and has thousands of themes and plugins to play with. This website you see now is also running on Wordpress.
+For the people who may not know what Wordpress is; Wordpress is a tool to create and manage websites, without needing to have knowledge of code. It is a so-called content management system (CMS) and has thousands of themes and plugins to play with. In the past, this website was also running on Wordpress but migrated in the first half of 2026 to GitHub Pages.
 
 [![jv-media-2625-d1fbba83d4a0.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-d1fbba83d4a0.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/wordpress-on-azure-2625/jv-media-2625-d1fbba83d4a0.png)
 
