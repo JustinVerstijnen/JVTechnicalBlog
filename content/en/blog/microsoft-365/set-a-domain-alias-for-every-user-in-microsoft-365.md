@@ -6,7 +6,7 @@ categories:
   - Microsoft 365
 tags:
   - Step by Step guides
-description: "Sometimes we aquire a new domain for Microsoft 365 and we want to add this domain to every user as alias to receive mail on. This post explains how to add a new alias with another domain to every user in your Microsoft 365 tenant.
+description: "Sometimes we aquire a new domain for Microsoft 365 and we want to add this domain to every user as alias to receive mail on. This post explains how to add a new alias with another domain to every user in your Microsoft 365 tenant."
 ---
 
 ## The solution described
