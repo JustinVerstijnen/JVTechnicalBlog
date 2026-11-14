@@ -326,7 +326,7 @@ Go to your DNS hosting service and login. Then go to your DNS records overview.
 
 Create a new CNAME record with the name "mta-sts" and paste the value you copied from the Azure Portal. Add a dot "." to the value of the record because it is a external domain. In my case, the value is:
 
-{{< card code=true header="**v**" lang="v" >}}
+{{< card code=true header="**Plain text**" lang="text" >}}
 orange-coast-05c818d03.6.azurestaticapps.net.
 {{< /card >}}
 
