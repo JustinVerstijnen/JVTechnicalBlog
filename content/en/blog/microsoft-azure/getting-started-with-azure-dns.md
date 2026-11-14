@@ -23,8 +23,6 @@ Azure DNS is a DNS hosting platform running inside Azure. It allows you to host 
 
 In this guide, I will show how to create a public DNS zone, add DNS records, and link your domain name to Azure DNS to leverage this service. I will migrate one stale domain and configure DNSSEC for the full coverage.
 
----
-
 ## Requirements
 
 Before starting, make sure you have:
@@ -33,8 +31,6 @@ Before starting, make sure you have:
 - A registered public domain name, like justinverstijnen.nl or example.com
 - Access to your current domain registrar or DNS provider
 - Basic DNS knowledge
-
----
 
 ## What is Azure DNS?
 
@@ -51,17 +47,15 @@ A DNS zone contains various records which tells the internet where to find your 
 | TXT | Verification and text records |
 | NS | Name server delegation |
 
----
-
 ## Step 1: Create a DNS zone
 
-Open the Azure Portal at https://portal.azure.com, search for "DNS zones", and select "Create".
+Open the Azure Portal at https://portal.azure.com, search for `DNS zones`, and select `Create`.
 
 Fill in the following settings of the wizard to your likings.
 
 [![jv-media-8527-01f6f3dabd70.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-azure-dns/jv-media-8527-01f6f3dabd70.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-azure-dns/jv-media-8527-01f6f3dabd70.png)
 
-Click "Review + create" and then select "Create". During this wizard, you could already import some records but we will do this soon.
+Click `Review + create` and then select `Create`. During this wizard, you could already import some records but we will do this soon.
 
 After deployment, open the DNS zone to verify some of the details:
 
@@ -76,15 +70,13 @@ You will now see the DNS records overview:
 
 The NS records are important because these are the Azure DNS name servers your domain must use.
 
-On the left, under "DNS Management" and then "Recordsets" you can find the panel to actually create DNS records manually.
+On the left, under `DNS Management` and then `Recordsets` you can find the panel to actually create DNS records manually.
 
 [![jv-media-8527-873bdb14e1aa.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-azure-dns/jv-media-8527-873bdb14e1aa.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-azure-dns/jv-media-8527-873bdb14e1aa.png)
 
----
-
 ## Step 2: Create your first DNS record
 
-Now we can create DNS records inside Azure. Open the Azure Portal at https://portal.azure.com, go to "DNS zones", open your DNS zone, and select "+ Record set".
+Now we can create DNS records inside Azure. Open the Azure Portal at https://portal.azure.com, go to `DNS zones`, open your DNS zone, and select `+ Record set`.
 
 For example, to create a website record:
 
@@ -95,21 +87,19 @@ For example, to create a website record:
 | TTL | 3600 |
 | IP address | 150.171.109.34 |
 
-Click "OK" to save the record. This creates the following DNS record which points the www record and cloudmysteries.nl domain to IP address:
+Click `OK` to save the record. This creates the following DNS record which points the www record and cloudmysteries.nl domain to IP address:
 
-{{< card code=true header="**Plain text**" lang="text" >}}
+{{< card code=true header="Plain text" lang="text" >}}
 www.cloudmysteries.nl -> 150.171.109.34
 {{< /card >}}
 
 However, nobody on the internet knows yet to look on Azure DNS for this record so any lookup to it will fail.
 
----
-
 ## Step 3: Import your DNS zone into Azure DNS
 
 As we now have setup Azure DNS and are familiar with the interface and management portal, we can import our DNS zone file. This is a file containing a full DNS zone with all records, values and names in it. It looks like this:
 
-{{< card code=true header="**Plain text**" lang="text" >}}
+{{< card code=true header="Plain text" lang="text" >}}
 $ORIGIN cloudmysteries.nl.
 $TTL 3600
 
@@ -127,7 +117,7 @@ _smtp._tls              3600 IN TXT   "v=TLSRPTv1; rua=mailto:reports@justinvers
 
 At my current provider, I can make a direct export of the full zone. If this is possible for your provider then also do this. Otherwise you have to copy and paste everything or ask AI to do the magic for you.
 
-In Azure, open your DNS zone and import the zone-file by clicking the "Import" button.
+In Azure, open your DNS zone and import the zone-file by clicking the `Import` button.
 
 [![jv-media-8527-1e6ebcb93a43.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-azure-dns/jv-media-8527-1e6ebcb93a43.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-azure-dns/jv-media-8527-1e6ebcb93a43.png)
 
@@ -143,15 +133,13 @@ Now our "phonebook" is ready and Azure DNS knows where your domain's services ca
 
 We are now fully ready to point your domain to Azure DNS. Performing this step before creating the records will result in a domain which the rest of the world doesn't understand with service outage as result.
 
----
-
 ## Step 4: Point your domain to Azure DNS
 
 On the internet, at the portal/company you bought your domain name you have the option to set DNS servers. Here is where you tell the internet where the records of your domain can be found. Which in our case is Azure DNS where we just created all required records.
 
 Inside the DNS zone overview in Azure, copy all four NS records which look similar to this:
 
-{{< card code=true header="**Plain text**" lang="text" >}}
+{{< card code=true header="Plain text" lang="text" >}}
 ns1-05.azure-dns.com.
 ns2-05.azure-dns.net.
 ns3-05.azure-dns.org.
@@ -177,8 +165,6 @@ I have already pasted in the values from the Azure Portal, without the trailing 
 
 DNS propagation can take some time, especially the NS records. In most cases this starts working within minutes, but globally it can take up to 24 to 48 hours.
 
----
-
 ## Step 5: Monitoring the DNS propagation
 
 For monitoring the proagation process, you can use this 3rd party tool: [https://www.whatsmydns.net/](https://www.whatsmydns.net/) This tool checks with multiple endpoints around the globe which result is found when looking a certain record. Perfect for our scenario.
@@ -191,13 +177,13 @@ This was about 10 minutes after the changes.
 
 You can also use PowerShell to check if the propagation is busy, but you only check this from your local PC. This causes some results to be in fast.
 
-{{< card code=true header="**PowerShell**" lang="powershell" >}}
+{{< card code=true header="PowerShell" lang="powershell" >}}
 Resolve-DnsName azuretest.cloudmysteries.nl
 {{< /card >}}
 
 Which outputs, if found:
 
-{{< card code=true header="**Plain**" lang="Plain" >}}
+{{< card code=true header="Plain" lang="Plain" >}}
 Name                                           Type   TTL   Section    IPAddress
 ----                                           ----   ---   -------    ---------
 azuretest.cloudmysteries.nl                    A      3600  Answer     1.2.3.4
@@ -205,15 +191,13 @@ azuretest.cloudmysteries.nl                    A      3600  Answer     1.2.3.4
 
 This only checks from one endpoint, but doesn't tell you anything about worldwide propagation, so the tool I mentioned is more reliable.
 
----
-
 ## Step 6: Configure DNSSEC
 
 We can now also configure DNSSEC on the domain. DNSSEC is basically an extra security layer where you create a trust from domain registrar to DNS provider so your DNS records cannot be spoofed, and will not be trusted by clients.
 
 It works by generating a DS record/key on the DNS provider and setting this in the registrar.
 
-In Azure, click on "DNSSEC":
+In Azure, click on `DNSSEC`:
 
 [![jv-media-8527-6f54eeb81efd.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-azure-dns/jv-media-8527-6f54eeb81efd.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/getting-started-with-azure-dns/jv-media-8527-6f54eeb81efd.png)
 
@@ -237,21 +221,19 @@ After this has been configured, this can take a while to actually perform. You c
 
 Green and a checkmark icon means an DNSSEC DS record is found and active.
 
----
-
 ## Summary
 
 Azure DNS allows you to centrally host and manage public DNS zones directly from Azure. In this guide we created a DNS zone, changed the domain name servers, created A and CNAME records, and tested the DNS resolution using the Whats My DNS tool and PowerShell. As bonus we configured DNSSEC to keep our domain secure and much more complex to spoof and man in the middle attacks.
 
 Thank you for reading this post and I hope it was helpful!
 
-{{% alert title="Sources 📖" color="info" %}}
+### Sources
+
 These sources helped me by writing and research for this post;
+
 1. https://learn.microsoft.com/en-us/azure/dns/dns-overview
 2. https://learn.microsoft.com/en-us/azure/dns/dns-getstarted-portal
 3. https://learn.microsoft.com/en-us/powershell/module/az.dns
-{{% /alert %}}
 
 {{< ads >}}
-
 {{< article-footer >}}
