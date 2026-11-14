@@ -74,6 +74,7 @@ Set-ItemProperty -Path $JVRegPath -Name "AllowWidgetsOnLockscreen" -Type DWord -
 # 3. Disable Widgets on Taskbar
 Set-ItemProperty -Path $JVRegPath -Name "AllowWidgets" -Type DWord -Value 0
 
+{{< /card >}}
 
 This sets 3 registry keys to the desired setting. In this case disabling widgets on the taskbar and lockscreen.
 
