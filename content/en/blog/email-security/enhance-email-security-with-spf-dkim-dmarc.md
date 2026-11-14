@@ -9,15 +9,10 @@ tags:
   - Concepts
   - Step by Step guides
   - Knowledge check
-description: >
-  When it comes to basic email security, we have 3 techniques that can enhance our email security and delivery by some basic initial configuration. Those are called SPF, DKIM and DMARC. This means, configure, monitor and almost never touch again.
+description: "When it comes to basic email security, we have 3 techniques that can enhance our email security and delivery by some basic initial configuration. Those are called SPF, DKIM and DMARC. This means, configure, monitor and almost never touch again."
 ---
 
-{{% alert color="info" %}}
-[Microsoft announced](https://techcommunity.microsoft.com/blog/microsoftdefenderforoffice365blog/strengthening-email-ecosystem-outlook%E2%80%99s-new-requirements-for-high%E2%80%90volume-senders/4399730) that starting from May 5, 2025: SPF, DKIM and DMARC will become mandatory for inbound email delivery. Not configuring all three can result in your emails not being delivered correctly.
-{{% /alert %}}
-
-These 3 techniques are:
+The 3 most important techniques to email security are:
 
 - **SPF**: Sender Policy Framework
 - **DKIM**: Domain Keys Identified Mail
@@ -54,13 +49,13 @@ Tip: Use my DNS MEGAtool to verify if your domain or other domains already use t
 
 Every domain on the internet can have multiple MX records. This record tells a sender on which server the email message must be delivered. A MX record for 365 can look like this:
 
-{{< card code=true header="**V**" lang="v" >}}
+{{< card code=true header="**Plain text**" lang="Plain text" >}}
 0 justinverstijnen-nl.mail.protection.outlook.com
 {{< /card >}}
 
 After configuring DNSSEC and SMTP DANE [from this guide](https://justinverstijnen.nl/configure-dnssec-and-smtp-dane-with-exchange-online-microsoft-365/), your MX record looks like this:
 
-{{< card code=true header="**V**" lang="v" >}}
+{{< card code=true header="**Plain text**" lang="Plain text" >}}
 0 justinverstijnen-nl.r-v1.mx.microsoft
 {{< /card >}}
 
@@ -81,7 +76,7 @@ Sender Policy Framework (SPF) is an email authentication method designed to prev
 
 It works by publishing a DNS record as a sending party that states when an email from the sending domain can be trusted. The receiving party then can lookup the sending party if the email is send through a trusted service. This DNS record is an TXT-type record and looks like this:
 
-{{< card code=true header="**V**" lang="V" >}}
+{{< card code=true header="**Plain text**" lang="Plain text" >}}
 v=spf1 mx ip4:123.123.123.123 include:spf.protection.outlook.com -all
 {{< /card >}}
 
@@ -124,7 +119,7 @@ Exactly like in SPF, the sending party publishes a DNS record with an public key
 
 DKIM records must be configured for every sending domain, and every service that sends email from the domain. Basically, it's a TXT record (or CNAME) that can look like this:
 
-{{< card code=true header="**V**" lang="V" >}}
+{{< card code=true header="**Plain text**" lang="Plain text" >}}
 v=DKIM1; p=4ea8f9af900800ac9d10d6d2a1d36e24643aeba2
 {{< /card >}}
 
@@ -168,7 +163,7 @@ DMARC is configured per domain, just as all other techniques and helps reducing 
 
 DMARC must be configured by configuring a TXT record on your public DNS. An example of a very strict DMARC record looks like this:
 
-{{< card code=true header="**V**" lang="V" >}}
+{{< card code=true header="**Plain text**" lang="Plain text" >}}
 _dmarc       v=DMARC1; p=reject;
 {{< /card >}}
 
@@ -191,7 +186,7 @@ You can configure this by adding the options to the DMARC record:
 
 Of course replace with your own email adresses and add the options to the DMARC record, my record will look like this:
 
-{{< card code=true header="**V**" lang="V" >}}
+{{< card code=true header="**Plain text**" lang="Plain text" >}}
 v=DMARC1; p=reject; rua=mailto:reports@justinverstijnen.nl; ruf=mailto:reports@justinverstijnen.nl;
 {{< /card >}}
 
@@ -274,7 +269,7 @@ Configuring DMARC is done through DNS records. This guide can be used to configu
 
 My record looks like this:
 
-{{< card code=true header="**V**" lang="V" >}}
+{{< card code=true header="**Plain text**" lang="Plain text" >}}
 v=DMARC1; p=reject;
 {{< /card >}}
 
@@ -282,7 +277,7 @@ We have to create or change an existing record to make this DMARC policy effecti
 
 | Type | Name | Value | TTL |
 | --- | --- | --- | --- |
-| TXT-record | \_dmarc | v=DMARC1; p=reject; | Provider default |
+| TXT-record | _dmarc | v=DMARC1; p=reject; | Provider default |
 
 My configured record for reference:
 
