@@ -37,7 +37,7 @@ Configuring these 3 techniques helps with:
 - Improving email deliverability of your domain
 - Decreases changes of your domains being spoofed
 - And so, increases security
-  - Not only for your own company but for others also
+  - Not only for your own company band employees but also for everyone you communicate with
 
 {{% alert color="info" %}}
 Tip: Use my DNS MEGAtool to verify if your domain or other domains already use these techniques: <https://tools.justinverstijnen.nl/dnsmegatool>
