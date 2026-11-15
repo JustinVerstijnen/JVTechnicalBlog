@@ -10,8 +10,6 @@ description: "In this post, we will dive into how to analyze Email Headers and t
 hidden: false
 ---
 
-# Introduction to Analyzing Email Headers
-
 When you troubleshoot mail flow, investigate phishing attempts, or validate spam filtering behavior, email headers are one of the most useful sources of information. Every email contains some hidden metadata (called the `Headers` that shows how the message traveled across mail servers, which authentication checks were performed, and how spam filtering systems handled the message. This gives you an answer why that one mail ended up in the user's junk box.
 
 In Microsoft 365 and Exchange Online environments, analyzing email headers is a common task for administrators and support engineers which must be performed regularly.
