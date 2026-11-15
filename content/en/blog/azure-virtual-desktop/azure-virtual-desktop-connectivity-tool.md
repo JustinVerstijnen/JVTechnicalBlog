@@ -22,7 +22,7 @@ In the past I used a custom script which kind of did the same but always require
 
 I have the open-source tool available on my website, which can be opened here:
 
-[Open AVD Experience Estimator](https://tools.justinverstijnen.nl/avdexperienceestimator/)
+<a class="btn btn-primary" href="https://tools.justinverstijnen.nl/avdexperienceestimator/" target="_blank" rel="noreferrer">Open AVD Experience Estimator</a>
 
 [![tool-avdexperienceestimator.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/tools-2375/tool-avdexperienceestimator.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/tools-2375/tool-avdexperienceestimator.png)
 
