@@ -1299,19 +1299,23 @@ nav.foldable-nav .ul-1 .with-child > input:checked ~ label::before { color: #77B
 @media print {
   .jv-post-meta { box-shadow: none; }
 }
-/* Breadcrumbs — compact, flat design.
- * Docsy 0.17 keeps the semantic .td-breadcrumbs__* classes.
- * The first link already leads to the blog section; retain the original
- * anchor text ("Blog") for screen readers and draw a home icon in CSS.
- * The same --jv-breadcrumb-gap is used ON BOTH SIDES of each chevron.
+/* Breadcrumbs — flat, blue, consistently spaced.
+ * Home icon ~30% larger than before (0.92rem -> 1.20rem).
+ * Home, category and page pills all share the same minimum height.
+ * The single spacing variable is used on both sides of each chevron.
+ * The accessible original Blog link to /blog/ stays in the HTML.
  */
 .td-breadcrumbs {
   --jv-breadcrumb-gap: 0.55rem;
+  --jv-breadcrumb-height: 2.2rem;
   --jv-breadcrumb-pill-bg: #eef6fc;
   --jv-breadcrumb-pill-hover: #e1f0fa;
   --jv-breadcrumb-text: #4b92cb;
   --jv-breadcrumb-chevron: #77b0de;
   --jv-breadcrumb-home: #4b92cb;
+  --jv-breadcrumb-home-bg: #e1f0fa;
+  --jv-breadcrumb-home-hover-bg: #4b92cb;
+  --jv-breadcrumb-home-hover-text: #ffffff;
 
   margin-bottom: 0.85rem;
 }
@@ -1320,7 +1324,7 @@ nav.foldable-nav .ul-1 .with-child > input:checked ~ label::before { color: #77B
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.4rem var(--jv-breadcrumb-gap);
+  gap: 0.45rem var(--jv-breadcrumb-gap);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1334,22 +1338,24 @@ nav.foldable-nav .ul-1 .with-child > input:checked ~ label::before { color: #77B
   margin: 0;
   padding: 0;
   color: var(--jv-breadcrumb-chevron);
-  font-size: 0.76rem;
+  font-size: 0.98rem;
   line-height: 1.3;
 }
 
-/* Remove Docsy/Bootstrap's default separator so we only draw one. */
+/* Disable the original theme separator to avoid doubling the chevrons. */
 .td-breadcrumbs__item + .td-breadcrumbs__item::before {
   display: none !important;
   content: none !important;
   padding: 0 !important;
 }
 
+/* Left: ::after margin = --jv-breadcrumb-gap.
+   Right: flex gap between this item and the next = same variable. */
 .td-breadcrumbs__item:not(:last-child)::after {
   display: block;
   flex: 0 0 auto;
-  width: 0.78rem;
-  height: 0.78rem;
+  width: 0.82rem;
+  height: 0.82rem;
   margin-inline-start: var(--jv-breadcrumb-gap);
   background-color: var(--jv-breadcrumb-chevron);
   content: '';
@@ -1357,14 +1363,17 @@ nav.foldable-nav .ul-1 .with-child > input:checked ~ label::before { color: #77B
   mask: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"%3E%3Cpath d="m7.5 4.5 5.5 5.5-5.5 5.5" fill="none" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/%3E%3C/svg%3E') center / contain no-repeat;
 }
 
+/* The category and current page have matching font size and pill height. */
 .td-breadcrumbs__item > a,
 .td-breadcrumbs__item[aria-current='page'] {
   display: inline-flex;
   align-items: center;
+  box-sizing: border-box;
   min-width: 0;
   max-width: 100%;
+  min-height: var(--jv-breadcrumb-height);
   margin: 0;
-  padding: 0.37rem 0.67rem;
+  padding: 0.4rem 0.82rem;
   border: 0;
   border-radius: 999px;
   background: var(--jv-breadcrumb-pill-bg);
@@ -1380,7 +1389,7 @@ nav.foldable-nav .ul-1 .with-child > input:checked ~ label::before { color: #77B
 }
 
 .td-breadcrumbs__item > a {
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .td-breadcrumbs__item > a:hover {
@@ -1394,19 +1403,22 @@ nav.foldable-nav .ul-1 .with-child > input:checked ~ label::before { color: #77B
   outline-offset: 3px;
 }
 
-/* Blog home: icon only, no pill. The existing href to /blog/ is kept. */
+/* The existing blog-home link remains a real link; display its icon only.
+ * Same height as the other pills. Blue circular background + hover effect.
+ */
 .td-blog .td-breadcrumbs__item:first-child > a {
   justify-content: center;
-  flex: 0 0 auto;
-  width: 1.5rem;
-  min-height: 1.65rem;
+  flex: 0 0 var(--jv-breadcrumb-height);
+  width: var(--jv-breadcrumb-height);
+  height: var(--jv-breadcrumb-height);
+  min-height: var(--jv-breadcrumb-height);
   padding: 0;
   border: 0;
-  border-radius: 0;
-  background: transparent;
+  border-radius: 50%;
+  background: var(--jv-breadcrumb-home-bg);
   box-shadow: none;
   color: var(--jv-breadcrumb-home);
-  font-size: 0; /* Keep the accessible "Blog" text in the HTML. */
+  font-size: 0; /* Keep 'Blog' accessible to screen readers. */
   line-height: 0;
   white-space: nowrap;
 }
@@ -1414,8 +1426,8 @@ nav.foldable-nav .ul-1 .with-child > input:checked ~ label::before { color: #77B
 .td-blog .td-breadcrumbs__item:first-child > a::before {
   display: block;
   flex: 0 0 auto;
-  width: 0.92rem;
-  height: 0.92rem;
+  width: 1.2rem; /* Old: .92rem. Increase ~30%. */
+  height: 1.2rem;
   background: currentColor;
   content: '';
   -webkit-mask: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"%3E%3Cpath d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/%3E%3C/svg%3E') center / contain no-repeat;
@@ -1423,8 +1435,14 @@ nav.foldable-nav .ul-1 .with-child > input:checked ~ label::before { color: #77B
 }
 
 .td-blog .td-breadcrumbs__item:first-child > a:hover {
-  background: transparent;
-  color: var(--jv-breadcrumb-text);
+  background: var(--jv-breadcrumb-home-hover-bg);
+  color: var(--jv-breadcrumb-home-hover-text);
+  box-shadow: 0 3px 10px rgba(75, 146, 203, 0.18);
+  transform: translateY(-1px) scale(1.05);
+}
+
+.td-blog .td-breadcrumbs__item:first-child > a:active {
+  transform: translateY(0) scale(1);
 }
 
 [data-bs-theme='dark'] .td-breadcrumbs {
@@ -1433,19 +1451,21 @@ nav.foldable-nav .ul-1 .with-child > input:checked ~ label::before { color: #77B
   --jv-breadcrumb-text: #9dcef5;
   --jv-breadcrumb-chevron: #77b0de;
   --jv-breadcrumb-home: #9dcef5;
+  --jv-breadcrumb-home-bg: #2c3f4e;
+  --jv-breadcrumb-home-hover-bg: #77b0de;
+  --jv-breadcrumb-home-hover-text: #172735;
 }
 
 @media (max-width: 575.98px) {
   .td-breadcrumbs__item {
-    font-size: 0.73rem;
+    font-size: 0.93rem;
   }
 
   .td-breadcrumbs__item > a,
   .td-breadcrumbs__item[aria-current='page'] {
-    padding: 0.34rem 0.60rem;
+    padding: 0.4rem 0.7rem;
   }
 
-  /* Let long titles wrap naturally, without staircase indents or arrows. */
   .td-breadcrumbs__item[aria-current='page'] {
     width: auto;
     flex: 0 1 auto;
@@ -1457,6 +1477,10 @@ nav.foldable-nav .ul-1 .with-child > input:checked ~ label::before { color: #77B
 @media (prefers-reduced-motion: reduce) {
   .td-breadcrumbs__item > a {
     transition: none;
+  }
+  .td-blog .td-breadcrumbs__item:first-child > a:hover,
+  .td-blog .td-breadcrumbs__item:first-child > a:active {
+    transform: none;
   }
 }
 
