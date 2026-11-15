@@ -10,8 +10,6 @@ description: "Learn how time zone redirection works in Azure Virtual Desktop and
 hidden: false
 ---
 
-# Time zone redirection in Azure Virtual Desktop
-
 When users connect to Azure Virtual Desktop (AVD), the remote session normally uses the time zone configured on the session host. If the session hosts are running in West Europe, users in other timezones, like Greece or Great Brittain may see the European time zone (UTC+1 or UTC+2 in summer) instead of the time zone configured on their local device.
 
 This can become a problem for applications and processes such as:

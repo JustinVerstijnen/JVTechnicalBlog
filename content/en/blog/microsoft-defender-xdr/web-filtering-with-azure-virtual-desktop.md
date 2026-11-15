@@ -11,8 +11,6 @@ description: "Learn how to configure web filtering for Azure Virtual Desktop usi
 hidden: false
 ---
 
-# Web filtering with Azure Virtual Desktop
-
 When using Azure Virtual Desktop (AVD), users normally have full internet access from the session hosts. In many environments this is not always desired, especially in business and enterprise environments where we might want to block unsafe websites, enforce compliance policies or reduce distractions.
 
 A common solution is using Microsoft Defender for Endpoint Web Content Filtering. This integrates well with Azure Virtual Desktop and works directly from the session hosts themselves. In this post I will explain:

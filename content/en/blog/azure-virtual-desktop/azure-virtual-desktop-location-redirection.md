@@ -10,8 +10,6 @@ description: "Learn how location redirection works in Azure Virtual Desktop and 
 hidden: false
 ---
 
-# Location redirection in Azure Virtual Desktop
-
 When users connect to Azure Virtual Desktop (AVD), applications inside the remote session normally see the location of the Azure datacenter instead of the user’s actual physical location.
 
 This can become a problem for applications such as:
