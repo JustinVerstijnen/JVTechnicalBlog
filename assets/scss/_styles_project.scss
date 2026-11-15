@@ -1321,6 +1321,9 @@ nav.foldable-nav .ul-1 .with-child > input:checked ~ label::before { color: #77B
 }
 
 .td-breadcrumbs__list {
+  /* Docsy inherits Bootstrap's breadcrumb-item spacing. Our flex gap
+     replaces it, so disable the Bootstrap spacing for every item. */
+  --bs-breadcrumb-item-padding-x: 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -1340,6 +1343,15 @@ nav.foldable-nav .ul-1 .with-child > input:checked ~ label::before { color: #77B
   color: var(--jv-breadcrumb-chevron);
   font-size: 0.98rem;
   line-height: 1.3;
+}
+
+/* Bootstrap's adjacent-item selector is more specific than the item rule
+   above and can shift category links on article pages by an extra 0.5rem.
+   Reset that shift explicitly. The current-page pill gets its own padding
+   below, so its rounded shape remains unchanged. */
+.td-breadcrumbs__item + .td-breadcrumbs__item {
+  padding-left: 0;
+  padding-inline-start: 0;
 }
 
 /* Disable the original theme separator to avoid doubling the chevrons. */
