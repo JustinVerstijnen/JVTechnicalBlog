@@ -135,15 +135,15 @@ In the previous blade under `Diagnostic settings` the created setting will be th
 
 ---
 
-## Step 4: Verify the incoming Intune logs
+## Step 4: Verify incoming Intune logs in Log Analytics
 
 After telling Intune to send the logs to Log Analytics we can check our workspace if any data is received. Return to the Azure Portal at [https://portal.azure.com](https://portal.azure.com) and once again go to `Log Analytics workspaces`, and open the created workspace.
 
-Under `General`, select `Logs`.
+Under `General`, select `Logs`
 
 [![jv-media-8541-b8cc0b216617.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-b8cc0b216617.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-b8cc0b216617.png)
 
-Here you can check if any Tables are there. These tables are created automatically if the data from Intune is sent to the workspace. In my case, I did this within 5 minutes of enabling data ingestion to Log Analytics so nothing is here yet. At this point, I will wait
+Here you can check if any Tables are there. These tables are created automatically if the data from Intune is sent to the workspace. In my case, I did this within 5 minutes of enabling data ingestion to Log Analytics so nothing is here yet. This can
 
 Close the welcome or queries window if it opens automatically. Make sure that `KQL mode` is selected and run the following query:
 
@@ -172,7 +172,7 @@ Do not be surprised if `IntuneDeviceComplianceOrg` and `IntuneDevices` are still
 
 ---
 
-## Step 5: Example queries for Intune information
+## Step 5: Example queries for this solution
 
 Now that the data is available, we can use KQL queries to retrieve information from the different Intune tables.
 
@@ -362,7 +362,9 @@ This provides a quick overview of outdated or uncommon operating system versions
 
 ## Summary
 
-By sending Microsoft Intune logs to an Azure Log Analytics workspace, we can centrally search administrator activities, operational events, compliance information, and device inventory. We configured the Intune diagnostic settings, verified the available tables, and used example KQL queries to show which information can be retrieved. The Log Analytics retention configuration also makes the collected data suitable for longer-term reporting and investigations.
+By sending Microsoft Intune logs to an Azure Log Analytics workspace, we can centrally search administrator activities, operational events, compliance information, device inventory and extend our logs' retention. We created a Log Analytics workspace in Azure and configured the Intune diagnostic settings, verified the available tables, and used example KQL queries to show which information can be retrieved.
+
+The Log Analytics retention configuration also makes the collected data suitable for longer-term reporting and investigations and even available for SIEM tools like Microsoft Sentinel or other third-party solutions.
 
 Thank you for reading this post and I hope it was helpful!
 
