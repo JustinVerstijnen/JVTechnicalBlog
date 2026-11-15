@@ -119,6 +119,8 @@ Now enter a descriptive name. Then under `LOG`, enable the following categories:
 - `DeviceComplianceOrg`
 - `IntuneDevices`
 
+You could also include Windows 365 logs during this step if your environment has Windows 365 machines. In this guide, I will not dive into this topic.
+
 Enable the option `Send to Log Analytics workspace` and select the Azure subscription and Log Analytics workspace created in Step 1. Take a look at my example below:
 
 [![jv-media-8541-6d8b375ab368.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-6d8b375ab368.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-6d8b375ab368.png)
