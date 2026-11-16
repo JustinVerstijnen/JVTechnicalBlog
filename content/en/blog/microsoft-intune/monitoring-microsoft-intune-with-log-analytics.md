@@ -1,7 +1,7 @@
 ---
 title: "Monitoring Microsoft Intune with Log Analytics"
 slug: "monitoring-microsoft-intune-with-log-analytics"
-date: 2025-12-03
+date: 2026-12-03
 tags:
 - Step by Step guides
 - Knowledge check
