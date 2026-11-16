@@ -63,7 +63,7 @@ Open the Azure Portal at [https://portal.azure.com](https://portal.azure.com) an
 
 [![jv-media-8541-776bd96dd020.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-776bd96dd020.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-776bd96dd020.png)
 
-Then finish the wizard to create the resource group. Now search for `Log Analytics workspaces` in the bar above and select `+Create`.
+Then finish the wizard to create the resource group. Now search for `Log Analytics workspaces` in the bar above and select `+ Create`.
 
 [![jv-media-8541-5d8456bbac49.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-5d8456bbac49.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-5d8456bbac49.png)
 
@@ -106,7 +106,7 @@ So first carefully think about how much you want to retain and for what period. 
 
 After we fully prepared our Log Analytics workspace, we can configure Intune to send the data to our workspace running in Azure. Open the Microsoft Intune admin center at https://intune.microsoft.com and go to `Tenant administration` > `Diagnostics settings`.
 
-On this page, click the `+Add diagnostic setting` button.
+On this page, click the `+ Add diagnostic setting` button.
 
 [![jv-media-8541-59bf64a54a25.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-59bf64a54a25.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-59bf64a54a25.png)
 
@@ -153,9 +153,9 @@ We can now perform some Kusto Query Language (KQL) queries to find specific info
 
 In the Query window, type only the text below and click `Run`.
 
-```
+{{< card code=true header="**Plain text**" lang="text" >}}
 IntuneDevices
-```
+{{< /card >}}
 
 We will be presented with some information about our devices which we can expand and review:
 
