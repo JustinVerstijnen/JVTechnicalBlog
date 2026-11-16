@@ -4,6 +4,7 @@ slug: "monitoring-microsoft-intune-with-log-analytics"
 date: 2025-12-03
 tags:
 - Step by Step guides
+- Knowledge check
 categories:
 - Microsoft Intune
 description: "In this post I will dive into sending Microsoft Intune audit, operational, compliance, and device logs to an Azure Log Analytics workspace and be able to write some custom queries."
@@ -308,6 +309,104 @@ Make sure to replace all text here. My advice is to click somewhere in the code 
 [![jv-media-8541-818bfc042351.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-818bfc042351.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-818bfc042351.png)
 
 The workbook contains all the queries I have explained above and are linked to the Time Range setting at the top of the workbook. This is an example of how the information from the Log Analytics workspace can be used for further investigation.
+
+---
+
+## Knowledge check
+
+{{< quiz >}}
+{
+  "intro": "Answer these question(s) to test your understanding of this post. Your answers are not saved or sent anywhere; this is simply a personal knowledge check. If you refresh the page, your answers will be cleared.",
+  "questions": [
+    {
+      "question": "What is Log Analytics?",
+      "reference": "The log categories explained",
+      "referenceUrl": "#the-log-categories-explained",
+      "answers": [
+        {
+          "text": "A database in Azure where we can store various information like logs, metrics and other diagnostic information",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        },
+        {
+          "text": "A syslog server",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "A link to a storage server",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "An analytics platform",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        }
+      ]
+    },
+    {
+      "question": "What 4 categories of logs could we send from Intune to Log Analytics?",
+      "reference": "Step 3: Configure the Intune diagnostic settings",
+      "referenceUrl": "#step-3-configure-the-intune-diagnostic-settings",
+      "answers": [
+        {
+          "text": "Audit logs and Device logs",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "Audit logs and Compliance logs",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "Device logs only",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "Compliance logs only",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "Audit logs, Operational logs, Compliance logs and Device logs",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        }
+      ]
+    },
+    {
+      "question": "Which table in Log Analytics contains device information like Device Names, OS and Serial Number?",
+      "reference": "Step 4: Verify incoming Intune logs in Log Analytics",
+      "referenceUrl": "#step-4-verify-incoming-intune-logs-in-log-analytics",
+      "answers": [
+        {
+          "text": "IntuneAuditLogs",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "IntuneDevices",
+          "correct": true,
+          "message": "Correct! This is the right answer."
+        },
+        {
+          "text": "IntuneDeviceComplianceOrg",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        },
+        {
+          "text": "IntuneAuditLogs",
+          "correct": false,
+          "message": "Incorrect. Review the referenced section and try again."
+        }
+      ]
+    }
+  ]
+}
+{{< /quiz >}}
 
 ---
 
