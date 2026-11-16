@@ -1,7 +1,7 @@
 ---
 title: "Monitoring Microsoft Intune with Log Analytics"
 slug: "monitoring-microsoft-intune-with-log-analytics"
-date: 2026-12-03
+date: 2025-12-03
 tags:
 - Step by Step guides
 categories:
@@ -145,220 +145,171 @@ Under `General`, select `Logs`
 
 [![jv-media-8541-b8cc0b216617.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-b8cc0b216617.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-b8cc0b216617.png)
 
-Here you can check if any Tables are there. These tables are created automatically if the data from Intune is sent to the workspace. In my case, I did this within 5 minutes of enabling data ingestion to Log Analytics so nothing is here yet. This can
+Here you can check if any Tables are there. These tables are created automatically if the data from Intune is sent to the workspace. In my case, I did this within 5 minutes of enabling data ingestion to Log Analytics so nothing is here yet. This can take up to 48 hours. In my case, the first real logs were available after around 15 hours.
 
-Close the welcome or queries window if it opens automatically. Make sure that `KQL mode` is selected and run the following query:
+Open the Azure Portal and then the Log Analytics workspace again, click on `Logs` on the left and make sure that `KQL mode` is selected on the right:
 
-```kusto
-IntuneAuditLogs
-| take 10
+[![jv-media-8541-5f220f2e3c8b.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-5f220f2e3c8b.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-5f220f2e3c8b.png)
+
+We can now perform some Kusto Query Language (KQL) queries to find specific information from the logs sent by Intune. It works similar to SQL, where if we type the name of a table, we get all information of that table presented:
+
+In the Query window, type only the text below and click `Run`.
+
+```
+IntuneDevices
 ```
 
-If audit activities have reached the workspace, the query returns ten available records from the table.
+We will be presented with some information about our devices which we can expand and review:
 
-We can also verify all four Intune tables using one query:
+[![jv-media-8541-656703d68a5b.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-656703d68a5b.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-656703d68a5b.png)
 
-```kusto
-union withsource=TableName
-    IntuneAuditLogs,
-    IntuneOperationalLogs,
-    IntuneDeviceComplianceOrg,
-    IntuneDevices
-| summarize Records=count() by TableName
-| order by TableName asc
-```
+Now we could filter really easily the information we need. Let's say, we only want to see the coloms DeviceName, UPN, OS and Model. We could run this query:
 
-This query combines the four tables and shows how many records are currently available in each table.
+{{< card code=true header="**Plain text**" lang="text" >}}
+IntuneDevices
+| project DeviceName, UPN, OS, Model
+{{< /card >}}
 
-Do not be surprised if `IntuneDeviceComplianceOrg` and `IntuneDevices` are still empty. These reports can take up to 48 hours to appear.
+This will only fetch the needed information and filters out all other information:
+
+[![jv-media-8541-1d3ef6d1daeb.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-1d3ef6d1daeb.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-1d3ef6d1daeb.png)
+
+This is a simple introduction to Kusto and the information retieved. Now I will show you some more advanced queries where the value of this solution will become more clear.
 
 ---
 
-## Step 5: Example queries for this solution
+## Step 5: Some example queries
 
-Now that the data is available, we can use KQL queries to retrieve information from the different Intune tables.
+Now that we verified the data is available, we can use KQL queries to retrieve information from the different Intune tables. In this step I will give you some examples of queries you can run to retrieve information you want. You can also add or remove some coloumns based on your preference.
 
-### 5.1 Recent administrator activities
+### 5.1 Intune Device Inventory
 
-The following query shows recent changes and remote actions recorded by Intune:
+This query shows a list of all devices in Intune with the most important coloms which I added some formattings to:
 
-```kusto
+{{< card code=true header="**Plain text**" lang="text" >}}
+IntuneDevices
+| where OS =~ "Windows" and EncryptionStatusString !~ "Encrypted"
+| extend Compliance = strcat(iff(CompliantState =~ "Compliant", "✅ ", "❌ "), CompliantState)
+| extend Encryption = case(tostring(EncryptionStatusString) in~ ("True", "Encrypted"), "✅ Encrypted", tostring(EncryptionStatusString) =~ "False", "❌ Not Encrypted", strcat("❌ ", EncryptionStatusString))
+| extend LastSeen = format_datetime(todatetime(LastContact), "dd-MM-yyyy HH:mm")
+| project DeviceName, UPN, Manufacturer, Model, SerialNumber, ['Operating System'] = OSVersion, Encryption, Compliance, LastSeen
+| order by DeviceName asc
+{{< /card >}}
+
+[![jv-media-8541-f7e9d069ffbc.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-f7e9d069ffbc.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-f7e9d069ffbc.png)
+
+This gives a really nice overview of how active devices are, their Encryption status and their Compliance status. Any device who has one of the two red needs some attention. You can also change the last line to order devices on another Coloumn, like LastSeen:
+
+{{< card code=true header="**Plain text**" lang="text" >}}
+| order by LastSeen asc
+{{< /card >}}
+
+This will order the devices on ascending Last Seen status, most inactive devices first.
+
+### 5.2 Intune devices by platform
+
+This query shows a bar diagram of all devices per platform:
+
+{{< card code=true header="**Plain text**" lang="text" >}}
+IntuneDevices
+| summarize DeviceCount = count() by Platform = tostring(OS)
+| order by DeviceCount desc
+| render barchart with (title="5.2 Intune Devices by Platform", xcolumn=Platform, ycolumns=DeviceCount)
+{{< /card >}}
+
+[![jv-media-8541-a922859e879d.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-a922859e879d.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-a922859e879d.png)
+
+### 5.3 Compliance overview by operating system
+
+This query shows a circle diagram and the device compliance status per platform. In my case, only one device is available and shows as Complaint:
+
+{{< card code=true header="**Plain text**" lang="text" >}}
+IntuneDeviceComplianceOrg
+| where isnotempty(OS)
+| summarize Devices = count() by OS, ComplianceState
+| extend Category = strcat(OS, " - ", ComplianceState)
+| project Category, Devices
+| render piechart with (title="5.3 Compliance overview by operating system")
+{{< /card >}}
+
+[![jv-media-8541-e64ee74f9988.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-e64ee74f9988.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-e64ee74f9988.png)
+
+### 5.4 Administrator activities
+
+Now we will dive deeper into Administrator activities, as this is one of the core enhancements. We can find all information by simply typing the name of the table, this shows what information is available for creating custom queries on:
+
+{{< card code=true header="**Plain text**" lang="text" >}}
 IntuneAuditLogs
-| where TimeGenerated >= ago(30d)
-| project
-    TimeGenerated,
-    Identity,
-    OperationName,
-    Category,
-    ResultType,
-    ResultDescription
+{{< /card >}}
+
+This reported two activities on my end as I have performed those after enabling the log to be sent to the workspace. Only activities after this action are recorded:
+
+[![jv-media-8541-441cbf04e2ff.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-441cbf04e2ff.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-441cbf04e2ff.png)
+
+We could dive deeper into the information itself to find what action exactly was performed:
+
+[![jv-media-8541-211b81ce82e3.jpg](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-211b81ce82e3.jpg)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-211b81ce82e3.jpg)
+
+As we can see, a Configuration Policy was created and assigned to a group. This was indeed an action I've done:
+
+[![jv-media-8541-00ab1f69c904.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-00ab1f69c904.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-00ab1f69c904.png)
+
+We could now perform a search into the logs of the last 180 days with this query:
+
+{{< card code=true header="**Plain text**" lang="text" >}}
+IntuneAuditLogs
+| where TimeGenerated >= ago(180d)
+| project TimeGenerated, Identity, OperationName, Category, ResultType, ResultDescription
 | order by TimeGenerated desc
-```
+{{< /card >}}
 
-The `Identity` column shows who or what performed the activity. `OperationName` describes the operation that was performed.
+As you just enabled the workspace and data ingestion, not much will show but after some weeks or months this will be really valuable information.
 
-### 5.2 Activities performed by a specific administrator
+### 5.5 Deleted Intune objects
 
-Replace the example account with the user principal name of the administrator you want to investigate:
+We could also look for deleted Intune objects in the logs by firing this querywhich search the audit logs for operations containing the word `Delete`:
 
-```kusto
+{{< card code=true header="**Plain text**" lang="text" >}}
 IntuneAuditLogs
-| where TimeGenerated >= ago(90d)
-| where Identity contains "admin@contoso.com"
-| project
-    TimeGenerated,
-    Identity,
-    OperationName,
-    Category,
-    ResultType,
-    ResultDescription
-| order by TimeGenerated desc
-```
-
-Because the data is stored in Log Analytics, the query can cover the period available within the configured workspace retention.
-
-### 5.3 Deleted Intune objects
-
-This query searches the audit logs for operations containing the word `Delete`:
-
-```kusto
-IntuneAuditLogs
-| where TimeGenerated >= ago(30d)
+| where TimeGenerated >= ago(180d)
 | where OperationName contains "Delete"
-| project
-    TimeGenerated,
-    Identity,
-    OperationName,
-    Category,
-    ResultType,
-    ResultDescription,
-    Properties
+| project TimeGenerated, Identity, OperationName, Category, ResultType, ResultDescription, Properties
 | order by TimeGenerated desc
-```
+{{< /card >}}
 
-The `Properties` column can contain additional information about the affected Intune object.
+[![jv-media-8541-cdb8bc59640d.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-cdb8bc59640d.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-cdb8bc59640d.png)
 
-### 5.4 Operational events and enrollment results
+In my environment, this shows the configuration profile I created for the cause of this guide and after that deleted it.
 
-The following query provides an overview of the operational events and their results:
+---
 
-```kusto
-IntuneOperationalLogs
-| where TimeGenerated >= ago(30d)
-| summarize Events=count() by OperationName, Result
-| order by Events desc
-```
+## Step 6: Azure Workbook with this queries (optional)
 
-To focus on device enrollment events, we can filter the operation name:
+To give you a nice and clear overview in Azure with my queries, I have created an Azure Workbook which you can download and utilize as an example of what is possible with this solution.
 
-```kusto
-IntuneOperationalLogs
-| where TimeGenerated >= ago(30d)
-| where OperationName contains "Enrollment"
-| project
-    TimeGenerated,
-    OperationName,
-    Category,
-    Result,
-    Properties
-| order by TimeGenerated desc
-```
+First download my example Workbook from GitHub:
 
-The exact operation names depend on the activities recorded in your Intune environment.
+<a class="btn btn-primary" href="https://github.com/JustinVerstijnen/JVIntuneWorkbook/blob/main/JVIntuneWorkbook.json" target="_blank" rel="noreferrer">View on my GitHub page</a>
 
-### 5.5 Noncompliant devices
+Then download this file or copy the contents, just what you like.
 
-The `IntuneDeviceComplianceOrg` table can be used to find devices that are not reported as compliant:
+Head back to Azure and search for `Workbooks`. On the Azure Workbooks page, click on `+ Create`.
 
-```kusto
-IntuneDeviceComplianceOrg
-| where ComplianceState !~ "Compliant"
-| project
-    TimeGenerated,
-    DeviceName,
-    UPN,
-    OS,
-    OSVersion,
-    ComplianceState,
-    DeviceHealthThreatLevel,
-    LastContact
-| order by DeviceName asc
-```
+[![jv-media-8541-02681cb2bc9a.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-02681cb2bc9a.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-02681cb2bc9a.png)
 
-Remember that this table is exported once every 24 hours and is not a real-time event stream.
+On the page after that, click on `+ New` to create a new workbook from scratch. Then click on the `</>` button to paste custom workbook code:
 
-### 5.6 Compliance overview by operating system
+[![jv-media-8541-46e48cc47589.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-46e48cc47589.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-46e48cc47589.png)
 
-This query counts devices by operating system and compliance state:
+On this page, select all current text and replace it with my template Workbook file to get my workbook in your environment which is already ready to go.
 
-```kusto
-IntuneDeviceComplianceOrg
-| summarize Devices=count() by OS, ComplianceState
-| order by OS asc, ComplianceState asc
-```
+[![jv-media-8541-19962c1e83ac.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-19962c1e83ac.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-19962c1e83ac.png)
 
-This can be useful when you want to compare the compliance status of Windows, Android, iOS, and macOS devices.
+Make sure to replace all text here. My advice is to click somewhere in the code field, press `CTRL + A` and then paste the code to replace everything. Now you can click the `Apply` button and save the workbook and start using it.
 
-### 5.7 Intune device inventory
+[![jv-media-8541-818bfc042351.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-818bfc042351.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-818bfc042351.png)
 
-The following query creates an inventory containing the most useful device properties:
-
-```kusto
-IntuneDevices
-| project
-    DeviceName,
-    UPN,
-    Manufacturer,
-    Model,
-    OS,
-    OSVersion,
-    CompliantState,
-    EncryptionStatusString,
-    Ownership,
-    JoinType,
-    LastContact
-| order by DeviceName asc
-```
-
-### 5.8 Windows devices without a reported encrypted state
-
-We can use the device inventory to find Windows devices that are not reported as encrypted:
-
-```kusto
-IntuneDevices
-| where OS =~ "Windows"
-| where EncryptionStatusString !~ "Encrypted"
-| project
-    DeviceName,
-    UPN,
-    Manufacturer,
-    Model,
-    OSVersion,
-    EncryptionStatusString,
-    CompliantState,
-    LastContact
-| order by DeviceName asc
-```
-
-Before using this query for reporting, check which encryption values exist in your environment:
-
-```kusto
-IntuneDevices
-| summarize Devices=count() by EncryptionStatusString
-| order by Devices desc
-```
-
-### 5.9 Operating system versions
-
-The following query shows which operating systems and versions are reported by your managed devices:
-
-```kusto
-IntuneDevices
-| summarize Devices=count() by OS, OSVersion
-| order by OS asc, Devices desc
-```
-
-This provides a quick overview of outdated or uncommon operating system versions in the environment.
+The workbook contains all the queries I have explained above and are linked to the Time Range setting at the top of the workbook. This is an example of how the information from the Log Analytics workspace can be used for further investigation.
 
 ---
 
@@ -367,6 +318,8 @@ This provides a quick overview of outdated or uncommon operating system versions
 By sending Microsoft Intune logs to an Azure Log Analytics workspace, we can centrally search administrator activities, operational events, compliance information, device inventory and extend our logs' retention. We created a Log Analytics workspace in Azure and configured the Intune diagnostic settings, verified the available tables, and used example KQL queries to show which information can be retrieved.
 
 The Log Analytics retention configuration also makes the collected data suitable for longer-term reporting and investigations and even available for SIEM tools like Microsoft Sentinel or other third-party solutions.
+
+In my opinion, you should use this if you have certain specific requirements only. The default sets of reports you get in Microsoft Intune are sufficient for most companies and people. I should only use this setup if you require to save audit logs for more than 30 days, you need detailed reporting/overview or you need to link a SIEM tool to your solutions. Otherwise, I should stick to the default options available.
 
 Thank you for reading this post and I hope it was helpful!
 
