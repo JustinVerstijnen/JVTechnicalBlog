@@ -16,15 +16,13 @@ Most of the information Microsoft stores for you will be retained for 30 days li
 
 In this guide I will be using the Intune diagnostic settings to send this data to an Azure Log Analytics workspace and give a basic turotial on how to search the collected information using Kusto Query Language, better known as KQL. Then I will give some example queries:
 
-- Changes made by Intune administrators
-- Created, updated, assigned, or deleted policies
-- Remote actions performed on devices
-- Successful or failed device enrollments
-- Noncompliant devices
-- Device operating systems and versions
-- Device manufacturers and models
-- Encryption status
-- The last time devices contacted Intune
+- Intune device inventory
+- Intune devices by platform
+- Compliance overview by platform
+- Administrator activities
+- Deleted Intune objects
+
+At the end of the guide I will share a template Azure Workbook with these template queries to start monitoring your Intune environment.
 
 ---
 
@@ -182,7 +180,7 @@ This is a simple introduction to Kusto and the information retrieved. Now I will
 
 Now that we verified the data is available, we can use KQL queries to retrieve information from the different Intune tables. In this step I will give you some examples of queries you can run to retrieve information you want. You can also add or remove some columns based on your preference.
 
-### 5.1 Intune Device Inventory
+### 5.1 Intune device inventory
 
 This query shows a list of all devices in Intune with the most important columns which I added some formattings to:
 
@@ -219,7 +217,7 @@ IntuneDevices
 
 [![jv-media-8541-a922859e879d.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-a922859e879d.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-a922859e879d.png)
 
-### 5.3 Compliance overview by operating system
+### 5.3 Compliance overview by platform
 
 This query shows a circle diagram and the device compliance status per platform. In my case, only one device is available and shows as Compliant:
 
