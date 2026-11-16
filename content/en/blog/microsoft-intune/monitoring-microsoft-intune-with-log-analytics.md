@@ -14,7 +14,7 @@ In Microsoft Intune we can view some basic information about devices, the status
 
 Most of the information Microsoft stores for you will be retained for 30 days like sign-in logs and activity logs. Some companies want to increase this period which is also possible with Log Analytics.
 
-In this guide I will be using the Intune diagnostic settings to send this data to an Azure Log Analytics workspace and give a basic turorial on how to search the collected information using Kusto Query Language, better known as KQL. Then I will give some example queries:
+In this guide I will be using the Intune diagnostic settings to send this data to an Azure Log Analytics workspace and give a basic turotial on how to search the collected information using Kusto Query Language, better known as KQL. Then I will give some example queries:
 
 - Changes made by Intune administrators
 - Created, updated, assigned, or deleted policies
@@ -51,7 +51,7 @@ In Microsoft Intune we can send these four different log categories to Log Analy
 
 _(Windows 365 logs are excluded from this guide)_
 
-The device compliance and Intune device reports are exported once every 24 hours. It can take up to 48 hours before this information becomes available in Log Analytics. Other information is near-realtime sent to Log Analytics.
+The device compliance and Intune device reports are exported once every 24 hours. It can take up to 48 hours before this information becomes available in Log Analytics. Other information is near real-time sent to Log Analytics.
 
 Log Analytics is if you don't know yet, a database in Azure where we can store various information like logs, metrics and other diagnostic information and we are able to retrieve the data from it which we can fully customize how this should look.
 
@@ -174,17 +174,17 @@ This will only fetch the needed information and filters out all other informatio
 
 [![jv-media-8541-1d3ef6d1daeb.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-1d3ef6d1daeb.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-1d3ef6d1daeb.png)
 
-This is a simple introduction to Kusto and the information retieved. Now I will show you some more advanced queries where the value of this solution will become more clear.
+This is a simple introduction to Kusto and the information retrieved. Now I will show you some more advanced queries where the value of this solution will become more clear.
 
 ---
 
 ## Step 5: Some example queries
 
-Now that we verified the data is available, we can use KQL queries to retrieve information from the different Intune tables. In this step I will give you some examples of queries you can run to retrieve information you want. You can also add or remove some coloumns based on your preference.
+Now that we verified the data is available, we can use KQL queries to retrieve information from the different Intune tables. In this step I will give you some examples of queries you can run to retrieve information you want. You can also add or remove some columns based on your preference.
 
 ### 5.1 Intune Device Inventory
 
-This query shows a list of all devices in Intune with the most important coloms which I added some formattings to:
+This query shows a list of all devices in Intune with the most important columns which I added some formattings to:
 
 {{< card code=true header="**Plain text**" lang="text" >}}
 IntuneDevices
@@ -198,7 +198,7 @@ IntuneDevices
 
 [![jv-media-8541-f7e9d069ffbc.png](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-f7e9d069ffbc.png)](https://sajvwebsiteblobstorage.blob.core.windows.net/blog/monitoring-microsoft-intune-with-log-analytics/jv-media-8541-f7e9d069ffbc.png)
 
-This gives a really nice overview of how active devices are, their Encryption status and their Compliance status. Any device who has one of the two red needs some attention. You can also change the last line to order devices on another Coloumn, like LastSeen:
+This gives a really nice overview of how active devices are, their Encryption status and their Compliance status. Any device who has one of the two red needs some attention. You can also change the last line to order devices on another column, like LastSeen:
 
 {{< card code=true header="**Plain text**" lang="text" >}}
 | order by LastSeen asc
@@ -221,7 +221,7 @@ IntuneDevices
 
 ### 5.3 Compliance overview by operating system
 
-This query shows a circle diagram and the device compliance status per platform. In my case, only one device is available and shows as Complaint:
+This query shows a circle diagram and the device compliance status per platform. In my case, only one device is available and shows as Compliant:
 
 {{< card code=true header="**Plain text**" lang="text" >}}
 IntuneDeviceComplianceOrg
@@ -267,7 +267,7 @@ As you just enabled the workspace and data ingestion, not much will show but aft
 
 ### 5.5 Deleted Intune objects
 
-We could also look for deleted Intune objects in the logs by firing this querywhich search the audit logs for operations containing the word `Delete`:
+We could also look for deleted Intune objects in the logs by firing this query which search the audit logs for operations containing the word `Delete`:
 
 {{< card code=true header="**Plain text**" lang="text" >}}
 IntuneAuditLogs
@@ -283,7 +283,7 @@ In my environment, this shows the configuration profile I created for the cause 
 
 ---
 
-## Step 6: Azure Workbook with this queries (optional)
+## Step 6: Azure Workbook with these queries (optional)
 
 To give you a nice and clear overview in Azure with my queries, I have created an Azure Workbook which you can download and utilize as an example of what is possible with this solution.
 
