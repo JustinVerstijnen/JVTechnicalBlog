@@ -68,7 +68,7 @@ You have created a Generation 2 Windows 11 virtual machine in Hyper-V and config
 
 Thank you for reading this post and I hope it was helpful!
 
-{% alert title="Sources 📖" color="info" %}
+{{% alert title="Sources 📖" color="info" %}}
 These sources helped me by writing and research for this post;
 
 1. https://www.microsoft.com/software-download/windows11
