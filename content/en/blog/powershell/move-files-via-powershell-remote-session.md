@@ -2,7 +2,8 @@
 title: "Move files via PowerShell Remote Session"
 slug: "move-files-via-powershell-remote-session"
 date: 2024-02-18
-tags: []
+tags:
+- Sep by Step Guides
 categories: 
 - PowerShell
 description: "This simple tutorial tells how to transfer files via PowerShell from our computer to a remote server. Simply by only using PowerShell, without any GUI or third-party tools."
