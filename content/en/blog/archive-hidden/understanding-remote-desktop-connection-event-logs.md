@@ -19,9 +19,20 @@ For troubleshooting and incident investigation, it is more useful to correlate e
 - Was a new session created or an existing session reconnected?
 - Was the session disconnected or completely logged off?
 
-## Where to find Remote Desktop events
+## RDP event overview
 
-The most relevant events are usually stored in these locations in Event Viewer:
+The following table provides a quick overview of the main event logs and event IDs involved in an RDP connection.
+
+| Activity | Event log location | Event IDs |
+| --- | --- | --- |
+| Logon | Security | 4624, 4625 |
+| Logon | TerminalServices-RemoteConnectionManager/Operational | 1149 |
+| Logon | RemoteDesktopServices-RdpCoreTS/Operational | 98, 131 |
+| Logon and session creation | TerminalServices-LocalSessionManager/Operational | 21, 22, 25 |
+| Logoff | Security | 4634, 4647 |
+| Logoff or disconnection | TerminalServices-LocalSessionManager/Operational | 23, 40 |
+
+You can find these logs in Event Viewer under the following locations:
 
 - **Windows Logs > Security**
 - **Applications and Services Logs > Microsoft > Windows > TerminalServices-RemoteConnectionManager > Operational**
@@ -30,21 +41,16 @@ The most relevant events are usually stored in these locations in Event Viewer:
 
 The Security log records authentication and logon activity. The Remote Desktop Services operational logs provide more detail about the connection and session lifecycle.
 
-## Important Security event IDs
+## Authentication events
 
-The following events are useful when investigating Remote Desktop activity:
+The two main authentication events are stored in the Security log.
 
-| Event ID | Meaning | What to examine |
+| Event ID | Log location | Message |
 | --- | --- | --- |
-| 4624 | Successful logon | Account, logon type, source address, and Logon ID |
-| 4625 | Failed logon | Account, source address, failure reason, and status codes |
-| 4634 | Logon session ended | Logon ID and account |
-| 4647 | User initiated a logoff | Account and Logon ID |
-| 4648 | Explicit credentials were used | Account supplying the credentials and target server |
-| 4778 | A session was reconnected | Account, session name, client name, and client address |
-| 4779 | A session was disconnected | Account, session name, client name, and client address |
+| 4624 | Security | An account was successfully logged on |
+| 4625 | Security | An account failed to log on |
 
-### Event ID 4624 and logon types
+### Event ID 4624
 
 Event ID 4624 is generated on the destination computer when Windows creates a successful logon session. For a newly established Remote Desktop session, the important value is normally:
 
@@ -68,11 +74,41 @@ Event ID 4625 records a failed logon attempt. Useful fields include:
 - **Status**
 - **Sub Status**
 
-Repeated Event ID 4625 entries with Logon Type 10 can indicate an incorrectly configured account, an outdated saved credential, or repeated attempts to access the system through Remote Desktop.
+Repeated Event ID 4625 entries with Logon Type 10 can indicate an incorrectly configured account, outdated saved credentials, or repeated attempts to access the system through Remote Desktop.
 
-The status and sub-status values should be reviewed before drawing a conclusion. A failed logon does not automatically mean that someone attempted to guess a password.
+The **Status** and **Sub Status** values provide more detail about why authentication failed.
 
-### Event ID 4648
+## Event ID 4625 status codes
+
+The following status codes can help you identify the cause of a failed authentication attempt.
+
+| Error | Cause |
+| --- | --- |
+| `0xC0000064` | The username is misspelled or the account does not exist. |
+| `0xC000006A` | The supplied password is incorrect. |
+| `0xC000006D` | The username or authentication information is incorrect. |
+| `0xC0000234` | The user account is currently locked out. |
+| `0xC0000072` | The user account is currently disabled. |
+| `0xC000006F` | The user tried to sign in outside the permitted logon hours. |
+| `0xC0000070` | The user tried to sign in from an unauthorized workstation. |
+| `0xC0000193` | The user account has expired. |
+| `0xC0000071` | The user's password has expired. |
+| `0xC0000133` | The clocks on the computer and domain controller are too far out of sync. |
+| `0xC0000224` | The user must change their password at the next logon. |
+| `0xC000015B` | The user has not been granted the requested logon type on the computer. |
+
+An Event ID 4625 can include both a **Status** and **Sub Status** value. The general status may be `0xC000006D`, while the sub-status provides the more specific cause. For example:
+
+```text
+Status:     0xC000006D
+Sub Status: 0xC000006A
+```
+
+In this example, the general authentication attempt failed because the username or authentication information was incorrect. The sub-status clarifies that the supplied password was incorrect.
+
+For an RDP logon, status code `0xC000015B` often means that the account does not have the **Allow log on through Remote Desktop Services** user right, or that it is affected by **Deny log on through Remote Desktop Services**.
+
+## Event ID 4648
 
 Event ID 4648 is generated when a process attempts to log on using explicitly supplied credentials. The event can show:
 
@@ -81,9 +117,9 @@ Event ID 4648 is generated when a process attempts to log on using explicitly su
 - The target server
 - The process that requested the logon
 
-This event is not specific to RDP. It can also be generated by applications, administrative tools, scripts, and other processes that use explicit credentials. Correlate it with Remote Desktop events from the source and destination computers before treating it as evidence of an RDP connection.
+This event is not specific to RDP. It can also be generated by applications, administrative tools, scripts, scheduled tasks, and other processes that use explicit credentials. Correlate it with Remote Desktop events from the source and destination computers before treating it as evidence of an RDP connection.
 
-### Events 4778 and 4779
+## Events 4778 and 4779
 
 Event ID 4778 records a reconnection to an existing session. Event ID 4779 records a session disconnection without a complete logoff.
 
@@ -103,16 +139,20 @@ The operational event logs provide supporting information that is not always ava
 
 | Event ID | Event log | Meaning |
 | --- | --- | --- |
-| 1149 | TerminalServices-RemoteConnectionManager | Remote Desktop Services received a successful user-authentication event |
-| 21 | TerminalServices-LocalSessionManager | A session logon succeeded |
-| 22 | TerminalServices-LocalSessionManager | The session shell started |
-| 23 | TerminalServices-LocalSessionManager | The session logged off |
-| 25 | TerminalServices-LocalSessionManager | An existing session was reconnected |
-| 40 | TerminalServices-LocalSessionManager | A session was disconnected |
+| 1149 | TerminalServices-RemoteConnectionManager/Operational | Remote Desktop Services received a successful user-authentication event |
+| 98 | RemoteDesktopServices-RdpCoreTS/Operational | Provides information about the RDP connection and protocol processing |
+| 131 | RemoteDesktopServices-RdpCoreTS/Operational | Records information about the incoming RDP connection |
+| 21 | TerminalServices-LocalSessionManager/Operational | A session logon succeeded |
+| 22 | TerminalServices-LocalSessionManager/Operational | The session shell started |
+| 23 | TerminalServices-LocalSessionManager/Operational | The session logged off |
+| 25 | TerminalServices-LocalSessionManager/Operational | An existing session was reconnected |
+| 40 | TerminalServices-LocalSessionManager/Operational | A session was disconnected |
 
-Event ID 21 helps confirm that the authenticated account successfully entered a session. Event ID 22 records the shell start notification and can provide additional evidence that the interactive desktop was started.
+Event ID 21 helps confirm that the authenticated account successfully entered a session. Event ID 22 records that the interactive shell started.
 
 Event ID 25 is useful for identifying a reconnection to a session that already existed. Event IDs 23 and 40 help distinguish a complete logoff from a disconnection.
+
+Event ID 1149 should not be used by itself to prove that a complete interactive session was created. Correlate it with Security Event ID 4624 and LocalSessionManager Event IDs 21 and 22.
 
 ## Disconnection versus logoff
 
@@ -129,19 +169,22 @@ Useful event combinations include:
 - **4778 or LocalSessionManager 25:** The user reconnected to an existing session.
 - **4647, 4634, or LocalSessionManager 23:** The session was logged off or ended.
 
+Event ID 4647 indicates that a user initiated the logoff process. Event ID 4634 confirms that the logon session was terminated and no longer exists.
+
 ## Correlating an RDP session
 
 A practical investigation should combine events by timestamp, account, source address, session name, and Logon ID.
 
 A typical new connection may produce a sequence similar to:
 
-1. Event ID 1149 records Remote Desktop authentication.
-2. Event ID 4624 records a successful logon with Logon Type 10.
-3. Event ID 21 records that the session logon succeeded.
-4. Event ID 22 records that the session shell started.
-5. Event ID 4779 or Event ID 40 records a later disconnection.
-6. Event ID 4778 or Event ID 25 records a reconnection.
-7. Event IDs 4647, 4634, or 23 record the eventual logoff.
+1. Event IDs 98 or 131 record activity associated with the incoming RDP connection.
+2. Event ID 1149 records Remote Desktop authentication activity.
+3. Event ID 4624 records a successful logon with Logon Type 10.
+4. Event ID 21 records that the session logon succeeded.
+5. Event ID 22 records that the session shell started.
+6. Event ID 4779 or Event ID 40 records a later disconnection.
+7. Event ID 4778 or Event ID 25 records a reconnection.
+8. Event IDs 4647, 4634, or 23 record the eventual logoff.
 
 Not every environment produces every event in this exact order. Audit policy, Windows version, session state, and log retention can affect what is available. The sequence should therefore be treated as a correlation model rather than a fixed signature.
 
@@ -190,11 +233,26 @@ Get-WinEvent -FilterHashtable @{
     Sort-Object TimeCreated
 ```
 
+To retrieve RdpCoreTS events:
+
+```powershell
+$StartTime = (Get-Date).AddDays(-7)
+$LogName = 'Microsoft-Windows-RemoteDesktopServices-RdpCoreTS/Operational'
+$EventIds = 98, 131
+
+Get-WinEvent -FilterHashtable @{
+    LogName   = $LogName
+    Id        = $EventIds
+    StartTime = $StartTime
+} | Select-Object TimeCreated, Id, MachineName, Message |
+    Sort-Object TimeCreated
+```
+
 These commands return the complete event messages so you can inspect account names, addresses, session identifiers, and failure information. Run them in an elevated PowerShell session if access to the Security log is denied.
 
 ## Summary
 
-Investigating an RDP connection requires more than searching for Event ID 4624. By correlating Security events with the RemoteConnectionManager and LocalSessionManager operational logs, you can distinguish authentication attempts, new sessions, reconnects, disconnections, and complete logoffs. Timestamps, Logon IDs, session names, account names, and client addresses provide the strongest links between the individual events.
+Investigating an RDP connection requires more than searching for Event ID 4624. By correlating Security events with the RemoteConnectionManager, RdpCoreTS, and LocalSessionManager operational logs, you can distinguish authentication attempts, new sessions, reconnects, disconnections, and complete logoffs. When authentication fails, the Status and Sub Status values in Event ID 4625 help identify the underlying cause.
 
 Thank you for reading this post and I hope it was helpful!
 
@@ -203,10 +261,13 @@ These sources helped me by writing and research for this post;
 
 1. https://frsecure.com/blog/rdp-connection-event-logs/
 2. https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4624
-3. https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4778
-4. https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4779
-5. https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/basic-audit-logon-events
-6. https://learn.microsoft.com/en-us/troubleshoot/windows-server/remote/log-files-to-troubleshoot-rds-issues
+3. https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4625
+4. https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4634
+5. https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4647
+6. https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4778
+7. https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4779
+8. https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/basic-audit-logon-events
+9. https://learn.microsoft.com/en-us/troubleshoot/windows-server/remote/log-files-to-troubleshoot-rds-issues
 {{% /alert %}}
 
 {{< ads >}}
